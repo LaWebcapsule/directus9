@@ -97,8 +97,8 @@ import { useI18n } from 'vue-i18n';
 import { defineComponent, PropType } from 'vue';
 
 import MapComponent from './components/map.vue';
-import { useSync } from '@directus/composables';
-import { GeometryOptions, Item } from '@directus/types';
+import { useSync } from '@directus9/composables';
+import { GeometryOptions, Item } from '@directus9/types';
 
 export default defineComponent({
 	components: { MapComponent },

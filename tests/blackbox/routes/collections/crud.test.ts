@@ -4,7 +4,7 @@ import request from 'supertest';
 import vendors from '@common/get-dbs-to-test';
 import knex from 'knex';
 import type { Knex } from 'knex';
-import type { Collection } from '@directus/types';
+import type { Collection } from '@directus9/types';
 import { findIndex } from 'lodash';
 import { requestGraphQL } from '@common/index';
 

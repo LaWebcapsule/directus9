@@ -38,18 +38,18 @@ Run the following commands in the terminal to install dependencies:
 
 ```
 cd my-website
-npm install @directus/sdk
+npm install @directus9/sdk
 ```
 
 Open `my-website` in your code editor.
 
-## Create Helper For @directus/sdk
+## Create Helper For @directus9/sdk
 
 To share a single instance of the Directus JavaScript SDK between multiple pages in this project, create a single helper
 file that can be imported later. Create a new directory called `lib` and a new file called `directus.js` inside of it.
 
 ```js
-import { Directus } from '@directus/sdk';
+import { Directus } from '@directus9/sdk';
 const directus = new Directus('https://your-project-id.directus.app/');
 export default directus;
 ```

@@ -1,5 +1,5 @@
-import { createInspector } from '@directus/schema';
-import type { SchemaInspector } from '@directus/schema';
+import { createInspector } from '@directus9/schema';
+import type { SchemaInspector } from '@directus9/schema';
 import fse from 'fs-extra';
 import type { Knex } from 'knex';
 import knex from 'knex';

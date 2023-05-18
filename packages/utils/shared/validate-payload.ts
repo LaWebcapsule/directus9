@@ -1,4 +1,4 @@
-import type { FieldFilter, Filter } from '@directus/types';
+import type { FieldFilter, Filter } from '@directus9/types';
 import type Joi from 'joi';
 import { flatten } from 'lodash-es';
 import type { JoiOptions } from './generate-joi.js';

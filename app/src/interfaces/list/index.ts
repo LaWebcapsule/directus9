@@ -1,4 +1,4 @@
-import { defineInterface } from '@directus/utils';
+import { defineInterface } from '@directus9/utils';
 import RepeaterOptions from './options.vue';
 import InterfaceList from './list.vue';
 import PreviewSVG from './preview.svg?raw';

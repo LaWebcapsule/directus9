@@ -1,5 +1,5 @@
-import type { StorageManager } from '@directus/storage';
-import { toArray } from '@directus/utils';
+import type { StorageManager } from '@directus9/storage';
+import { toArray } from '@directus9/utils';
 import { getEnv } from '../env.js';
 import { getConfigFromEnv } from '../utils/get-config-from-env.js';
 

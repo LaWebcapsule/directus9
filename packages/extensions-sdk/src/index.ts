@@ -7,7 +7,7 @@ export {
 	useLayout,
 	useStores,
 	useSync,
-} from '@directus/composables';
+} from '@directus9/composables';
 export {
 	defineDisplay,
 	defineEndpoint,
@@ -20,4 +20,4 @@ export {
 	definePanel,
 	getFieldsFromTemplate,
 	getRelationType,
-} from '@directus/utils';
+} from '@directus9/utils';

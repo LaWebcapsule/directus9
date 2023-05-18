@@ -1,4 +1,4 @@
-import { defineInterface } from '@directus/utils';
+import { defineInterface } from '@directus9/utils';
 import InterfaceMap from './map.vue';
 import Options from './options.vue';
 import PreviewSVG from './preview.svg?raw';

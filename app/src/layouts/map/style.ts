@@ -1,4 +1,4 @@
-import { cssVar } from '@directus/utils/browser';
+import { cssVar } from '@directus9/utils/browser';
 
 export function getMapStyle() {
 	return [

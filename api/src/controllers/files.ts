@@ -1,5 +1,5 @@
 import formatTitle from '@directus/format-title';
-import { toArray } from '@directus/utils';
+import { toArray } from '@directus9/utils';
 import Busboy from 'busboy';
 import type { RequestHandler } from 'express';
 import express from 'express';

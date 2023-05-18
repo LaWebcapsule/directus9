@@ -1,4 +1,4 @@
-import type { NestedExtensionType } from '@directus/types';
+import type { NestedExtensionType } from '@directus9/types';
 import fse from 'fs-extra';
 import path from 'path';
 import { pluralize } from './pluralize.js';

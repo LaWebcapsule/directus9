@@ -1,5 +1,5 @@
 import api from '@/api';
-import { getEndpoint } from '@directus/utils';
+import { getEndpoint } from '@directus9/utils';
 import { unexpectedError } from '@/utils/unexpected-error';
 import { merge } from 'lodash';
 import { ref, Ref, watch } from 'vue';

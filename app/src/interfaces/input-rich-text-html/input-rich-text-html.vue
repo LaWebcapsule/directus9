@@ -184,7 +184,7 @@ import useLink from './useLink';
 import useMedia from './useMedia';
 import useSourceCode from './useSourceCode';
 import { useSettingsStore } from '@/stores/settings';
-import { SettingsStorageAssetPreset } from '@directus/types';
+import { SettingsStorageAssetPreset } from '@directus9/types';
 
 import 'tinymce/tinymce';
 import 'tinymce/models/dom';

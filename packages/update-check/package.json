@@ -1,5 +1,5 @@
 {
-	"name": "@directus/update-check",
+	"name": "@directus9/update-check",
 	"version": "10.0.0",
 	"type": "module",
 	"scripts": {
@@ -10,10 +10,10 @@
 	"description": "Check if an update is available for a given package",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/directus/directus.git",
+		"url": "https://github.com/directus9/directus9.git",
 		"directory": "packages/update-check"
 	},
-	"funding": "https://github.com/directus/directus?sponsor=1",
+	"funding": "https://github.com/directus9/directus9?sponsor=1",
 	"license": "MIT",
 	"author": "Rijk van Zanten <rijkvanzanten@me.com>",
 	"exports": {

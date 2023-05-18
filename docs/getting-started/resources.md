@@ -14,7 +14,7 @@ readTime: 1 min read
 
 ## Developer Resources
 
-- **[GitHub](https://github.com/directus/directus)** — The open-source repository and version control.
+- **[GitHub](https://github.com/directus9/directus9)** — The open-source repository and version control.
 - **[NPM Package](https://www.npmjs.com/package/directus)** — The official Directus node package.
 - **[Docker Image](https://hub.docker.com/r/directus/directus)** — The official Directus docker image.
 - **[Documentation](https://docs.directus.io)** — Docs for the most recent version of Directus.

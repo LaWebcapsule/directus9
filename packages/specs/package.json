@@ -1,15 +1,15 @@
 {
-	"name": "@directus/specs",
+	"name": "@directus9/specs",
 	"version": "10.0.0",
 	"description": "OpenAPI Specification of the Directus API",
 	"homepage": "https://directus.io",
 	"type": "module",
 	"bugs": {
-		"url": "https://github.com/directus/directus/issues"
+		"url": "https://github.com/directus9/directus9/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/directus/directus.git",
+		"url": "https://github.com/directus9/directus9.git",
 		"directory": "packages/specs"
 	},
 	"license": "BUSL-1.1",

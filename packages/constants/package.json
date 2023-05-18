@@ -1,5 +1,5 @@
 {
-	"name": "@directus/constants",
+	"name": "@directus9/constants",
 	"version": "10.0.0",
 	"type": "module",
 	"scripts": {
@@ -9,10 +9,10 @@
 	"description": "Shared constants for Directus",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/directus/directus.git",
+		"url": "https://github.com/directus9/directus9.git",
 		"directory": "packages/constants"
 	},
-	"funding": "https://github.com/directus/directus?sponsor=1",
+	"funding": "https://github.com/directus9/directus9?sponsor=1",
 	"license": "MIT",
 	"author": "Rijk van Zanten <rijkvanzanten@me.com>",
 	"exports": {

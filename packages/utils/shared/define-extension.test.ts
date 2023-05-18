@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { defineComponent } from 'vue';
-import type { Type } from '@directus/types';
+import type { Type } from '@directus9/types';
 import {
 	defineDisplay,
 	defineEndpoint,
