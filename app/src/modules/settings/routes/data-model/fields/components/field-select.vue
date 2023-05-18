@@ -158,7 +158,7 @@ import { Field } from '@directus9/types';
 import FieldSelectMenu from './field-select-menu.vue';
 import { hideDragImage } from '@/utils/hide-drag-image';
 import Draggable from 'vuedraggable';
-import formatTitle from '@directus9/format-title';
+import formatTitle from '@directus/format-title';
 import { useExtension } from '@/composables/use-extension';
 
 export default defineComponent({

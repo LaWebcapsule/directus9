@@ -1,6 +1,6 @@
 {
 	"name": "@directus9/api",
-	"version": "9.26.0",
+	"version": "9.26.1",
 	"description": "Directus9 is a real-time API and App dashboard for managing SQL database content",
 	"type": "module",
 	"keywords": [
@@ -75,7 +75,7 @@
 		"@directus9/constants": "workspace:*",
 		"@directus9/exceptions": "workspace:*",
 		"@directus9/extensions-sdk": "workspace:*",
-		"@directus9/format-title": "10.0.0",
+		"@directus/format-title": "10.0.0",
 		"@directus9/schema": "workspace:*",
 		"@directus9/specs": "workspace:*",
 		"@directus9/storage": "workspace:*",

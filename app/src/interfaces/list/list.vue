@@ -90,7 +90,7 @@ import Draggable from 'vuedraggable';
 import { i18n } from '@/lang';
 import { renderStringTemplate } from '@/utils/render-string-template';
 import { hideDragImage } from '@/utils/hide-drag-image';
-import formatTitle from '@directus9/format-title';
+import formatTitle from '@directus/format-title';
 import { isEqual, sortBy } from 'lodash';
 
 export default defineComponent({

@@ -1,4 +1,4 @@
-import formatTitle from '@directus9/format-title';
+import formatTitle from '@directus/format-title';
 import { toArray } from '@directus9/utils';
 import Busboy from 'busboy';
 import type { RequestHandler } from 'express';

@@ -1,0 +1,15 @@
+{
+    "name": "@directus9/tsconfig",
+    "version": "0.0.7",
+    "description": "TS Config used in Directus projects",
+    "main": "index.js",
+    "keywords": [
+      "tsconfig",
+      "directus"
+    ],
+    "author": "Rijk van Zanten <rijkvanzanten@me.com>",
+    "license": "MIT",
+    "files": [
+      "./node18-esm.json"
+    ]
+  }

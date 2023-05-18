@@ -61,7 +61,7 @@ import { FlowRaw } from '@directus9/types';
 import { computed, ref, toRefs, unref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { translate } from '@/utils/translate-object-values';
-import formatTitle from '@directus9/format-title';
+import formatTitle from '@directus/format-title';
 
 interface Props {
 	collection: string;
