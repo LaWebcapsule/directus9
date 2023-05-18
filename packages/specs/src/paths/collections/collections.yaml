@@ -27,7 +27,7 @@ get:
 
 post:
   summary: Create a Collection
-  description: Create a new collection in Directus.
+  description: Create a new collection in Directus9.
   operationId: createCollection
   parameters:
     - $ref: '../../openapi.yaml#/components/parameters/Meta'

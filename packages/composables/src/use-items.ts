@@ -1,5 +1,5 @@
-import type { Item, Query } from '@directus/types';
-import { getEndpoint, moveInArray } from '@directus/utils';
+import type { Item, Query } from '@directus9/types';
+import { getEndpoint, moveInArray } from '@directus9/utils';
 import axios from 'axios';
 import { isEqual, throttle } from 'lodash-es';
 import type { ComputedRef, Ref, WritableComputedRef } from 'vue';
@@ -150,7 +150,7 @@ export function useItems(collection: Ref<string | null>, query: ComputedQuery): 
 		}
 
 		// Filter out fake internal columns. This is (among other things) for a fake $thumbnail m2o field
-		// on directus_files
+		// on directus9_files
 		fieldsToFetch = fieldsToFetch.filter((field) => field.startsWith('$') === false);
 
 		try {
@@ -174,13 +174,13 @@ export function useItems(collection: Ref<string | null>, query: ComputedQuery): 
 			 * @NOTE
 			 *
 			 * This is used in conjunction with the fake field in /src/stores/fields/fields.ts to be
-			 * able to render out the directus_files collection (file library) using regular layouts
+			 * able to render out the directus9_files collection (file library) using regular layouts
 			 *
-			 * Layouts expect the file to be a m2o of a `file` type, however, directus_files is the
+			 * Layouts expect the file to be a m2o of a `file` type, however, directus9_files is the
 			 * only collection that doesn't have this (obviously). This fake $thumbnail field is used to
 			 * pretend there is a file m2o, so we can use the regular layout logic for files as well
 			 */
-			if (collection.value === 'directus_files') {
+			if (collection.value === 'directus9_files') {
 				fetchedItems = fetchedItems.map((file: any) => ({
 					...file,
 					$thumbnail: file,

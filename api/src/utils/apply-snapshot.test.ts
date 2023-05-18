@@ -270,7 +270,7 @@ describe('applySnapshot', () => {
 			async (fieldSchemaDataType) => {
 				const snapshotToApply: Snapshot = {
 					version: 1,
-					directus: '0.0.0',
+					directus9: '0.0.0',
 					collections: [
 						{
 							collection: 'test_uuid_table',
@@ -407,7 +407,7 @@ describe('applySnapshot', () => {
 					database: db,
 					current: {
 						version: 1,
-						directus: '0.0.0',
+						directus9: '0.0.0',
 						collections: [],
 						fields: [],
 						relations: [],
@@ -425,7 +425,7 @@ describe('applySnapshot', () => {
 		it('Deletes interrelated collections', async () => {
 			const snapshotToApply: Snapshot = {
 				version: 1,
-				directus: '0.0.0',
+				directus9: '0.0.0',
 				collections: [],
 				fields: [],
 				relations: [],

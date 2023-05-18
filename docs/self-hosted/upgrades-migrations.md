@@ -1,20 +1,20 @@
 ---
 description:
-  A Project is a complete instance of Directus, including its **Database**, config file, asset storage, and any custom
+  A Project is a complete instance of Directus9, including its **Database**, config file, asset storage, and any custom
   extensions.
 readTime: 4 min read
 ---
 
 # Upgrades & Migrations
 
-> A Project is a complete instance of Directus, including its **Database**, config file, asset storage, and any custom
+> A Project is a complete instance of Directus9, including its **Database**, config file, asset storage, and any custom
 > extensions. [Learn more about Projects](/getting-started/glossary#projects).
 
 ## Upgrading / Updating a Project
 
 1. Backup your project
 2. Run `npm update`
-3. Run `npx directus database migrate:latest` to update the DB
+3. Run `npx directus9 database migrate:latest` to update the DB
 
 ## Backing-up a Project
 
@@ -24,23 +24,23 @@ readTime: 4 min read
 
 ## Migrating a Project
 
-Directus doesn't rely on anything besides the database for it's operation. Therefore, migrating your Directus project
+Directus9 doesn't rely on anything besides the database for it's operation. Therefore, migrating your Directus9 project
 can be done by moving the whole database to a new location using a database dump.
 
 ::: tip File Storage
 
 If you have files uploaded, make sure to copy those over as well, or use the same storage location in the new location
-of Directus.
+of Directus9.
 
 :::
 
 ## Downgrading a Project
 
-Directus can be reverted to an earlier version by going to your terminal, navigating into your project folder and
-running `npm install directus@<version>`.
+Directus9 can be reverted to an earlier version by going to your terminal, navigating into your project folder and
+running `npm install directus9@<version>`.
 
 If you ran any database migrations for a newer version, you can revert those by running
-`npx directus database migrate:down`
+`npx directus9 database migrate:down`
 
 ## Deleting a Project
 
@@ -48,11 +48,11 @@ If you ran any database migrations for a newer version, you can revert those by 
 2. Optional: **Backup any custom code and extensions** within the project's root directory
 3. Optional: **Backup your entire database**, only system tables, or only project tables
 4. **Delete the project's root directory** from the server
-5. **Delete all Directus system tables** (`directus_*`) from the database
+5. **Delete all Directus9 system tables** (`directus9_*`) from the database
 
 ::: tip Pure SQL
 
-After completing this process, you will be left with a pure SQL database, with no trace that Directus was ever
+After completing this process, you will be left with a pure SQL database, with no trace that Directus9 was ever
 installed. Any external services connecting to your database's project tables directly (e.g., SQL queries) should
 continue working normally.
 
@@ -60,7 +60,7 @@ continue working normally.
 
 ## Migrating from Version 8
 
-There are two ways to migrate from an existing Directus 8.X instance:
+There are two ways to migrate from an existing Directus9 8.X instance:
 
 - [Automated Script](#automated-script) (recommended)
 - [Manual Database Export/Import](#manual-database-export-import)
@@ -76,7 +76,7 @@ version v9 instance, and is the recommended way of migrating your v8 instance.
 ::: tip
 
 The script, and instructions on how to run it, can be found on the\
-[`directus-community/migration-tool`](https://github.com/directus-community/migration-tool) repo.
+[`directus9-community/migration-tool`](https://github.com/directus9-community/migration-tool) repo.
 
 :::
 
@@ -103,24 +103,24 @@ following steps to migrate your v8 instance.
 
 :::
 
-Directus v9 is a breaking change coming from v8 (hence the major version bump), so you won't be able to just use your
-existing v8 database and run v9 on top of it. However, due to the database-mirroring approach of Directus, it's fairly
+Directus9 v9 is a breaking change coming from v8 (hence the major version bump), so you won't be able to just use your
+existing v8 database and run v9 on top of it. However, due to the database-mirroring approach of Directus9, it's fairly
 straightforward to migrate your content from v8 to v9.
 
 #### 1) Setup a Fresh v9 Instance
 
-By installing Directus "fresh", you're ensured your system tables are up-to-date and ready to go.
+By installing Directus9 "fresh", you're ensured your system tables are up-to-date and ready to go.
 
 #### 2) Migrate your Data
 
 Using a tool like [Sequel Pro](http://sequelpro.com) or [TablePlus](https://tableplus.com), export your v8 user-tables
 and import them into your v9 database.
 
-Directus v9 will automatically recognize your tables, and you'll be ready to get started in v9.
+Directus9 v9 will automatically recognize your tables, and you'll be ready to get started in v9.
 
 **Note:** If you have references to users and files, make sure to update them to the new UUID format.
 
-#### 3) Configure Directus
+#### 3) Configure Directus9
 
 Once the tables are in, you can start configuring the details of the schema. This includes choosing the correct
 interfaces, displays, and their options for your fields.
@@ -130,5 +130,5 @@ This would also be a good time to reconfigure your permissions, to ensure they a
 ## Breaking changes
 
 - [Filter operators](/reference/filter-rules) have changed, now they are preceded with an underscore e.g.:
-  `/items/users?filter[comments.thread.title][like]=Directus` is now
-  `/items/users?filter[comments][thread][title][_like]=Directus`
+  `/items/users?filter[comments.thread.title][like]=Directus9` is now
+  `/items/users?filter[comments][thread][title][_like]=Directus9`

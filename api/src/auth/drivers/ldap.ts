@@ -1,4 +1,4 @@
-import type { Accountability } from '@directus/types';
+import type { Accountability } from '@directus9/types';
 import { Router } from 'express';
 import Joi from 'joi';
 import type { Client, Error, LDAPResult, SearchCallbackResponse, SearchEntry } from 'ldapjs';
@@ -215,7 +215,7 @@ export class LDAPAuthDriver extends AuthDriver {
 	private async fetchUserId(userDn: string): Promise<string | undefined> {
 		const user = await this.knex
 			.select('id')
-			.from('directus_users')
+			.from('directus9_users')
 			.orWhereRaw('LOWER(??) = ?', ['external_identifier', userDn.toLowerCase()])
 			.first();
 
@@ -259,7 +259,7 @@ export class LDAPAuthDriver extends AuthDriver {
 			if (userGroups.length) {
 				userRole = await this.knex
 					.select('id')
-					.from('directus_roles')
+					.from('directus9_roles')
 					.whereRaw(`LOWER(??) IN (${userGroups.map(() => '?')})`, [
 						'name',
 						...userGroups.map((group) => group.toLowerCase()),

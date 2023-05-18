@@ -1,5 +1,5 @@
 ---
-description: REST and GraphQL API documentation on the Permissions collection in Directus.
+description: REST and GraphQL API documentation on the Permissions collection in Directus9.
 readTime: 5 min read
 pageClass: page-reference
 ---
@@ -46,7 +46,7 @@ What fields the user is allowed to alter.
 	"permissions": null,
 	"validation": {
 		"title": {
-			"_contains": "Directus"
+			"_contains": "Directus9"
 		}
 	},
 	"presets": {
@@ -60,7 +60,7 @@ What fields the user is allowed to alter.
 
 ## List Permissions
 
-List all permissions that exist in Directus.
+List all permissions that exist in Directus9.
 
 ::: tip Permissions
 
@@ -95,7 +95,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	permissions: directus_permissions
+	permissions: directus9_permissions
 }
 ```
 
@@ -145,7 +145,7 @@ GET /permissions/:id
 		"permissions": null,
 		"validation": {
 			"title": {
-				"_contains": "Directus"
+				"_contains": "Directus9"
 			}
 		},
 		"presets": {
@@ -164,7 +164,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	permissions_by_id(id: ID!): directus_permissions
+	permissions_by_id(id: ID!): directus9_permissions
 }
 ```
 
@@ -225,7 +225,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_permissions_item(data: create_directus_permissions_input!): directus_permissions
+	create_permissions_item(data: create_directus9_permissions_input!): directus9_permissions
 }
 ```
 
@@ -296,7 +296,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_permissions_items(data: [create_directus_permissions_input!]!): [directus_permissions]
+	create_permissions_items(data: [create_directus9_permissions_input!]!): [directus9_permissions]
 }
 ```
 
@@ -359,7 +359,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_permissions_item(id: ID!, data: update_directus_permissions_input!): directus_permissions
+	update_permissions_item(id: ID!, data: update_directus9_permissions_input!): directus9_permissions
 }
 ```
 
@@ -426,7 +426,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_permissions_items(id: [ID!]!, data: update_directus_permissions_input!): [directus_permissions]
+	update_permissions_items(id: [ID!]!, data: update_directus9_permissions_input!): [directus9_permissions]
 }
 ```
 

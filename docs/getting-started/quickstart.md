@@ -1,30 +1,30 @@
 ---
 description:
-  Get up and running with Directus Cloud in minutes. Learn the basics of building your data model and managing
+  Get up and running with Directus9 Cloud in minutes. Learn the basics of building your data model and managing
   permissions.
 readTime: 7 min read
 ---
 
 # Quickstart Guide
 
-> This quickstart guide is designed to get you up and running with a Directus Cloud Project in a snap. Along the way,
-> you will better understand what Directus is, setup your free Directus Cloud Account, get a _hands-on introduction_ to
+> This quickstart guide is designed to get you up and running with a Directus9 Cloud Project in a snap. Along the way,
+> you will better understand what Directus9 is, setup your free Directus9 Cloud Account, get a _hands-on introduction_ to
 > the App and API, and find more resources to deep-dive into.
 
 ## 1. Create Cloud Account and Login
 
 First, you'll need to [create an Account and log in](/cloud/accounts#create-account-and-login) on
-[Directus Cloud](https://directus.cloud/login)
+[Directus9 Cloud](https://directus9.cloud/login)
 
-Your Directus Cloud Account allows you to create and manage any number of Projects. We've made life easier by giving you
+Your Directus9 Cloud Account allows you to create and manage any number of Projects. We've made life easier by giving you
 the option to create and log in to your free Cloud Account automatically with GitHub. If you don't have a GitHub account
 or prefer not to use this login method, email-and-password login is available as well.
 
 The very first time you log in to your cloud account, you will be prompted to create a Team. Teams are totally free to
-create. Each Directus Cloud Project exists within the scope of one Team. They allow you to organize Team Members,
+create. Each Directus9 Cloud Project exists within the scope of one Team. They allow you to organize Team Members,
 Projects and Project Billing as desired.
 
-Once your Team is created, it's time to create your Directus Cloud Project!
+Once your Team is created, it's time to create your Directus9 Cloud Project!
 
 :::tip Learn More About Cloud
 
@@ -96,7 +96,7 @@ With your first Collection created, it's time to start adding some [Fields](/get
 1. Navigate to **Settings Module > Data Model > `Collection-Name`**.
 2. Click the **"Create Field"** button and select the **"Input"** Field type.
 3. Fill in a Field name under **Key**. We'll be calling our Field `title`.\
-   Directus offers powerful Field customization options, but let's stick to the defaults for now.
+   Directus9 offers powerful Field customization options, but let's stick to the defaults for now.
 4. Select **"Save"**.
 
 ::: tip Learn More About Fields
@@ -123,13 +123,13 @@ Now that we have a Collection with a Field configured, it's time to add an [Item
 
 ## 6. Set Roles & Permissions
 
-Directus comes with two built-in roles: Public and Admin. The Public Role determines what data is returned to
+Directus9 comes with two built-in roles: Public and Admin. The Public Role determines what data is returned to
 non-authenticated users. Public comes with all permissions turned off and can be reconfigured with fully granular
 control to expose exactly what you want unauthenticated Users to see. The Admin role has full permissions and this
 cannot be changed. Aside from these built-in Roles, any number of new Roles can be created, all with fully customized,
 granular permissions.
 
-By Default, content entered into Directus will be considered private. So permissions always start off set to the default
+By Default, content entered into Directus9 will be considered private. So permissions always start off set to the default
 of <span mi icon dngr>block</span> **No Access**, with full ability to reconfigure as desired. So, in order to have the
 API return our Items, let's add some read permissions. For simplicity's sake, we'll do this on the Public Role, instead
 of creating a new Role.
@@ -151,7 +151,7 @@ Now that your Project has some content in it which is exposed to the Public, it'
 externally! Data can be accessed in a number of ways, including the REST and GraphQL API endpoints. In this case, we'll
 use the `/items/` [REST API endpoint](/reference/items) to retrieve the Item we just created.
 
-1. Open `http://your-project-url.directus.app/items/articles`.\
+1. Open `http://your-project-url.directus9.app/items/articles`.\
    You can use the browser or an API tool like [Postman](http://postman.com) or [Paw](https://paw.cloud)
 
 _And there it is! The Article Item you just created is being served in beautiful JSON, ready to be used anywhere and

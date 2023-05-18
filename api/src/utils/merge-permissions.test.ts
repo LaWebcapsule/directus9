@@ -1,4 +1,4 @@
-import type { Filter, Permission } from '@directus/types';
+import type { Filter, Permission } from '@directus9/types';
 import { describe, expect, test } from 'vitest';
 import { mergePermission } from './merge-permissions.js';
 
@@ -8,7 +8,7 @@ const conditionalFilter2 = { count: { _gt: 42 } } as Filter;
 
 const permissionTemplate = {
 	role: null,
-	collection: 'directus_users',
+	collection: 'directus9_users',
 	permissions: null,
 	validation: null,
 	presets: null,

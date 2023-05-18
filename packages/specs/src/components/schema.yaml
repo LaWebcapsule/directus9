@@ -3,7 +3,7 @@ properties:
   version:
     type: integer
     example: 1
-  directus:
+  directus9:
     type: string
   vendor:
     type: string

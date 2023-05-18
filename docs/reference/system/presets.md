@@ -1,12 +1,12 @@
 ---
-description: REST and GraphQL API documentation on the Presets collection in Directus.
+description: REST and GraphQL API documentation on the Presets collection in Directus9.
 readTime: 5 min read
 pageClass: page-reference
 ---
 
 # Preset
 
-> Presets hold the preferences of individual users of the platform. This allows Directus to show and maintain custom
+> Presets hold the preferences of individual users of the platform. This allows Directus9 to show and maintain custom
 > item listings and bookmarks for users of the app. [Learn more about Presets](/getting-started/glossary#presets).
 
 ---
@@ -49,7 +49,7 @@ The options used by the layout. This structure is based on the used layout.
 	"bookmark": null,
 	"user": "410b5772-e63f-4ae6-9ea2-39c3a31bd6ca",
 	"role": null,
-	"collection": "directus_activity",
+	"collection": "directus9_activity",
 	"search": null,
 	"filters": [],
 	"layout": "tabular",
@@ -77,7 +77,7 @@ The options used by the layout. This structure is based on the used layout.
 
 ## List Presets
 
-List all presets that exist in Directus.
+List all presets that exist in Directus9.
 
 ::: tip Permissions
 
@@ -112,7 +112,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	presets: [directus_presets]
+	presets: [directus9_presets]
 }
 ```
 
@@ -161,7 +161,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	presets_by_id(id: ID!): directus_presets
+	presets_by_id(id: ID!): directus9_presets
 }
 ```
 
@@ -208,7 +208,7 @@ POST /presets
 {
 	"user": "410b5772-e63f-4ae6-9ea2-39c3a31bd6ca",
 	"layout": "cards",
-	"search": "Directus"
+	"search": "Directus9"
 }
 ```
 
@@ -220,7 +220,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_presets_item(data: create_directus_presets_input!): directus_presets
+	create_presets_item(data: create_directus9_presets_input!): directus9_presets
 }
 ```
 
@@ -228,7 +228,7 @@ type Mutation {
 
 ```graphql
 mutation {
-	create_presets_item(data: { user: "410b5772-e63f-4ae6-9ea2-39c3a31bd6ca", layout: "cards", search: "Directus" }) {
+	create_presets_item(data: { user: "410b5772-e63f-4ae6-9ea2-39c3a31bd6ca", layout: "cards", search: "Directus9" }) {
 		id
 		user
 	}
@@ -266,10 +266,10 @@ POST /presets
 
 [
 	{
-		"collection": "directus_files",
+		"collection": "directus9_files",
 		"user": "410b5772-e63f-4ae6-9ea2-39c3a31bd6ca",
 		"layout": "cards",
-		"search": "Directus"
+		"search": "Directus9"
 	},
 	{
 		"collection": "articles",
@@ -287,7 +287,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_presets_items(data: [create_directus_presets_input!]!): [directus_presets]
+	create_presets_items(data: [create_directus9_presets_input!]!): [directus9_presets]
 }
 ```
 
@@ -298,10 +298,10 @@ mutation {
 	create_presets_items(
 		data: [
 			{
-				collection: "directus_files"
+				collection: "directus9_files"
 				user: "410b5772-e63f-4ae6-9ea2-39c3a31bd6ca"
 				layout: "cards"
-				search: "Directus"
+				search: "Directus9"
 			}
 			{ collection: "articles", user: "410b5772-e63f-4ae6-9ea2-39c3a31bd6ca", layout: "tabular" }
 		]
@@ -354,7 +354,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_presets_item(id: ID!, data: update_directus_presets_input): directus_presets
+	update_presets_item(id: ID!, data: update_directus9_presets_input): directus9_presets
 }
 ```
 
@@ -418,7 +418,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_presets_items(ids: [ID!]!, data: update_directus_presets_input): [directus_presets]
+	update_presets_items(ids: [ID!]!, data: update_directus9_presets_input): [directus9_presets]
 }
 ```
 

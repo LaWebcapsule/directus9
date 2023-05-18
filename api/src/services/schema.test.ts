@@ -30,7 +30,7 @@ let db: Knex;
 let tracker: Tracker;
 
 const testSnapshot = {
-	directus: '0.0.0',
+	directus9: '0.0.0',
 	version: 1,
 	vendor: 'postgres',
 	collections: [],
@@ -123,7 +123,7 @@ describe('Services / Schema', () => {
 
 	describe('diff', () => {
 		const snapshotToApply = {
-			directus: '0.0.0',
+			directus9: '0.0.0',
 			version: 1,
 			vendor: 'postgres',
 			collections: [

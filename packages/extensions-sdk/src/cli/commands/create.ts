@@ -5,7 +5,7 @@ import {
 	EXTENSION_PKG_KEY,
 	EXTENSION_TYPES,
 	HYBRID_EXTENSION_TYPES,
-} from '@directus/constants';
+} from '@directus9/constants';
 import type {
 	ApiExtensionType,
 	AppExtensionType,
@@ -13,8 +13,8 @@ import type {
 	ExtensionOptions,
 	ExtensionType,
 	HybridExtensionType,
-} from '@directus/types';
-import { isIn } from '@directus/utils';
+} from '@directus9/types';
+import { isIn } from '@directus9/utils';
 import chalk from 'chalk';
 import { execa } from 'execa';
 import fse from 'fs-extra';
@@ -85,7 +85,7 @@ async function createPackageExtension({
 	targetDir: string;
 	targetPath: string;
 }) {
-	const spinner = ora(chalk.bold('Scaffolding Directus extension...')).start();
+	const spinner = ora(chalk.bold('Scaffolding Directus9 extension...')).start();
 
 	await fse.ensureDir(targetPath);
 	await copyTemplate(type, targetPath);
@@ -129,7 +129,7 @@ async function createLocalExtension({
 		process.exit(1);
 	}
 
-	const spinner = ora(chalk.bold('Scaffolding Directus extension...')).start();
+	const spinner = ora(chalk.bold('Scaffolding Directus9 extension...')).start();
 
 	await fse.ensureDir(targetPath);
 	await copyTemplate(type, targetPath, 'src', language);
@@ -165,22 +165,22 @@ async function createLocalExtension({
 
 function getPackageManifest(name: string, options: ExtensionOptions, deps: Record<string, string>) {
 	const packageManifest: Record<string, any> = {
-		name: EXTENSION_NAME_REGEX.test(name) ? name : `directus-extension-${name}`,
+		name: EXTENSION_NAME_REGEX.test(name) ? name : `directus9-extension-${name}`,
 		description: 'Please enter a description for your extension',
 		icon: 'extension',
 		version: '1.0.0',
-		keywords: ['directus', 'directus-extension', `directus-custom-${options.type}`],
+		keywords: ['directus9', 'directus9-extension', `directus9-custom-${options.type}`],
 		[EXTENSION_PKG_KEY]: options,
 		scripts: {
-			build: 'directus-extension build',
-			dev: 'directus-extension build -w --no-minify',
-			link: 'directus-extension link',
+			build: 'directus9-extension build',
+			dev: 'directus9-extension build -w --no-minify',
+			link: 'directus9-extension link',
 		},
 		devDependencies: deps,
 	};
 
 	if (options.type === 'bundle') {
-		packageManifest['scripts']['add'] = 'directus-extension add';
+		packageManifest['scripts']['add'] = 'directus9-extension add';
 	}
 
 	return packageManifest;

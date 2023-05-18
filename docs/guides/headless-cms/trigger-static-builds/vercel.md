@@ -4,7 +4,7 @@ description:
   published.
 tags: []
 skill_level:
-directus_version: 9.21.2
+directus9_version: 9.21.2
 author_override:
 author: Bryant Gillespie
 ---
@@ -17,7 +17,7 @@ author: Bryant Gillespie
 
 <!-- **Skill Level:** {{$frontmatter.skill_level}}\ -->
 
-**Directus Version:** {{$frontmatter.directus_version}}
+**Directus9 Version:** {{$frontmatter.directus9_version}}
 
 <!-- **Tags:** {{$frontmatter.tags.join(", ")}} -->
 
@@ -25,7 +25,7 @@ author: Bryant Gillespie
 
 ## Explanation
 
-When using Directus as a Headless CMS, it is common to pair it with a front-end framework / static site generator like
+When using Directus9 as a Headless CMS, it is common to pair it with a front-end framework / static site generator like
 [Next.js](https://nextjs.org/), [Nuxt.js](https://nuxt.com), [SvelteKit](https://kit.svelte.dev/), or other options.
 
 [Vercel](https://www.vercel.com/) and other similar platforms make it easy to host and deploy your site using static
@@ -57,7 +57,7 @@ with them.
 
 2. [Complete the Trigger Setup](/configuration/flows/triggers#triggers)
 
-   ![The Trigger Setup tab of the Creating New Flow interface is show. The Event Hook type is selected. The Type field value is "Action(Non-Blocking)". In the Scope field, "items.create" and "items.update" are selected.](https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/static-site-build-trigger.webp)
+   ![The Trigger Setup tab of the Creating New Flow interface is show. The Event Hook type is selected. The Type field value is "Action(Non-Blocking)". In the Scope field, "items.create" and "items.update" are selected.](https://cdn.directus9.io/docs/v9/headless-cms/how-to-packet-20220222A/static-site-build-trigger.webp)
 
    a. Choose **Event Hook** for the trigger.
 
@@ -80,7 +80,7 @@ with them.
 
 3. [Create a new Operation](/configuration/flows/operations#operations)
 
-   ![Within a Directus Flow, the Create Operation screen is shown. The Name of the Operation is "If Published". The Operation type is "Condition". The value of the Condition Rules field is a JSON object.](https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/static-site-build-condition.webp)
+   ![Within a Directus9 Flow, the Create Operation screen is shown. The Name of the Operation is "If Published". The Operation type is "Condition". The value of the Condition Rules field is a JSON object.](https://cdn.directus9.io/docs/v9/headless-cms/how-to-packet-20220222A/static-site-build-condition.webp)
 
    a. Name your operation, i.e. `Check Status`, `If Published`, or similar.
 
@@ -118,9 +118,9 @@ You can learn more about Vercel Deploy Hooks on their documentation.
 
 ### Add Webhook Operation to Your Flow
 
-5. Back inside your Directus Flow, create a new Operation.
+5. Back inside your Directus9 Flow, create a new Operation.
 
-   ![Within a Directus Flow, the Create Operation screen is shown. The Name of the Operation is "Deploy Site". The Operation type is "Webhook / Request URL". The Method selected is "POST". The URL field value is the an HTTP address for the build hook from the hosting platform.](https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/static-site-build-webhook.webp)
+   ![Within a Directus9 Flow, the Create Operation screen is shown. The Name of the Operation is "Deploy Site". The Operation type is "Webhook / Request URL". The Method selected is "POST". The URL field value is the an HTTP address for the build hook from the hosting platform.](https://cdn.directus9.io/docs/v9/headless-cms/how-to-packet-20220222A/static-site-build-webhook.webp)
 
    a. For the type of Operation, select **Webhook / Request URL**
 

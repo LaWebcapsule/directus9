@@ -11,7 +11,7 @@ systems.
 
 ## Supported SSO mechanisms
 
-Directus supports four standard types of SSO mechanisms:
+Directus9 supports four standard types of SSO mechanisms:
 
 - [OpenID](https://openid.net/specs/openid-connect-core-1_0.html)
 - [OAuth 2.0](https://www.ietf.org/rfc/rfc6750.txt)
@@ -43,20 +43,20 @@ To be able to use Google OpenID as your external provider you will need to:
       - Select **External** to allow everyone with a Google account
    2. Fill the fields according to your preferences
       - The **Authorized domains** add an extra layer of security, but it is not required. In case you fill it, should
-        be the domain where your Directus instance is
+        be the domain where your Directus9 instance is
    3. On Scopes, you need to choose `.../auth/userinfo.email`, `.../auth/userinfo.profile` and `openid`
 4. On side bar, go to [Credentials](https://console.cloud.google.com/apis/credentials)
 5. Click on [Create Credentials -> OAuth Client ID](https://console.cloud.google.com/apis/credentials/oauthclient)
    1. Choose `Web Application` on **Application Type**
    2. The **Authorized JavaScript origins** adds an extra layer of security, but it is not required. In case you fill
-      it, should be the address of your Directus instance. For example, `https://directus.myserver.com`
-   3. On **Authorized redirect URIs** put your Directus instance address plus `/auth/login/google/callback`. For
-      example, you should put `https://directus.myserver.com/auth/login/google/callback` where
-      `https://directus.myserver.com` should be the address of your Directus instance. If you are testing locally you
+      it, should be the address of your Directus9 instance. For example, `https://directus9.myserver.com`
+   3. On **Authorized redirect URIs** put your Directus9 instance address plus `/auth/login/google/callback`. For
+      example, you should put `https://directus9.myserver.com/auth/login/google/callback` where
+      `https://directus9.myserver.com` should be the address of your Directus9 instance. If you are testing locally you
       should add `http://localhost:8055/auth/login/google/callback` too
 6. On click **Create**, a modal will appear with **Client ID** and **Client Secret**. Save both somewhere to use later.
 
-7. Now on Directus side, you need to add the following configuration to your `.env` file located on root folder of your
+7. Now on Directus9 side, you need to add the following configuration to your `.env` file located on root folder of your
    project:
 
 ```sh
@@ -70,22 +70,22 @@ AUTH_GOOGLE_IDENTIFIER_KEY="email"
 AUTH_GOOGLE_ICON="google"
 AUTH_GOOGLE_LABEL="Google"
 AUTH_GOOGLE_ALLOW_PUBLIC_REGISTRATION="true" # This allows users to be automatically created on logins. Use "false" if you want to create users manually
-AUTH_GOOGLE_DEFAULT_ROLE_ID="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" # Replace this with the Directus Role ID you would want for new users. If this is not properly configured, new users will not have access to Directus
+AUTH_GOOGLE_DEFAULT_ROLE_ID="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" # Replace this with the Directus9 Role ID you would want for new users. If this is not properly configured, new users will not have access to Directus9
 ```
 
-8. Now you can see a nice functional `Login with Google` button on Directus login page.
+8. Now you can see a nice functional `Login with Google` button on Directus9 login page.
 
 ## Seamless SSO
 
-While sometimes you want your users to directly have access to the Directus Application, in other cases you may need to
-fetch private data from Directus in your client using external providers. In this cases, it is needed a special
+While sometimes you want your users to directly have access to the Directus9 Application, in other cases you may need to
+fetch private data from Directus9 in your client using external providers. In this cases, it is needed a special
 configuration to work across domains, but is simple as:
 
 1. Setup an external provider. You have some examples on [Supported SSO mechanisms](#supported-sso-mechanisms)
 2. Allow cookie to be accessible across domains. Put the following configuration on `.env`:
 
 ```sh
-REFRESH_TOKEN_COOKIE_DOMAIN="XXXX" # Replace XXXX with the domain of your Directus instance. For example "directus.myserver.com"
+REFRESH_TOKEN_COOKIE_DOMAIN="XXXX" # Replace XXXX with the domain of your Directus9 instance. For example "directus9.myserver.com"
 REFRESH_TOKEN_COOKIE_SECURE="true"
 REFRESH_TOKEN_COOKIE_SAME_SITE="None"
 ```
@@ -93,10 +93,10 @@ REFRESH_TOKEN_COOKIE_SAME_SITE="None"
 2. On your client, your login button should be something like
 
 ```html
-<a href="https://directus.myserver.com/auth/login/google?redirect=https://client.myserver.com/login">Login</a>
+<a href="https://directus9.myserver.com/auth/login/google?redirect=https://client.myserver.com/login">Login</a>
 ```
 
-- Where `https://directus.myserver.com` should be the address of your Directus instance
+- Where `https://directus9.myserver.com` should be the address of your Directus9 instance
 - While `https://client.myserver.com/login` should be the address of your client application. The `/login` is not
   necessary, but helps to separate concerns
 
@@ -106,7 +106,7 @@ REFRESH_TOKEN_COOKIE_SAME_SITE="None"
    - via REST API / fetch
 
      ```js
-     await fetch('https://directus.myserver.com/auth/refresh', {
+     await fetch('https://directus9.myserver.com/auth/refresh', {
      	method: 'POST',
      	credentials: 'include', // this is required in order to send the refresh token cookie
      });
@@ -115,14 +115,14 @@ REFRESH_TOKEN_COOKIE_SAME_SITE="None"
    - via SDK
 
      ```js
-     const sdk = new Directus('https://directus.myserver.com');
+     const sdk = new Directus9('https://directus9.myserver.com');
 
      await sdk.auth.refresh();
      ```
 
 ### Testing Seamless SSO locally
 
-The above `REFRESH_TOKEN_*` configuration will likely fail for local testing, as you'll likely won't be serving Directus
+The above `REFRESH_TOKEN_*` configuration will likely fail for local testing, as you'll likely won't be serving Directus9
 using a valid SSL certificate which are required for "Secure" cookies. Instead, for local testing purposes (**and local
 testing purposes only**), the following configuration can be used:
 

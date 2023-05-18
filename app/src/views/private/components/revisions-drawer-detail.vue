@@ -37,7 +37,7 @@
 
 <script lang="ts" setup>
 import { useRevisions } from '@/composables/use-revisions';
-import { abbreviateNumber } from '@directus/utils';
+import { abbreviateNumber } from '@directus9/utils';
 import { ref, toRefs, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import RevisionsDateGroup from './revisions-date-group.vue';

@@ -7,21 +7,21 @@ import getSdkVersion from './utils/get-sdk-version.js';
 
 const program = new Command();
 
-program.name('directus-extension').usage('[command] [options]');
+program.name('directus9-extension').usage('[command] [options]');
 program.version(getSdkVersion(), '-v, --version');
 
 program
 	.command('create')
 	.arguments('<type> <name>')
-	.description('Scaffold a new Directus extension')
+	.description('Scaffold a new Directus9 extension')
 	.option('-l, --language <language>', 'specify the language to use')
 	.action(create);
 
-program.command('add').description('Add entries to an existing Directus extension').action(add);
+program.command('add').description('Add entries to an existing Directus9 extension').action(add);
 
 program
 	.command('build')
-	.description('Bundle a Directus extension to a single entrypoint')
+	.description('Bundle a Directus9 extension to a single entrypoint')
 	.option('-t, --type <type>', 'specify the extension type instead of reading from package manifest')
 	.option('-i, --input <file>', 'specify the entrypoint instead of reading from package manifest')
 	.option('-o, --output <file>', 'specify the output file instead of reading from package manifest')
@@ -34,8 +34,8 @@ program
 
 program
 	.command('link')
-	.description('Creates a symlink to the extension in the Directus extensions folder')
-	.argument('<path>', 'path to the extension folder of directus')
+	.description('Creates a symlink to the extension in the Directus9 extensions folder')
+	.argument('<path>', 'path to the extension folder of directus9')
 	.action(link);
 
 program.parse(process.argv);

@@ -2,7 +2,7 @@ import api, { replaceQueue } from '@/api';
 import { AUTH_SSO_DRIVERS, DEFAULT_AUTH_DRIVER, DEFAULT_AUTH_PROVIDER } from '@/constants';
 import { i18n } from '@/lang';
 import { setLanguage } from '@/lang/set-language';
-import formatTitle from '@directus/format-title';
+import formatTitle from '@directus9/format-title';
 import { acceptHMRUpdate, defineStore } from 'pinia';
 import { computed, reactive, unref } from 'vue';
 import { useUserStore } from '@/stores/user';
@@ -26,7 +26,7 @@ export type Info = {
 		public_note: string | null;
 		custom_css: string | null;
 	};
-	directus?: {
+	directus9?: {
 		version: string;
 	};
 	node?: {
@@ -58,7 +58,7 @@ export type Auth = {
 export const useServerStore = defineStore('serverStore', () => {
 	const info = reactive<Info>({
 		project: null,
-		directus: undefined,
+		directus9: undefined,
 		node: undefined,
 		os: undefined,
 		rateLimit: undefined,
@@ -93,7 +93,7 @@ export const useServerStore = defineStore('serverStore', () => {
 		]);
 
 		info.project = serverInfoResponse.data.data?.project;
-		info.directus = serverInfoResponse.data.data?.directus;
+		info.directus9 = serverInfoResponse.data.data?.directus9;
 		info.node = serverInfoResponse.data.data?.node;
 		info.os = serverInfoResponse.data.data?.os;
 		info.flows = serverInfoResponse.data.data?.flows;
@@ -121,7 +121,7 @@ export const useServerStore = defineStore('serverStore', () => {
 
 	const dehydrate = () => {
 		info.project = null;
-		info.directus = undefined;
+		info.directus9 = undefined;
 		info.node = undefined;
 		info.os = undefined;
 

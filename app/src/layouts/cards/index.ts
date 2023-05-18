@@ -3,8 +3,8 @@ import { adjustFieldsForDisplays } from '@/utils/adjust-fields-for-displays';
 import { saveAsCSV } from '@/utils/save-as-csv';
 import { syncRefProperty } from '@/utils/sync-ref-property';
 import { formatCollectionItemsCount } from '@/utils/format-collection-items-count';
-import { useCollection, useItems, useSync } from '@directus/composables';
-import { defineLayout, getFieldsFromTemplate } from '@directus/utils';
+import { useCollection, useItems, useSync } from '@directus9/composables';
+import { defineLayout, getFieldsFromTemplate } from '@directus9/utils';
 import { clone } from 'lodash';
 import { computed, ref, toRefs } from 'vue';
 import CardsActions from './actions.vue';
@@ -42,7 +42,7 @@ export default defineLayout<LayoutOptions, LayoutQuery>({
 					return (
 						relation.collection === props.collection &&
 						relation.field === field.field &&
-						relation.related_collection === 'directus_files'
+						relation.related_collection === 'directus9_files'
 					);
 				});
 
@@ -171,7 +171,7 @@ export default defineLayout<LayoutOptions, LayoutQuery>({
 					fields.push(`${imageSource.value}.id`);
 				}
 
-				if (props.collection === 'directus_files' && imageSource.value === '$thumbnail') {
+				if (props.collection === 'directus9_files' && imageSource.value === '$thumbnail') {
 					fields.push('modified_on');
 					fields.push('type');
 				}

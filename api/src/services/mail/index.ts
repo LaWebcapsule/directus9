@@ -1,4 +1,4 @@
-import type { Accountability, SchemaOverview } from '@directus/types';
+import type { Accountability, SchemaOverview } from '@directus9/types';
 import fse from 'fs-extra';
 import type { Knex } from 'knex';
 import { Liquid } from 'liquidjs';
@@ -99,11 +99,11 @@ export class MailService {
 	private async getDefaultTemplateData() {
 		const projectInfo = await this.knex
 			.select(['project_name', 'project_logo', 'project_color', 'project_url'])
-			.from('directus_settings')
+			.from('directus9_settings')
 			.first();
 
 		return {
-			projectName: projectInfo?.project_name || 'Directus',
+			projectName: projectInfo?.project_name || 'Directus9',
 			projectColor: projectInfo?.project_color || '#546e7a',
 			projectLogo: getProjectLogoURL(projectInfo?.project_logo),
 			projectUrl: projectInfo?.project_url || '',
@@ -115,7 +115,7 @@ export class MailService {
 			if (logoID) {
 				projectLogoUrl.addPath('assets', logoID);
 			} else {
-				projectLogoUrl.addPath('admin', 'img', 'directus-white.png');
+				projectLogoUrl.addPath('admin', 'img', 'directus9-white.png');
 			}
 
 			return projectLogoUrl.toString();

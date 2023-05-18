@@ -1,22 +1,22 @@
 ---
-description: Insights is a Module in Directus that allows rapid, no-code build-out of analytics dashboards.
+description: Insights is a Module in Directus9 that allows rapid, no-code build-out of analytics dashboards.
 readTime: 9 min read
 ---
 
 # Insights
 
-> Insights is a Module in Directus that allows rapid, no-code build-out of analytics dashboards. Regardless of your
+> Insights is a Module in Directus9 that allows rapid, no-code build-out of analytics dashboards. Regardless of your
 > use-case _(be it business intelligence, user progress tracking, web traffic conversions, or whatever!)_ you will be
 > able to setup key data metrics in just a few clicks.
 
 <video autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/insights-dashboards-20220216A.mp4" type="video/mp4" />
+<source src="https://cdn.directus9.io/docs/v9/app-guide/insights/insights-20220216A/insights-dashboards-20220216A.mp4" type="video/mp4" />
 </video>
 
 ## How it Works
 
 <video autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/insights-how-it-works-20220216A_1.mp4" type="video/mp4" />
+<source src="https://cdn.directus9.io/docs/v9/app-guide/insights/insights-20220216A/insights-how-it-works-20220216A_1.mp4" type="video/mp4" />
 </video>
 
 First, create a Dashboard, then fill the Dashboard with Panels.
@@ -33,9 +33,9 @@ First, create a Dashboard, then fill the Dashboard with Panels.
 
 ## Dashboards Overview
 
-![Dashboard Grid Area](https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/dashboards-overview-20220216A.webp)
+![Dashboard Grid Area](https://cdn.directus9.io/docs/v9/app-guide/insights/insights-20220216A/dashboards-overview-20220216A.webp)
 
-Each Directus Dashboard provides a drag-and-drop canvas where you can create and arrange different Panels to easily
+Each Directus9 Dashboard provides a drag-and-drop canvas where you can create and arrange different Panels to easily
 build out customized analytics. The Dashboard area automatically expands as you add more and more Panels. In theory, a
 Dashboard area can expand infinitely large... but in practice, users will probably only want to build Dashboards as
 large as the screen they will be viewing on. You are able to create as many Dashboards as you need. Additionally, the
@@ -50,14 +50,14 @@ The Auto Refresh menu in the [Sidebar](/app/overview#_4-sidebar) lets you select
 
 ## Create, Edit, and Delete Dashboards
 
-![How to Add, Edit and Delete Dashboards in Directus Insights](https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/create-edit-delete-dashboards-20220216A.webp)
+![How to Add, Edit and Delete Dashboards in Directus9 Insights](https://cdn.directus9.io/docs/v9/app-guide/insights/insights-20220216A/create-edit-delete-dashboards-20220216A.webp)
 
 1. Click the <span mi btn >add</span> icon in the page header to create a new Dashboard.
 2. Click the item option to edit or delete a Dashboard.
 
 ## Panels Overview
 
-![Directus Dashboard Panels](https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/panels-overview-20220216A.webp)
+![Directus9 Dashboard Panels](https://cdn.directus9.io/docs/v9/app-guide/insights/insights-20220216A/panels-overview-20220216A.webp)
 
 Panels are the building-blocks we add onto Insights dashboards to create, save and display data analytics. There are
 five types of Panels, and each one provides some unique analytics tool.
@@ -71,7 +71,7 @@ five types of Panels, and each one provides some unique analytics tool.
 
 ## Panel Header Options
 
-![Panel Header Options](https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/panel-header-options-20220216A.webp)
+![Panel Header Options](https://cdn.directus9.io/docs/v9/app-guide/insights/insights-20220216A/panel-header-options-20220216A.webp)
 
 All panel types let you set custom text to provide quick and clear context about what a Panel represents. Panel Header
 options are exactly the same for all four Panel types. Headers are also totally optional and can be hidden.
@@ -84,7 +84,7 @@ options are exactly the same for all four Panel types. Headers are also totally 
 
 ## Labels
 
-![Label Panel Options](https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/label-panel-options-20220216A.webp)
+![Label Panel Options](https://cdn.directus9.io/docs/v9/app-guide/insights/insights-20220216A/label-panel-options-20220216A.webp)
 
 As the name implies, this panel simply allows you to _label_ a group of other panels. Labels do not provide analytics.
 Labels simply help visually group the other panels (_which do provide analytics_) and give context to your dashboard.
@@ -94,7 +94,7 @@ Labels simply help visually group the other panels (_which do provide analytics_
 
 ## Lists
 
-![List Panel Options](https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/list-panel-options-20220216A.webp)
+![List Panel Options](https://cdn.directus9.io/docs/v9/app-guide/insights/insights-20220216A/list-panel-options-20220216A.webp)
 
 List panels display some number of Items from a Collection, _as a list!_ These Items displayed can be filtered by other
 criteria as well. So for example, you could show your top 5 selling products, 3 worst performing sales regions, 10
@@ -111,7 +111,7 @@ list that could be generated from your dataset.
 
 ## Metrics
 
-![Metrics Panel Options](https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/metric-panel-options-20220216A.webp)
+![Metrics Panel Options](https://cdn.directus9.io/docs/v9/app-guide/insights/insights-20220216A/metric-panel-options-20220216A.webp)
 
 Metrics Panels allow you to aggregate all Items in a Field down to a single value.
 
@@ -162,7 +162,7 @@ grayed out and unselectable in the `field dropdown list`.
 
 ## Time Series
 
-![Time Series Panel Options](https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/time-series-panel-options-20220216A.webp)
+![Time Series Panel Options](https://cdn.directus9.io/docs/v9/app-guide/insights/insights-20220216A/time-series-panel-options-20220216A.webp)
 
 The Time Series Panel allows you to build graphs and see how data changes over time.
 
@@ -197,7 +197,7 @@ type in `3 years`, `1 month`, `2 weeks`, `5 days`, etc.
 
 ## Global Variable
 
-![Global Variables](https://cdn.directus.io/docs/v9/app-guide/insights/insights-220624A/global-variable-220624A.webp)
+![Global Variables](https://cdn.directus9.io/docs/v9/app-guide/insights/insights-220624A/global-variable-220624A.webp)
 
 - **Variable Key** — Sets your variable. Use this key to access the variable in other Insights panels.
 - **Type** — Sets the data type of your variable.
@@ -260,11 +260,11 @@ or JSON variable in a place that requires Datetime data.
 
 ## Bar Chart
 
-![Dashboard edit page with a bar chart options panel visible.](https://cdn.directus.io/docs/v9/app-guide/insights/20220223/panels-bar-options-230223A.webp)
+![Dashboard edit page with a bar chart options panel visible.](https://cdn.directus9.io/docs/v9/app-guide/insights/20220223/panels-bar-options-230223A.webp)
 
 :::info Availability
 
-The Bar Chart Panel is only available in Directus Cloud and Enterprise Self-Hosted projects.
+The Bar Chart Panel is only available in Directus9 Cloud and Enterprise Self-Hosted projects.
 
 :::
 
@@ -282,11 +282,11 @@ The Bar Chart Panel allows you to build vertical and horizontal bar charts from 
 
 ## Line Chart
 
-![Dashboard edit page with a line chart options panel visible.](https://cdn.directus.io/docs/v9/app-guide/insights/20220223/panels-line-options-230223A.webp)
+![Dashboard edit page with a line chart options panel visible.](https://cdn.directus9.io/docs/v9/app-guide/insights/20220223/panels-line-options-230223A.webp)
 
 :::info Availability
 
-The Line Chart Panel is only available in Directus Cloud and Enterprise Self-Hosted projects.
+The Line Chart Panel is only available in Directus9 Cloud and Enterprise Self-Hosted projects.
 
 :::
 
@@ -310,11 +310,11 @@ data.
 
 ## Meter
 
-![Dashboard edit page with a meter options panel visible.](https://cdn.directus.io/docs/v9/app-guide/insights/20220223/panels-meter-options-230223A.webp)
+![Dashboard edit page with a meter options panel visible.](https://cdn.directus9.io/docs/v9/app-guide/insights/20220223/panels-meter-options-230223A.webp)
 
 :::info Availability
 
-The Meter Panel is only available in Directus Cloud and Enterprise Self-Hosted projects.
+The Meter Panel is only available in Directus9 Cloud and Enterprise Self-Hosted projects.
 
 :::
 
@@ -334,11 +334,11 @@ The Meter Panel takes a maximum value and allows you to show a completion percen
 
 ## Pie or Donut Chart
 
-![Dashboard edit page with a pie or donut options panel visible.](https://cdn.directus.io/docs/v9/app-guide/insights/20220223/panels-pie-donut-options-230223A.webp)
+![Dashboard edit page with a pie or donut options panel visible.](https://cdn.directus9.io/docs/v9/app-guide/insights/20220223/panels-pie-donut-options-230223A.webp)
 
 :::info Availability
 
-The Pie and Donut Chart Panels are only available in Directus Cloud and Enterprise Self-Hosted projects.
+The Pie and Donut Chart Panels are only available in Directus9 Cloud and Enterprise Self-Hosted projects.
 
 :::
 

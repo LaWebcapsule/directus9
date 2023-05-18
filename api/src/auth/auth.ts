@@ -1,4 +1,4 @@
-import type { SchemaOverview } from '@directus/types';
+import type { SchemaOverview } from '@directus9/types';
 import type { Knex } from 'knex';
 import type { AuthDriverOptions, User } from '../types/index.js';
 
@@ -30,7 +30,7 @@ export abstract class AuthDriver {
 	abstract verify(user: User, password?: string): Promise<void>;
 
 	/**
-	 * Check with the (external) provider if the user is allowed entry to Directus
+	 * Check with the (external) provider if the user is allowed entry to Directus9
 	 *
 	 * @param _user User information
 	 * @param _payload Any data that the user might've provided

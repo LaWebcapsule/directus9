@@ -8,7 +8,7 @@
 		v-model:layout-query="layoutQuery"
 		:filter="filter"
 		:search="search"
-		collection="directus_webhooks"
+		collection="directus9_webhooks"
 	>
 		<private-view
 			:title="t('webhooks')"
@@ -28,7 +28,7 @@
 			</template>
 
 			<template #actions>
-				<search-input v-model="search" collection="directus_webhooks" />
+				<search-input v-model="search" collection="directus9_webhooks" />
 
 				<v-dialog v-if="selection.length > 0" v-model="confirmDelete" @esc="confirmDelete = false">
 					<template #activator="{ on }">
@@ -101,7 +101,7 @@ import { defineComponent, computed, ref } from 'vue';
 import SettingsNavigation from '../../components/navigation.vue';
 import LayoutSidebarDetail from '@/views/private/components/layout-sidebar-detail.vue';
 import { usePreset } from '@/composables/use-preset';
-import { useLayout } from '@directus/composables';
+import { useLayout } from '@directus9/composables';
 import api from '@/api';
 import SearchInput from '@/views/private/components/search-input.vue';
 import { useExtension } from '@/composables/use-extension';
@@ -119,7 +119,7 @@ export default defineComponent({
 		const layoutRef = ref();
 		const selection = ref<Item[]>([]);
 
-		const { layout, layoutOptions, layoutQuery, filter, search } = usePreset(ref('directus_webhooks'));
+		const { layout, layoutOptions, layoutQuery, filter, search } = usePreset(ref('directus9_webhooks'));
 		const { addNewLink, batchLink } = useLinks();
 		const { confirmDelete, deleting, batchDelete } = useBatchDelete();
 

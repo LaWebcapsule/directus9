@@ -2,14 +2,14 @@
 'use strict';
 
 import inquirer from 'inquirer';
-import { EXTENSION_LANGUAGES, EXTENSION_TYPES, BUNDLE_EXTENSION_TYPES } from '@directus/constants';
-import { create } from '@directus/extensions-sdk/cli';
+import { EXTENSION_LANGUAGES, EXTENSION_TYPES, BUNDLE_EXTENSION_TYPES } from '@directus9/constants';
+import { create } from '@directus9/extensions-sdk/cli';
 
 run();
 
 async function run() {
 	// eslint-disable-next-line no-console
-	console.log('This utility will walk you through creating a Directus extension.\n');
+	console.log('This utility will walk you through creating a Directus9 extension.\n');
 
 	const { type, name, language } = await inquirer.prompt([
 		{

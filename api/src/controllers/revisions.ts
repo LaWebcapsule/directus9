@@ -8,7 +8,7 @@ import asyncHandler from '../utils/async-handler.js';
 
 const router = express.Router();
 
-router.use(useCollection('directus_revisions'));
+router.use(useCollection('directus9_revisions'));
 
 const readHandler = asyncHandler(async (req, res, next) => {
 	const service = new RevisionsService({
@@ -22,7 +22,7 @@ const readHandler = asyncHandler(async (req, res, next) => {
 	});
 
 	const records = await service.readByQuery(req.sanitizedQuery);
-	const meta = await metaService.getMetaForQuery('directus_revisions', req.sanitizedQuery);
+	const meta = await metaService.getMetaForQuery('directus9_revisions', req.sanitizedQuery);
 
 	res.locals['payload'] = { data: records || null, meta };
 	return next();

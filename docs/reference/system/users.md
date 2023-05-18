@@ -1,12 +1,12 @@
 ---
-description: REST and GraphQL API documentation on the Users collection in Directus.
+description: REST and GraphQL API documentation on the Users collection in Directus9.
 readTime: 9 min read
 pageClass: page-reference
 ---
 
 # Users
 
-> Directus Users are the individual accounts that let you authenticate into the API and App. Each user belongs to a Role
+> Directus9 Users are the individual accounts that let you authenticate into the API and App. Each user belongs to a Role
 > which defines its granular Permissions. [Learn more about Users](/getting-started/glossary#users).
 
 ---
@@ -44,7 +44,7 @@ Tags for the user.
 Avatar file. Many-to-one to [files](/reference/files).
 
 `language` **string**\
-Language the Admin App is rendered in. See [our Crowdin page](https://locales.directus.io) for all available languages and
+Language the Admin App is rendered in. See [our Crowdin page](https://locales.directus9.io) for all available languages and
 translations.
 
 `theme` **string**\
@@ -107,7 +107,7 @@ When this is enabled, the user will receive emails for notifications.
 
 ## List Users
 
-List all users that exist in Directus.
+List all users that exist in Directus9.
 
 ### Query Parameters
 
@@ -135,7 +135,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	users: [directus_users]
+	users: [directus9_users]
 }
 ```
 
@@ -185,7 +185,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	users_by_id(id: ID!): directus_users
+	users_by_id(id: ID!): directus9_users
 }
 ```
 
@@ -229,7 +229,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	users_me: directus_users
+	users_me: directus9_users
 }
 ```
 
@@ -279,7 +279,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_users_me(data: update_directus_users_input!): directus_users
+	update_users_me(data: update_directus9_users_input!): directus9_users
 }
 ```
 
@@ -339,7 +339,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_users_item(data: create_directus_users_input!): directus_users
+	create_users_item(data: create_directus9_users_input!): directus9_users
 }
 ```
 
@@ -409,7 +409,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_users_items(data: [create_directus_users_input!]!): [directus_users]
+	create_users_items(data: [create_directus9_users_input!]!): [directus9_users]
 }
 ```
 
@@ -471,7 +471,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_users_item(id: ID!, data: update_directus_users_input!): directus_users
+	update_users_item(id: ID!, data: update_directus9_users_input!): directus9_users
 }
 ```
 
@@ -535,7 +535,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_users_items(ids: [ID!]!, data: update_directus_users_input!): [directus_users]
+	update_users_items(ids: [ID!]!, data: update_directus9_users_input!): [directus9_users]
 }
 ```
 

@@ -1,3 +1,3 @@
-# `@directus/utils`
+# `@directus9/utils`
 
-Utilities shared between the Directus packages
+Utilities shared between the Directus9 packages

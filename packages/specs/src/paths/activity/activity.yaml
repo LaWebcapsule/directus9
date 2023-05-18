@@ -1,7 +1,7 @@
 get:
   summary: Retrieve an Activity Action
   description:
-    Retrieves the details of an existing activity action. Provide the primary key of the activity action and Directus
+    Retrieves the details of an existing activity action. Provide the primary key of the activity action and Directus9
     will return the corresponding information.
   operationId: getActivity
   parameters:

@@ -77,7 +77,7 @@
 
 			<v-form
 				v-model="edits"
-				collection="directus_roles"
+				collection="directus9_roles"
 				:primary-key="primaryKey"
 				:loading="loading"
 				:initial-values="item"
@@ -87,7 +87,7 @@
 
 		<template #sidebar>
 			<role-info-sidebar-detail :role="item" />
-			<revisions-drawer-detail ref="revisionsDrawerDetailRef" collection="directus_roles" :primary-key="primaryKey" />
+			<revisions-drawer-detail ref="revisionsDrawerDetailRef" collection="directus9_roles" :primary-key="primaryKey" />
 		</template>
 
 		<v-dialog v-model="confirmLeave" @esc="confirmLeave = false">
@@ -153,7 +153,7 @@ export default defineComponent({
 		const revisionsDrawerDetailRef = ref<InstanceType<typeof RevisionsDrawerDetail> | null>(null);
 
 		const { edits, hasEdits, item, saving, loading, error, save, remove, deleting, isBatch } = useItem(
-			ref('directus_roles'),
+			ref('directus9_roles'),
 			primaryKey,
 			{ deep: { users: { _limit: 0 } } }
 		);
@@ -191,11 +191,11 @@ export default defineComponent({
 			if (isAdmin) return true;
 
 			const usersCreatePermission = permissionsStore.permissions.find(
-				(permission) => permission.collection === 'directus_users' && permission.action === 'create'
+				(permission) => permission.collection === 'directus9_users' && permission.action === 'create'
 			);
 
 			const rolesReadPermission = permissionsStore.permissions.find(
-				(permission) => permission.collection === 'directus_roles' && permission.action === 'read'
+				(permission) => permission.collection === 'directus9_roles' && permission.action === 'read'
 			);
 
 			return !!usersCreatePermission && !!rolesReadPermission;

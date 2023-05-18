@@ -13,7 +13,7 @@
 			<v-dialog v-model="confirmDelete" @esc="confirmDelete = false">
 				<template #activator="{ on }">
 					<v-button
-						v-if="item && item.collection.startsWith('directus_') === false"
+						v-if="item && item.collection.startsWith('directus9_') === false"
 						v-tooltip.bottom="t('delete_collection')"
 						rounded
 						icon
@@ -69,12 +69,12 @@
 
 			<v-form
 				v-model="edits.meta"
-				collection="directus_collections"
+				collection="directus9_collections"
 				:loading="loading"
 				:initial-values="item && item.meta"
 				:batch-mode="isBatch"
 				:primary-key="collection"
-				:disabled="item && item.collection.startsWith('directus_')"
+				:disabled="item && item.collection.startsWith('directus9_')"
 			/>
 		</div>
 
@@ -103,7 +103,7 @@
 import { useI18n } from 'vue-i18n';
 import { defineComponent, computed, toRefs, ref } from 'vue';
 import SettingsNavigation from '../../../components/navigation.vue';
-import { useCollection } from '@directus/composables';
+import { useCollection } from '@directus9/composables';
 import FieldsManagement from './components/fields-management.vue';
 
 import { useItem } from '@/composables/use-item';
@@ -142,7 +142,7 @@ export default defineComponent({
 		const fieldsStore = useFieldsStore();
 
 		const { isNew, edits, item, saving, loading, error, save, remove, deleting, saveAsCopy, isBatch } = useItem(
-			ref('directus_collections'),
+			ref('directus9_collections'),
 			collection
 		);
 

@@ -1,4 +1,4 @@
-import type { SchemaOverview } from '@directus/types';
+import type { SchemaOverview } from '@directus9/types';
 import type { Knex } from 'knex';
 import { fromPairs, isArray, isPlainObject, mapValues, omit, sortBy, toPairs } from 'lodash-es';
 import getDatabase, { getDatabaseClient } from '../database/index.js';
@@ -35,7 +35,7 @@ export async function getSnapshot(options?: { database?: Knex; schema?: SchemaOv
 
 	return {
 		version: 1,
-		directus: version,
+		directus9: version,
 		vendor,
 		collections: collectionsSorted.map((collection) => sanitizeCollection(collection)) as Collection[],
 		fields: fieldsSorted.map((field) => sanitizeField(field)) as SnapshotField[],

@@ -1,4 +1,4 @@
-table: directus_settings
+table: directus9_settings
 
 columns:
   id:
@@ -7,7 +7,7 @@ columns:
     type: string
     length: 100
     nullable: false
-    default: 'Directus'
+    default: 'Directus9'
   project_url:
     type: string
     length: 255
@@ -18,17 +18,17 @@ columns:
   project_logo:
     type: uuid
     references:
-      table: directus_files
+      table: directus9_files
       column: id
   public_foreground:
     type: uuid
     references:
-      table: directus_files
+      table: directus9_files
       column: id
   public_background:
     type: uuid
     references:
-      table: directus_files
+      table: directus9_files
       column: id
   public_note:
     type: text

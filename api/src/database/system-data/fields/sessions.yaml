@@ -1,4 +1,4 @@
-table: directus_sessions
+table: directus9_sessions
 
 fields:
   - field: token

@@ -5,12 +5,12 @@ import {
 	ServiceUnavailableException,
 	TokenExpiredException,
 } from '../../src/exceptions/index.js';
-import type { DirectusTokenPayload } from '../../src/types/index.js';
+import type { Directus9TokenPayload } from '../../src/types/index.js';
 import { verifyAccessJWT, verifyJWT } from '../../src/utils/jwt.js';
 
-const payload: DirectusTokenPayload = { role: null, app_access: false, admin_access: false };
+const payload: Directus9TokenPayload = { role: null, app_access: false, admin_access: false };
 const secret = 'test-secret';
-const options = { issuer: 'directus' };
+const options = { issuer: 'directus9' };
 
 test('Returns the payload of a correctly signed token', () => {
 	const token = jwt.sign(payload, secret, options);
@@ -19,7 +19,7 @@ test('Returns the payload of a correctly signed token', () => {
 	expect(result['admin_access']).toEqual(payload.admin_access);
 	expect(result['app_access']).toEqual(payload.app_access);
 	expect(result['role']).toEqual(payload.role);
-	expect(result['iss']).toBe('directus');
+	expect(result['iss']).toBe('directus9');
 	expect(result['iat']).toBeTypeOf('number');
 });
 
@@ -50,7 +50,7 @@ test(`Throws ServiceUnavailableException for unexpected error from jsonwebtoken`
 	mock.mockRestore();
 });
 
-const RequiredEntries: Array<keyof DirectusTokenPayload> = ['role', 'app_access', 'admin_access'];
+const RequiredEntries: Array<keyof Directus9TokenPayload> = ['role', 'app_access', 'admin_access'];
 
 RequiredEntries.forEach((entry) => {
 	test(`Throws InvalidTokenException if ${entry} not defined`, () => {

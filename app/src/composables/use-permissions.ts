@@ -1,10 +1,10 @@
 import { usePermissionsStore } from '@/stores/permissions';
 import { useUserStore } from '@/stores/user';
-import { Field } from '@directus/types';
+import { Field } from '@directus9/types';
 import { computed, ComputedRef, Ref } from 'vue';
 import { cloneDeep } from 'lodash';
 import { isAllowed } from '../utils/is-allowed';
-import { useCollection } from '@directus/composables';
+import { useCollection } from '@directus9/composables';
 
 type UsablePermissions = {
 	createAllowed: ComputedRef<boolean>;
@@ -100,7 +100,7 @@ export function usePermissions(collection: Ref<string>, item: Ref<any>, isNew: R
 	const revisionsAllowed = computed(() => {
 		if (userStore.currentUser?.role?.admin_access === true) return true;
 		return !!permissionsStore.permissions.find(
-			(permission) => permission.collection === 'directus_revisions' && permission.action === 'read'
+			(permission) => permission.collection === 'directus9_revisions' && permission.action === 'read'
 		);
 	});
 

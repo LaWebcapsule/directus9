@@ -1,4 +1,4 @@
-import * as sharedExceptions from '@directus/exceptions';
+import * as sharedExceptions from '@directus9/exceptions';
 import type {
 	Accountability,
 	ActionHandler,
@@ -7,9 +7,9 @@ import type {
 	Operation,
 	OperationHandler,
 	SchemaOverview,
-} from '@directus/types';
-import { Action } from '@directus/constants';
-import { applyOptionsData, isValidJSON, parseJSON, toArray } from '@directus/utils';
+} from '@directus9/types';
+import { Action } from '@directus9/constants';
+import { applyOptionsData, isValidJSON, parseJSON, toArray } from '@directus9/utils';
 import fastRedact from 'fast-redact';
 import type { Knex } from 'knex';
 import { omit, pick } from 'lodash-es';
@@ -19,7 +19,7 @@ import getDatabase from './database/index.js';
 import emitter from './emitter.js';
 import env from './env.js';
 import * as exceptions from './exceptions/index.js';
-import { BaseException } from '@directus/exceptions';
+import { BaseException } from '@directus9/exceptions';
 import logger from './logger.js';
 import { getMessenger } from './messenger.js';
 import { ActivityService } from './services/activity.js';
@@ -154,7 +154,7 @@ class FlowManager {
 								if (!flow.options?.['collections']) return [];
 
 								return toArray(flow.options['collections']).map((collection: string) => {
-									if (collection.startsWith('directus_')) {
+									if (collection.startsWith('directus9_')) {
 										const action = scope.split('.')[1];
 										return collection.substring(9) + '.' + action;
 									}
@@ -340,7 +340,7 @@ class FlowManager {
 			const activity = await activityService.createOne({
 				action: Action.RUN,
 				user: accountability?.user ?? null,
-				collection: 'directus_flows',
+				collection: 'directus9_flows',
 				ip: accountability?.ip ?? null,
 				user_agent: accountability?.userAgent ?? null,
 				origin: accountability?.origin ?? null,
@@ -355,11 +355,11 @@ class FlowManager {
 
 				await revisionsService.createOne({
 					activity: activity,
-					collection: 'directus_flows',
+					collection: 'directus9_flows',
 					item: flow.id,
 					data: {
 						steps: steps,
-						data: redactLogs(omit(keyedData, '$accountability.permissions')), // Permissions is a ton of data, and is just a copy of what's in the directus_permissions table
+						data: redactLogs(omit(keyedData, '$accountability.permissions')), // Permissions is a ton of data, and is just a copy of what's in the directus9_permissions table
 					},
 				});
 			}

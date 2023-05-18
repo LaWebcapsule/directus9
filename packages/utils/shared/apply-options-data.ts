@@ -1,4 +1,4 @@
-import type { JsonValue } from '@directus/types';
+import type { JsonValue } from '@directus9/types';
 import type { ResolveFn, Scope } from 'micromustache';
 import { get, renderFn } from 'micromustache';
 import { parseJSON } from './parse-json.js';

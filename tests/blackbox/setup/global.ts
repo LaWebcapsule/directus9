@@ -1,8 +1,8 @@
 import { ChildProcess } from 'child_process';
 
 const global = {
-	directus: {} as { [vendor: string]: ChildProcess },
-	directusNoCache: {} as { [vendor: string]: ChildProcess },
+	directus9: {} as { [vendor: string]: ChildProcess },
+	directus9NoCache: {} as { [vendor: string]: ChildProcess },
 };
 
 export default global;

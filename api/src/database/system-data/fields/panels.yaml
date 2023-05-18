@@ -1,4 +1,4 @@
-table: directus_panels
+table: directus9_panels
 
 fields:
   - field: id

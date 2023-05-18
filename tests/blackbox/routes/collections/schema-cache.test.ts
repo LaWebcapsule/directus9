@@ -1,7 +1,7 @@
 import config, { Env, getUrl, paths } from '@common/config';
 import vendors from '@common/get-dbs-to-test';
 import * as common from '@common/index';
-import { awaitDirectusConnection } from '@utils/await-connection';
+import { awaitDirectus9Connection } from '@utils/await-connection';
 import { ChildProcess, spawn } from 'child_process';
 import type { Knex } from 'knex';
 import knex from 'knex';
@@ -10,7 +10,7 @@ import request from 'supertest';
 
 describe('Schema Caching Tests', () => {
 	const databases = new Map<string, Knex>();
-	const tzDirectus = {} as { [vendor: string]: ChildProcess[] };
+	const tzDirectus9 = {} as { [vendor: string]: ChildProcess[] };
 	const envs = {} as { [vendor: string]: Env[] };
 	const newCollectionName = 'schema-caching-test';
 
@@ -25,9 +25,9 @@ describe('Schema Caching Tests', () => {
 			env1[vendor].CACHE_AUTO_PURGE = 'true';
 			env1[vendor].CACHE_SCHEMA = 'true';
 			env1[vendor].CACHE_STORE = 'memory';
-			env1[vendor].CACHE_NAMESPACE = 'directus-schema-cache';
+			env1[vendor].CACHE_NAMESPACE = 'directus9-schema-cache';
 			env1[vendor].MESSENGER_STORE = 'redis';
-			env1[vendor].MESSENGER_NAMESPACE = `directus-${vendor}`;
+			env1[vendor].MESSENGER_NAMESPACE = `directus9-${vendor}`;
 			env1[vendor].MESSENGER_REDIS = `redis://localhost:6108/4`;
 
 			const env2 = cloneDeep(env1);
@@ -57,13 +57,13 @@ describe('Schema Caching Tests', () => {
 			const server3 = spawn('node', [paths.cli, 'start'], { cwd: paths.cwd, env: env3[vendor] });
 			const server4 = spawn('node', [paths.cli, 'start'], { cwd: paths.cwd, env: env4[vendor] });
 
-			tzDirectus[vendor] = [server1, server2, server3, server4];
+			tzDirectus9[vendor] = [server1, server2, server3, server4];
 			envs[vendor] = [env1, env2, env3, env4];
 
-			promises.push(awaitDirectusConnection(newServerPort1));
-			promises.push(awaitDirectusConnection(newServerPort2));
-			promises.push(awaitDirectusConnection(newServerPort3));
-			promises.push(awaitDirectusConnection(newServerPort4));
+			promises.push(awaitDirectus9Connection(newServerPort1));
+			promises.push(awaitDirectus9Connection(newServerPort2));
+			promises.push(awaitDirectus9Connection(newServerPort3));
+			promises.push(awaitDirectus9Connection(newServerPort4));
 		}
 
 		// Give the server some time to start
@@ -72,7 +72,7 @@ describe('Schema Caching Tests', () => {
 
 	afterAll(async () => {
 		for (const [vendor, connection] of databases) {
-			for (const instance of tzDirectus[vendor]!) {
+			for (const instance of tzDirectus9[vendor]!) {
 				instance.kill();
 			}
 

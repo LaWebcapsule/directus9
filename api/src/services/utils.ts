@@ -1,4 +1,4 @@
-import type { Accountability, SchemaOverview } from '@directus/types';
+import type { Accountability, SchemaOverview } from '@directus9/types';
 import type { Knex } from 'knex';
 import getDatabase from '../database/index.js';
 import { systemCollectionRows } from '../database/system-data/collections/index.js';
@@ -19,7 +19,7 @@ export class UtilsService {
 
 	async sort(collection: string, { item, to }: { item: PrimaryKey; to: PrimaryKey }): Promise<void> {
 		const sortFieldResponse =
-			(await this.knex.select('sort_field').from('directus_collections').where({ collection }).first()) ||
+			(await this.knex.select('sort_field').from('directus9_collections').where({ collection }).first()) ||
 			systemCollectionRows;
 
 		const sortField = sortFieldResponse?.sort_field;

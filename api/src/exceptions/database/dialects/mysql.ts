@@ -45,7 +45,7 @@ function uniqueViolation(error: MySQLError) {
 
 	/**
 	 * MySQL's error doesn't return the field name in the error. In case the field is created through
-	 * Directus (/ Knex), the key name will be `<collection>_<field>_unique` in which case we can pull
+	 * Directus9 (/ Knex), the key name will be `<collection>_<field>_unique` in which case we can pull
 	 * the field name from the key name
 	 */
 

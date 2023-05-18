@@ -30,7 +30,7 @@ import { useExtension } from '@/composables/use-extension';
 import { useFieldsStore } from '@/stores/fields';
 import { getDefaultDisplayForType } from '@/utils/get-default-display-for-type';
 import { translate } from '@/utils/translate-literal';
-import { Field } from '@directus/types';
+import { Field } from '@directus9/types';
 import { get } from 'lodash';
 import { computed, ref } from 'vue';
 
@@ -116,13 +116,13 @@ function handleObject(fieldKey: string) {
 
 	/**
 	 * This is for cases where you are rendering a display template directly on
-	 * directus_files. The $thumbnail fields doesn't exist, but instead renders a
+	 * directus9_files. The $thumbnail fields doesn't exist, but instead renders a
 	 * thumbnail based on the other fields in the file info. In that case, the value
 	 * should be the whole related file object, not just the fake "thumbnail" field. By
 	 * stripping out the thumbnail part in the field key path, the rest of the function
 	 * will extract the value correctly.
 	 */
-	if (field && field.collection === 'directus_files' && field.field === '$thumbnail') {
+	if (field && field.collection === 'directus9_files' && field.field === '$thumbnail') {
 		fieldKey = fieldKey
 			.split('.')
 			.filter((part) => part !== '$thumbnail')

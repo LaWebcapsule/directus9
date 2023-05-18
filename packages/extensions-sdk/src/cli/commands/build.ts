@@ -7,14 +7,14 @@ import {
 	ExtensionManifest,
 	ExtensionOptionsBundleEntries,
 	HYBRID_EXTENSION_TYPES,
-} from '@directus/constants';
+} from '@directus9/constants';
 import type {
 	ApiExtensionType,
 	AppExtensionType,
 	ExtensionOptionsBundleEntry,
 	ExtensionManifest as TExtensionManifest,
-} from '@directus/types';
-import { isIn, isTypeIn } from '@directus/utils';
+} from '@directus9/types';
+import { isIn, isTypeIn } from '@directus9/utils';
 import commonjsDefault from '@rollup/plugin-commonjs';
 import jsonDefault from '@rollup/plugin-json';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
@@ -75,7 +75,7 @@ export default async function build(options: BuildOptions): Promise<void> {
 		try {
 			extensionManifest = ExtensionManifest.parse(await fse.readJSON(packagePath));
 		} catch (err) {
-			log(`Current directory is not a valid Directus extension.`, 'error');
+			log(`Current directory is not a valid Directus9 extension.`, 'error');
 			process.exit(1);
 		}
 
@@ -483,7 +483,7 @@ async function buildBundleExtension({
 async function buildExtension(config: RollupConfig | RollupConfig[]) {
 	const configs = Array.isArray(config) ? config : [config];
 
-	const spinner = ora(chalk.bold('Building Directus extension...')).start();
+	const spinner = ora(chalk.bold('Building Directus9 extension...')).start();
 
 	const result = await Promise.all(
 		configs.map(async (c) => {
@@ -516,7 +516,7 @@ async function buildExtension(config: RollupConfig | RollupConfig[]) {
 async function watchExtension(config: RollupConfig | RollupConfig[]) {
 	const configs = Array.isArray(config) ? config : [config];
 
-	const spinner = ora(chalk.bold('Building Directus extension...'));
+	const spinner = ora(chalk.bold('Building Directus9 extension...'));
 
 	let buildCount = 0;
 

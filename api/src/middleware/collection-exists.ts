@@ -16,7 +16,7 @@ const collectionExists: RequestHandler = asyncHandler(async (req, _res, next) =>
 
 	req.collection = req.params['collection'];
 
-	if (req.collection.startsWith('directus_')) {
+	if (req.collection.startsWith('directus9_')) {
 		const systemRow = systemCollectionRows.find((collection) => {
 			return collection?.collection === req.collection;
 		});

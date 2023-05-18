@@ -5,7 +5,7 @@ import { getInternalInterfaces } from './index';
  * Vite v3 reworked the glob import with it's own internal sorting,
  * so this is to ensure any changes to vite's internal sorting to not affect the expected sort outcome.
  *
- *  @see {@link https://github.com/directus/directus/pull/15672#issuecomment-1289975933}
+ *  @see {@link https://github.com/directus9/directus9/pull/15672#issuecomment-1289975933}
  */
 
 const expectedInterfacesSortOrder = [

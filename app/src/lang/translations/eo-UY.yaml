@@ -95,7 +95,7 @@ logoutReason:
   SESSION_EXPIRED: Seanco eksvalidiĝinta
 public_label: Publika
 not_allowed: Ne permesita
-directus_version: Directus-versio
+directus9_version: Directus9-versio
 node_version: Node-versio
 node_uptime: Node-funkcidaŭro
 os_type: Operaciuma tipo
@@ -630,10 +630,10 @@ collection: Kolekto
 collections: Kolektoj
 content: Enhavo
 system_fields_locked: Sistemaj valoroj estas ŝlositaj kaj ne povas esti redaktitaj
-directus_collection:
-  directus_flows: Aŭtomatigaj fluoj
+directus9_collection:
+  directus9_flows: Aŭtomatigaj fluoj
 fields:
-  directus_activity:
+  directus9_activity:
     item: Ĉefa ŝlosilo de la ero
     action: Ago
     collection: Kolekto
@@ -644,7 +644,7 @@ fields:
     origin: Origino
     ip: IP-adreso
     revisions: Versioj
-  directus_collections:
+  directus9_collections:
     collection: Kolekto
     icon: Emblemo
     note: Noto
@@ -653,7 +653,7 @@ fields:
     archive_value: Arĥivi la valoron
     unarchive_value: Malarĥivi la valoron
     archive_field: Arĥivi la kampon
-  directus_files:
+  directus9_files:
     $thumbnail: Bildeto
     title: Titolo
     description: Priskribo
@@ -672,7 +672,7 @@ fields:
     height: Alto
     charset: Signaro
     duration: Daŭro
-  directus_users:
+  directus9_users:
     first_name: Pesona nomo
     last_name: Familia nomo
     email: Retpoŝtadreso
@@ -699,7 +699,7 @@ fields:
     provider: Provizanto
     external_identifier: Ekstera identigilo
     last_page: Lasta paĝo
-  directus_settings:
+  directus9_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
@@ -724,22 +724,22 @@ fields:
     module_bar: Modula breto
     transformations_all: Permesi ĉiujn transformojn
     transformations_none: Malŝalti transformojn
-  directus_shares:
+  directus9_shares:
     name: Nomo
     role: Rolo
     password: Pasvorto
-  directus_fields:
+  directus9_fields:
     icon: Emblemo de la kolekto
     note: Noto
     hidden: Kaŝita
     display_template: Ŝablono
-  directus_roles:
+  directus9_roles:
     name: Nomo de la rolo
     icon: Emblemo de la rolo
     description: Priskribo
     ip_access: IP-adreso
     enforce_tfa: Postuli dufaktoran kontroladon
-  directus_webhooks:
+  directus9_webhooks:
     name: Nomo
     method: Metodo
     status: Stato
@@ -750,7 +750,7 @@ fields:
     actions: Agoj
     collections: Kolektoj
 field_options:
-  directus_settings:
+  directus9_settings:
     project_name_placeholder: Mia projekto...
     project_logo_note: Blanka 40x40 SVG/PNG
     security_divider_title: Sekureco
@@ -764,11 +764,11 @@ field_options:
     basemaps_name_placeholder: Entajpu la nomon de la bazmapo...
     basemaps_style: Mapbox-stilo
     files_divider_title: Dosieroj kaj bildetoj
-  directus_activity:
+  directus9_activity:
     login: Ensaluti
     create: Krei
     delete: Forigi
-  directus_collections:
+  directus9_collections:
     note_placeholder: Priskribo de la kolekto...
     language: Lingvo
     translation: Traduko
@@ -779,11 +779,11 @@ field_options:
     archive_field_placeholder: Elekti kampon...
     sort_divider: Ordigi
     sort_field: Elekti kampon...
-  directus_files:
+  directus9_files:
     title: Unika titolo...
     description: Nedeviga priskribo...
     location: Nedeviga loko...
-  directus_roles:
+  directus9_roles:
     fields:
       icon_name: Emblemo
       name_name: Nomo
@@ -792,7 +792,7 @@ field_options:
       link_placeholder: Relativa aŭ absoluta URL...
     collections_name: Kolektoj
     collections_addLabel: Aldoni kolekton...
-  directus_users:
+  directus9_users:
     dropdown_auto: Aŭtomata (bazita je la sistemo)
     dropdown_light: Hela reĝimo
     dropdown_dark: Malhela reĝimo
@@ -801,7 +801,7 @@ field_options:
     status_dropdown_invited: Invitita
     status_dropdown_active: Aktiva
     status_dropdown_archived: Arĥivita
-  directus_webhooks:
+  directus9_webhooks:
     status_options_active: Aktiva
     status_options_inactive: Neaktiva
     data_label: Sendi eventodatumojn

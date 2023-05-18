@@ -1,10 +1,10 @@
 {
-	"name": "directus",
+	"name": "directus9",
 	"version": "9.26.0",
-	"description": "Directus is a real-time API and App dashboard for managing SQL database content",
+	"description": "Directus9 is a real-time API and App dashboard for managing SQL database content",
 	"type": "module",
 	"keywords": [
-		"directus",
+		"directus9",
 		"realtime",
 		"database",
 		"content",
@@ -22,15 +22,15 @@
 		"framework",
 		"vue"
 	],
-	"homepage": "https://directus.io",
+	"homepage": "https://directus9.io",
 	"bugs": {
-		"url": "https://github.com/directus/directus/issues"
+		"url": "https://github.com/directus9/directus9/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/directus/directus.git"
+		"url": "https://github.com/directus9/directus9.git"
 	},
-	"funding": "https://github.com/directus/directus?sponsor=1",
+	"funding": "https://github.com/directus9/directus9?sponsor=1",
 	"license": "GPL-3.0-only",
 	"author": {
 		"name": "Monospace Inc",
@@ -53,10 +53,10 @@
 		"./package.json": "./package.json"
 	},
 	"bin": {
-		"directus": "cli.js"
+		"directus9": "cli.js"
 	},
 	"dependencies": {
-		"@directus/api": "workspace:*"
+		"@directus9/api": "workspace:*"
 	},
 	"engines": {
 		"node": ">=18.0.0"

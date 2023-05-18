@@ -18,7 +18,7 @@
 		</template>
 
 		<drawer-item
-			collection="directus_shares"
+			collection="directus9_shares"
 			:primary-key="shareToEdit"
 			:active="!!shareToEdit"
 			@update:active="unselect"
@@ -80,7 +80,7 @@ import { defineComponent, ref, computed } from 'vue';
 import DrawerItem from '@/views/private/components/drawer-item.vue';
 import { getRootPath } from '@/utils/get-root-path';
 import { unexpectedError } from '@/utils/unexpected-error';
-import { Share } from '@directus/types';
+import { Share } from '@directus9/types';
 import { useClipboard } from '@/composables/use-clipboard';
 
 import api from '@/api';

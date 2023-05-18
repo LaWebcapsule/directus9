@@ -1,5 +1,5 @@
 {
-	"name": "@directus/schema",
+	"name": "@directus9/schema",
 	"version": "9.26.0",
 	"description": "Utility for extracting information about existing DB schema",
 	"type": "module",
@@ -13,16 +13,16 @@
 		"sqlite3",
 		"javascript"
 	],
-	"homepage": "https://directus.io",
+	"homepage": "https://directus9.io",
 	"bugs": {
-		"url": "https://github.com/directus/directus/issues"
+		"url": "https://github.com/directus9/directus9/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/directus/directus.git",
+		"url": "https://github.com/directus9/directus9.git",
 		"directory": "packages/schema"
 	},
-	"funding": "https://github.com/directus/directus?sponsor=1",
+	"funding": "https://github.com/directus9/directus9?sponsor=1",
 	"license": "GPL-3.0",
 	"author": "Rijk van Zanten <rijkvanzanten@me.com>",
 	"exports": {
@@ -45,7 +45,7 @@
 		"knex": "2.4.2"
 	},
 	"devDependencies": {
-		"@directus/tsconfig": "0.0.7",
+		"@directus9/tsconfig": "0.0.7",
 		"typescript": "5.0.4"
 	},
 	"publishConfig": {

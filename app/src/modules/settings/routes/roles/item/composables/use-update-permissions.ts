@@ -1,5 +1,5 @@
 import api from '@/api';
-import { Permission, Collection } from '@directus/types';
+import { Permission, Collection } from '@directus9/types';
 import { unexpectedError } from '@/utils/unexpected-error';
 import { inject, ref, Ref } from 'vue';
 
@@ -33,7 +33,7 @@ export default function useUpdatePermissions(
 
 		saving.value = true;
 
-		// If this collection isn't "managed" yet, make sure to add it to directus_collections first
+		// If this collection isn't "managed" yet, make sure to add it to directus9_collections first
 		// before trying to associate any permissions with it
 		if (collection.value.meta === null) {
 			await api.patch(`/collections/${collection.value.collection}`, {
@@ -99,7 +99,7 @@ export default function useUpdatePermissions(
 
 		saving.value = true;
 
-		// If this collection isn't "managed" yet, make sure to add it to directus_collections first
+		// If this collection isn't "managed" yet, make sure to add it to directus9_collections first
 		// before trying to associate any permissions with it
 		if (collection.value.meta === null) {
 			await api.patch(`/collections/${collection.value.collection}`, {

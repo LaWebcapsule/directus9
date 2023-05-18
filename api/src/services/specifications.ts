@@ -1,4 +1,4 @@
-import { spec } from '@directus/specs';
+import { spec } from '@directus9/specs';
 import type { Knex } from 'knex';
 import { cloneDeep, mergeWith } from 'lodash-es';
 import type {
@@ -9,7 +9,7 @@ import type {
 	SchemaObject,
 	TagObject,
 } from 'openapi3-ts';
-import type { Accountability, Field, Permission, Relation, SchemaOverview, Type } from '@directus/types';
+import type { Accountability, Field, Permission, Relation, SchemaOverview, Type } from '@directus9/types';
 import { version } from '../utils/package.js';
 import { OAS_REQUIRED_SCHEMAS } from '../constants.js';
 import getDatabase from '../database/index.js';
@@ -20,7 +20,7 @@ import { CollectionsService } from './collections.js';
 import { FieldsService } from './fields.js';
 import { GraphQLService } from './graphql/index.js';
 import { RelationsService } from './relations.js';
-import formatTitle from '@directus/format-title';
+import formatTitle from '@directus9/format-title';
 
 export class SpecificationService {
 	accountability: Accountability | null;
@@ -108,7 +108,7 @@ class OASSpecsService implements SpecificationSubService {
 			servers: [
 				{
 					url: env['PUBLIC_URL'],
-					description: 'Your current Directus instance.',
+					description: 'Your current Directus9 instance.',
 				},
 			],
 			paths,
@@ -133,7 +133,7 @@ class OASSpecsService implements SpecificationSubService {
 		}
 
 		for (const collection of collections) {
-			const isSystem = collection.collection.startsWith('directus_');
+			const isSystem = collection.collection.startsWith('directus9_');
 
 			// If the collection is one of the system collections, pull the tag from the static spec
 			if (isSystem) {
@@ -167,7 +167,7 @@ class OASSpecsService implements SpecificationSubService {
 		if (!tags) return paths;
 
 		for (const tag of tags) {
-			const isSystem = 'x-collection' in tag === false || tag['x-collection'].startsWith('directus_');
+			const isSystem = 'x-collection' in tag === false || tag['x-collection'].startsWith('directus9_');
 
 			if (isSystem) {
 				for (const [path, pathItem] of Object.entries<PathItemObject>(spec.paths)) {
@@ -353,7 +353,7 @@ class OASSpecsService implements SpecificationSubService {
 
 			if (!tag) continue;
 
-			const isSystem = collection.collection.startsWith('directus_');
+			const isSystem = collection.collection.startsWith('directus9_');
 
 			const fieldsInCollection = fields.filter((field) => field.collection === collection.collection);
 

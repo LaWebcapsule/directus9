@@ -1,5 +1,5 @@
-import type { Accountability, Permission, SchemaOverview } from '@directus/types';
-import { deepMap, parseFilter, parseJSON, parsePreset } from '@directus/utils';
+import type { Accountability, Permission, SchemaOverview } from '@directus9/types';
+import { deepMap, parseFilter, parseJSON, parsePreset } from '@directus9/utils';
 import { cloneDeep } from 'lodash-es';
 import hash from 'object-hash';
 import { getCache, getCacheValue, getSystemCache, setCacheValue, setSystemCache } from '../cache.js';
@@ -65,7 +65,7 @@ export async function getPermissions(accountability: Accountability, schema: Sch
 	}
 
 	if (accountability.admin !== true) {
-		const query = database.select('*').from('directus_permissions');
+		const query = database.select('*').from('directus9_permissions');
 
 		if (accountability.role) {
 			query.where({ role: accountability.role });

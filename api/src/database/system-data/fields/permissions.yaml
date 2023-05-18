@@ -1,5 +1,5 @@
-# directus_permissions isn't surfaced in the app
-table: directus_permissions
+# directus9_permissions isn't surfaced in the app
+table: directus9_permissions
 
 fields:
   - field: permissions

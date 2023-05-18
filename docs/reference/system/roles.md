@@ -1,5 +1,5 @@
 ---
-description: REST and GraphQL API documentation on the Roles collection in Directus.
+description: REST and GraphQL API documentation on the Roles collection in Directus9.
 readTime: 5 min read
 pageClass: page-reference
 ---
@@ -58,7 +58,7 @@ The users in this role. One-to-many to [users](/reference/system/users).
 
 ## List Roles
 
-List all roles that exist in Directus.
+List all roles that exist in Directus9.
 
 ### Query Parameters
 
@@ -86,7 +86,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	roles: [directus_roles]
+	roles: [directus9_roles]
 }
 ```
 
@@ -138,7 +138,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	roles_by_id(id: ID!): directus_roles
+	roles_by_id(id: ID!): directus9_roles
 }
 ```
 
@@ -202,7 +202,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_roles_item(data: create_directus_roles_input!): directus_roles
+	create_roles_item(data: create_directus9_roles_input!): directus9_roles
 }
 ```
 
@@ -277,7 +277,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_roles_items(data: [create_directus_roles_input!]!): [directus_roles]
+	create_roles_items(data: [create_directus9_roles_input!]!): [directus9_roles]
 }
 ```
 
@@ -342,7 +342,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_roles_item(id: ID!, data: update_directus_roles_input): directus_roles
+	update_roles_item(id: ID!, data: update_directus9_roles_input): directus9_roles
 }
 ```
 
@@ -409,7 +409,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_roles_items(ids: [ID!]!, data: update_directus_roles_input): [directus_roles]
+	update_roles_items(ids: [ID!]!, data: update_directus9_roles_input): [directus9_roles]
 }
 ```
 

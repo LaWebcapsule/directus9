@@ -97,7 +97,7 @@ logoutReason:
 public_label: گشتی
 public_description: کۆنتڕۆڵکردنی ئەوەی کام دەیتایەی API بەردەستە بەبێ ڕەسەنایەتی.
 not_allowed: ڕێگەپێنەدراوە
-directus_version: وەشانی دایرێکتەس
+directus9_version: وەشانی دایرێکتەس
 node_version: وەشانی نۆد
 node_uptime: چالاکی نۆد
 os_type: جۆری سیستەم
@@ -113,14 +113,14 @@ recommended_defaults: بنەڕەتیە پێشنیارکراوەکان
 unarchive: ئەرشیفنەکردن
 unarchive_confirm: ئایا دڵنیای دەتەوێت ئەم مادەیە ئەرشیف نەکەیت؟
 fields:
-  directus_settings:
+  directus9_settings:
     module_bar: شریتی مۆدیوڵەکان
-  directus_fields:
+  directus9_fields:
     translation: وەرگێڕانەکانی ناوی خانە
-  directus_roles:
+  directus9_roles:
     name: ناوی پلە
 field_options:
-  directus_collections:
+  directus9_collections:
     archive_divider: ئەرشیڤ
 interfaces:
   presentation-links:

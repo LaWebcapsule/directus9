@@ -167,12 +167,12 @@
 			<revisions-drawer-detail
 				v-if="isBatch === false && isNew === false && revisionsAllowed"
 				ref="revisionsDrawerDetailRef"
-				collection="directus_files"
+				collection="directus9_files"
 				:primary-key="primaryKey"
 			/>
 			<comments-sidebar-detail
 				v-if="isBatch === false && isNew === false"
-				collection="directus_files"
+				collection="directus9_files"
 				:primary-key="primaryKey"
 			/>
 		</template>
@@ -196,7 +196,7 @@ import FolderPicker from '@/views/private/components/folder-picker.vue';
 import ImageEditor from '@/views/private/components/image-editor.vue';
 import RevisionsDrawerDetail from '@/views/private/components/revisions-drawer-detail.vue';
 import SaveOptions from '@/views/private/components/save-options.vue';
-import { Field } from '@directus/types';
+import { Field } from '@directus9/types';
 import { computed, ref, toRefs, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';
@@ -236,7 +236,7 @@ const {
 	isBatch,
 	refresh,
 	validationErrors,
-} = useItem(ref('directus_files'), primaryKey);
+} = useItem(ref('directus9_files'), primaryKey);
 
 const isSavable = computed(() => saveAllowed.value && hasEdits.value);
 
@@ -280,7 +280,7 @@ const { moveToDialogActive, moveToFolder, moving, selectedFolder } = useMovetoFo
 useShortcut('meta+s', saveAndStay, form);
 
 const { createAllowed, deleteAllowed, saveAllowed, updateAllowed, fields, revisionsAllowed } = usePermissions(
-	ref('directus_files'),
+	ref('directus9_files'),
 	item,
 	isNew
 );

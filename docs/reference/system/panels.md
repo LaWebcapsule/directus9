@@ -1,5 +1,5 @@
 ---
-description: REST and GraphQL API documentation on the Panels collection in Directus.
+description: REST and GraphQL API documentation on the Panels collection in Directus9.
 readTime: 5 min read
 pageClass: page-reference
 ---
@@ -84,7 +84,7 @@ User that created the panel. Many-to-one to [users](/reference/system/users).
 
 ## List Panels
 
-List all panels that exist in Directus.
+List all panels that exist in Directus9.
 
 ### Query Parameters
 
@@ -112,7 +112,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	panels: [directus_panels]
+	panels: [directus9_panels]
 }
 ```
 
@@ -161,7 +161,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	panels_by_id(id: ID!): directus_panels
+	panels_by_id(id: ID!): directus9_panels
 }
 ```
 
@@ -219,7 +219,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_panels_item(data: create_directus_panels_input!): directus_panels
+	create_panels_item(data: create_directus9_panels_input!): directus9_panels
 }
 ```
 
@@ -283,7 +283,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_panels_items(data: [create_directus_panels_input!]!): [directus_panels]
+	create_panels_items(data: [create_directus9_panels_input!]!): [directus9_panels]
 }
 ```
 
@@ -351,7 +351,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_panels_item(id: ID!, data: update_directus_panels_input): directus_panels
+	update_panels_item(id: ID!, data: update_directus9_panels_input): directus9_panels
 }
 ```
 
@@ -415,7 +415,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_panels_items(ids: [ID!]!, data: update_directus_panels_input): [directus_panels]
+	update_panels_items(ids: [ID!]!, data: update_directus9_panels_input): [directus9_panels]
 }
 ```
 

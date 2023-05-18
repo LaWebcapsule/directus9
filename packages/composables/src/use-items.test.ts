@@ -1,4 +1,4 @@
-import type { Field, Filter } from '@directus/types';
+import type { Field, Filter } from '@directus9/types';
 import { flushPromises } from '@vue/test-utils';
 import type { AxiosRequestConfig } from 'axios';
 import { isEqual } from 'lodash-es';
@@ -201,10 +201,10 @@ test('should reset when collection changes', async () => {
 	expect(unref(items)).toEqual([]);
 });
 
-test('should append $thumbnail to fetched items when collection is directus_files', async () => {
+test('should append $thumbnail to fetched items when collection is directus9_files', async () => {
 	vi.mocked(useCollection).mockReturnValueOnce({ primaryKeyField: computed(() => null) } as any);
 
-	const collection = ref('directus_files');
+	const collection = ref('directus9_files');
 
 	const { items } = useItems(collection, {
 		fields: ref(['*']),

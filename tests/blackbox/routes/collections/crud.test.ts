@@ -4,7 +4,7 @@ import request from 'supertest';
 import vendors from '@common/get-dbs-to-test';
 import knex from 'knex';
 import type { Knex } from 'knex';
-import type { Collection } from '@directus/types';
+import type { Collection } from '@directus9/types';
 import { findIndex } from 'lodash';
 import { requestGraphQL } from '@common/index';
 
@@ -84,17 +84,17 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 									.sort();
 
 								const appAccessPermissions = [
-									'directus_activity',
-									'directus_collections',
-									'directus_fields',
-									'directus_notifications',
-									'directus_permissions',
-									'directus_presets',
-									'directus_relations',
-									'directus_roles',
-									'directus_settings',
-									'directus_shares',
-									'directus_users',
+									'directus9_activity',
+									'directus9_collections',
+									'directus9_fields',
+									'directus9_notifications',
+									'directus9_permissions',
+									'directus9_presets',
+									'directus9_relations',
+									'directus9_roles',
+									'directus9_settings',
+									'directus9_shares',
+									'directus9_users',
 								];
 
 								expect(response.statusCode).toBe(200);
@@ -129,7 +129,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 			afterEach(async () => {
 				const db = databases.get(currentVendor)!;
 				await db.schema.dropTableIfExists(TEST_COLLECTION_NAME);
-				await db('directus_collections').del().where({ collection: TEST_COLLECTION_NAME });
+				await db('directus9_collections').del().where({ collection: TEST_COLLECTION_NAME });
 			});
 
 			describe('Creates a new regular collection', () => {
@@ -252,7 +252,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 
 				for (const collection of collectionNames) {
 					await db.schema.dropTableIfExists(collection);
-					await db('directus_collections').del().where({ collection });
+					await db('directus9_collections').del().where({ collection });
 				}
 			});
 
@@ -322,7 +322,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 			afterEach(async () => {
 				const db = databases.get(currentVendor)!;
 				await db.schema.dropTableIfExists(TEST_COLLECTION_NAME);
-				await db('directus_collections').del().where({ collection: TEST_COLLECTION_NAME });
+				await db('directus9_collections').del().where({ collection: TEST_COLLECTION_NAME });
 			});
 
 			describe('Deletes a regular collection', () => {
@@ -374,7 +374,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 								.set('Authorization', `Bearer ${common.USER[userKey].TOKEN}`);
 
 							if (userKey === common.USER.ADMIN.KEY) {
-								expect(await db('directus_collections').select().where({ collection: TEST_FOLDER_NAME })).toHaveLength(
+								expect(await db('directus9_collections').select().where({ collection: TEST_FOLDER_NAME })).toHaveLength(
 									1
 								);
 							}
@@ -389,7 +389,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 								expect(response.statusCode).toBe(204);
 								expect(response.body).toEqual({});
 
-								expect(await db('directus_collections').select().where({ collection: TEST_FOLDER_NAME })).toHaveLength(
+								expect(await db('directus9_collections').select().where({ collection: TEST_FOLDER_NAME })).toHaveLength(
 									0
 								);
 							} else {

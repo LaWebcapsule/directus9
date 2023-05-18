@@ -1,4 +1,4 @@
-import type { Permission, PermissionsAction, SchemaOverview } from '@directus/types';
+import type { Permission, PermissionsAction, SchemaOverview } from '@directus9/types';
 import { uniq } from 'lodash-es';
 
 /**

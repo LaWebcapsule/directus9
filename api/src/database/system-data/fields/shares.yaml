@@ -1,4 +1,4 @@
-table: directus_shares
+table: directus9_shares
 
 fields:
   - field: id

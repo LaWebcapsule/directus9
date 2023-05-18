@@ -1,7 +1,7 @@
 import config, { getUrl, paths } from '@common/config';
 import vendors from '@common/get-dbs-to-test';
 import * as common from '@common/index';
-import { awaitDirectusConnection } from '@utils/await-connection';
+import { awaitDirectus9Connection } from '@utils/await-connection';
 import { sleep } from '@utils/sleep';
 import { validateDateDifference } from '@utils/validate-date-difference';
 import { ChildProcess, spawn } from 'child_process';
@@ -26,7 +26,7 @@ type SchemaTimezoneTypesResponse = SchemaTimezoneTypesObject & {
 
 describe('schema', () => {
 	const databases = new Map<string, Knex>();
-	const tzDirectus = {} as { [vendor: string]: ChildProcess };
+	const tzDirectus9 = {} as { [vendor: string]: ChildProcess };
 	const currentTzOffset = new Date().getTimezoneOffset();
 	const isWindows = ['win32', 'win64'].includes(process.platform);
 
@@ -73,16 +73,16 @@ describe('schema', () => {
 			config.envs[vendor]!.PORT = String(newServerPort);
 
 			const server = spawn('node', [paths.cli, 'start'], { cwd: paths.cwd, env: config.envs[vendor] });
-			tzDirectus[vendor] = server;
+			tzDirectus9[vendor] = server;
 
 			let serverOutput = '';
 			server.stdout.on('data', (data) => (serverOutput += data.toString()));
 
 			server.on('exit', (code) => {
-				if (code !== null) throw new Error(`Directus-${vendor} server failed: \n ${serverOutput}`);
+				if (code !== null) throw new Error(`Directus9-${vendor} server failed: \n ${serverOutput}`);
 			});
 
-			promises.push(awaitDirectusConnection(newServerPort));
+			promises.push(awaitDirectus9Connection(newServerPort));
 		}
 
 		// Give the server some time to start
@@ -91,7 +91,7 @@ describe('schema', () => {
 
 	afterAll(async () => {
 		for (const [vendor, connection] of databases) {
-			tzDirectus[vendor]!.kill();
+			tzDirectus9[vendor]!.kill();
 
 			config.envs[vendor]!.PORT = String(Number(config.envs[vendor]!.PORT) - 100);
 			delete config.envs[vendor]!.TZ;

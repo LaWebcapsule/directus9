@@ -106,7 +106,7 @@ logoutReason:
 public_label: สาธารณะ
 public_description: สามารถเข้าถึง API เหล่านี้ได้โดยไม่ต้องยืนยันตัวตน
 not_allowed: ไม่อนุญาต
-directus_version: เวอร์ชั่น Directus
+directus9_version: เวอร์ชั่น Directus9
 node_version: เวอร์ชั่น Node
 node_uptime: เวลาออนไลน์ Node
 os_type: ประเภท OS
@@ -841,7 +841,7 @@ singleton: Singleton
 singleton_label: ทำเสมือนว่ามีออปเจ็คเดียว
 system_fields_locked: ฟิลด์ระบบถูกล็อคและไม่สามารถแก้ไขได้
 fields:
-  directus_activity:
+  directus9_activity:
     item: คีย์หลัก
     action: ดำเนินการ
     collection: คอลเลกชัน
@@ -851,7 +851,7 @@ fields:
     user_agent: ตัวแทนของผู้ใช้
     ip: หมายเลขไอพี
     revisions: ประวัติการปรับปรุง
-  directus_collections:
+  directus9_collections:
     collection: คอลเลกชัน
     icon: ไอคอน
     note: หมายเหตุ
@@ -865,7 +865,7 @@ fields:
     unarchive_value: ยกเลิกการเก็บค่า
     sort_field: เรียงฟิลด์
     accountability: การติดตามกิจกรรมและการแก้ไข
-  directus_files:
+  directus9_files:
     $thumbnail: รูปขนาดย่อ
     title: ตำแหน่ง
     description: รายละเอียด
@@ -889,7 +889,7 @@ fields:
     height: สูง
     charset: 'ชุดอักขระ:'
     duration: ระยะเวลา
-  directus_users:
+  directus9_users:
     first_name: ชื่อ
     last_name: นามสกุล
     email: อีเมล
@@ -913,7 +913,7 @@ fields:
     provider: ผู้ให้บริการ
     last_page: หน้าสุดท้าย
     last_access: การเข้าถึงล่าสุด
-  directus_settings:
+  directus9_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
@@ -931,11 +931,11 @@ fields:
     storage_default_folder: โฟลเดอร์เริ่มต้น
     custom_css: CSS ที่กำหนดเอง
     module_bar: โมดูลบาร์
-  directus_shares:
+  directus9_shares:
     name: ชื่อ
     role: บทบาท
     password: รหัสผ่าน
-  directus_fields:
+  directus9_fields:
     collection: ชื่อคอลเลกชัน
     icon: ไอคอนของคอลเลกชัน
     note: หมายเหตุ
@@ -943,7 +943,7 @@ fields:
     singleton: Singleton
     translation: คำแปลชื่อฟิลด์
     display_template: แม่แบบ
-  directus_roles:
+  directus9_roles:
     name: ชื่อบทบาท
     icon: ไอคอนของบทบาท
     description: รายละเอียด
@@ -953,7 +953,7 @@ fields:
     enforce_tfa: ต้องการ 2FA
     users: ผู้ใช้ในบทบาทนี้
     module_list: รายการโมดูล
-  directus_webhooks:
+  directus9_webhooks:
     name: ชื่อ
     method: เมธอด
     status: สถานะ
@@ -963,14 +963,14 @@ fields:
     headers: รีเควส เฮดเดอร์
     collections: คอลเลกชัน
 field_options:
-  directus_settings:
+  directus9_settings:
     security_divider_title: ความปลอดภัย
-  directus_activity:
+  directus9_activity:
     login: เข้าสู่ระบบ
     create: สร้าง
     update: แก้ไข
     delete: ลบ
-  directus_collections:
+  directus9_collections:
     track_activity_revisions: ติดตามกิจกรรมและการแก้ไข
     only_track_activity: ติดตามกิจกรรมเท่านั้น
     do_not_track_anything: อย่าติดตามอะไรเลย
@@ -983,21 +983,21 @@ field_options:
     archive_divider: เก็บถาวร
     archive_field_placeholder: เลือกฟิลด์
     sort_divider: เรียง
-  directus_roles:
+  directus9_roles:
     fields:
       icon_name: ไอคอน
       name_name: ชื่อ
       name_placeholder: ป้อนชื่อเรื่อง
     collections_name: คอลเลกชัน
     collections_addLabel: เพิ่มคอลเลกชัน
-  directus_users:
+  directus9_users:
     preferences_divider: การตั้งค่าผู้ใช้
     status_dropdown_draft: ฉบับร่าง
     status_dropdown_active: เปิดใช้งาน
     status_dropdown_suspended: ระงับชั่วคราว
     status_dropdown_archived: เก็บถาวร
     token: ระบุโทเค็นความปลอดภัย
-  directus_webhooks:
+  directus9_webhooks:
     status_options_active: เปิดใช้งาน
     status_options_inactive: ไม่ใช้งาน
     actions_create: สร้าง
@@ -1293,7 +1293,7 @@ interfaces:
     recursive_only: อินเทอร์เฟซมุมมองแผนภูมิใช้งานได้กับความสัมพันธ์แบบซ้ำซ้อนเท่านั้น
   user:
     user: ผู้ใช้
-    description: เลือกผู้ใช้ของ directus ที่มีอยู่แล้ว
+    description: เลือกผู้ใช้ของ directus9 ที่มีอยู่แล้ว
     select_mode: เลือกโหมด
     modes:
       auto: อัตโนมัติ
@@ -1410,7 +1410,7 @@ displays:
     description: แสดงค่าที่เกี่ยวข้อง
   user:
     user: ผู้ใช้
-    description: แสดงผู้ใช้ของ directus
+    description: แสดงผู้ใช้ของ directus9
     avatar: ภาพประจำตัว
     name: ชื่อ
     both: ทั้งคู่

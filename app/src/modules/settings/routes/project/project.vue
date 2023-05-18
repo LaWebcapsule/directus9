@@ -44,7 +44,7 @@
 import { useI18n } from 'vue-i18n';
 import { defineComponent, ref, computed } from 'vue';
 import SettingsNavigation from '../../components/navigation.vue';
-import { useCollection } from '@directus/composables';
+import { useCollection } from '@directus9/composables';
 import { useSettingsStore } from '@/stores/settings';
 import { useServerStore } from '@/stores/server';
 import ProjectInfoSidebarDetail from './components/project-info-sidebar-detail.vue';
@@ -63,7 +63,7 @@ export default defineComponent({
 		const settingsStore = useSettingsStore();
 		const serverStore = useServerStore();
 
-		const { fields } = useCollection('directus_settings');
+		const { fields } = useCollection('directus9_settings');
 
 		const initialValues = ref(clone(settingsStore.settings));
 

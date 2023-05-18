@@ -1,11 +1,11 @@
-import type { OperationRaw } from '@directus/types';
+import type { OperationRaw } from '@directus9/types';
 import { getFlowManager } from '../flows.js';
 import type { AbstractServiceOptions, Item, MutationOptions, PrimaryKey } from '../types/index.js';
 import { ItemsService } from './items.js';
 
 export class OperationsService extends ItemsService<OperationRaw> {
 	constructor(options: AbstractServiceOptions) {
-		super('directus_operations', options);
+		super('directus9_operations', options);
 	}
 
 	override async createOne(data: Partial<Item>, opts?: MutationOptions): Promise<PrimaryKey> {

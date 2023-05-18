@@ -1,4 +1,4 @@
-table: directus_users
+table: directus9_users
 
 columns:
   id:
@@ -51,7 +51,7 @@ columns:
     type: uuid
     nullable: true
     references:
-      table: directus_roles
+      table: directus9_roles
       column: id
   token:
     type: string

@@ -1,5 +1,5 @@
-import formatTitle from '@directus/format-title';
-import { toArray } from '@directus/utils';
+import formatTitle from '@directus9/format-title';
+import { toArray } from '@directus9/utils';
 import Busboy from 'busboy';
 import type { RequestHandler } from 'express';
 import express from 'express';
@@ -18,7 +18,7 @@ import { sanitizeQuery } from '../utils/sanitize-query.js';
 
 const router = express.Router();
 
-router.use(useCollection('directus_files'));
+router.use(useCollection('directus9_files'));
 
 export const multipartHandler: RequestHandler = (req, res, next) => {
 	if (req.is('multipart/form-data') === false) return next();
@@ -43,7 +43,7 @@ export const multipartHandler: RequestHandler = (req, res, next) => {
 	/**
 	 * The order of the fields in multipart/form-data is important. We require that all fields
 	 * are provided _before_ the files. This allows us to set the storage location, and create
-	 * the row in directus_files async during the upload of the actual file.
+	 * the row in directus9_files async during the upload of the actual file.
 	 */
 
 	let disk: string = toArray(env['STORAGE_LOCATIONS'])[0];
@@ -224,7 +224,7 @@ const readHandler = asyncHandler(async (req, res, next) => {
 		result = await service.readByQuery(req.sanitizedQuery);
 	}
 
-	const meta = await metaService.getMetaForQuery('directus_files', req.sanitizedQuery);
+	const meta = await metaService.getMetaForQuery('directus9_files', req.sanitizedQuery);
 
 	res.locals['payload'] = { data: result, meta };
 	return next();

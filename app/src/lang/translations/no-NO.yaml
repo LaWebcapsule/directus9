@@ -116,7 +116,7 @@ logoutReason:
 public_label: Offentlig
 public_description: Kontrollerer hvilke API-data som er tilgjengelige uten å autentisere.
 not_allowed: Ikke tillatt
-directus_version: Directus versjon
+directus9_version: Directus9 versjon
 node_version: Node versjon
 node_uptime: Node oppetid
 os_type: OS Type
@@ -659,21 +659,21 @@ cancel: Avbryt
 collection: Kolleksjon
 collections: Kolleksjoner
 fields:
-  directus_activity:
+  directus9_activity:
     item: Element Hovednøkkel
     collection: Kolleksjon
     comment: Kommenter
     user_agent: Brukeragent
     origin: Opprinnelse
     ip: IP-addresse
-  directus_collections:
+  directus9_collections:
     collection: Kolleksjon
     icon: Ikon
     note: Notat
     color: Farge
     hidden: Skjult
     sort_field: Sorter felt
-  directus_files:
+  directus9_files:
     title: Tittel
     description: Beskrivelse
     tags: Etiketter
@@ -685,7 +685,7 @@ fields:
     folder: Mappe
     charset: Charset
     duration: Varighet
-  directus_users:
+  directus9_users:
     email: E-post
     password: Passord
     location: Lokasjon
@@ -697,42 +697,42 @@ fields:
     status_active: Aktiv
     last_page: Siste side
     last_access: Siste tilgang
-  directus_settings:
+  directus9_settings:
     project_name: Prosjektnavn
     module_bar: Modul Bar
-  directus_shares:
+  directus9_shares:
     name: Navn
     password: Passord
-  directus_fields:
+  directus9_fields:
     note: Notat
     hidden: Skjult
     translation: Feltnavn oversettelser
-  directus_roles:
+  directus9_roles:
     name: Rollenavn
     description: Beskrivelse
-  directus_webhooks:
+  directus9_webhooks:
     name: Navn
     status: Status
     value: Verdi
     collections: Kolleksjoner
 field_options:
-  directus_settings:
+  directus9_settings:
     security_divider_title: Sikkerhet
-  directus_activity:
+  directus9_activity:
     create: Opprett
     update: Oppdater
-  directus_collections:
+  directus9_collections:
     language: Språk
     archive_divider: Arkiv
     sort_divider: Sorter
-  directus_roles:
+  directus9_roles:
     fields:
       icon_name: Ikon
       name_name: Navn
     collections_name: Kolleksjoner
-  directus_users:
+  directus9_users:
     status_dropdown_active: Aktiv
-  directus_webhooks:
+  directus9_webhooks:
     status_options_active: Aktiv
     status_options_inactive: Inaktiv
     actions_create: Opprett

@@ -67,7 +67,7 @@ describe('Integration Tests', () => {
 
 				it('Returns array values as is', async () => {
 					const result = await service.transformers['cast-csv']!({
-						value: ['test', 'directus'],
+						value: ['test', 'directus9'],
 						action: 'read',
 						payload: {},
 						accountability: { role: null },
@@ -75,12 +75,12 @@ describe('Integration Tests', () => {
 						helpers,
 					});
 
-					expect(result).toEqual(['test', 'directus']);
+					expect(result).toEqual(['test', 'directus9']);
 				});
 
 				it('Splits the CSV string', async () => {
 					const result = await service.transformers['cast-csv']!({
-						value: 'test,directus',
+						value: 'test,directus9',
 						action: 'read',
 						payload: {},
 						accountability: { role: null },
@@ -88,12 +88,12 @@ describe('Integration Tests', () => {
 						helpers,
 					});
 
-					expect(result).toMatchObject(['test', 'directus']);
+					expect(result).toMatchObject(['test', 'directus9']);
 				});
 
 				it('Saves array values as joined string', async () => {
 					const result = await service.transformers['cast-csv']!({
-						value: ['test', 'directus'],
+						value: ['test', 'directus9'],
 						action: 'create',
 						payload: {},
 						accountability: { role: null },
@@ -101,12 +101,12 @@ describe('Integration Tests', () => {
 						helpers,
 					});
 
-					expect(result).toBe('test,directus');
+					expect(result).toBe('test,directus9');
 				});
 
 				it('Saves string values as is', async () => {
 					const result = await service.transformers['cast-csv']!({
-						value: 'test,directus',
+						value: 'test,directus9',
 						action: 'create',
 						payload: {},
 						accountability: { role: null },
@@ -114,7 +114,7 @@ describe('Integration Tests', () => {
 						helpers,
 					});
 
-					expect(result).toBe('test,directus');
+					expect(result).toBe('test,directus9');
 				});
 			});
 		});

@@ -44,7 +44,7 @@ required: Захтјева се
 create_role: Креирајте улогу
 emails: Е-мејлови
 not_allowed: Није дозвољено
-directus_version: Верзија Директуса
+directus9_version: Верзија Директуса
 node_version: Верзија нода
 node_uptime: Вријеме рада нода
 os_type: Тип OS-а
@@ -212,7 +212,7 @@ batch_delete_confirm: >-
 cancel: Откажи
 collection: Колекција
 fields:
-  directus_activity:
+  directus9_activity:
     item: Примарни кључ ставке
     action: Акција
     collection: Колекција
@@ -221,9 +221,9 @@ fields:
     comment: Коментар
     user_agent: Кориснички агент
     ip: ИП адреса
-  directus_collections:
+  directus9_collections:
     collection: Колекција
-  directus_files:
+  directus9_files:
     title: Наслов
     description: Опис
     tags: Ознаке
@@ -236,7 +236,7 @@ fields:
     width: Ширина
     height: Висина
     duration: Трајање
-  directus_users:
+  directus9_users:
     first_name: Име
     last_name: Презиме
     email: Имејл
@@ -251,27 +251,27 @@ fields:
     tfa_secret: Дво-факторска аутентификација
     status: Стање
     role: Рола
-  directus_shares:
+  directus9_shares:
     name: Име
     role: Рола
     password: Лозинка
-  directus_fields:
+  directus9_fields:
     display_template: Шаблон
-  directus_roles:
+  directus9_roles:
     description: Опис
-  directus_webhooks:
+  directus9_webhooks:
     name: Име
     status: Стање
 field_options:
-  directus_activity:
+  directus9_activity:
     create: Креирај
-  directus_collections:
+  directus9_collections:
     language: Језик
     archive_divider: Архивирај
-  directus_roles:
+  directus9_roles:
     fields:
       name_name: Име
-  directus_webhooks:
+  directus9_webhooks:
     actions_create: Креирај
 comment: Коментар
 description: Опис

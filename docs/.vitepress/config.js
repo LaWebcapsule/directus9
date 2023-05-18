@@ -3,8 +3,8 @@ import { defineConfig } from 'vitepress';
 export default defineConfig({
 	base: '/',
 	lang: 'en-US',
-	title: 'Directus Docs',
-	description: 'Directus. An Instant App & API for your SQL Database.',
+	title: 'Directus9 Docs',
+	description: 'Directus9. An Instant App & API for your SQL Database.',
 	ignoreDeadLinks: true,
 	markdown: {
 		theme: 'material-theme-palenight',
@@ -128,21 +128,21 @@ gtag('config', 'UA-24637628-7');
 		nav: [
 			{ text: 'Docs', link: '/' },
 			// { text: 'Cookbook', link: '/cookbook/add-a-recipe', activeMatch: '/cookbook/' },
-			{ text: 'Website', link: 'https://directus.io/' },
-			{ text: 'Cloud', link: 'https://directus.cloud/' },
-			{ text: 'GitHub', link: 'https://github.com/directus/directus' },
+			{ text: 'Website', link: 'https://directus9.io/' },
+			{ text: 'Cloud', link: 'https://directus9.cloud/' },
+			{ text: 'GitHub', link: 'https://github.com/directus9/directus9' },
 		],
 		algolia: {
 			appId: 'T5BDNEU205',
 			apiKey: '76eb519cf1a4492777a6991f75c5252b',
-			indexName: 'directus',
+			indexName: 'directus9',
 		},
 		sidebar: {
 			// '/cookbook/': sidebarCookbooks(),
 			'/': sidebar(),
 		},
 		editLink: {
-			pattern: 'https://github.com/directus/directus/edit/main/docs/:path',
+			pattern: 'https://github.com/directus9/directus9/edit/main/docs/:path',
 		},
 	},
 });
@@ -169,8 +169,8 @@ function sidebar() {
 					link: '/getting-started/support',
 				},
 				{
-					text: 'Backing Directus',
-					link: '/getting-started/backing-directus',
+					text: 'Backing Directus9',
+					link: '/getting-started/backing-directus9',
 				},
 				{
 					text: 'Resources',

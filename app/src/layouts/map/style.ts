@@ -1,11 +1,11 @@
-import { cssVar } from '@directus/utils/browser';
+import { cssVar } from '@directus9/utils/browser';
 
 export function getMapStyle() {
 	return [
 		{
-			id: '__directus_polygons_outline',
+			id: '__directus9_polygons_outline',
 			type: 'line',
-			source: '__directus',
+			source: '__directus9',
 			filter: ['all', ['!has', 'point_count'], ['==', '$type', 'Polygon']],
 			paint: {
 				'line-color': [
@@ -23,9 +23,9 @@ export function getMapStyle() {
 			},
 		},
 		{
-			id: '__directus_polygons',
+			id: '__directus9_polygons',
 			type: 'fill',
-			source: '__directus',
+			source: '__directus9',
 			filter: ['all', ['!has', 'point_count'], ['==', '$type', 'Polygon']],
 			paint: {
 				'fill-color': [
@@ -40,9 +40,9 @@ export function getMapStyle() {
 			},
 		},
 		{
-			id: '__directus_lines',
+			id: '__directus9_lines',
 			type: 'line',
-			source: '__directus',
+			source: '__directus9',
 			filter: ['all', ['!has', 'point_count'], ['==', '$type', 'LineString']],
 			paint: {
 				'line-color': [
@@ -57,9 +57,9 @@ export function getMapStyle() {
 			},
 		},
 		{
-			id: '__directus_points_shadow',
+			id: '__directus9_points_shadow',
 			type: 'circle',
-			source: '__directus',
+			source: '__directus9',
 			filter: ['all', ['!has', 'point_count'], ['==', '$type', 'Point']],
 			layout: {},
 			paint: {
@@ -70,9 +70,9 @@ export function getMapStyle() {
 			},
 		},
 		{
-			id: '__directus_points',
+			id: '__directus9_points',
 			type: 'circle',
-			source: '__directus',
+			source: '__directus9',
 			filter: ['all', ['!has', 'point_count'], ['==', '$type', 'Point']],
 			layout: {},
 			paint: {
@@ -90,9 +90,9 @@ export function getMapStyle() {
 			},
 		},
 		{
-			id: '__directus_clusters',
+			id: '__directus9_clusters',
 			type: 'circle',
-			source: '__directus',
+			source: '__directus9',
 			filter: ['has', 'point_count'],
 			paint: {
 				'circle-radius': ['step', ['get', 'point_count'], 20, 100, 30, 750, 40],
@@ -101,9 +101,9 @@ export function getMapStyle() {
 			},
 		},
 		{
-			id: '__directus_cluster_count',
+			id: '__directus9_cluster_count',
 			type: 'symbol',
-			source: '__directus',
+			source: '__directus9',
 			filter: ['has', 'point_count'],
 			layout: {
 				'text-field': '{point_count_abbreviated}',

@@ -1,19 +1,19 @@
 {
-	"name": "create-directus-extension",
+	"name": "create-directus9-extension",
 	"version": "9.26.0",
-	"description": "A small util that will scaffold a Directus extension",
+	"description": "A small util that will scaffold a Directus9 extension",
 	"keywords": [
-		"directus",
+		"directus9",
 		"extensions"
 	],
 	"type": "module",
-	"homepage": "https://directus.io",
+	"homepage": "https://directus9.io",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/directus/directus.git",
-		"directory": "packages/create-directus-extension"
+		"url": "https://github.com/directus9/directus9.git",
+		"directory": "packages/create-directus9-extension"
 	},
-	"funding": "https://github.com/directus/directus?sponsor=1",
+	"funding": "https://github.com/directus9/directus9?sponsor=1",
 	"license": "GPL-3.0-only",
 	"author": "Nicola Krumschmidt",
 	"contributors": [
@@ -27,14 +27,14 @@
 	"main": "lib/index.js",
 	"bin": {
 		"cde": "./lib/index.js",
-		"create-directus-extension": "./lib/index.js"
+		"create-directus9-extension": "./lib/index.js"
 	},
 	"files": [
 		"lib/index.js"
 	],
 	"dependencies": {
-		"@directus/constants": "workspace:*",
-		"@directus/extensions-sdk": "workspace:*",
+		"@directus9/constants": "workspace:*",
+		"@directus9/extensions-sdk": "workspace:*",
 		"inquirer": "9.1.5"
 	}
 }

@@ -136,7 +136,7 @@ import { router } from '@/router';
 import { useFlowsStore } from '@/stores/flows';
 import { usePermissionsStore } from '@/stores/permissions';
 import { unexpectedError } from '@/utils/unexpected-error';
-import { FlowRaw } from '@directus/types';
+import { FlowRaw } from '@directus9/types';
 import { sortBy } from 'lodash';
 import { computed, ref, Ref } from 'vue';
 import { useI18n } from 'vue-i18n';
@@ -152,7 +152,7 @@ const deletingFlow = ref(false);
 const editFlow = ref<string | undefined>();
 
 const createAllowed = computed<boolean>(() => {
-	return permissionsStore.hasPermission('directus_flows', 'create');
+	return permissionsStore.hasPermission('directus9_flows', 'create');
 });
 
 const conditionalFormatting = ref([

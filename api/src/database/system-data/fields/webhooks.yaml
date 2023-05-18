@@ -1,4 +1,4 @@
-table: directus_webhooks
+table: directus9_webhooks
 
 fields:
   - field: id
@@ -40,26 +40,26 @@ fields:
     display_options:
       showAsDot: true
       choices:
-        - text: $t:field_options.directus_webhooks.status_options_active
+        - text: $t:field_options.directus9_webhooks.status_options_active
           value: active
           foreground: 'var(--primary-10)'
           background: 'var(--primary)'
-        - text: $t:field_options.directus_webhooks.status_options_inactive
+        - text: $t:field_options.directus9_webhooks.status_options_inactive
           value: inactive
           foreground: 'var(--foreground-normal)'
           background: 'var(--background-normal-alt)'
     options:
       choices:
-        - text: $t:field_options.directus_webhooks.status_options_active
+        - text: $t:field_options.directus9_webhooks.status_options_active
           value: active
-        - text: $t:field_options.directus_webhooks.status_options_inactive
+        - text: $t:field_options.directus9_webhooks.status_options_inactive
           value: inactive
     width: half
 
   - field: data
     interface: boolean
     options:
-      label: $t:fields.directus_webhooks.data_label
+      label: $t:fields.directus9_webhooks.data_label
     special:
       - cast-boolean
     width: half
@@ -71,16 +71,16 @@ fields:
     interface: list
     options:
       template: '{{ header }}: {{ value }}'
-      addLabel: $t:field_options.directus_webhooks.headers.add
+      addLabel: $t:field_options.directus9_webhooks.headers.add
       fields:
         - field: header
-          name: $t:field_options.directus_webhooks.headers.header
+          name: $t:field_options.directus9_webhooks.headers.header
           type: string
           meta:
             interface: input
             width: half
         - field: value
-          name: $t:field_options.directus_webhooks.headers.value
+          name: $t:field_options.directus9_webhooks.headers.value
           type: string
           meta:
             interface: input
@@ -91,7 +91,7 @@ fields:
     interface: presentation-divider
     options:
       icon: api
-      title: $t:fields.directus_webhooks.triggers
+      title: $t:fields.directus9_webhooks.triggers
     special:
       - alias
       - no-data

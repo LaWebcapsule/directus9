@@ -82,7 +82,7 @@
 		<drawer-item
 			v-if="file"
 			v-model:active="editDrawerActive"
-			collection="directus_files"
+			collection="directus9_files"
 			:primary-key="file.id"
 			:edits="edits"
 			:disabled="disabled || !updateAllowed"
@@ -113,7 +113,7 @@
 
 		<drawer-collection
 			v-if="activeDialog === 'choose'"
-			collection="directus_files"
+			collection="directus9_files"
 			:active="activeDialog === 'choose'"
 			:filter="filterByFolder"
 			@update:active="activeDialog = null"
@@ -155,7 +155,7 @@ import { readableMimeType } from '@/utils/readable-mime-type';
 import { unexpectedError } from '@/utils/unexpected-error';
 import DrawerCollection from '@/views/private/components/drawer-collection.vue';
 import DrawerItem from '@/views/private/components/drawer-item.vue';
-import { Filter } from '@directus/types';
+import { Filter } from '@directus9/types';
 import { computed, ref, toRefs } from 'vue';
 import { useI18n } from 'vue-i18n';
 

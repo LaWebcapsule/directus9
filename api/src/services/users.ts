@@ -1,6 +1,6 @@
-import { FailedValidationException } from '@directus/exceptions';
-import type { Query } from '@directus/types';
-import { getSimpleHash, toArray } from '@directus/utils';
+import { FailedValidationException } from '@directus9/exceptions';
+import type { Query } from '@directus9/types';
+import { getSimpleHash, toArray } from '@directus9/utils';
 import jwt from 'jsonwebtoken';
 import { cloneDeep, isEmpty } from 'lodash-es';
 import { performance } from 'perf_hooks';
@@ -19,7 +19,7 @@ import { SettingsService } from './settings.js';
 
 export class UsersService extends ItemsService {
 	constructor(options: AbstractServiceOptions) {
-		super('directus_users', options);
+		super('directus9_users', options);
 
 		this.knex = options.knex || getDatabase();
 		this.accountability = options.accountability || null;
@@ -37,7 +37,7 @@ export class UsersService extends ItemsService {
 
 		if (duplicates.length) {
 			throw new RecordNotUniqueException('email', {
-				collection: 'directus_users',
+				collection: 'directus9_users',
 				field: 'email',
 				invalid: duplicates[0]!,
 			});
@@ -45,7 +45,7 @@ export class UsersService extends ItemsService {
 
 		const query = this.knex
 			.select('email')
-			.from('directus_users')
+			.from('directus9_users')
 			.whereRaw(`LOWER(??) IN (${emails.map(() => '?')})`, ['email', ...emails]);
 
 		if (excludeKey) {
@@ -56,7 +56,7 @@ export class UsersService extends ItemsService {
 
 		if (results.length) {
 			throw new RecordNotUniqueException('email', {
-				collection: 'directus_users',
+				collection: 'directus9_users',
 				field: 'email',
 				invalid: results[0].email,
 			});
@@ -65,7 +65,7 @@ export class UsersService extends ItemsService {
 
 	/**
 	 * Check if the provided password matches the strictness as configured in
-	 * directus_settings.auth_password_policy
+	 * directus9_settings.auth_password_policy
 	 */
 	private async checkPasswordPolicy(passwords: string[]): Promise<void> {
 		const settingsService = new SettingsService({
@@ -102,10 +102,10 @@ export class UsersService extends ItemsService {
 		// Make sure there's at least one admin user left after this deletion is done
 		const otherAdminUsers = await this.knex
 			.count('*', { as: 'count' })
-			.from('directus_users')
-			.whereNotIn('directus_users.id', excludeKeys)
-			.andWhere({ 'directus_roles.admin_access': true })
-			.leftJoin('directus_roles', 'directus_users.role', 'directus_roles.id')
+			.from('directus9_users')
+			.whereNotIn('directus9_users.id', excludeKeys)
+			.andWhere({ 'directus9_roles.admin_access': true })
+			.leftJoin('directus9_roles', 'directus9_users.role', 'directus9_roles.id')
 			.first();
 
 		const otherAdminUsersCount = +(otherAdminUsers?.count || 0);
@@ -121,11 +121,11 @@ export class UsersService extends ItemsService {
 	private async checkRemainingActiveAdmin(excludeKeys: PrimaryKey[]): Promise<void> {
 		const otherAdminUsers = await this.knex
 			.count('*', { as: 'count' })
-			.from('directus_users')
-			.whereNotIn('directus_users.id', excludeKeys)
-			.andWhere({ 'directus_roles.admin_access': true })
-			.andWhere({ 'directus_users.status': 'active' })
-			.leftJoin('directus_roles', 'directus_users.role', 'directus_roles.id')
+			.from('directus9_users')
+			.whereNotIn('directus9_users.id', excludeKeys)
+			.andWhere({ 'directus9_roles.admin_access': true })
+			.andWhere({ 'directus9_users.status': 'active' })
+			.leftJoin('directus9_roles', 'directus9_users.role', 'directus9_roles.id')
 			.first();
 
 		const otherAdminUsersCount = +(otherAdminUsers?.count || 0);
@@ -141,7 +141,7 @@ export class UsersService extends ItemsService {
 	private async getUserByEmail(email: string): Promise<{ id: string; role: string; status: string; password: string }> {
 		return await this.knex
 			.select('id', 'role', 'status', 'password')
-			.from('directus_users')
+			.from('directus9_users')
 			.whereRaw(`LOWER(??) = ?`, ['email', email.toLowerCase()])
 			.first();
 	}
@@ -152,7 +152,7 @@ export class UsersService extends ItemsService {
 	private inviteUrl(email: string, url: string | null): string {
 		const payload = { email, scope: 'invite' };
 
-		const token = jwt.sign(payload, env['SECRET'] as string, { expiresIn: '7d', issuer: 'directus' });
+		const token = jwt.sign(payload, env['SECRET'] as string, { expiresIn: '7d', issuer: 'directus9' });
 		const inviteURL = url ? new Url(url) : new Url(env['PUBLIC_URL']).addPath('admin', 'accept-invite');
 		inviteURL.setQuery('token', token);
 
@@ -237,7 +237,7 @@ export class UsersService extends ItemsService {
 				// data['role'] will be an object with id with GraphQL mutations
 				const roleId = data['role']?.id ?? data['role'];
 
-				const newRole = await this.knex.select('admin_access').from('directus_roles').where('id', roleId).first();
+				const newRole = await this.knex.select('admin_access').from('directus9_roles').where('id', roleId).first();
 
 				if (!newRole?.admin_access) {
 					await this.checkRemainingAdminExistence(keys);
@@ -251,7 +251,7 @@ export class UsersService extends ItemsService {
 			if (data['email']) {
 				if (keys.length > 1) {
 					throw new RecordNotUniqueException('email', {
-						collection: 'directus_users',
+						collection: 'directus9_users',
 						field: 'email',
 						invalid: data['email'],
 					});
@@ -308,7 +308,7 @@ export class UsersService extends ItemsService {
 			(opts || (opts = {})).preMutationException = err;
 		}
 
-		await this.knex('directus_notifications').update({ sender: null }).whereIn('sender', keys);
+		await this.knex('directus9_notifications').update({ sender: null }).whereIn('sender', keys);
 
 		await super.deleteMany(keys, opts);
 		return keys;
@@ -428,7 +428,7 @@ export class UsersService extends ItemsService {
 		});
 
 		const payload = { email, scope: 'password-reset', hash: getSimpleHash('' + user.password) };
-		const token = jwt.sign(payload, env['SECRET'] as string, { expiresIn: '1d', issuer: 'directus' });
+		const token = jwt.sign(payload, env['SECRET'] as string, { expiresIn: '1d', issuer: 'directus9' });
 
 		const acceptURL = url
 			? new Url(url).setQuery('token', token).toString()
@@ -452,7 +452,7 @@ export class UsersService extends ItemsService {
 	}
 
 	async resetPassword(token: string, password: string): Promise<void> {
-		const { email, scope, hash } = jwt.verify(token, env['SECRET'] as string, { issuer: 'directus' }) as {
+		const { email, scope, hash } = jwt.verify(token, env['SECRET'] as string, { issuer: 'directus9' }) as {
 			email: string;
 			scope: string;
 			hash: string;

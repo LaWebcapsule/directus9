@@ -1,5 +1,5 @@
-import type { Filter, LogicalFilterAND } from '@directus/types';
-import { parseJSON } from '@directus/utils';
+import type { Filter, LogicalFilterAND } from '@directus9/types';
+import { parseJSON } from '@directus9/utils';
 import type { Knex } from 'knex';
 
 type OldFilter = {
@@ -10,7 +10,7 @@ type OldFilter = {
 };
 
 export async function up(knex: Knex): Promise<void> {
-	await knex.schema.alterTable('directus_presets', (table) => {
+	await knex.schema.alterTable('directus9_presets', (table) => {
 		table.json('filter');
 	});
 
@@ -20,7 +20,7 @@ export async function up(knex: Knex): Promise<void> {
 			'filters',
 			'layout_query'
 		)
-		.from('directus_presets');
+		.from('directus9_presets');
 
 	for (const preset of presets) {
 		if (preset.filters) {
@@ -44,7 +44,7 @@ export async function up(knex: Knex): Promise<void> {
 			}
 
 			if (newFilter._and.length > 0) {
-				await knex('directus_presets')
+				await knex('directus9_presets')
 					.update({ filter: JSON.stringify(newFilter) })
 					.where('id', '=', preset.id);
 			}
@@ -62,13 +62,13 @@ export async function up(knex: Knex): Promise<void> {
 				layoutQuery[layout] = query;
 			}
 
-			await knex('directus_presets')
+			await knex('directus9_presets')
 				.update({ layout_query: JSON.stringify(layoutQuery) })
 				.where('id', '=', preset.id);
 		}
 	}
 
-	await knex.schema.alterTable('directus_presets', (table) => {
+	await knex.schema.alterTable('directus9_presets', (table) => {
 		table.dropColumn('filters');
 	});
 }
@@ -76,7 +76,7 @@ export async function up(knex: Knex): Promise<void> {
 export async function down(knex: Knex): Promise<void> {
 	const { nanoid } = await import('nanoid');
 
-	await knex.schema.alterTable('directus_presets', (table) => {
+	await knex.schema.alterTable('directus9_presets', (table) => {
 		table.json('filters');
 	});
 
@@ -86,7 +86,7 @@ export async function down(knex: Knex): Promise<void> {
 			'filter',
 			'layout_query'
 		)
-		.from('directus_presets');
+		.from('directus9_presets');
 
 	for (const preset of presets) {
 		if (preset.filter) {
@@ -113,7 +113,7 @@ export async function down(knex: Knex): Promise<void> {
 			}
 
 			if (oldFilters.length > 0) {
-				await knex('directus_presets')
+				await knex('directus9_presets')
 					.update({ filters: JSON.stringify(oldFilters) })
 					.where('id', '=', preset.id);
 			}
@@ -131,13 +131,13 @@ export async function down(knex: Knex): Promise<void> {
 				layoutQuery[layout] = query;
 			}
 
-			await knex('directus_presets')
+			await knex('directus9_presets')
 				.update({ layout_query: JSON.stringify(layoutQuery) })
 				.where('id', '=', preset.id);
 		}
 	}
 
-	await knex.schema.alterTable('directus_presets', (table) => {
+	await knex.schema.alterTable('directus9_presets', (table) => {
 		table.dropColumn('filter');
 	});
 }

@@ -1,5 +1,5 @@
 ---
-description: REST and GraphQL API documentation for filter rules in Directus.
+description: REST and GraphQL API documentation for filter rules in Directus9.
 readTime: 5 min read
 ---
 
@@ -27,7 +27,7 @@ readTime: 5 min read
 ```json
 {
 	"title": {
-		"_contains": "Directus"
+		"_contains": "Directus9"
 	}
 }
 ```
@@ -161,7 +161,7 @@ into Logical Operators. However, they cannot be sub-nested into Filter Rules.
 
 ### Some vs None in One-to-Many
 
-When applying filters to a one-to-many field, Directus will default to a "some" search, for example in:
+When applying filters to a one-to-many field, Directus9 will default to a "some" search, for example in:
 
 ```json
 {
@@ -210,7 +210,7 @@ You can also use [Function Parameters](/reference/query#functions) when building
 
 When configuring permissions, `$CURRENT_USER` and `$CURRENT_ROLE` allow you to specify any (nested) field under the
 current user/role as well as the root ID. For example: `$CURRENT_ROLE.name` or `$CURRENT_USER.avatar.filesize`. This
-includes custom fields that were added to the directus_users/directus_roles tables.
+includes custom fields that were added to the directus9_users/directus9_roles tables.
 
 Note: This feature is only available for permissions, validation, and presets. Regular filters and conditional fields
 currently only support the root ID.

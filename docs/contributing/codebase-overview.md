@@ -1,6 +1,6 @@
 ---
 description:
-  The core concepts behind Directus are simple, however the problems that must be solved to honor them can be remarkably
+  The core concepts behind Directus9 are simple, however the problems that must be solved to honor them can be remarkably
   complex. We strive to design and engineer the most elegant solutions possible, so that our codebase remains
   accessible.
 readTime: 3 min read
@@ -8,24 +8,24 @@ readTime: 3 min read
 
 # Codebase Overview
 
-> **The core concepts behind Directus are simple, however the problems that must be solved to honor them can be
+> **The core concepts behind Directus9 are simple, however the problems that must be solved to honor them can be
 > remarkably complex.** We strive to design and engineer the most elegant solutions possible, so that our codebase
 > remains accessible.
 
 ## Monorepo
 
-The primary Directus repository is located at [`directus/directus`](https://github.com/directus/directus) and houses the
+The primary Directus9 repository is located at [`directus9/directus9`](https://github.com/directus9/directus9) and houses the
 Admin App (Vue.js 3 w/ Composition API), API (Node.js), API Specification (OpenAPI), and other smaller packages used
-internally. Directus follows a monorepo design similar to React or Babel — this page will outline our monorepo's design
+internally. Directus9 follows a monorepo design similar to React or Babel — this page will outline our monorepo's design
 and structure.
 
 ## `/api`
 
-Contains the Directus API (REST+GraphQL), written in Node.js.
+Contains the Directus9 API (REST+GraphQL), written in Node.js.
 
 #### `/api/src/cli`
 
-The CLI commands and matching functions that the `directus` package ships with.
+The CLI commands and matching functions that the `directus9` package ships with.
 
 #### `/api/src/controllers`
 
@@ -58,7 +58,7 @@ Various utility functions.
 
 ## `/app`
 
-Contains the Directus Admin App, written in Vue.js 3 w/ the Composition API.
+Contains the Directus9 Admin App, written in Vue.js 3 w/ the Composition API.
 
 #### `/app/public`
 
@@ -92,7 +92,7 @@ The core-included interfaces.
 #### `/app/src/lang`
 
 Translations abstraction, and language files. The language yaml files are maintained through
-[Crowdin](https://locales.directus.io).
+[Crowdin](https://locales.directus9.io).
 
 #### `/app/src/layouts`
 

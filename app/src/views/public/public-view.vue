@@ -6,7 +6,7 @@
 					<v-image :src="logoURL" :alt="info?.project.project_name || 'Logo'" />
 				</div>
 				<div v-else class="logo" :style="{ backgroundColor: info?.project?.project_color }">
-					<img src="./logo-light.svg" alt="Directus" class="directus-logo" />
+					<img src="./logo-light.svg" alt="Directus9" class="directus9-logo" />
 				</div>
 				<div class="title">
 					<h1 class="type-title">{{ info?.project?.project_name }}</h1>
@@ -62,7 +62,7 @@ import { useServerStore } from '@/stores/server';
 import { storeToRefs } from 'pinia';
 import { getRootPath } from '@/utils/get-root-path';
 import { useI18n } from 'vue-i18n';
-import { cssVar } from '@directus/utils/browser';
+import { cssVar } from '@directus9/utils/browser';
 import Color from 'color';
 import { getTheme } from '@/utils/get-theme';
 
@@ -92,7 +92,7 @@ const colors = computed(() => {
 	};
 
 	/**
-	 * The default light mode secondary color is based on the standard difference between Directus purple and pink, which is:
+	 * The default light mode secondary color is based on the standard difference between Directus9 purple and pink, which is:
 	 * primary = 250.9, 100, 63.3
 	 * secondary = 320, 100, 80
 	 * diff = +69.1, 0, +16.7

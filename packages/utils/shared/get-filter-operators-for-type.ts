@@ -1,4 +1,4 @@
-import type { ClientFilterOperator, Type } from '@directus/types';
+import type { ClientFilterOperator, Type } from '@directus9/types';
 
 type GetFilterOperationsForTypeOptions = {
 	includeValidation?: boolean;

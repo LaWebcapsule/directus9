@@ -118,7 +118,7 @@ public_label: 공개
 public_description: 인증 없이 사용할 수 있는 API 데이터를 제어합니다.
 admin_description: 제한 없는 앱/API 액세스 권한이 있는 초기 관리자 역할입니다.
 not_allowed: 허용되지 않음
-directus_version: Directus 버전
+directus9_version: Directus9 버전
 node_version: 노드 버전
 node_uptime: 노드 가동 시간
 os_type: OS 유형
@@ -1036,30 +1036,30 @@ content: 데이터 및 컨텐츠 관리
 singleton: 싱글턴 패턴
 singleton_label: 단일 객체로 취급
 system_fields_locked: 시스템 필드가 잠겨 있어 편집할 수 없습니다.
-directus_collection:
-  directus_activity: 모든 이벤트에 대한 책임 로그
-  directus_collections: 추가 컬렉션 구성 및 메타데이터
-  directus_dashboards: Insights 모듈 내의 대시보드
-  directus_fields: 추가 필드 구성 및 메타데이터
-  directus_files: 관리되는 모든 파일 자산의 메타데이터
-  directus_flows: 자동화 플로우
-  directus_folders: 파일을 위한 가상 디렉터리 제공
-  directus_migrations: 사용 중인 데이터베이스 버전
-  directus_notifications: 사용자에게 전송된 알림
-  directus_operations: 플로우에서 실행되는 작업
-  directus_panels: Insights 대시보드 내의 개별 패널
-  directus_permissions: 역할별 접근 권한
-  directus_presets: 컬렉션 기본값 및 책갈피에 대한 사전 설정
-  directus_relations: 관계 구성 및 메타데이터
-  directus_revisions: 모든 활동에 대한 데이터 스냅샷
-  directus_roles: 시스템 사용자를 위한 권한 그룹
-  directus_sessions: 사용자 세션 정보
-  directus_settings: 프로젝트 구성 옵션
-  directus_shares: 외부 공유 항목 추적
-  directus_users: 플랫폼의 시스템 사용자
-  directus_webhooks: 이벤트 기반 HTTP 요청 구성
+directus9_collection:
+  directus9_activity: 모든 이벤트에 대한 책임 로그
+  directus9_collections: 추가 컬렉션 구성 및 메타데이터
+  directus9_dashboards: Insights 모듈 내의 대시보드
+  directus9_fields: 추가 필드 구성 및 메타데이터
+  directus9_files: 관리되는 모든 파일 자산의 메타데이터
+  directus9_flows: 자동화 플로우
+  directus9_folders: 파일을 위한 가상 디렉터리 제공
+  directus9_migrations: 사용 중인 데이터베이스 버전
+  directus9_notifications: 사용자에게 전송된 알림
+  directus9_operations: 플로우에서 실행되는 작업
+  directus9_panels: Insights 대시보드 내의 개별 패널
+  directus9_permissions: 역할별 접근 권한
+  directus9_presets: 컬렉션 기본값 및 책갈피에 대한 사전 설정
+  directus9_relations: 관계 구성 및 메타데이터
+  directus9_revisions: 모든 활동에 대한 데이터 스냅샷
+  directus9_roles: 시스템 사용자를 위한 권한 그룹
+  directus9_sessions: 사용자 세션 정보
+  directus9_settings: 프로젝트 구성 옵션
+  directus9_shares: 외부 공유 항목 추적
+  directus9_users: 플랫폼의 시스템 사용자
+  directus9_webhooks: 이벤트 기반 HTTP 요청 구성
 fields:
-  directus_activity:
+  directus9_activity:
     item: 기본키
     action: 활동
     collection: 목록
@@ -1070,7 +1070,7 @@ fields:
     origin: 출처
     ip: IP 주소
     revisions: 수정내역
-  directus_collections:
+  directus9_collections:
     collection: 컬렉션
     icon: 아이콘
     note: 메모
@@ -1086,7 +1086,7 @@ fields:
     accountability: 활동 및 개정 추적
     archive_field: 아카이브 필드
     item_duplication_fields: 항목 중복 필드
-  directus_files:
+  directus9_files:
     $thumbnail: 미리보기
     title: 제목
     description: 설명
@@ -1110,7 +1110,7 @@ fields:
     height: 세로(높이)
     charset: 문자셋
     duration: 기간
-  directus_users:
+  directus9_users:
     first_name: 이름/별명
     last_name: 성
     email: 이메일
@@ -1141,7 +1141,7 @@ fields:
     last_page: 마지막 페이지
     last_access: 최근 접속
     email_notifications: 이메일 알림
-  directus_settings:
+  directus9_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
@@ -1182,7 +1182,7 @@ fields:
     transformations_presets: 아래 사전 설정으로 변환 제한
     image_editor: 이미지 에디터
     custom_aspect_ratios: 가로세로 비율 조정
-  directus_shares:
+  directus9_shares:
     name: 이름
     role: 역할
     password: 비밀번호
@@ -1190,7 +1190,7 @@ fields:
     date_end: 종료 날짜
     max_uses: 최대 사용
     times_used: 사용 시간
-  directus_fields:
+  directus9_fields:
     collection: 컬렉션 이름
     icon: 컬렉션 아이콘
     note: 메모
@@ -1198,7 +1198,7 @@ fields:
     singleton: 싱글턴 패턴
     translation: 항목 명 번역
     display_template: 템플릿
-  directus_roles:
+  directus9_roles:
     name: 역할명
     icon: 역할 아이콘
     description: 설명
@@ -1208,7 +1208,7 @@ fields:
     enforce_tfa: 2FA 필요
     users: 이 역할의 사용자 목록
     module_list: '모듈 탐색:'
-  directus_webhooks:
+  directus9_webhooks:
     name: 이름
     method: 방법
     status: 상태
@@ -1221,7 +1221,7 @@ fields:
     actions: 액션
     collections: 컬렉션
 field_options:
-  directus_settings:
+  directus9_settings:
     project_name_placeholder: 내 프로젝트...
     project_color_note: 로그인/로고 화면 배경
     project_logo_note: 흰색 40x40 SVG/PNG
@@ -1250,12 +1250,12 @@ field_options:
     basemaps_style: 맵박스 스타일
     files_divider_title: 파일 및 썸네일
     overrides_divider_title: App 오버라이드
-  directus_activity:
+  directus9_activity:
     login: 로그인
     create: 작성
     update: 업데이트
     delete: 삭제
-  directus_collections:
+  directus9_collections:
     track_activity_revisions: 활동 및 개정 추적
     only_track_activity: 활동만 추적
     do_not_track_anything: 아무것도 추적하지 마십시오
@@ -1278,14 +1278,14 @@ field_options:
     sort_field: 필드 선택...
     accountability_divider: 책임
     duplication_divider: 복사
-  directus_files:
+  directus9_files:
     title: 고유한 제목...
     description: 선택적 설명...
     location: 선택적 위치...
     storage_divider: 파일 이름 지정
     filename_disk: 디스크 저장소의 이름...
     filename_download: 다운로드 시 이름...
-  directus_roles:
+  directus9_roles:
     name: 이 역할의 고유한 이름...
     description: 이 역할에 대한 설명...
     ip_access: 허용된 IP 주소를 추가하고 모두 허용하려면 비워 두세요...
@@ -1297,7 +1297,7 @@ field_options:
       link_placeholder: 상대 또는 절대 URL...
     collections_name: 컬렉션
     collections_addLabel: 컬렉션 추가...
-  directus_users:
+  directus9_users:
     preferences_divider: 사용자 개인 설정
     dropdown_auto: 자동(시스템 설정)
     dropdown_light: 밝은 배경 테마
@@ -1309,7 +1309,7 @@ field_options:
     status_dropdown_suspended: 정지된
     status_dropdown_archived: 보관됨
     token: 보안 액세스 토큰을 입력하세요...
-  directus_webhooks:
+  directus9_webhooks:
     status_options_active: 활성화
     status_options_inactive: 비활성화
     data_label: 이벤트 데이터 보내기

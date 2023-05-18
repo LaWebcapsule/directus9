@@ -151,7 +151,7 @@ import { defineComponent, computed, ref } from 'vue';
 import SettingsNavigation from '../../../components/navigation.vue';
 import PresetsInfoSidebarDetail from './components/presets-info-sidebar-detail.vue';
 
-import { useCollection, useLayout } from '@directus/composables';
+import { useCollection, useLayout } from '@directus9/composables';
 import LayoutSidebarDetail from '@/views/private/components/layout-sidebar-detail.vue';
 import RefreshSidebarDetail from '@/views/private/components/refresh-sidebar-detail.vue';
 import SearchInput from '@/views/private/components/search-input.vue';
@@ -174,7 +174,7 @@ export default defineComponent({
 	},
 	setup() {
 		const layout = ref('tabular');
-		const collection = ref('directus_presets');
+		const collection = ref('directus9_presets');
 		const { layoutOptions, layoutQuery, filter, search, refreshInterval } = usePreset(collection);
 
 		const { t } = useI18n();

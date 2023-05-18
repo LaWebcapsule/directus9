@@ -85,12 +85,12 @@
 <script lang="ts">
 import { useI18n } from 'vue-i18n';
 import { defineComponent, PropType, computed, ref, toRefs } from 'vue';
-import { Field } from '@directus/types';
+import { Field } from '@directus9/types';
 import Draggable from 'vuedraggable';
 import { i18n } from '@/lang';
 import { renderStringTemplate } from '@/utils/render-string-template';
 import { hideDragImage } from '@/utils/hide-drag-image';
-import formatTitle from '@directus/format-title';
+import formatTitle from '@directus9/format-title';
 import { isEqual, sortBy } from 'lodash';
 
 export default defineComponent({

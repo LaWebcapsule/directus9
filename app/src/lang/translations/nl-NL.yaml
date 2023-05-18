@@ -118,7 +118,7 @@ public_label: Openbaar
 public_description: Bepaalt welke data beschikbaar is in de API zonder in te loggen.
 admin_description: Initiële administratieve rol met onbeperkte App/API toegang.
 not_allowed: Niet toegestaan
-directus_version: Directus Versie
+directus9_version: Directus9 Versie
 node_version: Node Versie
 node_uptime: Node Uptime
 os_type: OS Type
@@ -1026,25 +1026,25 @@ content: Inhoud
 singleton: Singleton
 singleton_label: Behandel als één object
 system_fields_locked: Systeem velden zijn vergrendeld en kunnen niet worden bewerkt
-directus_collection:
-  directus_activity: Verantwoordings-logboeken voor alle gebeurtenissen
-  directus_collections: Aanvullende collectie configuratie en metadata
-  directus_dashboards: Dashboards binnen de Inzichten module
-  directus_fields: Aanvullende collectie configuratie en metadata
-  directus_files: Metadata voor alle beheerde bestanden
-  directus_flows: Automatisering Flows
-  directus_folders: Geeft virtuele map voor bestanden
-  directus_migrations: Welke versie van de database je gebruikt
-  directus_notifications: Notificaties verzonden naar gebruikers
-  directus_operations: Operaties die worden uitgevoerd in Flows
-  directus_panels: Individuele panelen binnen de Inzichten dashboards
-  directus_presets: Standaardinstellingen voor collecties en bladwijzers
-  directus_roles: Machtigingsgroepen voor systeemgebruikers
-  directus_sessions: Gebruikerssessie-informatie
-  directus_settings: Project configuratie opties
-  directus_users: Systeemgebruikers voor het platform
+directus9_collection:
+  directus9_activity: Verantwoordings-logboeken voor alle gebeurtenissen
+  directus9_collections: Aanvullende collectie configuratie en metadata
+  directus9_dashboards: Dashboards binnen de Inzichten module
+  directus9_fields: Aanvullende collectie configuratie en metadata
+  directus9_files: Metadata voor alle beheerde bestanden
+  directus9_flows: Automatisering Flows
+  directus9_folders: Geeft virtuele map voor bestanden
+  directus9_migrations: Welke versie van de database je gebruikt
+  directus9_notifications: Notificaties verzonden naar gebruikers
+  directus9_operations: Operaties die worden uitgevoerd in Flows
+  directus9_panels: Individuele panelen binnen de Inzichten dashboards
+  directus9_presets: Standaardinstellingen voor collecties en bladwijzers
+  directus9_roles: Machtigingsgroepen voor systeemgebruikers
+  directus9_sessions: Gebruikerssessie-informatie
+  directus9_settings: Project configuratie opties
+  directus9_users: Systeemgebruikers voor het platform
 fields:
-  directus_activity:
+  directus9_activity:
     item: Item Primary Key
     action: Actie
     collection: Collectie
@@ -1055,7 +1055,7 @@ fields:
     origin: Herkomst
     ip: IP Adres
     revisions: Revisies
-  directus_collections:
+  directus9_collections:
     collection: Collectie
     icon: Icoon
     note: Notitie
@@ -1070,7 +1070,7 @@ fields:
     sort_field: Sorteerveld
     accountability: Activiteit & Revisie Tracking
     archive_field: Veld archiveren
-  directus_files:
+  directus9_files:
     $thumbnail: Thumbnail
     title: Titel
     description: Beschrijving
@@ -1094,7 +1094,7 @@ fields:
     height: Hoogte
     charset: Karakterset
     duration: Duur
-  directus_users:
+  directus9_users:
     first_name: Voornaam
     last_name: Achternaam
     email: Email
@@ -1124,7 +1124,7 @@ fields:
     last_page: Laatste pagina
     last_access: Laatste toegang
     email_notifications: Email Notificaties
-  directus_settings:
+  directus9_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
@@ -1148,11 +1148,11 @@ fields:
     storage_default_folder: Standaard map
     custom_css: Aangepaste CSS
     module_bar: Modulebalk
-  directus_shares:
+  directus9_shares:
     name: Naam
     role: Rol
     password: Wachtwoord
-  directus_fields:
+  directus9_fields:
     collection: Collectie naam
     icon: Collectie Icoon
     note: Notitie
@@ -1160,7 +1160,7 @@ fields:
     singleton: Singleton
     translation: Veld-naam Vertalingen
     display_template: Sjabloon
-  directus_roles:
+  directus9_roles:
     name: Rol Naam
     icon: Rol Icoon
     description: Beschrijving
@@ -1170,7 +1170,7 @@ fields:
     enforce_tfa: 2FA vereist
     users: Gebruikers in rol
     module_list: Module Navigatie
-  directus_webhooks:
+  directus9_webhooks:
     name: Naam
     method: Methode
     status: Status
@@ -1182,7 +1182,7 @@ fields:
     actions: Acties
     collections: Collecties
 field_options:
-  directus_settings:
+  directus9_settings:
     project_name_placeholder: Mijn project...
     project_color_note: Inlog- en logoachtergrond
     project_logo_note: Wit 40x40 SVG/PNG
@@ -1202,12 +1202,12 @@ field_options:
     basemaps_tile: Raster TileJSON
     basemaps_style: Mapbox stijl
     files_divider_title: Bestanden en miniaturen
-  directus_activity:
+  directus9_activity:
     login: Inloggen
     create: Maak
     update: Updaten
     delete: Verwijderen
-  directus_collections:
+  directus9_collections:
     track_activity_revisions: Track Activiteiten & Revisies
     only_track_activity: Track alleen activiteiten
     do_not_track_anything: Niets tracken
@@ -1226,9 +1226,9 @@ field_options:
     sort_divider: Sorteren
     sort_field: Kies een veld...
     accountability_divider: Verantwoording
-  directus_files:
+  directus9_files:
     title: Een unieke titel...
-  directus_roles:
+  directus9_roles:
     ip_access: Toegestane IP-adressen toevoegen, leeg laten om alles toe te staan...
     fields:
       icon_name: Icoon
@@ -1237,7 +1237,7 @@ field_options:
       link_placeholder: Relatieve of absolute URL...
     collections_name: Collecties
     collections_addLabel: Collectie toevoegen...
-  directus_users:
+  directus9_users:
     preferences_divider: Gebruikersvoorkeuren
     dropdown_auto: Automatisch (Gebaseerd op systeem)
     dropdown_light: Lichte modus
@@ -1248,7 +1248,7 @@ field_options:
     status_dropdown_active: Actief
     status_dropdown_suspended: Geschorst
     status_dropdown_archived: Gearchiveerd
-  directus_webhooks:
+  directus9_webhooks:
     status_options_active: Actief
     status_options_inactive: Inactief
     triggers_divider: Triggers
@@ -1529,7 +1529,7 @@ interfaces:
     default_language: Standaardtaal
   user:
     user: Gebruiker
-    description: Selecteer een bestaande Directus gebruiker
+    description: Selecteer een bestaande Directus9 gebruiker
     select_mode: Selecteer modus
     modes:
       auto: Automatisch
@@ -1641,7 +1641,7 @@ displays:
     description: Relatieve waarden weergeven
   user:
     user: Gebruiker
-    description: Toon een directus gebruiker
+    description: Toon een directus9 gebruiker
     avatar: Profielafbeelding
     name: Naam
     both: Beiden

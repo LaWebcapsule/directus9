@@ -116,7 +116,7 @@ public_label: সার্বজনীন
 public_description: এটা নিয়ন্ত্রণ করে প্রমাণীকরণ ছাড়া কোন কোন API ডেটা উপলব্ধ।
 admin_description: অনিয়ন্ত্রিত অ্যাপ/এপিআই অ্যাক্সেস সহ প্রাথমিক প্রশাসনিক ভূমিকা।
 not_allowed: অনুমতি নেই
-directus_version: ডাইরেক্টাস সংস্করণ
+directus9_version: ডাইরেক্টাস সংস্করণ
 node_version: নোড সংস্করণ
 node_uptime: নোড আপটাইম
 os_type: কোন OS
@@ -143,14 +143,14 @@ uuid: ইউইউআইডি
 hash: হ্যাশ
 geometry: জ্যামিতি (সমস্ত)
 fields:
-  directus_settings:
+  directus9_settings:
     module_bar: মডিউল বার
-  directus_fields:
+  directus9_fields:
     translation: ক্ষেত্রের নাম অনুবাদ
-  directus_roles:
+  directus9_roles:
     name: নামভূমিকা
 field_options:
-  directus_collections:
+  directus9_collections:
     archive_divider: সংরক্ষণাগার
 interfaces:
   presentation-links:

@@ -1,4 +1,4 @@
-table: directus_sessions
+table: directus9_sessions
 
 columns:
   token:
@@ -10,7 +10,7 @@ columns:
     type: uuid
     nullable: false
     references:
-      table: directus_users
+      table: directus9_users
       column: id
   expires:
     type: timestamp

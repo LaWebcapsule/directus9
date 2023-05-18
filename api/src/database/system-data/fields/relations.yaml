@@ -1,4 +1,4 @@
-table: directus_relations
+table: directus9_relations
 
 fields:
   - field: id

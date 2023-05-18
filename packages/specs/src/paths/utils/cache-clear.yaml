@@ -1,6 +1,6 @@
 post:
   summary: Clear Cache
-  description: Resets both the data and schema cache of Directus.
+  description: Resets both the data and schema cache of Directus9.
   operationId: clear-cache
   responses:
     '200':

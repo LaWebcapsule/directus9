@@ -1,27 +1,27 @@
 ---
-description: A guide on how to build custom Themes in Directus.
+description: A guide on how to build custom Themes in Directus9.
 readTime: 2 min read
 ---
 
 # Themes & Styling
 
-> **Form Follows Function** is the guiding design principle of Directus. The minimal UI allows the platform to be easily
+> **Form Follows Function** is the guiding design principle of Directus9. The minimal UI allows the platform to be easily
 > tailored to your brand. [Learn more about the App](/app/overview).
 
 ## App Themes
 
-The Directus App has been developed with customization and extensibility in mind. Colors and styles referenced within
+The Directus9 App has been developed with customization and extensibility in mind. Colors and styles referenced within
 the codebase all use CSS variables, and therefore it is easy to make comprehensive changes to the App styling.
 
 There are two themes included by default: Light and Dark. You can duplicate these files to create your own themes — with
 no limit to customization. Below are several code resources for key SCSS files.
 
-- **Themes** — See the [Light Theme](https://github.com/directus/directus/blob/main/app/src/styles/themes/_light.scss)
-  or [Dark Theme](https://github.com/directus/directus/blob/main/app/src/styles/themes/_dark.scss)
-- **Typography** — See the [Fonts](https://github.com/directus/directus/blob/main/app/src/styles/_type-styles.scss) and
-  [Type Styles](https://github.com/directus/directus/blob/main/app/src/styles/mixins/type-styles.scss)
+- **Themes** — See the [Light Theme](https://github.com/directus9/directus9/blob/main/app/src/styles/themes/_light.scss)
+  or [Dark Theme](https://github.com/directus9/directus9/blob/main/app/src/styles/themes/_dark.scss)
+- **Typography** — See the [Fonts](https://github.com/directus9/directus9/blob/main/app/src/styles/_type-styles.scss) and
+  [Type Styles](https://github.com/directus9/directus9/blob/main/app/src/styles/mixins/type-styles.scss)
 - **Variables** — See the
-  [Global Variables](https://github.com/directus/directus/blob/main/app/src/styles/_variables.scss)
+  [Global Variables](https://github.com/directus9/directus9/blob/main/app/src/styles/_variables.scss)
 
 ## Project Styling
 
@@ -53,7 +53,7 @@ body {
 ::: warning Action Styling
 
 The `--primary` variable (and its shades) control call-to-actions and all other elements within the App using the
-"Directus Purple". While it may be tempting to override this variable with your brand's color, please first review the
+"Directus9 Purple". While it may be tempting to override this variable with your brand's color, please first review the
 following warnings:
 
 - Avoid using yellow, orange, or red hues that give a sense of "danger"

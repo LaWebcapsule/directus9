@@ -4,7 +4,7 @@ import request from 'supertest';
 import vendors from '@common/get-dbs-to-test';
 import knex from 'knex';
 import type { Knex } from 'knex';
-import type { FieldRaw } from '@directus/types';
+import type { FieldRaw } from '@directus9/types';
 import { sortedUniq } from 'lodash';
 import { collection } from './crud.seed';
 import { requestGraphQL } from '@common/index';
@@ -85,17 +85,17 @@ describe.each(common.PRIMARY_KEY_TYPES)('/fields', (pkType) => {
 								);
 
 								const appAccessPermissions = [
-									'directus_activity',
-									'directus_collections',
-									'directus_fields',
-									'directus_notifications',
-									'directus_permissions',
-									'directus_presets',
-									'directus_relations',
-									'directus_roles',
-									'directus_settings',
-									'directus_shares',
-									'directus_users',
+									'directus9_activity',
+									'directus9_collections',
+									'directus9_fields',
+									'directus9_notifications',
+									'directus9_permissions',
+									'directus9_presets',
+									'directus9_relations',
+									'directus9_roles',
+									'directus9_settings',
+									'directus9_shares',
+									'directus9_users',
 								];
 
 								expect(response.statusCode).toBe(200);
@@ -246,11 +246,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/fields', (pkType) => {
 			afterEach(async () => {
 				const db = databases.get(currentVendor)!;
 
-				await db('directus_fields')
+				await db('directus9_fields')
 					.update({ note: null })
 					.where({ collection: TEST_COLLECTION_NAME, field: TEST_FIELD_NAME });
 
-				await db('directus_fields')
+				await db('directus9_fields')
 					.update({ note: null })
 					.where({ collection: TEST_COLLECTION_NAME, field: TEST_ALIAS_FIELD_NAME });
 			});
@@ -341,11 +341,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/fields', (pkType) => {
 			afterEach(async () => {
 				const db = databases.get(currentVendor)!;
 
-				await db('directus_fields')
+				await db('directus9_fields')
 					.update({ note: null })
 					.where({ collection: TEST_COLLECTION_NAME, field: TEST_FIELD_NAME });
 
-				await db('directus_fields')
+				await db('directus9_fields')
 					.update({ note: null })
 					.where({ collection: TEST_COLLECTION_NAME, field: TEST_ALIAS_FIELD_NAME });
 			});

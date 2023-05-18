@@ -1,5 +1,5 @@
 ---
-description: A guide on how to build custom Interfaces in Directus.
+description: A guide on how to build custom Interfaces in Directus9.
 readTime: 4 min read
 ---
 
@@ -12,7 +12,7 @@ readTime: 4 min read
 
 The entrypoint of your interface is the `index` file inside the `src/` folder of your extension package. It exports a
 configuration object with options to configure the behavior of your interface. When loading your interface, this object
-is imported by the Directus host.
+is imported by the Directus9 host.
 
 Example of an entrypoint:
 
@@ -35,7 +35,7 @@ export default {
 - `id` — The unique key for this interface. It is good practice to scope proprietary interfaces with an author prefix.
 - `name` — The human-readable name for this interface.
 - `icon` — An icon name from the [material icon set](/getting-started/glossary#material-icons), or the extended list of
-  Directus custom icons.
+  Directus9 custom icons.
 - `description` — A short description (<80 characters) of this interface shown in the App.
 - `component` — A reference to your interface component.
 - `options` — The options of your interface. Can be either an options object or a dedicated Vue component.
@@ -49,7 +49,7 @@ export default {
 
 ## Interface Component
 
-The interface component is the part of your extension that will be rendered by the Directus App whenever your interface
+The interface component is the part of your extension that will be rendered by the Directus9 App whenever your interface
 should be used to input some value into a field. This interface component has to be Vue component. The most
 straightforward way to write a Vue component is to use the Vue Single File Component syntax.
 
@@ -81,7 +81,7 @@ export default {
 ```
 
 The current value of the field is provided to the component via the `value` prop. If the value was changed inside your
-component, it should be emitted to the Directus App by using the `input` emit.
+component, it should be emitted to the Directus9 App by using the `input` emit.
 
 #### Available Props
 
@@ -97,22 +97,22 @@ component, it should be emitted to the Directus App by using the `input` emit.
 - `input` — Update the value of the field.
 - `setFieldValue` - Used to set the value of other fields.
 
-Other than this simple API to communicate with the Directus App, the interface component is a blank canvas, allowing you
+Other than this simple API to communicate with the Directus9 App, the interface component is a blank canvas, allowing you
 to create anything you need.
 
 ::: warning Vue Version
 
-The Directus App uses Vue 3. There might be 3rd party libraries that aren't yet compatible with Vue 3.
+The Directus9 App uses Vue 3. There might be 3rd party libraries that aren't yet compatible with Vue 3.
 
 :::
 
 ## Accessing Internal Systems
 
 To access internal systems like the API or the stores, you can use the `useApi()` and `useStores()` composables exported
-by the `@directus/extensions-sdk` package. They can be used inside a `setup()` function like this:
+by the `@directus9/extensions-sdk` package. They can be used inside a `setup()` function like this:
 
 ```js
-import { useApi, useStores } from '@directus/extensions-sdk';
+import { useApi, useStores } from '@directus9/extensions-sdk';
 
 export default {
 	setup() {

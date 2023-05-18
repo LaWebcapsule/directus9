@@ -1,7 +1,7 @@
-import type { SchemaInspector } from '@directus/schema';
-import { createInspector } from '@directus/schema';
-import type { Filter, SchemaOverview } from '@directus/types';
-import { parseJSON, toArray } from '@directus/utils';
+import type { SchemaInspector } from '@directus9/schema';
+import { createInspector } from '@directus9/schema';
+import type { Filter, SchemaOverview } from '@directus9/types';
+import { parseJSON, toArray } from '@directus9/utils';
 import type { Knex } from 'knex';
 import { mapValues } from 'lodash-es';
 import { getSchemaCache, setSchemaCache } from '../cache.js';
@@ -67,7 +67,7 @@ async function getDatabaseSchema(database: Knex, schemaInspector: SchemaInspecto
 	const collections = [
 		...(await database
 			.select('collection', 'singleton', 'note', 'sort_field', 'accountability')
-			.from('directus_collections')),
+			.from('directus9_collections')),
 		...systemCollectionRows,
 	];
 
@@ -128,7 +128,7 @@ async function getDatabaseSchema(database: Knex, schemaInspector: SchemaInspecto
 					validation: string | Record<string, any> | null;
 				}[]
 			>('id', 'collection', 'field', 'special', 'note', 'validation')
-			.from('directus_fields')),
+			.from('directus9_fields')),
 		...systemFieldRows,
 	].filter((field) => (field.special ? toArray(field.special) : []).includes('no-data') === false);
 

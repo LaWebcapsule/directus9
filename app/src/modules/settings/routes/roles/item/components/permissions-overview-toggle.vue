@@ -66,7 +66,7 @@
 <script lang="ts">
 import { useI18n } from 'vue-i18n';
 import { defineComponent, PropType, computed, inject, ref, toRefs } from 'vue';
-import { Permission, Collection } from '@directus/types';
+import { Permission, Collection } from '@directus9/types';
 import api from '@/api';
 import { useRouter } from 'vue-router';
 import useUpdatePermissions from '../composables/use-update-permissions';
@@ -133,7 +133,7 @@ export default defineComponent({
 		return { t, permissionLevel, saving, setFullAccess, setNoAccess, openPermissions, appMinimalLevel };
 
 		async function openPermissions() {
-			// If this collection isn't "managed" yet, make sure to add it to directus_collections first
+			// If this collection isn't "managed" yet, make sure to add it to directus9_collections first
 			// before trying to associate any permissions with it
 			if (props.collection.meta === null) {
 				await api.patch(`/collections/${props.collection.collection}`, {

@@ -1,4 +1,4 @@
-import type { PermissionsAction, Query } from '@directus/types';
+import type { PermissionsAction, Query } from '@directus9/types';
 import type Keyv from 'keyv';
 import { clearSystemCache, getCache } from '../cache.js';
 import { appAccessMinimalPermissions } from '../database/system-data/app-access-permissions/index.js';
@@ -11,7 +11,7 @@ export class PermissionsService extends ItemsService {
 	systemCache: Keyv<any>;
 
 	constructor(options: AbstractServiceOptions) {
-		super('directus_permissions', options);
+		super('directus9_permissions', options);
 
 		const { systemCache } = getCache();
 

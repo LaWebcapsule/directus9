@@ -21,7 +21,7 @@ const defaults = {
 
 const systemFields = [
 	{
-		collection: 'directus_collections',
+		collection: 'directus9_collections',
 		field: 'collection_divider',
 		special: 'alias',
 		interface: 'divider',
@@ -35,7 +35,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_collections',
+		collection: 'directus9_collections',
 		field: 'collection',
 		interface: 'text-input',
 		options: {
@@ -47,7 +47,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_collections',
+		collection: 'directus9_collections',
 		field: 'icon',
 		interface: 'icon',
 		options: null,
@@ -56,7 +56,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_collections',
+		collection: 'directus9_collections',
 		field: 'note',
 		interface: 'text-input',
 		options: {
@@ -67,7 +67,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_collections',
+		collection: 'directus9_collections',
 		field: 'display_template',
 		interface: 'display-template',
 		options: {
@@ -78,7 +78,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_collections',
+		collection: 'directus9_collections',
 		field: 'hidden',
 		special: 'boolean',
 		interface: 'toggle',
@@ -90,7 +90,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_collections',
+		collection: 'directus9_collections',
 		field: 'singleton',
 		special: 'boolean',
 		interface: 'toggle',
@@ -102,7 +102,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_collections',
+		collection: 'directus9_collections',
 		field: 'translations',
 		special: 'json',
 		interface: 'repeater',
@@ -140,7 +140,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_collections',
+		collection: 'directus9_collections',
 		field: 'archive_divider',
 		special: 'alias',
 		interface: 'divider',
@@ -154,7 +154,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_collections',
+		collection: 'directus9_collections',
 		field: 'archive_field',
 		interface: 'field',
 		options: {
@@ -167,7 +167,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_collections',
+		collection: 'directus9_collections',
 		field: 'archive_app_filter',
 		interface: 'toggle',
 		special: 'boolean',
@@ -179,7 +179,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_collections',
+		collection: 'directus9_collections',
 		field: 'archive_value',
 		interface: 'text-input',
 		options: {
@@ -192,7 +192,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_collections',
+		collection: 'directus9_collections',
 		field: 'unarchive_value',
 		interface: 'text-input',
 		options: {
@@ -205,7 +205,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_collections',
+		collection: 'directus9_collections',
 		field: 'sort_divider',
 		special: 'alias',
 		interface: 'divider',
@@ -219,7 +219,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_collections',
+		collection: 'directus9_collections',
 		field: 'sort_field',
 		interface: 'field',
 		options: {
@@ -233,7 +233,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_roles',
+		collection: 'directus9_roles',
 		field: 'id',
 		hidden: true,
 		interface: 'text-input',
@@ -241,7 +241,7 @@ const systemFields = [
 		special: 'uuid',
 	},
 	{
-		collection: 'directus_roles',
+		collection: 'directus9_roles',
 		field: 'name',
 		interface: 'text-input',
 		options: {
@@ -252,7 +252,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_roles',
+		collection: 'directus9_roles',
 		field: 'icon',
 		interface: 'icon',
 		display: 'icon',
@@ -261,7 +261,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_roles',
+		collection: 'directus9_roles',
 		field: 'description',
 		interface: 'text-input',
 		options: {
@@ -272,7 +272,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_roles',
+		collection: 'directus9_roles',
 		field: 'app_access',
 		interface: 'toggle',
 		locked: true,
@@ -281,7 +281,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_roles',
+		collection: 'directus9_roles',
 		field: 'admin_access',
 		interface: 'toggle',
 		locked: true,
@@ -290,7 +290,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_roles',
+		collection: 'directus9_roles',
 		field: 'ip_access',
 		interface: 'tags',
 		options: {
@@ -302,7 +302,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_roles',
+		collection: 'directus9_roles',
 		field: 'enforce_tfa',
 		interface: 'toggle',
 		locked: true,
@@ -311,7 +311,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_roles',
+		collection: 'directus9_roles',
 		field: 'users',
 		interface: 'one-to-many',
 		locked: true,
@@ -323,7 +323,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_roles',
+		collection: 'directus9_roles',
 		field: 'module_list',
 		interface: 'repeater',
 		locked: true,
@@ -373,7 +373,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_roles',
+		collection: 'directus9_roles',
 		field: 'collection_list',
 		interface: 'repeater',
 		locked: true,
@@ -458,56 +458,56 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_fields',
+		collection: 'directus9_fields',
 		field: 'options',
 		hidden: true,
 		locked: true,
 		special: 'json',
 	},
 	{
-		collection: 'directus_fields',
+		collection: 'directus9_fields',
 		field: 'display_options',
 		hidden: true,
 		locked: true,
 		special: 'json',
 	},
 	{
-		collection: 'directus_fields',
+		collection: 'directus9_fields',
 		field: 'locked',
 		hidden: true,
 		locked: true,
 		special: 'boolean',
 	},
 	{
-		collection: 'directus_fields',
+		collection: 'directus9_fields',
 		field: 'readonly',
 		hidden: true,
 		locked: true,
 		special: 'boolean',
 	},
 	{
-		collection: 'directus_fields',
+		collection: 'directus9_fields',
 		field: 'hidden',
 		hidden: true,
 		locked: true,
 		special: 'boolean',
 	},
 	{
-		collection: 'directus_fields',
+		collection: 'directus9_fields',
 		field: 'special',
 		hidden: true,
 		locked: true,
 		special: 'csv',
 	},
 	{
-		collection: 'directus_fields',
+		collection: 'directus9_fields',
 		field: 'translations',
 		hidden: true,
 		locked: true,
 		special: 'json',
 	},
 	{
-		collection: 'directus_users',
+		collection: 'directus9_users',
 		field: 'first_name',
 		interface: 'text-input',
 		locked: true,
@@ -518,7 +518,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_users',
+		collection: 'directus9_users',
 		field: 'last_name',
 		interface: 'text-input',
 		locked: true,
@@ -529,7 +529,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_users',
+		collection: 'directus9_users',
 		field: 'email',
 		interface: 'text-input',
 		locked: true,
@@ -540,7 +540,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_users',
+		collection: 'directus9_users',
 		field: 'password',
 		special: 'hash, conceal',
 		interface: 'hash',
@@ -553,7 +553,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_users',
+		collection: 'directus9_users',
 		field: 'avatar',
 		interface: 'file',
 		locked: true,
@@ -561,7 +561,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_users',
+		collection: 'directus9_users',
 		field: 'location',
 		interface: 'text-input',
 		options: {
@@ -571,7 +571,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_users',
+		collection: 'directus9_users',
 		field: 'title',
 		interface: 'text-input',
 		options: {
@@ -581,14 +581,14 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_users',
+		collection: 'directus9_users',
 		field: 'description',
 		interface: 'textarea',
 		sort: 8,
 		width: 'full',
 	},
 	{
-		collection: 'directus_users',
+		collection: 'directus9_users',
 		field: 'tags',
 		interface: 'tags',
 		special: 'json',
@@ -599,7 +599,7 @@ const systemFields = [
 		},
 	},
 	{
-		collection: 'directus_users',
+		collection: 'directus9_users',
 		field: 'preferences_divider',
 		interface: 'divider',
 		options: {
@@ -612,7 +612,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_users',
+		collection: 'directus9_users',
 		field: 'language',
 		interface: 'dropdown',
 		locked: true,
@@ -748,7 +748,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_users',
+		collection: 'directus9_users',
 		field: 'theme',
 		interface: 'dropdown',
 		locked: true,
@@ -772,7 +772,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_users',
+		collection: 'directus9_users',
 		field: 'tfa_secret',
 		interface: 'tfa-setup',
 		locked: true,
@@ -781,7 +781,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_users',
+		collection: 'directus9_users',
 		field: 'admin_divider',
 		interface: 'divider',
 		locked: true,
@@ -795,7 +795,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_users',
+		collection: 'directus9_users',
 		field: 'status',
 		interface: 'dropdown',
 		locked: true,
@@ -827,7 +827,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_users',
+		collection: 'directus9_users',
 		field: 'role',
 		interface: 'many-to-one',
 		locked: true,
@@ -839,7 +839,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_users',
+		collection: 'directus9_users',
 		field: 'token',
 		interface: 'token',
 		locked: true,
@@ -851,7 +851,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_users',
+		collection: 'directus9_users',
 		field: 'id',
 		special: 'uuid',
 		interface: 'text-input',
@@ -863,14 +863,14 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_folders',
+		collection: 'directus9_folders',
 		field: 'id',
 		interface: 'text-input',
 		locked: true,
 		special: 'uuid',
 	},
 	{
-		collection: 'directus_files',
+		collection: 'directus9_files',
 		field: 'id',
 		hidden: true,
 		interface: 'text-input',
@@ -878,7 +878,7 @@ const systemFields = [
 		special: 'uuid',
 	},
 	{
-		collection: 'directus_files',
+		collection: 'directus9_files',
 		field: 'title',
 		interface: 'text-input',
 		locked: true,
@@ -890,7 +890,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_files',
+		collection: 'directus9_files',
 		field: 'description',
 		interface: 'textarea',
 		locked: true,
@@ -901,7 +901,7 @@ const systemFields = [
 		},
 	},
 	{
-		collection: 'directus_files',
+		collection: 'directus9_files',
 		field: 'tags',
 		interface: 'tags',
 		locked: true,
@@ -914,7 +914,7 @@ const systemFields = [
 		display: 'tags',
 	},
 	{
-		collection: 'directus_files',
+		collection: 'directus9_files',
 		field: 'location',
 		interface: 'text-input',
 		locked: true,
@@ -926,7 +926,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_files',
+		collection: 'directus9_files',
 		field: 'storage',
 		interface: 'text-input',
 		locked: true,
@@ -938,7 +938,7 @@ const systemFields = [
 		readonly: true,
 	},
 	{
-		collection: 'directus_files',
+		collection: 'directus9_files',
 		field: 'storage_divider',
 		interface: 'divider',
 		locked: true,
@@ -952,7 +952,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_files',
+		collection: 'directus9_files',
 		field: 'filename_disk',
 		interface: 'text-input',
 		locked: true,
@@ -964,7 +964,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_files',
+		collection: 'directus9_files',
 		field: 'filename_download',
 		interface: 'text-input',
 		locked: true,
@@ -976,24 +976,24 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_files',
+		collection: 'directus9_files',
 		field: 'metadata',
 		hidden: true,
 		locked: true,
 		special: 'json',
 	},
 	{
-		collection: 'directus_files',
+		collection: 'directus9_files',
 		field: 'type',
 		display: 'mime-type',
 	},
 	{
-		collection: 'directus_files',
+		collection: 'directus9_files',
 		field: 'filesize',
 		display: 'filesize',
 	},
 	{
-		collection: 'directus_files',
+		collection: 'directus9_files',
 		field: 'modified_by',
 		interface: 'user',
 		locked: true,
@@ -1002,7 +1002,7 @@ const systemFields = [
 		display: 'user',
 	},
 	{
-		collection: 'directus_files',
+		collection: 'directus9_files',
 		field: 'modified_on',
 		interface: 'datetime',
 		locked: true,
@@ -1011,66 +1011,66 @@ const systemFields = [
 		display: 'datetime',
 	},
 	{
-		collection: 'directus_files',
+		collection: 'directus9_files',
 		field: 'created_on',
 		display: 'datetime',
 	},
 	{
-		collection: 'directus_files',
+		collection: 'directus9_files',
 		field: 'created_by',
 		display: 'user',
 	},
 	{
-		collection: 'directus_permissions',
+		collection: 'directus9_permissions',
 		field: 'permissions',
 		hidden: true,
 		locked: true,
 		special: 'json',
 	},
 	{
-		collection: 'directus_permissions',
+		collection: 'directus9_permissions',
 		field: 'presets',
 		hidden: true,
 		locked: true,
 		special: 'json',
 	},
 	{
-		collection: 'directus_presets',
+		collection: 'directus9_presets',
 		field: 'filters',
 		hidden: true,
 		locked: true,
 		special: 'json',
 	},
 	{
-		collection: 'directus_presets',
+		collection: 'directus9_presets',
 		field: 'layout_query',
 		hidden: true,
 		locked: true,
 		special: 'json',
 	},
 	{
-		collection: 'directus_presets',
+		collection: 'directus9_presets',
 		field: 'layout_options',
 		hidden: true,
 		locked: true,
 		special: 'json',
 	},
 	{
-		collection: 'directus_revisions',
+		collection: 'directus9_revisions',
 		field: 'data',
 		hidden: true,
 		locked: true,
 		special: 'json',
 	},
 	{
-		collection: 'directus_revisions',
+		collection: 'directus9_revisions',
 		field: 'delta',
 		hidden: true,
 		locked: true,
 		special: 'json',
 	},
 	{
-		collection: 'directus_settings',
+		collection: 'directus9_settings',
 		field: 'project_name',
 		interface: 'text-input',
 		locked: true,
@@ -1086,7 +1086,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_settings',
+		collection: 'directus9_settings',
 		field: 'project_url',
 		interface: 'text-input',
 		locked: true,
@@ -1102,7 +1102,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_settings',
+		collection: 'directus9_settings',
 		field: 'project_color',
 		interface: 'color',
 		locked: true,
@@ -1115,7 +1115,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_settings',
+		collection: 'directus9_settings',
 		field: 'project_logo',
 		interface: 'file',
 		locked: true,
@@ -1128,7 +1128,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_settings',
+		collection: 'directus9_settings',
 		field: 'public_divider',
 		interface: 'divider',
 		locked: true,
@@ -1142,7 +1142,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_settings',
+		collection: 'directus9_settings',
 		field: 'public_foreground',
 		interface: 'file',
 		locked: true,
@@ -1154,7 +1154,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_settings',
+		collection: 'directus9_settings',
 		field: 'public_background',
 		interface: 'file',
 		locked: true,
@@ -1166,7 +1166,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_settings',
+		collection: 'directus9_settings',
 		field: 'public_note',
 		interface: 'textarea',
 		locked: true,
@@ -1177,7 +1177,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_settings',
+		collection: 'directus9_settings',
 		field: 'security_divider',
 		interface: 'divider',
 		locked: true,
@@ -1191,7 +1191,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_settings',
+		collection: 'directus9_settings',
 		field: 'auth_password_policy',
 		interface: 'dropdown',
 		locked: true,
@@ -1215,7 +1215,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_settings',
+		collection: 'directus9_settings',
 		field: 'auth_login_attempts',
 		interface: 'numeric',
 		locked: true,
@@ -1226,7 +1226,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_settings',
+		collection: 'directus9_settings',
 		field: 'files_divider',
 		interface: 'divider',
 		locked: true,
@@ -1240,7 +1240,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_settings',
+		collection: 'directus9_settings',
 		field: 'storage_asset_presets',
 		interface: 'repeater',
 		locked: true,
@@ -1335,7 +1335,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_settings',
+		collection: 'directus9_settings',
 		field: 'storage_asset_transform',
 		interface: 'dropdown',
 		locked: true,
@@ -1359,13 +1359,13 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_settings',
+		collection: 'directus9_settings',
 		field: 'id',
 		hidden: true,
 		locked: true,
 	},
 	{
-		collection: 'directus_settings',
+		collection: 'directus9_settings',
 		field: 'overrides_divider',
 		interface: 'divider',
 		locked: true,
@@ -1379,7 +1379,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_settings',
+		collection: 'directus9_settings',
 		field: 'custom_css',
 		interface: 'code',
 		locked: true,
@@ -1391,13 +1391,13 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_webhooks',
+		collection: 'directus9_webhooks',
 		field: 'id',
 		hidden: true,
 		locked: true,
 	},
 	{
-		collection: 'directus_webhooks',
+		collection: 'directus9_webhooks',
 		field: 'name',
 		interface: 'text-input',
 		locked: true,
@@ -1408,7 +1408,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_webhooks',
+		collection: 'directus9_webhooks',
 		field: 'method',
 		interface: 'dropdown',
 		display: 'labels',
@@ -1425,7 +1425,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_webhooks',
+		collection: 'directus9_webhooks',
 		field: 'url',
 		interface: 'text-input',
 		locked: true,
@@ -1436,7 +1436,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_webhooks',
+		collection: 'directus9_webhooks',
 		field: 'status',
 		interface: 'dropdown',
 		display: 'labels',
@@ -1476,7 +1476,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_webhooks',
+		collection: 'directus9_webhooks',
 		field: 'data',
 		interface: 'toggle',
 		locked: true,
@@ -1488,7 +1488,7 @@ const systemFields = [
 		width: 'half',
 	},
 	{
-		collection: 'directus_webhooks',
+		collection: 'directus9_webhooks',
 		field: 'triggers_divider',
 		interface: 'divider',
 		options: {
@@ -1501,7 +1501,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_webhooks',
+		collection: 'directus9_webhooks',
 		field: 'actions',
 		interface: 'checkboxes',
 		options: {
@@ -1525,7 +1525,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_webhooks',
+		collection: 'directus9_webhooks',
 		field: 'collections',
 		interface: 'collections',
 		special: 'csv',
@@ -1533,7 +1533,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_activity',
+		collection: 'directus9_activity',
 		field: 'action',
 		display: 'labels',
 		display_options: {
@@ -1568,7 +1568,7 @@ const systemFields = [
 		},
 	},
 	{
-		collection: 'directus_activity',
+		collection: 'directus9_activity',
 		field: 'collection',
 		display: 'collection',
 		display_options: {
@@ -1576,7 +1576,7 @@ const systemFields = [
 		},
 	},
 	{
-		collection: 'directus_activity',
+		collection: 'directus9_activity',
 		field: 'timestamp',
 		display: 'datetime',
 		options: {
@@ -1584,12 +1584,12 @@ const systemFields = [
 		},
 	},
 	{
-		collection: 'directus_activity',
+		collection: 'directus9_activity',
 		field: 'user',
 		display: 'user',
 	},
 	{
-		collection: 'directus_activity',
+		collection: 'directus9_activity',
 		field: 'comment',
 		display: 'formatted-text',
 		display_options: {
@@ -1597,7 +1597,7 @@ const systemFields = [
 		},
 	},
 	{
-		collection: 'directus_activity',
+		collection: 'directus9_activity',
 		field: 'user_agent',
 		display: 'formatted-text',
 		display_options: {
@@ -1605,7 +1605,7 @@ const systemFields = [
 		},
 	},
 	{
-		collection: 'directus_activity',
+		collection: 'directus9_activity',
 		field: 'ip',
 		display: 'formatted-text',
 		display_options: {
@@ -1613,7 +1613,7 @@ const systemFields = [
 		},
 	},
 	{
-		collection: 'directus_activity',
+		collection: 'directus9_activity',
 		field: 'revisions',
 		interface: 'one-to-many',
 		locked: true,
@@ -1624,7 +1624,7 @@ const systemFields = [
 		width: 'full',
 	},
 	{
-		collection: 'directus_relations',
+		collection: 'directus9_relations',
 		field: 'one_allowed_collections',
 		locked: true,
 		special: 'csv',
@@ -1642,9 +1642,9 @@ const systemFields = [
 export async function up(knex: Knex): Promise<void> {
 	const fieldKeys = uniq(systemFields.map((field: any) => field.field));
 
-	await knex('directus_fields').delete().where('collection', 'like', 'directus_%').whereIn('field', fieldKeys);
+	await knex('directus9_fields').delete().where('collection', 'like', 'directus9_%').whereIn('field', fieldKeys);
 }
 
 export async function down(knex: Knex): Promise<void> {
-	await knex.insert(systemFields).into('directus_fields');
+	await knex.insert(systemFields).into('directus9_fields');
 }

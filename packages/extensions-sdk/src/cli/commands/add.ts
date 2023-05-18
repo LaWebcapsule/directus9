@@ -5,15 +5,15 @@ import {
 	EXTENSION_TYPES,
 	ExtensionManifest,
 	HYBRID_EXTENSION_TYPES,
-} from '@directus/constants';
+} from '@directus9/constants';
 import type {
 	ExtensionOptions,
 	ExtensionOptionsBundleEntry,
 	NestedExtensionType,
 	ExtensionManifest as TExtensionManifest,
-} from '@directus/types';
-import { isIn, isTypeIn } from '@directus/utils';
-import { pathToRelativeUrl } from '@directus/utils/node';
+} from '@directus9/types';
+import { isIn, isTypeIn } from '@directus9/utils';
+import { pathToRelativeUrl } from '@directus9/utils/node';
 import chalk from 'chalk';
 import { execa } from 'execa';
 import fse from 'fs-extra';
@@ -45,7 +45,7 @@ export default async function add(): Promise<void> {
 		extensionManifest = ExtensionManifest.passthrough().parse(JSON.parse(extensionManifestFile));
 		indent = detectJsonIndent(extensionManifestFile);
 	} catch (e) {
-		log(`Current directory is not a valid Directus extension.`, 'error');
+		log(`Current directory is not a valid Directus9 extension.`, 'error');
 		process.exit(1);
 	}
 
@@ -86,7 +86,7 @@ export default async function add(): Promise<void> {
 			},
 		]);
 
-		const spinner = ora(chalk.bold('Modifying Directus extension...')).start();
+		const spinner = ora(chalk.bold('Modifying Directus9 extension...')).start();
 
 		const source = alternativeSource ?? 'src';
 
@@ -195,7 +195,7 @@ export default async function add(): Promise<void> {
 			},
 		]);
 
-		const spinner = ora(chalk.bold('Modifying Directus extension...')).start();
+		const spinner = ora(chalk.bold('Modifying Directus9 extension...')).start();
 
 		const source = alternativeSource ?? 'src';
 
@@ -255,8 +255,8 @@ export default async function add(): Promise<void> {
 
 		const newExtensionManifest = {
 			...extensionManifest,
-			name: EXTENSION_NAME_REGEX.test(extensionName) ? extensionName : `directus-extension-${extensionName}`,
-			keywords: ['directus', 'directus-extension', `directus-custom-bundle`],
+			name: EXTENSION_NAME_REGEX.test(extensionName) ? extensionName : `directus9-extension-${extensionName}`,
+			keywords: ['directus9', 'directus9-extension', `directus9-custom-bundle`],
 			[EXTENSION_PKG_KEY]: newExtensionOptions,
 			devDependencies: await getExtensionDevDeps(
 				entries.map((entry) => entry.type),

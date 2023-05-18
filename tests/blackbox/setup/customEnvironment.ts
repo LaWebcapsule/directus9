@@ -6,7 +6,7 @@ import * as common from '../common';
 
 /* eslint-disable no-var */
 declare global {
-	var directusFlowDataServerUrl: string;
+	var directus9FlowDataServerUrl: string;
 	var totalTestsCount: number;
 	var testFilePath: string;
 }
@@ -25,14 +25,14 @@ class CustomEnvironment extends NodeEnvironment {
 			throw 'Missing flow env variables';
 		}
 
-		this.global.directusFlowDataServerUrl = serverUrl;
+		this.global.directus9FlowDataServerUrl = serverUrl;
 		this.global.totalTestsCount = totalTestsCount;
 
 		const testIndex = SequentialTests.getReversedTestIndex(this.global.testFilePath);
 
 		while (testIndex !== 0) {
 			try {
-				const response = await axios.get(`${this.global.directusFlowDataServerUrl}/items/tests_flow_completed`, {
+				const response = await axios.get(`${this.global.directus9FlowDataServerUrl}/items/tests_flow_completed`, {
 					params: {
 						'aggregate[count]': 'id',
 					},
@@ -63,7 +63,7 @@ class CustomEnvironment extends NodeEnvironment {
 			test_file_path: this.global.testFilePath,
 		};
 
-		await axios.post(`${this.global.directusFlowDataServerUrl}/items/tests_flow_completed`, body, {
+		await axios.post(`${this.global.directus9FlowDataServerUrl}/items/tests_flow_completed`, body, {
 			headers: {
 				Authorization: `Bearer ${common.USER.TESTS_FLOW.TOKEN}`,
 				'Content-Type': 'application/json',

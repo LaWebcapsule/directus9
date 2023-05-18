@@ -8,7 +8,7 @@ export async function collectTelemetry(): Promise<void> {
 
 	if (env['TELEMETRY'] !== false) {
 		try {
-			await axios.post('https://telemetry.directus.io/', {
+			await axios.post('https://telemetry.directus9.io/', {
 				version: version,
 				public_url: env['PUBLIC_URL'],
 				project_id: env['KEY'],

@@ -3,21 +3,21 @@ import {
 	APP_OR_HYBRID_EXTENSION_TYPES,
 	APP_SHARED_DEPS,
 	NESTED_EXTENSION_TYPES,
-} from '@directus/constants';
+} from '@directus9/constants';
 import {
 	ensureExtensionDirs,
 	generateExtensionsEntrypoint,
 	getLocalExtensions,
 	getPackageExtensions,
 	resolvePackageExtensions,
-} from '@directus/utils/node';
+} from '@directus9/utils/node';
 import yaml from '@rollup/plugin-yaml';
 import vue from '@vitejs/plugin-vue';
 import fs from 'node:fs';
 import path from 'node:path';
 import { searchForWorkspaceRoot } from 'vite';
 import { defineConfig } from 'vitest/config';
-import { version } from '../directus/package.json';
+import { version } from '../directus9/package.json';
 
 const API_PATH = path.join('..', 'api');
 const EXTENSIONS_PATH = path.join(API_PATH, 'extensions');
@@ -25,10 +25,10 @@ const EXTENSIONS_PATH = path.join(API_PATH, 'extensions');
 // https://vitejs.dev/config/
 export default defineConfig({
 	define: {
-		__DIRECTUS_VERSION__: JSON.stringify(version),
+		__DIRECTUS9_VERSION__: JSON.stringify(version),
 	},
 	plugins: [
-		directusExtensions(),
+		directus9Extensions(),
 		vue(),
 		yaml({
 			transform(data) {
@@ -74,14 +74,14 @@ function getExtensionsRealPaths() {
 		: [];
 }
 
-function directusExtensions() {
-	const virtualExtensionsId = '@directus-extensions';
+function directus9Extensions() {
+	const virtualExtensionsId = '@directus9-extensions';
 
 	let extensionsEntrypoint = null;
 
 	return [
 		{
-			name: 'directus-extensions-serve',
+			name: 'directus9-extensions-serve',
 			apply: 'serve',
 			config: () => ({
 				optimizeDeps: {
@@ -103,7 +103,7 @@ function directusExtensions() {
 			},
 		},
 		{
-			name: 'directus-extensions-build',
+			name: 'directus9-extensions-build',
 			apply: 'build',
 			config: () => ({
 				build: {

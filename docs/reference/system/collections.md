@@ -1,5 +1,5 @@
 ---
-description: REST and GraphQL API documentation on the "Collections" collection in Directus.
+description: REST and GraphQL API documentation on the "Collections" collection in Directus9.
 readTime: 5 min read
 pageClass: page-reference
 ---
@@ -18,7 +18,7 @@ Name of the collection. This matches the table name in the database.
 
 #### Meta
 
-Directus metadata, primarily used in the Admin App.
+Directus9 metadata, primarily used in the Admin App.
 
 `collection` **string**\
 Name of the collection. This matches the table name in the database.
@@ -177,7 +177,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	collections: [directus_collections]
+	collections: [directus9_collections]
 }
 ```
 
@@ -225,7 +225,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	collections_by_name(name: String!): directus_collections
+	collections_by_name(name: String!): directus9_collections
 }
 ```
 
@@ -296,7 +296,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_collections_item(data: directus_collections): directus_collections
+	create_collections_item(data: directus9_collections): directus9_collections
 }
 ```
 
@@ -360,7 +360,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_collections_item(collection: String!, data: update_directus_collections_input!): directus_collections
+	update_collections_item(collection: String!, data: update_directus9_collections_input!): directus9_collections
 }
 ```
 

@@ -11,7 +11,7 @@ import { sanitizeQuery } from '../utils/sanitize-query.js';
 
 const router = express.Router();
 
-router.use(useCollection('directus_panels'));
+router.use(useCollection('directus9_panels'));
 
 router.post(
 	'/',

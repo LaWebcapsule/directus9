@@ -23,7 +23,7 @@ const scenarios = [
 	{
 		name: 'when no driver configured',
 		input: {
-			AUTH_PROVIDERS: 'directus',
+			AUTH_PROVIDERS: 'directus9',
 		},
 		output: [],
 	},
@@ -31,16 +31,16 @@ const scenarios = [
 	{
 		name: 'when single provider and driver are properly configured',
 		input: {
-			AUTH_PROVIDERS: 'directus',
-			AUTH_DIRECTUS_DRIVER: 'openid',
-			AUTH_DIRECTUS_LABEL: 'Directus',
-			AUTH_DIRECTUS_ICON: 'hare',
+			AUTH_PROVIDERS: 'directus9',
+			AUTH_DIRECTUS9_DRIVER: 'openid',
+			AUTH_DIRECTUS9_LABEL: 'Directus9',
+			AUTH_DIRECTUS9_ICON: 'hare',
 		},
 		output: [
 			{
-				name: 'directus',
+				name: 'directus9',
 				driver: 'openid',
-				label: 'Directus',
+				label: 'Directus9',
 				icon: 'hare',
 			},
 		],
@@ -49,18 +49,18 @@ const scenarios = [
 	{
 		name: 'when multiple provider and driver are properly configured',
 		input: {
-			AUTH_PROVIDERS: 'directus,custom',
-			AUTH_DIRECTUS_DRIVER: 'openid',
-			AUTH_DIRECTUS_LABEL: 'Directus',
-			AUTH_DIRECTUS_ICON: 'hare',
+			AUTH_PROVIDERS: 'directus9,custom',
+			AUTH_DIRECTUS9_DRIVER: 'openid',
+			AUTH_DIRECTUS9_LABEL: 'Directus9',
+			AUTH_DIRECTUS9_ICON: 'hare',
 			AUTH_CUSTOM_DRIVER: 'openid',
 			AUTH_CUSTOM_ICON: 'lock',
 		},
 		output: [
 			{
-				name: 'directus',
+				name: 'directus9',
 				driver: 'openid',
-				label: 'Directus',
+				label: 'Directus9',
 				icon: 'hare',
 			},
 			{

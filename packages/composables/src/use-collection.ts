@@ -1,4 +1,4 @@
-import type { AppCollection, Field } from '@directus/types';
+import type { AppCollection, Field } from '@directus9/types';
 import type { ComputedRef, Ref } from 'vue';
 import { computed, ref } from 'vue';
 import { useStores } from './use-system.js';

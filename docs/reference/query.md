@@ -1,12 +1,12 @@
 ---
-description: REST and GraphQL API documentation to run queries in Directus.
+description: REST and GraphQL API documentation to run queries in Directus9.
 readTime: 9 min read
 pageClass: page-reference
 ---
 
 # Global Query Parameters
 
-> Most Directus API Endpoint operations can be manipulated with the following parameters. It is important to understand
+> Most Directus9 API Endpoint operations can be manipulated with the following parameters. It is important to understand
 > them to get the most out of the platform.
 
 - [Fields](#fields)
@@ -205,20 +205,20 @@ root item's fields, related item fields are not included.
 
 ### Example
 
-Find all items that mention Directus\
-`Directus`
+Find all items that mention Directus9\
+`Directus9`
 
 ### REST API
 
 ```
-?search=Directus
+?search=Directus9
 ```
 
 ### GraphQL
 
 ```graphql
 query {
-	articles(search: "Directus") {
+	articles(search: "Directus9") {
 		id
 	}
 }
@@ -366,7 +366,7 @@ query {
 
 Aggregate functions allow you to perform calculations on a set of values, returning a single result.
 
-The following aggregation functions are available in Directus:
+The following aggregation functions are available in Directus9:
 
 | Name            | Description                                                   |
 | --------------- | ------------------------------------------------------------- |

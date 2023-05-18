@@ -1,4 +1,4 @@
-import type { Field, Type } from '@directus/types';
+import type { Field, Type } from '@directus9/types';
 import fse from 'fs-extra';
 import yaml from 'js-yaml';
 import type { Knex } from 'knex';
@@ -32,7 +32,7 @@ type TableSeed = {
 
 export default async function runSeed(database: Knex): Promise<void> {
 	const helpers = getHelpers(database);
-	const exists = await database.schema.hasTable('directus_collections');
+	const exists = await database.schema.hasTable('directus9_collections');
 
 	if (exists) {
 		throw new Error('Database is already installed');

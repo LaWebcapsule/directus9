@@ -1,5 +1,5 @@
 ---
-description: A guide on how to build extension bundles in Directus.
+description: A guide on how to build extension bundles in Directus9.
 readTime: 5 min read
 ---
 
@@ -9,12 +9,12 @@ readTime: 5 min read
 
 ## Create a Bundle
 
-When [scaffolding your Directus extension](/extensions/creating-extensions.html#scaffolding-your-directus-extension),
+When [scaffolding your Directus9 extension](/extensions/creating-extensions.html#scaffolding-your-directus9-extension),
 select the `bundle` type. This will create a new empty bundle.
 
 ## Entries
 
-In your bundle's `package.json` file, the `directus:extension` object has an `entries` array that describes all of the
+In your bundle's `package.json` file, the `directus9:extension` object has an `entries` array that describes all of the
 items contained within the bundle.
 
 Example of an entry:

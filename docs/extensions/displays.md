@@ -1,5 +1,5 @@
 ---
-description: A guide on how to build custom Display Extensions in Directus.
+description: A guide on how to build custom Display Extensions in Directus9.
 readTime: 4 min read
 ---
 
@@ -12,7 +12,7 @@ readTime: 4 min read
 
 The entrypoint of your display is the `index` file inside the `src/` folder of your extension package. It exports a
 configuration object with options to configure the behavior of your display. When loading your display, this object is
-imported by the Directus host.
+imported by the Directus9 host.
 
 Example of an entrypoint:
 
@@ -35,7 +35,7 @@ export default {
 - `id` — The unique key for this display. It is good practice to scope proprietary displays with an author prefix.
 - `name` — The human-readable name for this display.
 - `icon` — An icon name from the [material icon set](/getting-started/glossary#material-icons), or the extended list of
-  Directus custom icons.
+  Directus9 custom icons.
 - `description` — A short description (<80 characters) of this display shown in the App.
 - `component` — A reference to your display component.
 - `options` — The options of your display. Can be either an options object or a dedicated Vue component.
@@ -47,7 +47,7 @@ export default {
 
 ## Display Component
 
-The display component is the part of your extension that will be rendered by the Directus App whenever your display
+The display component is the part of your extension that will be rendered by the Directus9 App whenever your display
 should be used to show the value of a field. This display component has to be Vue component. The most straightforward
 way to write a Vue component is to use the Vue Single File Component syntax.
 
@@ -83,12 +83,12 @@ values.
 - `collection` — The collection name of the field.
 - `field` — The key of the field.
 
-Other than this simple API to communicate with the Directus App, the display component is a blank canvas, allowing you
+Other than this simple API to communicate with the Directus9 App, the display component is a blank canvas, allowing you
 to create anything you need.
 
 ::: warning Vue Version
 
-The Directus App uses Vue 3. There might be 3rd party libraries that aren't yet compatible with Vue 3.
+The Directus9 App uses Vue 3. There might be 3rd party libraries that aren't yet compatible with Vue 3.
 
 :::
 
@@ -114,10 +114,10 @@ export default {
 ## Accessing Internal Systems
 
 To access internal systems like the API or the stores, you can use the `useApi()` and `useStores()` composables exported
-by the `@directus/extensions-sdk` package. They can be used inside a `setup()` function like this:
+by the `@directus9/extensions-sdk` package. They can be used inside a `setup()` function like this:
 
 ```js
-import { useApi, useStores } from '@directus/extensions-sdk';
+import { useApi, useStores } from '@directus9/extensions-sdk';
 
 export default {
 	setup() {

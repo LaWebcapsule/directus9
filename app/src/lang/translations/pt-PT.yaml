@@ -115,7 +115,7 @@ logoutReason:
 public_label: Público
 public_description: Controla quais dados da API estão disponíveis sem autenticação.
 not_allowed: Não permitido
-directus_version: Versão do Directus
+directus9_version: Versão do Directus9
 node_version: Versão do Node.js
 node_uptime: Tempo de atividade do Node.js
 os_type: Tipo do Sistema Operativo
@@ -734,7 +734,7 @@ cancel: Cancelar
 collection: Coleção
 content: Conteúdo
 fields:
-  directus_activity:
+  directus9_activity:
     item: Chave primária
     action: Ação
     collection: Coleção
@@ -744,13 +744,13 @@ fields:
     user_agent: User Agent
     ip: Endereço IP
     revisions: Revisões
-  directus_collections:
+  directus9_collections:
     collection: Coleção
     note: Nota
     color: Cor
     display_template: Templates de Exibição
     sort_field: Campo de ordenação
-  directus_files:
+  directus9_files:
     title: Título
     description: Descrição
     tags: Etiquetas
@@ -764,7 +764,7 @@ fields:
     uploaded_on: Carregado a
     charset: Codificação
     duration: Duração
-  directus_users:
+  directus9_users:
     first_name: Primeiro Nome
     last_name: Apelido
     location: Localização
@@ -781,7 +781,7 @@ fields:
     token: Token
     last_page: Última página
     last_access: Último Acesso
-  directus_settings:
+  directus9_settings:
     project_name: Nome do projeto
     project_descriptor: Descrição do Projeto
     project_url: URL do projeto
@@ -792,15 +792,15 @@ fields:
     public_note: Nota Pública
     custom_css: CSS Personalizado
     module_bar: Barra de Módulo
-  directus_shares:
+  directus9_shares:
     name: Nome
     role: Perfil
-  directus_fields:
+  directus9_fields:
     collection: Nome da coleção
     icon: Ícone da coleção
     note: Nota
     translation: Nome do campo para as traduções
-  directus_roles:
+  directus9_roles:
     name: Nome do cargo
     description: Descrição
     app_access: Acesso da aplicação
@@ -809,18 +809,18 @@ fields:
     enforce_tfa: Exigir 2FA
     users: Utilizadores na função
     module_list: Navegação do Modulo
-  directus_webhooks:
+  directus9_webhooks:
     name: Nome
     status: Estado
 field_options:
-  directus_settings:
+  directus9_settings:
     project_name_placeholder: O meu projeto...
     public_note_placeholder: Uma mensagem pública e curta que suporta a formatação markdown...
     security_divider_title: Segurança
-  directus_activity:
+  directus9_activity:
     create: Criar
     update: Atualizar
-  directus_collections:
+  directus9_collections:
     track_activity_revisions: Rastrear Atividades e Revisões
     only_track_activity: Apenas rastrear Atividade
     do_not_track_anything: Não rastrear nada
@@ -829,13 +829,13 @@ field_options:
     collection_name: Nome da coleção
     archive_divider: Arquivar
     sort_divider: Ordenar
-  directus_roles:
+  directus9_roles:
     fields:
       name_name: Nome
-  directus_users:
+  directus9_users:
     dropdown_auto: Automático (baseado no sistema)
     status_dropdown_active: Ativar
-  directus_webhooks:
+  directus9_webhooks:
     status_options_active: Ativar
     status_options_inactive: Inativo
     actions_create: Criar

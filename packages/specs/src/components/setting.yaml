@@ -1,5 +1,5 @@
 type: object
-x-collection: directus_settings
+x-collection: directus9_settings
 properties:
   id:
     description: Unique identifier for the setting.
@@ -8,7 +8,7 @@ properties:
   project_name:
     description: The name of the project.
     type: string
-    example: Directus
+    example: Directus9
   project_url:
     description: The url of the project.
     type: string

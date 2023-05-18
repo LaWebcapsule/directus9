@@ -118,7 +118,7 @@ public_label: 公開
 public_description: 在沒有身分驗證的情況下，控制這些可用的API數據。
 admin_description: 預設管理者角色，擁有完整的管理介面以及API存取權限
 not_allowed: 不允许
-directus_version: Directus 版本
+directus9_version: Directus9 版本
 node_version: 節點的版本
 node_uptime: 節點正常運行時間
 os_type: 操作系統類型
@@ -999,30 +999,30 @@ content: 內容管理
 singleton: 單一資料
 singleton_label: 視為單一物件
 system_fields_locked: 系統欄位已鎖定無法編輯
-directus_collection:
-  directus_activity: 所有事件的詳細紀錄
-  directus_collections: 額外的資料集設定以及元資料
-  directus_dashboards: 儀表板以及預測模組
-  directus_fields: 額外的資料集設定以及元資料
-  directus_files: 所有檔案資源的元資料
-  directus_flows: 自動流程
-  directus_folders: 提供虛擬資料夾供存放檔案。
-  directus_migrations: 您使用的資料庫類型
-  directus_notifications: 傳送給使用者的通知
-  directus_operations: 執行在流程中的操作
-  directus_panels: 在儀表板中的獨立面板
-  directus_permissions: 每種角色的使用權限
-  directus_presets: 資料集以及書籤的預設值
-  directus_relations: 關聯資料及元資料的設定
-  directus_revisions: 所有操作的資料快照
-  directus_roles: 系統使用者的權限組
-  directus_sessions: 使用者登入階段資訊
-  directus_settings: 專案設定選項
-  directus_shares: 追蹤外部分享資料項目
-  directus_users: 平台的系統使用者
-  directus_webhooks: 事件驅動的 HTTP 請求設定
+directus9_collection:
+  directus9_activity: 所有事件的詳細紀錄
+  directus9_collections: 額外的資料集設定以及元資料
+  directus9_dashboards: 儀表板以及預測模組
+  directus9_fields: 額外的資料集設定以及元資料
+  directus9_files: 所有檔案資源的元資料
+  directus9_flows: 自動流程
+  directus9_folders: 提供虛擬資料夾供存放檔案。
+  directus9_migrations: 您使用的資料庫類型
+  directus9_notifications: 傳送給使用者的通知
+  directus9_operations: 執行在流程中的操作
+  directus9_panels: 在儀表板中的獨立面板
+  directus9_permissions: 每種角色的使用權限
+  directus9_presets: 資料集以及書籤的預設值
+  directus9_relations: 關聯資料及元資料的設定
+  directus9_revisions: 所有操作的資料快照
+  directus9_roles: 系統使用者的權限組
+  directus9_sessions: 使用者登入階段資訊
+  directus9_settings: 專案設定選項
+  directus9_shares: 追蹤外部分享資料項目
+  directus9_users: 平台的系統使用者
+  directus9_webhooks: 事件驅動的 HTTP 請求設定
 fields:
-  directus_activity:
+  directus9_activity:
     item: 項目主鍵值
     action: 操作
     collection: 集合
@@ -1033,7 +1033,7 @@ fields:
     origin: 來源
     ip: IP位址
     revisions: 修訂版本
-  directus_collections:
+  directus9_collections:
     collection: 集合
     icon: 圖示
     note: 備註
@@ -1049,7 +1049,7 @@ fields:
     accountability: 操作及修訂追蹤
     archive_field: 歸檔欄位
     item_duplication_fields: 項目重複欄位
-  directus_files:
+  directus9_files:
     $thumbnail: 縮圖
     title: 標題
     description: 描述說明
@@ -1073,7 +1073,7 @@ fields:
     height: 高度
     charset: 字元集
     duration: 持續時間
-  directus_users:
+  directus9_users:
     first_name: 名字
     last_name: 姓氏
     email: 電子郵件
@@ -1104,7 +1104,7 @@ fields:
     last_page: 最後一頁
     last_access: 最後存取
     email_notifications: 電子郵件通知
-  directus_settings:
+  directus9_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
@@ -1143,7 +1143,7 @@ fields:
     transformations_presets: 限制資料轉換範圍為以下清單
     image_editor: 圖片編輯器
     custom_aspect_ratios: 自訂比例
-  directus_shares:
+  directus9_shares:
     name: 名稱
     role: 角色
     password: 密碼
@@ -1151,7 +1151,7 @@ fields:
     date_end: 結束日期
     max_uses: 最大使用次數
     times_used: 使用次數
-  directus_fields:
+  directus9_fields:
     collection: 集合名稱
     icon: 集合圖示
     note: 備註
@@ -1159,7 +1159,7 @@ fields:
     singleton: 單一資料
     translation: 欄位名稱翻譯
     display_template: 模板
-  directus_roles:
+  directus9_roles:
     name: 角色名稱
     icon: 角色圖示
     description: 描述說明
@@ -1169,7 +1169,7 @@ fields:
     enforce_tfa: 必須兩步驟登入
     users: 角色中的使用者
     module_list: 模組導覽
-  directus_webhooks:
+  directus9_webhooks:
     name: 名稱
     method: 方法
     status: 狀態
@@ -1182,7 +1182,7 @@ fields:
     actions: 操作
     collections: 資料集
 field_options:
-  directus_settings:
+  directus9_settings:
     project_name_placeholder: 我的專案...
     project_color_note: 登入及 Logo 背景
     project_logo_note: 白底 40x40 SVG/PNG
@@ -1211,12 +1211,12 @@ field_options:
     basemaps_style: Mapbox 風格
     files_divider_title: 檔案與縮圖
     overrides_divider_title: 管理介面強迫修改
-  directus_activity:
+  directus9_activity:
     login: 登入
     create: 新建
     update: 更新
     delete: 刪除
-  directus_collections:
+  directus9_collections:
     track_activity_revisions: 追蹤活動與紀錄
     only_track_activity: 只追蹤操作紀錄
     do_not_track_anything: 不進行任何追蹤
@@ -1239,14 +1239,14 @@ field_options:
     sort_field: 選擇欄位
     accountability_divider: 稽核
     duplication_divider: 重複欄位
-  directus_files:
+  directus9_files:
     title: 不重複的標題...
     description: 選填的描述內容
     location: 選填的地點....
     storage_divider: 檔案命名
     filename_disk: 在磁碟儲存的名稱
     filename_download: 下載時的名稱
-  directus_roles:
+  directus9_roles:
     name: 這個角色的名稱
     description: 這個角色的簡介
     ip_access: 輸入允許的IP位置，留白的話則全部允許
@@ -1258,7 +1258,7 @@ field_options:
       link_placeholder: 相關或絕對網址
     collections_name: 資料集
     collections_addLabel: 新增資料集
-  directus_users:
+  directus9_users:
     preferences_divider: 使用者喜好設定
     dropdown_auto: 自動 (根據系統設定)
     dropdown_light: 淺色模式
@@ -1270,7 +1270,7 @@ field_options:
     status_dropdown_suspended: 已暫停
     status_dropdown_archived: 已封存
     token: 輸入安全的 access token
-  directus_webhooks:
+  directus9_webhooks:
     status_options_active: 有效的
     status_options_inactive: 未啟用
     data_label: 傳送事件資料

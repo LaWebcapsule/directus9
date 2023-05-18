@@ -1,4 +1,4 @@
-import { defineOperationApi, isValidJSON } from '@directus/utils';
+import { defineOperationApi, isValidJSON } from '@directus9/utils';
 import encodeUrl from 'encodeurl';
 import { getAxios } from '../../request/index.js';
 import { isAxiosError } from 'axios';

@@ -2,7 +2,7 @@ import type { Snapshot, SnapshotField, SnapshotRelation } from '../types/index.j
 
 export const snapshotBeforeCreateCollection: Snapshot = {
 	version: 1,
-	directus: '0.0.0',
+	directus9: '0.0.0',
 	collections: [
 		{
 			collection: 'test_table',
@@ -76,7 +76,7 @@ export const snapshotBeforeCreateCollection: Snapshot = {
 
 export const snapshotCreateCollection: Snapshot = {
 	version: 1,
-	directus: '0.0.0',
+	directus9: '0.0.0',
 	collections: [
 		{
 			collection: 'test_table',
@@ -278,7 +278,7 @@ export const snapshotCreateCollection: Snapshot = {
 
 export const snapshotCreateCollectionNotNested: Snapshot = {
 	version: 1,
-	directus: '0.0.0',
+	directus9: '0.0.0',
 	collections: [
 		{
 			collection: 'test_table',
@@ -416,7 +416,7 @@ export const snapshotCreateCollectionNotNested: Snapshot = {
 
 export const snapshotBeforeDeleteCollection: Snapshot = {
 	version: 1,
-	directus: '0.0.0',
+	directus9: '0.0.0',
 	collections: [
 		{
 			collection: 'articles',

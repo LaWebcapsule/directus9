@@ -1,5 +1,5 @@
 ---
-description: REST and GraphQL API documentation on the Dashboards collection in Directus.
+description: REST and GraphQL API documentation on the Dashboards collection in Directus9.
 readTime: 5 min read
 pageClass: page-reference
 ---
@@ -55,7 +55,7 @@ Panels that are in this dashboard. One-to-may to [panels](/reference/system/pane
 
 ## List Dashboards
 
-List all dashboards that exist in Directus.
+List all dashboards that exist in Directus9.
 
 ### Query Parameters
 
@@ -83,7 +83,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	dashboards: [directus_dashboards]
+	dashboards: [directus9_dashboards]
 }
 ```
 
@@ -132,7 +132,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	dashboards_by_id(id: ID!): directus_dashboards
+	dashboards_by_id(id: ID!): directus9_dashboards
 }
 ```
 
@@ -190,7 +190,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_dashboards_item(data: create_directus_dashboards_input!): directus_dashboards
+	create_dashboards_item(data: create_directus9_dashboards_input!): directus9_dashboards
 }
 ```
 
@@ -254,7 +254,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_dashboards_items(data: [create_directus_dashboards_input!]!): [directus_dashboards]
+	create_dashboards_items(data: [create_directus9_dashboards_input!]!): [directus9_dashboards]
 }
 ```
 
@@ -322,7 +322,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_dashboards_item(id: ID!, data: update_directus_dashboards_input): directus_dashboards
+	update_dashboards_item(id: ID!, data: update_directus9_dashboards_input): directus9_dashboards
 }
 ```
 
@@ -386,7 +386,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_dashboards_items(ids: [ID!]!, data: update_directus_dashboards_input): [directus_dashboards]
+	update_dashboards_items(ids: [ID!]!, data: update_directus9_dashboards_input): [directus9_dashboards]
 }
 ```
 

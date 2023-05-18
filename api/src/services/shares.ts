@@ -4,7 +4,7 @@ import env from '../env.js';
 import { ForbiddenException, InvalidCredentialsException } from '../exceptions/index.js';
 import type {
 	AbstractServiceOptions,
-	DirectusTokenPayload,
+	Directus9TokenPayload,
 	Item,
 	LoginResult,
 	MutationOptions,
@@ -24,7 +24,7 @@ export class SharesService extends ItemsService {
 	authorizationService: AuthorizationService;
 
 	constructor(options: AbstractServiceOptions) {
-		super('directus_shares', options);
+		super('directus9_shares', options);
 
 		this.authorizationService = new AuthorizationService({
 			accountability: this.accountability,
@@ -53,7 +53,7 @@ export class SharesService extends ItemsService {
 				share_max_uses: 'max_uses',
 				share_password: 'password',
 			})
-			.from('directus_shares')
+			.from('directus9_shares')
 			.where('id', payload['share'])
 			.andWhere((subQuery) => {
 				subQuery.whereNull('date_end').orWhere('date_end', '>=', new Date());
@@ -74,11 +74,11 @@ export class SharesService extends ItemsService {
 			throw new InvalidCredentialsException();
 		}
 
-		await this.knex('directus_shares')
+		await this.knex('directus9_shares')
 			.update({ times_used: record.share_times_used + 1 })
 			.where('id', record.share_id);
 
-		const tokenPayload: DirectusTokenPayload = {
+		const tokenPayload: Directus9TokenPayload = {
 			app_access: false,
 			admin_access: false,
 			role: record.share_role,
@@ -91,13 +91,13 @@ export class SharesService extends ItemsService {
 
 		const accessToken = jwt.sign(tokenPayload, env['SECRET'] as string, {
 			expiresIn: env['ACCESS_TOKEN_TTL'],
-			issuer: 'directus',
+			issuer: 'directus9',
 		});
 
 		const refreshToken = nanoid(64);
 		const refreshTokenExpiration = new Date(Date.now() + getMilliseconds(env['REFRESH_TOKEN_TTL'], 0));
 
-		await this.knex('directus_sessions').insert({
+		await this.knex('directus9_sessions').insert({
 			token: refreshToken,
 			expires: refreshTokenExpiration,
 			ip: this.accountability?.ip,
@@ -106,7 +106,7 @@ export class SharesService extends ItemsService {
 			share: record.share_id,
 		});
 
-		await this.knex('directus_sessions').delete().where('expires', '<', new Date());
+		await this.knex('directus9_sessions').delete().where('expires', '<', new Date());
 
 		return {
 			accessToken,

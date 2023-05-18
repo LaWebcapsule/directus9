@@ -1,95 +1,95 @@
 openapi: 3.0.1
 info:
-  title: Directus
+  title: Directus9
   description: A real-time API and App dashboard for managing SQL database content.
   contact:
-    email: contact@directus.io
+    email: contact@directus9.io
   license:
     name: GPL-3.0
     url: 'https://www.gnu.org/licenses/gpl-3.0.html'
   version: 9.0.0
 externalDocs:
-  description: Directus Docs
-  url: 'https://docs.directus.io'
+  description: Directus9 Docs
+  url: 'https://docs.directus9.io'
 tags:
   - name: Activity
     description:
-      All events that happen within Directus are tracked and stored in the activities collection. This gives you full
+      All events that happen within Directus9 are tracked and stored in the activities collection. This gives you full
       accountability over everything that happens.
-    x-collection: directus_activity
+    x-collection: directus9_activity
   - name: Assets
     description: Image typed files can be dynamically resized and transformed to fit any need.
   - name: Authentication
     description:
-      All events that happen within Directus are tracked and stored in the activities collection. This gives you full
+      All events that happen within Directus9 are tracked and stored in the activities collection. This gives you full
       accountability over everything that happens.
   - name: Presets
     description:
-      Presets hold the preferences of individual users of the platform. This allows Directus to show and maintain custom
+      Presets hold the preferences of individual users of the platform. This allows Directus9 to show and maintain custom
       item listings for users of the app.
-    x-collection: directus_presets
+    x-collection: directus9_presets
   - name: Collections
     description:
       Collections are the individual collections of items, similar to tables in a database. Changes to collections will
       alter the schema of the database.
-    x-collection: directus_collections
+    x-collection: directus9_collections
   - name: Extensions
     description:
-      Directus can easily be extended through the addition of several types of extensions, including layouts,
+      Directus9 can easily be extended through the addition of several types of extensions, including layouts,
       interfaces, and modules.
   - name: Fields
     description: Fields are individual pieces of content within an item. They are mapped to columns in the database.
-    x-collection: directus_fields
+    x-collection: directus9_fields
   - name: Files
     description:
-      Files can be saved in any given location. Directus has a powerful assets endpoint that can be used to generate
+      Files can be saved in any given location. Directus9 has a powerful assets endpoint that can be used to generate
       thumbnails for images on the fly.
-    x-collection: directus_files
+    x-collection: directus9_files
   - name: Flows
     description: Flows enable custom, event-driven data processing and task automation.
-    x-collection: directus_flows
+    x-collection: directus9_flows
   - name: Folders
     description: Group files by virtual folders.
-    x-collection: directus_folders
+    x-collection: directus9_folders
   - name: Items
     description:
       Items are individual pieces of data in your database. They can be anything, from articles, to IoT status checks.
   - name: Operations
     description: Operations are the building blocks within Data Flows.
-    x-collection: directus_operations
+    x-collection: directus9_operations
   - name: Permissions
     description: Permissions control who has access to what and when.
-    x-collection: directus_permissions
+    x-collection: directus9_permissions
   - name: Relations
     description:
       What data is linked to what other data. Allows you to assign authors to articles, products to sales, and whatever
       other structures you can think of.
-    x-collection: directus_relations
+    x-collection: directus9_relations
   - name: Revisions
     description:
-      Revisions are individual changes to items made. Directus keeps track of changes made, so you're able to revert to
+      Revisions are individual changes to items made. Directus9 keeps track of changes made, so you're able to revert to
       a previous state at will.
-    x-collection: directus_revisions
+    x-collection: directus9_revisions
   - name: Roles
     description: Roles are groups of users that share permissions.
-    x-collection: directus_roles
+    x-collection: directus9_roles
   - name: Schema
     description: Retrieve and update the schema of an instance.
   - name: Server
     description:
-      Access to where Directus runs. Allows you to make sure your server has everything needed to run the platform, and
+      Access to where Directus9 runs. Allows you to make sure your server has everything needed to run the platform, and
       check what kind of latency we're dealing with.
   - name: Settings
     description: Settings control the way the platform works and acts.
-    x-collection: directus_settings
+    x-collection: directus9_settings
   - name: Users
     description: Users are what gives you access to the data.
-    x-collection: directus_users
+    x-collection: directus9_users
   - name: Utilities
-    description: Directus comes with various utility endpoints you can use to simplify your development flow.
+    description: Directus9 comes with various utility endpoints you can use to simplify your development flow.
   - name: Webhooks
     description: Webhooks.
-    x-collection: directus_webhooks
+    x-collection: directus9_webhooks
 paths:
   # Activity
   /activity:

@@ -1,11 +1,11 @@
-import { parseJSON } from '@directus/utils';
+import { parseJSON } from '@directus9/utils';
 import type { Knex } from 'knex';
 
 // Change image metadata structure to match the output from 'exifr'
 export async function up(knex: Knex): Promise<void> {
 	const files = await knex
 		.select<{ id: number; metadata: string }[]>('id', 'metadata')
-		.from('directus_files')
+		.from('directus9_files')
 		.whereNotNull('metadata');
 
 	for (const { id, metadata } of files) {
@@ -48,7 +48,7 @@ export async function up(knex: Knex): Promise<void> {
 				newMetadata.iptc = prevMetadata.iptc;
 			}
 
-			await knex('directus_files')
+			await knex('directus9_files')
 				.update({ metadata: JSON.stringify(newMetadata) })
 				.where({ id });
 		}
@@ -58,7 +58,7 @@ export async function up(knex: Knex): Promise<void> {
 export async function down(knex: Knex): Promise<void> {
 	const files = await knex
 		.select<{ id: number; metadata: string }[]>('id', 'metadata')
-		.from('directus_files')
+		.from('directus9_files')
 		.whereNotNull('metadata')
 		.whereNot('metadata', '{}');
 
@@ -95,7 +95,7 @@ export async function down(knex: Knex): Promise<void> {
 				delete newMetadata.exif['iptc'];
 			}
 
-			await knex('directus_files')
+			await knex('directus9_files')
 				.update({ metadata: JSON.stringify(newMetadata) })
 				.where({ id });
 		}

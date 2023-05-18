@@ -1,7 +1,7 @@
 import type { Knex } from 'knex';
 
 export async function up(knex: Knex): Promise<void> {
-	await knex('directus_activity')
+	await knex('directus9_activity')
 		.update({
 			action: 'login',
 		})
@@ -9,7 +9,7 @@ export async function up(knex: Knex): Promise<void> {
 }
 
 export async function down(knex: Knex): Promise<void> {
-	await knex('directus_activity')
+	await knex('directus9_activity')
 		.update({
 			action: 'authenticate',
 		})

@@ -1,5 +1,5 @@
 {
-	"name": "@directus/exceptions",
+	"name": "@directus9/exceptions",
 	"version": "9.26.0",
 	"type": "module",
 	"scripts": {
@@ -7,13 +7,13 @@
 		"dev": "tsc --watch",
 		"test": "vitest --watch=false"
 	},
-	"description": "Shared exceptions in Directus",
+	"description": "Shared exceptions in Directus9",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/directus/directus.git",
+		"url": "https://github.com/directus9/directus9.git",
 		"directory": "packages/exceptions"
 	},
-	"funding": "https://github.com/directus/directus?sponsor=1",
+	"funding": "https://github.com/directus9/directus9?sponsor=1",
 	"license": "GPL-3.0",
 	"author": "Rijk van Zanten <rijkvanzanten@me.com>",
 	"exports": {
@@ -29,8 +29,8 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@directus/tsconfig": "0.0.7",
-		"@directus/types": "workspace:*",
+		"@directus9/tsconfig": "0.0.7",
+		"@directus9/types": "workspace:*",
 		"@ngneat/falso": "6.4.0",
 		"@vitest/coverage-c8": "0.30.1",
 		"joi": "17.9.1",

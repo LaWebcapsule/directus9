@@ -74,7 +74,7 @@ function useActivity(collection: string, primaryKey: string | number) {
 					'filter[collection][_eq]': collection,
 					'filter[item][_eq]': primaryKey,
 					'filter[action][_eq]': 'comment',
-					sort: '-id', // directus_activity has auto increment and is therefore in chronological order
+					sort: '-id', // directus9_activity has auto increment and is therefore in chronological order
 					fields: [
 						'id',
 						'action',

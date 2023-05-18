@@ -1,3 +1,3 @@
-# `@directus/storage-driver-cloudinary`
+# `@directus9/storage-driver-cloudinary`
 
-Cloudinary file storage driver for `@directus/storage`
+Cloudinary file storage driver for `@directus9/storage`

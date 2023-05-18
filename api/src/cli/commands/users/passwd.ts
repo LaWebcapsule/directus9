@@ -19,12 +19,12 @@ export default async function usersPasswd({ email, password }: { email?: string;
 
 		const user = await service.knex
 			.select('id')
-			.from('directus_users')
+			.from('directus9_users')
 			.whereRaw('LOWER(??) = ?', ['email', email.toLowerCase()])
 			.first();
 
 		if (user) {
-			await service.knex('directus_users').update({ password: passwordHashed }).where({ id: user.id });
+			await service.knex('directus9_users').update({ password: passwordHashed }).where({ id: user.id });
 			logger.info(`Password is updated for user ${user.id}`);
 		} else {
 			logger.error('No such user by this email');

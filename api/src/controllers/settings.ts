@@ -7,7 +7,7 @@ import asyncHandler from '../utils/async-handler.js';
 
 const router = express.Router();
 
-router.use(useCollection('directus_settings'));
+router.use(useCollection('directus9_settings'));
 
 router.get(
 	'/',

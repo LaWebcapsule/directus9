@@ -38,7 +38,7 @@ const logLevel = process.env.TEST_SAVE_LOGS
 		: 'info'
 	: 'error';
 
-const directusAuthConfig = {
+const directus9AuthConfig = {
 	AUTH_PROVIDERS: 'saml',
 	AUTH_SAML_DRIVER: 'saml',
 	AUTH_SAML_ALLOW_PUBLIC_REGISTRATION: 'true',
@@ -51,23 +51,23 @@ const directusAuthConfig = {
 	AUTH_SAML_EMAIL_KEY: 'email',
 };
 
-const directusStorageConfig = {
+const directus9StorageConfig = {
 	STORAGE_LOCATIONS: 'local,minio',
 	STORAGE_MINIO_DRIVER: 's3',
-	STORAGE_MINIO_KEY: 'directus',
+	STORAGE_MINIO_KEY: 'directus9',
 	STORAGE_MINIO_SECRET: 'miniosecret',
-	STORAGE_MINIO_BUCKET: 'directus-blackbox-test',
+	STORAGE_MINIO_BUCKET: 'directus9-blackbox-test',
 	STORAGE_MINIO_REGION: 'us-east-1',
 	STORAGE_MINIO_ENDPOINT: 'http://localhost:8881',
 	STORAGE_MINIO_FORCE_PATH_STYLE: 'true',
 };
 
-const directusConfig = {
+const directus9Config = {
 	...process.env,
 	ADMIN_EMAIL: 'admin@example.com',
 	ADMIN_PASSWORD: 'password',
-	KEY: 'directus-test',
-	SECRET: 'directus-test',
+	KEY: 'directus9-test',
+	SECRET: 'directus9-test',
 	TELEMETRY: 'false',
 	CACHE_SCHEMA: 'true',
 	CACHE_ENABLED: 'false',
@@ -81,8 +81,8 @@ const directusConfig = {
 	ASSETS_TRANSFORM_MAX_CONCURRENT: '2',
 	MAX_BATCH_MUTATION: '100', // Must be in multiples of 10 for tests
 	ACCESS_TOKEN_TTL: '25d', // should be larger than 24.86 days to test Expires value larger than 32-bit signed integer
-	...directusAuthConfig,
-	...directusStorageConfig,
+	...directus9AuthConfig,
+	...directus9StorageConfig,
 };
 
 const config: Config = {
@@ -90,7 +90,7 @@ const config: Config = {
 		postgres: {
 			client: 'pg',
 			connection: {
-				database: 'directus',
+				database: 'directus9',
 				user: 'postgres',
 				password: 'secret',
 				host: '127.0.0.1',
@@ -101,7 +101,7 @@ const config: Config = {
 		postgres10: {
 			client: 'pg',
 			connection: {
-				database: 'directus',
+				database: 'directus9',
 				user: 'postgres',
 				password: 'secret',
 				host: '127.0.0.1',
@@ -112,7 +112,7 @@ const config: Config = {
 		mysql: {
 			client: 'mysql',
 			connection: {
-				database: 'directus',
+				database: 'directus9',
 				user: 'root',
 				password: 'secret',
 				host: '127.0.0.1',
@@ -123,7 +123,7 @@ const config: Config = {
 		mysql5: {
 			client: 'mysql',
 			connection: {
-				database: 'directus',
+				database: 'directus9',
 				user: 'root',
 				password: 'secret',
 				host: '127.0.0.1',
@@ -134,7 +134,7 @@ const config: Config = {
 		maria: {
 			client: 'mysql',
 			connection: {
-				database: 'directus',
+				database: 'directus9',
 				user: 'root',
 				password: 'secret',
 				host: 'localhost',
@@ -212,57 +212,57 @@ const config: Config = {
 	},
 	envs: {
 		postgres: {
-			...directusConfig,
+			...directus9Config,
 			DB_CLIENT: 'pg',
 			DB_HOST: `127.0.0.1`,
 			DB_USER: 'postgres',
 			DB_PASSWORD: 'secret',
 			DB_PORT: '6100',
-			DB_DATABASE: 'directus',
+			DB_DATABASE: 'directus9',
 			PORT: '59152',
 		},
 		postgres10: {
-			...directusConfig,
+			...directus9Config,
 			DB_CLIENT: 'pg',
 			DB_HOST: `127.0.0.1`,
 			DB_USER: 'postgres',
 			DB_PASSWORD: 'secret',
 			DB_PORT: '6101',
-			DB_DATABASE: 'directus',
+			DB_DATABASE: 'directus9',
 			PORT: '59153',
 		},
 		mysql: {
-			...directusConfig,
+			...directus9Config,
 			DB_CLIENT: 'mysql',
 			DB_HOST: `127.0.0.1`,
 			DB_PORT: '6102',
 			DB_USER: 'root',
 			DB_PASSWORD: 'secret',
-			DB_DATABASE: 'directus',
+			DB_DATABASE: 'directus9',
 			PORT: '59154',
 		},
 		mysql5: {
-			...directusConfig,
+			...directus9Config,
 			DB_CLIENT: 'mysql',
 			DB_HOST: `127.0.0.1`,
 			DB_PORT: '6103',
 			DB_USER: 'root',
 			DB_PASSWORD: 'secret',
-			DB_DATABASE: 'directus',
+			DB_DATABASE: 'directus9',
 			PORT: '59155',
 		},
 		maria: {
-			...directusConfig,
+			...directus9Config,
 			DB_CLIENT: 'mysql',
 			DB_HOST: `localhost`,
 			DB_PORT: '6104',
 			DB_USER: 'root',
 			DB_PASSWORD: 'secret',
-			DB_DATABASE: 'directus',
+			DB_DATABASE: 'directus9',
 			PORT: '59156',
 		},
 		mssql: {
-			...directusConfig,
+			...directus9Config,
 			DB_CLIENT: 'mssql',
 			DB_HOST: `127.0.0.1`,
 			DB_PORT: '6105',
@@ -272,7 +272,7 @@ const config: Config = {
 			PORT: '59157',
 		},
 		oracle: {
-			...directusConfig,
+			...directus9Config,
 			DB_CLIENT: 'oracledb',
 			DB_USER: 'secretsysuser',
 			DB_PASSWORD: 'secretpassword',
@@ -280,7 +280,7 @@ const config: Config = {
 			PORT: '59158',
 		},
 		cockroachdb: {
-			...directusConfig,
+			...directus9Config,
 			DB_CLIENT: 'cockroachdb',
 			DB_HOST: `127.0.0.1`,
 			DB_USER: 'root',
@@ -290,7 +290,7 @@ const config: Config = {
 			PORT: '59159',
 		},
 		sqlite3: {
-			...directusConfig,
+			...directus9Config,
 			DB_CLIENT: 'sqlite3',
 			DB_FILENAME: './test.db',
 			PORT: '59160',

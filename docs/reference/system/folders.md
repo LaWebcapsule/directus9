@@ -1,5 +1,5 @@
 ---
-description: REST and GraphQL API documentation on the Folders collection in Directus.
+description: REST and GraphQL API documentation on the Folders collection in Directus9.
 readTime: 4 min read
 pageClass: page-reference
 ---
@@ -36,7 +36,7 @@ Parent folder. Many-to-one to folders (recursive).
 
 ## List Folders
 
-List all folders that exist in Directus.
+List all folders that exist in Directus9.
 
 ### Query Parameters
 
@@ -64,7 +64,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	folders: directus_folders
+	folders: directus9_folders
 }
 ```
 
@@ -82,7 +82,7 @@ query {
 
 ## Retrieve a Folder
 
-List all folders that exist in Directus.
+List all folders that exist in Directus9.
 
 ### Query Parameters
 
@@ -112,7 +112,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	folders_by_id(id: ID!): directus_folders
+	folders_by_id(id: ID!): directus9_folders
 }
 ```
 
@@ -168,7 +168,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_folders_item(data: create_directus_folders_input): directus_folders
+	create_folders_item(data: create_directus9_folders_input): directus9_folders
 }
 ```
 
@@ -230,7 +230,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_folders_items(data: [create_directus_folders_input]): [directus_folders]
+	create_folders_items(data: [create_directus9_folders_input]): [directus9_folders]
 }
 ```
 
@@ -287,7 +287,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_folders_item(id: ID!, data: update_directus_folders_input): directus_folders
+	update_folders_item(id: ID!, data: update_directus9_folders_input): directus9_folders
 }
 ```
 
@@ -354,7 +354,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_folders_items(ids: [ID!]!, data: update_directus_folders_input): [directus_folders]
+	update_folders_items(ids: [ID!]!, data: update_directus9_folders_input): [directus9_folders]
 }
 ```
 

@@ -12,7 +12,7 @@
 							<img :src="logoURL" :alt="serverInfo?.project.project_name || 'Logo'" />
 						</div>
 						<div v-else class="logo" :style="{ backgroundColor: serverInfo?.project.project_color }">
-							<img src="../../assets/logo.svg" alt="Directus" class="directus-logo" />
+							<img src="../../assets/logo.svg" alt="Directus9" class="directus9-logo" />
 						</div>
 						<div class="title">
 							<p class="subtitle">{{ serverInfo?.project.project_name }}</p>

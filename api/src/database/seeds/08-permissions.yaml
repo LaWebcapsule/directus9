@@ -1,4 +1,4 @@
-table: directus_permissions
+table: directus9_permissions
 
 columns:
   id:
@@ -6,14 +6,14 @@ columns:
   role:
     type: uuid
     references:
-      table: directus_roles
+      table: directus9_roles
       column: id
   collection:
     type: string
     length: 64
     nullable: false
     references:
-      table: directus_collections
+      table: directus9_collections
       column: collection
   action:
     type: string

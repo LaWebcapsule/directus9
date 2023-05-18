@@ -67,11 +67,11 @@ export default defineComponent({
 		const { t, d } = useI18n();
 
 		const editAllowed = computed(() => {
-			return isAllowed('directus_shares', 'update', props.share);
+			return isAllowed('directus9_shares', 'update', props.share);
 		});
 
 		const deleteAllowed = computed(() => {
-			return isAllowed('directus_shares', 'delete', props.share);
+			return isAllowed('directus9_shares', 'delete', props.share);
 		});
 
 		const usesLeft = computed(() => {

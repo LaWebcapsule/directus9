@@ -49,7 +49,7 @@ logoutReason:
   SESSION_EXPIRED: Sesijos laikas baigėsi
 public_description: Nustato kokie API duomenys yra prieinami neprisijungus.
 not_allowed: Neleidžiama
-directus_version: Directus versija
+directus9_version: Directus9 versija
 node_version: Serverio versija
 node_uptime: Serverio veikimo laikas
 os_type: OS tipas
@@ -621,7 +621,7 @@ singleton: Singleton objektas
 singleton_label: Laikyti vienu objektu
 system_fields_locked: Sisteminiai laukai yra užrakinti ir negali būti redaguojami
 fields:
-  directus_activity:
+  directus9_activity:
     item: Įrašo Pirminis Raktas
     action: Veiksmas
     collection: Rinkinys
@@ -631,7 +631,7 @@ fields:
     user_agent: Naršyklė
     ip: IP adresas
     revisions: Pakeitimai
-  directus_collections:
+  directus9_collections:
     collection: Rinkinys
     icon: Ikona
     note: Pastaba
@@ -640,7 +640,7 @@ fields:
     hidden: Paslėptas
     singleton: Singleton objektas
     sort_field: Rūšiavimo laukas
-  directus_files:
+  directus9_files:
     title: Pavadinmas
     description: Aprašymas
     tags: Žymos
@@ -658,7 +658,7 @@ fields:
     height: Aukštis
     charset: Simbolių rinkinys
     duration: Trukmė
-  directus_users:
+  directus9_users:
     first_name: Vardas
     last_name: Pavardė
     email: El. paštas
@@ -676,7 +676,7 @@ fields:
     role: Vaidmuo
     last_page: Paskutinis puslapis
     last_access: Paskutinė prieiga
-  directus_settings:
+  directus9_settings:
     project_name: Projekto pavadinimas
     project_url: Projekto adresas
     project_color: Projekto spalva
@@ -686,11 +686,11 @@ fields:
     public_note: Vieša pastaba
     auth_password_policy: Slaptažodžių politika
     auth_login_attempts: Max. bandymų prisijungti kiekis
-  directus_shares:
+  directus9_shares:
     name: Pavadinimas
     role: Vaidmuo
     password: Slaptažodis
-  directus_fields:
+  directus9_fields:
     collection: Kolekcijos pavadinimas
     icon: Kolekcijos ikonėlė
     note: Pastaba
@@ -698,7 +698,7 @@ fields:
     singleton: Singleton objektas
     translation: Laukų pavadinimų vertimai
     display_template: Šablonas
-  directus_roles:
+  directus9_roles:
     name: Vaidmens pavadinimas
     icon: Grupės ikonėlė
     description: Aprašymas
@@ -708,16 +708,16 @@ fields:
     enforce_tfa: Reikalinga 2FA
     users: Vartotojai grupėje
     module_list: Modulių navigacija
-  directus_webhooks:
+  directus9_webhooks:
     name: Pavadinimas
     status: Būsena
     value: Reikšmė
     collections: Kolekcijos
 field_options:
-  directus_activity:
+  directus9_activity:
     create: Kurti
     update: Atnaujinti
-  directus_collections:
+  directus9_collections:
     collection_setup: Kolekcijos konfigūracija
     singleton: Laikyti vienu objektu
     language: Kalba
@@ -725,14 +725,14 @@ field_options:
     collection_name: Kolekcijos pavadinimas
     archive_divider: Archyvuoti
     sort_divider: Rūšiuoti
-  directus_roles:
+  directus9_roles:
     fields:
       icon_name: Ikona
       name_name: Pavadinimas
     collections_name: Kolekcijos
-  directus_users:
+  directus9_users:
     status_dropdown_active: Aktyvus
-  directus_webhooks:
+  directus9_webhooks:
     status_options_active: Aktyvus
     actions_create: Kurti
     actions_update: Atnaujinti
@@ -885,7 +885,7 @@ interfaces:
     no_collection: Nėra kolekcijos
   user:
     user: Vartotojas
-    description: Pasirinkti egzistuojantį Directus vartotoją
+    description: Pasirinkti egzistuojantį Directus9 vartotoją
     select_mode: Pasirinkti režimą
     modes:
       auto: Automatiškai

@@ -1,7 +1,7 @@
 import api from '@/api';
 import { Collection } from '@/types/collections';
 import { adjustFieldsForDisplays } from '@/utils/adjust-fields-for-displays';
-import { getEndpoint, getFieldsFromTemplate } from '@directus/utils';
+import { getEndpoint, getFieldsFromTemplate } from '@directus9/utils';
 import { computed, Ref, ref, watch } from 'vue';
 
 type UsableTemplateData = {
@@ -34,7 +34,7 @@ export function useTemplateData(collection: Ref<Collection | null>, primaryKey: 
 
 		const baseEndpoint = getEndpoint(collection.value.collection);
 
-		const endpoint = collection.value.collection.startsWith('directus_')
+		const endpoint = collection.value.collection.startsWith('directus9_')
 			? `${baseEndpoint}/${primaryKey.value}`
 			: `${baseEndpoint}/${encodeURIComponent(primaryKey.value)}`;
 

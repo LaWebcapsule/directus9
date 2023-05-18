@@ -1,7 +1,7 @@
-import { defineDisplay } from '@directus/utils';
-import { DisplayConfig } from '@directus/types';
+import { defineDisplay } from '@directus9/utils';
+import { DisplayConfig } from '@directus9/types';
 import DisplayFormattedValue from './formatted-value.vue';
-import formatTitle from '@directus/format-title';
+import formatTitle from '@directus9/format-title';
 import { decode } from 'html-entities';
 import dompurify from 'dompurify';
 

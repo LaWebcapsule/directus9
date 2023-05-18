@@ -5,7 +5,7 @@ export async function up(knex: Knex): Promise<void> {
 	const helper = getHelpers(knex).schema;
 	const type = helper.isOneOfClients(['oracle', 'cockroachdb']) ? 'text' : 'string';
 
-	await helper.changeToType('directus_webhooks', 'collections', type, {
+	await helper.changeToType('directus9_webhooks', 'collections', type, {
 		nullable: false,
 	});
 }
@@ -13,5 +13,5 @@ export async function up(knex: Knex): Promise<void> {
 export async function down(knex: Knex): Promise<void> {
 	const helper = getHelpers(knex).schema;
 	const type = helper.isOneOfClients(['oracle', 'cockroachdb']) ? 'text' : 'string';
-	await helper.changeToType('directus_webhooks', 'collections', type);
+	await helper.changeToType('directus9_webhooks', 'collections', type);
 }

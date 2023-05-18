@@ -1,5 +1,5 @@
 import * as validator from '@authenio/samlify-node-xmllint';
-import { BaseException } from '@directus/exceptions';
+import { BaseException } from '@directus9/exceptions';
 import express, { Router } from 'express';
 import * as samlify from 'samlify';
 import { getAuthProvider } from '../../auth.js';
@@ -40,7 +40,7 @@ export class SAMLAuthDriver extends LocalAuthDriver {
 	async fetchUserID(identifier: string) {
 		const user = await this.knex
 			.select('id')
-			.from('directus_users')
+			.from('directus9_users')
 			.whereRaw('LOWER(??) = ?', ['external_identifier', identifier.toLowerCase()])
 			.first();
 

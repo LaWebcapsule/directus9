@@ -50,7 +50,7 @@ logoutReason:
   SESSION_EXPIRED: N'eo ket mat ho sezenn ken
 public_description: Kontroll peseurt roadennoù API a zo hegerz hep dilesa.
 not_allowed: N'eo ket aotreet
-directus_version: Doare Directus
+directus9_version: Doare Directus9
 node_version: Doare Node
 node_uptime: Amzer hegerzded an Node
 os_type: Seurt OS
@@ -671,7 +671,7 @@ collections: Dastumadoù
 singleton_label: Ur singleton eo
 system_fields_locked: Prennet eo ar maeziennoù sistem ha ne c'hellont ket bezañ kemmet
 fields:
-  directus_activity:
+  directus9_activity:
     item: Alc'hwez pennañ an elfenn
     action: Obererezh
     collection: Dastumad
@@ -681,7 +681,7 @@ fields:
     user_agent: Graer implijer
     ip: Chomlec'h IP
     revisions: Roll-istor
-  directus_collections:
+  directus9_collections:
     collection: Dastumad
     icon: Arlun
     note: Evezhiadenn
@@ -694,7 +694,7 @@ fields:
     unarchive_value: Talvoud evit an diziellañ
     sort_field: Maezienn rummañ
     accountability: Enrollañ an obererezh hag ar roll-istor
-  directus_files:
+  directus9_files:
     $thumbnail: Skeudennig
     title: Anv
     description: Deskrivadur
@@ -718,7 +718,7 @@ fields:
     height: Uhelder
     charset: Stropad arouezennoù
     duration: Hirder
-  directus_users:
+  directus9_users:
     first_name: Anv bihan
     last_name: Anv
     email: Postel
@@ -735,7 +735,7 @@ fields:
     role: Roll
     last_page: Pajenn ziwezhañ
     last_access: Mont diwezhañ
-  directus_settings:
+  directus9_settings:
     project_name: Anv ar raktres
     project_url: URL ar raktres
     project_color: Liv ar raktres
@@ -746,18 +746,18 @@ fields:
     auth_password_policy: Politikerezh ar gerioù-tremen
     auth_login_attempts: Taolioù kevreañ
     custom_css: Personelaat an CSS
-  directus_shares:
+  directus9_shares:
     name: Anv
     role: Roll
     password: Ger-tremen
-  directus_fields:
+  directus9_fields:
     collection: Anv an dastumad
     icon: Arlun an Dastumad
     note: Evezhiadenn
     hidden: Kuzhet
     translation: Troidigezhioù anv ar vaezienn
     display_template: Patrom
-  directus_roles:
+  directus9_roles:
     name: Anv ar roll
     icon: Arlun ar roll
     description: Deskrivadur
@@ -767,18 +767,18 @@ fields:
     enforce_tfa: Ret eo kaout A2F
     users: Izili gant ar roll
     module_list: Modulenn ar Merdeiñ
-  directus_webhooks:
+  directus9_webhooks:
     name: Anv
     status: Stad
     value: Talvoud
     collections: Dastumadoù
 field_options:
-  directus_settings:
+  directus9_settings:
     mapbox_placeholder: pk.eyJ1Ijo.....
-  directus_activity:
+  directus9_activity:
     create: Krouiñ
     update: Hizivaat
-  directus_collections:
+  directus9_collections:
     track_activity_revisions: Enrollañ an obererezh hag ar roll-istor
     only_track_activity: Enrollañ an obererezh hepken
     do_not_track_anything: Enrollañ netra
@@ -789,15 +789,15 @@ field_options:
     collection_name: Anv an dastumad
     archive_divider: Diellañ
     sort_divider: Rummañ
-  directus_roles:
+  directus9_roles:
     fields:
       icon_name: Arlun
       name_name: Anv
       name_placeholder: Bizskrivit un titl...
     collections_name: Dastumadoù
-  directus_users:
+  directus9_users:
     status_dropdown_active: Oberiat
-  directus_webhooks:
+  directus9_webhooks:
     status_options_active: Oberiat
     actions_create: Krouiñ
     actions_update: Hizivaat
@@ -1061,7 +1061,7 @@ interfaces:
     recursive_only: Gwel gwezheñvel evit an darempredoù rekursivel hepken.
   user:
     user: Implijer
-    description: Dibab un implijer directus a zo dija
+    description: Dibab un implijer directus9 a zo dija
     select_mode: Dibab ur mod
     modes:
       auto: Emgefreek
@@ -1174,7 +1174,7 @@ displays:
     description: Diskwel an talvoudoù deuet eus un darempred
   user:
     user: Implijer
-    description: Diskwel un implijer directus
+    description: Diskwel un implijer directus9
     name: Anv
     both: Holl
     circle_label: Diskwel an implijer en ur c'helc'h

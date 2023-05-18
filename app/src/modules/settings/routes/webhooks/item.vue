@@ -55,7 +55,7 @@
 			v-model="edits"
 			:loading="loading"
 			:initial-values="item"
-			collection="directus_webhooks"
+			collection="directus9_webhooks"
 			:batch-mode="isBatch"
 			:primary-key="primaryKey"
 			:validation-errors="validationErrors"
@@ -68,7 +68,7 @@
 			<revisions-drawer-detail
 				v-if="isNew === false"
 				ref="revisionsDrawerDetailRef"
-				collection="directus_webhooks"
+				collection="directus9_webhooks"
 				:primary-key="primaryKey"
 			/>
 		</template>
@@ -132,7 +132,7 @@ export default defineComponent({
 			saveAsCopy,
 			isBatch,
 			validationErrors,
-		} = useItem(ref('directus_webhooks'), primaryKey);
+		} = useItem(ref('directus9_webhooks'), primaryKey);
 
 		const confirmDelete = ref(false);
 

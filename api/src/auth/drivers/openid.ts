@@ -1,6 +1,6 @@
-import { BaseException } from '@directus/exceptions';
-import type { Accountability } from '@directus/types';
-import { parseJSON } from '@directus/utils';
+import { BaseException } from '@directus9/exceptions';
+import type { Accountability } from '@directus9/types';
+import { parseJSON } from '@directus9/utils';
 import express, { Router } from 'express';
 import flatten from 'flat';
 import jwt from 'jsonwebtoken';
@@ -116,7 +116,7 @@ export class OpenIDAuthDriver extends LocalAuthDriver {
 	private async fetchUserId(identifier: string): Promise<string | undefined> {
 		const user = await this.knex
 			.select('id')
-			.from('directus_users')
+			.from('directus9_users')
 			.whereRaw('LOWER(??) = ?', ['external_identifier', identifier.toLowerCase()])
 			.first();
 
@@ -307,7 +307,7 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 				env['SECRET'] as string,
 				{
 					expiresIn: '5m',
-					issuer: 'directus',
+					issuer: 'directus9',
 				}
 			);
 
@@ -337,7 +337,7 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 
 			try {
 				tokenData = jwt.verify(req.cookies[`openid.${providerName}`], env['SECRET'] as string, {
-					issuer: 'directus',
+					issuer: 'directus9',
 				}) as {
 					verifier: string;
 					redirect?: string;

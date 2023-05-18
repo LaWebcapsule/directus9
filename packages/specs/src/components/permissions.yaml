@@ -1,5 +1,5 @@
 type: object
-x-collection: directus_permissions
+x-collection: directus9_permissions
 properties:
   id:
     description: Unique identifier for the permission.

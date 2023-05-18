@@ -1,7 +1,7 @@
-import type { ForeignKey, SchemaInspector } from '@directus/schema';
-import { createInspector } from '@directus/schema';
-import type { Accountability, Query, Relation, RelationMeta, SchemaOverview } from '@directus/types';
-import { toArray } from '@directus/utils';
+import type { ForeignKey, SchemaInspector } from '@directus9/schema';
+import { createInspector } from '@directus9/schema';
+import type { Accountability, Query, Relation, RelationMeta, SchemaOverview } from '@directus9/types';
+import { toArray } from '@directus9/utils';
 import type Keyv from 'keyv';
 import type { Knex } from 'knex';
 import { clearSystemCache, getCache } from '../cache.js';
@@ -35,11 +35,11 @@ export class RelationsService {
 		this.schema = options.schema;
 		this.accountability = options.accountability || null;
 
-		this.relationsItemService = new ItemsService('directus_relations', {
+		this.relationsItemService = new ItemsService('directus9_relations', {
 			knex: this.knex,
 			schema: this.schema,
 			// We don't set accountability here. If you have read access to certain fields, you are
-			// allowed to extract the relations regardless of permissions to directus_relations. This
+			// allowed to extract the relations regardless of permissions to directus9_relations. This
 			// happens in `filterForbidden` down below
 		});
 
@@ -207,11 +207,11 @@ export class RelationsService {
 					});
 				}
 
-				const relationsItemService = new ItemsService('directus_relations', {
+				const relationsItemService = new ItemsService('directus9_relations', {
 					knex: trx,
 					schema: this.schema,
 					// We don't set accountability here. If you have read access to certain fields, you are
-					// allowed to extract the relations regardless of permissions to directus_relations. This
+					// allowed to extract the relations regardless of permissions to directus9_relations. This
 					// happens in `filterForbidden` down below
 				});
 
@@ -307,11 +307,11 @@ export class RelationsService {
 					});
 				}
 
-				const relationsItemService = new ItemsService('directus_relations', {
+				const relationsItemService = new ItemsService('directus9_relations', {
 					knex: trx,
 					schema: this.schema,
 					// We don't set accountability here. If you have read access to certain fields, you are
-					// allowed to extract the relations regardless of permissions to directus_relations. This
+					// allowed to extract the relations regardless of permissions to directus9_relations. This
 					// happens in `filterForbidden` down below
 				});
 
@@ -399,7 +399,7 @@ export class RelationsService {
 				}
 
 				if (existingRelation.meta) {
-					await trx('directus_relations').delete().where({ many_collection: collection, many_field: field });
+					await trx('directus9_relations').delete().where({ many_collection: collection, many_field: field });
 				}
 
 				const actionEvent = {
@@ -446,12 +446,12 @@ export class RelationsService {
 	 */
 	private get hasReadAccess() {
 		return !!this.accountability?.permissions?.find((permission) => {
-			return permission.collection === 'directus_relations' && permission.action === 'read';
+			return permission.collection === 'directus9_relations' && permission.action === 'read';
 		});
 	}
 
 	/**
-	 * Combine raw schema foreign key information with Directus relations meta rows to form final
+	 * Combine raw schema foreign key information with Directus9 relations meta rows to form final
 	 * Relation objects
 	 */
 	private stitchRelations(metaRows: RelationMeta[], schemaRows: ForeignKey[]) {

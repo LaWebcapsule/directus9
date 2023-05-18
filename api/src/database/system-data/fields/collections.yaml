@@ -1,4 +1,4 @@
-table: directus_collections
+table: directus9_collections
 
 fields:
   - field: collection_divider
@@ -8,7 +8,7 @@ fields:
     interface: presentation-divider
     options:
       icon: box
-      title: $t:field_options.directus_collections.collection_setup
+      title: $t:field_options.directus9_collections.collection_setup
     width: full
 
   - field: collection
@@ -21,7 +21,7 @@ fields:
   - field: note
     interface: input
     options:
-      placeholder: $t:field_options.directus_collections.note_placeholder
+      placeholder: $t:field_options.directus9_collections.note_placeholder
     width: half
 
   - field: icon
@@ -46,7 +46,7 @@ fields:
       - cast-boolean
     interface: boolean
     options:
-      label: $t:field_options.directus_collections.hidden_label
+      label: $t:field_options.directus9_collections.hidden_label
     width: half
 
   - field: singleton
@@ -74,30 +74,30 @@ fields:
             width: half
             required: true
         - field: translation
-          name: $t:field_options.directus_collections.collection_name
+          name: $t:field_options.directus9_collections.collection_name
           type: string
           meta:
             interface: input
             width: half
             required: true
             options:
-              placeholder: $t:field_options.directus_collections.translation_placeholder
+              placeholder: $t:field_options.directus9_collections.translation_placeholder
         - field: singular
-          name: $t:field_options.directus_collections.singular_unit
+          name: $t:field_options.directus9_collections.singular_unit
           type: string
           meta:
             interface: input
             width: half
             options:
-              placeholder: $t:field_options.directus_collections.translation_placeholder
+              placeholder: $t:field_options.directus9_collections.translation_placeholder
         - field: plural
-          name: $t:field_options.directus_collections.plural_unit
+          name: $t:field_options.directus9_collections.plural_unit
           type: string
           meta:
             interface: input
             width: half
             options:
-              placeholder: $t:field_options.directus_collections.translation_placeholder
+              placeholder: $t:field_options.directus9_collections.translation_placeholder
     width: full
 
   - field: archive_divider
@@ -107,7 +107,7 @@ fields:
     interface: presentation-divider
     options:
       icon: archive
-      title: $t:field_options.directus_collections.archive_divider
+      title: $t:field_options.directus9_collections.archive_divider
     width: full
 
   - field: archive_field
@@ -115,7 +115,7 @@ fields:
     options:
       collectionField: collection
       allowNone: true
-      placeholder: $t:field_options.directus_collections.archive_field_placeholder
+      placeholder: $t:field_options.directus9_collections.archive_field_placeholder
     width: half
 
   - field: archive_app_filter
@@ -123,7 +123,7 @@ fields:
     special:
       - cast-boolean
     options:
-      label: $t:field_options.directus_collections.archive_app_filter
+      label: $t:field_options.directus9_collections.archive_app_filter
     width: half
 
   - field: archive_value
@@ -131,7 +131,7 @@ fields:
     options:
       font: monospace
       iconRight: archive
-      placeholder: $t:field_options.directus_collections.archive_value
+      placeholder: $t:field_options.directus9_collections.archive_value
     width: half
 
   - field: unarchive_value
@@ -139,7 +139,7 @@ fields:
     options:
       font: monospace
       iconRight: unarchive
-      placeholder: $t:field_options.directus_collections.unarchive_value
+      placeholder: $t:field_options.directus9_collections.unarchive_value
     width: half
 
   - field: sort_divider
@@ -149,14 +149,14 @@ fields:
     interface: presentation-divider
     options:
       icon: sort
-      title: $t:field_options.directus_collections.sort_divider
+      title: $t:field_options.directus9_collections.sort_divider
     width: full
 
   - field: sort_field
     interface: system-field
     options:
       collectionField: collection
-      placeholder: $t:field_options.directus_collections.sort_field
+      placeholder: $t:field_options.directus9_collections.sort_field
       typeAllowList:
         - float
         - decimal
@@ -173,18 +173,18 @@ fields:
     interface: presentation-divider
     options:
       icon: admin_panel_settings
-      title: $t:field_options.directus_collections.accountability_divider
+      title: $t:field_options.directus9_collections.accountability_divider
     width: full
 
   - field: accountability
     interface: select-dropdown
     options:
       choices:
-        - text: $t:field_options.directus_collections.track_activity_revisions
+        - text: $t:field_options.directus9_collections.track_activity_revisions
           value: all
-        - text: $t:field_options.directus_collections.only_track_activity
+        - text: $t:field_options.directus9_collections.only_track_activity
           value: activity
-        - text: $t:field_options.directus_collections.do_not_track_anything
+        - text: $t:field_options.directus9_collections.do_not_track_anything
           value: null
     width: half
 
@@ -195,7 +195,7 @@ fields:
     interface: presentation-divider
     options:
       icon: content_copy
-      title: $t:field_options.directus_collections.duplication_divider
+      title: $t:field_options.directus9_collections.duplication_divider
 
   - field: item_duplication_fields
     special:

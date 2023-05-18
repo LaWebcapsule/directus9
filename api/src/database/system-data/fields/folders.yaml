@@ -1,4 +1,4 @@
-table: directus_folders
+table: directus9_folders
 
 fields:
   - field: id

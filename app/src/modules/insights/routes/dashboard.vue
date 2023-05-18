@@ -210,7 +210,7 @@ import { useInsightsStore } from '@/stores/insights';
 import { usePermissionsStore } from '@/stores/permissions';
 import { pointOnLine } from '@/utils/point-on-line';
 import RefreshSidebarDetail from '@/views/private/components/refresh-sidebar-detail.vue';
-import { applyOptionsData } from '@directus/utils';
+import { applyOptionsData } from '@directus9/utils';
 import { assign, isEmpty } from 'lodash';
 import { computed, ref, toRefs, unref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
@@ -238,7 +238,7 @@ const { loading, errors, data, saving, hasEdits, refreshIntervals, variables } =
 const zoomToFit = ref(false);
 
 const updateAllowed = computed<boolean>(() => {
-	return permissionsStore.hasPermission('directus_panels', 'update');
+	return permissionsStore.hasPermission('directus9_panels', 'update');
 });
 
 const now = new Date();

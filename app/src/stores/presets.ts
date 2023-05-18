@@ -1,6 +1,6 @@
 import api from '@/api';
 import { useUserStore } from '@/stores/user';
-import { Preset } from '@directus/types';
+import { Preset } from '@directus9/types';
 import { cloneDeep, merge, orderBy } from 'lodash';
 import { nanoid } from 'nanoid';
 import { defineStore } from 'pinia';
@@ -20,8 +20,8 @@ const defaultPreset: Omit<Preset, 'collection'> = {
 };
 
 const systemDefaults: Record<string, Partial<Preset>> = {
-	directus_files: {
-		collection: 'directus_files',
+	directus9_files: {
+		collection: 'directus9_files',
 		layout: 'cards',
 		layout_query: {
 			cards: {
@@ -38,8 +38,8 @@ const systemDefaults: Record<string, Partial<Preset>> = {
 			},
 		},
 	},
-	directus_users: {
-		collection: 'directus_users',
+	directus9_users: {
+		collection: 'directus9_users',
 		layout: 'cards',
 		layout_query: {
 			cards: {
@@ -55,8 +55,8 @@ const systemDefaults: Record<string, Partial<Preset>> = {
 			},
 		},
 	},
-	directus_activity: {
-		collection: 'directus_activity',
+	directus9_activity: {
+		collection: 'directus9_activity',
 		layout: 'tabular',
 		layout_query: {
 			tabular: {
@@ -75,8 +75,8 @@ const systemDefaults: Record<string, Partial<Preset>> = {
 			},
 		},
 	},
-	directus_roles: {
-		collection: 'directus_roles',
+	directus9_roles: {
+		collection: 'directus9_roles',
 		layout: 'tabular',
 		layout_query: {
 			tabular: {
@@ -93,8 +93,8 @@ const systemDefaults: Record<string, Partial<Preset>> = {
 			},
 		},
 	},
-	directus_webhooks: {
-		collection: 'directus_webhooks',
+	directus9_webhooks: {
+		collection: 'directus9_webhooks',
 		layout: 'tabular',
 		layout_query: {
 			tabular: {

@@ -1,12 +1,12 @@
-import type { CollectionsOverview, Relation } from '@directus/types';
+import type { CollectionsOverview, Relation } from '@directus9/types';
 
 export const systemSchema = {
 	collections: {
-		directus_users: {
-			collection: 'directus_users',
+		directus9_users: {
+			collection: 'directus9_users',
 			primary: 'id',
 			singleton: false,
-			note: '$t:directus_collection.directus_users',
+			note: '$t:directus9_collection.directus9_users',
 			sortField: null,
 			accountability: null,
 			fields: {
@@ -54,11 +54,11 @@ export const systemSchema = {
 				},
 			},
 		},
-		directus_files: {
-			collection: 'directus_files',
+		directus9_files: {
+			collection: 'directus9_files',
 			primary: 'id',
 			singleton: false,
-			note: '$t:directus_collection.directus_files',
+			note: '$t:directus9_collection.directus9_files',
 			sortField: null,
 			accountability: null,
 			fields: {
@@ -109,13 +109,13 @@ export const systemSchema = {
 	} as CollectionsOverview,
 	relations: [
 		{
-			collection: 'directus_files',
+			collection: 'directus9_files',
 			field: 'uploaded_by',
-			related_collection: 'directus_users',
+			related_collection: 'directus9_users',
 			schema: {
-				table: 'directus_files',
+				table: 'directus9_files',
 				column: 'uploaded_by',
-				foreign_key_table: 'directus_users',
+				foreign_key_table: 'directus9_users',
 				foreign_key_column: 'id',
 				on_update: 'NO ACTION',
 				on_delete: 'NO ACTION',
@@ -123,9 +123,9 @@ export const systemSchema = {
 			},
 			meta: {
 				system: true,
-				many_collection: 'directus_files',
+				many_collection: 'directus9_files',
 				many_field: 'uploaded_by',
-				one_collection: 'directus_users',
+				one_collection: 'directus9_users',
 				one_field: 'items',
 				one_allowed_collections: null,
 				one_collection_field: null,

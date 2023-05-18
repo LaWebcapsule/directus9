@@ -1,5 +1,5 @@
-import type { Accountability, SchemaOverview } from '@directus/types';
-import { Action } from '@directus/constants';
+import type { Accountability, SchemaOverview } from '@directus9/types';
+import { Action } from '@directus9/constants';
 import jwt from 'jsonwebtoken';
 import type { Knex } from 'knex';
 import { clone, cloneDeep } from 'lodash-es';
@@ -16,7 +16,7 @@ import {
 	UserSuspendedException,
 } from '../exceptions/index.js';
 import { createRateLimiter } from '../rate-limiter.js';
-import type { AbstractServiceOptions, DirectusTokenPayload, LoginResult, Session, User } from '../types/index.js';
+import type { AbstractServiceOptions, Directus9TokenPayload, LoginResult, Session, User } from '../types/index.js';
 import { getMilliseconds } from '../utils/get-milliseconds.js';
 import { stall } from '../utils/stall.js';
 import { ActivityService } from './activity.js';
@@ -81,8 +81,8 @@ export class AuthenticationService {
 				'u.external_identifier',
 				'u.auth_data'
 			)
-			.from('directus_users as u')
-			.leftJoin('directus_roles as r', 'u.role', 'r.id')
+			.from('directus9_users as u')
+			.leftJoin('directus9_roles as r', 'u.role', 'r.id')
 			.where('u.id', userId)
 			.first();
 
@@ -148,7 +148,7 @@ export class AuthenticationService {
 			try {
 				await loginAttemptsLimiter.consume(user.id);
 			} catch {
-				await this.knex('directus_users').update({ status: 'suspended' }).where({ id: user.id });
+				await this.knex('directus9_users').update({ status: 'suspended' }).where({ id: user.id });
 				user.status = 'suspended';
 
 				// This means that new attempts after the user has been re-activated will be accepted
@@ -206,13 +206,13 @@ export class AuthenticationService {
 
 		const accessToken = jwt.sign(customClaims, env['SECRET'] as string, {
 			expiresIn: env['ACCESS_TOKEN_TTL'],
-			issuer: 'directus',
+			issuer: 'directus9',
 		});
 
 		const refreshToken = nanoid(64);
 		const refreshTokenExpiration = new Date(Date.now() + getMilliseconds(env['REFRESH_TOKEN_TTL'], 0));
 
-		await this.knex('directus_sessions').insert({
+		await this.knex('directus9_sessions').insert({
 			token: refreshToken,
 			user: user.id,
 			expires: refreshTokenExpiration,
@@ -221,7 +221,7 @@ export class AuthenticationService {
 			origin: this.accountability?.origin,
 		});
 
-		await this.knex('directus_sessions').delete().where('expires', '<', new Date());
+		await this.knex('directus9_sessions').delete().where('expires', '<', new Date());
 
 		if (this.accountability) {
 			await this.activityService.createOne({
@@ -230,12 +230,12 @@ export class AuthenticationService {
 				ip: this.accountability.ip,
 				user_agent: this.accountability.userAgent,
 				origin: this.accountability.origin,
-				collection: 'directus_users',
+				collection: 'directus9_users',
 				item: user.id,
 			});
 		}
 
-		await this.knex('directus_users').update({ last_access: new Date() }).where({ id: user.id });
+		await this.knex('directus9_users').update({ last_access: new Date() }).where({ id: user.id });
 
 		emitStatus('success');
 
@@ -286,10 +286,10 @@ export class AuthenticationService {
 				share_times_used: 'd.times_used',
 				share_max_uses: 'd.max_uses',
 			})
-			.from('directus_sessions AS s')
-			.leftJoin('directus_users AS u', 's.user', 'u.id')
-			.leftJoin('directus_shares AS d', 's.share', 'd.id')
-			.leftJoin('directus_roles AS r', (join) => {
+			.from('directus9_sessions AS s')
+			.leftJoin('directus9_users AS u', 's.user', 'u.id')
+			.leftJoin('directus9_shares AS d', 's.share', 'd.id')
+			.leftJoin('directus9_roles AS r', (join) => {
 				join.onIn('r.id', [this.knex.ref('u.role'), this.knex.ref('d.role')]);
 			})
 			.where('s.token', refreshToken)
@@ -307,7 +307,7 @@ export class AuthenticationService {
 		}
 
 		if (record.user_id && record.user_status !== 'active') {
-			await this.knex('directus_sessions').where({ token: refreshToken }).del();
+			await this.knex('directus9_sessions').where({ token: refreshToken }).del();
 
 			if (record.user_status === 'suspended') {
 				await stall(STALL_TIME, timeStart);
@@ -337,7 +337,7 @@ export class AuthenticationService {
 			});
 		}
 
-		const tokenPayload: DirectusTokenPayload = {
+		const tokenPayload: Directus9TokenPayload = {
 			id: record.user_id,
 			role: record.role_id,
 			app_access: record.role_app_access,
@@ -377,13 +377,13 @@ export class AuthenticationService {
 
 		const accessToken = jwt.sign(customClaims, env['SECRET'] as string, {
 			expiresIn: env['ACCESS_TOKEN_TTL'],
-			issuer: 'directus',
+			issuer: 'directus9',
 		});
 
 		const newRefreshToken = nanoid(64);
 		const refreshTokenExpiration = new Date(Date.now() + getMilliseconds(env['REFRESH_TOKEN_TTL'], 0));
 
-		await this.knex('directus_sessions')
+		await this.knex('directus9_sessions')
 			.update({
 				token: newRefreshToken,
 				expires: refreshTokenExpiration,
@@ -391,7 +391,7 @@ export class AuthenticationService {
 			.where({ token: refreshToken });
 
 		if (record.user_id) {
-			await this.knex('directus_users').update({ last_access: new Date() }).where({ id: record.user_id });
+			await this.knex('directus9_users').update({ last_access: new Date() }).where({ id: record.user_id });
 		}
 
 		return {
@@ -416,8 +416,8 @@ export class AuthenticationService {
 				'u.external_identifier',
 				'u.auth_data'
 			)
-			.from('directus_sessions as s')
-			.innerJoin('directus_users as u', 's.user', 'u.id')
+			.from('directus9_sessions as s')
+			.innerJoin('directus9_users as u', 's.user', 'u.id')
 			.where('s.token', refreshToken)
 			.first();
 
@@ -427,7 +427,7 @@ export class AuthenticationService {
 			const provider = getAuthProvider(user.provider);
 			await provider.logout(clone(user));
 
-			await this.knex.delete().from('directus_sessions').where('token', refreshToken);
+			await this.knex.delete().from('directus9_sessions').where('token', refreshToken);
 		}
 	}
 
@@ -445,7 +445,7 @@ export class AuthenticationService {
 				'external_identifier',
 				'auth_data'
 			)
-			.from('directus_users')
+			.from('directus9_users')
 			.where('id', userID)
 			.first();
 

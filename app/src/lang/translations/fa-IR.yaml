@@ -118,7 +118,7 @@ public_label: در دسترس عموم
 public_description: اینکه کدام داده مربوط به API، بدون احراز هویت، قابل دسترسی باشد را کنترل میکند.
 admin_description: نقش مدیریتی اولیه با سطح دسترسی بدون محدودیت به برنامه و API
 not_allowed: مجاز نیست
-directus_version: نسخه دایرکتوس
+directus9_version: نسخه دایرکتوس
 node_version: نسخه node
 node_uptime: مدت زمان اجرای node تاکنون
 os_type: نوع سیستم عامل
@@ -1030,30 +1030,30 @@ content: محتوا
 singleton: تک کالکشن یا Singleton
 singleton_label: به عنوان یک شی واحد رفتار کند
 system_fields_locked: فیلدهای سیستم قفل هستند و قابل ویرایش نیستند
-directus_collection:
-  directus_activity: گزارش های مسئولیت پذیری برای همه رویدادها
-  directus_collections: پیکربندی مجموعه اضافی و ابرداده
-  directus_dashboards: داشبوردهای درون ماژول Insights
-  directus_fields: پیکربندی فیلد اضافی و ابرداده
-  directus_files: فراداده برای همه Assets های فایل مدیریت شده
-  directus_flows: اتوماسیون Flow
-  directus_folders: دایرکتوری های مجازی برای فایل ها فراهم می کند
-  directus_migrations: از چه نسخه ای از پایگاه داده استفاده می کنید
-  directus_notifications: اعلانهای ارسالی به کاربر
-  directus_operations: عملیاتی که در اتوماسیون اجرا می شوند
-  directus_panels: پنل‌های مجزا در داشبوردها
-  directus_permissions: دسترسی به اجازه های این نقش
-  directus_presets: تنظیمات پیش‌فرض برای مجموعه و بوکمارک‌ها
-  directus_relations: پیکربندی رابطه و داده متا
-  directus_revisions: عکس های فوری داده برای همه فعالیت ها
-  directus_roles: گروههای اجازه برای کاربران سیستم
-  directus_sessions: اطلاعات نشست کاربر
-  directus_settings: گزینه های پیکربندی پروژه
-  directus_shares: موارد به اشتراک گذاشته شده خارجی را ردیابی می کند
-  directus_users: کاربران سیستمی برای پلتفرم
-  directus_webhooks: پیکربندی برای درخواست های HTTP مبتنی بر رویداد
+directus9_collection:
+  directus9_activity: گزارش های مسئولیت پذیری برای همه رویدادها
+  directus9_collections: پیکربندی مجموعه اضافی و ابرداده
+  directus9_dashboards: داشبوردهای درون ماژول Insights
+  directus9_fields: پیکربندی فیلد اضافی و ابرداده
+  directus9_files: فراداده برای همه Assets های فایل مدیریت شده
+  directus9_flows: اتوماسیون Flow
+  directus9_folders: دایرکتوری های مجازی برای فایل ها فراهم می کند
+  directus9_migrations: از چه نسخه ای از پایگاه داده استفاده می کنید
+  directus9_notifications: اعلانهای ارسالی به کاربر
+  directus9_operations: عملیاتی که در اتوماسیون اجرا می شوند
+  directus9_panels: پنل‌های مجزا در داشبوردها
+  directus9_permissions: دسترسی به اجازه های این نقش
+  directus9_presets: تنظیمات پیش‌فرض برای مجموعه و بوکمارک‌ها
+  directus9_relations: پیکربندی رابطه و داده متا
+  directus9_revisions: عکس های فوری داده برای همه فعالیت ها
+  directus9_roles: گروههای اجازه برای کاربران سیستم
+  directus9_sessions: اطلاعات نشست کاربر
+  directus9_settings: گزینه های پیکربندی پروژه
+  directus9_shares: موارد به اشتراک گذاشته شده خارجی را ردیابی می کند
+  directus9_users: کاربران سیستمی برای پلتفرم
+  directus9_webhooks: پیکربندی برای درخواست های HTTP مبتنی بر رویداد
 fields:
-  directus_activity:
+  directus9_activity:
     item: کلید اصلی آیتم
     action: فعالیت
     collection: مجموعه
@@ -1064,7 +1064,7 @@ fields:
     origin: مبدأ
     ip: آدرس IP
     revisions: نسخه
-  directus_collections:
+  directus9_collections:
     collection: کالکشن یا مجموعه
     icon: آیکن
     note: شرح
@@ -1080,7 +1080,7 @@ fields:
     accountability: مشاهده Log ها و فعالیت ها
     archive_field: فیلد بایگانی
     item_duplication_fields: فیلدهای تکراری
-  directus_files:
+  directus9_files:
     $thumbnail: تصویر کوچک
     title: عنوان
     description: توضیحات
@@ -1104,7 +1104,7 @@ fields:
     height: ارتفاع
     charset: مجموعه کاراکتر
     duration: مدت زمان
-  directus_users:
+  directus9_users:
     first_name: نام
     last_name: نام خانوادگی
     email: ایمیل
@@ -1135,7 +1135,7 @@ fields:
     last_page: صفحه آخر
     last_access: آخرین دسترسی
     email_notifications: اعلان های ایمیلی
-  directus_settings:
+  directus9_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
@@ -1173,7 +1173,7 @@ fields:
     transformations_presets: تبدیل‌ها را به تنظیمات پیش‌فرض زیر محدود کنید
     image_editor: ویرایشگر تصویر
     custom_aspect_ratios: نسبت تصویر سفارشی
-  directus_shares:
+  directus9_shares:
     name: نام
     role: نقش
     password: رمز عبور
@@ -1181,7 +1181,7 @@ fields:
     date_end: تاریخ پایان
     max_uses: حداکثر استفاده
     times_used: زمان استفاده شده
-  directus_fields:
+  directus9_fields:
     collection: نام مجموعه
     icon: آیکن مجموعه
     note: شرح
@@ -1189,7 +1189,7 @@ fields:
     singleton: تک کالکشن یا Singleton
     translation: ترجمه‌های نام فیلد
     display_template: پوسته
-  directus_roles:
+  directus9_roles:
     name: نام نقش
     icon: آیکن نقش
     description: توضیحات
@@ -1199,7 +1199,7 @@ fields:
     enforce_tfa: اجبار به احراز هویت دو عاملی
     users: کاربران دارای این نقش
     module_list: نویگیشن مربوط به ماژول
-  directus_webhooks:
+  directus9_webhooks:
     name: نام
     method: شیوه یا متود
     status: وضعیت
@@ -1212,7 +1212,7 @@ fields:
     actions: فعالیت ها
     collections: کالکشن ها یا مجموعه ها
 field_options:
-  directus_settings:
+  directus9_settings:
     project_name_placeholder: پروژه من...
     project_color_note: نماد برگه ورود
     public_note_placeholder: یک پیام کوتاه و عمومی که از قالب بندی علامت گذاری پشتیبانی می کند...
@@ -1240,12 +1240,12 @@ field_options:
     basemaps_style: Mapbox Style
     files_divider_title: فایلها و تصاویر کوچک
     overrides_divider_title: لغو برنامه
-  directus_activity:
+  directus9_activity:
     login: ورود به سیستم
     create: ایجاد
     update: بروزرسانی
     delete: حذف
-  directus_collections:
+  directus9_collections:
     track_activity_revisions: مشاهده فعالیت ها و لاگ ها
     only_track_activity: فقط مشاهده فعالیت ها
     do_not_track_anything: هیچ چیز را پیگیری نکن
@@ -1268,14 +1268,14 @@ field_options:
     sort_field: یک فیلد را انتخاب کنید...
     accountability_divider: مسئوليت
     duplication_divider: تکراری
-  directus_files:
+  directus9_files:
     title: یک عنوان منحصر به فرد
     description: توضیحات اختیاری...
     location: موقعیت اختیاری...
     storage_divider: نحوه نام گذاری فایل
     filename_disk: نام برروی دیسک...
     filename_download: نام فایل به هنگام دانلود...
-  directus_roles:
+  directus9_roles:
     name: نامی یکتا برای این نقش...
     description: توضیحات مربوط به این نقش...
     ip_access: IP های مورد تأیید را وارد کنید، برای اجازه دسترسی به تمامی IP ها فیلد را خالی بگذارید...
@@ -1287,7 +1287,7 @@ field_options:
       link_placeholder: لینک نسبی یا کامل...
     collections_name: مجموعه‌ها
     collections_addLabel: مجموعه جدید...
-  directus_users:
+  directus9_users:
     preferences_divider: تنظیمات مربوط به کاربر
     dropdown_auto: انتخاب خودکار پوسته (توسط سیستم)
     dropdown_light: تم روشن
@@ -1299,7 +1299,7 @@ field_options:
     status_dropdown_suspended: تعلیق شده
     status_dropdown_archived: بایگانی شده
     token: یک رمز دسترسی ایمن وارد کنید...
-  directus_webhooks:
+  directus9_webhooks:
     status_options_active: فعال
     status_options_inactive: غیر فعال
     data_label: ارسال داده های رویداد

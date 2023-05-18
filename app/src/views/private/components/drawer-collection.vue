@@ -56,9 +56,9 @@
 <script lang="ts">
 import { useI18n } from 'vue-i18n';
 import { defineComponent, PropType, ref, computed, toRefs, watch } from 'vue';
-import { Filter } from '@directus/types';
+import { Filter } from '@directus9/types';
 import { usePreset } from '@/composables/use-preset';
-import { useCollection, useLayout } from '@directus/composables';
+import { useCollection, useLayout } from '@directus9/composables';
 import SearchInput from '@/views/private/components/search-input.vue';
 import { useExtension } from '@/composables/use-extension';
 

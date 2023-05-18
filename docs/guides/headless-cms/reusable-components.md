@@ -1,8 +1,8 @@
 ---
-description: This guide shows you how to build re-usable page components using Directus Many-to-Any (M2A) relationships.
+description: This guide shows you how to build re-usable page components using Directus9 Many-to-Any (M2A) relationships.
 tags: []
 skill_level:
-directus_version: 9.21.4
+directus9_version: 9.21.4
 author_override:
 author: Bryant Gillespie
 ---
@@ -15,7 +15,7 @@ author: Bryant Gillespie
 
 Many websites are made of common, repeating sections or groups of content.
 
-A common use case when using Directus as a Headless CMS is creating individual blocks that can be re-used on many
+A common use case when using Directus9 as a Headless CMS is creating individual blocks that can be re-used on many
 different pages.
 
 This enables your content team create unique page layouts from re-usable components.
@@ -33,18 +33,18 @@ To achieve this, you will:
 
 :::tip Requirements
 
-You’ll need to have either a Directus Cloud project configured and running or a self-hosted instance of Directus up and
+You’ll need to have either a Directus9 Cloud project configured and running or a self-hosted instance of Directus9 up and
 running.
 
 :::
 
 ### Map Out Your Data Model
 
-Before you starting creating Collections inside Directus, it’s helpful to map out your data model (schema).
+Before you starting creating Collections inside Directus9, it’s helpful to map out your data model (schema).
 
 Consider this sample page below.
 
-![Website wireframe that shows three different sections. A hero block with a headline and image, a group of content cards, and a block of rich text.](https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/sample-page.webp)
+![Website wireframe that shows three different sections. A hero block with a headline and image, a group of content cards, and a block of rich text.](https://cdn.directus9.io/docs/v9/headless-cms/how-to-packet-20220222A/sample-page.webp)
 
 There are three main “blocks” that could be broken down into separate components.
 
@@ -56,7 +56,7 @@ Let’s break down the data model for each section.
 
 ---
 
-![Simple wireframe of a hero section on a sample website.](https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/block-hero.webp)
+![Simple wireframe of a hero section on a sample website.](https://cdn.directus9.io/docs/v9/headless-cms/how-to-packet-20220222A/block-hero.webp)
 
 **Hero**
 
@@ -70,7 +70,7 @@ Let’s break down the data model for each section.
 
 ---
 
-![Simple wireframe of a group of content cards on a sample website.](https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/block-cardgroup.webp)
+![Simple wireframe of a group of content cards on a sample website.](https://cdn.directus9.io/docs/v9/headless-cms/how-to-packet-20220222A/block-cardgroup.webp)
 
 **Card Group**
 
@@ -83,7 +83,7 @@ Let’s break down the data model for each section.
 
 ---
 
-![Simple wireframe of a block of rich text on a sample website.](https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/block-richtext.webp)
+![Simple wireframe of a block of rich text on a sample website.](https://cdn.directus9.io/docs/v9/headless-cms/how-to-packet-20220222A/block-richtext.webp)
 
 **Rich Text**
 
@@ -92,7 +92,7 @@ Let’s break down the data model for each section.
 
 ---
 
-Now let's create a Collection for each inside Directus.
+Now let's create a Collection for each inside Directus9.
 
 :::tip
 
@@ -164,7 +164,7 @@ To keep things organized, we recommend that you namespace each collection with a
 
 5. Create a new Builder (M2A) field inside the `pages` data model.
 
-   ![In the data model settings for the pages collection, a new Many-To-Any relationship is being created. The key is named blocks. There are 3 related collections selected - Block Cardgroup, Block Hero, and Block Rich text.](https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/reusable-page-components-m2a-screen.webp)
+   ![In the data model settings for the pages collection, a new Many-To-Any relationship is being created. The key is named blocks. There are 3 related collections selected - Block Cardgroup, Block Hero, and Block Rich text.](https://cdn.directus9.io/docs/v9/headless-cms/how-to-packet-20220222A/reusable-page-components-m2a-screen.webp)
 
    a. For the **Key**, use `blocks`.
 
@@ -174,7 +174,7 @@ To keep things organized, we recommend that you namespace each collection with a
    - Gallery / Cards
    - Article
 
-   c. Save the field. Directus will create a new, hidden
+   c. Save the field. Directus9 will create a new, hidden
    [junction collection](/configuration/data-model/relationships#many-to-any-m2a) for you automatically.
 
 :::tip
@@ -189,7 +189,7 @@ Mode option.
 6. [Create a new item](/app/content/items#create-an-item) in the `pages` collection
 
    <video title="Create Your Page Content" autoplay muted loop controls playsinline>
-   <source src="https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/reusable-page-components-adding-content.mp4"> type="video/mp4" />
+   <source src="https://cdn.directus9.io/docs/v9/headless-cms/how-to-packet-20220222A/reusable-page-components-adding-content.mp4"> type="video/mp4" />
    </video>
 
    a. Enter the page **Title** and **Slug**.
@@ -217,8 +217,8 @@ how to properly fetch nested relational M2A data without over-fetching data that
 // Write some code here in your front-end framework that gets the slug from the current URL.
 const slug = 'the-ultimate-guide-to-rabbits';
 
-// Call the Directus API using the SDK.
-const response = await directus.items('pages').readByQuery({
+// Call the Directus9 API using the SDK.
+const response = await directus9.items('pages').readByQuery({
 	filter: {
 		slug: { _eq: slug },
 	},
@@ -298,7 +298,7 @@ const page = response.data[0];
 
 ### Structuring Your Front End
 
-We have [integration guides](https://directus.io/guides/) for many popular front-end frameworks. But there are far too
+We have [integration guides](https://directus9.io/guides/) for many popular front-end frameworks. But there are far too
 many to cover in this recipe.
 
 Here’s some general advice on how to structure your front end to display page blocks / Many-To-Any (M2A) Relationship
@@ -325,9 +325,9 @@ This guide has quite a few steps and involves several different collections. Her
 ### Study the API Response
 
 To prevent frustration when building your front-end, it’s important you understand the structure of the JSON data that
-Directus returns for Many To Any (M2A) relationships.
+Directus9 returns for Many To Any (M2A) relationships.
 
-- Complete your page builder data model inside Directus.
+- Complete your page builder data model inside Directus9.
 - Add some content.
 - Test your API calls.
 
@@ -346,14 +346,14 @@ We recommend adding types for each of your different collections to your fronten
 Consider using [data model folders](/configuration/data-model/collections#create-a-folder) to keep things nicely
 organized and your collections easy to find.
 
-![In the data model settings, a folder is highlighted. It is named blocks. There is a caption that reads "Data Model Folders help you keep collections well-organized and easy to find."](https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/reusable-page-components-folders.webp)
+![In the data model settings, a folder is highlighted. It is named blocks. There is a caption that reads "Data Model Folders help you keep collections well-organized and easy to find."](https://cdn.directus9.io/docs/v9/headless-cms/how-to-packet-20220222A/reusable-page-components-folders.webp)
 
 ### Use Translations for Collection Names
 
 When [setting up Collections](/configuration/data-model/collections#collection-setup) within your data model, use the
 Collection Naming Translations to create names that easier for the Data Studio users to understand.
 
-![In the data model settings for the hero collection a section is highlighted. It reads "Collection naming translations" with a single item called "Hero".](https://cdn.directus.io/docs/v9/headless-cms/how-to-packet-20220222A/reusable-page-components-translations.webp)
+![In the data model settings for the hero collection a section is highlighted. It reads "Collection naming translations" with a single item called "Hero".](https://cdn.directus9.io/docs/v9/headless-cms/how-to-packet-20220222A/reusable-page-components-translations.webp)
 
 For example:
 

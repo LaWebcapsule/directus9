@@ -1,8 +1,8 @@
 import { getGeometryFormatForType, toGeoJSON } from '@/utils/geometry';
 import { syncRefProperty } from '@/utils/sync-ref-property';
-import { useCollection, useItems, useSync } from '@directus/composables';
-import { Field, Filter, GeometryOptions, Item } from '@directus/types';
-import { defineLayout, getFieldsFromTemplate } from '@directus/utils';
+import { useCollection, useItems, useSync } from '@directus9/composables';
+import { Field, Filter, GeometryOptions, Item } from '@directus9/types';
+import { defineLayout, getFieldsFromTemplate } from '@directus9/utils';
 import { cloneDeep, merge } from 'lodash';
 import { computed, ref, toRefs, watch } from 'vue';
 import { useRouter } from 'vue-router';
@@ -195,7 +195,7 @@ export default defineLayout<LayoutOptions, LayoutQuery>({
 			}
 		}
 
-		const directusSource = ref({
+		const directus9Source = ref({
 			type: 'geojson',
 			data: {
 				type: 'FeatureCollection',
@@ -206,7 +206,7 @@ export default defineLayout<LayoutOptions, LayoutQuery>({
 		watch(clusterData, updateSource, { immediate: true });
 
 		function updateSource() {
-			directusSource.value = merge({}, directusSource.value, {
+			directus9Source.value = merge({}, directus9Source.value, {
 				cluster: clusterData.value,
 			});
 		}
@@ -256,8 +256,8 @@ export default defineLayout<LayoutOptions, LayoutQuery>({
 		return {
 			collection,
 			geojson,
-			directusSource,
-			directusLayers: getMapStyle(),
+			directus9Source,
+			directus9Layers: getMapStyle(),
 			featureId,
 			geojsonBounds,
 			geojsonLoading,

@@ -8,13 +8,13 @@ import { notify } from '@/utils/notify';
 import { translate } from '@/utils/translate-object-values';
 import { unexpectedError } from '@/utils/unexpected-error';
 import { validateItem } from '@/utils/validate-item';
-import { useCollection } from '@directus/composables';
-import { getEndpoint } from '@directus/utils';
+import { useCollection } from '@directus9/composables';
+import { getEndpoint } from '@directus9/utils';
 import { AxiosResponse } from 'axios';
 import { mergeWith } from 'lodash';
 import { computed, ComputedRef, isRef, Ref, ref, unref, watch } from 'vue';
 import { usePermissions } from './use-permissions';
-import { Field, Query, Relation } from '@directus/types';
+import { Field, Query, Relation } from '@directus9/types';
 import { getDefaultValuesFromFields } from '@/utils/get-default-values-from-fields';
 
 type UsableItem = {
@@ -449,8 +449,8 @@ export function useItem(
 
 	function setItemValueToResponse(response: AxiosResponse) {
 		if (
-			(collection.value.startsWith('directus_') && collection.value !== 'directus_collections') ||
-			(collection.value === 'directus_collections' && response.data.data.collection?.startsWith('directus_'))
+			(collection.value.startsWith('directus9_') && collection.value !== 'directus9_collections') ||
+			(collection.value === 'directus9_collections' && response.data.data.collection?.startsWith('directus9_'))
 		) {
 			response.data.data = translate(response.data.data);
 		}

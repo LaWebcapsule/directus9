@@ -1,4 +1,4 @@
-import type { FieldFilter } from '@directus/types';
+import type { FieldFilter } from '@directus9/types';
 import type { AnySchema, StringSchema as BaseStringSchema, DateSchema, NumberSchema } from 'joi';
 import BaseJoi from 'joi';
 import { escapeRegExp, merge } from 'lodash-es';

@@ -2,8 +2,8 @@ import api from '@/api';
 import { usePermissionsStore } from '@/stores/permissions';
 import { queryToGqlString } from '@/utils/query-to-gql-string';
 import { unexpectedError } from '@/utils/unexpected-error';
-import { Item, Panel } from '@directus/types';
-import { getSimpleHash, toArray, applyOptionsData } from '@directus/utils';
+import { Item, Panel } from '@directus9/types';
+import { getSimpleHash, toArray, applyOptionsData } from '@directus9/utils';
 import { AxiosResponse } from 'axios';
 import { assign, clone, get, isUndefined, mapKeys, omit, omitBy, pull, uniq } from 'lodash';
 import { nanoid } from 'nanoid';
@@ -105,8 +105,8 @@ export const useInsightsStore = defineStore('insightsStore', () => {
 		const permissionsStore = usePermissionsStore();
 
 		if (
-			permissionsStore.hasPermission('directus_dashboards', 'read') &&
-			permissionsStore.hasPermission('directus_panels', 'read')
+			permissionsStore.hasPermission('directus9_dashboards', 'read') &&
+			permissionsStore.hasPermission('directus9_panels', 'read')
 		) {
 			try {
 				const [dashboardsResponse, panelsResponse] = await Promise.all([
@@ -232,7 +232,7 @@ export const useInsightsStore = defineStore('insightsStore', () => {
 		const gqlString = queryToGqlString(
 			Array.from(queries.values())
 				.filter(({ collection }) => {
-					return collection.startsWith('directus_') === false;
+					return collection.startsWith('directus9_') === false;
 				})
 				.map(({ key, ...rest }) => ({ key: `query_${key}`, ...rest }))
 		);
@@ -240,7 +240,7 @@ export const useInsightsStore = defineStore('insightsStore', () => {
 		const systemGqlString = queryToGqlString(
 			Array.from(queries.values())
 				.filter(({ collection }) => {
-					return collection.startsWith('directus_') === true;
+					return collection.startsWith('directus9_') === true;
 				})
 				.map(({ key, ...rest }) => ({
 					key: `query_${key}`,

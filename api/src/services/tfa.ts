@@ -11,7 +11,7 @@ export class TFAService {
 
 	constructor(options: AbstractServiceOptions) {
 		this.knex = options.knex || getDatabase();
-		this.itemsService = new ItemsService('directus_users', options);
+		this.itemsService = new ItemsService('directus9_users', options);
 	}
 
 	async verifyOTP(key: PrimaryKey, otp: string, secret?: string): Promise<boolean> {
@@ -19,7 +19,7 @@ export class TFAService {
 			return authenticator.check(otp, secret);
 		}
 
-		const user = await this.knex.select('tfa_secret').from('directus_users').where({ id: key }).first();
+		const user = await this.knex.select('tfa_secret').from('directus9_users').where({ id: key }).first();
 
 		if (!user?.tfa_secret) {
 			throw new InvalidPayloadException(`User "${key}" doesn't have TFA enabled.`);
@@ -29,7 +29,7 @@ export class TFAService {
 	}
 
 	async generateTFA(key: PrimaryKey): Promise<Record<string, string>> {
-		const user = await this.knex.select('email', 'tfa_secret').from('directus_users').where({ id: key }).first();
+		const user = await this.knex.select('email', 'tfa_secret').from('directus9_users').where({ id: key }).first();
 
 		if (user?.tfa_secret !== null) {
 			throw new InvalidPayloadException('TFA Secret is already set for this user');
@@ -40,16 +40,16 @@ export class TFAService {
 		}
 
 		const secret = authenticator.generateSecret();
-		const project = await this.knex.select('project_name').from('directus_settings').limit(1).first();
+		const project = await this.knex.select('project_name').from('directus9_settings').limit(1).first();
 
 		return {
 			secret,
-			url: authenticator.keyuri(user.email, project?.project_name || 'Directus', secret),
+			url: authenticator.keyuri(user.email, project?.project_name || 'Directus9', secret),
 		};
 	}
 
 	async enableTFA(key: PrimaryKey, otp: string, secret: string): Promise<void> {
-		const user = await this.knex.select('tfa_secret').from('directus_users').where({ id: key }).first();
+		const user = await this.knex.select('tfa_secret').from('directus9_users').where({ id: key }).first();
 
 		if (user?.tfa_secret !== null) {
 			throw new InvalidPayloadException('TFA Secret is already set for this user');

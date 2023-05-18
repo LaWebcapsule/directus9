@@ -79,7 +79,7 @@ import { computed, defineComponent, onMounted, onUnmounted, PropType, ref, toRef
 import { useSettingsStore } from '@/stores/settings';
 import { flatten, getBBox, getGeometryFormatForType, getParser, getSerializer } from '@/utils/geometry';
 import { ButtonControl } from '@/utils/geometry/controls';
-import { Field, GeoJSONParser, GeoJSONSerializer, GeometryType, MultiGeometry, SimpleGeometry } from '@directus/types';
+import { Field, GeoJSONParser, GeoJSONSerializer, GeometryType, MultiGeometry, SimpleGeometry } from '@directus9/types';
 // @ts-ignore
 import StaticMode from '@mapbox/mapbox-gl-draw-static-mode';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
@@ -89,12 +89,12 @@ import { debounce, isEqual, snakeCase } from 'lodash';
 import { getMapStyle } from './style';
 
 const activeLayers = [
-	'directus-point',
-	'directus-line',
-	'directus-polygon-fill',
-	'directus-polygon-stroke',
-	'directus-polygon-midpoint',
-	'directus-polygon-and-line-vertex',
+	'directus9-point',
+	'directus9-line',
+	'directus9-polygon-fill',
+	'directus9-polygon-stroke',
+	'directus9-polygon-midpoint',
+	'directus9-polygon-and-line-vertex',
 ].flatMap((name) => [name + '.hot', name + '.cold']);
 
 import { useAppStore } from '@/stores/app';

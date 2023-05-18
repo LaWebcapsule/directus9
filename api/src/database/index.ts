@@ -1,5 +1,5 @@
-import { createInspector } from '@directus/schema';
-import type { SchemaInspector } from '@directus/schema';
+import { createInspector } from '@directus9/schema';
+import type { SchemaInspector } from '@directus9/schema';
 import fse from 'fs-extra';
 import type { Knex } from 'knex';
 import knex from 'knex';
@@ -238,10 +238,10 @@ export function getDatabaseClient(database?: Knex): DatabaseClient {
 export async function isInstalled(): Promise<boolean> {
 	const inspector = getSchemaInspector();
 
-	// The existence of a directus_collections table alone isn't a "proper" check to see if everything
+	// The existence of a directus9_collections table alone isn't a "proper" check to see if everything
 	// is installed correctly of course, but it's safe enough to assume that this collection only
-	// exists when Directus is properly installed.
-	return await inspector.hasTable('directus_collections');
+	// exists when Directus9 is properly installed.
+	return await inspector.hasTable('directus9_collections');
 }
 
 export async function validateMigrations(): Promise<boolean> {
@@ -265,7 +265,7 @@ export async function validateMigrations(): Promise<boolean> {
 
 		const requiredVersions = migrationFiles.map((filePath) => filePath.split('-')[0]);
 
-		const completedVersions = (await database.select('version').from('directus_migrations')).map(
+		const completedVersions = (await database.select('version').from('directus9_migrations')).map(
 			({ version }) => version
 		);
 

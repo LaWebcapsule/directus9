@@ -2,107 +2,107 @@ import type { Knex } from 'knex';
 
 const updates = [
 	{
-		table: 'directus_fields',
+		table: 'directus9_fields',
 		constraints: [
 			{
 				column: 'group',
-				references: 'directus_fields.id',
+				references: 'directus9_fields.id',
 			},
 		],
 	},
 	{
-		table: 'directus_files',
+		table: 'directus9_files',
 		constraints: [
 			{
 				column: 'folder',
-				references: 'directus_folders.id',
+				references: 'directus9_folders.id',
 			},
 			{
 				column: 'uploaded_by',
-				references: 'directus_users.id',
+				references: 'directus9_users.id',
 			},
 			{
 				column: 'modified_by',
-				references: 'directus_users.id',
+				references: 'directus9_users.id',
 			},
 		],
 	},
 	{
-		table: 'directus_folders',
+		table: 'directus9_folders',
 		constraints: [
 			{
 				column: 'parent',
-				references: 'directus_folders.id',
+				references: 'directus9_folders.id',
 			},
 		],
 	},
 	{
-		table: 'directus_permissions',
+		table: 'directus9_permissions',
 		constraints: [
 			{
 				column: 'role',
-				references: 'directus_roles.id',
+				references: 'directus9_roles.id',
 			},
 		],
 	},
 	{
-		table: 'directus_presets',
+		table: 'directus9_presets',
 		constraints: [
 			{
 				column: 'user',
-				references: 'directus_users.id',
+				references: 'directus9_users.id',
 			},
 			{
 				column: 'role',
-				references: 'directus_roles.id',
+				references: 'directus9_roles.id',
 			},
 		],
 	},
 	{
-		table: 'directus_revisions',
+		table: 'directus9_revisions',
 		constraints: [
 			{
 				column: 'activity',
-				references: 'directus_activity.id',
+				references: 'directus9_activity.id',
 			},
 			{
 				column: 'parent',
-				references: 'directus_revisions.id',
+				references: 'directus9_revisions.id',
 			},
 		],
 	},
 	{
-		table: 'directus_sessions',
+		table: 'directus9_sessions',
 		constraints: [
 			{
 				column: 'user',
-				references: 'directus_users.id',
+				references: 'directus9_users.id',
 			},
 		],
 	},
 	{
-		table: 'directus_settings',
+		table: 'directus9_settings',
 		constraints: [
 			{
 				column: 'project_logo',
-				references: 'directus_files.id',
+				references: 'directus9_files.id',
 			},
 			{
 				column: 'public_foreground',
-				references: 'directus_files.id',
+				references: 'directus9_files.id',
 			},
 			{
 				column: 'public_background',
-				references: 'directus_files.id',
+				references: 'directus9_files.id',
 			},
 		],
 	},
 	{
-		table: 'directus_users',
+		table: 'directus9_users',
 		constraints: [
 			{
 				column: 'role',
-				references: 'directus_roles.id',
+				references: 'directus9_roles.id',
 			},
 		],
 	},

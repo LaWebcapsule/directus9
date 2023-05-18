@@ -1,7 +1,7 @@
-import type { SchemaInspector, Table } from '@directus/schema';
-import { createInspector } from '@directus/schema';
-import type { Accountability, FieldMeta, RawField, SchemaOverview } from '@directus/types';
-import { addFieldFlag } from '@directus/utils';
+import type { SchemaInspector, Table } from '@directus9/schema';
+import { createInspector } from '@directus9/schema';
+import type { Accountability, FieldMeta, RawField, SchemaOverview } from '@directus9/types';
+import { addFieldFlag } from '@directus9/utils';
 import type Keyv from 'keyv';
 import type { Knex } from 'knex';
 import { chunk, omit } from 'lodash-es';
@@ -63,15 +63,15 @@ export class CollectionsService {
 
 		if (!payload.collection) throw new InvalidPayloadException(`"collection" is required`);
 
-		if (payload.collection.startsWith('directus_')) {
-			throw new InvalidPayloadException(`Collections can't start with "directus_"`);
+		if (payload.collection.startsWith('directus9_')) {
+			throw new InvalidPayloadException(`Collections can't start with "directus9_"`);
 		}
 
 		const nestedActionEvents: ActionEventParams[] = [];
 
 		try {
 			const existingCollections: string[] = [
-				...((await this.knex.select('collection').from('directus_collections'))?.map(({ collection }) => collection) ??
+				...((await this.knex.select('collection').from('directus9_collections'))?.map(({ collection }) => collection) ??
 					[]),
 				...Object.keys(this.schema.collections),
 			];
@@ -85,7 +85,7 @@ export class CollectionsService {
 			// transactions.
 			await this.knex.transaction(async (trx) => {
 				if (payload.schema) {
-					// Directus heavily relies on the primary key of a collection, so we have to make sure that
+					// Directus9 heavily relies on the primary key of a collection, so we have to make sure that
 					// every collection that is created has a primary key. If no primary key field is created
 					// while making the collection, we default to an auto incremented id named `id`
 					if (!payload.fields)
@@ -135,7 +135,7 @@ export class CollectionsService {
 						}
 					});
 
-					const fieldItemsService = new ItemsService('directus_fields', {
+					const fieldItemsService = new ItemsService('directus9_fields', {
 						knex: trx,
 						accountability: this.accountability,
 						schema: this.schema,
@@ -151,7 +151,7 @@ export class CollectionsService {
 				}
 
 				if (payload.meta) {
-					const collectionItemsService = new ItemsService('directus_collections', {
+					const collectionItemsService = new ItemsService('directus9_collections', {
 						knex: trx,
 						accountability: this.accountability,
 						schema: this.schema,
@@ -247,7 +247,7 @@ export class CollectionsService {
 	 * Read all collections. Currently doesn't support any query.
 	 */
 	async readByQuery(): Promise<Collection[]> {
-		const collectionItemsService = new ItemsService('directus_collections', {
+		const collectionItemsService = new ItemsService('directus9_collections', {
 			knex: this.knex,
 			schema: this.schema,
 			accountability: this.accountability,
@@ -370,7 +370,7 @@ export class CollectionsService {
 		const nestedActionEvents: ActionEventParams[] = [];
 
 		try {
-			const collectionItemsService = new ItemsService('directus_collections', {
+			const collectionItemsService = new ItemsService('directus9_collections', {
 				knex: this.knex,
 				accountability: this.accountability,
 				schema: this.schema,
@@ -384,7 +384,7 @@ export class CollectionsService {
 
 			const exists = !!(await this.knex
 				.select('collection')
-				.from('directus_collections')
+				.from('directus9_collections')
 				.where({ collection: collectionKey })
 				.first());
 
@@ -559,10 +559,10 @@ export class CollectionsService {
 				}
 
 				// Make sure this collection isn't used as a group in any other collections
-				await trx('directus_collections').update({ group: null }).where({ group: collectionKey });
+				await trx('directus9_collections').update({ group: null }).where({ group: collectionKey });
 
 				if (collectionToBeDeleted!.meta) {
-					const collectionItemsService = new ItemsService('directus_collections', {
+					const collectionItemsService = new ItemsService('directus9_collections', {
 						knex: trx,
 						accountability: this.accountability,
 						schema: this.schema,
@@ -581,12 +581,12 @@ export class CollectionsService {
 						schema: this.schema,
 					});
 
-					await trx('directus_fields').delete().where('collection', '=', collectionKey);
-					await trx('directus_presets').delete().where('collection', '=', collectionKey);
+					await trx('directus9_fields').delete().where('collection', '=', collectionKey);
+					await trx('directus9_presets').delete().where('collection', '=', collectionKey);
 
 					const revisionsToDelete = await trx
 						.select('id')
-						.from('directus_revisions')
+						.from('directus9_revisions')
 						.where({ collection: collectionKey });
 
 					if (revisionsToDelete.length > 0) {
@@ -596,15 +596,15 @@ export class CollectionsService {
 						);
 
 						for (const keys of chunks) {
-							await trx('directus_revisions').update({ parent: null }).whereIn('parent', keys);
+							await trx('directus9_revisions').update({ parent: null }).whereIn('parent', keys);
 						}
 					}
 
-					await trx('directus_revisions').delete().where('collection', '=', collectionKey);
+					await trx('directus9_revisions').delete().where('collection', '=', collectionKey);
 
-					await trx('directus_activity').delete().where('collection', '=', collectionKey);
-					await trx('directus_permissions').delete().where('collection', '=', collectionKey);
-					await trx('directus_relations').delete().where({ many_collection: collectionKey });
+					await trx('directus9_activity').delete().where('collection', '=', collectionKey);
+					await trx('directus9_permissions').delete().where('collection', '=', collectionKey);
+					await trx('directus9_relations').delete().where({ many_collection: collectionKey });
 
 					const relations = this.schema.relations.filter((relation) => {
 						return relation.collection === collectionKey || relation.related_collection === collectionKey;
@@ -641,7 +641,7 @@ export class CollectionsService {
 							.meta!.one_allowed_collections!.filter((collection) => collectionKey !== collection)
 							.join(',');
 
-						await trx('directus_relations')
+						await trx('directus9_relations')
 							.update({ one_allowed_collections: newAllowedCollections })
 							.where({ id: relation.meta!.id });
 					}

@@ -89,7 +89,7 @@ primary: ראשי
 rename_folder: שינוי שם תיקיה
 delete_folder: מחק תיקייה
 not_allowed: לא מורשה
-directus_version: גרסת דירקטוס
+directus9_version: גרסת דירקטוס
 node_version: Node Version
 node_uptime: Node Uptime
 os_type: OS Type
@@ -160,7 +160,7 @@ width: רוחב
 height: גובה
 collection: מאגר
 fields:
-  directus_activity:
+  directus9_activity:
     item: מפתח ראשי
     action: פעולה
     collection: מאגר
@@ -168,10 +168,10 @@ fields:
     user: מבצע פעולה
     comment: הערה
     ip: '‏כתובת IP'
-  directus_collections:
+  directus9_collections:
     collection: מאגר
     note: הערה
-  directus_files:
+  directus9_files:
     title: כותרת
     description: תיאור
     tags: תגיות
@@ -181,7 +181,7 @@ fields:
     width: רוחב
     height: גובה
     duration: משך זמן
-  directus_users:
+  directus9_users:
     first_name: שם פרטי
     last_name: שם משפחה
     email: דוא"ל
@@ -196,21 +196,21 @@ fields:
     tfa_secret: אימות דו-שלבי
     status: סטטוס
     role: תפקיד
-  directus_settings:
+  directus9_settings:
     module_bar: סרגל מודולים
-  directus_shares:
+  directus9_shares:
     role: תפקיד
     password: סיסמה
-  directus_fields:
+  directus9_fields:
     note: הערה
     translation: תרגומי שמות שדות
-  directus_roles:
+  directus9_roles:
     name: שם תפקיד
     description: תיאור
-  directus_webhooks:
+  directus9_webhooks:
     status: סטטוס
 field_options:
-  directus_collections:
+  directus9_collections:
     language: שפה
 comment: הערה
 description: תיאור

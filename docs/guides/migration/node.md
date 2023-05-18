@@ -1,8 +1,8 @@
 ---
-description: Learn how to migrate your data model to a new Directus project using Node.js.
+description: Learn how to migrate your data model to a new Directus9 project using Node.js.
 tags: []
 skill_level:
-directus_version: 9.23.0
+directus9_version: 9.23.0
 author_override:
 author: Kevin Lewis
 ---
@@ -13,17 +13,17 @@ author: Kevin Lewis
 
 :::tip Author: {{$frontmatter.author}}
 
-**Directus Version:** {{$frontmatter.directus_version}}
+**Directus9 Version:** {{$frontmatter.directus9_version}}
 
 :::
 
 ## Explanation
 
-Directus' schema migration endpoints allow users to retrieve a project's data model and apply changes to another
+Directus9' schema migration endpoints allow users to retrieve a project's data model and apply changes to another
 project.
 
 This is useful if you make changes to a data model in a development project and need to apply them to a production
-project, or to move from a self-hosted project to Directus Cloud.
+project, or to move from a self-hosted project to Directus9 Cloud.
 
 ## How-To Guide
 
@@ -33,7 +33,7 @@ You must be an admin user to use these endpoints and follow this guide.
 
 :::
 
-You should have two Directus projects - this guide will refer to them as the "base" and the "target". Before starting,
+You should have two Directus9 projects - this guide will refer to them as the "base" and the "target". Before starting,
 make sure you have a static access token for both projects.
 
 ### Set Up Project
@@ -46,10 +46,10 @@ Create a new `index.js` file and set it up:
 ```js
 const fetch = require('cross-fetch');
 
-const BASE_DIRECTUS_URL = 'https://your-base-project.directus.app';
+const BASE_DIRECTUS9_URL = 'https://your-base-project.directus9.app';
 const BASE_ACCESS_TOKEN = 'your-access-token';
 
-const TARGET_DIRECTUS_URL = 'https://your-target-project.directus.app';
+const TARGET_DIRECTUS9_URL = 'https://your-target-project.directus9.app';
 const TARGET_ACCESS_TOKEN = 'your-access-token';
 
 async function main() {}
@@ -63,7 +63,7 @@ At the bottom of `index.js`, create a `getSnapshot()` function:
 
 ```js
 async function getSnapshot() {
-	const URL = `${BASE_DIRECTUS_URL}/schema/snapshot?access_token=${BASE_ACCESS_TOKEN}`;
+	const URL = `${BASE_DIRECTUS9_URL}/schema/snapshot?access_token=${BASE_ACCESS_TOKEN}`;
 	const { data } = await fetch(URL).then((r) => r.json());
 	return data;
 }
@@ -89,7 +89,7 @@ At the bottom of `index.js`, create a `getDiff()` function which accepts a `snap
 
 ```js
 async function getDiff(snapshot) {
-	const URL = `${TARGET_DIRECTUS_URL}/schema/diff?access_token=${TARGET_ACCESS_TOKEN}`;
+	const URL = `${TARGET_DIRECTUS9_URL}/schema/diff?access_token=${TARGET_ACCESS_TOKEN}`;
 	const { data } = await fetch(URL, {
 		method: 'POST',
 		body: JSON.stringify(snapshot),
@@ -120,7 +120,7 @@ At the bottom of `index.js`, create a `applyDiff()` function which accepts a `di
 
 ```js
 async function applyDiff(diff) {
-	const URL = `${TARGET_DIRECTUS_URL}/schema/apply?access_token=${TARGET_ACCESS_TOKEN}`;
+	const URL = `${TARGET_DIRECTUS9_URL}/schema/apply?access_token=${TARGET_ACCESS_TOKEN}`;
 	await fetch(URL, {
 		method: 'POST',
 		body: JSON.stringify(diff),
@@ -146,7 +146,7 @@ Apply the diff by running `node index.js`.
 
 ## Final Tips
 
-The diff endpoint does not allow different Directus versions and database vendors by default. This is to avoid any
+The diff endpoint does not allow different Directus9 versions and database vendors by default. This is to avoid any
 unintentional diffs from being generated. You can opt in to bypass these checks by adding a second query parameter
 called `force` with the value of `true`.
 
@@ -160,10 +160,10 @@ The complete and final code is available below.
 ```js
 const fetch = require('cross-fetch');
 
-const BASE_DIRECTUS_URL = 'https://your-base-project.directus.app';
+const BASE_DIRECTUS9_URL = 'https://your-base-project.directus9.app';
 const BASE_ACCESS_TOKEN = 'your-access-token';
 
-const TARGET_DIRECTUS_URL = 'https://your-target-project.directus.app';
+const TARGET_DIRECTUS9_URL = 'https://your-target-project.directus9.app';
 const TARGET_ACCESS_TOKEN = 'your-access-token';
 
 async function main() {
@@ -175,13 +175,13 @@ async function main() {
 main();
 
 async function getSnapshot() {
-	const URL = `${BASE_DIRECTUS_URL}/schema/snapshot?access_token=${BASE_ACCESS_TOKEN}`;
+	const URL = `${BASE_DIRECTUS9_URL}/schema/snapshot?access_token=${BASE_ACCESS_TOKEN}`;
 	const { data } = await fetch(URL).then((r) => r.json());
 	return data;
 }
 
 async function getDiff(snapshot) {
-	const URL = `${TARGET_DIRECTUS_URL}/schema/diff?access_token=${TARGET_ACCESS_TOKEN}`;
+	const URL = `${TARGET_DIRECTUS9_URL}/schema/diff?access_token=${TARGET_ACCESS_TOKEN}`;
 	const { data } = await fetch(URL, {
 		method: 'POST',
 		body: JSON.stringify(snapshot),
@@ -193,7 +193,7 @@ async function getDiff(snapshot) {
 }
 
 async function applyDiff(diff) {
-	const URL = `${TARGET_DIRECTUS_URL}/schema/apply?access_token=${TARGET_ACCESS_TOKEN}`;
+	const URL = `${TARGET_DIRECTUS9_URL}/schema/apply?access_token=${TARGET_ACCESS_TOKEN}`;
 	await fetch(URL, {
 		method: 'POST',
 		body: JSON.stringify(diff),

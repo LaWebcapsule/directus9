@@ -168,13 +168,13 @@
 			<revisions-drawer-detail
 				v-if="isBatch === false && isNew === false && revisionsAllowed"
 				ref="revisionsDrawerDetail"
-				collection="directus_users"
+				collection="directus9_users"
 				:primary-key="primaryKey"
 				@revert="revert"
 			/>
 			<comments-sidebar-detail
 				v-if="isBatch === false && isNew === false"
-				collection="directus_users"
+				collection="directus9_users"
 				:primary-key="primaryKey"
 			/>
 		</template>
@@ -201,8 +201,8 @@ import { userName } from '@/utils/user-name';
 import CommentsSidebarDetail from '@/views/private/components/comments-sidebar-detail.vue';
 import RevisionsDrawerDetail from '@/views/private/components/revisions-drawer-detail.vue';
 import SaveOptions from '@/views/private/components/save-options.vue';
-import { useCollection } from '@directus/composables';
-import { Field } from '@directus/types';
+import { useCollection } from '@directus9/composables';
+import { Field } from '@directus9/types';
 import { useRouter } from 'vue-router';
 import UsersNavigation from '../components/navigation.vue';
 import UserInfoSidebarDetail from '../components/user-info-sidebar-detail.vue';
@@ -234,7 +234,7 @@ export default defineComponent({
 		const { primaryKey } = toRefs(props);
 		const { breadcrumb } = useBreadcrumb();
 
-		const { info: collectionInfo } = useCollection('directus_users');
+		const { info: collectionInfo } = useCollection('directus9_users');
 
 		const revisionsDrawerDetail = ref<InstanceType<typeof RevisionsDrawerDetail> | null>(null);
 
@@ -254,7 +254,7 @@ export default defineComponent({
 			archiving,
 			isArchived,
 			validationErrors,
-		} = useItem(ref('directus_users'), primaryKey);
+		} = useItem(ref('directus9_users'), primaryKey);
 
 		if (props.role) {
 			edits.value = {
@@ -286,7 +286,7 @@ export default defineComponent({
 		const { loading: previewLoading, avatarSrc, roleName } = useUserPreview();
 
 		const { createAllowed, deleteAllowed, archiveAllowed, saveAllowed, updateAllowed, revisionsAllowed, fields } =
-			usePermissions(ref('directus_users'), item, isNew);
+			usePermissions(ref('directus9_users'), item, isNew);
 
 		// These fields will be shown in the sidebar instead
 		const fieldsDenyList = ['id', 'last_page', 'created_on', 'created_by', 'modified_by', 'modified_on', 'last_access'];

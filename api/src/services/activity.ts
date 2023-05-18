@@ -1,5 +1,5 @@
-import type { Accountability } from '@directus/types';
-import { Action } from '@directus/constants';
+import type { Accountability } from '@directus9/types';
+import { Action } from '@directus9/constants';
 import { uniq } from 'lodash-es';
 import validateUUID from 'uuid-validate';
 import env from '../env.js';
@@ -19,7 +19,7 @@ export class ActivityService extends ItemsService {
 	usersService: UsersService;
 
 	constructor(options: AbstractServiceOptions) {
-		super('directus_activity', options);
+		super('directus9_activity', options);
 		this.notificationsService = new NotificationsService({ schema: this.schema });
 		this.usersService = new UsersService({ schema: this.schema });
 	}

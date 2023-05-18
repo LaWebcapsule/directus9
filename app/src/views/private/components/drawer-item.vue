@@ -90,12 +90,12 @@ import { useFieldsStore } from '@/stores/fields';
 import { useRelationsStore } from '@/stores/relations';
 import { unexpectedError } from '@/utils/unexpected-error';
 import { validateItem } from '@/utils/validate-item';
-import { useCollection } from '@directus/composables';
-import { Field, Relation } from '@directus/types';
+import { useCollection } from '@directus9/composables';
+import { Field, Relation } from '@directus9/types';
 import { getDefaultValuesFromFields } from '@/utils/get-default-values-from-fields';
 import { useEditsGuard } from '@/composables/use-edits-guard';
 import { useRouter } from 'vue-router';
-import { getEndpoint } from '@directus/utils';
+import { getEndpoint } from '@directus9/utils';
 
 interface Props {
 	collection: string;
@@ -237,12 +237,12 @@ const template = computed(
 const { file } = useFile();
 
 function useFile() {
-	const isDirectusFiles = computed(() => {
-		return relatedCollection.value === 'directus_files';
+	const isDirectus9Files = computed(() => {
+		return relatedCollection.value === 'directus9_files';
 	});
 
 	const file = computed(() => {
-		if (isDirectusFiles.value === false || !initialValues.value || !props.junctionField) return null;
+		if (isDirectus9Files.value === false || !initialValues.value || !props.junctionField) return null;
 		const fileData = initialValues.value?.[props.junctionField];
 		if (!fileData) return null;
 
@@ -250,7 +250,7 @@ function useFile() {
 		return { ...fileData, src };
 	});
 
-	return { file, isDirectusFiles };
+	return { file, isDirectus9Files };
 }
 
 function useActiveState() {
@@ -299,7 +299,7 @@ function useItem() {
 
 		const baseEndpoint = getEndpoint(props.collection);
 
-		const endpoint = props.collection.startsWith('directus_')
+		const endpoint = props.collection.startsWith('directus9_')
 			? `${baseEndpoint}/${props.primaryKey}`
 			: `${baseEndpoint}/${encodeURIComponent(props.primaryKey)}`;
 
@@ -329,7 +329,7 @@ function useItem() {
 
 		const baseEndpoint = getEndpoint(collection);
 
-		const endpoint = collection.startsWith('directus_')
+		const endpoint = collection.startsWith('directus9_')
 			? `${baseEndpoint}/${props.relatedPrimaryKey}`
 			: `${baseEndpoint}/${encodeURIComponent(props.relatedPrimaryKey)}`;
 

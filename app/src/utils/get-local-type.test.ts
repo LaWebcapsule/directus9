@@ -90,7 +90,7 @@ test('Returns STANDARD with no relations', () => {
 	expect(getLocalTypeForField('test_collection', 'test_fields')).toBe('standard');
 });
 
-test('Returns FILE for m2o relations to directus_files', () => {
+test('Returns FILE for m2o relations to directus9_files', () => {
 	const fieldsStore = useFieldsStore();
 
 	(fieldsStore.getField as Mock).mockReturnValue({
@@ -111,11 +111,11 @@ test('Returns FILE for m2o relations to directus_files', () => {
 		{
 			collection: 'test_collection',
 			field: 'test_fields',
-			related_collection: 'directus_files',
+			related_collection: 'directus9_files',
 			meta: {
 				many_collection: 'test_collection',
 				many_field: 'test_fields',
-				one_collection: 'directus_files',
+				one_collection: 'directus9_files',
 				one_field: null,
 				one_collection_field: null,
 				one_allowed_collections: null,
@@ -189,9 +189,9 @@ test('Returns O2M', () => {
 		{
 			collection: 'test_collection',
 			field: 'test_fields',
-			related_collection: 'directus_files',
+			related_collection: 'directus9_files',
 			meta: {
-				many_collection: 'directus_files',
+				many_collection: 'directus9_files',
 				many_field: 'test_fields',
 				one_collection: 'other_collection',
 				one_field: null,
@@ -204,7 +204,7 @@ test('Returns O2M', () => {
 		},
 	]);
 
-	expect(getLocalTypeForField('directus_files', 'test_field')).toBe('o2m');
+	expect(getLocalTypeForField('directus9_files', 'test_field')).toBe('o2m');
 });
 
 test('Returns TRANSLATIONS for special M2M relations', () => {
@@ -262,7 +262,7 @@ test('Returns TRANSLATIONS for special M2M relations', () => {
 		},
 	]);
 
-	expect(getLocalTypeForField('directus_files', 'test_field')).toBe('translations');
+	expect(getLocalTypeForField('directus9_files', 'test_field')).toBe('translations');
 });
 
 test('Returns M2A', () => {
@@ -381,7 +381,7 @@ test('Returns M2O for searched relation', () => {
 	expect(getLocalTypeForField('collection_a', 'test_field')).toBe('m2o');
 });
 
-test('Returns FILES for M2M relations to directus_files', () => {
+test('Returns FILES for M2M relations to directus9_files', () => {
 	const fieldsStore = useFieldsStore();
 
 	(fieldsStore.getField as Mock).mockReturnValue({
@@ -402,29 +402,29 @@ test('Returns FILES for M2M relations to directus_files', () => {
 
 	(relationsStore.getRelationsForField as Mock).mockReturnValue([
 		{
-			collection: 'collection_a_directus_files',
+			collection: 'collection_a_directus9_files',
 			field: 'collection_a_id',
 			related_collection: 'collection_a',
 			meta: {
-				many_collection: 'collection_a_directus_files',
+				many_collection: 'collection_a_directus9_files',
 				many_field: 'collection_a_id',
 				one_collection: 'collection_a',
 				one_field: 'relation',
 				one_collection_field: null,
 				one_allowed_collections: null,
-				junction_field: 'directus_files_id',
+				junction_field: 'directus9_files_id',
 				sort_field: null,
 				one_deselect_action: 'nullify',
 			},
 		},
 		{
-			collection: 'collection_a_directus_files',
-			field: 'directus_files_id',
-			related_collection: 'directus_files',
+			collection: 'collection_a_directus9_files',
+			field: 'directus9_files_id',
+			related_collection: 'directus9_files',
 			meta: {
-				many_collection: 'collection_a_directus_files',
-				many_field: 'directus_files_id',
-				one_collection: 'directus_files',
+				many_collection: 'collection_a_directus9_files',
+				many_field: 'directus9_files_id',
+				one_collection: 'directus9_files',
 				one_field: null,
 				one_collection_field: null,
 				one_allowed_collections: null,

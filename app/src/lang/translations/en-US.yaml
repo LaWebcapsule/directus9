@@ -119,7 +119,7 @@ public_label: Public
 public_description: Controls what API data is available without authenticating.
 admin_description: Initial administrative role with unrestricted App/API access.
 not_allowed: Not Allowed
-directus_version: Directus Version
+directus9_version: Directus9 Version
 node_version: Node Version
 node_uptime: Node Uptime
 os_type: OS Type
@@ -1051,30 +1051,30 @@ content: Content
 singleton: Singleton
 singleton_label: Treat as single object
 system_fields_locked: System fields are locked and can't be edited
-directus_collection:
-  directus_activity: Accountability logs for all events
-  directus_collections: Additional collection configuration and metadata
-  directus_dashboards: Dashboards within the Insights module
-  directus_fields: Additional field configuration and metadata
-  directus_files: Metadata for all managed file assets
-  directus_flows: Automation flows
-  directus_folders: Provides virtual directories for files
-  directus_migrations: What version of the database you're using
-  directus_notifications: Notifications sent to users
-  directus_operations: Operations that run in Flows
-  directus_panels: Individual panels within Insights dashboards
-  directus_permissions: Access permissions for each role
-  directus_presets: Presets for collection defaults and bookmarks
-  directus_relations: Relationship configuration and metadata
-  directus_revisions: Data snapshots for all activity
-  directus_roles: Permission groups for system users
-  directus_sessions: User session information
-  directus_settings: Project configuration options
-  directus_shares: Tracks externally shared items
-  directus_users: System users for the platform
-  directus_webhooks: Configuration for event-based HTTP requests
+directus9_collection:
+  directus9_activity: Accountability logs for all events
+  directus9_collections: Additional collection configuration and metadata
+  directus9_dashboards: Dashboards within the Insights module
+  directus9_fields: Additional field configuration and metadata
+  directus9_files: Metadata for all managed file assets
+  directus9_flows: Automation flows
+  directus9_folders: Provides virtual directories for files
+  directus9_migrations: What version of the database you're using
+  directus9_notifications: Notifications sent to users
+  directus9_operations: Operations that run in Flows
+  directus9_panels: Individual panels within Insights dashboards
+  directus9_permissions: Access permissions for each role
+  directus9_presets: Presets for collection defaults and bookmarks
+  directus9_relations: Relationship configuration and metadata
+  directus9_revisions: Data snapshots for all activity
+  directus9_roles: Permission groups for system users
+  directus9_sessions: User session information
+  directus9_settings: Project configuration options
+  directus9_shares: Tracks externally shared items
+  directus9_users: System users for the platform
+  directus9_webhooks: Configuration for event-based HTTP requests
 fields:
-  directus_activity:
+  directus9_activity:
     item: Item Primary Key
     action: Action
     collection: Collection
@@ -1085,7 +1085,7 @@ fields:
     origin: Origin
     ip: IP Address
     revisions: Revisions
-  directus_collections:
+  directus9_collections:
     collection: Collection
     icon: Icon
     note: Note
@@ -1101,7 +1101,7 @@ fields:
     accountability: Activity & Revision Tracking
     archive_field: Archive Field
     item_duplication_fields: Item Duplication Fields
-  directus_files:
+  directus9_files:
     $thumbnail: Thumbnail
     title: Title
     description: Description
@@ -1125,7 +1125,7 @@ fields:
     height: Height
     charset: Charset
     duration: Duration
-  directus_users:
+  directus9_users:
     first_name: First Name
     last_name: Last Name
     email: Email
@@ -1156,7 +1156,7 @@ fields:
     last_page: Last Page
     last_access: Last Access
     email_notifications: Email Notifications
-  directus_settings:
+  directus9_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
@@ -1198,7 +1198,7 @@ fields:
     transformations_presets: Limit transformations to presets below
     image_editor: Image Editor
     custom_aspect_ratios: Custom Aspect Ratios
-  directus_shares:
+  directus9_shares:
     name: Name
     role: Role
     password: Password
@@ -1206,7 +1206,7 @@ fields:
     date_end: Date End
     max_uses: Max Uses
     times_used: Times Used
-  directus_fields:
+  directus9_fields:
     collection: Collection Name
     icon: Collection Icon
     note: Note
@@ -1214,7 +1214,7 @@ fields:
     singleton: Singleton
     translation: Field Name Translations
     display_template: Template
-  directus_roles:
+  directus9_roles:
     name: Role Name
     icon: Role Icon
     description: Description
@@ -1224,7 +1224,7 @@ fields:
     enforce_tfa: Require 2FA
     users: Users in Role
     module_list: Module Navigation
-  directus_webhooks:
+  directus9_webhooks:
     name: Name
     method: Method
     status: Status
@@ -1237,7 +1237,7 @@ fields:
     actions: Actions
     collections: Collections
 field_options:
-  directus_settings:
+  directus9_settings:
     project_name_placeholder: My project...
     project_color_note: Login & Logo Background
     project_logo_note: White 40x40 SVG/PNG
@@ -1267,12 +1267,12 @@ field_options:
     basemaps_style: Mapbox Style
     files_divider_title: Files & Thumbnails
     overrides_divider_title: App Overrides
-  directus_activity:
+  directus9_activity:
     login: Login
     create: Create
     update: Update
     delete: Delete
-  directus_collections:
+  directus9_collections:
     track_activity_revisions: Track Activity & Revisions
     only_track_activity: Only Track Activity
     do_not_track_anything: Do Not Track Anything
@@ -1295,14 +1295,14 @@ field_options:
     sort_field: Choose a field...
     accountability_divider: Accountability
     duplication_divider: Duplication
-  directus_files:
+  directus9_files:
     title: A unique title...
     description: An optional description...
     location: An optional location...
     storage_divider: File Naming
     filename_disk: Name on disk storage...
     filename_download: Name when downloading...
-  directus_roles:
+  directus9_roles:
     name: The unique name for this role...
     description: A description of this role...
     ip_access: Add allowed IP addresses, leave empty to allow all...
@@ -1314,7 +1314,7 @@ field_options:
       link_placeholder: Relative or absolute URL...
     collections_name: Collections
     collections_addLabel: Add Collection...
-  directus_users:
+  directus9_users:
     preferences_divider: User Preferences
     dropdown_auto: Automatic (Based on System)
     dropdown_light: Light Mode
@@ -1326,7 +1326,7 @@ field_options:
     status_dropdown_suspended: Suspended
     status_dropdown_archived: Archived
     token: Enter a secure access token...
-  directus_webhooks:
+  directus9_webhooks:
     status_options_active: Active
     status_options_inactive: Inactive
     data_label: Send Event Data
@@ -1747,7 +1747,7 @@ interfaces:
     recursive_only: The tree view interface only works for recursive relationships.
   user:
     user: User
-    description: Select an existing directus user
+    description: Select an existing directus9 user
     select_mode: Select Mode
     modes:
       auto: Auto
@@ -1912,7 +1912,7 @@ displays:
     display_template_configure_notice: You can configure the display template after creating this field.
   user:
     user: User
-    description: Display a directus user
+    description: Display a directus9 user
     avatar: Avatar
     name: Name
     both: Both

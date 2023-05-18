@@ -3,7 +3,7 @@ import { useLocalStorage } from '@/composables/use-local-storage';
 
 describe('useLocalStorage', () => {
 	const key = 'test';
-	const keyWithPrefix = `directus-${key}`;
+	const keyWithPrefix = `directus9-${key}`;
 
 	beforeEach(() => {
 		localStorage.removeItem(keyWithPrefix);

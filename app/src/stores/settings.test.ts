@@ -1,5 +1,5 @@
 import api from '@/api';
-import { Settings } from '@directus/types';
+import { Settings } from '@directus9/types';
 import { createTestingPinia } from '@pinia/testing';
 import * as notifyUtil from '@/utils/notify';
 import * as unexpectedErrorUtil from '@/utils/unexpected-error';
@@ -31,7 +31,7 @@ const mockTranslationStrings: Settings['translation_strings'] = [
 
 const mockSettings: Settings = {
 	id: 1,
-	project_name: 'Directus',
+	project_name: 'Directus9',
 	project_url: null,
 	project_color: null,
 	project_logo: null,

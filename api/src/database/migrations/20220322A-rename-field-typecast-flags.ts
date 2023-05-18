@@ -1,11 +1,11 @@
-import { toArray } from '@directus/utils';
+import { toArray } from '@directus9/utils';
 import type { Knex } from 'knex';
 import { isArray } from 'lodash-es';
 
 export async function up(knex: Knex): Promise<void> {
 	const fields = await knex
 		.select<{ id: number; special: string }[]>('id', 'special')
-		.from('directus_fields')
+		.from('directus9_fields')
 		.whereNotNull('special')
 		.orWhere('special', '<>', '');
 
@@ -34,7 +34,7 @@ export async function up(knex: Knex): Promise<void> {
 			});
 
 			if (updateRequired) {
-				await knex('directus_fields')
+				await knex('directus9_fields')
 					.update({ special: parsedSpecial.join(',') })
 					.where({ id });
 			}
@@ -45,7 +45,7 @@ export async function up(knex: Knex): Promise<void> {
 export async function down(knex: Knex): Promise<void> {
 	const fields = await knex
 		.select<{ id: number; special: string }[]>('id', 'special')
-		.from('directus_fields')
+		.from('directus9_fields')
 		.whereNotNull('special')
 		.orWhere('special', '<>', '');
 
@@ -74,7 +74,7 @@ export async function down(knex: Knex): Promise<void> {
 			});
 
 			if (updateRequired) {
-				await knex('directus_fields')
+				await knex('directus9_fields')
 					.update({ special: parsedSpecial.join(',') })
 					.where({ id });
 			}

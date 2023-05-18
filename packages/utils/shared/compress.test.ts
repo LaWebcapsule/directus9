@@ -2,7 +2,7 @@ import { describe, test, expect } from 'vitest';
 import { compress, decompress, mapToSortedArray, encode, decode, to36, to10, getValueForToken } from './compress.js';
 
 const plain = {
-	string: 'directus',
+	string: 'directus9',
 	true: true,
 	false: false,
 	null: null,
@@ -18,7 +18,7 @@ const deep = {
 	arr: [plain, plain],
 };
 
-const arr = ['directus', false, deep];
+const arr = ['directus9', false, deep];
 
 const geoJSON = {
 	data: [
@@ -49,19 +49,19 @@ const dateOutput = {
 describe('compress', () => {
 	test('Compresses plain objects', () => {
 		expect(compress(plain)).toBe(
-			'string|directus|true|false|null|empty|integer|float|undefined^1K6^12.34^$0|1|2|-1|3|-2|4|-3|5|-4|6|9|7|A|8|-5]'
+			'string|directus9|true|false|null|empty|integer|float|undefined^1K6^12.34^$0|1|2|-1|3|-2|4|-3|5|-4|6|9|7|A|8|-5]'
 		);
 	});
 
 	test('Compresses deep nested objects', () => {
 		expect(compress(deep)).toBe(
-			'another|string|directus|true|false|null|empty|integer|float|undefined|nested|arr^1K6^12.34^$0|$1|2|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|A|$1|2|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|B|@$1|2|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|$1|2|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]]]'
+			'another|string|directus9|true|false|null|empty|integer|float|undefined|nested|arr^1K6^12.34^$0|$1|2|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|A|$1|2|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|B|@$1|2|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|$1|2|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]]]'
 		);
 	});
 
 	test('Compresses array input', () => {
 		expect(compress(arr)).toBe(
-			'directus|another|string|true|false|null|empty|integer|float|undefined|nested|arr^1K6^12.34^@0|-2|$1|$2|0|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|A|$2|0|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|B|@$2|0|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|$2|0|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]]]]'
+			'directus9|another|string|true|false|null|empty|integer|float|undefined|nested|arr^1K6^12.34^@0|-2|$1|$2|0|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|A|$2|0|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|B|@$2|0|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|$2|0|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]]]]'
 		);
 	});
 
@@ -84,7 +84,7 @@ describe('decompress', () => {
 	test('Decompresses plain objects', () => {
 		expect(
 			decompress(
-				'string|directus|true|false|null|empty|integer|float|undefined^1K6^12.34^$0|1|2|-1|3|-2|4|-3|5|-4|6|9|7|A|8|-5]'
+				'string|directus9|true|false|null|empty|integer|float|undefined^1K6^12.34^$0|1|2|-1|3|-2|4|-3|5|-4|6|9|7|A|8|-5]'
 			)
 		).toEqual(plain);
 	});
@@ -92,7 +92,7 @@ describe('decompress', () => {
 	test('Decompresses deep nested objects', () => {
 		expect(
 			decompress(
-				'another|string|directus|true|false|null|empty|integer|float|undefined|nested|arr^1K6^12.34^$0|$1|2|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|A|$1|2|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|B|@$1|2|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|$1|2|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]]]'
+				'another|string|directus9|true|false|null|empty|integer|float|undefined|nested|arr^1K6^12.34^$0|$1|2|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|A|$1|2|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|B|@$1|2|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|$1|2|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]]]'
 			)
 		).toEqual(deep);
 	});
@@ -100,7 +100,7 @@ describe('decompress', () => {
 	test('Decompresses arrays', () => {
 		expect(
 			decompress(
-				'directus|another|string|true|false|null|empty|integer|float|undefined|nested|arr^1K6^12.34^@0|-2|$1|$2|0|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|A|$2|0|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|B|@$2|0|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|$2|0|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]]]]'
+				'directus9|another|string|true|false|null|empty|integer|float|undefined|nested|arr^1K6^12.34^@0|-2|$1|$2|0|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|A|$2|0|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|B|@$2|0|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]|$2|0|3|-1|4|-2|5|-3|6|-4|7|C|8|D|9|-5]]]]'
 			)
 		).toEqual(arr);
 	});

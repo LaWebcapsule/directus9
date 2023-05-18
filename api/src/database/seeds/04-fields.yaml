@@ -1,4 +1,4 @@
-table: directus_fields
+table: directus9_fields
 
 columns:
   id:
@@ -8,7 +8,7 @@ columns:
     length: 64
     nullable: false
     references:
-      table: directus_collections
+      table: directus9_collections
       column: collection
   field:
     type: string
@@ -50,7 +50,7 @@ columns:
     type: integer
     unsigned: true
     references:
-      table: directus_fields
+      table: directus9_fields
       column: id
   translations:
     type: json

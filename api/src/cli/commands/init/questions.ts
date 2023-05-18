@@ -35,7 +35,7 @@ const database = (): Record<string, string> => ({
 	type: 'input',
 	name: 'database',
 	message: 'Database Name:',
-	default: 'directus',
+	default: 'directus9',
 });
 
 const user = (): Record<string, string> => ({

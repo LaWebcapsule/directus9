@@ -39,7 +39,7 @@ post:
               example: id
               type: string
             type:
-              description: Directus specific data type. Used to cast values in the API.
+              description: Directus9 specific data type. Used to cast values in the API.
               example: integer
               type: string
             schema:
@@ -110,7 +110,7 @@ post:
               nullable: true
               properties:
                 id:
-                  description: Unique identifier for the field in the `directus_fields` collection.
+                  description: Unique identifier for the field in the `directus9_fields` collection.
                   example: 3
                   type: integer
                 collection:
@@ -150,7 +150,7 @@ post:
                   nullable: true
                 locked:
                   description:
-                    If the field can be altered by the end user. Directus system fields have this value set to `true`.
+                    If the field can be altered by the end user. Directus9 system fields have this value set to `true`.
                   example: true
                   type: boolean
                 readonly:

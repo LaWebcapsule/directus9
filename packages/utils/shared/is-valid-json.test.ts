@@ -3,12 +3,12 @@ import { isValidJSON } from './is-valid-json.js';
 
 describe('isValidJSON', () => {
 	it('returns true if JSON is valid', () => {
-		const result = isValidJSON(`{"name": "Directus"}`);
+		const result = isValidJSON(`{"name": "Directus9"}`);
 		expect(result).toEqual(true);
 	});
 
 	it('returns false if JSON is invalid', () => {
-		const result = isValidJSON(`{"name: Directus"}`);
+		const result = isValidJSON(`{"name: Directus9"}`);
 		expect(result).toEqual(false);
 	});
 });

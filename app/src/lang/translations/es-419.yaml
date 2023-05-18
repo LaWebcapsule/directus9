@@ -118,7 +118,7 @@ public_label: Público
 public_description: Control de datos disponibles por API sin autentificación.
 admin_description: Descripción_administrador.
 not_allowed: No permitido
-directus_version: Versión de Directus
+directus9_version: Versión de Directus9
 node_version: Versión Node
 node_uptime: Tiempo de actividad de Node
 os_type: Tipo de SO
@@ -1019,30 +1019,30 @@ content: Contenido
 singleton: Singleton
 singleton_label: Tratar como un sólo objeto
 system_fields_locked: Los campos del sistema están bloqueados y no pueden ser editados
-directus_collection:
-  directus_activity: Registros de contabilidad para todos los eventos
-  directus_collections: Configuración adicional de colección y metadatos
-  directus_dashboards: Panel de control dentro del módulo Insights
-  directus_fields: Configuración adicional de campos y metadatos
-  directus_files: Metadatos para todos los archivos gestionados
-  directus_flows: Flujos de automatización
-  directus_folders: Proporciona directorios virtuales para archivos
-  directus_migrations: Qué versión de la base de datos estás usando
-  directus_notifications: Notificaciones enviadas a usuarios
-  directus_operations: Operaciones que funcionan en flujos
-  directus_panels: Paneles individuales dentro de los paneles de Individual
-  directus_permissions: Permisos de acceso para cada rol
-  directus_presets: Preajustes para la colección por defecto y marcadores
-  directus_relations: Configuración de relaciones y metadatos
-  directus_revisions: Capturas de datos para toda la actividad
-  directus_roles: Grupos de permisos para usuarios del sistema
-  directus_sessions: Información de sesión de usuario
-  directus_settings: Opciones de configuración del proyecto
-  directus_shares: Rastrear elementos compartidos externamente
-  directus_users: Usuarios del sistema para la plataforma
-  directus_webhooks: Configuración para solicitudes HTTP basadas en eventos
+directus9_collection:
+  directus9_activity: Registros de contabilidad para todos los eventos
+  directus9_collections: Configuración adicional de colección y metadatos
+  directus9_dashboards: Panel de control dentro del módulo Insights
+  directus9_fields: Configuración adicional de campos y metadatos
+  directus9_files: Metadatos para todos los archivos gestionados
+  directus9_flows: Flujos de automatización
+  directus9_folders: Proporciona directorios virtuales para archivos
+  directus9_migrations: Qué versión de la base de datos estás usando
+  directus9_notifications: Notificaciones enviadas a usuarios
+  directus9_operations: Operaciones que funcionan en flujos
+  directus9_panels: Paneles individuales dentro de los paneles de Individual
+  directus9_permissions: Permisos de acceso para cada rol
+  directus9_presets: Preajustes para la colección por defecto y marcadores
+  directus9_relations: Configuración de relaciones y metadatos
+  directus9_revisions: Capturas de datos para toda la actividad
+  directus9_roles: Grupos de permisos para usuarios del sistema
+  directus9_sessions: Información de sesión de usuario
+  directus9_settings: Opciones de configuración del proyecto
+  directus9_shares: Rastrear elementos compartidos externamente
+  directus9_users: Usuarios del sistema para la plataforma
+  directus9_webhooks: Configuración para solicitudes HTTP basadas en eventos
 fields:
-  directus_activity:
+  directus9_activity:
     item: Clave Primaria del registro
     action: Acción
     collection: Colección
@@ -1053,7 +1053,7 @@ fields:
     origin: Origen
     ip: Dirección IP
     revisions: Revisiones
-  directus_collections:
+  directus9_collections:
     collection: Colección
     icon: Ícono
     note: Nota
@@ -1069,7 +1069,7 @@ fields:
     accountability: Actividad y seguimiento de revisión
     archive_field: Campo de archivo
     item_duplication_fields: Campos de duplicación de elementos
-  directus_files:
+  directus9_files:
     $thumbnail: Miniatura
     title: Título
     description: Descripción
@@ -1093,7 +1093,7 @@ fields:
     height: Alto
     charset: Juego de caracteres
     duration: Duración
-  directus_users:
+  directus9_users:
     first_name: Nombre
     last_name: Apellido
     email: Correo Electrónico
@@ -1124,7 +1124,7 @@ fields:
     last_page: Última página
     last_access: Último acceso
     email_notifications: Notificaciones por correo electrónico
-  directus_settings:
+  directus9_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
@@ -1164,7 +1164,7 @@ fields:
     transformations_presets: Limitar las transformaciones a los ajustes de abajo
     image_editor: Editor de imágenes
     custom_aspect_ratios: Personalizar radios de aspecto
-  directus_shares:
+  directus9_shares:
     name: Nombre
     role: Rol
     password: Contraseña
@@ -1172,7 +1172,7 @@ fields:
     date_end: Fecha Fin
     max_uses: Usos máximos
     times_used: Veces usado
-  directus_fields:
+  directus9_fields:
     collection: Nombre de la Colección
     icon: Icono de la Colección
     note: Nota
@@ -1180,7 +1180,7 @@ fields:
     singleton: Singleton
     translation: Traducciónes del nombre de campo
     display_template: Plantilla
-  directus_roles:
+  directus9_roles:
     name: Nombra un rol
     icon: Ícono del Rol
     description: Descripción
@@ -1190,7 +1190,7 @@ fields:
     enforce_tfa: Requiere 2FA
     users: Usuarios en el Rol
     module_list: Navegación en Módulo
-  directus_webhooks:
+  directus9_webhooks:
     name: Nombre
     method: Método
     status: Estatus
@@ -1203,7 +1203,7 @@ fields:
     actions: Acciones
     collections: Colecciones
 field_options:
-  directus_settings:
+  directus9_settings:
     project_name_placeholder: Mi proyecto...
     project_color_note: Inicio de sesión y fondo de Logo
     project_logo_note: Blanco 40x40 SVG/PNG
@@ -1232,12 +1232,12 @@ field_options:
     basemaps_style: Estilo Mapbox
     files_divider_title: Archivos y miniaturas
     overrides_divider_title: Reemplazos de la aplicación
-  directus_activity:
+  directus9_activity:
     login: Iniciar sesión
     create: Crear
     update: Actualizar
     delete: Eliminar
-  directus_collections:
+  directus9_collections:
     track_activity_revisions: Rastrear actividad y revisiones
     only_track_activity: Sólo seguimiento de actividad
     do_not_track_anything: No realizar seguimiento
@@ -1260,14 +1260,14 @@ field_options:
     sort_field: Elija un campo...
     accountability_divider: Responsabilidad
     duplication_divider: Duplicación
-  directus_files:
+  directus9_files:
     title: Un título único...
     description: Una descripción opcional...
     location: Una ubicación opcional...
     storage_divider: Nombre de archivo
     filename_disk: Nombre en el almacenamiento de disco...
     filename_download: Nombre al descargar...
-  directus_roles:
+  directus9_roles:
     name: El nombre único para este rol...
     description: Una descripción de este rol...
     ip_access: Añadir direcciones IP permitidas, dejar vacío para permitir todos...
@@ -1279,7 +1279,7 @@ field_options:
       link_placeholder: URL relativa o absoluta...
     collections_name: Colecciones
     collections_addLabel: Añadir Colección...
-  directus_users:
+  directus9_users:
     preferences_divider: Preferencias de usuario
     dropdown_auto: Automático (basado en el sistema)
     dropdown_light: Modo luz
@@ -1291,7 +1291,7 @@ field_options:
     status_dropdown_suspended: Suspendido
     status_dropdown_archived: Archivado
     token: Introduzca un token de acceso seguro...
-  directus_webhooks:
+  directus9_webhooks:
     status_options_active: Activo
     status_options_inactive: Inactivo
     data_label: Enviar datos del evento
@@ -1701,7 +1701,7 @@ interfaces:
     recursive_only: La interfaz de vista en árbol sólo funciona para relaciones recursivas.
   user:
     user: Usuario
-    description: Seleccionar un usuario existente de Directus
+    description: Seleccionar un usuario existente de Directus9
     select_mode: Seleccionar Modo
     modes:
       auto: Automático
@@ -1865,7 +1865,7 @@ displays:
     display_template_configure_notice: Puede configurar la plantilla de pantalla después de crear este campo.
   user:
     user: Usuario
-    description: Presentar un usuario de Directus
+    description: Presentar un usuario de Directus9
     avatar: Avatar
     name: Nombre
     both: Ambos

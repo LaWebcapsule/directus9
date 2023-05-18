@@ -10,7 +10,7 @@ export class TestLogger {
 
 	/**
 	 *
-	 * @param server Process running a Directus instance
+	 * @param server Process running a Directus9 instance
 	 * @param stopCondition Finish as soon as the specified string appears in the logs.
 	 * @param filter Only capture log chunks containing the specified string, if `true` uses the same string as defined for `stopCondition`
 	 */

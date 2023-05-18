@@ -73,7 +73,7 @@ describe('/auth/login/saml', () => {
 
 	describe('POST /acs', () => {
 		describe('when no redirect is provided', () => {
-			describe('returns directus refresh token in JSON', () => {
+			describe('returns directus9 refresh token in JSON', () => {
 				it.each(vendors)('%s', async (vendor) => {
 					// Action
 					const samlLogin = await request(getUrl(vendor)).get('/auth/login/saml').expect(302);
@@ -109,7 +109,7 @@ describe('/auth/login/saml', () => {
 		});
 
 		describe('when redirect is provided', () => {
-			describe('returns directus refresh token in cookie', () => {
+			describe('returns directus9 refresh token in cookie', () => {
 				it.each(vendors)('%s', async (vendor) => {
 					// Action
 					const samlLogin = await request(getUrl(vendor))
@@ -143,7 +143,7 @@ describe('/auth/login/saml', () => {
 					const cookies = acsResponse.headers['set-cookie'].map((cookie: string) => cookie.split(';')[0]).join(';');
 
 					// Assert
-					expect(cookies).toMatch(/directus_refresh_token/);
+					expect(cookies).toMatch(/directus9_refresh_token/);
 				});
 			});
 		});

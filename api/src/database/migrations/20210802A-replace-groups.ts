@@ -1,9 +1,9 @@
-import { parseJSON } from '@directus/utils';
+import { parseJSON } from '@directus9/utils';
 import type { Knex } from 'knex';
 import logger from '../../logger.js';
 
 export async function up(knex: Knex): Promise<void> {
-	const dividerGroups = await knex.select('*').from('directus_fields').where('interface', '=', 'group-divider');
+	const dividerGroups = await knex.select('*').from('directus9_fields').where('interface', '=', 'group-divider');
 
 	for (const dividerGroup of dividerGroups) {
 		const newOptions: { showHeader: true; headerIcon?: string; headerColor?: string } = { showHeader: true };
@@ -22,7 +22,7 @@ export async function up(knex: Knex): Promise<void> {
 		}
 
 		try {
-			await knex('directus_fields')
+			await knex('directus9_fields')
 				.update({
 					interface: 'group-standard',
 					options: JSON.stringify(newOptions),
@@ -34,7 +34,7 @@ export async function up(knex: Knex): Promise<void> {
 		}
 	}
 
-	await knex('directus_fields')
+	await knex('directus9_fields')
 		.update({
 			interface: 'group-standard',
 		})
@@ -42,7 +42,7 @@ export async function up(knex: Knex): Promise<void> {
 }
 
 export async function down(knex: Knex): Promise<void> {
-	await knex('directus_fields')
+	await knex('directus9_fields')
 		.update({
 			interface: 'group-raw',
 		})

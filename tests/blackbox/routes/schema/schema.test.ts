@@ -24,7 +24,7 @@ import {
 import { cloneDeep } from 'lodash';
 import { PrimaryKeyType, PRIMARY_KEY_TYPES } from '@common/index';
 import { load as loadYaml } from 'js-yaml';
-import { version as currentDirectusVersion } from '../../../../api/package.json';
+import { version as currentDirectus9Version } from '../../../../api/package.json';
 import { v4 as uuid } from 'uuid';
 
 describe('Schema Snapshots', () => {
@@ -151,7 +151,7 @@ describe('Schema Snapshots', () => {
 					.post('/schema/diff')
 					.send({
 						version: 1,
-						directus: currentDirectusVersion,
+						directus9: currentDirectus9Version,
 						vendor: currentVendor,
 						collections: [],
 						fields: [],
@@ -164,7 +164,7 @@ describe('Schema Snapshots', () => {
 					.post('/schema/diff')
 					.send({
 						version: 1,
-						directus: currentDirectusVersion,
+						directus9: currentDirectus9Version,
 						vendor: currentVendor,
 						collections: [],
 						fields: [],
@@ -177,7 +177,7 @@ describe('Schema Snapshots', () => {
 					.post('/schema/diff')
 					.send({
 						version: 1,
-						directus: currentDirectusVersion,
+						directus9: currentDirectus9Version,
 						vendor: currentVendor,
 						collections: [],
 						fields: [],

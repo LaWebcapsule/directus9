@@ -5,7 +5,7 @@ import { createPinia } from 'pinia';
 import { createApp } from 'vue';
 import App from './app.vue';
 import { registerComponents } from './components/register';
-import { DIRECTUS_LOGO } from './constants';
+import { DIRECTUS9_LOGO } from './constants';
 import { registerDirectives } from './directives/register';
 import { i18n } from './lang/';
 import { router } from './router';
@@ -16,18 +16,18 @@ import { loadExtensions, registerExtensions } from './extensions';
 init();
 
 async function init() {
-	const version = __DIRECTUS_VERSION__;
+	const version = __DIRECTUS9_VERSION__;
 
-	console.log(DIRECTUS_LOGO);
+	console.log(DIRECTUS9_LOGO);
 
 	console.info(
-		`Hey! Interested in helping build this open-source data management platform?\nIf so, join our growing team of contributors at: https://directus.chat`
+		`Hey! Interested in helping build this open-source data management platform?\nIf so, join our growing team of contributors at: https://directus9.chat`
 	);
 
 	if (import.meta.env.DEV) {
-		console.info(`%c🐰 Starting Directus v${version}...`, 'color:Green');
+		console.info(`%c🐰 Starting Directus9 v${version}...`, 'color:Green');
 	} else {
-		console.info(`%c🐰 Starting Directus...`, 'color:Green');
+		console.info(`%c🐰 Starting Directus9...`, 'color:Green');
 	}
 
 	console.time('🕓 Application Loaded');

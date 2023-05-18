@@ -118,7 +118,7 @@ public_label: 公开
 public_description: 设置哪些API无需身份验证。
 admin_description: 不受限制的 App/ API 访问权限的初始管理角色
 not_allowed: 不允许
-directus_version: Directus 版本
+directus9_version: Directus9 版本
 node_version: Node 版本
 node_uptime: Node 运行时间
 os_type: 系统类型
@@ -1032,30 +1032,30 @@ content: 内容
 singleton: 单一
 singleton_label: 视为单个对象
 system_fields_locked: 系统字段已锁定，无法编辑
-directus_collection:
-  directus_activity: 所有事件操作日志
-  directus_collections: 其他集合配置和元数据
-  directus_dashboards: Insights模块中的仪表板
-  directus_fields: 其他字段配置和元数据
-  directus_files: 文件资源元数据
-  directus_flows: 自动化流程
-  directus_folders: 虚拟文件目录
-  directus_migrations: 您的数据库版本是
-  directus_notifications: 发送给用户的通知
-  directus_operations: 在Flow中运行的操作
-  directus_panels: Insights仪表板中的个别面板
-  directus_permissions: 每个角色的访问权限
-  directus_presets: 书签/预设默认值
-  directus_relations: 元数据和关系配置
-  directus_revisions: 数据快照
-  directus_roles: 系统用户权限组
-  directus_sessions: 用户会话信息
-  directus_settings: 项目配置
-  directus_shares: 跟踪外部共享条目
-  directus_users: 平台系统用户
-  directus_webhooks: 基于事件的 HTTP 请求配置
+directus9_collection:
+  directus9_activity: 所有事件操作日志
+  directus9_collections: 其他集合配置和元数据
+  directus9_dashboards: Insights模块中的仪表板
+  directus9_fields: 其他字段配置和元数据
+  directus9_files: 文件资源元数据
+  directus9_flows: 自动化流程
+  directus9_folders: 虚拟文件目录
+  directus9_migrations: 您的数据库版本是
+  directus9_notifications: 发送给用户的通知
+  directus9_operations: 在Flow中运行的操作
+  directus9_panels: Insights仪表板中的个别面板
+  directus9_permissions: 每个角色的访问权限
+  directus9_presets: 书签/预设默认值
+  directus9_relations: 元数据和关系配置
+  directus9_revisions: 数据快照
+  directus9_roles: 系统用户权限组
+  directus9_sessions: 用户会话信息
+  directus9_settings: 项目配置
+  directus9_shares: 跟踪外部共享条目
+  directus9_users: 平台系统用户
+  directus9_webhooks: 基于事件的 HTTP 请求配置
 fields:
-  directus_activity:
+  directus9_activity:
     item: 条目主键
     action: 操作
     collection: 数据模型
@@ -1066,7 +1066,7 @@ fields:
     origin: 原始
     ip: IP 地址
     revisions: 修订版本
-  directus_collections:
+  directus9_collections:
     collection: 数据模型
     icon: 图标
     note: 注释
@@ -1082,7 +1082,7 @@ fields:
     accountability: 活动和版本修订跟踪
     archive_field: 归档字段
     item_duplication_fields: 条目重复字段
-  directus_files:
+  directus9_files:
     $thumbnail: 缩略图
     title: 标题
     description: 描述
@@ -1106,7 +1106,7 @@ fields:
     height: 高度
     charset: 字符集
     duration: 持续时间
-  directus_users:
+  directus9_users:
     first_name: 名
     last_name: 姓
     email: 邮箱
@@ -1137,7 +1137,7 @@ fields:
     last_page: 尾页
     last_access: 上次访问
     email_notifications: 电子邮件通知
-  directus_settings:
+  directus9_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
@@ -1177,7 +1177,7 @@ fields:
     transformations_presets: 将转换限制为以下预设
     image_editor: 图像编辑器
     custom_aspect_ratios: 自定义长宽比
-  directus_shares:
+  directus9_shares:
     name: 名称
     role: 角色
     password: 密码
@@ -1185,7 +1185,7 @@ fields:
     date_end: 结束日期
     max_uses: 最大使用
     times_used: 已使用时间
-  directus_fields:
+  directus9_fields:
     collection: 模型名称
     icon: 图标
     note: 注释
@@ -1193,7 +1193,7 @@ fields:
     singleton: 单一
     translation: 字段名称翻译
     display_template: 模板
-  directus_roles:
+  directus9_roles:
     name: 角色名称
     icon: 角色 Icon
     description: 描述
@@ -1203,7 +1203,7 @@ fields:
     enforce_tfa: 请求两步验证
     users: 角色中的用户
     module_list: 模块导航
-  directus_webhooks:
+  directus9_webhooks:
     name: 名称
     method: 方法
     status: 状态
@@ -1216,7 +1216,7 @@ fields:
     actions: 操作
     collections: 数据模型
 field_options:
-  directus_settings:
+  directus9_settings:
     project_name_placeholder: 我的项目
     project_color_note: 登录和标志背景
     project_logo_note: 白色的40x40 SVG/PNG
@@ -1245,12 +1245,12 @@ field_options:
     basemaps_style: Mapbox 样式
     files_divider_title: 文件和缩略图
     overrides_divider_title: 应用设置覆盖
-  directus_activity:
+  directus9_activity:
     login: 登录
     create: 创建
     update: 更新
     delete: 删除
-  directus_collections:
+  directus9_collections:
     track_activity_revisions: 跟踪活动和历史修改版本
     only_track_activity: 仅跟踪活动
     do_not_track_anything: 不跟踪任何内容
@@ -1273,14 +1273,14 @@ field_options:
     sort_field: 选择字段...
     accountability_divider: 访问控制
     duplication_divider: 复制
-  directus_files:
+  directus9_files:
     title: 唯一的标题...
     description: 可选描述...
     location: 可选位置...
     storage_divider: 文件名
     filename_disk: 服务端的名称...
     filename_download: 下载时的文件名
-  directus_roles:
+  directus9_roles:
     name: 角色名称...
     description: 角色介绍...
     ip_access: 添加允许的 IP 地址，留空表示允许所有...
@@ -1292,7 +1292,7 @@ field_options:
       link_placeholder: 相对或绝对的 URL...
     collections_name: 数据模型
     collections_addLabel: 添加到模型...
-  directus_users:
+  directus9_users:
     preferences_divider: 用户设置
     dropdown_auto: 自动 (系统主题)
     dropdown_light: 亮色模式
@@ -1304,7 +1304,7 @@ field_options:
     status_dropdown_suspended: 已停用
     status_dropdown_archived: 已存档
     token: 请输入安全访问令牌...
-  directus_webhooks:
+  directus9_webhooks:
     status_options_active: 激活
     status_options_inactive: 非活跃
     data_label: 发送事件数据

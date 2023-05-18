@@ -1,5 +1,5 @@
 ---
-description: REST and GraphQL API documentation for file access and management in Directus.
+description: REST and GraphQL API documentation for file access and management in Directus9.
 readTime: 10 min read
 pageClass: page-reference
 ---
@@ -7,7 +7,7 @@ pageClass: page-reference
 # Accessing Files
 
 > Every file managed by the platform is uploaded to the configured storage adapter, and its associated metadata is
-> tracked within the `directus_files` system collection. Any requested file transformations are handled on the fly, and
+> tracked within the `directus9_files` system collection. Any requested file transformations are handled on the fly, and
 > are only saved to storage.
 
 ---
@@ -28,7 +28,7 @@ You can provide an optional filename after the UUID to optimize for SEO, for exa
 
 ```
 example.com/assets/<file-id>/<filename>
-example.com/assets/1ac73658-8b62-4dea-b6da-529fbc9d01a4/directus-logo.png
+example.com/assets/1ac73658-8b62-4dea-b6da-529fbc9d01a4/directus9-logo.png
 ```
 
 This optional filename is also used in the Content-Disposition header when the `?download` query parameter is used.
@@ -38,12 +38,12 @@ This optional filename is also used in the Content-Disposition header when the `
 ::: warning Direct File Access
 
 While you may _technically_ be able to expose your storage adapters root file system and access your raw files through
-there, it is recommended that you always use the Directus API. This is the only way that you can take advantage of file
+there, it is recommended that you always use the Directus9 API. This is the only way that you can take advantage of file
 permissions and other built-in features.
 
 :::
 
-![Original File](https://cdn.directus.io/docs/v9/reference/files/original-20220216A.jpg) _Original File Used — 602KB and
+![Original File](https://cdn.directus9.io/docs/v9/reference/files/original-20220216A.jpg) _Original File Used — 602KB and
 1800x1200_
 
 ---
@@ -58,7 +58,7 @@ download will work on the _same_ domain, however it will have the file's "id" as
 ### Example
 
 ```html
-<a href="https://your-directus.com/assets/<file-id>?download" target="_blank" download="Your File.pdf">Download</a>
+<a href="https://your-directus9.com/assets/<file-id>?download" target="_blank" download="Your File.pdf">Download</a>
 ```
 
 ---
@@ -96,7 +96,7 @@ grained control:
 
 ### Advanced Transformations
 
-For even more advanced control over the file generation, Directus exposes
+For even more advanced control over the file generation, Directus9 exposes
 [the full `sharp` API](https://sharp.pixelplumbing.com/api-operation) through the `transforms` query parameter. This
 parameter accepts a two-dimensional array with the format `[Operation, ...arguments]`.
 
@@ -124,7 +124,7 @@ Below are four possible qualities (200x200 cover) to visually compare the balanc
 
 | 25%                                                                                             | 50%                                                                                             | 75%                                                                                             | 100%                                                                                               |
 | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
-| ![25%](https://cdn.directus.io/docs/v9/reference/files/200-200-cover-25-20220216A.jpg)<br>_4KB_ | ![50%](https://cdn.directus.io/docs/v9/reference/files/200-200-cover-50-20220216A.jpg)<br>_6KB_ | ![75%](https://cdn.directus.io/docs/v9/reference/files/200-200-cover-75-20220216A.jpg)<br>_8KB_ | ![100%](https://cdn.directus.io/docs/v9/reference/files/200-200-cover-100-20220216A.jpg)<br>_38KB_ |
+| ![25%](https://cdn.directus9.io/docs/v9/reference/files/200-200-cover-25-20220216A.jpg)<br>_4KB_ | ![50%](https://cdn.directus9.io/docs/v9/reference/files/200-200-cover-50-20220216A.jpg)<br>_6KB_ | ![75%](https://cdn.directus9.io/docs/v9/reference/files/200-200-cover-75-20220216A.jpg)<br>_8KB_ | ![100%](https://cdn.directus9.io/docs/v9/reference/files/200-200-cover-100-20220216A.jpg)<br>_38KB_ |
 
 ### Preset
 
@@ -205,7 +205,7 @@ Location of the file.
 Tags for the file.
 
 `metadata` **object**\
-Any additional metadata Directus was able to scrape from the file. For images, this includes EXIF, IPTC, and ICC information.
+Any additional metadata Directus9 was able to scrape from the file. For images, this includes EXIF, IPTC, and ICC information.
 
 ```json
 {
@@ -248,7 +248,7 @@ Any additional metadata Directus was able to scrape from the file. For images, t
 
 ## List Files
 
-List all files that exist in Directus.
+List all files that exist in Directus9.
 
 ### Query Parameters
 
@@ -276,7 +276,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	files: [directus_files]
+	files: [directus9_files]
 }
 ```
 
@@ -325,7 +325,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	files_by_id(id: ID!): directus_files
+	files_by_id(id: ID!): directus9_files
 }
 ```
 
@@ -472,7 +472,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	import_file(url: String!, data: create_directus_files_input!): directus_files
+	import_file(url: String!, data: create_directus9_files_input!): directus9_files
 }
 ```
 
@@ -530,7 +530,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_files_item(id: ID!, data: update_directus_files_input!): directus_files
+	update_files_item(id: ID!, data: update_directus9_files_input!): directus9_files
 }
 ```
 
@@ -594,7 +594,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_files_items(ids: [ID!]!, data: update_directus_files!): [directus_files]
+	update_files_items(ids: [ID!]!, data: update_directus9_files!): [directus9_files]
 }
 ```
 

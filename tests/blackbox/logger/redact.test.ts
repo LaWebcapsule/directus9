@@ -2,7 +2,7 @@ import config, { getUrl, paths } from '@common/config';
 import vendors from '@common/get-dbs-to-test';
 import * as common from '@common/index';
 import { TestLogger } from '@common/test-logger';
-import { awaitDirectusConnection } from '@utils/await-connection';
+import { awaitDirectus9Connection } from '@utils/await-connection';
 import { ChildProcess, spawn } from 'child_process';
 import { EnumType } from 'json-to-graphql-query';
 import type { Knex } from 'knex';
@@ -12,7 +12,7 @@ import request from 'supertest';
 
 describe('Logger Redact Tests', () => {
 	const databases = new Map<string, Knex>();
-	const directusInstances = {} as { [vendor: string]: ChildProcess };
+	const directus9Instances = {} as { [vendor: string]: ChildProcess };
 	const env = cloneDeep(config.envs);
 	const authModes = ['json', 'cookie'];
 
@@ -29,9 +29,9 @@ describe('Logger Redact Tests', () => {
 			databases.set(vendor, knex(config.knexConfig[vendor]!));
 
 			const server = spawn('node', [paths.cli, 'start'], { cwd: paths.cwd, env: env[vendor] });
-			directusInstances[vendor] = server;
+			directus9Instances[vendor] = server;
 
-			promises.push(awaitDirectusConnection(Number(env[vendor].PORT)));
+			promises.push(awaitDirectus9Connection(Number(env[vendor].PORT)));
 		}
 
 		// Give the server some time to start
@@ -40,7 +40,7 @@ describe('Logger Redact Tests', () => {
 
 	afterAll(async () => {
 		for (const [vendor, connection] of databases) {
-			directusInstances[vendor]!.kill();
+			directus9Instances[vendor]!.kill();
 
 			await connection.destroy();
 		}
@@ -75,7 +75,7 @@ describe('Logger Redact Tests', () => {
 							).body.data.auth_login.refresh_token;
 
 							// Action
-							const logger = new TestLogger(directusInstances[vendor], '/auth/refresh', true);
+							const logger = new TestLogger(directus9Instances[vendor], '/auth/refresh', true);
 
 							const response = await request(getUrl(vendor, env))
 								.post(`/auth/refresh`)
@@ -84,7 +84,7 @@ describe('Logger Redact Tests', () => {
 
 							const logs = await logger.getLogs();
 
-							const loggerGql = new TestLogger(directusInstances[vendor], '/graphql/system', true);
+							const loggerGql = new TestLogger(directus9Instances[vendor], '/graphql/system', true);
 
 							const mutationKey = 'auth_refresh';
 
@@ -157,7 +157,7 @@ describe('Logger Redact Tests', () => {
 					describe(common.USER[userKey].NAME, () => {
 						it.each(vendors)('%s', async (vendor) => {
 							// Setup
-							const cookieName = 'directus_refresh_token';
+							const cookieName = 'directus9_refresh_token';
 
 							const refreshToken = (
 								await request(getUrl(vendor, env))
@@ -181,7 +181,7 @@ describe('Logger Redact Tests', () => {
 							).body.data.auth_login.refresh_token;
 
 							// Action
-							const logger = new TestLogger(directusInstances[vendor], '/auth/refresh', true);
+							const logger = new TestLogger(directus9Instances[vendor], '/auth/refresh', true);
 
 							const response = await request(getUrl(vendor, env))
 								.post(`/auth/refresh`)
@@ -191,7 +191,7 @@ describe('Logger Redact Tests', () => {
 
 							const logs = await logger.getLogs();
 
-							const loggerGql = new TestLogger(directusInstances[vendor], '/graphql/system', true);
+							const loggerGql = new TestLogger(directus9Instances[vendor], '/graphql/system', true);
 
 							const mutationKey = 'auth_refresh';
 

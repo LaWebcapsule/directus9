@@ -1,11 +1,11 @@
-import { toArray } from '@directus/utils';
+import { toArray } from '@directus9/utils';
 import type { Knex } from 'knex';
 import { isArray } from 'lodash-es';
 
 export async function up(knex: Knex): Promise<void> {
 	const fields = await knex
 		.select<{ id: number; special: string }[]>('id', 'special')
-		.from('directus_fields')
+		.from('directus9_fields')
 		.whereNotNull('special')
 		.orWhere('special', '<>', '');
 
@@ -39,7 +39,7 @@ export async function up(knex: Knex): Promise<void> {
 			const parsedSpecialString = parsedSpecial.join(',');
 
 			if (parsedSpecialString !== special) {
-				await knex('directus_fields').update({ special: parsedSpecialString }).where({ id });
+				await knex('directus9_fields').update({ special: parsedSpecialString }).where({ id });
 			}
 		}
 	}

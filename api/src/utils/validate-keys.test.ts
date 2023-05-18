@@ -1,4 +1,4 @@
-import type { SchemaOverview } from '@directus/types';
+import type { SchemaOverview } from '@directus9/types';
 import { v4 as uuid } from 'uuid';
 import { describe, expect, it } from 'vitest';
 import { validateKeys } from '../../src/utils/validate-keys.js';

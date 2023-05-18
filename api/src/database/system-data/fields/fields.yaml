@@ -1,104 +1,104 @@
-# directus_fields isn't surfaced in the app
-table: directus_fields
+# directus9_fields isn't surfaced in the app
+table: directus9_fields
 
 fields:
-  - collection: directus_fields
+  - collection: directus9_fields
     field: id
     width: half
 
-  - collection: directus_fields
+  - collection: directus9_fields
     field: collection
     width: half
 
-  - collection: directus_fields
+  - collection: directus9_fields
     field: field
     width: half
 
-  - collection: directus_fields
+  - collection: directus9_fields
     field: special
     hidden: true
     special:
       - cast-csv
     width: half
 
-  - collection: directus_fields
+  - collection: directus9_fields
     field: interface
     width: half
 
-  - collection: directus_fields
+  - collection: directus9_fields
     field: options
     hidden: true
     special:
       - cast-json
     width: half
 
-  - collection: directus_fields
+  - collection: directus9_fields
     field: display
     width: half
 
-  - collection: directus_fields
+  - collection: directus9_fields
     field: display_options
     hidden: true
     special:
       - cast-json
     width: half
 
-  - collection: directus_fields
+  - collection: directus9_fields
     field: readonly
     hidden: true
     special:
       - cast-boolean
     width: half
 
-  - collection: directus_fields
+  - collection: directus9_fields
     field: hidden
     hidden: true
     special:
       - cast-boolean
     width: half
 
-  - collection: directus_fields
+  - collection: directus9_fields
     field: required
     hidden: true
     special:
       - cast-boolean
     width: half
 
-  - collection: directus_fields
+  - collection: directus9_fields
     field: sort
     width: half
 
-  - collection: directus_fields
+  - collection: directus9_fields
     field: width
     width: half
 
-  - collection: directus_fields
+  - collection: directus9_fields
     field: group
     width: half
 
-  - collection: directus_fields
+  - collection: directus9_fields
     field: translations
     hidden: true
     special:
       - cast-json
     width: half
 
-  - collection: directus_fields
+  - collection: directus9_fields
     field: note
     width: half
 
-  - collection: directus_fields
+  - collection: directus9_fields
     field: conditions
     hidden: true
     special:
       - cast-json
 
-  - collection: directus_fields
+  - collection: directus9_fields
     field: validation
     hidden: true
     special:
       - cast-json
 
-  - collection: directus_fields
+  - collection: directus9_fields
     field: validation_message
     hidden: true

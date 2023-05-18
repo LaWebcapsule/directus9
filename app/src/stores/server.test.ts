@@ -18,7 +18,7 @@ import { useUserStore } from './user';
 
 const mockServerInfo: Info = {
 	project: {
-		project_name: 'Directus',
+		project_name: 'Directus9',
 		project_descriptor: null,
 		project_logo: null,
 		project_color: null,
@@ -28,7 +28,7 @@ const mockServerInfo: Info = {
 		public_note: null,
 		custom_css: null,
 	},
-	directus: {
+	directus9: {
 		version: '10.10.10',
 	},
 	node: {
@@ -45,7 +45,7 @@ const mockServerInfo: Info = {
 
 const mockAuthProviders: Auth['providers'] = [
 	{
-		name: 'directus',
+		name: 'directus9',
 		driver: 'oauth2',
 	},
 ];
@@ -340,7 +340,7 @@ describe('dehyrate action', () => {
 		serverStore.dehydrate();
 
 		expect(serverStore.info.project).toEqual(null);
-		expect(serverStore.info.directus).toEqual(undefined);
+		expect(serverStore.info.directus9).toEqual(undefined);
 		expect(serverStore.info.node).toEqual(undefined);
 		expect(serverStore.info.os).toEqual(undefined);
 		expect(serverStore.auth.providers).toEqual([]);

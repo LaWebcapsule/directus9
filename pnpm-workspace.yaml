@@ -1,5 +1,5 @@
 packages:
-  - directus
+  - directus9
   - app
   - api
   - docs

@@ -1,12 +1,12 @@
 ---
-description: REST and GraphQL API documentation on the Flows collection in Directus.
+description: REST and GraphQL API documentation on the Flows collection in Directus9.
 readTime: 5 min read
 pageClass: page-reference
 ---
 
 # Flows
 
-> Flows enable custom, event-driven data processing and task automation within Directus.
+> Flows enable custom, event-driven data processing and task automation within Directus9.
 
 ---
 
@@ -68,7 +68,7 @@ UUID of the operation connected to the trigger in the flow.
 
 ## List Flows
 
-List all flows that exist in Directus.
+List all flows that exist in Directus9.
 
 ### Query Parameters
 
@@ -96,7 +96,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	flows: [directus_flows]
+	flows: [directus9_flows]
 }
 ```
 
@@ -146,7 +146,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	flows_by_id(id: ID!): directus_flows
+	flows_by_id(id: ID!): directus9_flows
 }
 ```
 
@@ -206,7 +206,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_flows_item(data: create_directus_flows_input!): directus_flows
+	create_flows_item(data: create_directus9_flows_input!): directus9_flows
 }
 ```
 
@@ -273,7 +273,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_flows_items(data: [create_directus_flows_input!]!): [directus_flows]
+	create_flows_items(data: [create_directus9_flows_input!]!): [directus9_flows]
 }
 ```
 
@@ -344,7 +344,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_flows_item(id: ID!, data: update_directus_flows_input): directus_flows
+	update_flows_item(id: ID!, data: update_directus9_flows_input): directus9_flows
 }
 ```
 
@@ -408,7 +408,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_flows_items(ids: [ID!]!, data: update_directus_flows_input): [directus_flows]
+	update_flows_items(ids: [ID!]!, data: update_directus9_flows_input): [directus9_flows]
 }
 ```
 

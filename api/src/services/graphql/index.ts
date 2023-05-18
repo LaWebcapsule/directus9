@@ -1,7 +1,7 @@
-import { Action, FUNCTIONS } from '@directus/constants';
-import type { BaseException } from '@directus/exceptions';
-import type { Accountability, Aggregate, Filter, PrimaryKey, Query, SchemaOverview } from '@directus/types';
-import { parseFilterFunctionPath } from '@directus/utils';
+import { Action, FUNCTIONS } from '@directus9/constants';
+import type { BaseException } from '@directus9/exceptions';
+import type { Accountability, Aggregate, Filter, PrimaryKey, Query, SchemaOverview } from '@directus9/types';
+import { parseFilterFunctionPath } from '@directus9/utils';
 import argon2 from 'argon2';
 import type {
 	ArgumentNode,
@@ -99,14 +99,14 @@ if (env['GRAPHQL_INTROSPECTION'] === false) {
  * These should be ignored in the context of GraphQL, and/or are replaced by a custom resolver (for non-standard structures)
  */
 const SYSTEM_DENY_LIST = [
-	'directus_collections',
-	'directus_fields',
-	'directus_relations',
-	'directus_migrations',
-	'directus_sessions',
+	'directus9_collections',
+	'directus9_fields',
+	'directus9_relations',
+	'directus9_migrations',
+	'directus9_sessions',
 ];
 
-const READ_ONLY = ['directus_activity', 'directus_revisions'];
+const READ_ONLY = ['directus9_activity', 'directus9_revisions'];
 
 export class GraphQLService {
 	accountability: Accountability | null;
@@ -200,10 +200,10 @@ export class GraphQLService {
 		const { CreateCollectionTypes, UpdateCollectionTypes, DeleteCollectionTypes } = getWritableTypes();
 
 		const scopeFilter = (collection: SchemaOverview['collections'][string]) => {
-			if (this.scope === 'items' && collection.collection.startsWith('directus_') === true) return false;
+			if (this.scope === 'items' && collection.collection.startsWith('directus9_') === true) return false;
 
 			if (this.scope === 'system') {
-				if (collection.collection.startsWith('directus_') === false) return false;
+				if (collection.collection.startsWith('directus9_') === false) return false;
 				if (SYSTEM_DENY_LIST.includes(collection.collection)) return false;
 			}
 
@@ -1315,11 +1315,11 @@ export class GraphQLService {
 
 	/**
 	 * Generic resolver that's used for every "regular" items/system query. Converts the incoming GraphQL AST / fragments into
-	 * Directus' query structure which is then executed by the services.
+	 * Directus9' query structure which is then executed by the services.
 	 */
 	async resolveQuery(info: GraphQLResolveInfo): Promise<Partial<Item> | null> {
 		let collection = info.fieldName;
-		if (this.scope === 'system') collection = `directus_${collection}`;
+		if (this.scope === 'system') collection = `directus9_${collection}`;
 		const selections = this.replaceFragmentsInSelections(info.fieldNodes[0]?.selectionSet?.selections, info.fragments);
 
 		if (!selections) return null;
@@ -1386,7 +1386,7 @@ export class GraphQLService {
 	): Promise<Partial<Item> | boolean | undefined> {
 		const action = info.fieldName.split('_')[0] as 'create' | 'update' | 'delete';
 		let collection = info.fieldName.substring(action.length + 1);
-		if (this.scope === 'system') collection = `directus_${collection}`;
+		if (this.scope === 'system') collection = `directus9_${collection}`;
 
 		const selections = this.replaceFragmentsInSelections(info.fieldNodes[0]?.selectionSet?.selections, info.fragments);
 		const query = this.getQuery(args, selections || [], info.variableValues);
@@ -1498,8 +1498,8 @@ export class GraphQLService {
 
 	/**
 	 * GraphQL's regular resolver `args` variable only contains the "top-level" arguments. Seeing that we convert the
-	 * whole nested tree into one big query using Directus' own query resolver, we want to have a nested structure of
-	 * arguments for the whole resolving tree, which can later be transformed into Directus' AST using `deep`.
+	 * whole nested tree into one big query using Directus9' own query resolver, we want to have a nested structure of
+	 * arguments for the whole resolving tree, which can later be transformed into Directus9' AST using `deep`.
 	 * In order to do that, we'll parse over all ArgumentNodes and ObjectFieldNodes to manually recreate an object structure
 	 * of arguments
 	 */
@@ -1535,8 +1535,8 @@ export class GraphQLService {
 	}
 
 	/**
-	 * Get a Directus Query object from the parsed arguments (rawQuery) and GraphQL AST selectionSet. Converts SelectionSet into
-	 * Directus' `fields` query for use in the resolver. Also applies variables where appropriate.
+	 * Get a Directus9 Query object from the parsed arguments (rawQuery) and GraphQL AST selectionSet. Converts SelectionSet into
+	 * Directus9' `fields` query for use in the resolver. Also applies variables where appropriate.
 	 */
 	getQuery(
 		rawQuery: Query,
@@ -1699,7 +1699,7 @@ export class GraphQLService {
 	}
 
 	/**
-	 * Replace functions from GraphQL format to Directus-Filter format
+	 * Replace functions from GraphQL format to Directus9-Filter format
 	 */
 	replaceFuncs(filter: Filter): Filter {
 		return replaceFuncDeep(filter);
@@ -1722,7 +1722,7 @@ export class GraphQLService {
 	}
 
 	/**
-	 * Convert Directus-Exception into a GraphQL format, so it can be returned by GraphQL properly.
+	 * Convert Directus9-Exception into a GraphQL format, so it can be returned by GraphQL properly.
 	 */
 	formatError(error: BaseException | BaseException[]): GraphQLError {
 		if (Array.isArray(error)) {
@@ -1746,33 +1746,33 @@ export class GraphQLService {
 		};
 
 		switch (collection) {
-			case 'directus_activity':
+			case 'directus9_activity':
 				return new ActivityService(opts);
-			case 'directus_files':
+			case 'directus9_files':
 				return new FilesService(opts);
-			case 'directus_folders':
+			case 'directus9_folders':
 				return new FoldersService(opts);
-			case 'directus_permissions':
+			case 'directus9_permissions':
 				return new PermissionsService(opts);
-			case 'directus_presets':
+			case 'directus9_presets':
 				return new PresetsService(opts);
-			case 'directus_notifications':
+			case 'directus9_notifications':
 				return new NotificationsService(opts);
-			case 'directus_revisions':
+			case 'directus9_revisions':
 				return new RevisionsService(opts);
-			case 'directus_roles':
+			case 'directus9_roles':
 				return new RolesService(opts);
-			case 'directus_settings':
+			case 'directus9_settings':
 				return new SettingsService(opts);
-			case 'directus_users':
+			case 'directus9_users':
 				return new UsersService(opts);
-			case 'directus_webhooks':
+			case 'directus9_webhooks':
 				return new WebhooksService(opts);
-			case 'directus_shares':
+			case 'directus9_shares':
 				return new SharesService(opts);
-			case 'directus_flows':
+			case 'directus9_flows':
 				return new FlowsService(opts);
-			case 'directus_operations':
+			case 'directus9_operations':
 				return new OperationsService(opts);
 			default:
 				return new ItemsService(collection, opts);
@@ -1909,9 +1909,9 @@ export class GraphQLService {
 
 		if (this.accountability?.admin === true) {
 			ServerInfo.addFields({
-				directus: {
+				directus9: {
 					type: new GraphQLObjectType({
-						name: 'server_info_directus',
+						name: 'server_info_directus9',
 						fields: {
 							version: {
 								type: GraphQLString,
@@ -2034,15 +2034,15 @@ export class GraphQLService {
 		});
 
 		const Collection = schemaComposer.createObjectTC({
-			name: 'directus_collections',
+			name: 'directus9_collections',
 		});
 
 		const Field = schemaComposer.createObjectTC({
-			name: 'directus_fields',
+			name: 'directus9_fields',
 		});
 
 		const Relation = schemaComposer.createObjectTC({
-			name: 'directus_relations',
+			name: 'directus9_relations',
 		});
 
 		/**
@@ -2391,12 +2391,12 @@ export class GraphQLService {
 			},
 		});
 
-		if ('directus_collections' in schema.read.collections) {
+		if ('directus9_collections' in schema.read.collections) {
 			Collection.addFields({
 				collection: GraphQLString,
 				meta: schemaComposer.createObjectTC({
-					name: 'directus_collections_meta',
-					fields: Object.values(schema.read.collections['directus_collections']!.fields).reduce((acc, field) => {
+					name: 'directus9_collections_meta',
+					fields: Object.values(schema.read.collections['directus9_collections']!.fields).reduce((acc, field) => {
 						acc[field.field] = {
 							type: field.nullable
 								? getGraphQLType(field.type, field.special)
@@ -2408,7 +2408,7 @@ export class GraphQLService {
 					}, {} as ObjectTypeComposerFieldConfigAsObjectDefinition<any, any>),
 				}),
 				schema: schemaComposer.createObjectTC({
-					name: 'directus_collections_schema',
+					name: 'directus9_collections_schema',
 					fields: {
 						name: GraphQLString,
 						comment: GraphQLString,
@@ -2446,14 +2446,14 @@ export class GraphQLService {
 			});
 		}
 
-		if ('directus_fields' in schema.read.collections) {
+		if ('directus9_fields' in schema.read.collections) {
 			Field.addFields({
 				collection: GraphQLString,
 				field: GraphQLString,
 				type: GraphQLString,
 				meta: schemaComposer.createObjectTC({
-					name: 'directus_fields_meta',
-					fields: Object.values(schema.read.collections['directus_fields']!.fields).reduce((acc, field) => {
+					name: 'directus9_fields_meta',
+					fields: Object.values(schema.read.collections['directus9_fields']!.fields).reduce((acc, field) => {
 						acc[field.field] = {
 							type: field.nullable
 								? getGraphQLType(field.type, field.special)
@@ -2465,7 +2465,7 @@ export class GraphQLService {
 					}, {} as ObjectTypeComposerFieldConfigAsObjectDefinition<any, any>),
 				}),
 				schema: schemaComposer.createObjectTC({
-					name: 'directus_fields_schema',
+					name: 'directus9_fields_schema',
 					fields: {
 						name: GraphQLString,
 						table: GraphQLString,
@@ -2529,13 +2529,13 @@ export class GraphQLService {
 			});
 		}
 
-		if ('directus_relations' in schema.read.collections) {
+		if ('directus9_relations' in schema.read.collections) {
 			Relation.addFields({
 				collection: GraphQLString,
 				field: GraphQLString,
 				related_collection: GraphQLString,
 				schema: schemaComposer.createObjectTC({
-					name: 'directus_relations_schema',
+					name: 'directus9_relations_schema',
 					fields: {
 						table: new GraphQLNonNull(GraphQLString),
 						column: new GraphQLNonNull(GraphQLString),
@@ -2547,8 +2547,8 @@ export class GraphQLService {
 					},
 				}),
 				meta: schemaComposer.createObjectTC({
-					name: 'directus_relations_meta',
-					fields: Object.values(schema.read.collections['directus_relations']!.fields).reduce((acc, field) => {
+					name: 'directus9_relations_meta',
+					fields: Object.values(schema.read.collections['directus9_relations']!.fields).reduce((acc, field) => {
 						acc[field.field] = {
 							type: getGraphQLType(field.type, field.special),
 							description: field.note,
@@ -2608,11 +2608,11 @@ export class GraphQLService {
 				create_collections_item: {
 					type: Collection,
 					args: {
-						data: toInputObjectType(Collection.clone('create_directus_collections'), {
+						data: toInputObjectType(Collection.clone('create_directus9_collections'), {
 							postfix: '_input',
 						}).addFields({
 							fields: [
-								toInputObjectType(Field.clone('create_directus_collections_fields'), { postfix: '_input' }).NonNull,
+								toInputObjectType(Field.clone('create_directus9_collections_fields'), { postfix: '_input' }).NonNull,
 							],
 						}).NonNull,
 					},
@@ -2630,7 +2630,7 @@ export class GraphQLService {
 					type: Collection,
 					args: {
 						collection: new GraphQLNonNull(GraphQLString),
-						data: toInputObjectType(Collection.clone('update_directus_collections'), {
+						data: toInputObjectType(Collection.clone('update_directus9_collections'), {
 							postfix: '_input',
 						}).removeField(['collection', 'schema']).NonNull,
 					},
@@ -2671,7 +2671,7 @@ export class GraphQLService {
 					type: Field,
 					args: {
 						collection: new GraphQLNonNull(GraphQLString),
-						data: toInputObjectType(Field.clone('create_directus_fields'), { postfix: '_input' }).NonNull,
+						data: toInputObjectType(Field.clone('create_directus9_fields'), { postfix: '_input' }).NonNull,
 					},
 					resolve: async (_, args) => {
 						const service = new FieldsService({
@@ -2688,7 +2688,7 @@ export class GraphQLService {
 					args: {
 						collection: new GraphQLNonNull(GraphQLString),
 						field: new GraphQLNonNull(GraphQLString),
-						data: toInputObjectType(Field.clone('update_directus_fields'), { postfix: '_input' }).NonNull,
+						data: toInputObjectType(Field.clone('update_directus9_fields'), { postfix: '_input' }).NonNull,
 					},
 					resolve: async (_, args) => {
 						const service = new FieldsService({
@@ -2733,7 +2733,7 @@ export class GraphQLService {
 				create_relations_item: {
 					type: Relation,
 					args: {
-						data: toInputObjectType(Relation.clone('create_directus_relations'), { postfix: '_input' }).NonNull,
+						data: toInputObjectType(Relation.clone('create_directus9_relations'), { postfix: '_input' }).NonNull,
 					},
 					resolve: async (_, args) => {
 						const relationsService = new RelationsService({
@@ -2750,7 +2750,7 @@ export class GraphQLService {
 					args: {
 						collection: new GraphQLNonNull(GraphQLString),
 						field: new GraphQLNonNull(GraphQLString),
-						data: toInputObjectType(Relation.clone('update_directus_relations'), { postfix: '_input' }).NonNull,
+						data: toInputObjectType(Relation.clone('update_directus9_relations'), { postfix: '_input' }).NonNull,
 					},
 					resolve: async (_, args) => {
 						const relationsService = new RelationsService({
@@ -2787,10 +2787,10 @@ export class GraphQLService {
 			});
 		}
 
-		if ('directus_users' in schema.read.collections) {
+		if ('directus9_users' in schema.read.collections) {
 			schemaComposer.Query.addFields({
 				users_me: {
-					type: ReadCollectionTypes['directus_users']!,
+					type: ReadCollectionTypes['directus9_users']!,
 					resolve: async (_, args, __, info) => {
 						if (!this.accountability?.user) return null;
 						const service = new UsersService({ schema: this.schema, accountability: this.accountability });
@@ -2808,12 +2808,12 @@ export class GraphQLService {
 			});
 		}
 
-		if ('directus_users' in schema.update.collections && this.accountability?.user) {
+		if ('directus9_users' in schema.update.collections && this.accountability?.user) {
 			schemaComposer.Mutation.addFields({
 				update_users_me: {
-					type: ReadCollectionTypes['directus_users']!,
+					type: ReadCollectionTypes['directus9_users']!,
 					args: {
-						data: toInputObjectType(UpdateCollectionTypes['directus_users']!),
+						data: toInputObjectType(UpdateCollectionTypes['directus9_users']!),
 					},
 					resolve: async (_, args, __, info) => {
 						if (!this.accountability?.user) return null;
@@ -2825,7 +2825,7 @@ export class GraphQLService {
 
 						await service.updateOne(this.accountability.user, args['data']);
 
-						if ('directus_users' in ReadCollectionTypes) {
+						if ('directus9_users' in ReadCollectionTypes) {
 							const selections = this.replaceFragmentsInSelections(
 								info.fieldNodes[0]?.selectionSet?.selections,
 								info.fragments
@@ -2842,10 +2842,10 @@ export class GraphQLService {
 			});
 		}
 
-		if ('directus_activity' in schema.create.collections) {
+		if ('directus9_activity' in schema.create.collections) {
 			schemaComposer.Mutation.addFields({
 				create_comment: {
-					type: ReadCollectionTypes['directus_activity'] ?? GraphQLBoolean,
+					type: ReadCollectionTypes['directus9_activity'] ?? GraphQLBoolean,
 					args: {
 						collection: new GraphQLNonNull(GraphQLString),
 						item: new GraphQLNonNull(GraphQLID),
@@ -2866,7 +2866,7 @@ export class GraphQLService {
 							origin: this.accountability?.origin,
 						});
 
-						if ('directus_activity' in ReadCollectionTypes) {
+						if ('directus9_activity' in ReadCollectionTypes) {
 							const selections = this.replaceFragmentsInSelections(
 								info.fieldNodes[0]?.selectionSet?.selections,
 								info.fragments
@@ -2883,10 +2883,10 @@ export class GraphQLService {
 			});
 		}
 
-		if ('directus_activity' in schema.update.collections) {
+		if ('directus9_activity' in schema.update.collections) {
 			schemaComposer.Mutation.addFields({
 				update_comment: {
-					type: ReadCollectionTypes['directus_activity'] ?? GraphQLBoolean,
+					type: ReadCollectionTypes['directus9_activity'] ?? GraphQLBoolean,
 					args: {
 						id: new GraphQLNonNull(GraphQLID),
 						comment: new GraphQLNonNull(GraphQLString),
@@ -2899,7 +2899,7 @@ export class GraphQLService {
 
 						const primaryKey = await service.updateOne(args['id'], { comment: args['comment'] });
 
-						if ('directus_activity' in ReadCollectionTypes) {
+						if ('directus9_activity' in ReadCollectionTypes) {
 							const selections = this.replaceFragmentsInSelections(
 								info.fieldNodes[0]?.selectionSet?.selections,
 								info.fragments
@@ -2916,7 +2916,7 @@ export class GraphQLService {
 			});
 		}
 
-		if ('directus_activity' in schema.delete.collections) {
+		if ('directus9_activity' in schema.delete.collections) {
 			schemaComposer.Mutation.addFields({
 				delete_comment: {
 					type: DeleteCollectionTypes['one']!,
@@ -2936,14 +2936,14 @@ export class GraphQLService {
 			});
 		}
 
-		if ('directus_files' in schema.create.collections) {
+		if ('directus9_files' in schema.create.collections) {
 			schemaComposer.Mutation.addFields({
 				import_file: {
-					type: ReadCollectionTypes['directus_files'] ?? GraphQLBoolean,
+					type: ReadCollectionTypes['directus9_files'] ?? GraphQLBoolean,
 					args: {
 						url: new GraphQLNonNull(GraphQLString),
-						data: toInputObjectType(CreateCollectionTypes['directus_files']!).setTypeName(
-							'create_directus_files_input'
+						data: toInputObjectType(CreateCollectionTypes['directus9_files']!).setTypeName(
+							'create_directus9_files_input'
 						),
 					},
 					resolve: async (_, args, __, info) => {
@@ -2954,7 +2954,7 @@ export class GraphQLService {
 
 						const primaryKey = await service.importOne(args['url'], args['data']);
 
-						if ('directus_files' in ReadCollectionTypes) {
+						if ('directus9_files' in ReadCollectionTypes) {
 							const selections = this.replaceFragmentsInSelections(
 								info.fieldNodes[0]?.selectionSet?.selections,
 								info.fragments
@@ -2970,7 +2970,7 @@ export class GraphQLService {
 			});
 		}
 
-		if ('directus_users' in schema.create.collections) {
+		if ('directus9_users' in schema.create.collections) {
 			schemaComposer.Mutation.addFields({
 				users_invite: {
 					type: GraphQLBoolean,

@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useCollection } from '@directus/composables';
+import { useCollection } from '@directus9/composables';
 import { toRefs } from 'vue';
 
 const props = withDefaults(

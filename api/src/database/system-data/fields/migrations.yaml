@@ -1,10 +1,10 @@
-# directus_migrations isn't surfaced in the app, nor accessible from the API
-table: directus_migrations
+# directus9_migrations isn't surfaced in the app, nor accessible from the API
+table: directus9_migrations
 
 fields:
-  - collection: directus_migrations
+  - collection: directus9_migrations
     field: version
-  - collection: directus_migrations
+  - collection: directus9_migrations
     field: name
-  - collection: directus_migrations
+  - collection: directus9_migrations
     field: timestamp

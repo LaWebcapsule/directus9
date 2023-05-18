@@ -1,4 +1,4 @@
-import CustomIconDirectus from './custom-icons/directus.vue';
+import CustomIconDirectus9 from './custom-icons/directus9.vue';
 import CustomIconBookmarkSave from './custom-icons/bookmark_save.vue';
 import CustomIconBox from './custom-icons/box.vue';
 import CustomIconCommitNode from './custom-icons/commit_node.vue';
@@ -18,7 +18,7 @@ import CustomIconFolderLock from './custom-icons/folder_lock.vue';
 import CustomIconLogout from './custom-icons/logout.vue';
 
 export const components: Record<string, any> = {
-	CustomIconDirectus,
+	CustomIconDirectus9,
 	CustomIconBookmarkSave,
 	CustomIconBox,
 	CustomIconCommitNode,

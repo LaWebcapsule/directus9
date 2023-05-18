@@ -9,7 +9,7 @@ const assetsDirectory = [__dirname, '..', '..', 'assets'];
 const storages = ['local', 'minio'];
 
 const imageFile = {
-	name: 'directus.png',
+	name: 'directus9.png',
 	type: 'image/png',
 	filesize: '7136',
 };

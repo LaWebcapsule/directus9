@@ -1,10 +1,10 @@
-import type { FieldMeta } from '@directus/types';
+import type { FieldMeta } from '@directus9/types';
 import fse from 'fs-extra';
 import { merge } from 'lodash-es';
 import path from 'path';
 import { getAuthProviders } from '../../../utils/get-auth-providers.js';
 import { requireYAML } from '../../../utils/require-yaml.js';
-import formatTitle from '@directus/format-title';
+import formatTitle from '@directus9/format-title';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -27,7 +27,7 @@ for (const filepath of fieldData) {
 		});
 
 		// Dynamically populate auth providers field
-		if (systemField.collection === 'directus_users' && systemField.field === 'provider') {
+		if (systemField.collection === 'directus9_users' && systemField.field === 'provider') {
 			getAuthProviders().forEach(({ name }) => {
 				systemField.options?.['choices']?.push({
 					text: formatTitle(name),

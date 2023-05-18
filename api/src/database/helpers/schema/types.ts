@@ -1,5 +1,5 @@
-import type { KNEX_TYPES } from '@directus/constants';
-import type { Field, Relation, Type } from '@directus/types';
+import type { KNEX_TYPES } from '@directus9/constants';
+import type { Field, Relation, Type } from '@directus9/types';
 import type { Knex } from 'knex';
 import type { DatabaseClient } from '../../../types/index.js';
 import { getDatabaseClient } from '../../index.js';
@@ -129,7 +129,7 @@ export abstract class SchemaHelper extends DatabaseHelper {
 		orderByFields: Knex.Raw[]
 	): Knex.QueryBuilder {
 		dbQuery.rowNumber(
-			knex.ref('directus_row_number').toQuery(),
+			knex.ref('directus9_row_number').toQuery(),
 			knex.raw(`partition by ?? order by ${orderByString}`, [`${table}.${primaryKey}`, ...orderByFields])
 		);
 

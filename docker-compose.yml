@@ -1,6 +1,6 @@
 # This compose file is meant to spin up a copy of all supported database vendors + Redis and S3 (Minio).
 # For production use see the docker compose file example in the docs:
-#     https://docs.directus.io/self-hosted/installation/docker/#docker-compose
+#     https://docs.directus9.io/self-hosted/installation/docker/#docker-compose
 #
 # ONLY FOR DEBUGGING. THIS IS NOT INTENDED FOR PRODUCTION USE.
 #
@@ -73,7 +73,7 @@ services:
     image: postgis/postgis:13-3.1-alpine
     environment:
       POSTGRES_PASSWORD: secret
-      POSTGRES_DB: directus
+      POSTGRES_DB: directus9
     ports:
       - 5100:5432
 
@@ -82,7 +82,7 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASE: directus
+      MYSQL_DATABASE: directus9
     ports:
       - 5101:3306
     cap_add:
@@ -92,7 +92,7 @@ services:
     image: mariadb:10.7
     environment:
       MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASE: directus
+      MYSQL_DATABASE: directus9
     ports:
       - 5102:3306
 
@@ -134,7 +134,7 @@ services:
     image: mysql:5
     environment:
       MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASE: directus
+      MYSQL_DATABASE: directus9
     ports:
       - 5108:3306
 
@@ -157,7 +157,7 @@ services:
     image: postgis/postgis:10-3.1-alpine
     environment:
       POSTGRES_PASSWORD: secret
-      POSTGRES_DB: directus
+      POSTGRES_DB: directus9
     ports:
       - 5111:5432
 

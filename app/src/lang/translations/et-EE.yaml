@@ -117,7 +117,7 @@ public_label: Avalik
 public_description: Kontrollib, millised API andmed on saadaval autentimata kasutajale.
 admin_description: Esialgne administraatoriroll. Administraatoril on piiramatu juurdepääs rakendusele ja API-le.
 not_allowed: Ei ole lubatud
-directus_version: Directuse Versioon
+directus9_version: Directus9e Versioon
 node_version: Node Versioon
 node_uptime: Node ülevaloleku aeg
 os_type: OS Tüüp
@@ -825,7 +825,7 @@ singleton: Üksik
 singleton_label: Käsitle üksiku objektina
 system_fields_locked: Süsteemsed välja on lukus ja neid ei saa muuta
 fields:
-  directus_activity:
+  directus9_activity:
     item: Kirje peamine võti
     action: Tegevus
     collection: Kogud
@@ -835,7 +835,7 @@ fields:
     user_agent: Kasutaja agent
     ip: IP aadress
     revisions: Versioonid
-  directus_collections:
+  directus9_collections:
     collection: Kogud
     icon: Ikoon
     note: Märkus
@@ -849,7 +849,7 @@ fields:
     unarchive_value: Aktiveeri väärtus
     sort_field: Sorteerimisväli
     accountability: Tegevuste ja muudatuste jälgimine
-  directus_files:
+  directus9_files:
     $thumbnail: Pisipilt
     title: Pealkiri
     description: Kirjeldus
@@ -873,7 +873,7 @@ fields:
     height: Kõrgus
     charset: Sümbolid
     duration: Kestus
-  directus_users:
+  directus9_users:
     first_name: Eesnimi
     last_name: Perekonnanimi
     email: E-post
@@ -893,7 +893,7 @@ fields:
     token: Kontrollkood
     last_page: Viimane leht
     last_access: Viimati vaadatud
-  directus_settings:
+  directus9_settings:
     project_name: Projekti nimi
     project_url: Projekti URL
     project_color: Projekti värv
@@ -905,11 +905,11 @@ fields:
     auth_login_attempts: Sisselogimise katseid
     custom_css: Kohandatud CSS
     module_bar: Mooduliriba
-  directus_shares:
+  directus9_shares:
     name: Nimi
     role: Roll
     password: Parool
-  directus_fields:
+  directus9_fields:
     collection: Andmekogu nimetus
     icon: Andmekogu pilt
     note: Märkus
@@ -917,7 +917,7 @@ fields:
     singleton: Üksik
     translation: Väljade Tõlked
     display_template: Mall
-  directus_roles:
+  directus9_roles:
     name: Rolli Nimi
     icon: Rolli pilt
     description: Kirjeldus
@@ -927,19 +927,19 @@ fields:
     enforce_tfa: 2FA on nõutav
     users: Kasutajad selles rollis
     module_list: Moodulite näitamine
-  directus_webhooks:
+  directus9_webhooks:
     name: Nimi
     status: Staatus
     value: Väärtus
     collections: Kogud
 field_options:
-  directus_settings:
+  directus9_settings:
     security_divider_title: Turvalisus
-  directus_activity:
+  directus9_activity:
     create: Loo
     update: Uuenda
     delete: Kustuta
-  directus_collections:
+  directus9_collections:
     track_activity_revisions: Salvesta muudatuste statistika
     only_track_activity: Jälgi ainult aktiivsust
     do_not_track_anything: Ära jälgi midagi
@@ -950,16 +950,16 @@ field_options:
     collection_name: Andmekogu nimetus
     archive_divider: Arhiiv
     sort_divider: Sorteeri
-  directus_roles:
+  directus9_roles:
     fields:
       icon_name: Ikoon
       name_name: Nimi
       name_placeholder: Sisesta pealkiri...
     collections_name: Kogud
-  directus_users:
+  directus9_users:
     status_dropdown_active: aktiivne
     status_dropdown_archived: Arhiveeritud
-  directus_webhooks:
+  directus9_webhooks:
     status_options_active: aktiivne
     status_options_inactive: Mitteaktiivne
     actions_create: Loo
@@ -1247,7 +1247,7 @@ interfaces:
     recursive_only: Puuvaate kasutajaliides töötab ainult rekursiivsete seoste korral.
   user:
     user: Kasutaja
-    description: Vali olemasolev Directuse kasutaja
+    description: Vali olemasolev Directus9e kasutaja
     select_mode: Vali režiim
     modes:
       auto: Automaatne
@@ -1362,7 +1362,7 @@ displays:
     description: Näita seotud väärtusi
   user:
     user: Kasutaja
-    description: Näita Directuse kasutajat
+    description: Näita Directus9e kasutajat
     avatar: Avatar
     name: Nimi
     both: Mõlemad

@@ -10,7 +10,7 @@ import path from 'node:path';
 import * as common from '../common';
 import config, { getUrl, paths } from '../common/config';
 import vendors from '../common/get-dbs-to-test';
-import { awaitDatabaseConnection, awaitDirectusConnection } from '../utils/await-connection';
+import { awaitDatabaseConnection, awaitDirectus9Connection } from '../utils/await-connection';
 import global from './global';
 
 let started = false;
@@ -45,7 +45,7 @@ export default async (): Promise<void> => {
 								});
 
 								if (bootstrap.stderr.length > 0) {
-									throw new Error(`Directus-${vendor} bootstrap failed: \n ${bootstrap.stderr.toString()}`);
+									throw new Error(`Directus9-${vendor} bootstrap failed: \n ${bootstrap.stderr.toString()}`);
 								}
 
 								await database.migrate.latest();
@@ -58,7 +58,7 @@ export default async (): Promise<void> => {
 										env: config.envs[vendor],
 									});
 
-									global.directus[vendor] = server;
+									global.directus9[vendor] = server;
 									let serverOutput = '';
 									server.stdout.setEncoding('utf8');
 
@@ -71,19 +71,19 @@ export default async (): Promise<void> => {
 											writeFileSync(path.join(paths.cwd, `server-log-${vendor}.txt`), serverOutput);
 										}
 
-										if (code !== null) throw new Error(`Directus-${vendor} server failed: \n ${serverOutput}`);
+										if (code !== null) throw new Error(`Directus9-${vendor} server failed: \n ${serverOutput}`);
 									});
 
 									// Give the server some time to start
-									await awaitDirectusConnection(Number(config.envs[vendor]!.PORT!));
+									await awaitDirectus9Connection(Number(config.envs[vendor]!.PORT!));
 									server.on('exit', () => undefined);
 
-									// Set up separate directus instance without system cache
+									// Set up separate directus9 instance without system cache
 									const noCacheEnv = clone(config.envs[vendor]!);
 									noCacheEnv.CACHE_SCHEMA = 'false';
 									noCacheEnv.PORT = String(parseInt(noCacheEnv.PORT!) + 50);
 									const serverNoCache = spawn('node', [paths.cli, 'start'], { cwd: paths.cwd, env: noCacheEnv });
-									global.directusNoCache[vendor] = serverNoCache;
+									global.directus9NoCache[vendor] = serverNoCache;
 									let serverNoCacheOutput = '';
 									serverNoCache.stdout.setEncoding('utf8');
 
@@ -97,11 +97,11 @@ export default async (): Promise<void> => {
 										}
 
 										if (code !== null)
-											throw new Error(`Directus-${vendor}-no-cache server failed: \n ${serverNoCacheOutput}`);
+											throw new Error(`Directus9-${vendor}-no-cache server failed: \n ${serverNoCacheOutput}`);
 									});
 
 									// Give the server some time to start
-									await awaitDirectusConnection(Number(noCacheEnv.PORT!));
+									await awaitDirectus9Connection(Number(noCacheEnv.PORT!));
 									serverNoCache.on('exit', () => undefined);
 								}
 							},
@@ -157,7 +157,7 @@ export default async (): Promise<void> => {
 							}
 
 							if (!process.env.serverUrl) {
-								throw new Error('Unable to connect to any directus server');
+								throw new Error('Unable to connect to any directus9 server');
 							}
 						},
 					},
@@ -167,11 +167,11 @@ export default async (): Promise<void> => {
 	])
 		.run()
 		.catch((reason) => {
-			for (const server of Object.values(global.directus)) {
+			for (const server of Object.values(global.directus9)) {
 				server?.kill();
 			}
 
-			for (const serverNoCache of Object.values(global.directusNoCache)) {
+			for (const serverNoCache of Object.values(global.directus9NoCache)) {
 				serverNoCache?.kill();
 			}
 

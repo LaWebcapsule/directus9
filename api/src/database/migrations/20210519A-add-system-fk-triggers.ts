@@ -1,5 +1,5 @@
 import type { Knex } from 'knex';
-import { createInspector } from '@directus/schema';
+import { createInspector } from '@directus9/schema';
 import logger from '../../logger.js';
 
 /**
@@ -14,66 +14,66 @@ import logger from '../../logger.js';
 
 const updates = [
 	{
-		table: 'directus_files',
+		table: 'directus9_files',
 		constraints: [
 			{
 				column: 'folder',
-				references: 'directus_folders.id',
+				references: 'directus9_folders.id',
 				on_delete: 'SET NULL',
 			},
 		],
 	},
 	{
-		table: 'directus_permissions',
+		table: 'directus9_permissions',
 		constraints: [
 			{
 				column: 'role',
-				references: 'directus_roles.id',
+				references: 'directus9_roles.id',
 				on_delete: 'CASCADE',
 			},
 		],
 	},
 	{
-		table: 'directus_presets',
+		table: 'directus9_presets',
 		constraints: [
 			{
 				column: 'user',
-				references: 'directus_users.id',
+				references: 'directus9_users.id',
 				on_delete: 'CASCADE',
 			},
 			{
 				column: 'role',
-				references: 'directus_roles.id',
+				references: 'directus9_roles.id',
 				on_delete: 'CASCADE',
 			},
 		],
 	},
 	{
-		table: 'directus_revisions',
+		table: 'directus9_revisions',
 		constraints: [
 			{
 				column: 'activity',
-				references: 'directus_activity.id',
+				references: 'directus9_activity.id',
 				on_delete: 'CASCADE',
 			},
 		],
 	},
 	{
-		table: 'directus_sessions',
+		table: 'directus9_sessions',
 		constraints: [
 			{
 				column: 'user',
-				references: 'directus_users.id',
+				references: 'directus9_users.id',
 				on_delete: 'CASCADE',
 			},
 		],
 	},
 	{
-		table: 'directus_users',
+		table: 'directus9_users',
 		constraints: [
 			{
 				column: 'role',
-				references: 'directus_roles.id',
+				references: 'directus9_roles.id',
 				on_delete: 'SET NULL',
 			},
 		],

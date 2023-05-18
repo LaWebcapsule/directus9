@@ -1,5 +1,5 @@
-import type { Accountability, Query, SchemaOverview } from '@directus/types';
-import { parseJSON, toArray } from '@directus/utils';
+import type { Accountability, Query, SchemaOverview } from '@directus9/types';
+import { parseJSON, toArray } from '@directus9/utils';
 import { queue } from 'async';
 import csv from 'csv-parser';
 import destroyStream from 'destroy';
@@ -44,7 +44,7 @@ export class ImportService {
 	}
 
 	async import(collection: string, mimetype: string, stream: Readable): Promise<void> {
-		if (this.accountability?.admin !== true && collection.startsWith('directus_')) throw new ForbiddenException();
+		if (this.accountability?.admin !== true && collection.startsWith('directus9_')) throw new ForbiddenException();
 
 		const createPermissions = this.accountability?.permissions?.find(
 			(permission) => permission.collection === collection && permission.action === 'create'
@@ -292,7 +292,7 @@ export class ExportService {
 					recipient: this.accountability.user,
 					sender: this.accountability.user,
 					subject: `Your export of ${collection} is ready`,
-					collection: `directus_files`,
+					collection: `directus9_files`,
 					item: savedFile,
 				});
 			}

@@ -1,5 +1,5 @@
 type: object
-x-collection: directus_collections
+x-collection: directus9_collections
 properties:
   collection:
     description: The collection key.

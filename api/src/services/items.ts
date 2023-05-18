@@ -1,5 +1,5 @@
-import type { Accountability, PermissionsAction, Query, SchemaOverview } from '@directus/types';
-import { Action } from '@directus/constants';
+import type { Accountability, PermissionsAction, Query, SchemaOverview } from '@directus9/types';
+import { Action } from '@directus9/constants';
 import type Keyv from 'keyv';
 import type { Knex } from 'knex';
 import { assign, clone, cloneDeep, omit, pick, without } from 'lodash-es';
@@ -47,7 +47,7 @@ export class ItemsService<Item extends AnyItem = AnyItem> implements AbstractSer
 		this.collection = collection;
 		this.knex = options.knex || getDatabase();
 		this.accountability = options.accountability || null;
-		this.eventScope = this.collection.startsWith('directus_') ? this.collection.substring(9) : 'items';
+		this.eventScope = this.collection.startsWith('directus9_') ? this.collection.substring(9) : 'items';
 		this.schema = options.schema;
 		this.cache = getCache().cache;
 

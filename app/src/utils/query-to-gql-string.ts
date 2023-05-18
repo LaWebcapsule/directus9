@@ -1,6 +1,6 @@
 import { useFieldsStore } from '@/stores/fields';
-import { Filter, Query } from '@directus/types';
-import { parseJSON, toArray } from '@directus/utils';
+import { Filter, Query } from '@directus9/types';
+import { parseJSON, toArray } from '@directus9/utils';
 import { jsonToGraphQLQuery } from 'json-to-graphql-query';
 import { isEmpty, pick, set, omitBy, isUndefined, transform } from 'lodash';
 import { extractFieldFromFunction } from './extract-field-from-function';
@@ -24,7 +24,7 @@ export function queryToGqlString(queries: QueryInfo | QueryInfo[]): string | nul
 export function formatQuery({ collection, query }: QueryInfo): Record<string, any> {
 	const queryKeysInArguments: (keyof Query)[] = ['limit', 'sort', 'filter', 'offset', 'page', 'search'];
 
-	const alias = collection.startsWith('directus_') ? collection.substring(9) : collection;
+	const alias = collection.startsWith('directus9_') ? collection.substring(9) : collection;
 
 	const formattedQuery: Record<string, any> = {
 		__args: omitBy(pick(query, ...queryKeysInArguments), isUndefined),
@@ -73,7 +73,7 @@ export function formatQuery({ collection, query }: QueryInfo): Record<string, an
 }
 
 /**
- * Replace functions from Directus-Filter format to GraphQL format
+ * Replace functions from Directus9-Filter format to GraphQL format
  */
 function replaceFuncs(filter?: Filter | null): null | undefined | Filter {
 	if (!filter) return filter;

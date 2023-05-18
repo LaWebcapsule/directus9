@@ -1,5 +1,5 @@
-import formatTitle from '@directus/format-title';
-import { toArray } from '@directus/utils';
+import formatTitle from '@directus9/format-title';
+import { toArray } from '@directus9/utils';
 import encodeURL from 'encodeurl';
 import exif from 'exif-reader';
 import type { IccProfile } from 'icc';
@@ -24,7 +24,7 @@ import { ItemsService } from './items.js';
 
 export class FilesService extends ItemsService {
 	constructor(options: AbstractServiceOptions) {
-		super('directus_files', options);
+		super('directus9_files', options);
 	}
 
 	/**
@@ -44,7 +44,7 @@ export class FilesService extends ItemsService {
 			existingFile =
 				(await this.knex
 					.select('folder', 'filename_download')
-					.from('directus_files')
+					.from('directus9_files')
 					.where({ id: primaryKey })
 					.first()) ?? {};
 		}
@@ -52,7 +52,7 @@ export class FilesService extends ItemsService {
 		const payload = { ...existingFile, ...clone(data) };
 
 		if ('folder' in payload === false) {
-			const settings = await this.knex.select('storage_default_folder').from('directus_settings').first();
+			const settings = await this.knex.select('storage_default_folder').from('directus9_settings').first();
 
 			if (settings?.storage_default_folder) {
 				payload.folder = settings.storage_default_folder;
@@ -107,7 +107,7 @@ export class FilesService extends ItemsService {
 
 		// We do this in a service without accountability. Even if you don't have update permissions to the file,
 		// we still want to be able to set the extracted values from the file on create
-		const sudoService = new ItemsService('directus_files', {
+		const sudoService = new ItemsService('directus9_files', {
 			knex: this.knex,
 			schema: this.schema,
 		});
@@ -261,7 +261,7 @@ export class FilesService extends ItemsService {
 	 */
 	async importOne(importURL: string, body: Partial<File>): Promise<PrimaryKey> {
 		const fileCreatePermissions = this.accountability?.permissions?.find(
-			(permission) => permission.collection === 'directus_files' && permission.action === 'create'
+			(permission) => permission.collection === 'directus9_files' && permission.action === 'create'
 		);
 
 		if (this.accountability && this.accountability?.admin !== true && !fileCreatePermissions) {

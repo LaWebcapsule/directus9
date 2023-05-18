@@ -138,13 +138,13 @@ import { useI18n } from 'vue-i18n';
 import { computed, ref } from 'vue';
 
 import SettingsNavigation from '../../components/navigation.vue';
-import { Preset, Filter } from '@directus/types';
+import { Preset, Filter } from '@directus9/types';
 import api from '@/api';
 import { useCollectionsStore } from '@/stores/collections';
 import { usePresetsStore } from '@/stores/presets';
 import { useRouter } from 'vue-router';
 import { unexpectedError } from '@/utils/unexpected-error';
-import { useLayout } from '@directus/composables';
+import { useLayout } from '@directus9/composables';
 import { useShortcut } from '@/composables/use-shortcut';
 import { useEditsGuard } from '@/composables/use-edits-guard';
 import { isEqual } from 'lodash';
@@ -441,7 +441,7 @@ function usePreset() {
 }
 
 function useForm() {
-	const systemCollectionWhiteList = ['directus_users', 'directus_files', 'directus_activity'];
+	const systemCollectionWhiteList = ['directus9_users', 'directus9_files', 'directus9_activity'];
 
 	const fields = computed(() => [
 		{
@@ -457,7 +457,7 @@ function useForm() {
 							value: collection.collection,
 						}))
 						.filter((option) => {
-							if (option.value.startsWith('directus_')) return systemCollectionWhiteList.includes(option.value);
+							if (option.value.startsWith('directus9_')) return systemCollectionWhiteList.includes(option.value);
 
 							return true;
 						}),

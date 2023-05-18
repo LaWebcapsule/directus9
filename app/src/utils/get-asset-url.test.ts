@@ -13,25 +13,25 @@ Object.defineProperty(window, 'URL', {
 });
 
 test('Get asset url', () => {
-	vi.mocked(getPublicURL).mockReturnValueOnce('https://directus.io/');
+	vi.mocked(getPublicURL).mockReturnValueOnce('https://directus9.io/');
 	const output = getAssetUrl('test.jpg');
-	expect(output).toBe(`https://directus.io${addTokenToURL('/assets/test.jpg')}`);
+	expect(output).toBe(`https://directus9.io${addTokenToURL('/assets/test.jpg')}`);
 });
 
 test('Get asset url for download', () => {
-	vi.mocked(getPublicURL).mockReturnValueOnce('https://directus.io/');
+	vi.mocked(getPublicURL).mockReturnValueOnce('https://directus9.io/');
 	const output = getAssetUrl('test.jpg', true);
-	expect(output).toBe(`https://directus.io${addTokenToURL('/assets/test.jpg?download=')}`);
+	expect(output).toBe(`https://directus9.io${addTokenToURL('/assets/test.jpg?download=')}`);
 });
 
 test('Subdirectory Install: Get asset url', () => {
-	vi.mocked(getPublicURL).mockReturnValueOnce('https://directus.io/subdirectory/');
+	vi.mocked(getPublicURL).mockReturnValueOnce('https://directus9.io/subdirectory/');
 	const output = getAssetUrl('test.jpg');
-	expect(output).toBe(`https://directus.io/subdirectory${addTokenToURL('/assets/test.jpg')}`);
+	expect(output).toBe(`https://directus9.io/subdirectory${addTokenToURL('/assets/test.jpg')}`);
 });
 
 test('Subdirectory Install: Get asset url for download', () => {
-	vi.mocked(getPublicURL).mockReturnValueOnce('https://directus.io/subdirectory/');
+	vi.mocked(getPublicURL).mockReturnValueOnce('https://directus9.io/subdirectory/');
 	const output = getAssetUrl('test.jpg', true);
-	expect(output).toBe(`https://directus.io/subdirectory${addTokenToURL('/assets/test.jpg?download=')}`);
+	expect(output).toBe(`https://directus9.io/subdirectory${addTokenToURL('/assets/test.jpg?download=')}`);
 });

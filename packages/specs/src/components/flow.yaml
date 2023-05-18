@@ -1,5 +1,5 @@
 type: object
-x-collection: directus_flows
+x-collection: directus9_flows
 properties:
   id:
     description: Unique identifier for the flow.

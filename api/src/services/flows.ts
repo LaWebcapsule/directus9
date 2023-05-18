@@ -1,11 +1,11 @@
-import type { FlowRaw } from '@directus/types';
+import type { FlowRaw } from '@directus9/types';
 import { getFlowManager } from '../flows.js';
 import type { AbstractServiceOptions, Item, MutationOptions, PrimaryKey } from '../types/index.js';
 import { ItemsService } from './items.js';
 
 export class FlowsService extends ItemsService<FlowRaw> {
 	constructor(options: AbstractServiceOptions) {
-		super('directus_flows', options);
+		super('directus9_flows', options);
 	}
 
 	override async createOne(data: Partial<Item>, opts?: MutationOptions): Promise<PrimaryKey> {
@@ -47,8 +47,8 @@ export class FlowsService extends ItemsService<FlowRaw> {
 	override async deleteMany(keys: PrimaryKey[], opts?: MutationOptions): Promise<PrimaryKey[]> {
 		const flowManager = getFlowManager();
 
-		// this is to prevent foreign key constraint error on directus_operations resolve/reject during cascade deletion
-		await this.knex('directus_operations').update({ resolve: null, reject: null }).whereIn('flow', keys);
+		// this is to prevent foreign key constraint error on directus9_operations resolve/reject during cascade deletion
+		await this.knex('directus9_operations').update({ resolve: null, reject: null }).whereIn('flow', keys);
 
 		const result = await super.deleteMany(keys, opts);
 		await flowManager.reload();

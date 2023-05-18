@@ -1,5 +1,5 @@
-import { DeepPartial, Field, FlowRaw, TriggerType, Width } from '@directus/types';
-import { toArray } from '@directus/utils';
+import { DeepPartial, Field, FlowRaw, TriggerType, Width } from '@directus9/types';
+import { toArray } from '@directus9/utils';
 import { useI18n } from 'vue-i18n';
 import { getPublicURL } from '../../../../utils/get-root-path';
 

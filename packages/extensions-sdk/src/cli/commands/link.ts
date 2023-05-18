@@ -1,4 +1,4 @@
-import { ExtensionManifest } from '@directus/constants';
+import { ExtensionManifest } from '@directus9/constants';
 import fs from 'fs-extra';
 import path from 'path';
 import { log } from '../utils/logger.js';
@@ -25,7 +25,7 @@ export default async function link(extensionsPath: string): Promise<void> {
 	try {
 		manifestFile = await fs.readJSON(packagePath);
 	} catch (err) {
-		log(`Current directory is not a valid Directus extension.`, 'error');
+		log(`Current directory is not a valid Directus9 extension.`, 'error');
 		return;
 	}
 
@@ -38,7 +38,7 @@ export default async function link(extensionsPath: string): Promise<void> {
 		return;
 	}
 
-	const type = extensionManifest['directus:extension']?.type;
+	const type = extensionManifest['directus9:extension']?.type;
 
 	if (!type) {
 		log(`Extension type not found in package.json`, 'error');

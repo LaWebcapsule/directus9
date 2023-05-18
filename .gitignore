@@ -37,7 +37,7 @@ debug
 # Temporary files
 TODO
 
-# Directus
+# Directus9
 /schema.yaml
 /schema.json
 /api/uploads

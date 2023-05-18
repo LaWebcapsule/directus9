@@ -68,7 +68,7 @@ import { defineComponent, computed, ref, provide, watch } from 'vue';
 import { useCollectionsStore } from '@/stores/collections';
 import PermissionsOverviewHeader from './permissions-overview-header.vue';
 import PermissionsOverviewRow from './permissions-overview-row.vue';
-import { Permission } from '@directus/types';
+import { Permission } from '@directus9/types';
 import api from '@/api';
 import { appRecommendedPermissions, appMinimalPermissions } from '../../app-permissions';
 import { unexpectedError } from '@/utils/unexpected-error';
@@ -100,7 +100,7 @@ export default defineComponent({
 
 		const systemCollections = computed(() =>
 			orderBy(
-				collectionsStore.collections.filter((collection) => collection.collection.startsWith('directus_') === true),
+				collectionsStore.collections.filter((collection) => collection.collection.startsWith('directus9_') === true),
 				'name'
 			)
 		);
@@ -194,7 +194,7 @@ export default defineComponent({
 				resetting.value = true;
 
 				const toBeDeleted = permissions.value
-					.filter((permission) => permission.collection.startsWith('directus_'))
+					.filter((permission) => permission.collection.startsWith('directus9_'))
 					.map((permission) => permission.id);
 
 				try {

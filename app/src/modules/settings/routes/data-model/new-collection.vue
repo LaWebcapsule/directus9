@@ -131,7 +131,7 @@ import { useI18n } from 'vue-i18n';
 import { cloneDeep } from 'lodash';
 import { defineComponent, ref, reactive, watch } from 'vue';
 import api from '@/api';
-import { Field, Relation } from '@directus/types';
+import { Field, Relation } from '@directus9/types';
 import { useFieldsStore } from '@/stores/fields';
 import { useCollectionsStore } from '@/stores/collections';
 import { useRelationsStore } from '@/stores/relations';
@@ -139,7 +139,7 @@ import { notify } from '@/utils/notify';
 import { useDialogRoute } from '@/composables/use-dialog-route';
 import { useRouter } from 'vue-router';
 import { unexpectedError } from '@/utils/unexpected-error';
-import { DeepPartial } from '@directus/types';
+import { DeepPartial } from '@directus9/types';
 
 const defaultSystemFields = {
 	status: {
@@ -491,7 +491,7 @@ export default defineComponent({
 				relations.push({
 					collection: collectionName.value!,
 					field: systemFields.userCreated.name,
-					related_collection: 'directus_users',
+					related_collection: 'directus9_users',
 					schema: {},
 				});
 			}
@@ -500,7 +500,7 @@ export default defineComponent({
 				relations.push({
 					collection: collectionName.value!,
 					field: systemFields.userUpdated.name,
-					related_collection: 'directus_users',
+					related_collection: 'directus9_users',
 					schema: {},
 				});
 			}

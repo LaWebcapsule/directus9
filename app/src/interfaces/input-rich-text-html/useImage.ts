@@ -3,7 +3,7 @@ import { i18n } from '@/lang';
 import { addQueryToPath } from '@/utils/add-query-to-path';
 import { getPublicURL } from '@/utils/get-root-path';
 import { Ref, ref, watch } from 'vue';
-import { SettingsStorageAssetPreset } from '@directus/types';
+import { SettingsStorageAssetPreset } from '@directus9/types';
 
 type ImageSelection = {
 	imageUrl: string;

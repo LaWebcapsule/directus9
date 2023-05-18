@@ -135,9 +135,9 @@
 <script lang="ts">
 import { useI18n } from 'vue-i18n';
 import { defineComponent, computed } from 'vue';
-import { GEOMETRY_TYPES } from '@directus/constants';
+import { GEOMETRY_TYPES } from '@directus9/constants';
 import { translate } from '@/utils/translate-object-values';
-import { Type } from '@directus/types';
+import { Type } from '@directus9/types';
 import { TranslateResult } from 'vue-i18n';
 import { useFieldDetailStore, syncFieldDetailStoreProperty } from '../store';
 import { storeToRefs } from 'pinia';
@@ -340,11 +340,11 @@ export default defineComponent({
 						},
 					];
 
-					if (localType.value === 'm2o' && relations.value.m2o?.related_collection === 'directus_users') {
+					if (localType.value === 'm2o' && relations.value.m2o?.related_collection === 'directus9_users') {
 						return options.filter(({ value }) => [null, 'user-created'].includes(value));
 					}
 
-					if (localType.value === 'm2o' && relations.value.m2o?.related_collection === 'directus_roles') {
+					if (localType.value === 'm2o' && relations.value.m2o?.related_collection === 'directus9_roles') {
 						return options.filter(({ value }) => [null, 'role-created'].includes(value));
 					}
 
@@ -421,11 +421,11 @@ export default defineComponent({
 						},
 					];
 
-					if (localType.value === 'm2o' && relations.value.m2o?.related_collection === 'directus_users') {
+					if (localType.value === 'm2o' && relations.value.m2o?.related_collection === 'directus9_users') {
 						return options.filter(({ value }) => [null, 'user-updated'].includes(value));
 					}
 
-					if (localType.value === 'm2o' && relations.value.m2o?.related_collection === 'directus_roles') {
+					if (localType.value === 'm2o' && relations.value.m2o?.related_collection === 'directus9_roles') {
 						return options.filter(({ value }) => [null, 'role-updated'].includes(value));
 					}
 

@@ -118,7 +118,7 @@ public_label: सार्वजनिक
 public_description: प्रमाणीकरण नगरीकन कुन एपीआई डेटा उपलब्ध छ भनेर नियन्त्रण गर्छ।
 admin_description: अप्रतिबंधित एप/एपीआई पहुँचको साथ प्रारम्भिक प्रशासनिक भूमिका।
 not_allowed: अनुमति छैन
-directus_version: Directus संस्करण
+directus9_version: Directus9 संस्करण
 node_version: नोड संस्करण
 node_uptime: नोड अपटाइम
 os_type: ओएस प्रकार
@@ -988,30 +988,30 @@ collections: सङ्ग्रहहरू
 content: सामग्री
 singleton_label: एकल वस्तुको रूपमा व्यवहार गर्नुहोस्
 system_fields_locked: प्रणाली फिल्डहरू लक गरिएका छन् र सम्पादन गर्न सकिँदैन
-directus_collection:
-  directus_activity: सबै घटनाहरूको लागि उत्तरदायित्व लग
-  directus_collections: अतिरिक्त संग्रह कन्फिगरेसन र मेटाडाटा
-  directus_dashboards: इनसाइट्स मोड्युल भित्र ड्यासबोर्डहरू
-  directus_fields: अतिरिक्त फिल्ड कन्फिगरेसन र मेटाडाटा
-  directus_files: सबै व्यवस्थित फाइल सम्पत्तिहरूको लागि मेटाडेटा
-  directus_flows: स्वचालन फ्लो
-  directus_folders: फाइलहरूको लागि भर्चुअल डाइरेक्टरीहरू प्रदान गर्दछ
-  directus_migrations: तपाईले प्रयोग गरिरहनु भएको डेटाबेसको कुन संस्करण
-  directus_notifications: प्रयोगकर्ताहरूलाई सूचनाहरू पठाइयो
-  directus_operations: फ्लोमा चल्ने अपरेशनहरू
-  directus_panels: अन्तर्दृष्टि ड्यासबोर्डहरू भित्र व्यक्तिगत प्यानलहरू
-  directus_permissions: प्रत्येक भूमिकाको लागि पहुँच अनुमतिहरू
-  directus_presets: पूर्वनिर्धारित संग्रह र बुकमार्कहरूको लागि प्रिसेटहरू
-  directus_relations: सम्बन्ध कन्फिगरेसन र मेटाडेटा
-  directus_revisions: सबै गतिविधिका लागि डाटा स्न्यापसटहरू
-  directus_roles: सिस्टम प्रयोगकर्ताहरूको लागि अनुमति समूह
-  directus_sessions: प्रयोगकर्ता सत्रको जानकारी
-  directus_settings: प्रोजेक्ट कन्फिगरेसन विकल्पहरू
-  directus_shares: बाह्य रूपमा साझा वस्तुहरू ट्र्याक गर्दछ
-  directus_users: प्लेटफर्मको लागि सिस्टम प्रयोगकर्ताहरू
-  directus_webhooks: एभेन्ट-आधारित HTTP अनुरोधहरूको लागि कन्फिगरेसन
+directus9_collection:
+  directus9_activity: सबै घटनाहरूको लागि उत्तरदायित्व लग
+  directus9_collections: अतिरिक्त संग्रह कन्फिगरेसन र मेटाडाटा
+  directus9_dashboards: इनसाइट्स मोड्युल भित्र ड्यासबोर्डहरू
+  directus9_fields: अतिरिक्त फिल्ड कन्फिगरेसन र मेटाडाटा
+  directus9_files: सबै व्यवस्थित फाइल सम्पत्तिहरूको लागि मेटाडेटा
+  directus9_flows: स्वचालन फ्लो
+  directus9_folders: फाइलहरूको लागि भर्चुअल डाइरेक्टरीहरू प्रदान गर्दछ
+  directus9_migrations: तपाईले प्रयोग गरिरहनु भएको डेटाबेसको कुन संस्करण
+  directus9_notifications: प्रयोगकर्ताहरूलाई सूचनाहरू पठाइयो
+  directus9_operations: फ्लोमा चल्ने अपरेशनहरू
+  directus9_panels: अन्तर्दृष्टि ड्यासबोर्डहरू भित्र व्यक्तिगत प्यानलहरू
+  directus9_permissions: प्रत्येक भूमिकाको लागि पहुँच अनुमतिहरू
+  directus9_presets: पूर्वनिर्धारित संग्रह र बुकमार्कहरूको लागि प्रिसेटहरू
+  directus9_relations: सम्बन्ध कन्फिगरेसन र मेटाडेटा
+  directus9_revisions: सबै गतिविधिका लागि डाटा स्न्यापसटहरू
+  directus9_roles: सिस्टम प्रयोगकर्ताहरूको लागि अनुमति समूह
+  directus9_sessions: प्रयोगकर्ता सत्रको जानकारी
+  directus9_settings: प्रोजेक्ट कन्फिगरेसन विकल्पहरू
+  directus9_shares: बाह्य रूपमा साझा वस्तुहरू ट्र्याक गर्दछ
+  directus9_users: प्लेटफर्मको लागि सिस्टम प्रयोगकर्ताहरू
+  directus9_webhooks: एभेन्ट-आधारित HTTP अनुरोधहरूको लागि कन्फिगरेसन
 fields:
-  directus_activity:
+  directus9_activity:
     item: वस्तुको प्राथमिक कुञ्जी
     action: कार्य
     collection: संग्रह
@@ -1020,7 +1020,7 @@ fields:
     origin: उत्पत्ति
     ip: आईपी ठेगाना
     revisions: संशोधन
-  directus_collections:
+  directus9_collections:
     collection: संग्रह
     icon: आइकन
     note: नोट
@@ -1034,7 +1034,7 @@ fields:
     sort_field: फिल्ड क्रमबद्ध गर्नुहोस्
     accountability: गतिविधि र संशोधन ट्र्याकिङ
     archive_field: अभिलेख फिल्ड
-  directus_files:
+  directus9_files:
     $thumbnail: थम्बनेल
     title: सेटिङहरू अद्यावधिक गरियो
     description: विवरणः
@@ -1058,7 +1058,7 @@ fields:
     height: ऊचाई
     charset: अक्षरसेट
     duration: अवधि
-  directus_users:
+  directus9_users:
     first_name: नाम
     last_name: थर
     email: इमेल
@@ -1089,7 +1089,7 @@ fields:
     last_page: अन्तिम पाना
     last_access: अन्तिम पहुँच
     email_notifications: इमेल सूचनाहरू
-  directus_settings:
+  directus9_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
@@ -1115,20 +1115,20 @@ fields:
     module_bar: मोड्युल बार
     transformations_none: रूपान्तरण असक्षम गर्नुहोस्
     transformations_presets: तलका प्रिसेटहरूमा रूपान्तरणहरू सीमित गर्नुहोस्
-  directus_shares:
+  directus9_shares:
     name: नाम
     role: भूमिका
     password: पासवर्ड
     date_end: "अन्त्य मिति\n"
     max_uses: "अधिकतम प्रयोगहरू\n"
     times_used: प्रयोग गरिएको संख्या
-  directus_fields:
+  directus9_fields:
     icon: संग्रह आइकन
     note: नोट
     hidden: लुकेको
     translation: फिल्ड नामको उल्थाहरू
     display_template: टेम्प्लेट
-  directus_roles:
+  directus9_roles:
     name: भूमिकाको नाम
     icon: भूमिका आइकन
     description: विवरणः
@@ -1138,7 +1138,7 @@ fields:
     enforce_tfa: 2FA आवश्यक छ
     users: भूमिकामा प्रयोगकर्ताहरू
     module_list: मोड्युल नेभिगेसन
-  directus_webhooks:
+  directus9_webhooks:
     name: नाम
     method: विधि
     status: स्थिति
@@ -1151,7 +1151,7 @@ fields:
     actions: कार्यहरू
     collections: सङ्ग्रहहरू
 field_options:
-  directus_settings:
+  directus9_settings:
     project_name_placeholder: मेरो परियोजना...
     project_color_note: लगइन र लोगो पृष्ठभूमि
     project_logo_note: "सेतो 40x40 SVG/PNG\n"
@@ -1168,12 +1168,12 @@ field_options:
     mapbox_key: "म्यापबक्स Access टोकन\n"
     files_divider_title: फाइलहरू र थम्बनेलहरू
     overrides_divider_title: एप ओभरराइड
-  directus_activity:
+  directus9_activity:
     login: लग - इन
     create: सिर्जना गर्नुहोस्
     update: अद्यावधिक
     delete: मेट्नुहोस्
-  directus_collections:
+  directus9_collections:
     only_track_activity: मात्र गतिविधि ट्र्याक गर्नुहोस्
     do_not_track_anything: केहि पनि ट्र्याक नगर्नुहोस्
     collection_setup: संग्रह सेटअप
@@ -1189,12 +1189,12 @@ field_options:
     sort_field: एउटा क्षेत्र छान्नुहोस्...
     accountability_divider: जवाफदेहिता
     duplication_divider: नक्कल
-  directus_files:
+  directus9_files:
     title: एक अद्वितीय शीर्षक ...
     location: एक वैकल्पिक स्थान ...
     storage_divider: फाइल नामकरण
     filename_disk: डिस्क भण्डारणमा नाम...
-  directus_roles:
+  directus9_roles:
     name: "यो भूमिकाको लागि अद्वितीय नाम ...\n"
     ip_access: "अनुमति दिइएको IP ठेगानाहरू थप्नुहोस्, सबैलाई अनुमति दिन खाली छोड्नुहोस्...\n"
     fields:
@@ -1205,7 +1205,7 @@ field_options:
       link_placeholder: "सापेक्ष वा पूर्ण URL...\n"
     collections_name: सङ्ग्रहहरू
     collections_addLabel: सङ्ग्रह थप्नुहोस्...
-  directus_users:
+  directus9_users:
     preferences_divider: प्रयोगकर्ता प्राथमिकताहरू
     dropdown_auto: स्वचालित (प्रणालीमा आधारित)
     dropdown_light: उज्यालो मोड
@@ -1216,7 +1216,7 @@ field_options:
     status_dropdown_active: सक्रिय
     status_dropdown_suspended: निलम्बित
     status_dropdown_archived: अभिलेख राखिएको
-  directus_webhooks:
+  directus9_webhooks:
     status_options_active: सक्रिय
     status_options_inactive: निष्क्रिय
     data_label: घटना डेटा पठाउनुहोस्
@@ -1513,7 +1513,7 @@ interfaces:
     default_language: पूर्वनिर्धारित भाषा
   user:
     user: प्रयोगकर्ता
-    description: पहिले नै अवस्थित directus प्रयोगकर्ता चयन गर्नुहोस्
+    description: पहिले नै अवस्थित directus9 प्रयोगकर्ता चयन गर्नुहोस्
     select_mode: मोड चयन गर्नुहोस्
     modes:
       auto: स्वतः

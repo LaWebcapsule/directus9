@@ -25,11 +25,11 @@ export async function createCli(): Promise<Command> {
 
 	await emitter.emitInit('cli.before', { program });
 
-	program.name('directus').usage('[command] [options]');
+	program.name('directus9').usage('[command] [options]');
 	program.version(pkg.version, '-v, --version');
 
-	program.command('start').description('Start the Directus API').action(startServer);
-	program.command('init').description('Create a new Directus Project').action(init);
+	program.command('start').description('Start the Directus9 API').action(startServer);
+	program.command('init').description('Create a new Directus9 Project').action(init);
 
 	// Security
 	const securityCommand = program.command('security');

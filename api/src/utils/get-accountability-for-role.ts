@@ -1,4 +1,4 @@
-import type { Accountability, SchemaOverview } from '@directus/types';
+import type { Accountability, SchemaOverview } from '@directus9/types';
 import type { Knex } from 'knex';
 import { InvalidConfigException } from '../exceptions/index.js';
 import { getPermissions } from './get-permissions.js';
@@ -33,7 +33,7 @@ export async function getAccountabilityForRole(
 	} else {
 		const roleInfo = await context.database
 			.select(['app_access', 'admin_access'])
-			.from('directus_roles')
+			.from('directus9_roles')
 			.where({ id: role })
 			.first();
 

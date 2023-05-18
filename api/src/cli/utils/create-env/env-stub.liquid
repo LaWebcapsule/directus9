@@ -1,11 +1,11 @@
 ####################################################################################################
 #
-# These values set environment variables which modify core settings of Directus.
+# These values set environment variables which modify core settings of Directus9.
 #
 # Values in square brackets are the default values.
 #
 # The following options are not all possible options. For more, see
-# https://docs.directus.io/self-hosted/config-options/
+# https://docs.directus9.io/self-hosted/config-options/
 #
 ####################################################################################################
 ####################################################################################################
@@ -15,7 +15,7 @@
 # IP or host the API listens on ["0.0.0.0"]
 HOST="0.0.0.0"
 
-# The port Directus will run on [8055]
+# The port Directus9 will run on [8055]
 PORT=8055
 
 # The URL where your API can be reached on the web. It is also used for things like OAuth redirects,
@@ -62,7 +62,7 @@ PUBLIC_URL="/"
 # DB_CLIENT="pg"
 # DB_HOST="localhost"
 # DB_PORT=5432
-# DB_DATABASE="directus"
+# DB_DATABASE="directus9"
 # DB_USER="postgres"
 # DB_PASSWORD="secret"
 
@@ -70,7 +70,7 @@ PUBLIC_URL="/"
 # DB_CLIENT="cockroachdb"
 # DB_HOST="localhost"
 # DB_PORT=26257
-# DB_DATABASE="directus"
+# DB_DATABASE="directus9"
 # DB_USER="root"
 # DB_PASSWORD=""
 
@@ -78,7 +78,7 @@ PUBLIC_URL="/"
 # DB_CLIENT="mysql"
 # DB_HOST="localhost"
 # DB_PORT=3306
-# DB_DATABASE="directus"
+# DB_DATABASE="directus9"
 # DB_USER="root"
 # DB_PASSWORD="secret"
 
@@ -86,7 +86,7 @@ PUBLIC_URL="/"
 # DB_CLIENT="mysql"
 # DB_HOST="localhost"
 # DB_PORT=3306
-# DB_DATABASE="directus"
+# DB_DATABASE="directus9"
 # DB_USER="root"
 # DB_PASSWORD="secret"
 
@@ -94,7 +94,7 @@ PUBLIC_URL="/"
 # DB_CLIENT="mssql"
 # DB_HOST="localhost"
 # DB_PORT=1343
-# DB_DATABASE="directus"
+# DB_DATABASE="directus9"
 # DB_USER="sa"
 # DB_PASSWORD="Test@123"
 
@@ -112,7 +112,7 @@ PUBLIC_URL="/"
 # DB_CLIENT="mysql"
 # DB_HOST="localhost"
 # DB_PORT=3306
-# DB_DATABASE="directus"
+# DB_DATABASE="directus9"
 # DB_USER="root"
 # DB_PASSWORD="secret"
 
@@ -143,8 +143,8 @@ CACHE_ENABLED=false
 # How long the cache is persisted ["5m"]
 # CACHE_TTL="30m"
 
-# How to scope the cache data ["directus-cache"]
-# CACHE_NAMESPACE="directus-cache"
+# How to scope the cache data ["directus9-cache"]
+# CACHE_NAMESPACE="directus9-cache"
 
 # Automatically purge the cache on create, update, and delete actions. [false]
 # CACHE_AUTO_PURGE=true
@@ -208,8 +208,8 @@ REFRESH_TOKEN_COOKIE_SECURE=false
 # Value for sameSite in the refresh token cookie when in cookie mode ["lax"]
 REFRESH_TOKEN_COOKIE_SAME_SITE="lax"
 
-# Name of refresh token cookie ["directus_refresh_token"]
-REFRESH_TOKEN_COOKIE_NAME="directus_refresh_token"
+# Name of refresh token cookie ["directus9_refresh_token"]
+REFRESH_TOKEN_COOKIE_NAME="directus9_refresh_token"
 
 # Which domain to use for the refresh cookie. Useful for development mode.
 # REFRESH_TOKEN_COOKIE_DOMAIN
@@ -292,8 +292,8 @@ EXTENSIONS_AUTO_RELOAD=false
 ####################################################################################################
 ### Email
 
-# Email address from which emails are sent ["no-reply@directus.io"]
-EMAIL_FROM="no-reply@directus.io"
+# Email address from which emails are sent ["no-reply@directus9.io"]
+EMAIL_FROM="no-reply@directus9.io"
 
 # What to use to send emails. One of
 # sendmail, smtp, mailgun, sendgrid, ses.

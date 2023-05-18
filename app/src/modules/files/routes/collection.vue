@@ -10,7 +10,7 @@
 		:filter-user="filter"
 		:filter-system="folderTypeFilter"
 		:search="search"
-		collection="directus_files"
+		collection="directus9_files"
 		:reset-preset="resetPreset"
 	>
 		<private-view
@@ -34,7 +34,7 @@
 			</template>
 
 			<template #actions>
-				<search-input v-model="search" v-model:filter="filter" collection="directus_files" />
+				<search-input v-model="search" v-model:filter="filter" collection="directus9_files" />
 
 				<add-folder :parent="folder" :disabled="createFolderAllowed !== true" />
 
@@ -158,7 +158,7 @@
 			<drawer-batch
 				v-model:active="batchEditActive"
 				:primary-keys="selection"
-				collection="directus_files"
+				collection="directus9_files"
 				@refresh="refresh"
 			/>
 
@@ -171,7 +171,7 @@
 				</layout-sidebar-detail>
 				<component :is="`layout-sidebar-${layout}`" v-bind="layoutState" />
 				<export-sidebar-detail
-					collection="directus_files"
+					collection="directus9_files"
 					:layout-query="layoutQuery"
 					:filter="mergeFilters(filter, folderTypeFilter)"
 					:search="search"
@@ -205,9 +205,9 @@ import DrawerBatch from '@/views/private/components/drawer-batch.vue';
 import FolderPicker from '@/views/private/components/folder-picker.vue';
 import LayoutSidebarDetail from '@/views/private/components/layout-sidebar-detail.vue';
 import SearchInput from '@/views/private/components/search-input.vue';
-import { useLayout } from '@directus/composables';
-import { Filter } from '@directus/types';
-import { mergeFilters } from '@directus/utils';
+import { useLayout } from '@directus9/composables';
+import { Filter } from '@directus9/types';
+import { mergeFilters } from '@directus9/utils';
 import { subDays } from 'date-fns';
 import { PropType, computed, defineComponent, nextTick, onMounted, onUnmounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
@@ -253,7 +253,7 @@ export default defineComponent({
 
 		const userStore = useUserStore();
 
-		const { layout, layoutOptions, layoutQuery, filter, search, resetPreset } = usePreset(ref('directus_files'));
+		const { layout, layoutOptions, layoutQuery, filter, search, resetPreset } = usePreset(ref('directus9_files'));
 
 		const currentLayout = useExtension('layout', layout);
 
@@ -493,7 +493,7 @@ export default defineComponent({
 				if (admin) return true;
 
 				const updatePermissions = permissionsStore.permissions.find(
-					(permission) => permission.action === 'update' && permission.collection === 'directus_files'
+					(permission) => permission.action === 'update' && permission.collection === 'directus9_files'
 				);
 
 				return !!updatePermissions;
@@ -504,7 +504,7 @@ export default defineComponent({
 				if (admin) return true;
 
 				const deletePermissions = permissionsStore.permissions.find(
-					(permission) => permission.action === 'delete' && permission.collection === 'directus_files'
+					(permission) => permission.action === 'delete' && permission.collection === 'directus9_files'
 				);
 
 				return !!deletePermissions;
@@ -515,7 +515,7 @@ export default defineComponent({
 				if (admin) return true;
 
 				const createPermissions = permissionsStore.permissions.find(
-					(permission) => permission.action === 'create' && permission.collection === 'directus_files'
+					(permission) => permission.action === 'create' && permission.collection === 'directus9_files'
 				);
 
 				return !!createPermissions;
@@ -526,7 +526,7 @@ export default defineComponent({
 				if (admin) return true;
 
 				const createPermissions = permissionsStore.permissions.find(
-					(permission) => permission.action === 'create' && permission.collection === 'directus_folders'
+					(permission) => permission.action === 'create' && permission.collection === 'directus9_folders'
 				);
 
 				return !!createPermissions;

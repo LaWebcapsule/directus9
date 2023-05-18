@@ -1,5 +1,5 @@
 type: object
-x-collection: directus_users
+x-collection: directus9_users
 properties:
   id:
     description: Unique identifier for the user.
@@ -51,7 +51,7 @@ properties:
       - $ref: '../openapi.yaml#/components/schemas/Files'
     nullable: true
   language:
-    description: The user's language used in Directus.
+    description: The user's language used in Directus9.
     example: en-US
     type: string
   theme:

@@ -118,7 +118,7 @@ public_label: सार्वजनिक
 public_description: यह नियंत्रित करता है कि authentication के बिना कौन सा API डेटा उपलब्ध है
 admin_description: अप्रतिबंधित ऐप/एपीआई एक्सेस के साथ प्रारंभिक प्रशासनिक भूमिका।
 not_allowed: अनुमति नहीं हैं
-directus_version: Directus वर्शन
+directus9_version: Directus9 वर्शन
 node_version: Node वर्शन
 node_uptime: Node उप टाइम
 os_type: OS टाइप
@@ -431,43 +431,43 @@ wysiwyg_options:
   selectall: सभी चुनें
 settings_webhooks: Webhooks
 fields:
-  directus_collections:
+  directus9_collections:
     note: ध्यान दें
     color: Color
     sort_field: Sort Field
-  directus_files:
+  directus9_files:
     title: शीर्षक
     modified_on: संशोधन का समय
     folder: फ़ोल्डर
     duration: अवधि
-  directus_users:
+  directus9_users:
     title: शीर्षक
     language: भाषा
     role: भूमिका
-  directus_settings:
+  directus9_settings:
     module_bar: मॉड्यूल बार
-  directus_shares:
+  directus9_shares:
     name: नाम
     role: भूमिका
-  directus_fields:
+  directus9_fields:
     note: ध्यान दें
     translation: फ़ील्ड नाम अनुवाद
-  directus_roles:
+  directus9_roles:
     name: भूमिका नाम
-  directus_webhooks:
+  directus9_webhooks:
     name: नाम
 field_options:
-  directus_activity:
+  directus9_activity:
     create: Create
     update: Update
-  directus_collections:
+  directus9_collections:
     language: भाषा
     archive_divider: आर्काइव
     sort_divider: सॉर्ट
-  directus_roles:
+  directus9_roles:
     fields:
       name_name: नाम
-  directus_webhooks:
+  directus9_webhooks:
     actions_create: Create
     actions_update: Update
 interfaces:

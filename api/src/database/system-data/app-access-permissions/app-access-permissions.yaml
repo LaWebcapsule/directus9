@@ -1,19 +1,19 @@
 # NOTE: Activity/collections/fields/presets/relations/revisions will have an extra hardcoded filter
 # to filter out collections you don't have read access
 
-- collection: directus_activity
+- collection: directus9_activity
   action: read
   permissions:
     user:
       _eq: $CURRENT_USER
 
-- collection: directus_activity
+- collection: directus9_activity
   action: create
   validation:
     comment:
       _nnull: true
 
-- collection: directus_presets
+- collection: directus9_presets
   action: read
   permissions:
     _or:
@@ -30,40 +30,40 @@
           - role:
               _null: true
 
-- collection: directus_presets
+- collection: directus9_presets
   action: create
   validation:
     user:
       _eq: $CURRENT_USER
 
-- collection: directus_presets
+- collection: directus9_presets
   action: update
   permissions:
     user:
       _eq: $CURRENT_USER
 
-- collection: directus_presets
+- collection: directus9_presets
   action: delete
   permissions:
     user:
       _eq: $CURRENT_USER
 
-- collection: directus_roles
+- collection: directus9_roles
   action: read
   permissions:
     id:
       _eq: $CURRENT_ROLE
 
-- collection: directus_settings
+- collection: directus9_settings
   action: read
 
-- collection: directus_notifications
+- collection: directus9_notifications
   action: read
   permissions:
     recipient:
       _eq: $CURRENT_USER
 
-- collection: directus_notifications
+- collection: directus9_notifications
   action: update
   permissions:
     recipient:
@@ -71,13 +71,13 @@
   fields:
     - status
 
-- collection: directus_shares
+- collection: directus9_shares
   action: read
   permissions:
     user_created:
       _eq: $CURRENT_USER
 
-- collection: directus_users
+- collection: directus9_users
   action: read
   permissions:
     id:

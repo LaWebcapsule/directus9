@@ -1,6 +1,6 @@
 ---
 description:
-  Operations are the individual actions in a flow. They enable you to do things like manage data within Directus,
+  Operations are the individual actions in a flow. They enable you to do things like manage data within Directus9,
   transform the flow's data, send information off to outside services, set conditional logic, trigger other flows, and
   beyond!
 readTime: 5 min read
@@ -8,7 +8,7 @@ readTime: 5 min read
 
 # Operations
 
-> Operations are the individual actions in a flow. They enable you to do things like manage data within Directus,
+> Operations are the individual actions in a flow. They enable you to do things like manage data within Directus9,
 > transform the flow's data, send information off to outside services, set conditional logic, trigger other flows, _and
 > beyond!_
 
@@ -22,7 +22,7 @@ configuration options, as well as any well as other relevant details. We will as
 
 ## Condition
 
-![Condition](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/condition-20220603A.webp)
+![Condition](https://cdn.directus9.io/docs/v9/configuration/flows/operations/operations-20220603A/condition-20220603A.webp)
 
 A **Condition** operation lets you choose a **success path** or **failure path** by validating data passed into it with
 [Filter Rules](/reference/filter-rules).
@@ -128,7 +128,7 @@ For security reasons, module usage is disabled by default. You can configure wha
 
 ## Create Data
 
-![Create Data](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/create-data-20220603A.webp)
+![Create Data](https://cdn.directus9.io/docs/v9/configuration/flows/operations/operations-20220603A/create-data-20220603A.webp)
 
 This operation creates item(s) in a collection.
 
@@ -147,7 +147,7 @@ An array with the ID(s) of all items created will be appended under its `<operat
 
 :::warning
 
-**Emit Events** toggles the event's _visibility_ throughout Directus. For example, if toggled on, this operation will
+**Emit Events** toggles the event's _visibility_ throughout Directus9. For example, if toggled on, this operation will
 trigger relevant event hooks in other flows or custom extensions. If toggled off, the operation will not trigger other
 event hooks. Imagine a situation where you have a flow being triggered by `<collection>.items.create` which contains an
 operation that then tries to create another item in that `<collection>`. This would throw an infinite loop where the
@@ -164,7 +164,7 @@ To learn about payload requirements when creating an item, see [API Reference > 
 
 ## Delete Data
 
-![Delete Data](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/delete-data-20220603A.webp)
+![Delete Data](https://cdn.directus9.io/docs/v9/configuration/flows/operations/operations-20220603A/delete-data-20220603A.webp)
 
 This operation deletes item(s) from a collection.
 
@@ -184,7 +184,7 @@ An array with the ID(s) of all items deleted will be appended under its `<operat
 
 :::warning
 
-**Emit Events** toggles the event's _visibility_ throughout Directus. For example, if togged on, this operation will
+**Emit Events** toggles the event's _visibility_ throughout Directus9. For example, if togged on, this operation will
 trigger relevant event hooks in other flows or custom extensions. If toggled off, the operation will not trigger other
 event hooks. Imagine a situation where you have a flow being triggered by `<collection>.items.delete` which contains an
 operation that then tries to delete another item in that `<collection>`. This would throw an infinite loop where the
@@ -195,7 +195,7 @@ triggers other event hooks.
 
 ## Read Data
 
-![Read Data](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/read-data-20220603A.webp)
+![Read Data](https://cdn.directus9.io/docs/v9/configuration/flows/operations/operations-20220603A/read-data-20220603A.webp)
 
 This operation reads item(s) from a collection and adds them onto the data chain. You may select Items by their ID or by
 running a query.
@@ -216,7 +216,7 @@ An array containing all items read will be appended under its `<operationKey>`.
 
 :::warning
 
-**Emit Events** toggles the event's _visibility_ throughout Directus. For example, if togged on, this operation will
+**Emit Events** toggles the event's _visibility_ throughout Directus9. For example, if togged on, this operation will
 trigger relevant event hooks in other flows or custom extensions. If toggled off, the operation will not trigger other
 event hooks. Imagine a situation where you have a flow being triggered by `<collection>.items.read` which contains an
 operation that then tries to read another item in that `<collection>`. This would throw an infinite loop where the
@@ -227,7 +227,7 @@ triggers other event hooks.
 
 ## Update Data
 
-![Update Data](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/update-data-20220603A.webp)
+![Update Data](https://cdn.directus9.io/docs/v9/configuration/flows/operations/operations-20220603A/update-data-20220603A.webp)
 
 This operation updates item(s) in a collection. You may select item(s) to update by their ID or by running a query.
 
@@ -248,7 +248,7 @@ An array containing all items updated will be appended under its `<operationKey>
 
 :::warning
 
-**Emit Events** toggles the event's _visibility_ throughout Directus. For example, if togged on, this operation will
+**Emit Events** toggles the event's _visibility_ throughout Directus9. For example, if togged on, this operation will
 trigger relevant event hooks in other flows or custom extensions. If toggled off, the operation will not trigger other
 event hooks. Imagine a situation where you have a flow being triggered by `<collection>.items.update` which contains an
 operation that then tries to update another item in that `<collection>`. This would throw an infinite loop where the
@@ -265,7 +265,7 @@ To learn about `payload` requirements when updating an item, see [API Reference 
 
 ## Log to Console
 
-![Log to Console](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/log-to-console-20220603A.webp)
+![Log to Console](https://cdn.directus9.io/docs/v9/configuration/flows/operations/operations-20220603A/log-to-console-20220603A.webp)
 
 This operation outputs information to the server-side console as well as the [Logs](/configuration/flows#logs) within
 the Data Studio. This is a key tool for troubleshooting flow configuration. A Log operation's key will have a null value
@@ -286,7 +286,7 @@ For more details, see the section on [Logs](/configuration/flows#logs).
 
 ## Send Email
 
-![Send Email](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/send-email-20220603A.webp)
+![Send Email](https://cdn.directus9.io/docs/v9/configuration/flows/operations/operations-20220603A/send-email-20220603A.webp)
 
 This operation sends off emails.
 
@@ -318,9 +318,9 @@ may send it there automatically.
 
 ## Send Notification
 
-![Send Notification](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/send-notification-20220603A.webp)
+![Send Notification](https://cdn.directus9.io/docs/v9/configuration/flows/operations/operations-20220603A/send-notification-20220603A.webp)
 
-This operation pushes notifications to Directus Users. If the operation executes successfully, a list containing the IDs
+This operation pushes notifications to Directus9 Users. If the operation executes successfully, a list containing the IDs
 of all sent notifications generated is appended under this operation's key.
 
 **Options**
@@ -345,7 +345,7 @@ You can input an array of UUIDs in the `To` input option to send off multiple em
 
 ## Webhook / Request URL
 
-![Webhook / Request URL](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/webhook-20220603A.webp)
+![Webhook / Request URL](https://cdn.directus9.io/docs/v9/configuration/flows/operations/operations-20220603A/webhook-20220603A.webp)
 
 This operation makes a request to another URL.
 
@@ -362,7 +362,7 @@ When an operation completes successfully, the `response` is appended under its `
 
 ## Sleep
 
-![Sleep](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/sleep-20220603A.webp)
+![Sleep](https://cdn.directus9.io/docs/v9/configuration/flows/operations/operations-20220603A/sleep-20220603A.webp)
 
 This operation creates a delay in the Flow for a given amount of milliseconds, then continues to the next operation.
 
@@ -376,7 +376,7 @@ This operation does not generate data. It will append a `null` value on its `ope
 
 ## Transform Payload
 
-![Transform Payload](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/transform-payload-20220603A.webp)
+![Transform Payload](https://cdn.directus9.io/docs/v9/configuration/flows/operations/operations-20220603A/transform-payload-20220603A.webp)
 
 This operation lets you custom define your own JSON payload for use in subsequent operations. This enables you to take
 multiple sources of data and "tidy them up" into a single payload.
@@ -410,7 +410,7 @@ Then you could stitch together all this data to create a new JSON object, like s
 
 ## Trigger Flow
 
-![Trigger Flow](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/trigger-flow-20220603A.webp)
+![Trigger Flow](https://cdn.directus9.io/docs/v9/configuration/flows/operations/operations-20220603A/trigger-flow-20220603A.webp)
 
 This operation starts another flow and _(optionally)_ passes data into it. It should be used in combination with the
 [Another Flow](/configuration/flows/triggers#another-flow) trigger.

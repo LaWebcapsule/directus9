@@ -1,4 +1,4 @@
-import { BaseException } from '@directus/exceptions';
+import { BaseException } from '@directus9/exceptions';
 
 type Extensions = {
 	collection: string;

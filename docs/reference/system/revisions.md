@@ -1,12 +1,12 @@
 ---
-description: REST and GraphQL API documentation on the Revisions collection in Directus.
+description: REST and GraphQL API documentation on the Revisions collection in Directus9.
 readTime: 2 min read
 pageClass: page-reference
 ---
 
 # Revisions
 
-> Revisions are individual changes to items made. Directus keeps track of changes made, so you're able to revert to a
+> Revisions are individual changes to items made. Directus9 keeps track of changes made, so you're able to revert to a
 > previous state at will. [Learn more about Revisions](/getting-started/glossary#revisions).
 
 ---
@@ -54,7 +54,7 @@ Parent revision that triggered this revision. Many-to-one to revisions (recursiv
 
 ## List revisions
 
-List all revisions that exist in Directus.
+List all revisions that exist in Directus9.
 
 ::: tip Permissions
 
@@ -89,7 +89,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	revisions: [directus_revisions]
+	revisions: [directus9_revisions]
 }
 ```
 
@@ -139,7 +139,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	revisions_by_id(id: ID!): directus_revisions
+	revisions_by_id(id: ID!): directus9_revisions
 }
 ```
 

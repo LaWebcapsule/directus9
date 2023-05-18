@@ -26,7 +26,7 @@ import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
 import { ref, watch, PropType, onMounted, onUnmounted, defineComponent, toRefs, computed, WatchStopHandle } from 'vue';
 import { useI18n } from 'vue-i18n';
 
-import { ShowSelect } from '@directus/types';
+import { ShowSelect } from '@directus9/types';
 import { useAppStore } from '@/stores/app';
 import { useSettingsStore } from '@/stores/settings';
 import { BoxSelectControl, ButtonControl } from '@/utils/geometry/controls';
@@ -103,7 +103,7 @@ export default defineComponent({
 		const boxSelectControl = new BoxSelectControl({
 			boxElementClass: 'map-selection-box',
 			selectButtonClass: 'mapboxgl-ctrl-select',
-			layers: ['__directus_polygons', '__directus_points', '__directus_lines'],
+			layers: ['__directus9_polygons', '__directus9_points', '__directus9_lines'],
 		});
 
 		let geocoderControl: MapboxGeocoder | undefined;
@@ -155,7 +155,7 @@ export default defineComponent({
 			map.on('load', () => {
 				watch(() => style.value, updateStyle);
 				watch(() => props.bounds, fitBounds);
-				const activeLayers = ['__directus_polygons', '__directus_points', '__directus_lines'];
+				const activeLayers = ['__directus9_polygons', '__directus9_points', '__directus9_lines'];
 
 				for (const layer of activeLayers) {
 					map.on('click', layer, onFeatureClick);
@@ -164,9 +164,9 @@ export default defineComponent({
 				}
 
 				map.on('move', updatePopupLocation);
-				map.on('click', '__directus_clusters', expandCluster);
-				map.on('mousemove', '__directus_clusters', hoverCluster);
-				map.on('mouseleave', '__directus_clusters', hoverCluster);
+				map.on('click', '__directus9_clusters', expandCluster);
+				map.on('mousemove', '__directus9_clusters', hoverCluster);
+				map.on('mouseleave', '__directus9_clusters', hoverCluster);
 				map.on('select.enable', () => (selectMode.value = true));
 				map.on('select.disable', () => (selectMode.value = false));
 
@@ -227,7 +227,7 @@ export default defineComponent({
 		}
 
 		function updateData(newData: any) {
-			const source = map.getSource('__directus');
+			const source = map.getSource('__directus9');
 			(source as GeoJSONSource).setData(newData);
 			updateSelection(props.selection, undefined);
 		}
@@ -247,11 +247,11 @@ export default defineComponent({
 				(newSource as any).generateId = true;
 			}
 
-			if (map.getStyle().sources?.['__directus']) {
-				map.removeSource('__directus');
+			if (map.getStyle().sources?.['__directus9']) {
+				map.removeSource('__directus9');
 			}
 
-			map.addSource('__directus', { ...newSource, data: props.data });
+			map.addSource('__directus9', { ...newSource, data: props.data });
 
 			map.once('sourcedata', () => {
 				setTimeout(() => props.layers.forEach((layer) => map.addLayer(layer)));
@@ -272,12 +272,12 @@ export default defineComponent({
 
 		function updateSelection(newSelection?: (string | number)[], previousSelection?: (string | number)[]) {
 			previousSelection?.forEach((id) => {
-				map.setFeatureState({ id, source: '__directus' }, { selected: false });
-				map.removeFeatureState({ id, source: '__directus' });
+				map.setFeatureState({ id, source: '__directus9' }, { selected: false });
+				map.removeFeatureState({ id, source: '__directus9' });
 			});
 
 			newSelection?.forEach((id) => {
-				map.setFeatureState({ id, source: '__directus' }, { selected: true });
+				map.setFeatureState({ id, source: '__directus9' }, { selected: true });
 			});
 		}
 
@@ -296,14 +296,14 @@ export default defineComponent({
 
 		function updatePopup(event: MapLayerMouseEvent) {
 			const feature = map.queryRenderedFeatures(event.point, {
-				layers: ['__directus_polygons', '__directus_points', '__directus_lines'],
+				layers: ['__directus9_polygons', '__directus9_points', '__directus9_lines'],
 			})[0];
 
 			const previousId = hoveredFeature.value?.id;
 			const featureChanged = previousId !== feature?.id;
 
 			if (previousId && featureChanged) {
-				map.setFeatureState({ id: previousId, source: '__directus' }, { hovered: false });
+				map.setFeatureState({ id: previousId, source: '__directus9' }, { hovered: false });
 			}
 
 			if (feature && feature.properties) {
@@ -317,7 +317,7 @@ export default defineComponent({
 				}
 
 				if (featureChanged) {
-					map.setFeatureState({ id: feature.id, source: '__directus' }, { hovered: true });
+					map.setFeatureState({ id: feature.id, source: '__directus9' }, { hovered: true });
 					hoveredFeature.value = feature;
 					emit('updateitempopup', { item: feature.id });
 				}
@@ -338,11 +338,11 @@ export default defineComponent({
 
 		function expandCluster(event: MapLayerMouseEvent) {
 			const features = map.queryRenderedFeatures(event.point, {
-				layers: ['__directus_clusters'],
+				layers: ['__directus9_clusters'],
 			});
 
 			const clusterId = features[0]?.properties?.cluster_id;
-			const source = map.getSource('__directus') as GeoJSONSource;
+			const source = map.getSource('__directus9') as GeoJSONSource;
 
 			source.getClusterExpansionZoom(clusterId, (err: any, zoom: number) => {
 				if (err) return;

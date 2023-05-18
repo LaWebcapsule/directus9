@@ -1,7 +1,7 @@
 import { useFieldsStore } from '@/stores/fields';
 import { useCollectionsStore } from '@/stores/collections';
 import { adjustFieldsForDisplays } from '@/utils/adjust-fields-for-displays';
-import { definePanel, getFieldsFromTemplate } from '@directus/utils';
+import { definePanel, getFieldsFromTemplate } from '@directus9/utils';
 import PanelList from './panel-list.vue';
 
 export default definePanel({

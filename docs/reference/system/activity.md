@@ -1,12 +1,12 @@
 ---
-description: REST and GraphQL API documentation on the Activity collection in Directus.
+description: REST and GraphQL API documentation on the Activity collection in Directus9.
 readTime: 4 min read
 pageClass: page-reference
 ---
 
 # Activity
 
-> All events within Directus are tracked and stored in the activities collection. This gives you full accountability
+> All events within Directus9 are tracked and stored in the activities collection. This gives you full accountability
 > over everything that happens. [Learn more about Activity](/getting-started/glossary#activity).
 
 ---
@@ -90,7 +90,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	activity: [directus_activity]
+	activity: [directus9_activity]
 }
 ```
 
@@ -132,7 +132,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	activity_by_id(id: ID!): directus_activity
+	activity_by_id(id: ID!): directus9_activity
 }
 ```
 
@@ -193,7 +193,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_comment(collection: String!, item: ID!, comment: String!): directus_activity
+	create_comment(collection: String!, item: ID!, comment: String!): directus9_activity
 }
 ```
 
@@ -248,7 +248,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_comment(id: ID!, comment: String!): directus_activity
+	update_comment(id: ID!, comment: String!): directus9_activity
 }
 ```
 

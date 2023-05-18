@@ -1,4 +1,4 @@
-import { isUpToDate } from '@directus/update-check';
+import { isUpToDate } from '@directus9/update-check';
 import type { TerminusOptions } from '@godaddy/terminus';
 import { createTerminus } from '@godaddy/terminus';
 import type { Request } from 'express';
@@ -126,7 +126,7 @@ export async function createServer(): Promise<http.Server> {
 		);
 
 		if (env['NODE_ENV'] !== 'development') {
-			logger.info('Directus shut down OK. Bye bye!');
+			logger.info('Directus9 shut down OK. Bye bye!');
 		}
 	}
 }

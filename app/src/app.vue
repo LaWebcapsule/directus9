@@ -1,5 +1,5 @@
 <template>
-	<div id="directus" :style="brandStyle">
+	<div id="directus9" :style="brandStyle">
 		<transition name="fade">
 			<div v-if="hydrating" class="hydrating">
 				<v-progress-circular indeterminate />
@@ -26,7 +26,7 @@ import { useAppStore } from '@/stores/app';
 import { useServerStore } from '@/stores/server';
 import { useUserStore } from '@/stores/user';
 import { setFavicon } from '@/utils/set-favicon';
-import { User } from '@directus/types';
+import { User } from '@directus9/types';
 import { StyleValue, computed, onMounted, onUnmounted, toRefs, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { startIdleTracking, stopIdleTracking } from './idle';
@@ -81,7 +81,7 @@ watch(
 watch(
 	() => serverStore.info?.project?.project_name,
 	(projectName) => {
-		document.title = projectName || 'Directus';
+		document.title = projectName || 'Directus9';
 	},
 	{ immediate: true }
 );
@@ -100,7 +100,7 @@ useSystem();
 	height: 100%;
 }
 
-#directus {
+#directus9 {
 	height: 100%;
 }
 

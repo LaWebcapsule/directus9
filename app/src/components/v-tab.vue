@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { inject, ref } from 'vue';
-import { useGroupable } from '@directus/composables';
+import { useGroupable } from '@directus9/composables';
 
 interface Props {
 	/** A custom value to be used with `v-tabs` */

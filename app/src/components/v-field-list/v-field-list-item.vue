@@ -69,8 +69,8 @@ export default {
 
 <script lang="ts" setup>
 import { FieldNode } from '@/composables/use-field-tree';
-import formatTitle from '@directus/format-title';
-import { getFunctionsForType } from '@directus/utils';
+import formatTitle from '@directus9/format-title';
+import { getFunctionsForType } from '@directus9/utils';
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 

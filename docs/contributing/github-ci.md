@@ -1,13 +1,13 @@
 ---
 description:
-  This guide explains how to publish a forked version of Directus on NPM, Dockerhub and GHCR. You need to first create a
+  This guide explains how to publish a forked version of Directus9 on NPM, Dockerhub and GHCR. You need to first create a
   fork.
 readTime: 2 min read
 ---
 
 # GitHub CI
 
-> This guide explains how to publish a forked version of Directus on NPM, Dockerhub and GHCR. You need to first
+> This guide explains how to publish a forked version of Directus9 on NPM, Dockerhub and GHCR. You need to first
 > [create a fork](/contributing/running-locally)
 
 ::: warning Using a fork in production is neither supported nor recommended.
@@ -39,13 +39,13 @@ necessary.
 
 | Variable          | Description                                                            | Example                     |
 | ----------------- | ---------------------------------------------------------------------- | --------------------------- |
-| `GHCR_IMAGE`      | Image name for GitHub Container Registry. Be sure to use the full URL. | `ghcr.io/directus/directus` |
-| `DOCKERHUB_IMAGE` | Image name for hub.docker.com, no prefix.                              | `directus/directus`         |
+| `GHCR_IMAGE`      | Image name for GitHub Container Registry. Be sure to use the full URL. | `ghcr.io/directus9/directus9` |
+| `DOCKERHUB_IMAGE` | Image name for hub.docker.com, no prefix.                              | `directus9/directus9`         |
 
 | Secret               | Description                                             | Example        |
 | -------------------- | ------------------------------------------------------- | -------------- |
 | `NPM_TOKEN`          | Your NPM token. Make sure to use the type "automation". | `12345678-...` |
-| `DOCKERHUB_USERNAME` | Dockerhub Username                                      | `directus`     |
+| `DOCKERHUB_USERNAME` | Dockerhub Username                                      | `directus9`     |
 | `DOCKERHUB_PASSWORD` | Dockerhub Password                                      | `hunter2`      |
 
 ## 2. Create a release

@@ -34,7 +34,7 @@ services:
     image: postgis/postgis:13-3.1-alpine
     environment:
       POSTGRES_PASSWORD: secret
-      POSTGRES_DB: directus
+      POSTGRES_DB: directus9
     ports:
       - 6100:5432
 
@@ -42,7 +42,7 @@ services:
     image: postgis/postgis:10-3.1-alpine
     environment:
       POSTGRES_PASSWORD: secret
-      POSTGRES_DB: directus
+      POSTGRES_DB: directus9
     ports:
       - 6101:5432
 
@@ -51,7 +51,7 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASE: directus
+      MYSQL_DATABASE: directus9
     ports:
       - 6102:3306
     cap_add:
@@ -61,7 +61,7 @@ services:
     image: mysql:5
     environment:
       MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASE: directus
+      MYSQL_DATABASE: directus9
     ports:
       - 6103:3306
 
@@ -69,7 +69,7 @@ services:
     image: mariadb:10.7
     environment:
       MYSQL_ROOT_PASSWORD: secret
-      MYSQL_DATABASE: directus
+      MYSQL_DATABASE: directus9
     ports:
       - 6104:3306
 
@@ -118,7 +118,7 @@ services:
       - 8881:9000
       - 8882:9001
     environment:
-      MINIO_ROOT_USER: directus
+      MINIO_ROOT_USER: directus9
       MINIO_ROOT_PASSWORD: miniosecret
 
   minio-mc:
@@ -126,7 +126,7 @@ services:
     depends_on:
       - minio
     entrypoint: >
-      /bin/sh -c " /usr/bin/mc alias set directusminio http://minio:9000 directus miniosecret; /usr/bin/mc mb
-      directusminio/directus-blackbox-test; while true; do
+      /bin/sh -c " /usr/bin/mc alias set directus9minio http://minio:9000 directus9 miniosecret; /usr/bin/mc mb
+      directus9minio/directus9-blackbox-test; while true; do
           sleep 3600;
       done "

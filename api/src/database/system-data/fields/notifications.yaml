@@ -1,4 +1,4 @@
-table: directus_notifications
+table: directus9_notifications
 
 fields:
   - field: id

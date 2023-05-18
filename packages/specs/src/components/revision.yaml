@@ -1,5 +1,5 @@
 type: object
-x-collection: directus_revisions
+x-collection: directus9_revisions
 properties:
   id:
     description: Unique identifier for the revision.

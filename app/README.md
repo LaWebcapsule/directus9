@@ -1,3 +1,3 @@
-# @directus/app
+# @directus9/app
 
-The Directus Admin App. Included with `directus` itself. You wouldn't install this package separately.
+The Directus9 Admin App. Included with `directus9` itself. You wouldn't install this package separately.

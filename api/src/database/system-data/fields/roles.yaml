@@ -1,4 +1,4 @@
-table: directus_roles
+table: directus9_roles
 
 fields:
   - field: id
@@ -10,7 +10,7 @@ fields:
   - field: name
     interface: input
     options:
-      placeholder: $t:field_options.directus_roles.name
+      placeholder: $t:field_options.directus9_roles.name
     width: half
 
   - field: icon
@@ -21,7 +21,7 @@ fields:
   - field: description
     interface: input
     options:
-      placeholder: $t:field_options.directus_roles.description
+      placeholder: $t:field_options.directus9_roles.description
     width: full
 
   - field: app_access
@@ -39,7 +39,7 @@ fields:
   - field: ip_access
     interface: tags
     options:
-      placeholder: $t:field_options.directus_roles.ip_access
+      placeholder: $t:field_options.directus9_roles.ip_access
     special:
       - cast-csv
     width: full

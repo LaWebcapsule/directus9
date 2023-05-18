@@ -12,7 +12,7 @@ export async function setLanguage(lang: Language): Promise<boolean> {
 
 	if (Object.keys(availableLanguages).includes(lang) === false) {
 		// eslint-disable-next-line no-console
-		console.warn(`"${lang}" is not an available language in the Directus app.`);
+		console.warn(`"${lang}" is not an available language in the Directus9 app.`);
 	} else {
 		if (loadedLanguages.includes(lang) === false) {
 			try {

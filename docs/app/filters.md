@@ -12,7 +12,7 @@ readTime: 5 min read
 > restricting Item access permissions for specific Users or Roles, building dashboard analytics with the Insights
 > module, and more.
 
-![Filters](https://cdn.directus.io/docs/v9/app-guide/filters/filters-20220303A/filters-20220303A.webp)
+![Filters](https://cdn.directus9.io/docs/v9/app-guide/filters/filters-20220303A/filters-20220303A.webp)
 
 ::: warning There Are Two Filters Documents
 
@@ -36,7 +36,7 @@ A basic filter is composed of 3 parts: A **Field** from the Collection being Fil
 Field.
 
 <video autoplay playsinline muted loop controls title="How Filters Work">
-	<source src="https://cdn.directus.io/docs/v9/app-guide/filters/filters-20220303A/how-filters-work-20220303A.mp4" type="video/mp4" />
+	<source src="https://cdn.directus9.io/docs/v9/app-guide/filters/filters-20220303A/how-filters-work-20220303A.mp4" type="video/mp4" />
 </video>
 
 2. Click <span mi icon>filter_list</span> or **"Add Filter"**.
@@ -62,7 +62,7 @@ automatically display. An exhaustive list of Operators and what they do can be f
 `AND` Groups give the option to filter for Items that meet _all of several criteria_. On the other hand, `OR` Groups
 filter for Items that meet _any one of several criteria_.
 
-![AND/OR Groups](https://cdn.directus.io/docs/v9/app-guide/filters/filters-20220303A/and-or-groups-20220303A.webp)
+![AND/OR Groups](https://cdn.directus9.io/docs/v9/app-guide/filters/filters-20220303A/and-or-groups-20220303A.webp)
 
 1. Click "Add Filter".
 2. Click "And/OR Group" at the very top of the dropdown menu.
@@ -86,10 +86,10 @@ conditions inside of OR Groups.
 The following video shows how to filter for Blog posts written within the past 60 days.
 
 <video autoplay playsinline muted loop controls title="How Filters Work">
-	<source src="https://cdn.directus.io/docs/v9/app-guide/filters/filters-20220303A/dynamic-variables-20220307A.mp4" type="video/mp4" />
+	<source src="https://cdn.directus9.io/docs/v9/app-guide/filters/filters-20220303A/dynamic-variables-20220307A.mp4" type="video/mp4" />
 </video>
 
-The following Dynamic Variables are built into Directus to make Filtering easier: `$CURRENT_USER`, `$CURRENT_ROLE`,
+The following Dynamic Variables are built into Directus9 to make Filtering easier: `$CURRENT_USER`, `$CURRENT_ROLE`,
 `$NOW` and `$NOW(<adjustment>)`. For more information, please see the Dynamic Variables section in
 [Filter Rules](/reference/filter-rules).
 
@@ -113,7 +113,7 @@ one of these Fields, you can run Filters on the current Collection by Field valu
 Here are step-by-step instructions on how to filter by Fields in other Collections:
 
 <video autoplay playsinline muted loop controls title="How Filters Work">
-	<source src="https://cdn.directus.io/docs/v9/app-guide/filters/filters-20220303A/filtering-by-related-collections-20220303A.mp4" type="video/mp4" />
+	<source src="https://cdn.directus9.io/docs/v9/app-guide/filters/filters-20220303A/filtering-by-related-collections-20220303A.mp4" type="video/mp4" />
 </video>
 
 1. Click "Add Filter".
@@ -123,7 +123,7 @@ Here are step-by-step instructions on how to filter by Fields in other Collectio
 
 ## Unfilterable Fields
 
-![Unfilterable Fields](https://cdn.directus.io/docs/v9/app-guide/filters/filters-20220303A/unfilterable-fields-20220303A.webp)
+![Unfilterable Fields](https://cdn.directus9.io/docs/v9/app-guide/filters/filters-20220303A/unfilterable-fields-20220303A.webp)
 
 Not all Fields can be filtered. As seen above in [Filtering by Related Collections](#filtering-by-related-collections),
 Alias Fields cannot be filtered; they instead provide a dropdown menu to access Fields from a related Collection.
@@ -132,8 +132,8 @@ Filters.
 
 ## Extensibility Options
 
-Directus Core is completely open-source, modular and extensible. Extensions allow you to expand or modify any part of
-Directus to fit your needs. Here are some great resources to get started down that track.
+Directus9 Core is completely open-source, modular and extensible. Extensions allow you to expand or modify any part of
+Directus9 to fit your needs. Here are some great resources to get started down that track.
 
 - [Extensions > Introduction](/extensions/introduction)
 - [Extensions > Creating Extensions](/extensions/creating-extensions)
@@ -143,11 +143,11 @@ Directus to fit your needs. Here are some great resources to get started down th
 ::: tip Accelerated Development
 
 Working on an enterprise project and looking to outsource or financially sponsor the development of a Shares extension?
-Contact [our team](https://directus.io/contact)
+Contact [our team](https://directus9.io/contact)
 
 :::
 
 ## More Help
 
 Looking for technical support for your non-enterprise project? Chat with thousands of engineers within our growing
-[Community on Discord](https://discord.com/invite/directus)
+[Community on Discord](https://discord.com/invite/directus9)

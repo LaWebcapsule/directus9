@@ -118,7 +118,7 @@ public_label: گشتی
 public_description: کۆنتڕۆڵکردنی ئەوەی کام داتایەی API بەردەستە بەبێ ڕەسەنایەتی.
 admin_description: ڕۆڵی بەڕێوبەری سەرەتایی لەگەڵ دەسەڵاتی API و پێگەی بێ سنوور.
 not_allowed: ڕێگەپێنەدراوە
-directus_version: وەشانی دایرێکتەس
+directus9_version: وەشانی دایرێکتەس
 node_version: وەشانی نۆد
 node_uptime: چالاکی نۆد
 os_type: جۆری سیستەم
@@ -1019,30 +1019,30 @@ content: ناوەڕۆک
 singleton: تاکی
 singleton_label: وەک تاکە شت مامەڵەی لەگەڵ بکە
 system_fields_locked: خانەکانی سیستەم قوفلکراون و ناتوانرێت دەستکاری بکرێن
-directus_collection:
-  directus_activity: تۆماری بەرپرسیاری بۆ هەموو ڕوداوەکان
-  directus_collections: ڕێکخستن و مێتادەیتای زیادەی کۆمەڵە
-  directus_dashboards: داشبۆردەکان لە یەکەی تێڕوانینەکان
-  directus_fields: ڕێکخستن و مێتادەیتای زیادەی خانە
-  directus_files: مێتادەیتا بۆ هەموو پەڕگە بەڕێوەبراوەکان
-  directus_flows: خۆکارکردنی لێشاوەکان
-  directus_folders: دابینکردنی بەڕێوەبردنی خەیاڵی بۆ پەڕگەکان
-  directus_migrations: کام وەشانی بنکەدراو بەکاردەهێنیت
-  directus_notifications: ئاگادارکەرەوەکان نێردران بۆ بەکارهێنەران
-  directus_operations: کردارەکان کە لە لێشاوەکاندا جێبەجێدەبن
-  directus_panels: پانێڵی تاکەکەسی لە نێو داشبۆردی تێڕوانینەکان
-  directus_permissions: دەسەڵاتی دەستگەیشتن بۆ هەر پلەیەک
-  directus_presets: پێشسێت بۆ بنەڕەتی کۆمەڵە و نیشانکردنەکان
-  directus_relations: ڕێکخستنی پەیوەندی و مێتادەیتا
-  directus_revisions: خێراوێنەی داتا بۆ هەموو چالاکیەکان
-  directus_roles: دەستەی دەسەڵاتەکان بۆ بەکارهێنەرەکانی سیستەم
-  directus_sessions: زانیاری دەورەی بەکارهێنەر
-  directus_settings: بژاردەکانی ڕێکخستنی پڕۆژە
-  directus_shares: بەدواداچوونی ماددە هاوبەشیپێکراوە دەرەکیەکان
-  directus_users: بەکارهێنەرەکانی سیستەم بۆ سەکۆکە
-  directus_webhooks: ڕێکخستن بۆ داواکارییەکانی HTTP لەسەر بنەمای ڕووداو
+directus9_collection:
+  directus9_activity: تۆماری بەرپرسیاری بۆ هەموو ڕوداوەکان
+  directus9_collections: ڕێکخستن و مێتادەیتای زیادەی کۆمەڵە
+  directus9_dashboards: داشبۆردەکان لە یەکەی تێڕوانینەکان
+  directus9_fields: ڕێکخستن و مێتادەیتای زیادەی خانە
+  directus9_files: مێتادەیتا بۆ هەموو پەڕگە بەڕێوەبراوەکان
+  directus9_flows: خۆکارکردنی لێشاوەکان
+  directus9_folders: دابینکردنی بەڕێوەبردنی خەیاڵی بۆ پەڕگەکان
+  directus9_migrations: کام وەشانی بنکەدراو بەکاردەهێنیت
+  directus9_notifications: ئاگادارکەرەوەکان نێردران بۆ بەکارهێنەران
+  directus9_operations: کردارەکان کە لە لێشاوەکاندا جێبەجێدەبن
+  directus9_panels: پانێڵی تاکەکەسی لە نێو داشبۆردی تێڕوانینەکان
+  directus9_permissions: دەسەڵاتی دەستگەیشتن بۆ هەر پلەیەک
+  directus9_presets: پێشسێت بۆ بنەڕەتی کۆمەڵە و نیشانکردنەکان
+  directus9_relations: ڕێکخستنی پەیوەندی و مێتادەیتا
+  directus9_revisions: خێراوێنەی داتا بۆ هەموو چالاکیەکان
+  directus9_roles: دەستەی دەسەڵاتەکان بۆ بەکارهێنەرەکانی سیستەم
+  directus9_sessions: زانیاری دەورەی بەکارهێنەر
+  directus9_settings: بژاردەکانی ڕێکخستنی پڕۆژە
+  directus9_shares: بەدواداچوونی ماددە هاوبەشیپێکراوە دەرەکیەکان
+  directus9_users: بەکارهێنەرەکانی سیستەم بۆ سەکۆکە
+  directus9_webhooks: ڕێکخستن بۆ داواکارییەکانی HTTP لەسەر بنەمای ڕووداو
 fields:
-  directus_activity:
+  directus9_activity:
     item: ماددەی کلیلی سەرەکی
     action: کردەوە
     collection: کۆمەڵە
@@ -1053,7 +1053,7 @@ fields:
     origin: ڕەسەن
     ip: ناونیشانی IP
     revisions: پێداچونەوەکان
-  directus_collections:
+  directus9_collections:
     collection: کۆمەڵە
     icon: ئایکۆن
     note: تێبینی
@@ -1069,7 +1069,7 @@ fields:
     accountability: بەدواداچونی گەڕاندنەوەی و کردارەکان
     archive_field: خانەی ئەرشیڤ
     item_duplication_fields: خانەی لەبەرگرتنەوەی ماددە
-  directus_files:
+  directus9_files:
     $thumbnail: وێنەی بچوککراو
     title: ناونیشان
     description: وەسف
@@ -1093,7 +1093,7 @@ fields:
     height: بەرزی
     charset: کۆمەڵەهێما
     duration: ماوە
-  directus_users:
+  directus9_users:
     first_name: ناوی یەکەم
     last_name: ناوی باوک
     email: ئیمەیڵ
@@ -1124,7 +1124,7 @@ fields:
     last_page: کۆتا پەڕ
     last_access: دواین دەستگەیشتن
     email_notifications: ئاگادارکەرەوەی ئیمەیڵ
-  directus_settings:
+  directus9_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
@@ -1164,7 +1164,7 @@ fields:
     transformations_presets: سنوردارکردنی گۆڕانکاریەکان بۆ پێشکەشکردن لە خوارەوە
     image_editor: دەستکاریکەری وێنە
     custom_aspect_ratios: ڕێژەی ڕوبەری خواستراو
-  directus_shares:
+  directus9_shares:
     name: ناو
     role: پلە
     password: تێپەڕەوشە
@@ -1172,7 +1172,7 @@ fields:
     date_end: کۆتایی ڕێکەوت
     max_uses: ئەوپەڕی بەکارهێنان
     times_used: جاری بەکارهێنراو
-  directus_fields:
+  directus9_fields:
     collection: ناوی کۆمەڵە
     icon: ئایکۆنی کۆمەڵە
     note: تێبینی
@@ -1180,7 +1180,7 @@ fields:
     singleton: تاکی
     translation: وەرگێڕانەکانی ناوی خانە
     display_template: قاڵب
-  directus_roles:
+  directus9_roles:
     name: ناوی پلە
     icon: ئایکۆنی پلە
     description: وەسف
@@ -1190,7 +1190,7 @@ fields:
     enforce_tfa: 2FA ـی داواکراوە
     users: بەکارهێنەران لە پلەی
     module_list: ڕێدۆزی یەکە
-  directus_webhooks:
+  directus9_webhooks:
     name: ناو
     method: ڕێگە
     status: دۆخەکان
@@ -1203,7 +1203,7 @@ fields:
     actions: کردارەکان
     collections: کۆمەڵەکان
 field_options:
-  directus_settings:
+  directus9_settings:
     project_name_placeholder: پڕۆژەکەم...
     project_color_note: چونەژوورەوە و لۆگی پاشبنەما
     project_logo_note: سپی 40x40 SVG/PNG
@@ -1232,12 +1232,12 @@ field_options:
     basemaps_style: شێوازی Mapbox
     files_divider_title: پەڕگەکان و وێنە بچوککراوەکان
     overrides_divider_title: سەپاندنەکانی پێگە
-  directus_activity:
+  directus9_activity:
     login: چوونەژوورەوە
     create: دروستکردن
     update: نوێکردنەوە
     delete: سڕینەوە
-  directus_collections:
+  directus9_collections:
     track_activity_revisions: بەدواداچوونی کردار و گەڕاندنەوەکان
     only_track_activity: تەنها بەدواداچوونی کردار
     do_not_track_anything: بەدواداچونی هیچ کردارێک مەکە
@@ -1260,14 +1260,14 @@ field_options:
     sort_field: خانەیەک هەڵبژێرە...
     accountability_divider: بەرپرسیاری
     duplication_divider: دووبارەکردنەوە
-  directus_files:
+  directus9_files:
     title: ناونیشانێکی بێ هاوتا...
     description: وەسفێکی بژاردەیی...
     location: شوێنێکی بژاردەیی...
     storage_divider: ناونانی پەڕگە
     filename_disk: ناو لەسەر پەپکەی بیرگە...
     filename_download: ناو لەکاتی داگرتن...
-  directus_roles:
+  directus9_roles:
     name: ناوێکی بێ هاوتا بۆ ئەم پلەیە...
     description: وەسفێک بۆ ئەم پلەیە...
     ip_access: ناونیشانێکی ڕێگەپێدراوی IP زیاد بکە، بە بەتاڵی جێی بهێڵە بۆ ڕێگەپێدان بە هەمووان...
@@ -1279,7 +1279,7 @@ field_options:
       link_placeholder: بەستەری ڕێژەیی یان ڕەها...
     collections_name: کۆمەڵەکان
     collections_addLabel: زیادکردنی کۆمەڵە...
-  directus_users:
+  directus9_users:
     preferences_divider: هەڵبژاردنەکانی بەکارهێنەر
     dropdown_auto: خۆکار (بەپێی سیستەم)
     dropdown_light: دۆخی ڕوناک
@@ -1291,7 +1291,7 @@ field_options:
     status_dropdown_suspended: ڕاگیراوە
     status_dropdown_archived: ئەرشیفکراوە
     token: تۆکنێکی پارێزراوی دەستگەیشتن دابنێ...
-  directus_webhooks:
+  directus9_webhooks:
     status_options_active: چالاک
     status_options_inactive: ناچالاک
     data_label: ناردنی داتای ڕوداو

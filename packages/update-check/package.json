@@ -1,5 +1,5 @@
 {
-	"name": "@directus/update-check",
+	"name": "@directus9/update-check",
 	"version": "9.26.0",
 	"type": "module",
 	"scripts": {
@@ -10,10 +10,10 @@
 	"description": "Check if an update is available for a given package",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/directus/directus.git",
+		"url": "https://github.com/directus9/directus9.git",
 		"directory": "packages/update-check"
 	},
-	"funding": "https://github.com/directus/directus?sponsor=1",
+	"funding": "https://github.com/directus9/directus9?sponsor=1",
 	"license": "GPL-3.0",
 	"author": "Rijk van Zanten <rijkvanzanten@me.com>",
 	"exports": {
@@ -33,7 +33,7 @@
 		"undici": "5.22.0"
 	},
 	"devDependencies": {
-		"@directus/tsconfig": "0.0.7",
+		"@directus9/tsconfig": "0.0.7",
 		"@ngneat/falso": "6.4.0",
 		"@types/semver": "7.3.13",
 		"@vitest/coverage-c8": "0.30.1",

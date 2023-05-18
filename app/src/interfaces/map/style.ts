@@ -1,4 +1,4 @@
-import { cssVar } from '@directus/utils/browser';
+import { cssVar } from '@directus9/utils/browser';
 
 export function getMapStyle() {
 	const color = [
@@ -12,7 +12,7 @@ export function getMapStyle() {
 
 	return [
 		{
-			id: 'directus-polygon-fill',
+			id: 'directus9-polygon-fill',
 			type: 'fill',
 			filter: ['all', ['==', '$type', 'Polygon']],
 			paint: {
@@ -22,7 +22,7 @@ export function getMapStyle() {
 			},
 		},
 		{
-			id: 'directus-polygon-stroke',
+			id: 'directus9-polygon-stroke',
 			type: 'line',
 			filter: ['all', ['==', '$type', 'Polygon']],
 			layout: {
@@ -35,7 +35,7 @@ export function getMapStyle() {
 			},
 		},
 		{
-			id: 'directus-polygon-midpoint',
+			id: 'directus9-polygon-midpoint',
 			type: 'circle',
 			filter: ['all', ['==', '$type', 'Point'], ['==', 'meta', 'midpoint']],
 			paint: {
@@ -44,7 +44,7 @@ export function getMapStyle() {
 			},
 		},
 		{
-			id: 'directus-line',
+			id: 'directus9-line',
 			type: 'line',
 			filter: ['all', ['==', '$type', 'LineString']],
 			layout: {
@@ -57,7 +57,7 @@ export function getMapStyle() {
 			},
 		},
 		{
-			id: 'directus-polygon-and-line-vertex',
+			id: 'directus9-polygon-and-line-vertex',
 			type: 'circle',
 			filter: ['all', ['==', 'meta', 'vertex'], ['==', '$type', 'Point']],
 			paint: {
@@ -69,7 +69,7 @@ export function getMapStyle() {
 			},
 		},
 		{
-			id: 'directus-point-shadow',
+			id: 'directus9-point-shadow',
 			filter: [
 				'all',
 				['==', '$type', 'Point'],
@@ -87,7 +87,7 @@ export function getMapStyle() {
 			},
 		},
 		{
-			id: 'directus-point',
+			id: 'directus9-point',
 			filter: ['all', ['==', '$type', 'Point'], ['==', 'meta', 'feature'], ['!=', 'meta', 'midpoint']],
 			type: 'circle',
 			layout: {},

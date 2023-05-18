@@ -14,7 +14,7 @@
 		:reset-preset="resetPreset"
 		:clear-filters="clearFilters"
 	>
-		<content-not-found v-if="!currentCollection || collection.startsWith('directus_')" />
+		<content-not-found v-if="!currentCollection || collection.startsWith('directus9_')" />
 		<private-view
 			v-else
 			:title="bookmark ? bookmarkTitle : currentCollection.name"
@@ -276,7 +276,7 @@ import { defineComponent, computed, ref, watch, toRefs } from 'vue';
 import ContentNavigation from '../components/navigation.vue';
 import api from '@/api';
 import ContentNotFound from './not-found.vue';
-import { useCollection, useLayout } from '@directus/composables';
+import { useCollection, useLayout } from '@directus9/composables';
 import { usePreset } from '@/composables/use-preset';
 import LayoutSidebarDetail from '@/views/private/components/layout-sidebar-detail.vue';
 import ArchiveSidebarDetail from '@/views/private/components/archive-sidebar-detail.vue';
@@ -290,8 +290,8 @@ import { usePermissionsStore } from '@/stores/permissions';
 import { useUserStore } from '@/stores/user';
 import DrawerBatch from '@/views/private/components/drawer-batch.vue';
 import { unexpectedError } from '@/utils/unexpected-error';
-import { mergeFilters } from '@directus/utils';
-import { Filter } from '@directus/types';
+import { mergeFilters } from '@directus9/utils';
+import { Filter } from '@directus9/types';
 import { useExtension } from '@/composables/use-extension';
 
 type Item = {

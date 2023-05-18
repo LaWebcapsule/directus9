@@ -1,4 +1,4 @@
-table: directus_settings
+table: directus9_settings
 
 fields:
   - field: id
@@ -8,14 +8,14 @@ fields:
     interface: input
     options:
       iconRight: title
-      placeholder: $t:field_options.directus_settings.project_name_placeholder
+      placeholder: $t:field_options.directus9_settings.project_name_placeholder
     width: half
 
   - field: project_descriptor
     interface: input
     options:
       iconRight: title
-      placeholder: $t:field_options.directus_settings.project_name_placeholder
+      placeholder: $t:field_options.directus9_settings.project_name_placeholder
     width: half
 
   - field: project_url
@@ -36,7 +36,7 @@ fields:
     interface: presentation-divider
     options:
       icon: palette
-      title: $t:fields.directus_settings.branding
+      title: $t:fields.directus9_settings.branding
     special:
       - alias
       - no-data
@@ -44,12 +44,12 @@ fields:
 
   - field: project_color
     interface: select-color
-    note: $t:field_options.directus_settings.project_color_note
+    note: $t:field_options.directus9_settings.project_color_note
     width: half
 
   - field: project_logo
     interface: file
-    note: $t:field_options.directus_settings.project_logo_note
+    note: $t:field_options.directus9_settings.project_logo_note
     width: half
 
   - field: public_foreground
@@ -64,7 +64,7 @@ fields:
   - field: public_note
     interface: input
     options:
-      placeholder: $t:field_options.directus_settings.public_note_placeholder
+      placeholder: $t:field_options.directus9_settings.public_note_placeholder
       iconRight: info
     width: full
 
@@ -126,11 +126,11 @@ fields:
     options:
       choices:
         - value: null
-          text: $t:field_options.directus_settings.auth_password_policy.none_text
+          text: $t:field_options.directus9_settings.auth_password_policy.none_text
         - value: '/^.{8,}$/'
-          text: $t:field_options.directus_settings.auth_password_policy.weak_text
+          text: $t:field_options.directus9_settings.auth_password_policy.weak_text
         - value: "/(?=^.{8,}$)(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+}{';'?>.<,])(?!.*\\s).*$/"
-          text: $t:field_options.directus_settings.auth_password_policy.strong_text
+          text: $t:field_options.directus9_settings.auth_password_policy.strong_text
       allowOther: true
     width: half
 
@@ -145,7 +145,7 @@ fields:
     interface: presentation-divider
     options:
       icon: folder
-      title: $t:fields.directus_settings.files_and_thumbnails
+      title: $t:fields.directus9_settings.files_and_thumbnails
     special:
       - alias
       - no-data
@@ -156,11 +156,11 @@ fields:
     options:
       choices:
         - value: all
-          text: $t:fields.directus_settings.transformations_all
+          text: $t:fields.directus9_settings.transformations_all
         - value: none
-          text: $t:fields.directus_settings.transformations_none
+          text: $t:fields.directus9_settings.transformations_none
         - value: presets
-          text: $t:fields.directus_settings.transformations_presets
+          text: $t:fields.directus9_settings.transformations_presets
     width: half
 
   - field: storage_default_folder
@@ -185,7 +185,7 @@ fields:
             width: full
             required: true
         - field: fit
-          name: $t:field_options.directus_settings.storage_asset_presets.fit_label
+          name: $t:field_options.directus9_settings.storage_asset_presets.fit_label
           type: string
           schema:
             is_nullable: false
@@ -194,13 +194,13 @@ fields:
             options:
               choices:
                 - value: contain
-                  text: $t:field_options.directus_settings.storage_asset_presets.fit.contain_text
+                  text: $t:field_options.directus9_settings.storage_asset_presets.fit.contain_text
                 - value: cover
-                  text: $t:field_options.directus_settings.storage_asset_presets.fit.cover_text
+                  text: $t:field_options.directus9_settings.storage_asset_presets.fit.cover_text
                 - value: inside
-                  text: $t:field_options.directus_settings.storage_asset_presets.fit.fit_text
+                  text: $t:field_options.directus9_settings.storage_asset_presets.fit.fit_text
                 - value: outside
-                  text: $t:field_options.directus_settings.storage_asset_presets.fit.outside_text
+                  text: $t:field_options.directus9_settings.storage_asset_presets.fit.outside_text
             width: half
         - field: width
           name: $t:width
@@ -232,7 +232,7 @@ fields:
               step: 1
             width: half
         - field: withoutEnlargement
-          name: $t:field_options.directus_settings.storage_asset_presets.upscaling
+          name: $t:field_options.directus9_settings.storage_asset_presets.upscaling
           type: boolean
           schema:
             default_value: false
@@ -266,13 +266,13 @@ fields:
                   text: AVIF
             width: half
         - field: transforms
-          name: $t:field_options.directus_settings.additional_transforms
+          name: $t:field_options.directus9_settings.additional_transforms
           type: json
           schema:
             is_nullable: false
             default_value: []
           meta:
-            note: $t:field_options.directus_settings.transforms_note
+            note: $t:field_options.directus9_settings.transforms_note
 
             interface: json
             options:
@@ -298,7 +298,7 @@ fields:
     interface: presentation-divider
     options:
       icon: map
-      title: $t:fields.directus_settings.mapping
+      title: $t:fields.directus9_settings.mapping
     special:
       - alias
       - no-data
@@ -308,8 +308,8 @@ fields:
     interface: input
     options:
       icon: key
-      title: $t:field_options.directus_settings.mapbox_key
-      placeholder: $t:field_options.directus_settings.mapbox_placeholder
+      title: $t:field_options.directus9_settings.mapbox_key
+      placeholder: $t:field_options.directus9_settings.mapbox_placeholder
       iconLeft: vpn_key
       font: monospace
     width: full
@@ -329,7 +329,7 @@ fields:
             interface: text-input
             required: true
             options:
-              placeholder: $t:field_options.directus_settings.basemaps_name_placeholder
+              placeholder: $t:field_options.directus9_settings.basemaps_name_placeholder
         - field: type
           name: $t:type
           meta:
@@ -337,11 +337,11 @@ fields:
             options:
               choices:
                 - value: raster
-                  text: $t:field_options.directus_settings.basemaps_raster
+                  text: $t:field_options.directus9_settings.basemaps_raster
                 - value: tile
-                  text: $t:field_options.directus_settings.basemaps_tile
+                  text: $t:field_options.directus9_settings.basemaps_tile
                 - value: style
-                  text: $t:field_options.directus_settings.basemaps_style
+                  text: $t:field_options.directus9_settings.basemaps_style
         - field: url
           name: $t:url
           schema:
@@ -366,14 +366,14 @@ fields:
                     _neq: 'raster'
                 hidden: true
         - field: attribution
-          name: $t:fields.directus_settings.attribution
+          name: $t:fields.directus9_settings.attribution
           type: string
           schema:
             is_nullable: true
           meta:
             interface: input
             options:
-              placeholder: $t:fields.directus_settings.attribution_placeholder
+              placeholder: $t:fields.directus9_settings.attribution_placeholder
 
   - field: translation_strings
     special:
@@ -384,7 +384,7 @@ fields:
     interface: presentation-divider
     options:
       icon: image
-      title: $t:fields.directus_settings.image_editor
+      title: $t:fields.directus9_settings.image_editor
     special:
       - alias
       - no-data

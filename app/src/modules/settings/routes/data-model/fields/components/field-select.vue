@@ -154,11 +154,11 @@ import { getLocalTypeForField } from '@/utils/get-local-type';
 import { getSpecialForType } from '@/utils/get-special-for-type';
 import { notify } from '@/utils/notify';
 import { unexpectedError } from '@/utils/unexpected-error';
-import { Field } from '@directus/types';
+import { Field } from '@directus9/types';
 import FieldSelectMenu from './field-select-menu.vue';
 import { hideDragImage } from '@/utils/hide-drag-image';
 import Draggable from 'vuedraggable';
-import formatTitle from '@directus/format-title';
+import formatTitle from '@directus9/format-title';
 import { useExtension } from '@/composables/use-extension';
 
 export default defineComponent({
@@ -264,7 +264,7 @@ export default defineComponent({
 			const collections = computed(() =>
 				collectionsStore.collections
 					.map(({ collection }) => collection)
-					.filter((collection) => collection.startsWith('directus_') === false)
+					.filter((collection) => collection.startsWith('directus9_') === false)
 			);
 
 			const duplicateTo = ref(props.field.collection);

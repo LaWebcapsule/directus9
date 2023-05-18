@@ -1,4 +1,4 @@
-table: directus_users
+table: directus9_users
 
 fields:
   - field: first_name
@@ -66,7 +66,7 @@ fields:
     interface: presentation-divider
     options:
       icon: face
-      title: $t:fields.directus_users.user_preferences
+      title: $t:fields.directus9_users.user_preferences
     special:
       - alias
       - no-data
@@ -83,11 +83,11 @@ fields:
     options:
       choices:
         - value: auto
-          text: $t:fields.directus_users.theme_auto
+          text: $t:fields.directus9_users.theme_auto
         - value: light
-          text: $t:fields.directus_users.theme_light
+          text: $t:fields.directus9_users.theme_light
         - value: dark
-          text: $t:fields.directus_users.theme_dark
+          text: $t:fields.directus9_users.theme_dark
     width: half
 
   - field: tfa_secret
@@ -106,7 +106,7 @@ fields:
     interface: presentation-divider
     options:
       icon: verified_user
-      title: $t:fields.directus_users.admin_options
+      title: $t:fields.directus9_users.admin_options
       color: 'var(--danger)'
     special:
       - alias
@@ -117,15 +117,15 @@ fields:
     interface: select-dropdown
     options:
       choices:
-        - text: $t:fields.directus_users.status_draft
+        - text: $t:fields.directus9_users.status_draft
           value: draft
-        - text: $t:fields.directus_users.status_invited
+        - text: $t:fields.directus9_users.status_invited
           value: invited
-        - text: $t:fields.directus_users.status_active
+        - text: $t:fields.directus9_users.status_active
           value: active
-        - text: $t:fields.directus_users.status_suspended
+        - text: $t:fields.directus9_users.status_suspended
           value: suspended
-        - text: $t:fields.directus_users.status_archived
+        - text: $t:fields.directus9_users.status_archived
           value: archived
     width: half
 

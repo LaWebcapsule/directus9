@@ -13,7 +13,7 @@ const Template = (args) => ({
 		return { args };
 	},
 	template:
-		'<v-sheet v-bind="args" v-on="args" >This is some wanky sheet that is not even used inside Directus.</v-sheet>',
+		'<v-sheet v-bind="args" v-on="args" >This is some wanky sheet that is not even used inside Directus9.</v-sheet>',
 });
 
 export const Primary = Template.bind({});

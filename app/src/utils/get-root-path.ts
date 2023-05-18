@@ -16,7 +16,7 @@ export function getPublicURL(): string {
  * Extract the root path of the admin app from a given input path/url
  *
  * @param path - Path or URL string of the current page
- * @returns - Root URL of the Directus instance
+ * @returns - Root URL of the Directus9 instance
  */
 export function extract(path: string) {
 	const parts = path.split('/');

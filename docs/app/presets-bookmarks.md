@@ -27,14 +27,14 @@ To manage Presets and Bookmarks programmatically, see our [API guide on Presets]
 Remember, a [Collection Page](/app/content/collections.md) enables you to customize how its items are presented. That
 is, it lets you sort, search, or filter items and even change [Layouts](/app/layouts.md). In some cases, you may need to
 apply the same display adjustments again and again. Presets save these adjustments, like a snapshot. You can create
-presets for all project collections, as well as `directus_activity`, `directus_files` and `directus_users`.
+presets for all project collections, as well as `directus9_activity`, `directus9_files` and `directus9_users`.
 
 Admins can access and manage all presets under **Settings > Presets and Bookmarks**.
 
 ## Create a Preset
 
 <video title="Create a Preset" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/presets-bookmarks/presets-bookmarks-20220819/create-a-preset-20220819B.mp4" type="video/mp4" />
+	<source src="https://cdn.directus9.io/docs/v9/configuration/presets-bookmarks/presets-bookmarks-20220819/create-a-preset-20220819B.mp4" type="video/mp4" />
 </video>
 
 There are two types or presets, Defaults and Bookmarks.
@@ -74,7 +74,7 @@ is: User, then Role, then Global.
 ## Edit a Preset
 
 <video title="Edit a Preset" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/presets-bookmarks/presets-bookmarks-20220819/edit-a-preset-20220819A.mp4" type="video/mp4" />
+	<source src="https://cdn.directus9.io/docs/v9/configuration/presets-bookmarks/presets-bookmarks-20220819/edit-a-preset-20220819A.mp4" type="video/mp4" />
 </video>
 
 1. Navigate to **Settings > Presets & Bookmarks > [preset]**.
@@ -84,7 +84,7 @@ is: User, then Role, then Global.
 ## Delete a Preset
 
 <video title="Delete a Preset" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/presets-bookmarks/presets-bookmarks-20220819/delete-a-preset-20220819A.mp4" type="video/mp4" />
+	<source src="https://cdn.directus9.io/docs/v9/configuration/presets-bookmarks/presets-bookmarks-20220819/delete-a-preset-20220819A.mp4" type="video/mp4" />
 </video>
 
 1. Navigate to **Settings > Presets & Bookmarks > [preset]**.

@@ -16,7 +16,7 @@ export async function awaitDatabaseConnection(database: Knex, checkSQL: string):
 	throw new Error(`Couldn't connect to DB`);
 }
 
-export async function awaitDirectusConnection(port: number): Promise<void | null> {
+export async function awaitDirectus9Connection(port: number): Promise<void | null> {
 	for (let attempt = 0; attempt <= 100; attempt++) {
 		try {
 			await axios.get(`http://127.0.0.1:${port}/server/ping`);
@@ -27,5 +27,5 @@ export async function awaitDirectusConnection(port: number): Promise<void | null
 		}
 	}
 
-	throw new Error(`Couldn't connect to Directus`);
+	throw new Error(`Couldn't connect to Directus9`);
 }

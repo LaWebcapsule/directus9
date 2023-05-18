@@ -117,7 +117,7 @@ logoutReason:
 public_label: Javno
 public_description: Kontroliše koji podaci sa API su dostupni bez potrebe za provjerom autentičnosti korisnika.
 not_allowed: Nije dozvoljeno
-directus_version: Directus verzija
+directus9_version: Directus9 verzija
 node_version: Node Verzija
 node_uptime: Node Aktivno vrijeme rada
 os_type: OS tip
@@ -744,7 +744,7 @@ singleton: Singleton
 singleton_label: Tretiraj kao jedinstven objekat
 system_fields_locked: Sistemska polja su zaključana i ne mogu se uređivati
 fields:
-  directus_activity:
+  directus9_activity:
     item: Primarni Ključ Stavke
     action: Akcija
     collection: Kolekcija
@@ -754,7 +754,7 @@ fields:
     user_agent: Korisnički Agent
     ip: IP adresa
     revisions: Revizije
-  directus_collections:
+  directus9_collections:
     collection: Kolekcija
     icon: Ikonica
     note: Napomena
@@ -768,7 +768,7 @@ fields:
     unarchive_value: Poništi arhiviranje vrijednosti
     sort_field: Polje za Sortiranje
     accountability: Aktivnost & Praćenje Revizija
-  directus_files:
+  directus9_files:
     $thumbnail: Sličica
     title: Naslov
     description: Opis
@@ -792,7 +792,7 @@ fields:
     height: Visina
     charset: Set karaktera
     duration: Trajanje
-  directus_users:
+  directus9_users:
     first_name: Ime
     last_name: Prezime
     email: Email adresa
@@ -811,7 +811,7 @@ fields:
     token: Token
     last_page: Posljednja Stranica
     last_access: Posljednji Pristup
-  directus_settings:
+  directus9_settings:
     project_name: Ime Projekta
     project_url: URL projekta
     project_color: Boja Projekta
@@ -823,11 +823,11 @@ fields:
     auth_login_attempts: Broj pokušaja prijave
     custom_css: Prilagođeni CSS
     module_bar: Modul Bar
-  directus_shares:
+  directus9_shares:
     name: Ime
     role: Uloga
     password: Lozinka
-  directus_fields:
+  directus9_fields:
     collection: Ime Kolekcije
     icon: Ikonica Kolekcije
     note: Napomena
@@ -835,7 +835,7 @@ fields:
     singleton: Singleton
     translation: Prevodi Polja
     display_template: Šablon
-  directus_roles:
+  directus9_roles:
     name: Naziv uloge
     icon: Ikonica Uloge
     description: Opis
@@ -845,16 +845,16 @@ fields:
     enforce_tfa: Traži 2FA
     users: Svi korisnici ove Uloge
     module_list: Navigacija Modula
-  directus_webhooks:
+  directus9_webhooks:
     name: Ime
     status: Status
     value: Vrijednost
     collections: Kolekcije
 field_options:
-  directus_activity:
+  directus9_activity:
     create: Kreiraj
     update: Ažuriranje
-  directus_collections:
+  directus9_collections:
     track_activity_revisions: Prati Aktivnost & Revizije
     only_track_activity: Samo Prati Aktivnost
     do_not_track_anything: Bez praćenja
@@ -865,15 +865,15 @@ field_options:
     collection_name: Ime Kolekcije
     archive_divider: Arhiviraj
     sort_divider: Sortiranje
-  directus_roles:
+  directus9_roles:
     fields:
       icon_name: Ikonica
       name_name: Ime
       name_placeholder: Unesi naslov...
     collections_name: Kolekcije
-  directus_users:
+  directus9_users:
     status_dropdown_active: Aktivan
-  directus_webhooks:
+  directus9_webhooks:
     status_options_active: Aktivan
     actions_create: Kreiraj
     actions_update: Ažuriranje
@@ -1137,7 +1137,7 @@ interfaces:
     recursive_only: Interfejs u prikazu stabla radi samo u slučajevima rekurzivnih relacija.
   user:
     user: Korisnik
-    description: Odaberi postojećeg directus korisnika
+    description: Odaberi postojećeg directus9 korisnika
     select_mode: Način Odabira
     modes:
       auto: Automatski
@@ -1251,7 +1251,7 @@ displays:
     description: Prikaži povezane vrijednosti
   user:
     user: Korisnik
-    description: Prikaži directus korisnika
+    description: Prikaži directus9 korisnika
     avatar: Avatar
     name: Ime
     both: Oba

@@ -43,13 +43,13 @@ const meta = computed(() => {
 	const breadcrumb = walkTree(unref(theme).sidebar, []);
 
 	const imageUrl = getImageUrl({
-		account: 'directus',
+		account: 'directus9',
 		template: 'docs',
 		data: { title, lastUpdated, readTime, breadcrumb },
 		type: 'png',
 	});
 
-	const pageUrl = `https://docs.directus.io${path}`;
+	const pageUrl = `https://docs.directus9.io${path}`;
 
 	return [
 		{ property: 'og:title', content: title },
@@ -63,7 +63,7 @@ const meta = computed(() => {
 		{ name: 'twitter:title', content: title },
 		{ name: 'twitter:description', content: description },
 		{ name: 'twitter:url', content: pageUrl },
-		{ name: 'twitter:site', content: '@directus' },
+		{ name: 'twitter:site', content: '@directus9' },
 		{ name: 'twitter:card', content: 'summary_large_image' },
 		{ name: 'twitter:image', content: imageUrl },
 		{ name: 'twitter:image:width', content: 1200 },

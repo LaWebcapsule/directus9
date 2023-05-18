@@ -6,11 +6,11 @@ body:
       value: |
         Hi, thank you for taking the time to create an issue! Before you get started, please ensure the following are correct:
 
-        - I'm using the [latest version of Directus](https://github.com/directus/directus/releases)
-        - I've completed all [Troubleshooting Steps](https://docs.directus.io/getting-started/support/#troubleshooting-steps).
-        - There's [no other issue](https://github.com/directus/directus/issues?q=is%3Aissue) that already describes the problem.
+        - I'm using the [latest version of Directus9](https://github.com/directus9/directus9/releases)
+        - I've completed all [Troubleshooting Steps](https://docs.directus9.io/getting-started/support/#troubleshooting-steps).
+        - There's [no other issue](https://github.com/directus9/directus9/issues?q=is%3Aissue) that already describes the problem.
 
-        _For issues specific to Directus Cloud projects, please reach out through the Live Chat in our Cloud Dashboard._
+        _For issues specific to Directus9 Cloud projects, please reach out through the Live Chat in our Cloud Dashboard._
   - type: textarea
     attributes:
       label: Describe the Bug
@@ -27,7 +27,7 @@ body:
       required: true
   - type: input
     attributes:
-      label: Directus Version
+      label: Directus9 Version
       placeholder: v9.x.x
     validations:
       required: true
@@ -38,6 +38,6 @@ body:
       options:
         - Self-Hosted (Docker Image)
         - Self-Hosted (Custom)
-        - Directus Cloud
+        - Directus9 Cloud
     validations:
       required: true

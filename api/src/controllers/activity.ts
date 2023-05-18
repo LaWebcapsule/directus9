@@ -1,4 +1,4 @@
-import { Action } from '@directus/constants';
+import { Action } from '@directus9/constants';
 import express from 'express';
 import Joi from 'joi';
 import { ForbiddenException, InvalidPayloadException } from '../exceptions/index.js';
@@ -12,7 +12,7 @@ import { getIPFromReq } from '../utils/get-ip-from-req.js';
 
 const router = express.Router();
 
-router.use(useCollection('directus_activity'));
+router.use(useCollection('directus9_activity'));
 
 const readHandler = asyncHandler(async (req, res, next) => {
 	const service = new ActivityService({
@@ -35,7 +35,7 @@ const readHandler = asyncHandler(async (req, res, next) => {
 		result = await service.readByQuery(req.sanitizedQuery);
 	}
 
-	const meta = await metaService.getMetaForQuery('directus_activity', req.sanitizedQuery);
+	const meta = await metaService.getMetaForQuery('directus9_activity', req.sanitizedQuery);
 
 	res.locals['payload'] = {
 		data: result,

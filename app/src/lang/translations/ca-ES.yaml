@@ -118,7 +118,7 @@ public_label: Públic
 public_description: Controla quines dades API estan disponibles sense autenticar.
 admin_description: Rol d'administració inicial sense restriccions d'accés a l'APP/API.
 not_allowed: No permès
-directus_version: Versió de Directus
+directus9_version: Versió de Directus9
 node_version: Versió de Node
 node_uptime: Temps d'activitat de Node
 os_type: Tipus de SO
@@ -968,30 +968,30 @@ content: Contingut
 singleton: Singleton
 singleton_label: Tracta com un objecte únic
 system_fields_locked: Els camps del sistema estan bloquejats i no poden editar-se
-directus_collection:
-  directus_activity: Registres de responsabilitat (autoria) per a tots els esdeveniments
-  directus_collections: Configuració i metadades addicionals de la col·lecció
-  directus_dashboards: Quadres de comandament de tota la visió
-  directus_fields: Configuració i metadades addicionals del camp
-  directus_files: Metadades per a tots els actius de fitxers gestionats
-  directus_flows: Automatització de fluxes
-  directus_folders: Proporciona directoris virtuals per a fitxers
-  directus_migrations: Quina versió de base de dades estàs utilitzant
-  directus_notifications: Notificacions enviades als usuaris
-  directus_operations: Operacions que s'executen en fluxes
-  directus_panels: Panells individuals dins dels quadres de comandament de la visió
-  directus_permissions: Permisos d'accés per cada rol
-  directus_presets: Predefinits per als ajustaments predeterminat de col·leció i marcadors
-  directus_relations: Configuració i metadades de la relació
-  directus_revisions: Instantània de dades per a totes les activitats
-  directus_roles: Grups de permisos per a usuaris del sistema
-  directus_sessions: Informació de la sessió d'usuari
-  directus_settings: Opcions de configuració del projecte
-  directus_shares: Rastreja els elements compartits externament
-  directus_users: Usuaris del sistema per a la plataforma
-  directus_webhooks: Configuració per a les peticions HTTP basades en esdeveniments
+directus9_collection:
+  directus9_activity: Registres de responsabilitat (autoria) per a tots els esdeveniments
+  directus9_collections: Configuració i metadades addicionals de la col·lecció
+  directus9_dashboards: Quadres de comandament de tota la visió
+  directus9_fields: Configuració i metadades addicionals del camp
+  directus9_files: Metadades per a tots els actius de fitxers gestionats
+  directus9_flows: Automatització de fluxes
+  directus9_folders: Proporciona directoris virtuals per a fitxers
+  directus9_migrations: Quina versió de base de dades estàs utilitzant
+  directus9_notifications: Notificacions enviades als usuaris
+  directus9_operations: Operacions que s'executen en fluxes
+  directus9_panels: Panells individuals dins dels quadres de comandament de la visió
+  directus9_permissions: Permisos d'accés per cada rol
+  directus9_presets: Predefinits per als ajustaments predeterminat de col·leció i marcadors
+  directus9_relations: Configuració i metadades de la relació
+  directus9_revisions: Instantània de dades per a totes les activitats
+  directus9_roles: Grups de permisos per a usuaris del sistema
+  directus9_sessions: Informació de la sessió d'usuari
+  directus9_settings: Opcions de configuració del projecte
+  directus9_shares: Rastreja els elements compartits externament
+  directus9_users: Usuaris del sistema per a la plataforma
+  directus9_webhooks: Configuració per a les peticions HTTP basades en esdeveniments
 fields:
-  directus_activity:
+  directus9_activity:
     item: Clau primaria de l'ítem
     action: Acció
     collection: Coŀlecció
@@ -1002,7 +1002,7 @@ fields:
     origin: Origen
     ip: Adreça IP
     revisions: Revisions
-  directus_collections:
+  directus9_collections:
     collection: Coŀlecció
     icon: Icona
     note: Nota
@@ -1018,7 +1018,7 @@ fields:
     accountability: Traça d'activitat i revisió
     archive_field: Camp arxivat
     item_duplication_fields: Element Camp duplicat
-  directus_files:
+  directus9_files:
     $thumbnail: Miniatura
     title: Títol
     description: Descripció
@@ -1042,7 +1042,7 @@ fields:
     height: Alçada
     charset: Conjunt de caràcters
     duration: Durada
-  directus_users:
+  directus9_users:
     first_name: Nom
     last_name: Cognoms
     email: Correu electrònic
@@ -1073,7 +1073,7 @@ fields:
     last_page: Última pàgina
     last_access: Últim accés
     email_notifications: Notificacions per correu
-  directus_settings:
+  directus9_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
@@ -1113,7 +1113,7 @@ fields:
     transformations_presets: Limita les transformacions al predefinits de sota
     image_editor: Editor d'imatge
     custom_aspect_ratios: Relació d'aspecte personalitzat
-  directus_shares:
+  directus9_shares:
     name: Nom
     role: Rol
     password: Contrasenya
@@ -1121,7 +1121,7 @@ fields:
     date_end: Data fi
     max_uses: Usos màxims
     times_used: Cops utilitzat
-  directus_fields:
+  directus9_fields:
     collection: Nom de la col·lecció
     icon: Icona de la col·lecció
     note: Nota
@@ -1129,7 +1129,7 @@ fields:
     singleton: Singleton
     translation: Traducció de noms de camps
     display_template: Plantilla
-  directus_roles:
+  directus9_roles:
     name: Nom del Rol
     icon: Icona del rol
     description: Descripció
@@ -1139,7 +1139,7 @@ fields:
     enforce_tfa: Requereix 2FA
     users: Usuaris al rol
     module_list: Navegació dels mòduls
-  directus_webhooks:
+  directus9_webhooks:
     name: Nom
     method: Mètode
     status: Estat
@@ -1152,7 +1152,7 @@ fields:
     actions: Accions
     collections: Col·leccions
 field_options:
-  directus_settings:
+  directus9_settings:
     project_name_placeholder: El meu projecte...
     project_color_note: Inici de sessió i Logotip de fons
     project_logo_note: Blanc 40x40 SVG/PNG
@@ -1181,12 +1181,12 @@ field_options:
     basemaps_style: Estil Mapbox
     files_divider_title: Fitxers i miniatures
     overrides_divider_title: Substitucións de l'aplicació
-  directus_activity:
+  directus9_activity:
     login: Iniciar Sessió
     create: Crear
     update: Actualitzar
     delete: Elimina
-  directus_collections:
+  directus9_collections:
     track_activity_revisions: Traça l'activitat i revisions
     only_track_activity: Només traça l'activitat
     do_not_track_anything: No tracis res
@@ -1202,13 +1202,13 @@ field_options:
     archive_divider: Arxiu
     archive_field_placeholder: Tria un camp...
     sort_divider: Ordre
-  directus_roles:
+  directus9_roles:
     fields:
       icon_name: Icona
       name_name: Nom
       name_placeholder: Introdueix un títol...
     collections_name: Col·leccions
-  directus_users:
+  directus9_users:
     preferences_divider: Preferències de l'usuari
     dropdown_auto: Automàtic (basat en el sistema)
     dropdown_light: Mode clar
@@ -1219,7 +1219,7 @@ field_options:
     status_dropdown_suspended: Suspès
     status_dropdown_archived: Arxivat
     token: Entra un testimoni d'accés (token) segur...
-  directus_webhooks:
+  directus9_webhooks:
     status_options_active: Activa
     status_options_inactive: Inactiva
     data_label: Envia les dades de l'event

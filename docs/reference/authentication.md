@@ -1,5 +1,5 @@
 ---
-description: API documentation on authentication in Directus.
+description: API documentation on authentication in Directus9.
 readTime: 5 min read
 pageClass: page-reference
 ---
@@ -14,14 +14,14 @@ pageClass: page-reference
 
 ## Access Tokens
 
-There are two types of tokens that can be used to authenticate within Directus.
+There are two types of tokens that can be used to authenticate within Directus9.
 
 **Temporary Token (JWT)** are returned by the [login](#login) endpoint/mutation. These tokens have a relatively short
 expiration time, and are thus the most secure option to use. The tokens are returned with a `refresh_token` that can be
 used to retrieve a new access token via the [refresh](#refresh) endpoint/mutation.
 
 **Static Tokens** can be set for each platform user, and never expire. They are less secure, but quite useful for
-server-to-server communication. They are saved as plain-text within `directus_users.token`.
+server-to-server communication. They are saved as plain-text within `directus9_users.token`.
 
 Once you have your access token, there are two ways to pass it to the API, via the `access_token` query parameter, or in
 the request's Authorization Header.

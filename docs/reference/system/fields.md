@@ -1,5 +1,5 @@
 ---
-description: REST and GraphQL API documentation on the Fields collection in Directus.
+description: REST and GraphQL API documentation on the Fields collection in Directus9.
 readTime: 7 min read
 pageClass: page-reference
 ---
@@ -20,14 +20,14 @@ Name of the collection the field resides in.
 The identifier of the field. This matches the table column name.
 
 `type` **string**\
-The Directus data type of the field. See [Types](/getting-started/glossary#types) for possible options.
+The Directus9 data type of the field. See [Types](/getting-started/glossary#types) for possible options.
 
 #### Meta
 
-Directus metadata, primarily used in the Admin App. Meta is optional.
+Directus9 metadata, primarily used in the Admin App. Meta is optional.
 
 `id` **integer**\
-Primary key of the metadata row in `directus_fields`.
+Primary key of the metadata row in `directus9_fields`.
 
 `collection` **string**\
 The name of the collection this field resides in.
@@ -72,7 +72,7 @@ Short description displayed in the Admin App.
 #### Schema
 
 "Raw" database information. Based on the database vendor used, different information might be returned. The following
-are available for all drivers. Note: schema is optional. If a field exist in directus_fields, but not in the database,
+are available for all drivers. Note: schema is optional. If a field exist in directus9_fields, but not in the database,
 it's an alias commonly used for relational (O2M) or presentation purposes in the Admin App.
 
 `name` **string**\
@@ -97,7 +97,7 @@ Precision for integer/float/decimal type fields.
 Scale for integer/float/decimal type fields.
 
 `is_nullable` **boolean**\
-Whether or not the column is nullable. This is what is used as the "required" state in Directus.
+Whether or not the column is nullable. This is what is used as the "required" state in Directus9.
 
 `is_primary_key` **boolean**\
 Whether or not the field is the primary key of the table.
@@ -178,7 +178,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	fields: [directus_fields]
+	fields: [directus9_fields]
 }
 ```
 
@@ -227,7 +227,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	fields_in_collection(collection: String!): directus_fields
+	fields_in_collection(collection: String!): directus9_fields
 }
 ```
 
@@ -276,7 +276,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	fields_by_name(collection: String!, field: String!): directus_fields
+	fields_by_name(collection: String!, field: String!): directus9_fields
 }
 ```
 
@@ -307,7 +307,7 @@ This endpoint doesn't currently support any query parameters.
 Field key, also used as the column name.
 
 `type` **Required**\
-One of the Directus types. This in turn controls what datatype is used for the column in the database. Setting the type to
+One of the Directus9 types. This in turn controls what datatype is used for the column in the database. Setting the type to
 `alias` prevents a column from being created in the database.
 
 `meta`\
@@ -351,7 +351,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_fields_item(collection: String!, data: create_directus_fields_input!): directus_fields
+	create_fields_item(collection: String!, data: create_directus9_fields_input!): directus9_fields
 }
 ```
 
@@ -432,7 +432,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_fields_item(collection: String!, field: String!, data: update_directus_fields_input!): directus_fields
+	update_fields_item(collection: String!, field: String!, data: update_directus9_fields_input!): directus9_fields
 }
 ```
 
