@@ -1,4 +1,4 @@
-import type { Field, Relation, SchemaOverview } from '@directus/types';
+import type { Field, Relation, SchemaOverview } from '@directus9/types';
 import type { Diff, DiffDeleted, DiffNew } from 'deep-diff';
 import deepDiff from 'deep-diff';
 import type { Knex } from 'knex';

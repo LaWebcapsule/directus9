@@ -1,4 +1,4 @@
-import type { SchemaOverview } from '@directus/types';
+import type { SchemaOverview } from '@directus9/types';
 import type { Knex } from 'knex';
 import type { AuthDriverOptions, User } from '../types/index.js';
 

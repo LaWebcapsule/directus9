@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { useGroupable } from '@directus/composables';
+import { useGroupable } from '@directus9/composables';
 
 interface Props {
 	/** Custom value to use for selection state */

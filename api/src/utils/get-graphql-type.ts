@@ -1,4 +1,4 @@
-import type { Type } from '@directus/types';
+import type { Type } from '@directus9/types';
 import type { GraphQLType } from 'graphql';
 import { GraphQLBoolean, GraphQLFloat, GraphQLInt, GraphQLList, GraphQLScalarType, GraphQLString } from 'graphql';
 import { GraphQLJSON } from 'graphql-compose';

@@ -45,9 +45,9 @@
 <script lang="ts">
 import { useI18n } from 'vue-i18n';
 import { defineComponent, ref, watch, PropType, computed, inject, Ref } from 'vue';
-import { Filter } from '@directus/types';
+import { Filter } from '@directus9/types';
 import { isObject } from 'lodash';
-import { useElementSize } from '@directus/composables';
+import { useElementSize } from '@directus9/composables';
 
 export default defineComponent({
 	props: {

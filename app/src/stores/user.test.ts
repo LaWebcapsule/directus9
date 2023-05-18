@@ -12,7 +12,7 @@ beforeEach(() => {
 	);
 });
 
-import { User } from '@directus/types';
+import { User } from '@directus9/types';
 import { pick } from 'lodash';
 import { useLatencyStore } from './latency';
 import { useUserStore } from './user';

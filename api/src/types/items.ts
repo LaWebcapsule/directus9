@@ -3,8 +3,8 @@
  * expecting an item vs any other generic object.
  */
 
-import type { BaseException } from '@directus/exceptions';
-import type { EventContext } from '@directus/types';
+import type { BaseException } from '@directus9/exceptions';
+import type { EventContext } from '@directus9/types';
 import type { MutationTracker } from '../services/items.js';
 
 export type Item = Record<string, any>;

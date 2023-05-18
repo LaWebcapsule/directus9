@@ -1,4 +1,4 @@
-import type { Relation, SchemaOverview } from '@directus/types';
+import type { Relation, SchemaOverview } from '@directus9/types';
 import { InvalidQueryException } from '../exceptions/index.js';
 import { getRelationInfo } from './get-relation-info.js';
 

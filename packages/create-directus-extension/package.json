@@ -10,10 +10,10 @@
 	"homepage": "https://directus.io",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/directus/directus.git",
+		"url": "https://github.com/directus9/directus9.git",
 		"directory": "packages/create-directus-extension"
 	},
-	"funding": "https://github.com/directus/directus?sponsor=1",
+	"funding": "https://github.com/directus9/directus9?sponsor=1",
 	"license": "GPL-3.0-only",
 	"author": "Nicola Krumschmidt",
 	"contributors": [
@@ -33,8 +33,8 @@
 		"lib/index.js"
 	],
 	"dependencies": {
-		"@directus/constants": "workspace:*",
-		"@directus/extensions-sdk": "workspace:*",
+		"@directus9/constants": "workspace:*",
+		"@directus9/extensions-sdk": "workspace:*",
 		"inquirer": "9.1.5"
 	}
 }

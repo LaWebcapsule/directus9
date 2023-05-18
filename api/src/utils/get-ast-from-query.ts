@@ -2,8 +2,8 @@
  * Generate an AST based on a given collection and query
  */
 
-import { REGEX_BETWEEN_PARENS } from '@directus/constants';
-import type { Accountability, PermissionsAction, Query, SchemaOverview } from '@directus/types';
+import { REGEX_BETWEEN_PARENS } from '@directus9/constants';
+import type { Accountability, PermissionsAction, Query, SchemaOverview } from '@directus9/types';
 import type { Knex } from 'knex';
 import { cloneDeep, isEmpty, mapKeys, omitBy, uniq } from 'lodash-es';
 import type { AST, FieldNode, FunctionFieldNode, NestedCollectionNode } from '../types/index.js';

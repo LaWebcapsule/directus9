@@ -1,5 +1,5 @@
-import type { SchemaOverview } from '@directus/types';
-import { getSimpleHash } from '@directus/utils';
+import type { SchemaOverview } from '@directus9/types';
+import { getSimpleHash } from '@directus9/utils';
 import type { Options } from 'keyv';
 import Keyv from 'keyv';
 import env from './env.js';

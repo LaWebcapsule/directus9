@@ -130,7 +130,7 @@ gtag('config', 'UA-24637628-7');
 			// { text: 'Cookbook', link: '/cookbook/add-a-recipe', activeMatch: '/cookbook/' },
 			{ text: 'Website', link: 'https://directus.io/' },
 			{ text: 'Cloud', link: 'https://directus.cloud/' },
-			{ text: 'GitHub', link: 'https://github.com/directus/directus' },
+			{ text: 'GitHub', link: 'https://github.com/directus9/directus9' },
 		],
 		algolia: {
 			appId: 'T5BDNEU205',
@@ -142,7 +142,7 @@ gtag('config', 'UA-24637628-7');
 			'/': sidebar(),
 		},
 		editLink: {
-			pattern: 'https://github.com/directus/directus/edit/main/docs/:path',
+			pattern: 'https://github.com/directus9/directus9/edit/main/docs/:path',
 		},
 	},
 });

@@ -1,6 +1,6 @@
 import { useFieldsStore } from '@/stores/fields';
-import { Filter, Query } from '@directus/types';
-import { parseJSON, toArray } from '@directus/utils';
+import { Filter, Query } from '@directus9/types';
+import { parseJSON, toArray } from '@directus9/utils';
 import { jsonToGraphQLQuery } from 'json-to-graphql-query';
 import { isEmpty, pick, set, omitBy, isUndefined, transform } from 'lodash';
 import { extractFieldFromFunction } from './extract-field-from-function';

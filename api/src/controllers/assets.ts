@@ -1,5 +1,5 @@
-import type { Range } from '@directus/storage';
-import { parseJSON } from '@directus/utils';
+import type { Range } from '@directus9/storage';
+import { parseJSON } from '@directus9/utils';
 import contentDisposition from 'content-disposition';
 import { Router } from 'express';
 import { merge, pick } from 'lodash-es';

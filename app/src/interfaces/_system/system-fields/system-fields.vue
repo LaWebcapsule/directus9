@@ -40,7 +40,7 @@
 
 <script lang="ts" setup>
 import { useFieldsStore } from '@/stores/fields';
-import { Field } from '@directus/types';
+import { Field } from '@directus9/types';
 import { computed } from 'vue';
 import Draggable from 'vuedraggable';
 import { useI18n } from 'vue-i18n';

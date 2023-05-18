@@ -1,4 +1,4 @@
-import type { FieldFunction } from '@directus/types';
+import type { FieldFunction } from '@directus9/types';
 import { getDate, getDay, getWeek, parseISO } from 'date-fns';
 
 export const functions: Record<FieldFunction, (val: any) => any> = {

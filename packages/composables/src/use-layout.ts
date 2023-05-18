@@ -1,4 +1,4 @@
-import type { Filter, LayoutConfig, ShowSelect } from '@directus/types';
+import type { Filter, LayoutConfig, ShowSelect } from '@directus9/types';
 import type { Component, ComputedRef, PropType, Ref } from 'vue';
 import { computed, defineComponent, reactive, toRefs } from 'vue';
 import { useExtensions } from './use-system.js';

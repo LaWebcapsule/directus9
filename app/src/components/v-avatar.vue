@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { useSizeClass } from '@directus/composables';
+import { useSizeClass } from '@directus9/composables';
 
 interface Props {
 	/** Render as a tile (square) */
