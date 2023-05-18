@@ -1,4 +1,4 @@
-import { parseJSON } from '@directus/utils';
+import { parseJSON } from '@directus9/utils';
 import { Redis } from 'ioredis';
 import env from './env.js';
 import { getConfigFromEnv } from './utils/get-config-from-env.js';

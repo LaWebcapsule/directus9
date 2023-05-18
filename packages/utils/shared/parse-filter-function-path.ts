@@ -1,4 +1,4 @@
-import { REGEX_BETWEEN_PARENS } from '@directus/constants';
+import { REGEX_BETWEEN_PARENS } from '@directus9/constants';
 
 /**
  * Parse count(a.b.c) as a.b.count(c) and a.b.count(c.d) as a.b.c.count(d)

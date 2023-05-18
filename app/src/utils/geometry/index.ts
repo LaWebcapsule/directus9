@@ -8,7 +8,7 @@ import {
 	AllGeoJSON,
 	GeoJSONParser,
 	SimpleGeometry,
-} from '@directus/types';
+} from '@directus9/types';
 import { BBox, Point, Feature, FeatureCollection } from 'geojson';
 import { coordEach } from '@turf/meta';
 import { i18n } from '@/lang';

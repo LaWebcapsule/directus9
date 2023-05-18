@@ -1,4 +1,4 @@
-import type { Collection, CollectionType } from '@directus/types';
+import type { Collection, CollectionType } from '@directus9/types';
 
 /**
  * Get the type of collection. One of alias | table. (And later: view)

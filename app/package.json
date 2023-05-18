@@ -1,15 +1,15 @@
 {
-	"name": "@directus/app",
+	"name": "@directus9/app",
 	"version": "9.26.0",
 	"description": "App dashboard for Directus",
 	"homepage": "https://directus.io",
 	"type": "module",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/directus/directus.git",
+		"url": "https://github.com/directus9/directus9.git",
 		"directory": "app"
 	},
-	"funding": "https://github.com/directus/directus?sponsor=1",
+	"funding": "https://github.com/directus9/directus9?sponsor=1",
 	"author": "Rijk van Zanten <rijkvanzanten@me.com>",
 	"exports": {
 		".": "./dist/index.html",
@@ -29,12 +29,12 @@
 	"devDependencies": {
 		"@babel/core": "7.21.4",
 		"@babel/preset-env": "7.21.4",
-		"@directus/constants": "workspace:*",
-		"@directus/exceptions": "workspace:*",
-		"@directus/extensions-sdk": "workspace:*",
 		"@directus/format-title": "10.0.0",
-		"@directus/types": "workspace:*",
-		"@directus/utils": "workspace:*",
+		"@directus9/constants": "workspace:*",
+		"@directus9/exceptions": "workspace:*",
+		"@directus9/extensions-sdk": "workspace:*",
+		"@directus9/types": "workspace:*",
+		"@directus9/utils": "workspace:*",
 		"@fortawesome/fontawesome-svg-core": "6.4.0",
 		"@fortawesome/free-brands-svg-icons": "6.4.0",
 		"@fullcalendar/core": "6.1.5",
@@ -85,7 +85,7 @@
 		"@vue/test-utils": "2.3.2",
 		"apexcharts": "3.39.0",
 		"axios": "1.3.6",
-		"babel-loader": "9",
+		"babel-loader": "^9.1.2",
 		"base-64": "1.0.0",
 		"c8": "7.13.0",
 		"caret-pos": "2.0.0",
@@ -118,8 +118,8 @@
 		"pretty-bytes": "6.1.0",
 		"pretty-ms": "8.0.0",
 		"qrcode": "1.5.1",
-		"react": "18",
-		"react-dom": "18",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
 		"sass": "1.62.0",
 		"storybook": "7.0.6",
 		"tinymce": "6.4.1",
@@ -137,6 +137,6 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@directus/composables": "workspace:*"
+		"@directus9/composables": "workspace:*"
 	}
 }

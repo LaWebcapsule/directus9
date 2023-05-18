@@ -1,4 +1,4 @@
-import type { Driver, Range } from '@directus/storage';
+import type { Driver, Range } from '@directus9/storage';
 import { createReadStream, createWriteStream } from 'node:fs';
 import { access, copyFile, mkdir, opendir, rename, stat, unlink } from 'node:fs/promises';
 import { dirname, join, relative, resolve, sep } from 'node:path';

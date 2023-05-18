@@ -1,4 +1,4 @@
-import { parseJSON } from '@directus/utils';
+import { parseJSON } from '@directus9/utils';
 import type { RequestHandler } from 'express';
 import type { DocumentNode } from 'graphql';
 import { getOperationAST, parse, Source } from 'graphql';

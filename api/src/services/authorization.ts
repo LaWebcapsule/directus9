@@ -1,4 +1,4 @@
-import { FailedValidationException } from '@directus/exceptions';
+import { FailedValidationException } from '@directus9/exceptions';
 import type {
 	Accountability,
 	Aggregate,
@@ -7,8 +7,8 @@ import type {
 	PermissionsAction,
 	Query,
 	SchemaOverview,
-} from '@directus/types';
-import { validatePayload } from '@directus/utils';
+} from '@directus9/types';
+import { validatePayload } from '@directus9/utils';
 import type { Knex } from 'knex';
 import { cloneDeep, flatten, isArray, isNil, merge, reduce, uniq, uniqWith } from 'lodash-es';
 import { GENERATE_SPECIAL } from '../constants.js';

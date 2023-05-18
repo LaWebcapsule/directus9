@@ -60,7 +60,7 @@ The Directus Data Studio is a no-code dashboard that brings the whole team toget
 
 Directus is 100% open-source, modular, and extensible, ensuring you will never hit a hard feature ceiling within the
 platform. Built entirely in crispy clean Typescript, mostly on Node.js and Vue.js, you have the power to add or modify
-_any feature_ with your own custom extensions. [:star: Star us on GitHub! :star:](https://github.com/directus/directus)
+_any feature_ with your own custom extensions. [:star: Star us on GitHub! :star:](https://github.com/directus9/directus9)
 
 ## Versioning
 

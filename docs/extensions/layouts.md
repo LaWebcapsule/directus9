@@ -115,7 +115,7 @@ These props and emits are available in all components associated with your layou
 Other than this simple API to communicate with the Directus App and the system to share state between components, the
 layout component is a blank canvas, allowing you to create anything you need.
 
-The `@directus/extensions-sdk` package provides some useful composables to help with creating layouts:
+The `@directus9/extensions-sdk` package provides some useful composables to help with creating layouts:
 
 - `useSync()` — This function can be used to synchronize a writable ref with a prop and a corresponding emit.
 - `useCollection()` — This function can be used to receive information about a collection.
@@ -130,10 +130,10 @@ The Directus App uses Vue 3. There might be 3rd party libraries that aren't yet 
 ## Accessing Internal Systems
 
 To access internal systems like the API or the stores, you can use the `useApi()` and `useStores()` composables exported
-by the `@directus/extensions-sdk` package. They can be used inside a `setup()` function like this:
+by the `@directus9/extensions-sdk` package. They can be used inside a `setup()` function like this:
 
 ```js
-import { useApi, useStores } from '@directus/extensions-sdk';
+import { useApi, useStores } from '@directus9/extensions-sdk';
 
 export default {
 	setup() {

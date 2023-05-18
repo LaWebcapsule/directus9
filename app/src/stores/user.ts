@@ -1,6 +1,6 @@
 import api from '@/api';
 import { useLatencyStore } from '@/stores/latency';
-import { User } from '@directus/types';
+import { User } from '@directus9/types';
 import { userName } from '@/utils/user-name';
 import { merge } from 'lodash';
 import { defineStore } from 'pinia';

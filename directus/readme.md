@@ -22,7 +22,7 @@ Aurora/Redshift or Google Cloud Platform SQL.
 Learn more at...
 
 - [Website](https://directus.io/)
-- [GitHub](https://github.com/directus/directus)
+- [GitHub](https://github.com/directus9/directus9)
 - [Documentation](https://docs.directus.io/)
 - [Community](https://directus.chat/)
 - [Twitter](https://twitter.com/directus)
@@ -62,11 +62,11 @@ npm update
 
 ## Contributing
 
-Please report any and all issues [on our GitHub](https://github.com/directus/directus/issues/new).
+Please report any and all issues [on our GitHub](https://github.com/directus9/directus9/issues/new).
 
 Pull-requests are more than welcome, and always appreciated. Please be sure to read our
 [Contributors Guide](https://docs.directus.io/contributing/introduction/) before starting work on a new feature/fix, or
-reach out a member of the Core Team via [GitHub](https://github.com/directus/directus/discussions) or
+reach out a member of the Core Team via [GitHub](https://github.com/directus9/directus9/discussions) or
 [Discord](https://directus.chat) with any questions.
 
 <p>&nbsp;</p>

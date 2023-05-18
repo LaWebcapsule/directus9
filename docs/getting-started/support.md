@@ -13,15 +13,15 @@ If you're experiencing issues or think you have found a problem in Directus, be 
 [Reporting a Bug](/contributing/introduction#bug-reporting):
 
 1. Ensure your server and database meet the [minimum requirements](/self-hosted/docker-guide.html#supported-databases).
-2. Ensure you’re on the [latest version](https://github.com/directus/directus/releases/latest) of Directus.
+2. Ensure you’re on the [latest version](https://github.com/directus9/directus9/releases/latest) of Directus.
 3. Stop `CTRL+C` and restart the server `npx directus start`.
 4. Run the database migration script: `directus database migrate:latest`\
    _Note: backup your database first._
 5. Disable any data-caching within your project.
 6. Test any app issues with both browser extensions and caching disabled _(i.e. Incognito Mode)_.
 7. Confirm the issue is not related to your own custom code.
-8. Check for [existing Issues](https://github.com/directus/directus/issues?q=is%3Aissue) (and
-   [Discussions](https://github.com/directus/directus/discussions)) that match your problem.
+8. Check for [existing Issues](https://github.com/directus9/directus9/issues?q=is%3Aissue) (and
+   [Discussions](https://github.com/directus9/directus9/discussions)) that match your problem.
 
 If you're still experiencing a problem after completing the above steps, you can chat through things on our
 [community support](#community-support) or [report a bug](/contributing/introduction#bug-reporting).
@@ -30,7 +30,7 @@ If you're still experiencing a problem after completing the above steps, you can
 
 ### Community Support
 
-[GitHub Discussions](https://github.com/directus/directus/discussions) is a great first place to reach out for help. Our
+[GitHub Discussions](https://github.com/directus9/directus9/discussions) is a great first place to reach out for help. Our
 community and core developers often check this platform and answer posts. It has the added benefit of being an archival
 resource for others developers with similar questions.
 
@@ -86,7 +86,7 @@ stable, however new issues still arise, some of which may be triaged with a lowe
 
 If you need, you can contact us about [sponsoring expedited fixes](#expedited-fixes) or
 [commissioning new features](#commissioned-features). You can also
-[submit a pull request](https://github.com/directus/directus/pulls) — after all, it is open-source!
+[submit a pull request](https://github.com/directus9/directus9/pulls) — after all, it is open-source!
 
 ### Can you give an ETA for this feature/fix?
 

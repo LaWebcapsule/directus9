@@ -1,6 +1,6 @@
-import type { SchemaOverview } from '@directus/schema/types/overview';
-import { parseJSON } from '@directus/utils';
-import type { Column } from '@directus/schema';
+import type { SchemaOverview } from '@directus9/schema/types/overview';
+import { parseJSON } from '@directus9/utils';
+import type { Column } from '@directus9/schema';
 import env from '../env.js';
 import logger from '../logger.js';
 import getLocalType from './get-local-type.js';

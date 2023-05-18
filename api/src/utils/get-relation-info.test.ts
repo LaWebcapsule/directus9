@@ -1,4 +1,4 @@
-import type { DeepPartial, Relation } from '@directus/types';
+import type { DeepPartial, Relation } from '@directus9/types';
 import { describe, expect, it } from 'vitest';
 import { getRelationInfo } from '../../src/utils/get-relation-info.js';
 

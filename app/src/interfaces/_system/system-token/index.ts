@@ -1,4 +1,4 @@
-import { defineInterface } from '@directus/utils';
+import { defineInterface } from '@directus9/utils';
 import InterfaceSystemToken from './system-token.vue';
 
 export default defineInterface({

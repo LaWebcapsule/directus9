@@ -1,4 +1,4 @@
-import type { SchemaOverview } from '@directus/types';
+import type { SchemaOverview } from '@directus9/types';
 import validateUUID from 'uuid-validate';
 import { ForbiddenException } from '../exceptions/forbidden.js';
 import type { PrimaryKey } from '../types/index.js';

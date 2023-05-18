@@ -1,11 +1,11 @@
 /**
- * @NOTE This is copied from @directus/utils. Once the tests are ESM too, this needs to be removed
- * in favor of using @directus/utils
+ * @NOTE This is copied from @directus9/utils. Once the tests are ESM too, this needs to be removed
+ * in favor of using @directus9/utils
  *
  * @TODO
  */
 
-import type { ClientFilterOperator, Type } from '@directus/types';
+import type { ClientFilterOperator, Type } from '@directus9/types';
 
 type GetFilterOperationsForTypeOptions = {
 	includeValidation?: boolean;

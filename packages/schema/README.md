@@ -1,4 +1,4 @@
-# @directus/schema
+# @directus9/schema
 
 Utility for extracting information about the database schema
 
@@ -8,7 +8,7 @@ The package is initialized by passing it an instance of Knex:
 
 ```ts
 import knex from 'knex';
-import schema from '@directus/schema';
+import schema from '@directus9/schema';
 
 const database = knex({
 	client: 'mysql',

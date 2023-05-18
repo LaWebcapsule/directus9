@@ -1,4 +1,4 @@
-import type { Table } from '@directus/schema';
+import type { Table } from '@directus9/schema';
 
 type Translations = {
 	language: string;
