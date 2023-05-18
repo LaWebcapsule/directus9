@@ -118,7 +118,7 @@ public_label: Publik
 public_description: Kontrollerar vilken data som är tillgängliga via APIet utan autentisering.
 admin_description: Initial administrativ roll med obegränsad app/API-åtkomst.
 not_allowed: Inte tillåtet
-directus9_version: Directus9 Version
+directus_version: Directus9 Version
 node_version: Node version
 node_uptime: Node upptid
 os_type: Operativsystem
@@ -977,19 +977,19 @@ content: Innehåll
 singleton: Singleton
 singleton_label: Behandla som ett enskilt objekt
 system_fields_locked: Systemfälten är låsta och kan inte redigeras
-directus9_collection:
-  directus9_activity: Ansvarsloggar för alla händelser
-  directus9_dashboards: Kontrollpaneler i insights modulen
-  directus9_notifications: Meddelande skickat till användare
-  directus9_panels: Individuella paneler inom Insights kontrollpaneler
-  directus9_revisions: Ögonblicksbilder för all aktivitet
-  directus9_roles: Behörighetsgrupper för systemanvändare
-  directus9_sessions: Information om användarsessioner
-  directus9_settings: Projektets konfigurationsalternativ
-  directus9_users: Systemanvändare för plattformen
-  directus9_webhooks: Konfiguration för eventbaserade HTTP-anrop
+directus_collection:
+  directus_activity: Ansvarsloggar för alla händelser
+  directus_dashboards: Kontrollpaneler i insights modulen
+  directus_notifications: Meddelande skickat till användare
+  directus_panels: Individuella paneler inom Insights kontrollpaneler
+  directus_revisions: Ögonblicksbilder för all aktivitet
+  directus_roles: Behörighetsgrupper för systemanvändare
+  directus_sessions: Information om användarsessioner
+  directus_settings: Projektets konfigurationsalternativ
+  directus_users: Systemanvändare för plattformen
+  directus_webhooks: Konfiguration för eventbaserade HTTP-anrop
 fields:
-  directus9_activity:
+  directus_activity:
     item: Primärnyckel för objekt
     action: Åtgärd
     collection: Kollektion
@@ -1000,7 +1000,7 @@ fields:
     origin: Ursprung
     ip: IP-adress
     revisions: Revidering
-  directus9_collections:
+  directus_collections:
     collection: Kollektion
     icon: Ikon
     note: Anteckning
@@ -1013,7 +1013,7 @@ fields:
     unarchive_value: Avarkivera värde
     sort_field: Sortera fält
     archive_field: Arkivera fält
-  directus9_files:
+  directus_files:
     $thumbnail: Miniatyrbild
     title: Rubrik
     description: Beskrivning
@@ -1037,7 +1037,7 @@ fields:
     height: Höjd
     charset: Teckenuppsättning
     duration: Varaktighet
-  directus9_users:
+  directus_users:
     first_name: Förnamn
     last_name: Efternamn
     email: E-post
@@ -1067,7 +1067,7 @@ fields:
     external_identifier: Extern identifierare
     last_page: Sista sidan
     last_access: Senaste åtkomsten
-  directus9_settings:
+  directus_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
@@ -1092,11 +1092,11 @@ fields:
     transformations_all: Tillåt alla transformationer
     transformations_none: Inaktivera transformationer
     transformations_presets: Begränsa transformationer till inställningarna nedan
-  directus9_shares:
+  directus_shares:
     name: Namn
     role: Roll
     password: Lösenord
-  directus9_fields:
+  directus_fields:
     collection: Namn kollektion
     icon: Ikon kollektion
     note: Anteckning
@@ -1104,7 +1104,7 @@ fields:
     singleton: Singleton
     translation: Översättningar fältnamn
     display_template: Mall
-  directus9_roles:
+  directus_roles:
     name: Rollens namn
     icon: Ikon roll
     description: Beskrivning
@@ -1114,7 +1114,7 @@ fields:
     enforce_tfa: Kräv 2FA
     users: Användare i rollen
     module_list: Navigering för modul
-  directus9_webhooks:
+  directus_webhooks:
     name: Namn
     method: Metod
     status: Status
@@ -1126,7 +1126,7 @@ fields:
     actions: Åtgärder
     collections: Kollektioner
 field_options:
-  directus9_settings:
+  directus_settings:
     project_name_placeholder: Mitt projekt...
     project_color_note: Inloggning & logotyp bakgrund
     project_logo_note: Vit 40x40 SVG/PNG
@@ -1148,12 +1148,12 @@ field_options:
     transforms_note: Skarpa metodens namn och dess argument. Se https://sharp.pixelplumbing.com/api-constructor för mer information.
     basemaps_raster: Raster
     basemaps_tile: Raster TileJSON
-  directus9_activity:
+  directus_activity:
     login: Inloggning
     create: Skapa
     update: Uppdatera
     delete: Radera
-  directus9_collections:
+  directus_collections:
     track_activity_revisions: Spåra aktivitet och revisioner
     only_track_activity: Spåra endast aktivitet
     do_not_track_anything: Spåra ingenting
@@ -1175,14 +1175,14 @@ field_options:
     sort_field: Välj ett fält...
     accountability_divider: Ansvarsskyldighet
     duplication_divider: Duplicering
-  directus9_files:
+  directus_files:
     title: En unik titel...
     description: En valfri beskrivning...
     location: En valfri plats...
     storage_divider: Namngivning av fil
     filename_disk: Namn på disk...
     filename_download: Namn vid nedladdning...
-  directus9_roles:
+  directus_roles:
     name: Unikt namn för denna roll...
     description: Beskrivning av rollen...
     ip_access: Lägg till tillåtna IP-adresser, lämna tomt för att tillåta alla...
@@ -1194,7 +1194,7 @@ field_options:
       link_placeholder: Relativ eller absolut URL...
     collections_name: Kollektioner
     collections_addLabel: Lägg till kollektion...
-  directus9_users:
+  directus_users:
     preferences_divider: Användarinställningar
     dropdown_auto: Automatisk (baserat på system)
     dropdown_light: Ljust läge
@@ -1206,7 +1206,7 @@ field_options:
     status_dropdown_suspended: Avstängd
     status_dropdown_archived: Arkiverad
     token: Ange ett säkert åtkomsttoken...
-  directus9_webhooks:
+  directus_webhooks:
     status_options_active: Aktiv
     status_options_inactive: Inaktiv
     data_label: Skicka händelsedata

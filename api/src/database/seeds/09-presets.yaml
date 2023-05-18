@@ -1,4 +1,4 @@
-table: directus9_presets
+table: directus_presets
 
 columns:
   id:
@@ -9,18 +9,18 @@ columns:
   user:
     type: uuid
     references:
-      table: directus9_users
+      table: directus_users
       column: id
   role:
     type: uuid
     references:
-      table: directus9_roles
+      table: directus_roles
       column: id
   collection:
     type: string
     length: 64
     references:
-      table: directus9_collections
+      table: directus_collections
       column: collection
   search:
     type: string

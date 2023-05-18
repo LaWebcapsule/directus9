@@ -1,5 +1,5 @@
 type: object
-x-collection: directus9_users
+x-collection: directus_users
 properties:
   id:
     description: Unique identifier for the user.

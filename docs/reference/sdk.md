@@ -468,7 +468,7 @@ type CustomTypes = {
 	collection name exactly. Typos won't get caught here
 	since SDK will assume it's a custom user collection.
 	*/
-	directus9_users: UserType;
+	directus_users: UserType;
 };
 
 const directus9 = new Directus9<CustomTypes>('https://example.directus9.app');
@@ -611,7 +611,7 @@ type MyBlog = {
 	// You can also extend Directus9 collection. The naming has
 	// to match a Directus9 system collection and it will be merged
 	// into the system spec.
-	directus9_users: {
+	directus_users: {
 		bio: string;
 	};
 };
@@ -777,7 +777,7 @@ await articles.createOne(
 directus9.activity;
 ```
 
-The activity property has all the methods of directus9.items('directus9_activity') with the addition of an alias to the
+The activity property has all the methods of directus9.items('directus_activity') with the addition of an alias to the
 activity comments (below).
 
 ```js
@@ -901,7 +901,7 @@ await directus9.fields.deleteOne(/* collection name */ 'articles', /* field_name
 directus9.files;
 ```
 
-The files property support all of the functions common to all items - directus9.items('directus9_files') with one
+The files property support all of the functions common to all items - directus9.items('directus_files') with one
 addition: import.
 
 ### Import
@@ -1010,7 +1010,7 @@ await directus9.files.import({
 directus9.folders;
 ```
 
-Same methods as `directus9.items("directus9_folders")`.
+Same methods as `directus9.items("directus_folders")`.
 
 ## Permissions
 
@@ -1018,7 +1018,7 @@ Same methods as `directus9.items("directus9_folders")`.
 directus9.permissions;
 ```
 
-Same methods as `directus9.items("directus9_permissions")`.
+Same methods as `directus9.items("directus_permissions")`.
 
 ## Presets
 
@@ -1026,7 +1026,7 @@ Same methods as `directus9.items("directus9_permissions")`.
 directus9.presets;
 ```
 
-Same methods as `directus9.items("directus9_presets")`.
+Same methods as `directus9.items("directus_presets")`.
 
 ## Relations
 
@@ -1034,7 +1034,7 @@ Same methods as `directus9.items("directus9_presets")`.
 directus9.relations;
 ```
 
-Same methods as `directus9.items("directus9_relations")`.
+Same methods as `directus9.items("directus_relations")`.
 
 ## Revisions
 
@@ -1042,7 +1042,7 @@ Same methods as `directus9.items("directus9_relations")`.
 directus9.revisions;
 ```
 
-Same methods as `directus9.items("directus9_revisions")`.
+Same methods as `directus9.items("directus_revisions")`.
 
 ## Roles
 
@@ -1050,7 +1050,7 @@ Same methods as `directus9.items("directus9_revisions")`.
 directus9.roles;
 ```
 
-Same methods as `directus9.items("directus9_roles")`.
+Same methods as `directus9.items("directus_roles")`.
 
 ## Settings
 
@@ -1058,7 +1058,7 @@ Same methods as `directus9.items("directus9_roles")`.
 directus9.settings;
 ```
 
-Same methods as `directus9.items("directus9_settings")`.
+Same methods as `directus9.items("directus_settings")`.
 
 ## Server
 
@@ -1080,7 +1080,7 @@ await directus9.server.info();
 directus9.users;
 ```
 
-Same methods as `directus9.items("directus9_users")`, and:
+Same methods as `directus9.items("directus_users")`, and:
 
 ### Invite a New User
 

@@ -1,5 +1,5 @@
 type: object
-x-collection: directus9_activity
+x-collection: directus_activity
 properties:
   id:
     description: Unique identifier for the object.

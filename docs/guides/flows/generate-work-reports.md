@@ -2,7 +2,7 @@
 description: This recipe outlines a method to generate reports using Directus9 Flows.
 tags: []
 skill_level:
-directus9_version: 9.18.1
+directus_version: 9.18.1
 author_override:
 author: Eron Powell
 ---
@@ -19,7 +19,7 @@ Pairs well with [workflows](/cookbook/permissions/workflows.md)
 
 <!-- **Skill Level:** {{$frontmatter.skill_level}}\ -->
 
-**Directus9 Version:** {{$frontmatter.directus9_version}}
+**Directus9 Version:** {{$frontmatter.directus_version}}
 
 <!-- **Tags:** {{$frontmatter.tags.join(", ")}} -->
 

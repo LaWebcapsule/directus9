@@ -4,7 +4,7 @@ description:
   published.
 tags: []
 skill_level:
-directus9_version: 9.21.2
+directus_version: 9.21.2
 author_override:
 author: Bryant Gillespie
 ---
@@ -17,7 +17,7 @@ author: Bryant Gillespie
 
 <!-- **Skill Level:** {{$frontmatter.skill_level}}\ -->
 
-**Directus9 Version:** {{$frontmatter.directus9_version}}
+**Directus9 Version:** {{$frontmatter.directus_version}}
 
 <!-- **Tags:** {{$frontmatter.tags.join(", ")}} -->
 

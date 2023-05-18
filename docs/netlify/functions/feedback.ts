@@ -1,7 +1,7 @@
 import fetch from 'node-fetch';
 
-const feedbackUrl = process.env.DIRECTUS9_URL + '/items/docs_feedback';
-const token = process.env.DIRECTUS9_TOKEN;
+const feedbackUrl = process.env.directus_URL + '/items/docs_feedback';
+const token = process.env.directus_TOKEN;
 
 const headers = {
 	'Content-Type': 'application/json',

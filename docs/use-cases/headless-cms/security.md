@@ -3,7 +3,7 @@ description:
   This guide covers best practices for security, authentication, and permissions within the context of Headless CMS.
 tags: []
 skill_level:
-directus9_version:
+directus_version:
 author_override:
 author: Bryant Gillespie
 ---

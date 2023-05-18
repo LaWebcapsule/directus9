@@ -3,7 +3,7 @@ import { getEndpoint } from './get-endpoint.js';
 
 describe('getEndpoint', () => {
 	it('When a system collection is passed in', () => {
-		expect(getEndpoint('directus9_system_collection')).toBe('/system_collection');
+		expect(getEndpoint('directus_system_collection')).toBe('/system_collection');
 	});
 
 	it('When a non-system collection is passed in', () => {

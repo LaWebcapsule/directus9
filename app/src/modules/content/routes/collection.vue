@@ -14,7 +14,7 @@
 		:reset-preset="resetPreset"
 		:clear-filters="clearFilters"
 	>
-		<content-not-found v-if="!currentCollection || collection.startsWith('directus9_')" />
+		<content-not-found v-if="!currentCollection || collection.startsWith('directus_')" />
 		<private-view
 			v-else
 			:title="bookmark ? bookmarkTitle : currentCollection.name"

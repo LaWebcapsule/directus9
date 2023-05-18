@@ -33,7 +33,7 @@ export default function useUpdatePermissions(
 
 		saving.value = true;
 
-		// If this collection isn't "managed" yet, make sure to add it to directus9_collections first
+		// If this collection isn't "managed" yet, make sure to add it to directus_collections first
 		// before trying to associate any permissions with it
 		if (collection.value.meta === null) {
 			await api.patch(`/collections/${collection.value.collection}`, {
@@ -99,7 +99,7 @@ export default function useUpdatePermissions(
 
 		saving.value = true;
 
-		// If this collection isn't "managed" yet, make sure to add it to directus9_collections first
+		// If this collection isn't "managed" yet, make sure to add it to directus_collections first
 		// before trying to associate any permissions with it
 		if (collection.value.meta === null) {
 			await api.patch(`/collections/${collection.value.collection}`, {

@@ -39,7 +39,7 @@ export class AuthorizationService {
 		this.accountability = options.accountability || null;
 		this.schema = options.schema;
 
-		this.payloadService = new PayloadService('directus9_permissions', {
+		this.payloadService = new PayloadService('directus_permissions', {
 			knex: this.knex,
 			schema: this.schema,
 		});

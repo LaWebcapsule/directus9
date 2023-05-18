@@ -118,7 +118,7 @@ public_label: Публичный
 public_description: Контролирует, какие данные API доступны без входа в личный кабинет.
 admin_description: Начальная административная роль с неограниченным доступом к приложениям/API.
 not_allowed: Не разрешено
-directus9_version: Версия Directus9
+directus_version: Версия Directus9
 node_version: Версия Node
 node_uptime: Время работы Node
 os_type: Тип ОС
@@ -1019,30 +1019,30 @@ content: Контент
 singleton: Синглтон
 singleton_label: Считать одним объектом
 system_fields_locked: Системные поля заблокированы и не могут быть изменены
-directus9_collection:
-  directus9_activity: Журналы отчётности по всем событиям
-  directus9_collections: Дополнительные настройки коллекции и метаданные
-  directus9_dashboards: Панели инструментов в модуле Аналитика
-  directus9_fields: Дополнительные настройки полей и метаданные
-  directus9_files: Метаданные для всех управляемых файлов
-  directus9_flows: Автоматизированные процессы
-  directus9_folders: Предоставляет виртуальные папки для файлов
-  directus9_migrations: Какую версию базы данных вы используете
-  directus9_notifications: Уведомления, отправленные пользователям
-  directus9_operations: Операции, которые выполняются в процессах
-  directus9_panels: Панели в досках модуля Аналитика
-  directus9_permissions: Права доступа для каждой роли
-  directus9_presets: Шаблоны для коллекций по умолчанию и закладки
-  directus9_relations: Настройки отношений и метаданные
-  directus9_revisions: Снимки данных для всех действий
-  directus9_roles: Группы разрешений для системных пользователей
-  directus9_sessions: Информация о сеансе пользователя
-  directus9_settings: Параметры конфигурации проекта
-  directus9_shares: Отслеживает элементы с общим доступом
-  directus9_users: Системные пользователи для платформы
-  directus9_webhooks: Конфигурация для HTTP-запросов на основе событий
+directus_collection:
+  directus_activity: Журналы отчётности по всем событиям
+  directus_collections: Дополнительные настройки коллекции и метаданные
+  directus_dashboards: Панели инструментов в модуле Аналитика
+  directus_fields: Дополнительные настройки полей и метаданные
+  directus_files: Метаданные для всех управляемых файлов
+  directus_flows: Автоматизированные процессы
+  directus_folders: Предоставляет виртуальные папки для файлов
+  directus_migrations: Какую версию базы данных вы используете
+  directus_notifications: Уведомления, отправленные пользователям
+  directus_operations: Операции, которые выполняются в процессах
+  directus_panels: Панели в досках модуля Аналитика
+  directus_permissions: Права доступа для каждой роли
+  directus_presets: Шаблоны для коллекций по умолчанию и закладки
+  directus_relations: Настройки отношений и метаданные
+  directus_revisions: Снимки данных для всех действий
+  directus_roles: Группы разрешений для системных пользователей
+  directus_sessions: Информация о сеансе пользователя
+  directus_settings: Параметры конфигурации проекта
+  directus_shares: Отслеживает элементы с общим доступом
+  directus_users: Системные пользователи для платформы
+  directus_webhooks: Конфигурация для HTTP-запросов на основе событий
 fields:
-  directus9_activity:
+  directus_activity:
     item: Ключ элемента
     action: Действие
     collection: Коллекция
@@ -1053,7 +1053,7 @@ fields:
     origin: Источник
     ip: IP-адрес
     revisions: Редакции
-  directus9_collections:
+  directus_collections:
     collection: Коллекция
     icon: Иконка
     note: Заметка
@@ -1069,7 +1069,7 @@ fields:
     accountability: Отслеживание действий и редакций
     archive_field: Архивировать поле
     item_duplication_fields: Поля дублирования предметов
-  directus9_files:
+  directus_files:
     $thumbnail: Миниатюра
     title: Название
     description: Описание
@@ -1093,7 +1093,7 @@ fields:
     height: Высота
     charset: Кодировка
     duration: Продолжительность
-  directus9_users:
+  directus_users:
     first_name: Имя
     last_name: Фамилия
     email: E-mail
@@ -1124,7 +1124,7 @@ fields:
     last_page: Последняя страница
     last_access: Последний доступ
     email_notifications: Уведомления по e-mail
-  directus9_settings:
+  directus_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
@@ -1164,7 +1164,7 @@ fields:
     transformations_presets: Ограничить преобразования для шаблонов ниже
     image_editor: Редактор изображений
     custom_aspect_ratios: Пользовательские пропорции
-  directus9_shares:
+  directus_shares:
     name: Название
     role: Роль
     password: Пароль
@@ -1172,7 +1172,7 @@ fields:
     date_end: Дата окончания
     max_uses: Максимум использований
     times_used: Использовано раз
-  directus9_fields:
+  directus_fields:
     collection: Название коллекции
     icon: Иконка коллекции
     note: Заметка
@@ -1180,7 +1180,7 @@ fields:
     singleton: Синглтон
     translation: Переводы названий полей
     display_template: Шаблон
-  directus9_roles:
+  directus_roles:
     name: Название роли
     icon: Иконка роли
     description: Описание
@@ -1190,7 +1190,7 @@ fields:
     enforce_tfa: Требуется 2FA
     users: Пользователи в роли
     module_list: Навигация по модулям
-  directus9_webhooks:
+  directus_webhooks:
     name: Название
     method: Метод
     status: Статус
@@ -1203,7 +1203,7 @@ fields:
     actions: Действия
     collections: Коллекции
 field_options:
-  directus9_settings:
+  directus_settings:
     project_name_placeholder: Мой проект...
     project_color_note: Фон страницы входа и логотипа
     project_logo_note: Белый 40х40 SVG/PNG
@@ -1232,12 +1232,12 @@ field_options:
     basemaps_style: Стиль Mapbox
     files_divider_title: Файлы и миниатюры
     overrides_divider_title: Переопределения заводских настроек
-  directus9_activity:
+  directus_activity:
     login: Войти в систему
     create: Создать
     update: Обновить
     delete: Удалить
-  directus9_collections:
+  directus_collections:
     track_activity_revisions: Отслеживать действия и редакции
     only_track_activity: Отслеживать только действия
     do_not_track_anything: Ничего не отслеживать
@@ -1260,14 +1260,14 @@ field_options:
     sort_field: Выберите поле...
     accountability_divider: Подотчетность
     duplication_divider: Дублирование
-  directus9_files:
+  directus_files:
     title: Уникальное название...
     description: Описание (необязательно)...
     location: Расположение (необязательно)...
     storage_divider: Именование файлов
     filename_disk: Имя на диске...
     filename_download: Имя при скачивании...
-  directus9_roles:
+  directus_roles:
     name: Уникальное название для этой роли...
     description: Описание этой роли...
     ip_access: Добавьте разрешённые IP-адреса — оставьте поле пустым, чтобы разрешить все...
@@ -1279,7 +1279,7 @@ field_options:
       link_placeholder: Относительный или абсолютный URL-адрес...
     collections_name: Коллекции
     collections_addLabel: Добавить коллекцию...
-  directus9_users:
+  directus_users:
     preferences_divider: Пользовательские настройки
     dropdown_auto: Автоматически (как в системе)
     dropdown_light: Светлая тема
@@ -1291,7 +1291,7 @@ field_options:
     status_dropdown_suspended: Заблокирован
     status_dropdown_archived: В архиве
     token: Укажите достаточно надёжный ключ доступа...
-  directus9_webhooks:
+  directus_webhooks:
     status_options_active: Активный
     status_options_inactive: Неактивный
     data_label: Отправлять данные о событии

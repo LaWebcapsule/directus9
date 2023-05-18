@@ -103,7 +103,7 @@ export default defineComponent({
 		const boxSelectControl = new BoxSelectControl({
 			boxElementClass: 'map-selection-box',
 			selectButtonClass: 'mapboxgl-ctrl-select',
-			layers: ['__directus9_polygons', '__directus9_points', '__directus9_lines'],
+			layers: ['__directus_polygons', '__directus_points', '__directus_lines'],
 		});
 
 		let geocoderControl: MapboxGeocoder | undefined;
@@ -155,7 +155,7 @@ export default defineComponent({
 			map.on('load', () => {
 				watch(() => style.value, updateStyle);
 				watch(() => props.bounds, fitBounds);
-				const activeLayers = ['__directus9_polygons', '__directus9_points', '__directus9_lines'];
+				const activeLayers = ['__directus_polygons', '__directus_points', '__directus_lines'];
 
 				for (const layer of activeLayers) {
 					map.on('click', layer, onFeatureClick);
@@ -164,9 +164,9 @@ export default defineComponent({
 				}
 
 				map.on('move', updatePopupLocation);
-				map.on('click', '__directus9_clusters', expandCluster);
-				map.on('mousemove', '__directus9_clusters', hoverCluster);
-				map.on('mouseleave', '__directus9_clusters', hoverCluster);
+				map.on('click', '__directus_clusters', expandCluster);
+				map.on('mousemove', '__directus_clusters', hoverCluster);
+				map.on('mouseleave', '__directus_clusters', hoverCluster);
 				map.on('select.enable', () => (selectMode.value = true));
 				map.on('select.disable', () => (selectMode.value = false));
 
@@ -296,7 +296,7 @@ export default defineComponent({
 
 		function updatePopup(event: MapLayerMouseEvent) {
 			const feature = map.queryRenderedFeatures(event.point, {
-				layers: ['__directus9_polygons', '__directus9_points', '__directus9_lines'],
+				layers: ['__directus_polygons', '__directus_points', '__directus_lines'],
 			})[0];
 
 			const previousId = hoveredFeature.value?.id;
@@ -338,7 +338,7 @@ export default defineComponent({
 
 		function expandCluster(event: MapLayerMouseEvent) {
 			const features = map.queryRenderedFeatures(event.point, {
-				layers: ['__directus9_clusters'],
+				layers: ['__directus_clusters'],
 			});
 
 			const clusterId = features[0]?.properties?.cluster_id;

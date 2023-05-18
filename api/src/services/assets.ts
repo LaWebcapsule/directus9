@@ -42,14 +42,14 @@ export class AssetsService {
 
 		const publicSettings = await this.knex
 			.select('project_logo', 'public_background', 'public_foreground')
-			.from('directus9_settings')
+			.from('directus_settings')
 			.first();
 
 		const systemPublicKeys = Object.values(publicSettings || {});
 
 		/**
 		 * This is a little annoying. Postgres will error out if you're trying to search in `where`
-		 * with a wrong type. In case of directus9_files where id is a uuid, we'll have to verify the
+		 * with a wrong type. In case of directus_files where id is a uuid, we'll have to verify the
 		 * validity of the uuid ahead of time.
 		 */
 		const isValidUUID = validateUUID(id, 4);
@@ -57,10 +57,10 @@ export class AssetsService {
 		if (isValidUUID === false) throw new ForbiddenException();
 
 		if (systemPublicKeys.includes(id) === false && this.accountability?.admin !== true) {
-			await this.authorizationService.checkAccess('read', 'directus9_files', id);
+			await this.authorizationService.checkAccess('read', 'directus_files', id);
 		}
 
-		const file = (await this.knex.select('*').from('directus9_files').where({ id }).first()) as File;
+		const file = (await this.knex.select('*').from('directus_files').where({ id }).first()) as File;
 
 		if (!file) throw new ForbiddenException();
 

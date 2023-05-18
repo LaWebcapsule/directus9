@@ -112,7 +112,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	panels: [directus9_panels]
+	panels: [directus_panels]
 }
 ```
 
@@ -161,7 +161,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	panels_by_id(id: ID!): directus9_panels
+	panels_by_id(id: ID!): directus_panels
 }
 ```
 
@@ -219,7 +219,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_panels_item(data: create_directus9_panels_input!): directus9_panels
+	create_panels_item(data: create_directus_panels_input!): directus_panels
 }
 ```
 
@@ -283,7 +283,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_panels_items(data: [create_directus9_panels_input!]!): [directus9_panels]
+	create_panels_items(data: [create_directus_panels_input!]!): [directus_panels]
 }
 ```
 
@@ -351,7 +351,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_panels_item(id: ID!, data: update_directus9_panels_input): directus9_panels
+	update_panels_item(id: ID!, data: update_directus_panels_input): directus_panels
 }
 ```
 
@@ -415,7 +415,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_panels_items(ids: [ID!]!, data: update_directus9_panels_input): [directus9_panels]
+	update_panels_items(ids: [ID!]!, data: update_directus_panels_input): [directus_panels]
 }
 ```
 

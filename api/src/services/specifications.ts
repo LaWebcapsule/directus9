@@ -133,7 +133,7 @@ class OASSpecsService implements SpecificationSubService {
 		}
 
 		for (const collection of collections) {
-			const isSystem = collection.collection.startsWith('directus9_');
+			const isSystem = collection.collection.startsWith('directus_');
 
 			// If the collection is one of the system collections, pull the tag from the static spec
 			if (isSystem) {
@@ -167,7 +167,7 @@ class OASSpecsService implements SpecificationSubService {
 		if (!tags) return paths;
 
 		for (const tag of tags) {
-			const isSystem = 'x-collection' in tag === false || tag['x-collection'].startsWith('directus9_');
+			const isSystem = 'x-collection' in tag === false || tag['x-collection'].startsWith('directus_');
 
 			if (isSystem) {
 				for (const [path, pathItem] of Object.entries<PathItemObject>(spec.paths)) {
@@ -353,7 +353,7 @@ class OASSpecsService implements SpecificationSubService {
 
 			if (!tag) continue;
 
-			const isSystem = collection.collection.startsWith('directus9_');
+			const isSystem = collection.collection.startsWith('directus_');
 
 			const fieldsInCollection = fields.filter((field) => field.collection === collection.collection);
 

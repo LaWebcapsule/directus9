@@ -9,8 +9,8 @@ import { getColumnPath } from '../../src/utils/get-column-path.js';
   path: [ 'author', 'role', 'name' ],
   collection: 'articles',
   aliasMap: {
-    author: { alias: 'grenv', collection: 'directus9_users' },
-	'author.role': { alias: 'ljnsv', collection: 'directus9_roles' },
+    author: { alias: 'grenv', collection: 'directus_users' },
+	'author.role': { alias: 'ljnsv', collection: 'directus_roles' },
   },
   relations: []
 
@@ -93,21 +93,21 @@ test('Returns correct alias for m2o', () => {
 		path: ['author', 'role', 'name'],
 		collection: 'articles',
 		aliasMap: {
-			author: { alias: 'ljnsv', collection: 'directus9_users' },
-			'author.role': { alias: 'grenv', collection: 'directus9_roles' },
+			author: { alias: 'ljnsv', collection: 'directus_users' },
+			'author.role': { alias: 'grenv', collection: 'directus_roles' },
 		},
 		relations: [
 			{
 				collection: 'articles',
 				field: 'author',
-				related_collection: 'directus9_users',
+				related_collection: 'directus_users',
 				meta: null,
 				schema: null,
 			},
 			{
-				collection: 'directus9_users',
+				collection: 'directus_users',
 				field: 'role',
-				related_collection: 'directus9_roles',
+				related_collection: 'directus_roles',
 				meta: null,
 				schema: null,
 			},
@@ -116,7 +116,7 @@ test('Returns correct alias for m2o', () => {
 
 	const result = getColumnPath(input as ColPathProps);
 	expect(result.columnPath).toBe('grenv.name');
-	expect(result.targetCollection).toBe('directus9_roles');
+	expect(result.targetCollection).toBe('directus_roles');
 });
 
 test('Returns correct alias for o2m', () => {
@@ -218,29 +218,29 @@ test('Returns correct alias when there are multiple joins to the same table', ()
 		path: ['author', 'secondary_role', 'name'],
 		collection: 'articles',
 		aliasMap: {
-			author: { alias: 'ljnsv', collection: 'directus9_users' },
-			'author.role': { alias: 'grenv', collection: 'directus9_roles' },
-			'author.secondary_role': { alias: 'psgwn', collection: 'directus9_roles' },
+			author: { alias: 'ljnsv', collection: 'directus_users' },
+			'author.role': { alias: 'grenv', collection: 'directus_roles' },
+			'author.secondary_role': { alias: 'psgwn', collection: 'directus_roles' },
 		},
 		relations: [
 			{
 				collection: 'articles',
 				field: 'author',
-				related_collection: 'directus9_users',
+				related_collection: 'directus_users',
 				meta: null,
 				schema: null,
 			},
 			{
-				collection: 'directus9_users',
+				collection: 'directus_users',
 				field: 'role',
-				related_collection: 'directus9_roles',
+				related_collection: 'directus_roles',
 				meta: null,
 				schema: null,
 			},
 			{
-				collection: 'directus9_users',
+				collection: 'directus_users',
 				field: 'secondary_role',
-				related_collection: 'directus9_roles',
+				related_collection: 'directus_roles',
 				meta: null,
 				schema: null,
 			},
@@ -249,5 +249,5 @@ test('Returns correct alias when there are multiple joins to the same table', ()
 
 	const result = getColumnPath(input as ColPathProps);
 	expect(result.columnPath).toBe('psgwn.name');
-	expect(result.targetCollection).toBe('directus9_roles');
+	expect(result.targetCollection).toBe('directus_roles');
 });

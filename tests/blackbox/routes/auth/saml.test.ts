@@ -143,7 +143,7 @@ describe('/auth/login/saml', () => {
 					const cookies = acsResponse.headers['set-cookie'].map((cookie: string) => cookie.split(';')[0]).join(';');
 
 					// Assert
-					expect(cookies).toMatch(/directus9_refresh_token/);
+					expect(cookies).toMatch(/directus_refresh_token/);
 				});
 			});
 		});

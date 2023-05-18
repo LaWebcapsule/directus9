@@ -64,7 +64,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	folders: directus9_folders
+	folders: directus_folders
 }
 ```
 
@@ -112,7 +112,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	folders_by_id(id: ID!): directus9_folders
+	folders_by_id(id: ID!): directus_folders
 }
 ```
 
@@ -168,7 +168,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_folders_item(data: create_directus9_folders_input): directus9_folders
+	create_folders_item(data: create_directus_folders_input): directus_folders
 }
 ```
 
@@ -230,7 +230,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_folders_items(data: [create_directus9_folders_input]): [directus9_folders]
+	create_folders_items(data: [create_directus_folders_input]): [directus_folders]
 }
 ```
 
@@ -287,7 +287,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_folders_item(id: ID!, data: update_directus9_folders_input): directus9_folders
+	update_folders_item(id: ID!, data: update_directus_folders_input): directus_folders
 }
 ```
 
@@ -354,7 +354,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_folders_items(ids: [ID!]!, data: update_directus9_folders_input): [directus9_folders]
+	update_folders_items(ids: [ID!]!, data: update_directus_folders_input): [directus_folders]
 }
 ```
 

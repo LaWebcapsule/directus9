@@ -3,6 +3,6 @@ import { ItemsService } from './items.js';
 
 export class FoldersService extends ItemsService {
 	constructor(options: AbstractServiceOptions) {
-		super('directus9_folders', options);
+		super('directus_folders', options);
 	}
 }

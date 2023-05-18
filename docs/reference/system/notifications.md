@@ -85,7 +85,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	notifications: [directus9_notifications]
+	notifications: [directus_notifications]
 }
 ```
 
@@ -135,7 +135,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	notifications_by_id(id: ID!): directus9_notifications
+	notifications_by_id(id: ID!): directus_notifications
 }
 ```
 
@@ -196,7 +196,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_notifications_item(data: create_directus9_notifications_input!): directus9_notifications
+	create_notifications_item(data: create_directus_notifications_input!): directus_notifications
 }
 ```
 
@@ -242,7 +242,7 @@ POST /notifications
 
 [
 	{
-		"collection": "directus9_files",
+		"collection": "directus_files",
 		"recipient": "410b5772-e63f-4ae6-9ea2-39c3a31bd6ca",
 		"message": "Hi there! You should check out these files"
 	},
@@ -262,7 +262,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_notifications_items(data: [create_directus9_notifications_input!]!): [directus9_notifications]
+	create_notifications_items(data: [create_directus_notifications_input!]!): [directus_notifications]
 }
 ```
 
@@ -273,7 +273,7 @@ mutation {
 	create_notifications_items(
 		data: [
 			{
-				collection: "directus9_files"
+				collection: "directus_files"
 				recipient: "410b5772-e63f-4ae6-9ea2-39c3a31bd6ca"
 				message: "Hi there! You should check out these files"
 			}
@@ -339,7 +339,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_notifications_item(id: ID!, data: update_directus9_notifications_input): directus9_notifications
+	update_notifications_item(id: ID!, data: update_directus_notifications_input): directus_notifications
 }
 ```
 
@@ -403,7 +403,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_notifications_items(ids: [ID!]!, data: update_directus9_notifications_input): [directus9_notifications]
+	update_notifications_items(ids: [ID!]!, data: update_directus_notifications_input): [directus_notifications]
 }
 ```
 

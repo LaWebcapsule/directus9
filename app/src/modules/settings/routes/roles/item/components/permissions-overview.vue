@@ -100,7 +100,7 @@ export default defineComponent({
 
 		const systemCollections = computed(() =>
 			orderBy(
-				collectionsStore.collections.filter((collection) => collection.collection.startsWith('directus9_') === true),
+				collectionsStore.collections.filter((collection) => collection.collection.startsWith('directus_') === true),
 				'name'
 			)
 		);
@@ -194,7 +194,7 @@ export default defineComponent({
 				resetting.value = true;
 
 				const toBeDeleted = permissions.value
-					.filter((permission) => permission.collection.startsWith('directus9_'))
+					.filter((permission) => permission.collection.startsWith('directus_'))
 					.map((permission) => permission.id);
 
 				try {

@@ -1,4 +1,4 @@
-table: directus9_settings
+table: directus_settings
 
 columns:
   id:
@@ -18,17 +18,17 @@ columns:
   project_logo:
     type: uuid
     references:
-      table: directus9_files
+      table: directus_files
       column: id
   public_foreground:
     type: uuid
     references:
-      table: directus9_files
+      table: directus_files
       column: id
   public_background:
     type: uuid
     references:
-      table: directus9_files
+      table: directus_files
       column: id
   public_note:
     type: text

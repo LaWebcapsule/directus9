@@ -114,7 +114,7 @@ Directus9 does not currently support creation of virtual tables via SQL Views.
 
 Remember, a collection is simply a database table. Therefore, you can import or create a table directly in the database
 and it will automatically appear within your Directus9 project. The first time you manage that table, a
-`directus9_collections` record will be created with default values.
+`directus_collections` record will be created with default values.
 
 :::
 

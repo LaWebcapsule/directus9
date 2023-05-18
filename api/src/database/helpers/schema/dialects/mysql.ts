@@ -17,7 +17,7 @@ export class SchemaHelperMySQL extends SchemaHelper {
 			dbQuery = knex
 				.select(
 					knex.raw(
-						`??, ( @rank := IF ( @cur_id = deep.${primaryKey}, @rank + 1, 1 ) ) AS directus9_row_number, ( @cur_id := deep.${primaryKey} ) AS current_id`,
+						`??, ( @rank := IF ( @cur_id = deep.${primaryKey}, @rank + 1, 1 ) ) AS directus_row_number, ( @cur_id := deep.${primaryKey} ) AS current_id`,
 						'deep.*'
 					)
 				)

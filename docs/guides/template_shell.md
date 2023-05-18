@@ -2,7 +2,7 @@
 description: Try to make this description a clear, catchy, cool, 2-4 line explanation of your recipe.
 tags: []
 skill_level:
-directus9_version:
+directus_version:
 author_override:
 author: Eron Powell
 ---
@@ -15,7 +15,7 @@ author: Eron Powell
 
 <!-- **Skill Level:** {{$frontmatter.skill_level}}\ -->
 
-**Directus9 Version:** {{$frontmatter.directus9_version}}
+**Directus9 Version:** {{$frontmatter.directus_version}}
 
 <!-- **Tags:** {{$frontmatter.tags.join(", ")}} -->
 

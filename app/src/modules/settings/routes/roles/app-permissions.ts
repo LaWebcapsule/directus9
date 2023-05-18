@@ -2,108 +2,108 @@ import { Permission } from '@directus9/types';
 
 export const appRecommendedPermissions: Partial<Permission>[] = [
 	{
-		collection: 'directus9_files',
+		collection: 'directus_files',
 		action: 'create',
 		permissions: {},
 		fields: ['*'],
 	},
 	{
-		collection: 'directus9_files',
+		collection: 'directus_files',
 		action: 'read',
 		permissions: {},
 		fields: ['*'],
 	},
 	{
-		collection: 'directus9_files',
+		collection: 'directus_files',
 		action: 'update',
 		permissions: {},
 		fields: ['*'],
 	},
 	{
-		collection: 'directus9_files',
+		collection: 'directus_files',
 		action: 'delete',
 		permissions: {},
 		fields: ['*'],
 	},
 	{
-		collection: 'directus9_dashboards',
+		collection: 'directus_dashboards',
 		action: 'create',
 		permissions: {},
 		fields: ['*'],
 	},
 	{
-		collection: 'directus9_dashboards',
+		collection: 'directus_dashboards',
 		action: 'read',
 		permissions: {},
 		fields: ['*'],
 	},
 	{
-		collection: 'directus9_dashboards',
+		collection: 'directus_dashboards',
 		action: 'update',
 		permissions: {},
 		fields: ['*'],
 	},
 	{
-		collection: 'directus9_dashboards',
+		collection: 'directus_dashboards',
 		action: 'delete',
 		permissions: {},
 		fields: ['*'],
 	},
 	{
-		collection: 'directus9_panels',
+		collection: 'directus_panels',
 		action: 'create',
 		permissions: {},
 		fields: ['*'],
 	},
 	{
-		collection: 'directus9_panels',
+		collection: 'directus_panels',
 		action: 'read',
 		permissions: {},
 		fields: ['*'],
 	},
 	{
-		collection: 'directus9_panels',
+		collection: 'directus_panels',
 		action: 'update',
 		permissions: {},
 		fields: ['*'],
 	},
 	{
-		collection: 'directus9_panels',
+		collection: 'directus_panels',
 		action: 'delete',
 		permissions: {},
 		fields: ['*'],
 	},
 	{
-		collection: 'directus9_folders',
+		collection: 'directus_folders',
 		action: 'create',
 		permissions: {},
 		fields: ['*'],
 	},
 	{
-		collection: 'directus9_folders',
+		collection: 'directus_folders',
 		action: 'read',
 		permissions: {},
 		fields: ['*'],
 	},
 	{
-		collection: 'directus9_folders',
+		collection: 'directus_folders',
 		action: 'update',
 		permissions: {},
 		fields: ['*'],
 	},
 	{
-		collection: 'directus9_folders',
+		collection: 'directus_folders',
 		action: 'delete',
 		permissions: {},
 	},
 	{
-		collection: 'directus9_users',
+		collection: 'directus_users',
 		action: 'read',
 		permissions: {},
 		fields: ['*'],
 	},
 	{
-		collection: 'directus9_users',
+		collection: 'directus_users',
 		action: 'update',
 		permissions: {
 			id: {
@@ -125,13 +125,13 @@ export const appRecommendedPermissions: Partial<Permission>[] = [
 		],
 	},
 	{
-		collection: 'directus9_roles',
+		collection: 'directus_roles',
 		action: 'read',
 		permissions: {},
 		fields: ['*'],
 	},
 	{
-		collection: 'directus9_shares',
+		collection: 'directus_shares',
 		action: 'read',
 		permissions: {
 			_or: [
@@ -150,13 +150,13 @@ export const appRecommendedPermissions: Partial<Permission>[] = [
 		fields: ['*'],
 	},
 	{
-		collection: 'directus9_shares',
+		collection: 'directus_shares',
 		action: 'create',
 		permissions: {},
 		fields: ['*'],
 	},
 	{
-		collection: 'directus9_shares',
+		collection: 'directus_shares',
 		action: 'update',
 		permissions: {
 			user_created: {
@@ -166,7 +166,7 @@ export const appRecommendedPermissions: Partial<Permission>[] = [
 		fields: ['*'],
 	},
 	{
-		collection: 'directus9_shares',
+		collection: 'directus_shares',
 		action: 'delete',
 		permissions: {
 			user_created: {
@@ -176,7 +176,7 @@ export const appRecommendedPermissions: Partial<Permission>[] = [
 		fields: ['*'],
 	},
 	{
-		collection: 'directus9_flows',
+		collection: 'directus_flows',
 		action: 'read',
 		permissions: {
 			trigger: {
@@ -189,7 +189,7 @@ export const appRecommendedPermissions: Partial<Permission>[] = [
 
 export const appMinimalPermissions: Partial<Permission>[] = [
 	{
-		collection: 'directus9_activity',
+		collection: 'directus_activity',
 		action: 'read',
 		permissions: {
 			user: {
@@ -198,7 +198,7 @@ export const appMinimalPermissions: Partial<Permission>[] = [
 		},
 	},
 	{
-		collection: 'directus9_activity',
+		collection: 'directus_activity',
 		action: 'create',
 		validation: {
 			comment: {
@@ -207,15 +207,15 @@ export const appMinimalPermissions: Partial<Permission>[] = [
 		},
 	},
 	{
-		collection: 'directus9_collections',
+		collection: 'directus_collections',
 		action: 'read',
 	},
 	{
-		collection: 'directus9_fields',
+		collection: 'directus_fields',
 		action: 'read',
 	},
 	{
-		collection: 'directus9_permissions',
+		collection: 'directus_permissions',
 		action: 'read',
 		permissions: {
 			role: {
@@ -224,7 +224,7 @@ export const appMinimalPermissions: Partial<Permission>[] = [
 		},
 	},
 	{
-		collection: 'directus9_presets',
+		collection: 'directus_presets',
 		action: 'read',
 		permissions: {
 			_or: [
@@ -265,7 +265,7 @@ export const appMinimalPermissions: Partial<Permission>[] = [
 		},
 	},
 	{
-		collection: 'directus9_presets',
+		collection: 'directus_presets',
 		action: 'create',
 		validation: {
 			user: {
@@ -274,7 +274,7 @@ export const appMinimalPermissions: Partial<Permission>[] = [
 		},
 	},
 	{
-		collection: 'directus9_presets',
+		collection: 'directus_presets',
 		action: 'update',
 		permissions: {
 			user: {
@@ -283,7 +283,7 @@ export const appMinimalPermissions: Partial<Permission>[] = [
 		},
 	},
 	{
-		collection: 'directus9_presets',
+		collection: 'directus_presets',
 		action: 'delete',
 		permissions: {
 			user: {
@@ -292,11 +292,11 @@ export const appMinimalPermissions: Partial<Permission>[] = [
 		},
 	},
 	{
-		collection: 'directus9_relations',
+		collection: 'directus_relations',
 		action: 'read',
 	},
 	{
-		collection: 'directus9_roles',
+		collection: 'directus_roles',
 		action: 'read',
 		permissions: {
 			id: {
@@ -305,11 +305,11 @@ export const appMinimalPermissions: Partial<Permission>[] = [
 		},
 	},
 	{
-		collection: 'directus9_settings',
+		collection: 'directus_settings',
 		action: 'read',
 	},
 	{
-		collection: 'directus9_shares',
+		collection: 'directus_shares',
 		action: 'read',
 		permissions: {
 			user_created: {
@@ -318,7 +318,7 @@ export const appMinimalPermissions: Partial<Permission>[] = [
 		},
 	},
 	{
-		collection: 'directus9_users',
+		collection: 'directus_users',
 		action: 'read',
 		permissions: {
 			id: {

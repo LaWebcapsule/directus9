@@ -2,7 +2,7 @@ import { Type } from '@directus9/types';
 
 export const VALIDATION_TYPES = ['FAILED_VALIDATION', 'RECORD_NOT_UNIQUE'];
 
-export const DIRECTUS9_LOGO = `
+export const directus_LOGO = `
 
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣦⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -28,14 +28,14 @@ export const DIRECTUS9_LOGO = `
  * These are the system endpoints that don't have full/regular CRUD operations available.
  */
 export const COLLECTIONS_DENY_LIST = [
-	'directus9_activity',
-	'directus9_collections',
-	'directus9_fields',
-	'directus9_migrations',
-	'directus9_relations',
-	'directus9_revisions',
-	'directus9_sessions',
-	'directus9_settings',
+	'directus_activity',
+	'directus_collections',
+	'directus_fields',
+	'directus_migrations',
+	'directus_relations',
+	'directus_revisions',
+	'directus_sessions',
+	'directus_settings',
 ];
 
 export const MODULE_BAR_DEFAULT = [

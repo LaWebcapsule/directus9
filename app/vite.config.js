@@ -25,7 +25,7 @@ const EXTENSIONS_PATH = path.join(API_PATH, 'extensions');
 // https://vitejs.dev/config/
 export default defineConfig({
 	define: {
-		__DIRECTUS9_VERSION__: JSON.stringify(version),
+		__directus_VERSION__: JSON.stringify(version),
 	},
 	plugins: [
 		directus9Extensions(),

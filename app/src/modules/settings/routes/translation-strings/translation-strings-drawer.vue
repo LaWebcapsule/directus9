@@ -150,7 +150,7 @@ const fields = computed<DeepPartial<Field>[]>(() => {
 								width: 'full',
 								required: true,
 								options: {
-									placeholder: '$t:field_options.directus9_collections.translation_placeholder',
+									placeholder: '$t:field_options.directus_collections.translation_placeholder',
 								},
 							},
 						},

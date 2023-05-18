@@ -118,7 +118,7 @@ public_label: عام
 public_description: التحكم بتوفر البيانات على واجهة الربط البرمجي بدون تسجيل دخول.
 admin_description: الدور الأساسي للمدير مع وصول غير مقيّد للتطبيق والـ API.
 not_allowed: غير مسموح
-directus9_version: إصدار Directus9
+directus_version: إصدار Directus9
 node_version: رقم نسخة الوحدة
 node_uptime: مدة الاستيقاظ الوحدة
 os_type: نوع نظام التشغيل
@@ -977,30 +977,30 @@ content: المحتوى
 singleton: متفرد
 singleton_label: معاملته ككائن واحد
 system_fields_locked: حقول النظام مقفلة ولا يمكن تعديلها
-directus9_collection:
-  directus9_activity: سجلات المساءلة لجميع الأحداث
-  directus9_collections: تكوين وبيانات المجموعة الإضافية الوصفية
-  directus9_dashboards: لوحات التحكم داخل وحدة البصائر
-  directus9_fields: تكوين وبيانات الحقل الإضافي الوصفية
-  directus9_files: البيانات الوصفية لجميع أصول الملفات المدارة
-  directus9_flows: تدفقات الأتمتة
-  directus9_folders: يوفر مجلدات افتراضية للملفات
-  directus9_migrations: ما هي نسخة قاعدة البيانات التي تستخدمها
-  directus9_notifications: الإشعارات المرسلة إلى المستخدمين
-  directus9_operations: العمليات التي تشتغل في التدفقات
-  directus9_panels: لوحات فردية ضمن لوحة تحكم البصائر
-  directus9_permissions: أذونات الوصول لكل دور
-  directus9_presets: الإعداد المسبق للقيم الافتراضية للمجموعة والعلامات المرجعية
-  directus9_relations: تكوين وبيانات العَلاقة الوصفية
-  directus9_revisions: لقطات بيانات لجميع الأنشطة
-  directus9_roles: مجموعات الأذونات لمستخدمي النظام
-  directus9_sessions: معلومات جلسة المستخدم
-  directus9_settings: خيارات تكوين المشروع
-  directus9_shares: تتبع العناصر المشتركة خارجيًا
-  directus9_users: مستخدمي النظام للمنصة
-  directus9_webhooks: إعدادات لطلبات HTTP المستندة إلى الأحداث
+directus_collection:
+  directus_activity: سجلات المساءلة لجميع الأحداث
+  directus_collections: تكوين وبيانات المجموعة الإضافية الوصفية
+  directus_dashboards: لوحات التحكم داخل وحدة البصائر
+  directus_fields: تكوين وبيانات الحقل الإضافي الوصفية
+  directus_files: البيانات الوصفية لجميع أصول الملفات المدارة
+  directus_flows: تدفقات الأتمتة
+  directus_folders: يوفر مجلدات افتراضية للملفات
+  directus_migrations: ما هي نسخة قاعدة البيانات التي تستخدمها
+  directus_notifications: الإشعارات المرسلة إلى المستخدمين
+  directus_operations: العمليات التي تشتغل في التدفقات
+  directus_panels: لوحات فردية ضمن لوحة تحكم البصائر
+  directus_permissions: أذونات الوصول لكل دور
+  directus_presets: الإعداد المسبق للقيم الافتراضية للمجموعة والعلامات المرجعية
+  directus_relations: تكوين وبيانات العَلاقة الوصفية
+  directus_revisions: لقطات بيانات لجميع الأنشطة
+  directus_roles: مجموعات الأذونات لمستخدمي النظام
+  directus_sessions: معلومات جلسة المستخدم
+  directus_settings: خيارات تكوين المشروع
+  directus_shares: تتبع العناصر المشتركة خارجيًا
+  directus_users: مستخدمي النظام للمنصة
+  directus_webhooks: إعدادات لطلبات HTTP المستندة إلى الأحداث
 fields:
-  directus9_activity:
+  directus_activity:
     item: المفتاح الأساسي للعنصر
     action: الإجراء
     collection: المجموعة
@@ -1011,7 +1011,7 @@ fields:
     origin: الأصل
     ip: عنوان IP
     revisions: المراجعات
-  directus9_collections:
+  directus_collections:
     collection: المجموعة
     icon: أيقونة
     note: ملحوظة
@@ -1027,7 +1027,7 @@ fields:
     accountability: تتبع النشاط والتنقيح
     archive_field: حقل الأرشيف
     item_duplication_fields: الحقول الممكن تكرارها للعنصر
-  directus9_files:
+  directus_files:
     $thumbnail: صورة مصغرة
     title: العنوان
     description: التفاصيل
@@ -1051,7 +1051,7 @@ fields:
     height: الارتفاع
     charset: اصطفاف تعليق افتراضي
     duration: المدة
-  directus9_users:
+  directus_users:
     first_name: الاسم الأول
     last_name: الاسم الأخير
     email: البريد الإلكتروني
@@ -1082,7 +1082,7 @@ fields:
     last_page: آخر صفحة
     last_access: آخر وصول
     email_notifications: إشعارات البريد الإلكتروني
-  directus9_settings:
+  directus_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
@@ -1114,14 +1114,14 @@ fields:
     transformations_all: السماح بجميع التحولات
     transformations_none: تعطيل التحولات
     image_editor: محرر الصور
-  directus9_shares:
+  directus_shares:
     name: الاسم
     role: الدور
     password: كلمة المرور
     date_start: تاريخ البدء
     date_end: تاريخ الانتهاء
     times_used: الوقت المستغرق
-  directus9_fields:
+  directus_fields:
     collection: اسم المجموعة
     icon: أيقونة المجموعة
     note: ملحوظة
@@ -1129,7 +1129,7 @@ fields:
     singleton: متفرد
     translation: ترجمة اسم الحقل
     display_template: قالب
-  directus9_roles:
+  directus_roles:
     name: إسم الدور
     icon: أيقونة الدور
     description: التفاصيل
@@ -1137,7 +1137,7 @@ fields:
     admin_access: صلاحيات مسؤول
     enforce_tfa: يتطلب التحقق بخطوتين 2FA
     users: المستخدمون في الدور
-  directus9_webhooks:
+  directus_webhooks:
     name: الاسم
     status: حالة
     data: البيانات
@@ -1149,7 +1149,7 @@ fields:
     actions: الإجراءات
     collections: مجموعات
 field_options:
-  directus9_settings:
+  directus_settings:
     project_name_placeholder: مشروعي...
     project_color_note: خلفية تسجيل الدخول والشعار
     project_logo_note: الأبيض 40x40 SVG/PNG
@@ -1172,12 +1172,12 @@ field_options:
     mapbox_placeholder: pk.eyJ1Ijo.....
     files_divider_title: الملفات و الصور المصغرة
     overrides_divider_title: تجاوزات التطبيق
-  directus9_activity:
+  directus_activity:
     login: تسجيل الدخول
     create: انشاء
     update: تحديث
     delete: حذف
-  directus9_collections:
+  directus_collections:
     track_activity_revisions: تتبع النشاط والتنقيحات
     only_track_activity: تتبع النشاط فقط
     do_not_track_anything: عدم تتبع أي شيء
@@ -1200,14 +1200,14 @@ field_options:
     sort_field: إختر حقل...
     accountability_divider: المساءلة
     duplication_divider: تكرار
-  directus9_files:
+  directus_files:
     title: عنوان فريد...
     description: وصف اختياري...
     location: موقع اختياري...
     storage_divider: تسمية الملف
     filename_disk: الإسم على قرص التخزين...
     filename_download: الاسم عند التنزيل...
-  directus9_roles:
+  directus_roles:
     name: الاسم الفريد لهذا الدور...
     description: وصف لهذا الدور...
     fields:
@@ -1216,7 +1216,7 @@ field_options:
       name_placeholder: أدخل عنوانًا...
     collections_name: مجموعات
     collections_addLabel: مجموعة جديدة...
-  directus9_users:
+  directus_users:
     preferences_divider: تفضيلات المستخدم
     dropdown_auto: تلقائي (مبني على النظام)
     dropdown_light: الوضع المضيء
@@ -1228,7 +1228,7 @@ field_options:
     status_dropdown_suspended: معلّق
     status_dropdown_archived: مؤرشف
     token: أدخل رمز الوصول الآمن...
-  directus9_webhooks:
+  directus_webhooks:
     status_options_active: مفعل
     status_options_inactive: غير نشط
     data_label: إرسال بيانات الحدث

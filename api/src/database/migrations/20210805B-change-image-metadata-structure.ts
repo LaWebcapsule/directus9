@@ -5,7 +5,7 @@ import type { Knex } from 'knex';
 export async function up(knex: Knex): Promise<void> {
 	const files = await knex
 		.select<{ id: number; metadata: string }[]>('id', 'metadata')
-		.from('directus9_files')
+		.from('directus_files')
 		.whereNotNull('metadata');
 
 	for (const { id, metadata } of files) {
@@ -48,7 +48,7 @@ export async function up(knex: Knex): Promise<void> {
 				newMetadata.iptc = prevMetadata.iptc;
 			}
 
-			await knex('directus9_files')
+			await knex('directus_files')
 				.update({ metadata: JSON.stringify(newMetadata) })
 				.where({ id });
 		}
@@ -58,7 +58,7 @@ export async function up(knex: Knex): Promise<void> {
 export async function down(knex: Knex): Promise<void> {
 	const files = await knex
 		.select<{ id: number; metadata: string }[]>('id', 'metadata')
-		.from('directus9_files')
+		.from('directus_files')
 		.whereNotNull('metadata')
 		.whereNot('metadata', '{}');
 
@@ -95,7 +95,7 @@ export async function down(knex: Knex): Promise<void> {
 				delete newMetadata.exif['iptc'];
 			}
 
-			await knex('directus9_files')
+			await knex('directus_files')
 				.update({ metadata: JSON.stringify(newMetadata) })
 				.where({ id });
 		}

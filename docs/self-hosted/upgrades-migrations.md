@@ -48,7 +48,7 @@ If you ran any database migrations for a newer version, you can revert those by 
 2. Optional: **Backup any custom code and extensions** within the project's root directory
 3. Optional: **Backup your entire database**, only system tables, or only project tables
 4. **Delete the project's root directory** from the server
-5. **Delete all Directus9 system tables** (`directus9_*`) from the database
+5. **Delete all Directus9 system tables** (`directus_*`) from the database
 
 ::: tip Pure SQL
 

@@ -1,5 +1,5 @@
 type: object
-x-collection: directus9_relations
+x-collection: directus_relations
 properties:
   id:
     description: Unique identifier for the relation.
@@ -7,7 +7,7 @@ properties:
     type: integer
   many_collection:
     description: Collection that has the field that holds the foreign key.
-    example: directus9_activity
+    example: directus_activity
     type: string
   many_field:
     description: Foreign key. Field that holds the primary key of the related collection.
@@ -19,7 +19,7 @@ properties:
     type: string
   one_collection:
     description: Collection on the _one_ side of the relationship.
-    example: directus9_users
+    example: directus_users
     type: string
   one_field:
     description: Alias column that serves as the _one_ side of the relationship.

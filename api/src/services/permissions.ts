@@ -11,7 +11,7 @@ export class PermissionsService extends ItemsService {
 	systemCache: Keyv<any>;
 
 	constructor(options: AbstractServiceOptions) {
-		super('directus9_permissions', options);
+		super('directus_permissions', options);
 
 		const { systemCache } = getCache();
 

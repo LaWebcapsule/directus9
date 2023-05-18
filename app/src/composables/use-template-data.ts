@@ -34,7 +34,7 @@ export function useTemplateData(collection: Ref<Collection | null>, primaryKey: 
 
 		const baseEndpoint = getEndpoint(collection.value.collection);
 
-		const endpoint = collection.value.collection.startsWith('directus9_')
+		const endpoint = collection.value.collection.startsWith('directus_')
 			? `${baseEndpoint}/${primaryKey.value}`
 			: `${baseEndpoint}/${encodeURIComponent(primaryKey.value)}`;
 

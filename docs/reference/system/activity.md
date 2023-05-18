@@ -90,7 +90,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	activity: [directus9_activity]
+	activity: [directus_activity]
 }
 ```
 
@@ -132,7 +132,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	activity_by_id(id: ID!): directus9_activity
+	activity_by_id(id: ID!): directus_activity
 }
 ```
 
@@ -193,7 +193,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_comment(collection: String!, item: ID!, comment: String!): directus9_activity
+	create_comment(collection: String!, item: ID!, comment: String!): directus_activity
 }
 ```
 
@@ -248,7 +248,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_comment(id: ID!, comment: String!): directus9_activity
+	update_comment(id: ID!, comment: String!): directus_activity
 }
 ```
 

@@ -108,7 +108,7 @@ logoutReason:
 public_label: Công khai
 public_description: Kiểm soát dữ liệu API nào có thể truy cập mà không cần đăng nhập.
 not_allowed: Không Cho Phép
-directus9_version: Phiên bản hệ thống
+directus_version: Phiên bản hệ thống
 node_version: Phiên bản Node
 node_uptime: Thời gian Hoạt động
 os_type: Hệ điều hành
@@ -763,7 +763,7 @@ collections: Danh mục
 content: Nội dung
 system_fields_locked: Trường hệ thống đang bị khoá và không thể chỉnh sửa được
 fields:
-  directus9_activity:
+  directus_activity:
     item: Trường khoá chính định danh
     action: Hành động
     collection: Danh mục
@@ -773,7 +773,7 @@ fields:
     user_agent: Tài khoản người dùng
     ip: Địa chỉ IP
     revisions: Bản điều chỉnh
-  directus9_collections:
+  directus_collections:
     collection: Danh mục
     icon: Biểu tượng
     note: Ghi chú
@@ -781,7 +781,7 @@ fields:
     display_template: Mẫu hiển thị
     hidden: Ẩn
     sort_field: Sắp xếp theo trường
-  directus9_files:
+  directus_files:
     title: Tiêu đề
     description: Mô tả
     tags: Tags
@@ -802,7 +802,7 @@ fields:
     height: Độ dài
     charset: Bảng mã
     duration: Thời lượng
-  directus9_users:
+  directus_users:
     first_name: Tên
     last_name: Họ
     email: Địa chỉ email
@@ -830,30 +830,30 @@ fields:
     last_page: Trang cuối
     last_access: Truy cập lần cuối
     email_notifications: Thông báo email
-  directus9_settings:
+  directus_settings:
     project_name: Tên Dự Án
     auth_password_policy: Quy định về mật khẩu
     storage_default_folder: Thư mục mặc định
     custom_css: Tuỳ chỉnh CSS
     module_bar: Thanh công cụ
     image_editor: Trình chỉnh sửa ảnh
-  directus9_shares:
+  directus_shares:
     name: Tên
     role: Phân quyền
     password: Mật khẩu
     date_start: Ngày bắt đầu
     date_end: Ngày kết thúc
     times_used: Thời gian sử dụng
-  directus9_fields:
+  directus_fields:
     icon: Biểu tượng của Danh mục
     note: Ghi chú
     hidden: Ẩn
     translation: Hiển thị Ngôn ngữ Khác
     display_template: Mẫu
-  directus9_roles:
+  directus_roles:
     name: Tên Quyền
     description: Mô tả
-  directus9_webhooks:
+  directus_webhooks:
     name: Tên
     method: Phương thức
     status: Trạng thái
@@ -861,16 +861,16 @@ fields:
     value: Giá trị
     collections: Danh mục
 field_options:
-  directus9_settings:
+  directus_settings:
     security_divider_title: Bảo mật
     auth_password_policy:
       none_text: Không có - Không khuyến nghị
-  directus9_activity:
+  directus_activity:
     login: Đăng nhập
     create: Tạo
     update: Cập nhật
     delete: Xóa
-  directus9_collections:
+  directus_collections:
     collection_setup: Cài đặt Bộ sưu tập
     language: Ngôn ngữ
     translation: Bản dịch
@@ -878,12 +878,12 @@ field_options:
     archive_field_placeholder: Chọn một trường...
     sort_divider: Sắp xếp
     sort_field: Chọn một trường...
-  directus9_roles:
+  directus_roles:
     fields:
       icon_name: Biểu tượng
       name_name: Tên
     collections_name: Danh mục
-  directus9_users:
+  directus_users:
     preferences_divider: Tuỳ chọn người dùng
     dropdown_auto: Tự động (Dựa vào hệ thống)
     dropdown_light: Chế độ Sáng
@@ -893,7 +893,7 @@ field_options:
     status_dropdown_active: Kích hoạt
     status_dropdown_suspended: Tạm ngưng
     status_dropdown_archived: Đã lưu trữ
-  directus9_webhooks:
+  directus_webhooks:
     status_options_active: Kích hoạt
     status_options_inactive: Không hoạt động
     actions_create: Tạo

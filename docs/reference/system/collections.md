@@ -177,7 +177,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	collections: [directus9_collections]
+	collections: [directus_collections]
 }
 ```
 
@@ -225,7 +225,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	collections_by_name(name: String!): directus9_collections
+	collections_by_name(name: String!): directus_collections
 }
 ```
 
@@ -296,7 +296,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_collections_item(data: directus9_collections): directus9_collections
+	create_collections_item(data: directus_collections): directus_collections
 }
 ```
 
@@ -360,7 +360,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_collections_item(collection: String!, data: update_directus9_collections_input!): directus9_collections
+	update_collections_item(collection: String!, data: update_directus_collections_input!): directus_collections
 }
 ```
 

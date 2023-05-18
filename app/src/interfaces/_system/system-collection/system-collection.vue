@@ -46,7 +46,7 @@ export default defineComponent({
 			}
 
 			return [
-				...collections.filter((collection) => collection.collection.startsWith('directus9_') === false),
+				...collections.filter((collection) => collection.collection.startsWith('directus_') === false),
 				...(props.includeSystem ? collectionsStore.crudSafeSystemCollections : []),
 			];
 		});

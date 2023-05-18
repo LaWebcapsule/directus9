@@ -16,7 +16,7 @@ import { ref } from 'vue';
 const checkForSystem: NavigationGuard = (to, from) => {
 	if (!to.params?.collection) return;
 
-	if (to.params.collection === 'directus9_users') {
+	if (to.params.collection === 'directus_users') {
 		if (to.params.primaryKey) {
 			return `/users/${to.params.primaryKey}`;
 		} else {
@@ -24,7 +24,7 @@ const checkForSystem: NavigationGuard = (to, from) => {
 		}
 	}
 
-	if (to.params.collection === 'directus9_files') {
+	if (to.params.collection === 'directus_files') {
 		if (to.params.primaryKey) {
 			return `/files/${to.params.primaryKey}`;
 		} else {
@@ -32,7 +32,7 @@ const checkForSystem: NavigationGuard = (to, from) => {
 		}
 	}
 
-	if (to.params.collection === 'directus9_activity') {
+	if (to.params.collection === 'directus_activity') {
 		if (to.params.primaryKey) {
 			return `/activity/${to.params.primaryKey}`;
 		} else {
@@ -40,7 +40,7 @@ const checkForSystem: NavigationGuard = (to, from) => {
 		}
 	}
 
-	if (to.params.collection === 'directus9_webhooks') {
+	if (to.params.collection === 'directus_webhooks') {
 		if (to.params.primaryKey) {
 			return `/settings/webhooks/${to.params.primaryKey}`;
 		} else {
@@ -48,7 +48,7 @@ const checkForSystem: NavigationGuard = (to, from) => {
 		}
 	}
 
-	if (to.params.collection === 'directus9_presets') {
+	if (to.params.collection === 'directus_presets') {
 		if (to.params.primaryKey) {
 			return `/settings/presets/${to.params.primaryKey}`;
 		} else {

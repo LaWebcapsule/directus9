@@ -41,10 +41,10 @@ export function adjustFieldsForDisplays(fields: readonly string[], parentCollect
 				return fieldKeys.map((fieldKey) => {
 					/**
 					 * This is for the special case where you want to show a thumbnail in a relation to
-					 * directus9_files. The thumbnail itself isn't a real field, but shows the thumbnail based
+					 * directus_files. The thumbnail itself isn't a real field, but shows the thumbnail based
 					 * on the other available fields (like ID, title, and type).
 					 */
-					if (fieldKey.includes('$thumbnail') && field.collection === 'directus9_files') {
+					if (fieldKey.includes('$thumbnail') && field.collection === 'directus_files') {
 						return fieldKey
 							.split('.')
 							.filter((part) => part !== '$thumbnail')

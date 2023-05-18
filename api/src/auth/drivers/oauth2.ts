@@ -100,7 +100,7 @@ export class OAuth2AuthDriver extends LocalAuthDriver {
 	private async fetchUserId(identifier: string): Promise<string | undefined> {
 		const user = await this.knex
 			.select('id')
-			.from('directus9_users')
+			.from('directus_users')
 			.whereRaw('LOWER(??) = ?', ['external_identifier', identifier.toLowerCase()])
 			.first();
 

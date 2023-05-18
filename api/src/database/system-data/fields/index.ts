@@ -27,7 +27,7 @@ for (const filepath of fieldData) {
 		});
 
 		// Dynamically populate auth providers field
-		if (systemField.collection === 'directus9_users' && systemField.field === 'provider') {
+		if (systemField.collection === 'directus_users' && systemField.field === 'provider') {
 			getAuthProviders().forEach(({ name }) => {
 				systemField.options?.['choices']?.push({
 					text: formatTitle(name),

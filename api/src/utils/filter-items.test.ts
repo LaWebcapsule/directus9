@@ -9,7 +9,7 @@ const items = [
 		presets: null,
 		fields: ['*'],
 		system: true,
-		collection: 'directus9_settings',
+		collection: 'directus_settings',
 		action: 'read',
 	},
 	{
@@ -23,7 +23,7 @@ const items = [
 		presets: null,
 		fields: ['*'],
 		system: true,
-		collection: 'directus9_presets',
+		collection: 'directus_presets',
 		action: 'delete',
 	},
 ];

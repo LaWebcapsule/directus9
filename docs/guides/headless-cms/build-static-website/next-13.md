@@ -2,7 +2,7 @@
 description: This guide shows you how build a website with Next 13 and Directus9 as a Headless CMS.
 tags: []
 skill_level:
-directus9_version: 9.21.4
+directus_version: 9.21.4
 author_override:
 author: Kevin Lewis
 ---
@@ -157,7 +157,7 @@ Create the following fields in your `posts` data model:
 - a datetime selection field called `published` - set the type to 'date'
 - a many-to-one relational field called `author` with the related collection set to `authors`
 
-In Roles & Permissions, give the Public role read access to the `authors`, `posts`, and `directus9_files` collections.
+In Roles & Permissions, give the Public role read access to the `authors`, `posts`, and `directus_files` collections.
 
 Create 3 items in the posts collection -
 [here's some sample data](https://github.com/directus9/examples/blob/main/website-next13/demo-data).

@@ -174,7 +174,7 @@ export default defineComponent({
 	},
 	setup() {
 		const layout = ref('tabular');
-		const collection = ref('directus9_presets');
+		const collection = ref('directus_presets');
 		const { layoutOptions, layoutQuery, filter, search, refreshInterval } = usePreset(collection);
 
 		const { t } = useI18n();

@@ -5,7 +5,7 @@ import { ItemsService } from './items.js';
 
 export class OperationsService extends ItemsService<OperationRaw> {
 	constructor(options: AbstractServiceOptions) {
-		super('directus9_operations', options);
+		super('directus_operations', options);
 	}
 
 	override async createOne(data: Partial<Item>, opts?: MutationOptions): Promise<PrimaryKey> {

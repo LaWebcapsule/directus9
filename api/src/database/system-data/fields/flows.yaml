@@ -1,4 +1,4 @@
-table: directus9_flows
+table: directus_flows
 
 fields:
   - field: id

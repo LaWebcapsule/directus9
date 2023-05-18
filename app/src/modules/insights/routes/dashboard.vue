@@ -238,7 +238,7 @@ const { loading, errors, data, saving, hasEdits, refreshIntervals, variables } =
 const zoomToFit = ref(false);
 
 const updateAllowed = computed<boolean>(() => {
-	return permissionsStore.hasPermission('directus9_panels', 'update');
+	return permissionsStore.hasPermission('directus_panels', 'update');
 });
 
 const now = new Date();

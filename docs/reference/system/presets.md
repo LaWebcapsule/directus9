@@ -49,7 +49,7 @@ The options used by the layout. This structure is based on the used layout.
 	"bookmark": null,
 	"user": "410b5772-e63f-4ae6-9ea2-39c3a31bd6ca",
 	"role": null,
-	"collection": "directus9_activity",
+	"collection": "directus_activity",
 	"search": null,
 	"filters": [],
 	"layout": "tabular",
@@ -112,7 +112,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	presets: [directus9_presets]
+	presets: [directus_presets]
 }
 ```
 
@@ -161,7 +161,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	presets_by_id(id: ID!): directus9_presets
+	presets_by_id(id: ID!): directus_presets
 }
 ```
 
@@ -220,7 +220,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_presets_item(data: create_directus9_presets_input!): directus9_presets
+	create_presets_item(data: create_directus_presets_input!): directus_presets
 }
 ```
 
@@ -266,7 +266,7 @@ POST /presets
 
 [
 	{
-		"collection": "directus9_files",
+		"collection": "directus_files",
 		"user": "410b5772-e63f-4ae6-9ea2-39c3a31bd6ca",
 		"layout": "cards",
 		"search": "Directus9"
@@ -287,7 +287,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_presets_items(data: [create_directus9_presets_input!]!): [directus9_presets]
+	create_presets_items(data: [create_directus_presets_input!]!): [directus_presets]
 }
 ```
 
@@ -298,7 +298,7 @@ mutation {
 	create_presets_items(
 		data: [
 			{
-				collection: "directus9_files"
+				collection: "directus_files"
 				user: "410b5772-e63f-4ae6-9ea2-39c3a31bd6ca"
 				layout: "cards"
 				search: "Directus9"
@@ -354,7 +354,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_presets_item(id: ID!, data: update_directus9_presets_input): directus9_presets
+	update_presets_item(id: ID!, data: update_directus_presets_input): directus_presets
 }
 ```
 
@@ -418,7 +418,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_presets_items(ids: [ID!]!, data: update_directus9_presets_input): [directus9_presets]
+	update_presets_items(ids: [ID!]!, data: update_directus_presets_input): [directus_presets]
 }
 ```
 

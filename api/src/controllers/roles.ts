@@ -11,7 +11,7 @@ import { sanitizeQuery } from '../utils/sanitize-query.js';
 
 const router = express.Router();
 
-router.use(useCollection('directus9_roles'));
+router.use(useCollection('directus_roles'));
 
 router.post(
 	'/',
@@ -64,7 +64,7 @@ const readHandler = asyncHandler(async (req, res, next) => {
 	});
 
 	const records = await service.readByQuery(req.sanitizedQuery);
-	const meta = await metaService.getMetaForQuery('directus9_roles', req.sanitizedQuery);
+	const meta = await metaService.getMetaForQuery('directus_roles', req.sanitizedQuery);
 
 	res.locals['payload'] = { data: records || null, meta };
 	return next();

@@ -11,12 +11,12 @@
 					</div>
 
 					<div class="field half">
-						<p class="type-label">{{ t('fields.directus9_roles.app_access') }}</p>
+						<p class="type-label">{{ t('fields.directus_roles.app_access') }}</p>
 						<v-checkbox v-model="appAccess" block :label="t('enabled')" />
 					</div>
 
 					<div class="field half">
-						<p class="type-label">{{ t('fields.directus9_roles.admin_access') }}</p>
+						<p class="type-label">{{ t('fields.directus_roles.admin_access') }}</p>
 						<v-checkbox v-model="adminAccess" block :label="t('enabled')" />
 					</div>
 				</div>

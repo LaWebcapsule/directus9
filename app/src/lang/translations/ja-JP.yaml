@@ -105,7 +105,7 @@ logoutReason:
   SESSION_EXPIRED: セッションが期限切れです
 public_description: 認証せずに利用できる API データを制御します。
 not_allowed: 許可されていない
-directus9_version: Directus9 Version
+directus_version: Directus9 Version
 os_type: OS 種類
 os_version: OSバージョン
 os_uptime: OS 稼働時間
@@ -426,19 +426,19 @@ content: コンテンツ
 singleton: シングルトン
 singleton_label: シングルオブジェクトに設定する
 fields:
-  directus9_activity:
+  directus_activity:
     comment: コメント
     user_agent: ユーザーエージェント
     ip: IPアドレス
     revisions: 履歴
-  directus9_collections:
+  directus_collections:
     icon: アイコン
     note: 備考
     color: 色
     hidden: 非表示
     singleton: シングルトン
     sort_field: フィールドの並べ替え
-  directus9_files:
+  directus_files:
     title: タイトル
     description: 説明
     tags: タグ
@@ -454,7 +454,7 @@ fields:
     folder: フォルダ
     width: 幅
     height: 高さ
-  directus9_users:
+  directus_users:
     first_name: 名
     last_name: 姓
     email: メールアドレス
@@ -469,47 +469,47 @@ fields:
     status: ステータス
     token: トークン
     last_access: 最後にアクセスした日時
-  directus9_settings:
+  directus_settings:
     project_name: プロジェクト名
     project_url: プロジェクトの URL
     project_color: プロジェクトの色
     project_logo: プロジェクトのロゴ
     module_bar: モジュールバー
-  directus9_shares:
+  directus_shares:
     name: 名前
     password: パスワード
-  directus9_fields:
+  directus_fields:
     note: 備考
     hidden: 非表示
     singleton: シングルトン
     translation: 項目名の翻訳を追加する
-  directus9_roles:
+  directus_roles:
     name: 権限名
     description: 説明
     ip_access: IP アクセス
     enforce_tfa: 二段階認証が必要
-  directus9_webhooks:
+  directus_webhooks:
     name: 名前
     status: ステータス
     value: 値
     collections: コレクション
 field_options:
-  directus9_activity:
+  directus_activity:
     create: 作成
     update: 更新
-  directus9_collections:
+  directus_collections:
     collection_setup: コレクションの作成
     singleton: シングルオブジェクトに設定する
     language: 言語
     translation: 翻訳
     archive_divider: アーカイブ
     sort_divider: 並べ替え
-  directus9_roles:
+  directus_roles:
     fields:
       icon_name: アイコン
       name_name: 名前
     collections_name: コレクション
-  directus9_webhooks:
+  directus_webhooks:
     actions_create: 作成
     actions_update: 更新
     headers:

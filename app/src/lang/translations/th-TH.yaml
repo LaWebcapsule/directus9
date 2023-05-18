@@ -106,7 +106,7 @@ logoutReason:
 public_label: สาธารณะ
 public_description: สามารถเข้าถึง API เหล่านี้ได้โดยไม่ต้องยืนยันตัวตน
 not_allowed: ไม่อนุญาต
-directus9_version: เวอร์ชั่น Directus9
+directus_version: เวอร์ชั่น Directus9
 node_version: เวอร์ชั่น Node
 node_uptime: เวลาออนไลน์ Node
 os_type: ประเภท OS
@@ -841,7 +841,7 @@ singleton: Singleton
 singleton_label: ทำเสมือนว่ามีออปเจ็คเดียว
 system_fields_locked: ฟิลด์ระบบถูกล็อคและไม่สามารถแก้ไขได้
 fields:
-  directus9_activity:
+  directus_activity:
     item: คีย์หลัก
     action: ดำเนินการ
     collection: คอลเลกชัน
@@ -851,7 +851,7 @@ fields:
     user_agent: ตัวแทนของผู้ใช้
     ip: หมายเลขไอพี
     revisions: ประวัติการปรับปรุง
-  directus9_collections:
+  directus_collections:
     collection: คอลเลกชัน
     icon: ไอคอน
     note: หมายเหตุ
@@ -865,7 +865,7 @@ fields:
     unarchive_value: ยกเลิกการเก็บค่า
     sort_field: เรียงฟิลด์
     accountability: การติดตามกิจกรรมและการแก้ไข
-  directus9_files:
+  directus_files:
     $thumbnail: รูปขนาดย่อ
     title: ตำแหน่ง
     description: รายละเอียด
@@ -889,7 +889,7 @@ fields:
     height: สูง
     charset: 'ชุดอักขระ:'
     duration: ระยะเวลา
-  directus9_users:
+  directus_users:
     first_name: ชื่อ
     last_name: นามสกุล
     email: อีเมล
@@ -913,7 +913,7 @@ fields:
     provider: ผู้ให้บริการ
     last_page: หน้าสุดท้าย
     last_access: การเข้าถึงล่าสุด
-  directus9_settings:
+  directus_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
@@ -931,11 +931,11 @@ fields:
     storage_default_folder: โฟลเดอร์เริ่มต้น
     custom_css: CSS ที่กำหนดเอง
     module_bar: โมดูลบาร์
-  directus9_shares:
+  directus_shares:
     name: ชื่อ
     role: บทบาท
     password: รหัสผ่าน
-  directus9_fields:
+  directus_fields:
     collection: ชื่อคอลเลกชัน
     icon: ไอคอนของคอลเลกชัน
     note: หมายเหตุ
@@ -943,7 +943,7 @@ fields:
     singleton: Singleton
     translation: คำแปลชื่อฟิลด์
     display_template: แม่แบบ
-  directus9_roles:
+  directus_roles:
     name: ชื่อบทบาท
     icon: ไอคอนของบทบาท
     description: รายละเอียด
@@ -953,7 +953,7 @@ fields:
     enforce_tfa: ต้องการ 2FA
     users: ผู้ใช้ในบทบาทนี้
     module_list: รายการโมดูล
-  directus9_webhooks:
+  directus_webhooks:
     name: ชื่อ
     method: เมธอด
     status: สถานะ
@@ -963,14 +963,14 @@ fields:
     headers: รีเควส เฮดเดอร์
     collections: คอลเลกชัน
 field_options:
-  directus9_settings:
+  directus_settings:
     security_divider_title: ความปลอดภัย
-  directus9_activity:
+  directus_activity:
     login: เข้าสู่ระบบ
     create: สร้าง
     update: แก้ไข
     delete: ลบ
-  directus9_collections:
+  directus_collections:
     track_activity_revisions: ติดตามกิจกรรมและการแก้ไข
     only_track_activity: ติดตามกิจกรรมเท่านั้น
     do_not_track_anything: อย่าติดตามอะไรเลย
@@ -983,21 +983,21 @@ field_options:
     archive_divider: เก็บถาวร
     archive_field_placeholder: เลือกฟิลด์
     sort_divider: เรียง
-  directus9_roles:
+  directus_roles:
     fields:
       icon_name: ไอคอน
       name_name: ชื่อ
       name_placeholder: ป้อนชื่อเรื่อง
     collections_name: คอลเลกชัน
     collections_addLabel: เพิ่มคอลเลกชัน
-  directus9_users:
+  directus_users:
     preferences_divider: การตั้งค่าผู้ใช้
     status_dropdown_draft: ฉบับร่าง
     status_dropdown_active: เปิดใช้งาน
     status_dropdown_suspended: ระงับชั่วคราว
     status_dropdown_archived: เก็บถาวร
     token: ระบุโทเค็นความปลอดภัย
-  directus9_webhooks:
+  directus_webhooks:
     status_options_active: เปิดใช้งาน
     status_options_inactive: ไม่ใช้งาน
     actions_create: สร้าง

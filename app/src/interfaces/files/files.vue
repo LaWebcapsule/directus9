@@ -54,7 +54,7 @@
 								</v-list-item>
 								<v-list-item
 									clickable
-									:download="element.directus9_files_id.filename_download"
+									:download="element.directus_files_id.filename_download"
 									:href="getAssetUrl(getFilename(element), true)"
 								>
 									<v-list-item-icon><v-icon name="download" /></v-list-item-icon>
@@ -90,7 +90,7 @@
 		>
 			<template #actions>
 				<v-button
-					v-if="currentlyEditing !== '+' && relationInfo.relatedCollection.collection === 'directus9_files'"
+					v-if="currentlyEditing !== '+' && relationInfo.relatedCollection.collection === 'directus_files'"
 					secondary
 					rounded
 					icon
@@ -340,16 +340,16 @@ function onSelect(selected: string[]) {
 }
 
 const downloadName = computed(() => {
-	if (relatedPrimaryKey.value === null || relationInfo.value?.relatedCollection.collection !== 'directus9_files') return;
+	if (relatedPrimaryKey.value === null || relationInfo.value?.relatedCollection.collection !== 'directus_files') return;
 	const junctionField = relationInfo.value.junctionField.field;
 	const relationPkField = relationInfo.value.relatedPrimaryKeyField.field;
 
-	return displayItems.value.find((item) => get(item, [junctionField, relationPkField]))?.directus9_files_id
+	return displayItems.value.find((item) => get(item, [junctionField, relationPkField]))?.directus_files_id
 		?.filename_download;
 });
 
 const downloadUrl = computed(() => {
-	if (relatedPrimaryKey.value === null || relationInfo.value?.relatedCollection.collection !== 'directus9_files') return;
+	if (relatedPrimaryKey.value === null || relationInfo.value?.relatedCollection.collection !== 'directus_files') return;
 	return getAssetUrl(String(relatedPrimaryKey.value), true);
 });
 

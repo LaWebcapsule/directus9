@@ -1,4 +1,4 @@
-table: directus9_collections
+table: directus_collections
 
 defaults:
   collection: null
@@ -11,64 +11,64 @@ defaults:
   accountability: 'all'
 
 data:
-  - collection: directus9_activity
-    note: $t:directus9_collection.directus9_activity
+  - collection: directus_activity
+    note: $t:directus_collection.directus_activity
     accountability: null
-  - collection: directus9_collections
+  - collection: directus_collections
     icon: list_alt
-    note: $t:directus9_collection.directus9_collections
-  - collection: directus9_fields
+    note: $t:directus_collection.directus_collections
+  - collection: directus_fields
     icon: input
-    note: $t:directus9_collection.directus9_fields
-  - collection: directus9_files
+    note: $t:directus_collection.directus_fields
+  - collection: directus_files
     icon: folder
-    note: $t:directus9_collection.directus9_files
+    note: $t:directus_collection.directus_files
     display_template: '{{ $thumbnail }} {{ title }}'
-  - collection: directus9_folders
-    note: $t:directus9_collection.directus9_folders
+  - collection: directus_folders
+    note: $t:directus_collection.directus_folders
     display_template: '{{ name }}'
-  - collection: directus9_migrations
-    note: $t:directus9_collection.directus9_migrations
-  - collection: directus9_permissions
+  - collection: directus_migrations
+    note: $t:directus_collection.directus_migrations
+  - collection: directus_permissions
     icon: admin_panel_settings
-    note: $t:directus9_collection.directus9_permissions
-  - collection: directus9_presets
+    note: $t:directus_collection.directus_permissions
+  - collection: directus_presets
     icon: bookmark
-    note: $t:directus9_collection.directus9_presets
+    note: $t:directus_collection.directus_presets
     accountability: null
-  - collection: directus9_relations
+  - collection: directus_relations
     icon: merge_type
-    note: $t:directus9_collection.directus9_relations
-  - collection: directus9_revisions
-    note: $t:directus9_collection.directus9_revisions
+    note: $t:directus_collection.directus_relations
+  - collection: directus_revisions
+    note: $t:directus_collection.directus_revisions
     accountability: null
-  - collection: directus9_roles
+  - collection: directus_roles
     icon: supervised_user_circle
-    note: $t:directus9_collection.directus9_roles
-  - collection: directus9_sessions
-    note: $t:directus9_collection.directus9_sessions
-  - collection: directus9_settings
+    note: $t:directus_collection.directus_roles
+  - collection: directus_sessions
+    note: $t:directus_collection.directus_sessions
+  - collection: directus_settings
     singleton: true
-    note: $t:directus9_collection.directus9_settings
-  - collection: directus9_users
+    note: $t:directus_collection.directus_settings
+  - collection: directus_users
     archive_field: status
     archive_value: archived
     unarchive_value: draft
     icon: people_alt
-    note: $t:directus9_collection.directus9_users
+    note: $t:directus_collection.directus_users
     display_template: '{{ first_name }} {{ last_name }}'
-  - collection: directus9_webhooks
-    note: $t:directus9_collection.directus9_webhooks
-  - collection: directus9_dashboards
-    note: $t:directus9_collection.directus9_dashboards
-  - collection: directus9_panels
-    note: $t:directus9_collection.directus9_panels
-  - collection: directus9_notifications
-    note: $t:directus9_collection.directus9_notifications
-  - collection: directus9_shares
+  - collection: directus_webhooks
+    note: $t:directus_collection.directus_webhooks
+  - collection: directus_dashboards
+    note: $t:directus_collection.directus_dashboards
+  - collection: directus_panels
+    note: $t:directus_collection.directus_panels
+  - collection: directus_notifications
+    note: $t:directus_collection.directus_notifications
+  - collection: directus_shares
     icon: share
-    note: $t:directus9_collection.directus9_shares
-  - collection: directus9_flows
-    note: $t:directus9_collection.directus9_flows
-  - collection: directus9_operations
-    note: $t:directus9_collection.directus9_operations
+    note: $t:directus_collection.directus_shares
+  - collection: directus_flows
+    note: $t:directus_collection.directus_flows
+  - collection: directus_operations
+    note: $t:directus_collection.directus_operations

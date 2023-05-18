@@ -1,4 +1,4 @@
-table: directus9_files
+table: directus_files
 
 columns:
   id:
@@ -24,12 +24,12 @@ columns:
   folder:
     type: uuid
     references:
-      table: directus9_folders
+      table: directus_folders
       column: id
   uploaded_by:
     type: uuid
     references:
-      table: directus9_users
+      table: directus_users
       column: id
   uploaded_on:
     type: timestamp
@@ -38,7 +38,7 @@ columns:
   modified_by:
     type: uuid
     references:
-      table: directus9_users
+      table: directus_users
       column: id
   modified_on:
     type: timestamp

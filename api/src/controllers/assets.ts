@@ -20,20 +20,20 @@ import { getMilliseconds } from '../utils/get-milliseconds.js';
 
 const router = Router();
 
-router.use(useCollection('directus9_files'));
+router.use(useCollection('directus_files'));
 
 router.get(
 	'/:pk/:filename?',
 	// Validate query params
 	asyncHandler(async (req, res, next) => {
-		const payloadService = new PayloadService('directus9_settings', { schema: req.schema });
+		const payloadService = new PayloadService('directus_settings', { schema: req.schema });
 		const defaults = { storage_asset_presets: [], storage_asset_transform: 'all' };
 
 		const database = getDatabase();
 
 		const savedAssetSettings = await database
 			.select('storage_asset_presets', 'storage_asset_transform')
-			.from('directus9_settings')
+			.from('directus_settings')
 			.first();
 
 		if (savedAssetSettings) {

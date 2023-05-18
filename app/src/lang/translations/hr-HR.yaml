@@ -118,7 +118,7 @@ public_label: Javno
 public_description: Određuje koji su API podaci dostupni bez provjere autentičnosti.
 admin_description: Početna administrativna uloga s neograničenim pristupom aplikaciji/API-ju.
 not_allowed: Nije dopušteno
-directus9_version: Directus9 verzija
+directus_version: Directus9 verzija
 node_version: Node verzija
 node_uptime: Node vrijeme rada
 os_type: Vrsta OS-a
@@ -1012,30 +1012,30 @@ content: Sadržaj
 singleton: Singleton
 singleton_label: Tretiraj kao jedan objekt
 system_fields_locked: Polja sustava su zaključana i ne mogu se uređivati
-directus9_collection:
-  directus9_activity: Dnevnici odgovornosti za sve događaje
-  directus9_collections: Dodatna konfiguracija zbirke i metapodaci
-  directus9_dashboards: Nadzorne ploče unutar modula s uvidima
-  directus9_fields: Dodatna konfiguracija polja i metapodaci
-  directus9_files: Metapodaci za sva upravljana datotečna sredstva
-  directus9_flows: Automatizacija tokova
-  directus9_folders: Pruža virtualne direktorije za datoteke
-  directus9_migrations: Koju verziju baze podataka koristite
-  directus9_notifications: Obavijesti poslane korisnicima
-  directus9_operations: Operacije koje se izvode u tokovima
-  directus9_panels: Pojedinačne ploče unutar nadzornih ploča s uvidima
-  directus9_permissions: Dozvole pristupa za svaku ulogu
-  directus9_presets: Unaprijed postavljene postavke za zbirke i oznake
-  directus9_relations: Konfiguracija odnosa i metapodaci
-  directus9_revisions: Snimke podataka za sve aktivnosti
-  directus9_roles: Grupe dopuštenja za korisnike sustava
-  directus9_sessions: Informacije o sesiji korisnika
-  directus9_settings: Opcije konfiguracije projekta
-  directus9_shares: Prati vanjske dijeljene stavke
-  directus9_users: Korisnici sustava za platformu
-  directus9_webhooks: Konfiguracija za HTTP zahtjeve temeljene na događajima
+directus_collection:
+  directus_activity: Dnevnici odgovornosti za sve događaje
+  directus_collections: Dodatna konfiguracija zbirke i metapodaci
+  directus_dashboards: Nadzorne ploče unutar modula s uvidima
+  directus_fields: Dodatna konfiguracija polja i metapodaci
+  directus_files: Metapodaci za sva upravljana datotečna sredstva
+  directus_flows: Automatizacija tokova
+  directus_folders: Pruža virtualne direktorije za datoteke
+  directus_migrations: Koju verziju baze podataka koristite
+  directus_notifications: Obavijesti poslane korisnicima
+  directus_operations: Operacije koje se izvode u tokovima
+  directus_panels: Pojedinačne ploče unutar nadzornih ploča s uvidima
+  directus_permissions: Dozvole pristupa za svaku ulogu
+  directus_presets: Unaprijed postavljene postavke za zbirke i oznake
+  directus_relations: Konfiguracija odnosa i metapodaci
+  directus_revisions: Snimke podataka za sve aktivnosti
+  directus_roles: Grupe dopuštenja za korisnike sustava
+  directus_sessions: Informacije o sesiji korisnika
+  directus_settings: Opcije konfiguracije projekta
+  directus_shares: Prati vanjske dijeljene stavke
+  directus_users: Korisnici sustava za platformu
+  directus_webhooks: Konfiguracija za HTTP zahtjeve temeljene na događajima
 fields:
-  directus9_activity:
+  directus_activity:
     item: Primarni ključ stavke
     action: Radnja
     collection: Zbirka
@@ -1046,7 +1046,7 @@ fields:
     origin: Podrijetlo
     ip: IP Adresa
     revisions: Revizije
-  directus9_collections:
+  directus_collections:
     collection: Zbirke
     icon: Ikona
     note: Napomena
@@ -1062,7 +1062,7 @@ fields:
     accountability: Praćenje aktivnosti i revizija
     archive_field: Arhivsko polje
     item_duplication_fields: Polje za dupliciranje stavke
-  directus9_files:
+  directus_files:
     $thumbnail: Minijatura
     title: Naslov
     description: Opis
@@ -1086,7 +1086,7 @@ fields:
     height: Visina
     charset: Skup znakova
     duration: Trajanje
-  directus9_users:
+  directus_users:
     first_name: Ime
     last_name: Prezime
     email: E-mail
@@ -1117,7 +1117,7 @@ fields:
     last_page: Zadnja stranica
     last_access: Zadnji pristup
     email_notifications: Obavijesti e-pošte
-  directus9_settings:
+  directus_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
@@ -1157,7 +1157,7 @@ fields:
     transformations_presets: Ograničite transformacije na unaprijed postavljene postavke u nastavku
     image_editor: Uređivač slika
     custom_aspect_ratios: Prilagođeni omjeri
-  directus9_shares:
+  directus_shares:
     name: Ime
     role: Uloge
     password: Lozinka
@@ -1165,7 +1165,7 @@ fields:
     date_end: Završni datum
     max_uses: Maksimalno upotreba
     times_used: Upotrijebljeno puta
-  directus9_fields:
+  directus_fields:
     collection: Ime zbirke
     icon: Ikona zbirke
     note: Napomena
@@ -1173,7 +1173,7 @@ fields:
     singleton: Singleton
     translation: Prijevodi naziva polja
     display_template: Predložak
-  directus9_roles:
+  directus_roles:
     name: Naziv uloge
     icon: Ikona uloge
     description: Opis
@@ -1183,7 +1183,7 @@ fields:
     enforce_tfa: Zahtijevaj 2FA
     users: Korisnici s ulogom
     module_list: Navigacija modula
-  directus9_webhooks:
+  directus_webhooks:
     name: Ime
     method: Metoda
     status: Status
@@ -1196,7 +1196,7 @@ fields:
     actions: Radnje
     collections: Zbirke
 field_options:
-  directus9_settings:
+  directus_settings:
     project_name_placeholder: Moj projekt...
     project_color_note: Pozadina i logotip za prijavu
     project_logo_note: Bijela 40x40 SVG/PNG
@@ -1225,12 +1225,12 @@ field_options:
     basemaps_style: Mapbox stil
     files_divider_title: Datoteke i minijature
     overrides_divider_title: Aplikacija nadjačava
-  directus9_activity:
+  directus_activity:
     login: Prijava
     create: Kreiraj
     update: Ažuriraj
     delete: Obriši
-  directus9_collections:
+  directus_collections:
     track_activity_revisions: Praćenje aktivnost i revizija
     only_track_activity: Prati samo aktivnost
     do_not_track_anything: Nemoj pratiti ništa
@@ -1253,14 +1253,14 @@ field_options:
     sort_field: Odaberite polje...
     accountability_divider: Odgovornost
     duplication_divider: Umnožavanje
-  directus9_files:
+  directus_files:
     title: Jedinstven naslov...
     description: Neobavezan opis...
     location: Neobavezna lokacija...
     storage_divider: Imenovanje datoteka
     filename_disk: Naziv na disku...
     filename_download: Naziv prilikom preuzimanja...
-  directus9_roles:
+  directus_roles:
     name: Jedinstveni naziv za ovu ulogu...
     description: Opis uloge...
     ip_access: Dodajte dopuštene IP adrese, ostavite prazno da dopustite sve...
@@ -1272,7 +1272,7 @@ field_options:
       link_placeholder: Relativni ili apsolutni URL...
     collections_name: Zbirke
     collections_addLabel: Dodaj zbirku...
-  directus9_users:
+  directus_users:
     preferences_divider: Preferencije korisnika
     dropdown_auto: Automatski (na temelju sustava)
     dropdown_light: Svijetli način
@@ -1284,7 +1284,7 @@ field_options:
     status_dropdown_suspended: Suspendiran
     status_dropdown_archived: Arhivirano
     token: Unesite siguran pristupni token...
-  directus9_webhooks:
+  directus_webhooks:
     status_options_active: Aktivan
     status_options_inactive: Neaktivan
     data_label: Pošalji podatke o događaju

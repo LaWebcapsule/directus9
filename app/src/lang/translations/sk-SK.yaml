@@ -118,7 +118,7 @@ public_label: Verejné
 public_description: Určuje, ktoré údaje z API sú dostupné bez overovania.
 admin_description: Počiatočná administratívna rola s neobmedzeným prístupom k Appke/API.
 not_allowed: Nepovolené
-directus9_version: Verzia Directus9
+directus_version: Verzia Directus9
 node_version: Verzia Node
 node_uptime: Doba prevádzky nodu
 os_type: Typ OS
@@ -1017,30 +1017,30 @@ content: Obsah
 singleton: Jeden objekt
 singleton_label: Považovať za jeden objekt
 system_fields_locked: Systémové polia sú zamknuté a nedajú sa upravovať
-directus9_collection:
-  directus9_activity: Logovať zodpovednosti za všetky aktivity
-  directus9_collections: Dodatočné nastavenia zbierky a metadát
-  directus9_dashboards: Tabule v module prehľadov
-  directus9_fields: Dodatočné nastavenia polí a metadát
-  directus9_files: Metadáta pre všetky spravované súbory
-  directus9_flows: Automatizácia tokov
-  directus9_folders: Poskytuje virtuálne priečinky na súboru
-  directus9_migrations: Akú verziu databázy používate
-  directus9_notifications: Notifikácie poslané používateľom
-  directus9_operations: Operácie, ktoré bežia v tokoch
-  directus9_panels: Jednotlivé panely na tabuliach
-  directus9_permissions: Prístupové práva pre kažú rolu
-  directus9_presets: Presety pre predvolené hodnoty zbierok a záložky
-  directus9_relations: Nastavenia vzťahov a metadát
-  directus9_revisions: Snímky dát pre všetky aktivity
-  directus9_roles: Skupiny práv pre systémových používateľov
-  directus9_sessions: Informácie o používateľskom sedení
-  directus9_settings: Možnosti konfigurácie projektu
-  directus9_shares: Sleduje externe zdieľané položky
-  directus9_users: Systémoví používatelia na platforme
-  directus9_webhooks: Konfigurácia HTTP požiadavkov z udalostí
+directus_collection:
+  directus_activity: Logovať zodpovednosti za všetky aktivity
+  directus_collections: Dodatočné nastavenia zbierky a metadát
+  directus_dashboards: Tabule v module prehľadov
+  directus_fields: Dodatočné nastavenia polí a metadát
+  directus_files: Metadáta pre všetky spravované súbory
+  directus_flows: Automatizácia tokov
+  directus_folders: Poskytuje virtuálne priečinky na súboru
+  directus_migrations: Akú verziu databázy používate
+  directus_notifications: Notifikácie poslané používateľom
+  directus_operations: Operácie, ktoré bežia v tokoch
+  directus_panels: Jednotlivé panely na tabuliach
+  directus_permissions: Prístupové práva pre kažú rolu
+  directus_presets: Presety pre predvolené hodnoty zbierok a záložky
+  directus_relations: Nastavenia vzťahov a metadát
+  directus_revisions: Snímky dát pre všetky aktivity
+  directus_roles: Skupiny práv pre systémových používateľov
+  directus_sessions: Informácie o používateľskom sedení
+  directus_settings: Možnosti konfigurácie projektu
+  directus_shares: Sleduje externe zdieľané položky
+  directus_users: Systémoví používatelia na platforme
+  directus_webhooks: Konfigurácia HTTP požiadavkov z udalostí
 fields:
-  directus9_activity:
+  directus_activity:
     item: Primárny kľúč položky
     action: Akcia
     collection: Zbierka
@@ -1051,7 +1051,7 @@ fields:
     origin: Pôvod
     ip: IP adresa
     revisions: Revízie
-  directus9_collections:
+  directus_collections:
     collection: Zbierka
     icon: Ikona
     note: Poznámka
@@ -1067,7 +1067,7 @@ fields:
     accountability: Sledovanie aktivity a revízií
     archive_field: Archivačné pole
     item_duplication_fields: Duplikované polia položky
-  directus9_files:
+  directus_files:
     $thumbnail: Miniatúra
     title: Názov
     description: Popis
@@ -1091,7 +1091,7 @@ fields:
     height: Výška
     charset: Znaková sada
     duration: Trvanie
-  directus9_users:
+  directus_users:
     first_name: Meno
     last_name: Priezvisko
     email: E-mail
@@ -1122,7 +1122,7 @@ fields:
     last_page: Posledná strana
     last_access: Posledný prístup
     email_notifications: E-mailové upozornenia
-  directus9_settings:
+  directus_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
@@ -1161,7 +1161,7 @@ fields:
     transformations_presets: Obmedziť transformácie na presety nižšie
     image_editor: Editor obrázkov
     custom_aspect_ratios: Vlastné pomery strán
-  directus9_shares:
+  directus_shares:
     name: Názov
     role: Rola
     password: Heslo
@@ -1169,7 +1169,7 @@ fields:
     date_end: Dátum konca
     max_uses: Max použití
     times_used: Počet použití
-  directus9_fields:
+  directus_fields:
     collection: Názov zbierky
     icon: Ikona zbierky
     note: Poznámka
@@ -1177,7 +1177,7 @@ fields:
     singleton: Jeden objekt
     translation: Preklady názvov polí
     display_template: Šablóna
-  directus9_roles:
+  directus_roles:
     name: Názov role
     icon: Ikona role
     description: Popis
@@ -1187,7 +1187,7 @@ fields:
     enforce_tfa: Vyžadovať 2FA
     users: Používatelia v roli
     module_list: Navigácia modulu
-  directus9_webhooks:
+  directus_webhooks:
     name: Názov
     method: Metóda
     status: Stav
@@ -1200,7 +1200,7 @@ fields:
     actions: Akcie
     collections: Zbierky
 field_options:
-  directus9_settings:
+  directus_settings:
     project_name_placeholder: Môj projekt...
     project_color_note: Prihlásenie a logo na pozadí
     project_logo_note: Biele 40x40 SVG/PNG
@@ -1228,12 +1228,12 @@ field_options:
     basemaps_tile: Raster TileJSON
     basemaps_style: Štýl Mapboxu
     files_divider_title: Súbory a náhľady
-  directus9_activity:
+  directus_activity:
     login: Prihlásenie
     create: Vytvorenie
     update: Úprava
     delete: Odstránenie
-  directus9_collections:
+  directus_collections:
     track_activity_revisions: Sledovať aktivitu a revízie
     only_track_activity: Sledovať len aktivitu
     do_not_track_anything: Nesledovať nič
@@ -1256,14 +1256,14 @@ field_options:
     sort_field: Vyberte pole...
     accountability_divider: Zodpovednosť
     duplication_divider: Duplikovanie
-  directus9_files:
+  directus_files:
     title: Unikátny nadpis...
     description: Voliteľný popis...
     location: Voliteľné miesto...
     storage_divider: Pomenovanie súboru
     filename_disk: Názov na diskovom úložisku...
     filename_download: Názov pri sťahovaní...
-  directus9_roles:
+  directus_roles:
     name: Unikátny názov tejto role...
     description: Popis tejto role...
     ip_access: Pridajte povolené IP adresy, nechajte prázdne pre povolenie všetkých...
@@ -1275,7 +1275,7 @@ field_options:
       link_placeholder: Relatívna alebo absolútna URL...
     collections_name: Zbierky
     collections_addLabel: Pridať zbierku...
-  directus9_users:
+  directus_users:
     preferences_divider: Nastavenia používateľa
     dropdown_auto: Automaticky (podľa systému)
     dropdown_light: Svetlý režim
@@ -1287,7 +1287,7 @@ field_options:
     status_dropdown_suspended: Pozastavený
     status_dropdown_archived: Archivovaný
     token: Zadajte bezpečnostný prístupový token...
-  directus9_webhooks:
+  directus_webhooks:
     status_options_active: Aktívne
     status_options_inactive: Neaktívne
     data_label: Poslať údaje udalosti

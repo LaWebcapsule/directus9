@@ -1,5 +1,5 @@
 type: object
-x-collection: directus9_operations
+x-collection: directus_operations
 properties:
   id:
     description: Unique identifier for the operation.

@@ -229,9 +229,9 @@ export function setDefaults(updates: StateUpdates, state: State, { getCurrent }:
 	set(updates, 'relations.o2m.collection', junctionName);
 	set(updates, 'relations.o2m.field', `${currentCollection}_${currentCollectionPrimaryKeyField}`);
 	set(updates, 'relations.m2o.collection', junctionName);
-	set(updates, 'relations.m2o.related_collection', 'directus9_files');
+	set(updates, 'relations.m2o.related_collection', 'directus_files');
 
-	set(updates, 'relations.m2o.field', 'directus9_files_id');
+	set(updates, 'relations.m2o.field', 'directus_files_id');
 }
 
 export function matchJunctionCollectionName(updates: StateUpdates) {
@@ -258,7 +258,7 @@ export function getAutomaticJunctionCollectionName(collectionA: string) {
 	function getName(index: number) {
 		let name = `${collectionA}_files`;
 
-		if (name.startsWith('directus9_')) {
+		if (name.startsWith('directus_')) {
 			name = 'junction_' + name;
 		}
 

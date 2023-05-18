@@ -5,7 +5,7 @@ import { createPinia } from 'pinia';
 import { createApp } from 'vue';
 import App from './app.vue';
 import { registerComponents } from './components/register';
-import { DIRECTUS9_LOGO } from './constants';
+import { directus_LOGO } from './constants';
 import { registerDirectives } from './directives/register';
 import { i18n } from './lang/';
 import { router } from './router';
@@ -16,9 +16,9 @@ import { loadExtensions, registerExtensions } from './extensions';
 init();
 
 async function init() {
-	const version = __DIRECTUS9_VERSION__;
+	const version = __directus_VERSION__;
 
-	console.log(DIRECTUS9_LOGO);
+	console.log(directus_LOGO);
 
 	console.info(
 		`Hey! Interested in helping build this open-source data management platform?\nIf so, join our growing team of contributors at: https://directus9.chat`

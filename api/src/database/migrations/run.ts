@@ -23,7 +23,7 @@ export default async function run(database: Knex, direction: 'up' | 'down' | 'la
 	migrationFiles = migrationFiles.filter((file: string) => /^[0-9]+[A-Z]-[^.]+\.(?:js|ts)$/.test(file));
 	customMigrationFiles = customMigrationFiles.filter((file: string) => file.endsWith('.js'));
 
-	const completedMigrations = await database.select<Migration[]>('*').from('directus9_migrations').orderBy('version');
+	const completedMigrations = await database.select<Migration[]>('*').from('directus_migrations').orderBy('version');
 
 	const migrations = [
 		...migrationFiles.map((path) => parseFilePath(path)),
@@ -77,7 +77,7 @@ export default async function run(database: Knex, direction: 'up' | 'down' | 'la
 		}
 
 		await up(database);
-		await database.insert({ version: nextVersion.version, name: nextVersion.name }).into('directus9_migrations');
+		await database.insert({ version: nextVersion.version, name: nextVersion.name }).into('directus_migrations');
 
 		await flushCaches(true);
 	}
@@ -102,7 +102,7 @@ export default async function run(database: Knex, direction: 'up' | 'down' | 'la
 		}
 
 		await down(database);
-		await database('directus9_migrations').delete().where({ version: migration.version });
+		await database('directus_migrations').delete().where({ version: migration.version });
 
 		await flushCaches(true);
 	}
@@ -120,7 +120,7 @@ export default async function run(database: Knex, direction: 'up' | 'down' | 'la
 				}
 
 				await up(database);
-				await database.insert({ version: migration.version, name: migration.name }).into('directus9_migrations');
+				await database.insert({ version: migration.version, name: migration.name }).into('directus_migrations');
 			}
 		}
 

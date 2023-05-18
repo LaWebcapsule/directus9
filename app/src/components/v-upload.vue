@@ -57,7 +57,7 @@
 
 			<template v-if="fromUrl !== false || fromLibrary !== false">
 				<drawer-collection
-					collection="directus9_files"
+					collection="directus_files"
 					:active="activeDialog === 'choose'"
 					:multiple="multiple"
 					:filter="filterByFolder"

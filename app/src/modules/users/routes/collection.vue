@@ -10,7 +10,7 @@
 		:filter-user="filter"
 		:filter-system="roleFilter"
 		:search="search"
-		collection="directus9_users"
+		collection="directus_users"
 		:reset-preset="resetPreset"
 	>
 		<private-view
@@ -33,7 +33,7 @@
 			</template>
 
 			<template #actions>
-				<search-input v-model="search" v-model:filter="filter" collection="directus9_users" />
+				<search-input v-model="search" v-model:filter="filter" collection="directus_users" />
 
 				<v-dialog v-if="selection.length > 0" v-model="confirmDelete" @esc="confirmDelete = false">
 					<template #activator="{ on }">
@@ -141,7 +141,7 @@
 			<drawer-batch
 				v-model:active="batchEditActive"
 				:primary-keys="selection"
-				collection="directus9_users"
+				collection="directus_users"
 				@refresh="refresh"
 			/>
 
@@ -154,7 +154,7 @@
 				</layout-sidebar-detail>
 				<component :is="`layout-sidebar-${layout}`" v-bind="layoutState" />
 				<export-sidebar-detail
-					collection="directus9_users"
+					collection="directus_users"
 					:layout-query="layoutQuery"
 					:filter="mergeFilters(filter, roleFilter)"
 					:search="search"
@@ -210,7 +210,7 @@ const serverStore = useServerStore();
 const layoutRef = ref();
 const selection = ref<Item[]>([]);
 
-const { layout, layoutOptions, layoutQuery, filter, search, resetPreset } = usePreset(ref('directus9_users'));
+const { layout, layoutOptions, layoutQuery, filter, search, resetPreset } = usePreset(ref('directus_users'));
 const { addNewLink } = useLinks();
 
 const currentLayout = useExtension('layout', layout);
@@ -242,11 +242,11 @@ const canInviteUsers = computed(() => {
 	if (isAdmin) return true;
 
 	const usersCreatePermission = permissionsStore.permissions.find(
-		(permission) => permission.collection === 'directus9_users' && permission.action === 'create'
+		(permission) => permission.collection === 'directus_users' && permission.action === 'create'
 	);
 
 	const rolesReadPermission = permissionsStore.permissions.find(
-		(permission) => permission.collection === 'directus9_roles' && permission.action === 'read'
+		(permission) => permission.collection === 'directus_roles' && permission.action === 'read'
 	);
 
 	return !!usersCreatePermission && !!rolesReadPermission;
@@ -340,7 +340,7 @@ function usePermissions() {
 		if (admin) return true;
 
 		const updatePermissions = permissionsStore.permissions.find(
-			(permission) => permission.action === 'update' && permission.collection === 'directus9_users'
+			(permission) => permission.action === 'update' && permission.collection === 'directus_users'
 		);
 
 		return !!updatePermissions;
@@ -351,7 +351,7 @@ function usePermissions() {
 		if (admin) return true;
 
 		const deletePermissions = permissionsStore.permissions.find(
-			(permission) => permission.action === 'delete' && permission.collection === 'directus9_users'
+			(permission) => permission.action === 'delete' && permission.collection === 'directus_users'
 		);
 
 		return !!deletePermissions;
@@ -362,7 +362,7 @@ function usePermissions() {
 		if (admin) return true;
 
 		const createPermissions = permissionsStore.permissions.find(
-			(permission) => permission.action === 'create' && permission.collection === 'directus9_users'
+			(permission) => permission.action === 'create' && permission.collection === 'directus_users'
 		);
 
 		return !!createPermissions;

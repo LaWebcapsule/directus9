@@ -362,7 +362,7 @@ async function getDBQuery(
 		});
 
 		if (hasMultiRelationalSort) {
-			wrapperQuery.where('inner.directus9_row_number', '=', 1);
+			wrapperQuery.where('inner.directus_row_number', '=', 1);
 			applyLimit(knex, wrapperQuery, queryCopy.limit);
 		}
 	}

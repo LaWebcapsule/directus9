@@ -117,7 +117,7 @@ public_label: Julkinen
 public_description: Määrittää mitä API-tietoja on saatavilla ilman autentikointia.
 admin_description: Alkuperäinen hallinnollinen rooli rajoittamattomalla App/API-käyttöoikeudella.
 not_allowed: Ei sallittu
-directus9_version: Directus9-versio
+directus_version: Directus9-versio
 node_version: Node-versio
 node_uptime: Node-käynnissäoloaika
 os_type: Käyttöjärjestelmätyyppi
@@ -994,20 +994,20 @@ content: Sisältö
 singleton: Singleton
 singleton_label: Käsittele yhtenä objektina
 system_fields_locked: Järjestelmäkentät ovat lukittuja, eikä niitä voi muokata
-directus9_collection:
-  directus9_activity: Vastuuvelvollisuuslokit kaikille tapahtumille
-  directus9_dashboards: Kojelaudat yleiskatsausmoduulissa
-  directus9_files: Kaikkien hallittujen tiedostojen metatiedot
-  directus9_migrations: Mitä versiota tietokannasta käytät
-  directus9_notifications: Ilmoitus lähetetty käyttäjille
-  directus9_presets: Esiasetukset kokoelmien oletusarvoille ja kirjanmerkeille
-  directus9_roles: Käyttöoikeusryhmät järjestelmäkäyttäjille
-  directus9_sessions: Käyttäjän istunnon tiedot
-  directus9_settings: Projektin konfiguraation asetukset
-  directus9_users: Alustan järjestelmäkäyttäjät
-  directus9_webhooks: Konfiguraatio tapahtumapohjaisille HTTP-pyynnöille
+directus_collection:
+  directus_activity: Vastuuvelvollisuuslokit kaikille tapahtumille
+  directus_dashboards: Kojelaudat yleiskatsausmoduulissa
+  directus_files: Kaikkien hallittujen tiedostojen metatiedot
+  directus_migrations: Mitä versiota tietokannasta käytät
+  directus_notifications: Ilmoitus lähetetty käyttäjille
+  directus_presets: Esiasetukset kokoelmien oletusarvoille ja kirjanmerkeille
+  directus_roles: Käyttöoikeusryhmät järjestelmäkäyttäjille
+  directus_sessions: Käyttäjän istunnon tiedot
+  directus_settings: Projektin konfiguraation asetukset
+  directus_users: Alustan järjestelmäkäyttäjät
+  directus_webhooks: Konfiguraatio tapahtumapohjaisille HTTP-pyynnöille
 fields:
-  directus9_activity:
+  directus_activity:
     item: Kohteen ensisijainen avain
     action: Toiminto
     collection: Kokoelma
@@ -1018,7 +1018,7 @@ fields:
     origin: Alkuperä
     ip: IP-osoite
     revisions: Versiot
-  directus9_collections:
+  directus_collections:
     collection: Kokoelma
     icon: Kuvake
     note: Muistiinpano
@@ -1034,7 +1034,7 @@ fields:
     accountability: Tapahtumien ja versioiden seuranta
     archive_field: Arkistointikenttä
     item_duplication_fields: Kohteen kahdennuskentät
-  directus9_files:
+  directus_files:
     $thumbnail: Pikkukuva
     title: Otsikko
     description: Kuvaus
@@ -1058,7 +1058,7 @@ fields:
     height: Korkeus
     charset: Merkistö
     duration: Kesto
-  directus9_users:
+  directus_users:
     first_name: Etunimi
     last_name: Sukunimi
     email: Sähköposti
@@ -1088,7 +1088,7 @@ fields:
     external_identifier: Ulkopuoliset tunnistautumiset
     last_page: Viimeinen sivu
     last_access: Viimeksi käytetty
-  directus9_settings:
+  directus_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
@@ -1118,11 +1118,11 @@ fields:
     transformations_all: Salli kaikki muutokset
     transformations_none: Poista muunnokset käytöstä
     transformations_presets: Rajoita muunnoksia allaoleviin esiasetuksiin
-  directus9_shares:
+  directus_shares:
     name: Nimi
     role: Rooli
     password: Salasana
-  directus9_fields:
+  directus_fields:
     collection: Kokoelman nimi
     icon: Kokoelman kuvake
     note: Muistiinpano
@@ -1130,7 +1130,7 @@ fields:
     singleton: Singleton
     translation: Kentän nimen käännökset
     display_template: Pohja
-  directus9_roles:
+  directus_roles:
     name: Roolin nimi
     icon: Roolin kuvake
     description: Kuvaus
@@ -1140,7 +1140,7 @@ fields:
     enforce_tfa: Vaadi 2FA
     users: Käyttäjät roolissa
     module_list: Moduulien navigointi
-  directus9_webhooks:
+  directus_webhooks:
     name: Nimi
     method: Metodi
     status: Tila
@@ -1152,7 +1152,7 @@ fields:
     actions: Toiminnot
     collections: Kokoelmat
 field_options:
-  directus9_settings:
+  directus_settings:
     project_name_placeholder: Oma projekti...
     project_color_note: Kirjautumisen ja logon taustakuva
     project_logo_note: Valkoinen- 40x40 SVG/PNG
@@ -1175,12 +1175,12 @@ field_options:
     basemaps_style: Mapbox-tyyli
     files_divider_title: Tiedostot ja esikatselukuvat
     overrides_divider_title: Sovelluksen ylikirjoitukset
-  directus9_activity:
+  directus_activity:
     login: Kirjaudu
     create: Luo
     update: Päivitä
     delete: Poista
-  directus9_collections:
+  directus_collections:
     track_activity_revisions: Seuraa tapahtumia ja versioita
     only_track_activity: Seuraa vain tapahtumia
     do_not_track_anything: Älä seuraa mitään
@@ -1203,14 +1203,14 @@ field_options:
     sort_field: Valitse kenttä...
     accountability_divider: Vastuuvelvollisuus
     duplication_divider: Monistus
-  directus9_files:
+  directus_files:
     title: Yksilöllinen otsikko...
     description: Valinnainen kuvaus...
     location: Valinnainen sijainti...
     storage_divider: Tiedoston nimeäminen
     filename_disk: Nimi levyn tallennustilassa...
     filename_download: Nimi ladattaessa...
-  directus9_roles:
+  directus_roles:
     name: Yksilöllinen nimi tälle roolille...
     description: Tämän roolin kuvaus...
     ip_access: Lisää sallitut IP-osoitteet, jätä tyhjäksi salliaksesi kaikki...
@@ -1222,7 +1222,7 @@ field_options:
       link_placeholder: Suhteellinen tai absoluuttinen URL...
     collections_name: Kokoelmat
     collections_addLabel: Lisää kokoelma...
-  directus9_users:
+  directus_users:
     preferences_divider: Käyttäjän asetukset
     dropdown_auto: Automaattinen (perustuen järjestelmään)
     dropdown_light: Vaalea teema
@@ -1234,7 +1234,7 @@ field_options:
     status_dropdown_suspended: Keskeytetty
     status_dropdown_archived: Arkistoitu
     token: Syötä suojatun pääsyn tunniste...
-  directus9_webhooks:
+  directus_webhooks:
     status_options_active: Aktiivinen
     status_options_inactive: Ei käytössä
     data_label: Lähetä tapahtuman tiedot

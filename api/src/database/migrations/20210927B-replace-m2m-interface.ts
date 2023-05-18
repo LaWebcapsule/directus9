@@ -1,7 +1,7 @@
 import type { Knex } from 'knex';
 
 export async function up(knex: Knex): Promise<void> {
-	await knex('directus9_fields')
+	await knex('directus_fields')
 		.update({
 			interface: 'files',
 		})
@@ -10,7 +10,7 @@ export async function up(knex: Knex): Promise<void> {
 }
 
 export async function down(knex: Knex): Promise<void> {
-	await knex('directus9_fields')
+	await knex('directus_fields')
 		.update({
 			interface: 'list-m2m',
 		})

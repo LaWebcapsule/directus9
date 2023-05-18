@@ -100,7 +100,7 @@ export function usePermissions(collection: Ref<string>, item: Ref<any>, isNew: R
 	const revisionsAllowed = computed(() => {
 		if (userStore.currentUser?.role?.admin_access === true) return true;
 		return !!permissionsStore.permissions.find(
-			(permission) => permission.collection === 'directus9_revisions' && permission.action === 'read'
+			(permission) => permission.collection === 'directus_revisions' && permission.action === 'read'
 		);
 	});
 

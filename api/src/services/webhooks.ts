@@ -7,7 +7,7 @@ export class WebhooksService extends ItemsService<Webhook> {
 	messenger: Messenger;
 
 	constructor(options: AbstractServiceOptions) {
-		super('directus9_webhooks', options);
+		super('directus_webhooks', options);
 		this.messenger = getMessenger();
 	}
 

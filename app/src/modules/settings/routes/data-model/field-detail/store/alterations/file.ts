@@ -36,7 +36,7 @@ export function prepareRelation(updates: StateUpdates, state: State) {
 	updates.relations.m2o = {
 		collection: state.collection,
 		field: state.field.field,
-		related_collection: 'directus9_files',
+		related_collection: 'directus_files',
 		meta: {
 			sort_field: null,
 		},

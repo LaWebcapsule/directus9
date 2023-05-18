@@ -170,7 +170,7 @@ export function getAutomaticJunctionCollectionName(collectionA: string, collecti
 	function getName(index: number) {
 		let name = `${collectionA}_${collectionB}`;
 
-		if (name.startsWith('directus9_')) {
+		if (name.startsWith('directus_')) {
 			name = 'junction_' + name;
 		}
 

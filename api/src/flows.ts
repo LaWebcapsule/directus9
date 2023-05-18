@@ -154,7 +154,7 @@ class FlowManager {
 								if (!flow.options?.['collections']) return [];
 
 								return toArray(flow.options['collections']).map((collection: string) => {
-									if (collection.startsWith('directus9_')) {
+									if (collection.startsWith('directus_')) {
 										const action = scope.split('.')[1];
 										return collection.substring(9) + '.' + action;
 									}
@@ -340,7 +340,7 @@ class FlowManager {
 			const activity = await activityService.createOne({
 				action: Action.RUN,
 				user: accountability?.user ?? null,
-				collection: 'directus9_flows',
+				collection: 'directus_flows',
 				ip: accountability?.ip ?? null,
 				user_agent: accountability?.userAgent ?? null,
 				origin: accountability?.origin ?? null,
@@ -355,11 +355,11 @@ class FlowManager {
 
 				await revisionsService.createOne({
 					activity: activity,
-					collection: 'directus9_flows',
+					collection: 'directus_flows',
 					item: flow.id,
 					data: {
 						steps: steps,
-						data: redactLogs(omit(keyedData, '$accountability.permissions')), // Permissions is a ton of data, and is just a copy of what's in the directus9_permissions table
+						data: redactLogs(omit(keyedData, '$accountability.permissions')), // Permissions is a ton of data, and is just a copy of what's in the directus_permissions table
 					},
 				});
 			}

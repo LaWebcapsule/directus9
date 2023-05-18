@@ -1,1 +1,1 @@
-declare const __DIRECTUS9_VERSION__: string;
+declare const __directus_VERSION__: string;

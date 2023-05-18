@@ -172,7 +172,7 @@ export default defineLayout<LayoutOptions>({
 					} else {
 						const primaryKey = info.event.id;
 
-						const route = collection.value.startsWith('directus9_')
+						const route = collection.value.startsWith('directus_')
 							? collection.value.substring(9)
 							: `content/${collection.value}`;
 

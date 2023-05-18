@@ -136,7 +136,7 @@ export default defineComponent({
 			return translate(
 				sortBy(
 					collectionsStore.collections.filter(
-						(collection) => collection.collection.startsWith('directus9_') === false && collection.meta
+						(collection) => collection.collection.startsWith('directus_') === false && collection.meta
 					),
 					['meta.sort', 'collection']
 				)
@@ -152,7 +152,7 @@ export default defineComponent({
 				sortBy(
 					collectionsStore.collections.filter(
 						(collection) =>
-							collection.collection.startsWith('directus9_') === false &&
+							collection.collection.startsWith('directus_') === false &&
 							!!collection.meta === false &&
 							collection.schema
 					),
@@ -165,7 +165,7 @@ export default defineComponent({
 			return translate(
 				sortBy(
 					collectionsStore.collections
-						.filter((collection) => collection.collection.startsWith('directus9_') === true)
+						.filter((collection) => collection.collection.startsWith('directus_') === true)
 						.map((collection) => ({ ...collection, icon: 'settings' })),
 					'collection'
 				)

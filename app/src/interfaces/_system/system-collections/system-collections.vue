@@ -50,7 +50,7 @@ export default defineComponent({
 
 			if (props.includeSystem) return collections;
 
-			return collections.filter((collection) => collection.collection.startsWith('directus9_') === false);
+			return collections.filter((collection) => collection.collection.startsWith('directus_') === false);
 		});
 
 		const items = computed(() => {

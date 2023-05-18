@@ -238,7 +238,7 @@ const { file } = useFile();
 
 function useFile() {
 	const isDirectus9Files = computed(() => {
-		return relatedCollection.value === 'directus9_files';
+		return relatedCollection.value === 'directus_files';
 	});
 
 	const file = computed(() => {
@@ -299,7 +299,7 @@ function useItem() {
 
 		const baseEndpoint = getEndpoint(props.collection);
 
-		const endpoint = props.collection.startsWith('directus9_')
+		const endpoint = props.collection.startsWith('directus_')
 			? `${baseEndpoint}/${props.primaryKey}`
 			: `${baseEndpoint}/${encodeURIComponent(props.primaryKey)}`;
 
@@ -329,7 +329,7 @@ function useItem() {
 
 		const baseEndpoint = getEndpoint(collection);
 
-		const endpoint = collection.startsWith('directus9_')
+		const endpoint = collection.startsWith('directus_')
 			? `${baseEndpoint}/${props.relatedPrimaryKey}`
 			: `${baseEndpoint}/${encodeURIComponent(props.relatedPrimaryKey)}`;
 

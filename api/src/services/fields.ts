@@ -41,8 +41,8 @@ export class FieldsService {
 		this.helpers = getHelpers(this.knex);
 		this.schemaInspector = options.knex ? createInspector(options.knex) : getSchemaInspector();
 		this.accountability = options.accountability || null;
-		this.itemsService = new ItemsService('directus9_fields', options);
-		this.payloadService = new PayloadService('directus9_fields', options);
+		this.itemsService = new ItemsService('directus_fields', options);
+		this.payloadService = new PayloadService('directus_fields', options);
 		this.schema = options.schema;
 
 		const { cache, systemCache } = getCache();
@@ -53,7 +53,7 @@ export class FieldsService {
 
 	private get hasReadAccess() {
 		return !!this.accountability?.permissions?.find((permission) => {
-			return permission.collection === 'directus9_fields' && permission.action === 'read';
+			return permission.collection === 'directus_fields' && permission.action === 'read';
 		});
 	}
 
@@ -64,7 +64,7 @@ export class FieldsService {
 			throw new ForbiddenException();
 		}
 
-		const nonAuthorizedItemsService = new ItemsService('directus9_fields', {
+		const nonAuthorizedItemsService = new ItemsService('directus_fields', {
 			knex: this.knex,
 			schema: this.schema,
 		});
@@ -104,7 +104,7 @@ export class FieldsService {
 			return data as Field;
 		});
 
-		const aliasQuery = this.knex.select<any[]>('*').from('directus9_fields');
+		const aliasQuery = this.knex.select<any[]>('*').from('directus_fields');
 
 		if (collection) {
 			aliasQuery.andWhere('collection', collection);
@@ -205,7 +205,7 @@ export class FieldsService {
 		}
 
 		let column = undefined;
-		let fieldInfo = await this.knex.select('*').from('directus9_fields').where({ collection, field }).first();
+		let fieldInfo = await this.knex.select('*').from('directus_fields').where({ collection, field }).first();
 
 		if (fieldInfo) {
 			fieldInfo = (await this.payloadService.processValues('read', fieldInfo)) as FieldMeta[];
@@ -260,10 +260,10 @@ export class FieldsService {
 			const exists =
 				field.field in this.schema.collections[collection]!.fields ||
 				isNil(
-					await this.knex.select('id').from('directus9_fields').where({ collection, field: field.field }).first()
+					await this.knex.select('id').from('directus_fields').where({ collection, field: field.field }).first()
 				) === false;
 
-			// Check if field already exists, either as a column, or as a row in directus9_fields
+			// Check if field already exists, either as a column, or as a row in directus_fields
 			if (exists) {
 				throw new InvalidPayloadException(`Field "${field.field}" already exists in collection "${collection}"`);
 			}
@@ -276,7 +276,7 @@ export class FieldsService {
 			}
 
 			await this.knex.transaction(async (trx) => {
-				const itemsService = new ItemsService('directus9_fields', {
+				const itemsService = new ItemsService('directus_fields', {
 					knex: trx,
 					accountability: this.accountability,
 					schema: this.schema,
@@ -384,7 +384,7 @@ export class FieldsService {
 			);
 
 			const record = field.meta
-				? await this.knex.select('id').from('directus9_fields').where({ collection, field: field.field }).first()
+				? await this.knex.select('id').from('directus_fields').where({ collection, field: field.field }).first()
 				: null;
 
 			if (
@@ -549,7 +549,7 @@ export class FieldsService {
 
 					// If the current field is a o2m, just delete the one field config from the relation
 					if (!isM2O && relation.meta?.one_field) {
-						await trx('directus9_relations')
+						await trx('directus_relations')
 							.update({ one_field: null })
 							.where({ many_collection: relation.collection, many_field: relation.field });
 					}
@@ -568,7 +568,7 @@ export class FieldsService {
 
 				const collectionMeta = await trx
 					.select('archive_field', 'sort_field')
-					.from('directus9_collections')
+					.from('directus_collections')
 					.where({ collection })
 					.first();
 
@@ -583,24 +583,24 @@ export class FieldsService {
 				}
 
 				if (Object.keys(collectionMetaUpdates).length > 0) {
-					await trx('directus9_collections').update(collectionMetaUpdates).where({ collection });
+					await trx('directus_collections').update(collectionMetaUpdates).where({ collection });
 				}
 
-				// Cleanup directus9_fields
+				// Cleanup directus_fields
 				const metaRow = await trx
 					.select('collection', 'field')
-					.from('directus9_fields')
+					.from('directus_fields')
 					.where({ collection, field })
 					.first();
 
 				if (metaRow) {
 					// Handle recursive FK constraints
-					await trx('directus9_fields')
+					await trx('directus_fields')
 						.update({ group: null })
 						.where({ group: metaRow.field, collection: metaRow.collection });
 				}
 
-				await trx('directus9_fields').delete().where({ collection, field });
+				await trx('directus_fields').delete().where({ collection, field });
 			});
 
 			const actionEvent = {

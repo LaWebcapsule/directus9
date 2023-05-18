@@ -24,7 +24,7 @@ export class SharesService extends ItemsService {
 	authorizationService: AuthorizationService;
 
 	constructor(options: AbstractServiceOptions) {
-		super('directus9_shares', options);
+		super('directus_shares', options);
 
 		this.authorizationService = new AuthorizationService({
 			accountability: this.accountability,
@@ -53,7 +53,7 @@ export class SharesService extends ItemsService {
 				share_max_uses: 'max_uses',
 				share_password: 'password',
 			})
-			.from('directus9_shares')
+			.from('directus_shares')
 			.where('id', payload['share'])
 			.andWhere((subQuery) => {
 				subQuery.whereNull('date_end').orWhere('date_end', '>=', new Date());
@@ -74,7 +74,7 @@ export class SharesService extends ItemsService {
 			throw new InvalidCredentialsException();
 		}
 
-		await this.knex('directus9_shares')
+		await this.knex('directus_shares')
 			.update({ times_used: record.share_times_used + 1 })
 			.where('id', record.share_id);
 
@@ -97,7 +97,7 @@ export class SharesService extends ItemsService {
 		const refreshToken = nanoid(64);
 		const refreshTokenExpiration = new Date(Date.now() + getMilliseconds(env['REFRESH_TOKEN_TTL'], 0));
 
-		await this.knex('directus9_sessions').insert({
+		await this.knex('directus_sessions').insert({
 			token: refreshToken,
 			expires: refreshTokenExpiration,
 			ip: this.accountability?.ip,
@@ -106,7 +106,7 @@ export class SharesService extends ItemsService {
 			share: record.share_id,
 		});
 
-		await this.knex('directus9_sessions').delete().where('expires', '<', new Date());
+		await this.knex('directus_sessions').delete().where('expires', '<', new Date());
 
 		return {
 			accessToken,

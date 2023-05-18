@@ -3,6 +3,6 @@ import { ItemsService } from './items.js';
 
 export class SettingsService extends ItemsService {
 	constructor(options: AbstractServiceOptions) {
-		super('directus9_settings', options);
+		super('directus_settings', options);
 	}
 }

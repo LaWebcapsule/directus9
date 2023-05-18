@@ -152,7 +152,7 @@ const deletingFlow = ref(false);
 const editFlow = ref<string | undefined>();
 
 const createAllowed = computed<boolean>(() => {
-	return permissionsStore.hasPermission('directus9_flows', 'create');
+	return permissionsStore.hasPermission('directus_flows', 'create');
 });
 
 const conditionalFormatting = ref([

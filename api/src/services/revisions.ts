@@ -4,7 +4,7 @@ import { ItemsService } from './items.js';
 
 export class RevisionsService extends ItemsService {
 	constructor(options: AbstractServiceOptions) {
-		super('directus9_revisions', options);
+		super('directus_revisions', options);
 	}
 
 	async revert(pk: PrimaryKey): Promise<void> {

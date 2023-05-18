@@ -4,10 +4,10 @@ import type { AliasMap } from './get-column-path.js';
 
 it('Returns the correct collection', () => {
 	const aliasMap: AliasMap = {
-		author: { alias: 'aaaaa', collection: 'directus9_users' },
-		'author.role': { alias: 'bbbbb', collection: 'directus9_roles' },
+		author: { alias: 'aaaaa', collection: 'directus_users' },
+		'author.role': { alias: 'bbbbb', collection: 'directus_roles' },
 		'author.role.org': { alias: 'ccccc', collection: 'organisation' },
-		'author.role.org.admin': { alias: 'ddddd', collection: 'directus9_users' },
+		'author.role.org.admin': { alias: 'ddddd', collection: 'directus_users' },
 	};
 
 	const collection = getCollectionFromAlias('ccccc', aliasMap);

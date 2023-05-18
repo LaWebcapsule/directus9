@@ -2,7 +2,7 @@
 description: Learn the terms and concepts you need to know about Headless CMS.
 tags: []
 skill_level:
-directus9_version:
+directus_version:
 author_override:
 author: Bryant Gillespie
 ---

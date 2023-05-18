@@ -215,7 +215,7 @@ export class LDAPAuthDriver extends AuthDriver {
 	private async fetchUserId(userDn: string): Promise<string | undefined> {
 		const user = await this.knex
 			.select('id')
-			.from('directus9_users')
+			.from('directus_users')
 			.orWhereRaw('LOWER(??) = ?', ['external_identifier', userDn.toLowerCase()])
 			.first();
 
@@ -259,7 +259,7 @@ export class LDAPAuthDriver extends AuthDriver {
 			if (userGroups.length) {
 				userRole = await this.knex
 					.select('id')
-					.from('directus9_roles')
+					.from('directus_roles')
 					.whereRaw(`LOWER(??) IN (${userGroups.map(() => '?')})`, [
 						'name',
 						...userGroups.map((group) => group.toLowerCase()),

@@ -2,7 +2,7 @@
 description: Learn how to migrate your data model to a new Directus9 project using Hoppscotch.
 tags: []
 skill_level:
-directus9_version: 9.23.0
+directus_version: 9.23.0
 author_override:
 author: Kevin Lewis
 ---
@@ -13,7 +13,7 @@ author: Kevin Lewis
 
 :::tip Author: {{$frontmatter.author}}
 
-**Directus9 Version:** {{$frontmatter.directus9_version}}
+**Directus9 Version:** {{$frontmatter.directus_version}}
 
 :::
 

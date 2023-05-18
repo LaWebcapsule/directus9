@@ -1,4 +1,4 @@
-table: directus9_revisions
+table: directus_revisions
 
 fields:
   - field: id

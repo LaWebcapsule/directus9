@@ -14,66 +14,66 @@ import logger from '../../logger.js';
 
 const updates = [
 	{
-		table: 'directus9_files',
+		table: 'directus_files',
 		constraints: [
 			{
 				column: 'folder',
-				references: 'directus9_folders.id',
+				references: 'directus_folders.id',
 				on_delete: 'SET NULL',
 			},
 		],
 	},
 	{
-		table: 'directus9_permissions',
+		table: 'directus_permissions',
 		constraints: [
 			{
 				column: 'role',
-				references: 'directus9_roles.id',
+				references: 'directus_roles.id',
 				on_delete: 'CASCADE',
 			},
 		],
 	},
 	{
-		table: 'directus9_presets',
+		table: 'directus_presets',
 		constraints: [
 			{
 				column: 'user',
-				references: 'directus9_users.id',
+				references: 'directus_users.id',
 				on_delete: 'CASCADE',
 			},
 			{
 				column: 'role',
-				references: 'directus9_roles.id',
+				references: 'directus_roles.id',
 				on_delete: 'CASCADE',
 			},
 		],
 	},
 	{
-		table: 'directus9_revisions',
+		table: 'directus_revisions',
 		constraints: [
 			{
 				column: 'activity',
-				references: 'directus9_activity.id',
+				references: 'directus_activity.id',
 				on_delete: 'CASCADE',
 			},
 		],
 	},
 	{
-		table: 'directus9_sessions',
+		table: 'directus_sessions',
 		constraints: [
 			{
 				column: 'user',
-				references: 'directus9_users.id',
+				references: 'directus_users.id',
 				on_delete: 'CASCADE',
 			},
 		],
 	},
 	{
-		table: 'directus9_users',
+		table: 'directus_users',
 		constraints: [
 			{
 				column: 'role',
-				references: 'directus9_roles.id',
+				references: 'directus_roles.id',
 				on_delete: 'SET NULL',
 			},
 		],

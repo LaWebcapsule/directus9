@@ -167,12 +167,12 @@
 			<revisions-drawer-detail
 				v-if="isBatch === false && isNew === false && revisionsAllowed"
 				ref="revisionsDrawerDetailRef"
-				collection="directus9_files"
+				collection="directus_files"
 				:primary-key="primaryKey"
 			/>
 			<comments-sidebar-detail
 				v-if="isBatch === false && isNew === false"
-				collection="directus9_files"
+				collection="directus_files"
 				:primary-key="primaryKey"
 			/>
 		</template>
@@ -236,7 +236,7 @@ const {
 	isBatch,
 	refresh,
 	validationErrors,
-} = useItem(ref('directus9_files'), primaryKey);
+} = useItem(ref('directus_files'), primaryKey);
 
 const isSavable = computed(() => saveAllowed.value && hasEdits.value);
 
@@ -280,7 +280,7 @@ const { moveToDialogActive, moveToFolder, moving, selectedFolder } = useMovetoFo
 useShortcut('meta+s', saveAndStay, form);
 
 const { createAllowed, deleteAllowed, saveAllowed, updateAllowed, fields, revisionsAllowed } = usePermissions(
-	ref('directus9_files'),
+	ref('directus_files'),
 	item,
 	isNew
 );

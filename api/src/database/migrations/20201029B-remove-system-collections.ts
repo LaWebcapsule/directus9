@@ -2,7 +2,7 @@ import type { Knex } from 'knex';
 import { merge } from 'lodash-es';
 
 export async function up(knex: Knex): Promise<void> {
-	await knex('directus9_collections').delete().where('collection', 'like', 'directus9_%');
+	await knex('directus_collections').delete().where('collection', 'like', 'directus_%');
 }
 
 export async function down(knex: Knex): Promise<void> {
@@ -18,63 +18,63 @@ export async function down(knex: Knex): Promise<void> {
 
 	const systemCollections = [
 		{
-			collection: 'directus9_activity',
+			collection: 'directus_activity',
 			note: 'Accountability logs for all events',
 		},
 		{
-			collection: 'directus9_collections',
+			collection: 'directus_collections',
 			icon: 'list_alt',
 			note: 'Additional collection configuration and metadata',
 		},
 		{
-			collection: 'directus9_fields',
+			collection: 'directus_fields',
 			icon: 'input',
 			note: 'Additional field configuration and metadata',
 		},
 		{
-			collection: 'directus9_files',
+			collection: 'directus_files',
 			icon: 'folder',
 			note: 'Metadata for all managed file assets',
 		},
 		{
-			collection: 'directus9_folders',
+			collection: 'directus_folders',
 			note: 'Provides virtual directories for files',
 		},
 		{
-			collection: 'directus9_permissions',
+			collection: 'directus_permissions',
 			icon: 'admin_panel_settings',
 			note: 'Access permissions for each role',
 		},
 		{
-			collection: 'directus9_presets',
+			collection: 'directus_presets',
 			icon: 'bookmark_border',
 			note: 'Presets for collection defaults and bookmarks',
 		},
 		{
-			collection: 'directus9_relations',
+			collection: 'directus_relations',
 			icon: 'merge_type',
 			note: 'Relationship configuration and metadata',
 		},
 		{
-			collection: 'directus9_revisions',
+			collection: 'directus_revisions',
 			note: 'Data snapshots for all activity',
 		},
 		{
-			collection: 'directus9_roles',
+			collection: 'directus_roles',
 			icon: 'supervised_user_circle',
 			note: 'Permission groups for system users',
 		},
 		{
-			collection: 'directus9_sessions',
+			collection: 'directus_sessions',
 			note: 'User session information',
 		},
 		{
-			collection: 'directus9_settings',
+			collection: 'directus_settings',
 			singleton: true,
 			note: 'Project configuration options',
 		},
 		{
-			collection: 'directus9_users',
+			collection: 'directus_users',
 			archive_field: 'status',
 			archive_value: 'archived',
 			unarchive_value: 'draft',
@@ -82,7 +82,7 @@ export async function down(knex: Knex): Promise<void> {
 			note: 'System users for the platform',
 		},
 		{
-			collection: 'directus9_webhooks',
+			collection: 'directus_webhooks',
 			note: 'Configuration for event-based HTTP requests',
 		},
 	].map((row) => {
@@ -95,5 +95,5 @@ export async function down(knex: Knex): Promise<void> {
 		return merge({}, defaults, row);
 	});
 
-	await knex.insert(systemCollections).into('directus9_collections');
+	await knex.insert(systemCollections).into('directus_collections');
 }

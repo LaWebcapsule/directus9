@@ -11,7 +11,7 @@ import { sanitizeQuery } from '../utils/sanitize-query.js';
 
 const router = express.Router();
 
-router.use(useCollection('directus9_folders'));
+router.use(useCollection('directus_folders'));
 
 router.post(
 	'/',
@@ -73,7 +73,7 @@ const readHandler = asyncHandler(async (req, res, next) => {
 		result = await service.readByQuery(req.sanitizedQuery);
 	}
 
-	const meta = await metaService.getMetaForQuery('directus9_folders', req.sanitizedQuery);
+	const meta = await metaService.getMetaForQuery('directus_folders', req.sanitizedQuery);
 
 	res.locals['payload'] = { data: result, meta };
 	return next();

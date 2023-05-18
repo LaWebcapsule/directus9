@@ -79,7 +79,7 @@ logoutReason:
   SESSION_EXPIRED: Lota útrunnin
 public_label: Almennt
 not_allowed: Ekki Leyft
-directus9_version: Directus9 Útgáfa
+directus_version: Directus9 Útgáfa
 os_type: Gerð stýrikerfis
 os_version: Útgáfa stýrikerfis
 os_uptime: Uppitími stýrikerfis
@@ -268,14 +268,14 @@ none: Ekkert
 cancel: Hætta við
 content: Efni
 fields:
-  directus9_activity:
+  directus_activity:
     origin: Uppruni
-  directus9_collections:
+  directus_collections:
     icon: Íkon
     note: Minnispunktur
     color: Litur
     hidden: Falið
-  directus9_files:
+  directus_files:
     title: Titill
     description: Lýsing
     location: Staðsetning
@@ -289,7 +289,7 @@ fields:
     uploaded_on: Upphlaðið Þann
     height: Hæð
     duration: Tímalengd
-  directus9_users:
+  directus_users:
     first_name: Fornafn
     last_name: Eftirnafn
     email: Tölvupóstur
@@ -309,38 +309,38 @@ fields:
     role: Hlutverk
     last_page: Síðasta Síða
     last_access: Síðasta Aðgengi
-  directus9_settings:
+  directus_settings:
     project_name: Verkefni Nafn
-  directus9_shares:
+  directus_shares:
     name: Nafn
     password: Lykilorð
-  directus9_fields:
+  directus_fields:
     note: Minnispunktur
-  directus9_roles:
+  directus_roles:
     name: Hlutverks Nafn
     description: Lýsing
-  directus9_webhooks:
+  directus_webhooks:
     name: Nafn
     status: Staða
 field_options:
-  directus9_settings:
+  directus_settings:
     security_divider_title: Öryggi
-  directus9_activity:
+  directus_activity:
     login: Skrá inn
     create: Búa til
-  directus9_collections:
+  directus_collections:
     language: Tungumál
     sort_divider: Flokka
-  directus9_roles:
+  directus_roles:
     fields:
       icon_name: Íkon
       name_name: Nafn
       name_placeholder: Skráðu titil...
       link_name: Hlekkur
-  directus9_users:
+  directus_users:
     preferences_divider: Notandi Stillingar
     status_dropdown_draft: Drög
-  directus9_webhooks:
+  directus_webhooks:
     actions_create: Búa til
     actions_update: Uppfæra
     actions_delete: Eyða

@@ -1,4 +1,4 @@
-table: directus9_operations
+table: directus_operations
 
 fields:
   - field: id

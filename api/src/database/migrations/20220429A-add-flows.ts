@@ -3,7 +3,7 @@ import type { Knex } from 'knex';
 import { v4 as uuid } from 'uuid';
 
 export async function up(knex: Knex): Promise<void> {
-	await knex.schema.createTable('directus9_flows', (table) => {
+	await knex.schema.createTable('directus_flows', (table) => {
 		table.uuid('id').primary().notNullable();
 		table.string('name').notNullable();
 		table.string('icon', 30);
@@ -15,10 +15,10 @@ export async function up(knex: Knex): Promise<void> {
 		table.json('options');
 		table.uuid('operation').unique();
 		table.timestamp('date_created').defaultTo(knex.fn.now());
-		table.uuid('user_created').references('id').inTable('directus9_users').onDelete('SET NULL');
+		table.uuid('user_created').references('id').inTable('directus_users').onDelete('SET NULL');
 	});
 
-	await knex.schema.createTable('directus9_operations', (table) => {
+	await knex.schema.createTable('directus_operations', (table) => {
 		table.uuid('id').primary().notNullable();
 		table.string('name');
 		table.string('key').notNullable();
@@ -26,14 +26,14 @@ export async function up(knex: Knex): Promise<void> {
 		table.integer('position_x').notNullable();
 		table.integer('position_y').notNullable();
 		table.json('options');
-		table.uuid('resolve').unique().references('id').inTable('directus9_operations');
-		table.uuid('reject').unique().references('id').inTable('directus9_operations');
-		table.uuid('flow').notNullable().references('id').inTable('directus9_flows').onDelete('CASCADE');
+		table.uuid('resolve').unique().references('id').inTable('directus_operations');
+		table.uuid('reject').unique().references('id').inTable('directus_operations');
+		table.uuid('flow').notNullable().references('id').inTable('directus_flows').onDelete('CASCADE');
 		table.timestamp('date_created').defaultTo(knex.fn.now());
-		table.uuid('user_created').references('id').inTable('directus9_users').onDelete('SET NULL');
+		table.uuid('user_created').references('id').inTable('directus_users').onDelete('SET NULL');
 	});
 
-	const webhooks = await knex.select('*').from('directus9_webhooks');
+	const webhooks = await knex.select('*').from('directus_webhooks');
 
 	const flows = [];
 	const operations = [];
@@ -73,16 +73,16 @@ export async function up(knex: Knex): Promise<void> {
 	}
 
 	if (flows.length && operations.length) {
-		await knex.insert(flows).into('directus9_flows');
-		await knex.insert(operations).into('directus9_operations');
+		await knex.insert(flows).into('directus_flows');
+		await knex.insert(operations).into('directus_operations');
 
 		for (const operation of operations) {
-			await knex('directus9_flows').update({ operation: operation.id }).where({ id: operation.flow });
+			await knex('directus_flows').update({ operation: operation.id }).where({ id: operation.flow });
 		}
 	}
 }
 
 export async function down(knex: Knex): Promise<void> {
-	await knex.schema.dropTable('directus9_operations');
-	await knex.schema.dropTable('directus9_flows');
+	await knex.schema.dropTable('directus_operations');
+	await knex.schema.dropTable('directus_flows');
 }

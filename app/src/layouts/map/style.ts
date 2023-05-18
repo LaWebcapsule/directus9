@@ -3,7 +3,7 @@ import { cssVar } from '@directus9/utils/browser';
 export function getMapStyle() {
 	return [
 		{
-			id: '__directus9_polygons_outline',
+			id: '__directus_polygons_outline',
 			type: 'line',
 			source: '__directus9',
 			filter: ['all', ['!has', 'point_count'], ['==', '$type', 'Polygon']],
@@ -23,7 +23,7 @@ export function getMapStyle() {
 			},
 		},
 		{
-			id: '__directus9_polygons',
+			id: '__directus_polygons',
 			type: 'fill',
 			source: '__directus9',
 			filter: ['all', ['!has', 'point_count'], ['==', '$type', 'Polygon']],
@@ -40,7 +40,7 @@ export function getMapStyle() {
 			},
 		},
 		{
-			id: '__directus9_lines',
+			id: '__directus_lines',
 			type: 'line',
 			source: '__directus9',
 			filter: ['all', ['!has', 'point_count'], ['==', '$type', 'LineString']],
@@ -57,7 +57,7 @@ export function getMapStyle() {
 			},
 		},
 		{
-			id: '__directus9_points_shadow',
+			id: '__directus_points_shadow',
 			type: 'circle',
 			source: '__directus9',
 			filter: ['all', ['!has', 'point_count'], ['==', '$type', 'Point']],
@@ -70,7 +70,7 @@ export function getMapStyle() {
 			},
 		},
 		{
-			id: '__directus9_points',
+			id: '__directus_points',
 			type: 'circle',
 			source: '__directus9',
 			filter: ['all', ['!has', 'point_count'], ['==', '$type', 'Point']],
@@ -90,7 +90,7 @@ export function getMapStyle() {
 			},
 		},
 		{
-			id: '__directus9_clusters',
+			id: '__directus_clusters',
 			type: 'circle',
 			source: '__directus9',
 			filter: ['has', 'point_count'],
@@ -101,7 +101,7 @@ export function getMapStyle() {
 			},
 		},
 		{
-			id: '__directus9_cluster_count',
+			id: '__directus_cluster_count',
 			type: 'symbol',
 			source: '__directus9',
 			filter: ['has', 'point_count'],

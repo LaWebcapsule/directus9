@@ -118,7 +118,7 @@ public_label: Offentlig
 public_description: Styrer, hvilke API-data der er tilgængelige uden godkendelse.
 admin_description: Oprindelig administrativ rolle med ubegrænset App/API-adgang.
 not_allowed: Ikke tilladt
-directus9_version: Directus9 version
+directus_version: Directus9 version
 node_version: Node version
 node_uptime: Node oppetid
 os_type: OS type
@@ -1012,30 +1012,30 @@ content: Indhold
 singleton: Enkelt
 singleton_label: Behandl som enkelt objekt
 system_fields_locked: Systemfelter er låst og kan ikke redigeres
-directus9_collection:
-  directus9_activity: Ansvarslogger for alle begivenheder
-  directus9_collections: Yderligere samling konfiguration og metadata
-  directus9_dashboards: Instrumentbrætter i Insights modulet
-  directus9_fields: Yderligere feltkonfiguration og metadata
-  directus9_files: Metadata for alle administrerede fil-asset'er
-  directus9_flows: Automatiseringsflows
-  directus9_folders: Giver virtuelle mapper til filer
-  directus9_migrations: Hvilken version af den database, du bruger
-  directus9_notifications: Notifikationer sendt til brugere
-  directus9_operations: Operationer, der kører i Flows
-  directus9_panels: Individuelle paneler i Insights dashboards
-  directus9_permissions: Adgangstilladelser for hver rolle
-  directus9_presets: Forudindstillinger for opsamling standardindstillinger og bogmærker
-  directus9_relations: Sammenhæng konfiguration og metadata
-  directus9_revisions: Data snapshots for al aktivitet
-  directus9_roles: Tilladelsesgrupper for systembrugere
-  directus9_sessions: Bruger session information
-  directus9_settings: Valgmuligheder for projektopsætning
-  directus9_shares: Spor eksternt delte elementer
-  directus9_users: Systembrugere til platformen
-  directus9_webhooks: Konfiguration for event-baserede HTTP-forespørgsler
+directus_collection:
+  directus_activity: Ansvarslogger for alle begivenheder
+  directus_collections: Yderligere samling konfiguration og metadata
+  directus_dashboards: Instrumentbrætter i Insights modulet
+  directus_fields: Yderligere feltkonfiguration og metadata
+  directus_files: Metadata for alle administrerede fil-asset'er
+  directus_flows: Automatiseringsflows
+  directus_folders: Giver virtuelle mapper til filer
+  directus_migrations: Hvilken version af den database, du bruger
+  directus_notifications: Notifikationer sendt til brugere
+  directus_operations: Operationer, der kører i Flows
+  directus_panels: Individuelle paneler i Insights dashboards
+  directus_permissions: Adgangstilladelser for hver rolle
+  directus_presets: Forudindstillinger for opsamling standardindstillinger og bogmærker
+  directus_relations: Sammenhæng konfiguration og metadata
+  directus_revisions: Data snapshots for al aktivitet
+  directus_roles: Tilladelsesgrupper for systembrugere
+  directus_sessions: Bruger session information
+  directus_settings: Valgmuligheder for projektopsætning
+  directus_shares: Spor eksternt delte elementer
+  directus_users: Systembrugere til platformen
+  directus_webhooks: Konfiguration for event-baserede HTTP-forespørgsler
 fields:
-  directus9_activity:
+  directus_activity:
     item: Element primær nøgle
     action: Handling
     collection: Samling
@@ -1046,7 +1046,7 @@ fields:
     origin: Oprindelse
     ip: IP adresse
     revisions: Revisioner
-  directus9_collections:
+  directus_collections:
     collection: Samling
     icon: Ikon
     note: Kommentar
@@ -1062,7 +1062,7 @@ fields:
     accountability: Aktivitet og revisions tracking
     archive_field: Arkivér felt
     item_duplication_fields: Element duplikationsfelter
-  directus9_files:
+  directus_files:
     $thumbnail: Miniaturebillede
     title: Titel
     description: Beskrivelse
@@ -1086,7 +1086,7 @@ fields:
     height: Højde
     charset: Tegnsæt
     duration: Varighed
-  directus9_users:
+  directus_users:
     first_name: Fornavn
     last_name: Efternavn
     email: E-mail
@@ -1117,7 +1117,7 @@ fields:
     last_page: Sidste side
     last_access: Seneste adgang
     email_notifications: E-Mail notifikationer
-  directus9_settings:
+  directus_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
@@ -1154,7 +1154,7 @@ fields:
     transformations_presets: Begræns transformationer til forudindstillinger nedenfor
     image_editor: Billedredigering
     custom_aspect_ratios: Brugerdefinerede billedformater
-  directus9_shares:
+  directus_shares:
     name: Navn
     role: Rolle
     password: Adgangskode
@@ -1162,7 +1162,7 @@ fields:
     date_end: Dato slut
     max_uses: Maksimal anvendelser
     times_used: Brugte tider
-  directus9_fields:
+  directus_fields:
     collection: Samlingensnavn
     icon: Samlingsikon
     note: Kommentar
@@ -1170,7 +1170,7 @@ fields:
     singleton: Enkelt
     translation: Oversættelse af feltnavn
     display_template: Skabelon
-  directus9_roles:
+  directus_roles:
     name: Rollenavn
     icon: Rolle ikon
     description: Beskrivelse
@@ -1180,7 +1180,7 @@ fields:
     enforce_tfa: Kræver 2FA
     users: Brugere i rolle
     module_list: Modul navigation
-  directus9_webhooks:
+  directus_webhooks:
     name: Navn
     method: Metode
     status: Status
@@ -1193,7 +1193,7 @@ fields:
     actions: Handlinger
     collections: Samlinger
 field_options:
-  directus9_settings:
+  directus_settings:
     project_name_placeholder: Mit projekt...
     project_color_note: Login- & logo baggrund
     project_logo_note: Hvid 40x40 SVG/PNG
@@ -1219,12 +1219,12 @@ field_options:
     basemaps_style: Mapbox stil
     files_divider_title: Filer og miniaturer
     overrides_divider_title: App tilsidesættelser
-  directus9_activity:
+  directus_activity:
     login: Log ind
     create: Opret
     update: Opdater
     delete: Slet
-  directus9_collections:
+  directus_collections:
     track_activity_revisions: Spor aktivitet og revisioner
     only_track_activity: Spor kun aktivitet
     do_not_track_anything: Spor ikke noget
@@ -1247,14 +1247,14 @@ field_options:
     sort_field: Vælg et felt...
     accountability_divider: Ansvarlighed
     duplication_divider: Duplikering
-  directus9_files:
+  directus_files:
     title: En unik titel...
     description: En valgfri beskrivelse...
     location: En valgfri placering...
     storage_divider: Navngivning af Fil
     filename_disk: Navn på disklagerplads...
     filename_download: Navn når du downloader...
-  directus9_roles:
+  directus_roles:
     name: Det unikke navn for denne rolle...
     description: En beskrivelse af denne rolle...
     ip_access: Tilføj tilladte IP-adresser, efterlad blank for at tillade alle...
@@ -1266,7 +1266,7 @@ field_options:
       link_placeholder: Relativ eller absolut URL...
     collections_name: Samlinger
     collections_addLabel: Tilføj samling...
-  directus9_users:
+  directus_users:
     preferences_divider: Bruger præferencer
     dropdown_auto: Automatisk (Basseret på system)
     dropdown_light: Lys tilstand
@@ -1278,7 +1278,7 @@ field_options:
     status_dropdown_suspended: Suspenderet
     status_dropdown_archived: Arkiveret
     token: Indtast en sikker adgangstok...
-  directus9_webhooks:
+  directus_webhooks:
     status_options_active: Aktiv
     status_options_inactive: Inaktiv
     data_label: Send begivenhedsdata

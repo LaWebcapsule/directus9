@@ -1,5 +1,5 @@
 type: object
-x-collection: directus9_settings
+x-collection: directus_settings
 properties:
   id:
     description: Unique identifier for the setting.

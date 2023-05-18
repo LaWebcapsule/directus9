@@ -9,7 +9,7 @@
 		:filter-system="roleFilter"
 		:search="search"
 		show-select="none"
-		collection="directus9_activity"
+		collection="directus_activity"
 	>
 		<private-view
 			:title="t('activity_feed')"
@@ -27,7 +27,7 @@
 			</template>
 
 			<template #actions>
-				<search-input v-model="search" v-model:filter="filter" collection="directus9_activity" />
+				<search-input v-model="search" v-model:filter="filter" collection="directus_activity" />
 			</template>
 
 			<template #navigation>
@@ -87,7 +87,7 @@ export default defineComponent({
 	setup() {
 		const { t } = useI18n();
 
-		const { layout, layoutOptions, layoutQuery, filter, search } = usePreset(ref('directus9_activity'));
+		const { layout, layoutOptions, layoutQuery, filter, search } = usePreset(ref('directus_activity'));
 		const { breadcrumb } = useBreadcrumb();
 
 		const { layoutWrapper } = useLayout(layout);

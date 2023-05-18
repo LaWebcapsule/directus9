@@ -13,7 +13,7 @@
 			<v-dialog v-model="confirmDelete" @esc="confirmDelete = false">
 				<template #activator="{ on }">
 					<v-button
-						v-if="item && item.collection.startsWith('directus9_') === false"
+						v-if="item && item.collection.startsWith('directus_') === false"
 						v-tooltip.bottom="t('delete_collection')"
 						rounded
 						icon
@@ -69,12 +69,12 @@
 
 			<v-form
 				v-model="edits.meta"
-				collection="directus9_collections"
+				collection="directus_collections"
 				:loading="loading"
 				:initial-values="item && item.meta"
 				:batch-mode="isBatch"
 				:primary-key="collection"
-				:disabled="item && item.collection.startsWith('directus9_')"
+				:disabled="item && item.collection.startsWith('directus_')"
 			/>
 		</div>
 
@@ -142,7 +142,7 @@ export default defineComponent({
 		const fieldsStore = useFieldsStore();
 
 		const { isNew, edits, item, saving, loading, error, save, remove, deleting, saveAsCopy, isBatch } = useItem(
-			ref('directus9_collections'),
+			ref('directus_collections'),
 			collection
 		);
 

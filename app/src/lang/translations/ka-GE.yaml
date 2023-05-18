@@ -23,15 +23,15 @@ all: ყველა
 cancel: გაუქმება
 collection: კოლექცია
 fields:
-  directus9_activity:
+  directus_activity:
     action: მოქმედება
     collection: კოლექცია
     comment: კომენტარი
     user_agent: მომხმარებლის აგენტი
     ip: IP მისამართი
-  directus9_collections:
+  directus_collections:
     collection: კოლექცია
-  directus9_files:
+  directus_files:
     title: სათაური
     description: აღწერა
     tags: იარლიყები
@@ -42,7 +42,7 @@ fields:
     uploaded_on: ატვირთვის თარიღი
     height: სიმაღლე
     duration: ხანგრძლივობა
-  directus9_users:
+  directus_users:
     first_name: სახელი
     last_name: გვარი
     email: ელ-ფოსტა
@@ -56,17 +56,17 @@ fields:
     tfa_secret: ორფაქტორიანი იდენტიფიკაცია
     status: სტატუსი
     role: როლი
-  directus9_shares:
+  directus_shares:
     role: როლი
     password: პაროლი
-  directus9_roles:
+  directus_roles:
     description: აღწერა
-  directus9_webhooks:
+  directus_webhooks:
     status: სტატუსი
 field_options:
-  directus9_activity:
+  directus_activity:
     create: შექმნა
-  directus9_webhooks:
+  directus_webhooks:
     actions_create: შექმნა
 comment: კომენტარი
 description: აღწერა

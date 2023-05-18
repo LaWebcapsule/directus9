@@ -44,7 +44,7 @@ export class ImportService {
 	}
 
 	async import(collection: string, mimetype: string, stream: Readable): Promise<void> {
-		if (this.accountability?.admin !== true && collection.startsWith('directus9_')) throw new ForbiddenException();
+		if (this.accountability?.admin !== true && collection.startsWith('directus_')) throw new ForbiddenException();
 
 		const createPermissions = this.accountability?.permissions?.find(
 			(permission) => permission.collection === collection && permission.action === 'create'
@@ -292,7 +292,7 @@ export class ExportService {
 					recipient: this.accountability.user,
 					sender: this.accountability.user,
 					subject: `Your export of ${collection} is ready`,
-					collection: `directus9_files`,
+					collection: `directus_files`,
 					item: savedFile,
 				});
 			}

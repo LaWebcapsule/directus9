@@ -76,8 +76,8 @@ type about_us {
   general_email: String
   primary_color: String
   secondary_color: String
-  logo: directus9_files
-  mark: directus9_files
+  logo: directus_files
+  mark: directus_files
 }
 
 type articles {

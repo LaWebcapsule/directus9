@@ -118,7 +118,7 @@ public_label: Publik
 public_description: Kendalikan data API yang tersedia tanpa autentikasi.
 admin_description: Peran administratif awal tanpa batasan akses aplikasi/API.
 not_allowed: Tidak Diizinkan
-directus9_version: Versi Directus9
+directus_version: Versi Directus9
 node_version: Versi Node
 node_uptime: Waktu Jalan Node
 os_type: Tipe OS
@@ -1000,13 +1000,13 @@ collections: Pengumpulan
 content: Konten
 singleton: Singleton
 singleton_label: Perlakukan sebagai objek tunggal
-directus9_collection:
-  directus9_activity: Log akuntabilitas untuk semua kejadian
-  directus9_collections: Konfigurasi koleksi tambahan dan metadata
-  directus9_fields: Isian konfigurasi tambahan dan metadata
-  directus9_permissions: Izin akses untuk setiap peran
+directus_collection:
+  directus_activity: Log akuntabilitas untuk semua kejadian
+  directus_collections: Konfigurasi koleksi tambahan dan metadata
+  directus_fields: Isian konfigurasi tambahan dan metadata
+  directus_permissions: Izin akses untuk setiap peran
 fields:
-  directus9_activity:
+  directus_activity:
     item: Kunci Utama Item
     action: Aksi
     collection: Koleksi
@@ -1017,7 +1017,7 @@ fields:
     origin: Asal
     ip: Alamat IP
     revisions: Revisi
-  directus9_collections:
+  directus_collections:
     collection: Koleksi
     icon: Ikon
     note: Catatan
@@ -1032,7 +1032,7 @@ fields:
     accountability: Pelacakan Aktifitas & Revisi
     archive_field: Bidang Arsip
     item_duplication_fields: Bidang Duplikasi Item
-  directus9_files:
+  directus_files:
     $thumbnail: Gambar kecil
     title: Judul
     description: Deskripsi
@@ -1056,7 +1056,7 @@ fields:
     height: Tinggi
     charset: Charset
     duration: Durasi
-  directus9_users:
+  directus_users:
     first_name: Nama Depan
     last_name: Nama belakang
     email: Email
@@ -1087,7 +1087,7 @@ fields:
     last_page: Halaman Terakhir
     last_access: Akses Terakhir
     email_notifications: Email pemberitahuan
-  directus9_settings:
+  directus_settings:
     jpg: JPEG
     png: PNG
     webP: JaringanP
@@ -1119,28 +1119,28 @@ fields:
     custom_css: CSS Kustomisasi
     module_bar: Papan Modul
     image_editor: Editor Gambar
-  directus9_shares:
+  directus_shares:
     name: Nama
     role: Peran
     password: Kata Sandi
     date_start: Tanggal Mulai
     times_used: Waktu yang digunakan
-  directus9_fields:
+  directus_fields:
     note: Catatan
     hidden: Tersembunyi
     singleton: Singleton
     translation: Terjemahan Nama Kolom
     display_template: Templat
-  directus9_roles:
+  directus_roles:
     name: Nama Peran
     description: Deskripsi
-  directus9_webhooks:
+  directus_webhooks:
     name: Nama
     status: Status
     value: Nilai
     collections: Pengumpulan
 field_options:
-  directus9_settings:
+  directus_settings:
     security_divider_title: Keamanan
     additional_transforms: Transformasi Tambahan
     transforms_note: Nama metode Sharp dan argumennya. Lihat konstruktor https://sharp.pixelplumbing.com/api- untuk informasi lebih.
@@ -1149,12 +1149,12 @@ field_options:
     basemaps_raster: Raster
     basemaps_tile: Ubin RasterJSON
     basemaps_style: Gaya Kotak peta
-  directus9_activity:
+  directus_activity:
     login: Masuk
     create: Buat
     update: Perbarui
     delete: Hapus
-  directus9_collections:
+  directus_collections:
     track_activity_revisions: Lacak Aktifitas & Revisi
     only_track_activity: Hanya Aktifitas Melacak
     do_not_track_anything: Jangan Lacak Apapun
@@ -1177,14 +1177,14 @@ field_options:
     sort_field: Pilih bidang...
     accountability_divider: Akuntabilitas
     duplication_divider: Duplikasi
-  directus9_files:
+  directus_files:
     title: Judul yang unik...
     description: Deskripsi opsional...
     location: Lokasi opsional...
     storage_divider: Penamaan File
     filename_disk: Nama pada penyimpanan disk...
     filename_download: Nama saat mengunduh...
-  directus9_roles:
+  directus_roles:
     name: Nama unik untuk peran ini...
     description: Deskripsi peran ini...
     ip_access: Tambahkan alamat IP yang diizinkan, biarkan kosong untuk mengizinkan semua...
@@ -1196,7 +1196,7 @@ field_options:
       link_placeholder: URL Relatif atau absolut...
     collections_name: Pengumpulan
     collections_addLabel: Tambah Koleksi...
-  directus9_users:
+  directus_users:
     preferences_divider: Preferensi Pengguna
     dropdown_auto: Otomatis (Berdasarkan Sistem)
     dropdown_light: Mode Terang
@@ -1208,7 +1208,7 @@ field_options:
     status_dropdown_suspended: Tergantung
     status_dropdown_archived: Diarsipkan
     token: Masukkan token akses aman...
-  directus9_webhooks:
+  directus_webhooks:
     status_options_active: Aktif
     status_options_inactive: Tidak aktif
     data_label: Kirim Data Acara

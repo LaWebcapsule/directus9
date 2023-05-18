@@ -285,7 +285,7 @@ All the `DB_POOL__` prefixed options are passed to [`tarn.js`](https://github.co
 | `REFRESH_TOKEN_COOKIE_DOMAIN`    | Which domain to use for the refresh cookie. Useful for development mode.                                                                                                                             | --                        |
 | `REFRESH_TOKEN_COOKIE_SECURE`    | Whether or not to use a secure cookie for the refresh token in cookie mode.                                                                                                                          | `false`                   |
 | `REFRESH_TOKEN_COOKIE_SAME_SITE` | Value for `sameSite` in the refresh token cookie when in cookie mode.                                                                                                                                | `lax`                     |
-| `REFRESH_TOKEN_COOKIE_NAME`      | Name of refresh token cookie .                                                                                                                                                                       | `directus9_refresh_token`  |
+| `REFRESH_TOKEN_COOKIE_NAME`      | Name of refresh token cookie .                                                                                                                                                                       | `directus_refresh_token`  |
 | `LOGIN_STALL_TIME`               | The duration in milliseconds that a login request will be stalled for, and it should be greater than the time taken for a login request with an invalid password                                     | `500`                     |
 | `PASSWORD_RESET_URL_ALLOW_LIST`  | List of URLs that can be used [as `reset_url` in /password/request](/reference/authentication#request-password-reset)                                                                                | --                        |
 | `USER_INVITE_URL_ALLOW_LIST`     | List of URLs that can be used [as `invite_url` in /users/invite](/reference/system/users#invite-a-new-user)                                                                                          | --                        |
@@ -534,7 +534,7 @@ By default, Directus9 stores all uploaded files locally on disk. However, you ca
 Google Cloud Storage, Azure, or Cloudinary. You can also configure _multiple_ storage adapters at the same time. This
 allows you to choose where files are being uploaded on a file-by-file basis. In the Admin App, files will automatically
 be uploaded to the first configured storage location (in this case `local`). The used storage location is saved under
-`storage` in `directus9_files`.
+`storage` in `directus_files`.
 
 ::: tip File Storage Default
 

@@ -2,7 +2,7 @@
 description: Learn how to migrate your data model to a new Directus9 project using Node.js.
 tags: []
 skill_level:
-directus9_version: 9.23.0
+directus_version: 9.23.0
 author_override:
 author: Kevin Lewis
 ---
@@ -13,7 +13,7 @@ author: Kevin Lewis
 
 :::tip Author: {{$frontmatter.author}}
 
-**Directus9 Version:** {{$frontmatter.directus9_version}}
+**Directus9 Version:** {{$frontmatter.directus_version}}
 
 :::
 
@@ -46,10 +46,10 @@ Create a new `index.js` file and set it up:
 ```js
 const fetch = require('cross-fetch');
 
-const BASE_DIRECTUS9_URL = 'https://your-base-project.directus9.app';
+const BASE_directus_URL = 'https://your-base-project.directus9.app';
 const BASE_ACCESS_TOKEN = 'your-access-token';
 
-const TARGET_DIRECTUS9_URL = 'https://your-target-project.directus9.app';
+const TARGET_directus_URL = 'https://your-target-project.directus9.app';
 const TARGET_ACCESS_TOKEN = 'your-access-token';
 
 async function main() {}
@@ -63,7 +63,7 @@ At the bottom of `index.js`, create a `getSnapshot()` function:
 
 ```js
 async function getSnapshot() {
-	const URL = `${BASE_DIRECTUS9_URL}/schema/snapshot?access_token=${BASE_ACCESS_TOKEN}`;
+	const URL = `${BASE_directus_URL}/schema/snapshot?access_token=${BASE_ACCESS_TOKEN}`;
 	const { data } = await fetch(URL).then((r) => r.json());
 	return data;
 }
@@ -89,7 +89,7 @@ At the bottom of `index.js`, create a `getDiff()` function which accepts a `snap
 
 ```js
 async function getDiff(snapshot) {
-	const URL = `${TARGET_DIRECTUS9_URL}/schema/diff?access_token=${TARGET_ACCESS_TOKEN}`;
+	const URL = `${TARGET_directus_URL}/schema/diff?access_token=${TARGET_ACCESS_TOKEN}`;
 	const { data } = await fetch(URL, {
 		method: 'POST',
 		body: JSON.stringify(snapshot),
@@ -120,7 +120,7 @@ At the bottom of `index.js`, create a `applyDiff()` function which accepts a `di
 
 ```js
 async function applyDiff(diff) {
-	const URL = `${TARGET_DIRECTUS9_URL}/schema/apply?access_token=${TARGET_ACCESS_TOKEN}`;
+	const URL = `${TARGET_directus_URL}/schema/apply?access_token=${TARGET_ACCESS_TOKEN}`;
 	await fetch(URL, {
 		method: 'POST',
 		body: JSON.stringify(diff),
@@ -160,10 +160,10 @@ The complete and final code is available below.
 ```js
 const fetch = require('cross-fetch');
 
-const BASE_DIRECTUS9_URL = 'https://your-base-project.directus9.app';
+const BASE_directus_URL = 'https://your-base-project.directus9.app';
 const BASE_ACCESS_TOKEN = 'your-access-token';
 
-const TARGET_DIRECTUS9_URL = 'https://your-target-project.directus9.app';
+const TARGET_directus_URL = 'https://your-target-project.directus9.app';
 const TARGET_ACCESS_TOKEN = 'your-access-token';
 
 async function main() {
@@ -175,13 +175,13 @@ async function main() {
 main();
 
 async function getSnapshot() {
-	const URL = `${BASE_DIRECTUS9_URL}/schema/snapshot?access_token=${BASE_ACCESS_TOKEN}`;
+	const URL = `${BASE_directus_URL}/schema/snapshot?access_token=${BASE_ACCESS_TOKEN}`;
 	const { data } = await fetch(URL).then((r) => r.json());
 	return data;
 }
 
 async function getDiff(snapshot) {
-	const URL = `${TARGET_DIRECTUS9_URL}/schema/diff?access_token=${TARGET_ACCESS_TOKEN}`;
+	const URL = `${TARGET_directus_URL}/schema/diff?access_token=${TARGET_ACCESS_TOKEN}`;
 	const { data } = await fetch(URL, {
 		method: 'POST',
 		body: JSON.stringify(snapshot),
@@ -193,7 +193,7 @@ async function getDiff(snapshot) {
 }
 
 async function applyDiff(diff) {
-	const URL = `${TARGET_DIRECTUS9_URL}/schema/apply?access_token=${TARGET_ACCESS_TOKEN}`;
+	const URL = `${TARGET_directus_URL}/schema/apply?access_token=${TARGET_ACCESS_TOKEN}`;
 	await fetch(URL, {
 		method: 'POST',
 		body: JSON.stringify(diff),

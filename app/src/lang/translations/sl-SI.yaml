@@ -60,7 +60,7 @@ logoutReason:
 public_label: Javno
 public_description: Nadzoruje, kateri podatki API so na voljo brez avtentikacije.
 not_allowed: Ni dovoljeno
-directus9_version: Directus9 verzija
+directus_version: Directus9 verzija
 node_version: Node verzija
 node_uptime: Node deluje
 os_type: OS vrsta
@@ -714,7 +714,7 @@ singleton: En zapis
 singleton_label: Obravnavaj kot en objekt
 system_fields_locked: Sistemska polja so zaklenjena in se ne urejajo
 fields:
-  directus9_activity:
+  directus_activity:
     item: Primarni ključ zapisa
     action: Dejanje
     collection: Zbirka
@@ -724,7 +724,7 @@ fields:
     user_agent: Brskalnik
     ip: IP naslov
     revisions: Revizija
-  directus9_collections:
+  directus_collections:
     collection: Zbirka
     icon: Ikona
     note: Opomba
@@ -738,7 +738,7 @@ fields:
     unarchive_value: Odarhiviraj vrednost
     sort_field: Polje za razvrščanje
     accountability: Sledenje aktivnosti in revizij
-  directus9_files:
+  directus_files:
     $thumbnail: Predogledna slika
     title: Naslov
     description: Opis
@@ -762,7 +762,7 @@ fields:
     height: Višina
     charset: Nabor znakov
     duration: Trajanje
-  directus9_users:
+  directus_users:
     first_name: Ime
     last_name: Priimek
     email: E-pošta
@@ -790,7 +790,7 @@ fields:
     token: Žeton
     last_page: Zadnja stran
     last_access: Zadnji dostop
-  directus9_settings:
+  directus_settings:
     transforms_note: Ime Sharp metode in parametri. Več na https://sharp.pixelplumbing.com/api-constructor.
     additional_transforms: Dodatne pretvorbe
     project_name: Ime projekta
@@ -804,11 +804,11 @@ fields:
     auth_login_attempts: Število poskusov prijave
     overrides: Aplikacijske preglasitve
     custom_css: CSS po meri
-  directus9_shares:
+  directus_shares:
     name: Ime
     role: Vloga
     password: Geslo
-  directus9_fields:
+  directus_fields:
     collection: Ime zbirke
     icon: Ikona zbirke
     note: Opomba
@@ -816,7 +816,7 @@ fields:
     singleton: En zapis
     translation: Prevodi imen polj
     display_template: Predloga
-  directus9_roles:
+  directus_roles:
     name: Ime vloge
     icon: Ikona vloge
     description: Opis
@@ -826,7 +826,7 @@ fields:
     enforce_tfa: Obvezno 2FA
     users: Uporabniki v vlogi
     module_list: Krmarjenje po modulu
-  directus9_webhooks:
+  directus_webhooks:
     name: Ime
     method: Metoda
     status: Stanje
@@ -837,7 +837,7 @@ fields:
     actions: Dejanja
     collections: Zbirke
 field_options:
-  directus9_settings:
+  directus_settings:
     project_name_placeholder: Moj projekt ...
     public_note_placeholder: Kratko javno sporočilo, ki podpira Markdown oblikovanje ...
     security_divider_title: Varnost
@@ -855,12 +855,12 @@ field_options:
     transforms_note: Ime Sharp metode in parametri. Več na https://sharp.pixelplumbing.com/api-constructor.
     files_divider_title: Datoteke & sličice
     overrides_divider_title: Aplikacijske preglasitve
-  directus9_activity:
+  directus_activity:
     login: Prijava
     create: Ustvari
     update: Posodobi
     delete: Izbriši
-  directus9_collections:
+  directus_collections:
     track_activity_revisions: Sledi aktivnosti in revizije
     only_track_activity: Sledi samo aktivnosti
     do_not_track_anything: Ne sledi ničesar
@@ -879,14 +879,14 @@ field_options:
     sort_divider: Razvrsti
     sort_field: Izberite polje ...
     accountability_divider: Odgovornost
-  directus9_files:
+  directus_files:
     title: Edinstven naziv ...
     description: Opcijski opis ...
     location: Opcijska lokacija ...
     storage_divider: Imenovanje datotek
     filename_disk: Ime na disku ...
     filename_download: Ime za prenos ...
-  directus9_roles:
+  directus_roles:
     name: Edinstveno ime te vloge ...
     description: Opis te vloge ...
     ip_access: Dovoljeni IP naslovi, pustite prazno za neomejen dostop ...
@@ -898,7 +898,7 @@ field_options:
       link_placeholder: Relativni ali absolutni URL naslov ...
     collections_name: Zbirke
     collections_addLabel: Dodaj zbirko ...
-  directus9_users:
+  directus_users:
     preferences_divider: Uporabniške nastavitve
     dropdown_auto: Avtomatsko (sistemsko)
     dropdown_light: Svetla tema
@@ -910,7 +910,7 @@ field_options:
     status_dropdown_suspended: Zaustavljeno
     status_dropdown_archived: Arhivirano
     token: Vnesite žeton ...
-  directus9_webhooks:
+  directus_webhooks:
     status_options_active: Aktivno
     status_options_inactive: Neaktivno
     data_label: Pošlji podatke dogodka

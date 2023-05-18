@@ -1,4 +1,4 @@
-table: directus9_files
+table: directus_files
 
 fields:
   - field: id
@@ -11,14 +11,14 @@ fields:
     interface: input
     options:
       iconRight: title
-      placeholder: $t:field_options.directus9_files.title
+      placeholder: $t:field_options.directus_files.title
     width: full
 
   - field: description
     interface: input-multiline
     width: full
     options:
-      placeholder: $t:field_options.directus9_files.description
+      placeholder: $t:field_options.directus_files.description
 
   - field: tags
     interface: tags
@@ -36,7 +36,7 @@ fields:
     interface: input
     options:
       iconRight: place
-      placeholder: $t:field_options.directus9_files.location
+      placeholder: $t:field_options.directus_files.location
     width: half
 
   - field: storage
@@ -50,7 +50,7 @@ fields:
     interface: presentation-divider
     options:
       icon: insert_drive_file
-      title: $t:field_options.directus9_files.storage_divider
+      title: $t:field_options.directus_files.storage_divider
     special:
       - alias
       - no-data
@@ -60,7 +60,7 @@ fields:
     interface: input
     options:
       iconRight: publish
-      placeholder: $t:field_options.directus9_files.filename_disk
+      placeholder: $t:field_options.directus_files.filename_disk
     readonly: true
     width: half
 
@@ -68,7 +68,7 @@ fields:
     interface: input
     options:
       iconRight: get_app
-      placeholder: $t:field_options.directus9_files.filename_download
+      placeholder: $t:field_options.directus_files.filename_download
     width: half
 
   - field: metadata

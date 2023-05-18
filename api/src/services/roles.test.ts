@@ -13,8 +13,8 @@ vi.mock('../../src/database/index', () => {
 
 const testSchema = {
 	collections: {
-		directus9_roles: {
-			collection: 'directus9_roles',
+		directus_roles: {
+			collection: 'directus_roles',
 			primary: 'id',
 			singleton: false,
 			sortField: null,
@@ -51,10 +51,10 @@ describe('Integration Tests', () => {
 	});
 
 	beforeEach(() => {
-		tracker.on.any('directus9_roles').response({});
+		tracker.on.any('directus_roles').response({});
 
 		tracker.on
-			.select(/"directus9_roles"."id" from "directus9_roles" order by "directus9_roles"."id" asc limit .*/)
+			.select(/"directus_roles"."id" from "directus_roles" order by "directus_roles"."id" asc limit .*/)
 			.response([]);
 	});
 
@@ -93,8 +93,8 @@ describe('Integration Tests', () => {
 								users: [userId1, userId2],
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
 
 							const result = await service.updateOne(adminRoleId, data);
 							expect(result).toBe(adminRoleId);
@@ -106,10 +106,10 @@ describe('Integration Tests', () => {
 								users: [userId1],
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
 
 							tracker.on
-								.select('select "id" from "directus9_users" where "role" = ?')
+								.select('select "id" from "directus_users" where "role" = ?')
 								.responseOnce([{ id: userId1 }, { id: userId2 }]);
 
 							const result = await service.updateOne(adminRoleId, data);
@@ -122,9 +122,9 @@ describe('Integration Tests', () => {
 								users: [],
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 1 });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 1 });
 
 							const result = await service.updateOne(adminRoleId, data);
 							expect(result).toBe(adminRoleId);
@@ -142,9 +142,9 @@ describe('Integration Tests', () => {
 								users: [],
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 0 });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 0 });
 
 							const promise = service.updateOne(adminRoleId, data);
 
@@ -175,8 +175,8 @@ describe('Integration Tests', () => {
 								users: [{ id: userId1 }, { id: userId2 }],
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
 
 							const result = await service.updateOne(adminRoleId, data);
 							expect(result).toBe(adminRoleId);
@@ -188,10 +188,10 @@ describe('Integration Tests', () => {
 								users: [{ id: userId1 }],
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
 
 							tracker.on
-								.select('select "id" from "directus9_users" where "role" = ?')
+								.select('select "id" from "directus_users" where "role" = ?')
 								.responseOnce([{ id: userId1 }, { id: userId2 }]);
 
 							const result = await service.updateOne(adminRoleId, data);
@@ -204,9 +204,9 @@ describe('Integration Tests', () => {
 								users: [],
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 1 });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 1 });
 
 							const result = await service.updateOne(adminRoleId, data);
 							expect(result).toBe(adminRoleId);
@@ -224,9 +224,9 @@ describe('Integration Tests', () => {
 								users: [],
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 0 });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 0 });
 
 							const promise = service.updateOne(adminRoleId, data);
 
@@ -261,8 +261,8 @@ describe('Integration Tests', () => {
 								},
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
 
 							const result = await service.updateOne(adminRoleId, data);
 							expect(result).toBe(adminRoleId);
@@ -278,9 +278,9 @@ describe('Integration Tests', () => {
 								},
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 1 });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 1 });
 
 							const result = await service.updateOne(adminRoleId, data);
 							expect(result).toBe(adminRoleId);
@@ -296,13 +296,13 @@ describe('Integration Tests', () => {
 								},
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
 
 							tracker.on
-								.select('select "id" from "directus9_users" where "role" = ?')
+								.select('select "id" from "directus_users" where "role" = ?')
 								.responseOnce([{ id: userId1 }, { id: userId2 }]);
 
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 1 });
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 1 });
 
 							const result = await service.updateOne(adminRoleId, data);
 							expect(result).toBe(adminRoleId);
@@ -318,9 +318,9 @@ describe('Integration Tests', () => {
 								},
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 1 });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 1 });
 
 							const result = await service.updateOne(adminRoleId, data);
 							expect(result).toBe(adminRoleId);
@@ -342,9 +342,9 @@ describe('Integration Tests', () => {
 								},
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 0 });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 0 });
 
 							const promise = service.updateOne(adminRoleId, data);
 
@@ -379,9 +379,9 @@ describe('Integration Tests', () => {
 								users: [userId1, userId2],
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 1 });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 1 });
 
 							const result = await service.updateOne(adminRoleId, data);
 							expect(result).toBe(adminRoleId);
@@ -399,9 +399,9 @@ describe('Integration Tests', () => {
 								users: [userId1, userId2],
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 0 });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 0 });
 
 							const promise = service.updateOne(adminRoleId, data);
 
@@ -430,13 +430,13 @@ describe('Integration Tests', () => {
 								users: [userId1],
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
 
 							tracker.on
-								.select('select "id" from "directus9_users" where "role" = ?')
+								.select('select "id" from "directus_users" where "role" = ?')
 								.responseOnce([{ id: userId1 }, { id: userId2 }]);
 
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 1 });
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 1 });
 
 							const result = await service.updateOne(adminRoleId, data);
 							expect(result).toBe(adminRoleId);
@@ -448,9 +448,9 @@ describe('Integration Tests', () => {
 								users: [],
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 1 });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 1 });
 
 							const result = await service.updateOne(adminRoleId, data);
 							expect(result).toBe(adminRoleId);
@@ -468,9 +468,9 @@ describe('Integration Tests', () => {
 								users: [],
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 0 });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 0 });
 
 							const promise = service.updateOne(adminRoleId, data);
 
@@ -501,9 +501,9 @@ describe('Integration Tests', () => {
 								users: [{ id: userId1 }, { id: userId2 }],
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 1 });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 1 });
 
 							const result = await service.updateOne(adminRoleId, data);
 							expect(result).toBe(adminRoleId);
@@ -521,9 +521,9 @@ describe('Integration Tests', () => {
 								users: [{ id: userId1 }, { id: userId2 }],
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 0 });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 0 });
 
 							const promise = service.updateOne(adminRoleId, data);
 
@@ -552,13 +552,13 @@ describe('Integration Tests', () => {
 								users: [{ id: userId1 }],
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
 
 							tracker.on
-								.select('select "id" from "directus9_users" where "role" = ?')
+								.select('select "id" from "directus_users" where "role" = ?')
 								.responseOnce([{ id: userId1 }, { id: userId2 }]);
 
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 1 });
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 1 });
 
 							const result = await service.updateOne(adminRoleId, data);
 							expect(result).toBe(adminRoleId);
@@ -570,9 +570,9 @@ describe('Integration Tests', () => {
 								users: [],
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 1 });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 1 });
 
 							const result = await service.updateOne(adminRoleId, data);
 							expect(result).toBe(adminRoleId);
@@ -590,9 +590,9 @@ describe('Integration Tests', () => {
 								users: [],
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 0 });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 0 });
 
 							const promise = service.updateOne(adminRoleId, data);
 
@@ -627,9 +627,9 @@ describe('Integration Tests', () => {
 								},
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 1 });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 1 });
 
 							const result = await service.updateOne(adminRoleId, data);
 							expect(result).toBe(adminRoleId);
@@ -645,9 +645,9 @@ describe('Integration Tests', () => {
 								},
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 1 });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 1 });
 
 							const result = await service.updateOne(adminRoleId, data);
 							expect(result).toBe(adminRoleId);
@@ -669,9 +669,9 @@ describe('Integration Tests', () => {
 								},
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 0 });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 0 });
 
 							const promise = service.updateOne(adminRoleId, data);
 
@@ -704,13 +704,13 @@ describe('Integration Tests', () => {
 								},
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
 
 							tracker.on
-								.select('select "id" from "directus9_users" where "role" = ?')
+								.select('select "id" from "directus_users" where "role" = ?')
 								.responseOnce([{ id: userId1 }, { id: userId2 }]);
 
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 1 });
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 1 });
 
 							const result = await service.updateOne(adminRoleId, data);
 							expect(result).toBe(adminRoleId);
@@ -726,9 +726,9 @@ describe('Integration Tests', () => {
 								},
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 1 });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 1 });
 
 							const result = await service.updateOne(adminRoleId, data);
 							expect(result).toBe(adminRoleId);
@@ -750,9 +750,9 @@ describe('Integration Tests', () => {
 								},
 							};
 
-							tracker.on.select('select "admin_access" from "directus9_roles"').responseOnce({ admin_access });
-							tracker.on.select('select "id" from "directus9_users" where "role" = ?').responseOnce([{ id: userId1 }]);
-							tracker.on.select('select count(*) as "count" from "directus9_users"').responseOnce({ count: 0 });
+							tracker.on.select('select "admin_access" from "directus_roles"').responseOnce({ admin_access });
+							tracker.on.select('select "id" from "directus_users" where "role" = ?').responseOnce([{ id: userId1 }]);
+							tracker.on.select('select count(*) as "count" from "directus_users"').responseOnce({ count: 0 });
 
 							const promise = service.updateOne(adminRoleId, data);
 
@@ -791,8 +791,8 @@ describe('Integration Tests', () => {
 				knex: db,
 				schema: {
 					collections: {
-						directus9_roles: {
-							collection: 'directus9_roles',
+						directus_roles: {
+							collection: 'directus_roles',
 							primary: 'id',
 							singleton: false,
 							sortField: null,

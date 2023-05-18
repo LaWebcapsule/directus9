@@ -32,9 +32,9 @@ const scenarios = [
 		name: 'when single provider and driver are properly configured',
 		input: {
 			AUTH_PROVIDERS: 'directus9',
-			AUTH_DIRECTUS9_DRIVER: 'openid',
-			AUTH_DIRECTUS9_LABEL: 'Directus9',
-			AUTH_DIRECTUS9_ICON: 'hare',
+			AUTH_directus_DRIVER: 'openid',
+			AUTH_directus_LABEL: 'Directus9',
+			AUTH_directus_ICON: 'hare',
 		},
 		output: [
 			{
@@ -50,9 +50,9 @@ const scenarios = [
 		name: 'when multiple provider and driver are properly configured',
 		input: {
 			AUTH_PROVIDERS: 'directus9,custom',
-			AUTH_DIRECTUS9_DRIVER: 'openid',
-			AUTH_DIRECTUS9_LABEL: 'Directus9',
-			AUTH_DIRECTUS9_ICON: 'hare',
+			AUTH_directus_DRIVER: 'openid',
+			AUTH_directus_LABEL: 'Directus9',
+			AUTH_directus_ICON: 'hare',
 			AUTH_CUSTOM_DRIVER: 'openid',
 			AUTH_CUSTOM_ICON: 'lock',
 		},

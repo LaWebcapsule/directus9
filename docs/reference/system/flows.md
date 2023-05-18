@@ -96,7 +96,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	flows: [directus9_flows]
+	flows: [directus_flows]
 }
 ```
 
@@ -146,7 +146,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	flows_by_id(id: ID!): directus9_flows
+	flows_by_id(id: ID!): directus_flows
 }
 ```
 
@@ -206,7 +206,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_flows_item(data: create_directus9_flows_input!): directus9_flows
+	create_flows_item(data: create_directus_flows_input!): directus_flows
 }
 ```
 
@@ -273,7 +273,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_flows_items(data: [create_directus9_flows_input!]!): [directus9_flows]
+	create_flows_items(data: [create_directus_flows_input!]!): [directus_flows]
 }
 ```
 
@@ -344,7 +344,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_flows_item(id: ID!, data: update_directus9_flows_input): directus9_flows
+	update_flows_item(id: ID!, data: update_directus_flows_input): directus_flows
 }
 ```
 
@@ -408,7 +408,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_flows_items(ids: [ID!]!, data: update_directus9_flows_input): [directus9_flows]
+	update_flows_items(ids: [ID!]!, data: update_directus_flows_input): [directus_flows]
 }
 ```
 

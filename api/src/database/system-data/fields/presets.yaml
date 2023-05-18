@@ -1,4 +1,4 @@
-table: directus9_presets
+table: directus_presets
 
 fields:
   - field: filter

@@ -144,7 +144,7 @@ export function getAutomaticJunctionCollectionName(collectionA: string, field: s
 	function getName(index: number) {
 		let name = `${collectionA}_${field}`;
 
-		if (name.startsWith('directus9_')) {
+		if (name.startsWith('directus_')) {
 			name = 'junction_' + name;
 		}
 
@@ -253,7 +253,7 @@ function generateFields(updates: StateUpdates, state: State, { getCurrent }: Hel
 		set(updates, 'fields.oneCollectionField', {
 			collection: junctionCollection,
 			field: oneCollectionField,
-			// directus9_collections.collection is a string
+			// directus_collections.collection is a string
 			type: 'string',
 			schema: {},
 			meta: {

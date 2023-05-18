@@ -118,7 +118,7 @@ public_label: Public
 public_description: Controlează ce date API sunt disponibile fără autentificare.
 admin_description: Rol administrativ inițial cu acces fără restricții la aplicație/API.
 not_allowed: Nu este permis
-directus9_version: Versiune Directus9
+directus_version: Versiune Directus9
 node_version: Versiune Node
 node_uptime: Durată execuție Node
 os_type: Tip SO
@@ -921,28 +921,28 @@ content: Conținut
 singleton: Singleton
 singleton_label: Tratează ca un singur obiect
 system_fields_locked: Câmpurile de sistem sunt blocate și nu pot fi editate
-directus9_collection:
-  directus9_activity: Jurnale de responsabilitate pentru toate evenimentele
-  directus9_collections: Configurare suplimentară pentru colecții și metadate
-  directus9_dashboards: Tablouri de bord din modulul de analize
-  directus9_fields: Configurare suplimentară pentru colecții și metadate
-  directus9_files: Metadate pentru toate activele gestionate în fișier
-  directus9_folders: Oferă directoare virtuale pentru fișiere
-  directus9_migrations: Ce versiune a bazei de date utilizaţi
-  directus9_notifications: Notificări trimise utilizatorilor
-  directus9_panels: Panouri individuale din tablourile de bord pentru analize
-  directus9_permissions: Accesați permisiunile pentru fiecare rol
-  directus9_presets: Presetări pentru valorile implicite ale colecțiilor și semne de carte
-  directus9_relations: Configurarea relației și metadate
-  directus9_revisions: Instantanee cu date pentru toată activitatea
-  directus9_roles: Grupuri de permisiuni pentru utilizatorii de sistem
-  directus9_sessions: Informații sesiune utilizator
-  directus9_settings: Opțiuni de configurare proiect
-  directus9_shares: Contorizează elementele partajate extern
-  directus9_users: Utilizatorii de sistem pentru platformă
-  directus9_webhooks: Configurare pentru cereri HTTP bazate pe evenimente
+directus_collection:
+  directus_activity: Jurnale de responsabilitate pentru toate evenimentele
+  directus_collections: Configurare suplimentară pentru colecții și metadate
+  directus_dashboards: Tablouri de bord din modulul de analize
+  directus_fields: Configurare suplimentară pentru colecții și metadate
+  directus_files: Metadate pentru toate activele gestionate în fișier
+  directus_folders: Oferă directoare virtuale pentru fișiere
+  directus_migrations: Ce versiune a bazei de date utilizaţi
+  directus_notifications: Notificări trimise utilizatorilor
+  directus_panels: Panouri individuale din tablourile de bord pentru analize
+  directus_permissions: Accesați permisiunile pentru fiecare rol
+  directus_presets: Presetări pentru valorile implicite ale colecțiilor și semne de carte
+  directus_relations: Configurarea relației și metadate
+  directus_revisions: Instantanee cu date pentru toată activitatea
+  directus_roles: Grupuri de permisiuni pentru utilizatorii de sistem
+  directus_sessions: Informații sesiune utilizator
+  directus_settings: Opțiuni de configurare proiect
+  directus_shares: Contorizează elementele partajate extern
+  directus_users: Utilizatorii de sistem pentru platformă
+  directus_webhooks: Configurare pentru cereri HTTP bazate pe evenimente
 fields:
-  directus9_activity:
+  directus_activity:
     item: Cheia primară a elementului
     action: Acţiune
     collection: Colecție
@@ -952,7 +952,7 @@ fields:
     user_agent: User Agent
     ip: Adresă IP
     revisions: Revizii
-  directus9_collections:
+  directus_collections:
     collection: Colecție
     icon: Pictogramă
     note: Notă
@@ -968,7 +968,7 @@ fields:
     accountability: Urmărire activitate și revizuire
     archive_field: Câmp arhivă
     item_duplication_fields: Câmpuri pentru duplicarea elementului
-  directus9_files:
+  directus_files:
     $thumbnail: Miniatură
     title: Titlu
     description: Descriere
@@ -992,7 +992,7 @@ fields:
     height: Înălţime
     charset: Setul de caractere
     duration: Durată
-  directus9_users:
+  directus_users:
     first_name: Prenume
     last_name: Nume
     email: Email
@@ -1023,7 +1023,7 @@ fields:
     last_page: Ultima Pagină
     last_access: Ultima accesare
     email_notifications: Notificări prin e-mail
-  directus9_settings:
+  directus_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
@@ -1061,7 +1061,7 @@ fields:
     transformations_all: Permite toate transformările
     transformations_none: Dezactivează transformările
     transformations_presets: Limitează transformările la presetările de mai jos
-  directus9_shares:
+  directus_shares:
     name: Nume
     role: Rol
     password: Parolă
@@ -1069,7 +1069,7 @@ fields:
     date_end: Data de sfârșit
     max_uses: Utilizări maxime
     times_used: Număr de utilizări
-  directus9_fields:
+  directus_fields:
     collection: Numele colecției
     icon: Pictogramă colecție
     note: Notă
@@ -1077,7 +1077,7 @@ fields:
     singleton: Singleton
     translation: Traduceri nume câmp
     display_template: Șablon
-  directus9_roles:
+  directus_roles:
     name: Nume rol
     icon: Pictogramă rol
     description: Descriere
@@ -1087,7 +1087,7 @@ fields:
     enforce_tfa: Necesită 2FA
     users: Utilizatori în rol
     module_list: Navigare în module
-  directus9_webhooks:
+  directus_webhooks:
     name: Nume
     method: Metodă
     status: Stare
@@ -1100,7 +1100,7 @@ fields:
     actions: Acțiuni
     collections: Colecții
 field_options:
-  directus9_settings:
+  directus_settings:
     project_name_placeholder: Proiectul meu...
     project_color_note: Logo și fundal logo
     project_logo_note: 'Alb: 40x40 SVG/PNG'
@@ -1129,12 +1129,12 @@ field_options:
     basemaps_style: Stil Mapbox
     files_divider_title: Fișiere și miniaturi
     overrides_divider_title: Suprascrieri peste aplicație
-  directus9_activity:
+  directus_activity:
     login: Autentificare
     create: Creare
     update: Actualizare
     delete: Ștergere
-  directus9_collections:
+  directus_collections:
     track_activity_revisions: Urmărire activitate și revizii
     only_track_activity: Urmărește doar activitatea
     do_not_track_anything: Nu urmări nimic
@@ -1157,14 +1157,14 @@ field_options:
     sort_field: Alegeți un câmp...
     accountability_divider: Responsabilitate
     duplication_divider: Duplicare
-  directus9_files:
+  directus_files:
     title: Un titlu unic...
     description: O descriere opțională...
     location: O locație opțională...
     storage_divider: Numirea fișierelor
     filename_disk: Nume la stocarea pe disc...
     filename_download: Nume la descărcare...
-  directus9_roles:
+  directus_roles:
     name: Numele unic pentru acest rol...
     description: O descriere a acestui rol...
     ip_access: Adaugă adresele IP permise, lasă gol pentru a le permite pe toate...
@@ -1176,7 +1176,7 @@ field_options:
       link_placeholder: URL relativ sau absolut...
     collections_name: Colecții
     collections_addLabel: Adaugă Colecție...
-  directus9_users:
+  directus_users:
     preferences_divider: Preferințe utilizator
     dropdown_auto: Automat (bazat pe sistem)
     dropdown_light: Mod luminos
@@ -1188,7 +1188,7 @@ field_options:
     status_dropdown_suspended: Suspendat
     status_dropdown_archived: Arhivat
     token: Introduceți un token de acces securizat...
-  directus9_webhooks:
+  directus_webhooks:
     status_options_active: Activ
     status_options_inactive: Inactiv
     data_label: Trimite date eveniment

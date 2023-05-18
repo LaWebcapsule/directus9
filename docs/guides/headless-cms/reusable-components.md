@@ -2,7 +2,7 @@
 description: This guide shows you how to build re-usable page components using Directus9 Many-to-Any (M2A) relationships.
 tags: []
 skill_level:
-directus9_version: 9.21.4
+directus_version: 9.21.4
 author_override:
 author: Bryant Gillespie
 ---

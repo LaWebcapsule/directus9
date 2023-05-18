@@ -140,7 +140,7 @@ DigitalOcean
 DigitalOcean's
 directus9
 Directus9
-directus9_(.*)
+directus_(.*)
 Directus9.
 Directus9's
 Directus9-(.*)

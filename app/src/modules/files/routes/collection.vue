@@ -10,7 +10,7 @@
 		:filter-user="filter"
 		:filter-system="folderTypeFilter"
 		:search="search"
-		collection="directus9_files"
+		collection="directus_files"
 		:reset-preset="resetPreset"
 	>
 		<private-view
@@ -34,7 +34,7 @@
 			</template>
 
 			<template #actions>
-				<search-input v-model="search" v-model:filter="filter" collection="directus9_files" />
+				<search-input v-model="search" v-model:filter="filter" collection="directus_files" />
 
 				<add-folder :parent="folder" :disabled="createFolderAllowed !== true" />
 
@@ -158,7 +158,7 @@
 			<drawer-batch
 				v-model:active="batchEditActive"
 				:primary-keys="selection"
-				collection="directus9_files"
+				collection="directus_files"
 				@refresh="refresh"
 			/>
 
@@ -171,7 +171,7 @@
 				</layout-sidebar-detail>
 				<component :is="`layout-sidebar-${layout}`" v-bind="layoutState" />
 				<export-sidebar-detail
-					collection="directus9_files"
+					collection="directus_files"
 					:layout-query="layoutQuery"
 					:filter="mergeFilters(filter, folderTypeFilter)"
 					:search="search"
@@ -253,7 +253,7 @@ export default defineComponent({
 
 		const userStore = useUserStore();
 
-		const { layout, layoutOptions, layoutQuery, filter, search, resetPreset } = usePreset(ref('directus9_files'));
+		const { layout, layoutOptions, layoutQuery, filter, search, resetPreset } = usePreset(ref('directus_files'));
 
 		const currentLayout = useExtension('layout', layout);
 
@@ -493,7 +493,7 @@ export default defineComponent({
 				if (admin) return true;
 
 				const updatePermissions = permissionsStore.permissions.find(
-					(permission) => permission.action === 'update' && permission.collection === 'directus9_files'
+					(permission) => permission.action === 'update' && permission.collection === 'directus_files'
 				);
 
 				return !!updatePermissions;
@@ -504,7 +504,7 @@ export default defineComponent({
 				if (admin) return true;
 
 				const deletePermissions = permissionsStore.permissions.find(
-					(permission) => permission.action === 'delete' && permission.collection === 'directus9_files'
+					(permission) => permission.action === 'delete' && permission.collection === 'directus_files'
 				);
 
 				return !!deletePermissions;
@@ -515,7 +515,7 @@ export default defineComponent({
 				if (admin) return true;
 
 				const createPermissions = permissionsStore.permissions.find(
-					(permission) => permission.action === 'create' && permission.collection === 'directus9_files'
+					(permission) => permission.action === 'create' && permission.collection === 'directus_files'
 				);
 
 				return !!createPermissions;
@@ -526,7 +526,7 @@ export default defineComponent({
 				if (admin) return true;
 
 				const createPermissions = permissionsStore.permissions.find(
-					(permission) => permission.action === 'create' && permission.collection === 'directus9_folders'
+					(permission) => permission.action === 'create' && permission.collection === 'directus_folders'
 				);
 
 				return !!createPermissions;

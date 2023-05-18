@@ -64,7 +64,7 @@
 				v-if="image"
 				v-model:active="editImageDetails"
 				:disabled="disabled || !updateAllowed"
-				collection="directus9_files"
+				collection="directus_files"
 				:primary-key="image.id"
 				:edits="edits"
 				@input="update"

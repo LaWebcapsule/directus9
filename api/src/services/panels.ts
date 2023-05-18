@@ -3,6 +3,6 @@ import { ItemsService } from './items.js';
 
 export class PanelsService extends ItemsService {
 	constructor(options: AbstractServiceOptions) {
-		super('directus9_panels', options);
+		super('directus_panels', options);
 	}
 }

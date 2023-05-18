@@ -168,13 +168,13 @@
 			<revisions-drawer-detail
 				v-if="isBatch === false && isNew === false && revisionsAllowed"
 				ref="revisionsDrawerDetail"
-				collection="directus9_users"
+				collection="directus_users"
 				:primary-key="primaryKey"
 				@revert="revert"
 			/>
 			<comments-sidebar-detail
 				v-if="isBatch === false && isNew === false"
-				collection="directus9_users"
+				collection="directus_users"
 				:primary-key="primaryKey"
 			/>
 		</template>
@@ -234,7 +234,7 @@ export default defineComponent({
 		const { primaryKey } = toRefs(props);
 		const { breadcrumb } = useBreadcrumb();
 
-		const { info: collectionInfo } = useCollection('directus9_users');
+		const { info: collectionInfo } = useCollection('directus_users');
 
 		const revisionsDrawerDetail = ref<InstanceType<typeof RevisionsDrawerDetail> | null>(null);
 
@@ -254,7 +254,7 @@ export default defineComponent({
 			archiving,
 			isArchived,
 			validationErrors,
-		} = useItem(ref('directus9_users'), primaryKey);
+		} = useItem(ref('directus_users'), primaryKey);
 
 		if (props.role) {
 			edits.value = {
@@ -286,7 +286,7 @@ export default defineComponent({
 		const { loading: previewLoading, avatarSrc, roleName } = useUserPreview();
 
 		const { createAllowed, deleteAllowed, archiveAllowed, saveAllowed, updateAllowed, revisionsAllowed, fields } =
-			usePermissions(ref('directus9_users'), item, isNew);
+			usePermissions(ref('directus_users'), item, isNew);
 
 		// These fields will be shown in the sidebar instead
 		const fieldsDenyList = ['id', 'last_page', 'created_on', 'created_by', 'modified_by', 'modified_on', 'last_access'];

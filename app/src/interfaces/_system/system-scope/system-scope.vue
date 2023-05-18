@@ -54,11 +54,11 @@ export default defineComponent({
 				},
 				{
 					text: t('user') + ': ' + t('select'),
-					value: 'directus9_users',
+					value: 'directus_users',
 				},
 				{
 					text: t('role') + ': ' + t('select'),
-					value: 'directus9_roles',
+					value: 'directus_roles',
 				},
 			];
 
@@ -90,8 +90,8 @@ export default defineComponent({
 		}
 
 		function onSelectItem(value: string[]) {
-			if (collection.value === 'directus9_users') return emit('input', 'user_' + value[0]);
-			if (collection.value === 'directus9_roles') return emit('input', 'role_' + value[0]);
+			if (collection.value === 'directus_users') return emit('input', 'user_' + value[0]);
+			if (collection.value === 'directus_roles') return emit('input', 'role_' + value[0]);
 		}
 
 		async function loadItemName() {

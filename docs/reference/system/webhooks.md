@@ -84,7 +84,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	webhooks: [directus9_webhooks]
+	webhooks: [directus_webhooks]
 }
 ```
 
@@ -127,7 +127,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	webhooks_by_id(id: ID!): directus9_webhooks
+	webhooks_by_id(id: ID!): directus_webhooks
 }
 ```
 
@@ -190,7 +190,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_webhooks_item(data: create_directus9_webhooks_input!): directus9_webhooks
+	create_webhooks_item(data: create_directus_webhooks_input!): directus_webhooks
 }
 ```
 
@@ -262,7 +262,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	create_webhooks_items(data: [create_directus9_webhooks_input!]!): [directus9_webhooks]
+	create_webhooks_items(data: [create_directus_webhooks_input!]!): [directus_webhooks]
 }
 ```
 
@@ -324,7 +324,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_webhooks_item(id: ID!, data: update_directus9_webhooks_input!): directus9_webhooks
+	update_webhooks_item(id: ID!, data: update_directus_webhooks_input!): directus_webhooks
 }
 ```
 
@@ -387,7 +387,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_webhooks_items(ids: [ID!]!, data: update_directus9_webhooks_input!): [directus9_webhooks]
+	update_webhooks_items(ids: [ID!]!, data: update_directus_webhooks_input!): [directus_webhooks]
 }
 ```
 

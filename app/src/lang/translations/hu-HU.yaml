@@ -118,7 +118,7 @@ public_label: Nyilvános
 public_description: API adatok hozzáférése bejelentkezés nélkül.
 admin_description: Alapértelmezett adminisztrátori szerepkör korlátlan alkalmazás és API hozzáféréssel.
 not_allowed: Nem engedélyezett
-directus9_version: Directus9 verzió
+directus_version: Directus9 verzió
 node_version: Node verzió
 node_uptime: Node futásidő
 os_type: Operációs rendszer típusa
@@ -1024,30 +1024,30 @@ content: Ügyvitel
 singleton: Egyedüli
 singleton_label: Egyetlen objektumként kezelendő
 system_fields_locked: A rendszermezők zároltak és nem szerkeszthetők
-directus9_collection:
-  directus9_activity: Az összes esemény elszámoltathatósági naplója
-  directus9_collections: Gyűjtemény további konfigurációja és metaadatok
-  directus9_dashboards: Irányítópultok az Insights modulon belül
-  directus9_fields: Mező további konfigurációja és metaadatok
-  directus9_files: Metaadatok az összes kezelt fájleszközhöz
-  directus9_flows: Automatizáció
-  directus9_folders: Virtuális könyvtárakat biztosít a fájlok számára
-  directus9_migrations: Az adatbázis melyik verzióját használja
-  directus9_notifications: A felhasználóknak küldött értesítések
-  directus9_operations: A folyamatok műveletei
-  directus9_panels: Egyedi panelek a kimutatások irányítópultjain belül
-  directus9_permissions: Hozzáférési engedélyek a szerepkörökhöz
-  directus9_presets: Gyűjtemény és könyvjelzők alapértelmezései
-  directus9_relations: Reláció konfigurációja és metaadatok
-  directus9_revisions: Pillanatkép minden tevékenységhez
-  directus9_roles: Jogosultsági csoportok rendszerfelhasználók számára
-  directus9_sessions: Felhasználói munkamenet-információk
-  directus9_settings: Projekt konfigurációs lehetőségek
-  directus9_shares: Követi a külsőleg megosztott elemeket
-  directus9_users: A platform rendszerhasználói
-  directus9_webhooks: Konfiguráció eseményalapú HTTP-kérésekhez
+directus_collection:
+  directus_activity: Az összes esemény elszámoltathatósági naplója
+  directus_collections: Gyűjtemény további konfigurációja és metaadatok
+  directus_dashboards: Irányítópultok az Insights modulon belül
+  directus_fields: Mező további konfigurációja és metaadatok
+  directus_files: Metaadatok az összes kezelt fájleszközhöz
+  directus_flows: Automatizáció
+  directus_folders: Virtuális könyvtárakat biztosít a fájlok számára
+  directus_migrations: Az adatbázis melyik verzióját használja
+  directus_notifications: A felhasználóknak küldött értesítések
+  directus_operations: A folyamatok műveletei
+  directus_panels: Egyedi panelek a kimutatások irányítópultjain belül
+  directus_permissions: Hozzáférési engedélyek a szerepkörökhöz
+  directus_presets: Gyűjtemény és könyvjelzők alapértelmezései
+  directus_relations: Reláció konfigurációja és metaadatok
+  directus_revisions: Pillanatkép minden tevékenységhez
+  directus_roles: Jogosultsági csoportok rendszerfelhasználók számára
+  directus_sessions: Felhasználói munkamenet-információk
+  directus_settings: Projekt konfigurációs lehetőségek
+  directus_shares: Követi a külsőleg megosztott elemeket
+  directus_users: A platform rendszerhasználói
+  directus_webhooks: Konfiguráció eseményalapú HTTP-kérésekhez
 fields:
-  directus9_activity:
+  directus_activity:
     item: Elem elsődleges kulcsa
     action: Művelet
     collection: Gyűjtemény
@@ -1058,7 +1058,7 @@ fields:
     origin: Származás
     ip: IP cím
     revisions: Változatok
-  directus9_collections:
+  directus_collections:
     collection: Gyűjtemény
     icon: Ikon
     note: Jegyzet
@@ -1074,7 +1074,7 @@ fields:
     accountability: Tevékenység és revízió nyomkövetése
     archive_field: Archívum
     item_duplication_fields: Elemkettőzési mezők
-  directus9_files:
+  directus_files:
     $thumbnail: Miniatűr
     title: Cím
     description: Leírás
@@ -1098,7 +1098,7 @@ fields:
     height: Magasság
     charset: Karakterkészlet
     duration: Időtartam
-  directus9_users:
+  directus_users:
     first_name: Keresztnév
     last_name: Vezetéknév
     email: Email
@@ -1129,7 +1129,7 @@ fields:
     last_page: Utolsó oldal
     last_access: Utolsó hozzáférés
     email_notifications: Email értesítések
-  directus9_settings:
+  directus_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
@@ -1169,7 +1169,7 @@ fields:
     transformations_presets: Korlátozza az átalakításokat a beállítások szerint
     image_editor: Képszerkesztő
     custom_aspect_ratios: Egyedi képarányok
-  directus9_shares:
+  directus_shares:
     name: Név
     role: Szerepkör
     password: Jelszó
@@ -1177,7 +1177,7 @@ fields:
     date_end: Befejezés dátuma
     max_uses: Maximális felhasználás
     times_used: Használat ideje
-  directus9_fields:
+  directus_fields:
     collection: Gyűjtemény neve
     icon: Gyűjtemény ikonja
     note: Jegyzet
@@ -1185,7 +1185,7 @@ fields:
     singleton: Egyedüli
     translation: Lefordított mezőnevek
     display_template: Sablon
-  directus9_roles:
+  directus_roles:
     name: Szerepkör neve
     icon: Szerep ikonja
     description: Leírás
@@ -1195,7 +1195,7 @@ fields:
     enforce_tfa: 2FA megkövetelése
     users: Felhasználók a szerepkörben
     module_list: Modul navigáció felülbírálása
-  directus9_webhooks:
+  directus_webhooks:
     name: Név
     method: Metódus
     status: Állapot
@@ -1208,7 +1208,7 @@ fields:
     actions: Műveletek
     collections: Gyűjtemények
 field_options:
-  directus9_settings:
+  directus_settings:
     project_name_placeholder: Saját projektem...
     project_color_note: Bejelentkezés és logó háttér
     project_logo_note: Fehér 40x40 SVG/PNG
@@ -1237,12 +1237,12 @@ field_options:
     basemaps_style: Mapbox stílus
     files_divider_title: Fájlok és miniatűrök
     overrides_divider_title: Alkalmazás felülbírálások
-  directus9_activity:
+  directus_activity:
     login: Bejelentkezés
     create: Létrehozás
     update: Frissítés
     delete: Törlés
-  directus9_collections:
+  directus_collections:
     track_activity_revisions: Tevékenységek és módosítások nyomon követése
     only_track_activity: Csak a tevékenység nyomon követése
     do_not_track_anything: Minden nyomkövetés tiltása
@@ -1265,14 +1265,14 @@ field_options:
     sort_field: Mező kiválasztása...
     accountability_divider: Elszámoltathatóság
     duplication_divider: Duplikálás
-  directus9_files:
+  directus_files:
     title: Egy egyedi cím...
     description: Egy opcionális leírás...
     location: Egy opcionális helyszín...
     storage_divider: Fájl elnevezése
     filename_disk: Név a lemeztáron...
     filename_download: Elnevezés letöltés esetén...
-  directus9_roles:
+  directus_roles:
     name: E szerepkör egyedi neve...
     description: A szerepkör leírása...
     ip_access: Adja hozzá az engedélyezett IP-címeket, minden IP engedélyezéséhez hagyja üresen...
@@ -1284,7 +1284,7 @@ field_options:
       link_placeholder: Relatív vagy abszolút URL...
     collections_name: Gyűjtemények
     collections_addLabel: Gyűjtemény hozzáadása...
-  directus9_users:
+  directus_users:
     preferences_divider: Felhasználói beállítások
     dropdown_auto: Automatikus (A rendszeren alapuló)
     dropdown_light: Világos mód
@@ -1296,7 +1296,7 @@ field_options:
     status_dropdown_suspended: Felfüggesztve
     status_dropdown_archived: Archiválva
     token: Írja be a biztonságos hozzáférés tokenjét...
-  directus9_webhooks:
+  directus_webhooks:
     status_options_active: Aktív
     status_options_inactive: Inaktív
     data_label: Eseményadatok küldése

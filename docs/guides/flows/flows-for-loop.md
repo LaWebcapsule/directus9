@@ -4,7 +4,7 @@ description:
   execute a flow for each element in a payload's array.
 tags: []
 skill_level:
-directus9_version: 9.18.1
+directus_version: 9.18.1
 author_override:
 author: Eron Powell
 ---
@@ -17,7 +17,7 @@ author: Eron Powell
 
 <!-- **Skill Level:** {{$frontmatter.skill_level}}\ -->
 
-**Directus9 Version:** {{$frontmatter.directus9_version}}
+**Directus9 Version:** {{$frontmatter.directus_version}}
 
 <!-- **Tags:** {{$frontmatter.tags.join(", ")}} -->
 

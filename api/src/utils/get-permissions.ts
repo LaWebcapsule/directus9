@@ -65,7 +65,7 @@ export async function getPermissions(accountability: Accountability, schema: Sch
 	}
 
 	if (accountability.admin !== true) {
-		const query = database.select('*').from('directus9_permissions');
+		const query = database.select('*').from('directus_permissions');
 
 		if (accountability.role) {
 			query.where({ role: accountability.role });

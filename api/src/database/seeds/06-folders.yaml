@@ -1,4 +1,4 @@
-table: directus9_folders
+table: directus_folders
 
 columns:
   id:
@@ -12,5 +12,5 @@ columns:
   parent:
     type: uuid
     references:
-      table: directus9_folders
+      table: directus_folders
       column: id

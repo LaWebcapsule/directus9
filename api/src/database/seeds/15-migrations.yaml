@@ -1,4 +1,4 @@
-table: directus9_migrations
+table: directus_migrations
 
 columns:
   version:

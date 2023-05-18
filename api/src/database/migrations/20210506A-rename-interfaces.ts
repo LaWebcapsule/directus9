@@ -53,7 +53,7 @@ export async function up(knex: Knex): Promise<void> {
 		if (options) {
 			const fields = await knex
 				.select<{ id: number; options: Record<string, unknown> }[]>('id', 'options')
-				.from('directus9_fields')
+				.from('directus_fields')
 				.where({ interface: before });
 
 			for (const { id, options: existingOptionsRaw } of fields) {
@@ -65,18 +65,18 @@ export async function up(knex: Knex): Promise<void> {
 					...options,
 				};
 
-				await knex('directus9_fields')
+				await knex('directus_fields')
 					.update({ interface: after, options: JSON.stringify(newOptions) })
 					.where({ id });
 			}
 		} else {
-			await knex('directus9_fields').update({ interface: after }).where({ interface: before });
+			await knex('directus_fields').update({ interface: after }).where({ interface: before });
 		}
 	}
 }
 
 export async function down(knex: Knex): Promise<void> {
 	for (const [before, after] of changes) {
-		await knex('directus9_fields').update({ interface: before }).where({ interface: after });
+		await knex('directus_fields').update({ interface: before }).where({ interface: after });
 	}
 }

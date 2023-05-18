@@ -264,7 +264,7 @@ export default defineComponent({
 			const collections = computed(() =>
 				collectionsStore.collections
 					.map(({ collection }) => collection)
-					.filter((collection) => collection.startsWith('directus9_') === false)
+					.filter((collection) => collection.startsWith('directus_') === false)
 			);
 
 			const duplicateTo = ref(props.field.collection);

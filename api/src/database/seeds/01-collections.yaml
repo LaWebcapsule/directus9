@@ -1,4 +1,4 @@
-table: directus9_collections
+table: directus_collections
 
 columns:
   collection:

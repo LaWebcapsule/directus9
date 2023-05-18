@@ -18,7 +18,7 @@
 		</template>
 
 		<drawer-item
-			collection="directus9_shares"
+			collection="directus_shares"
 			:primary-key="shareToEdit"
 			:active="!!shareToEdit"
 			@update:active="unselect"

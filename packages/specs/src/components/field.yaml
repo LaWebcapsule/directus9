@@ -1,5 +1,5 @@
 type: object
-x-collection: directus9_fields
+x-collection: directus_fields
 properties:
   collection:
     description: Unique name of the collection this field is in.
@@ -81,7 +81,7 @@ properties:
     nullable: true
     properties:
       id:
-        description: Unique identifier for the field in the `directus9_fields` collection.
+        description: Unique identifier for the field in the `directus_fields` collection.
         example: 3
         type: integer
       collection:

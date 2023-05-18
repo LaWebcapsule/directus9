@@ -101,12 +101,12 @@ export default async function init(): Promise<void> {
 	const userID = uuid();
 	const roleID = uuid();
 
-	await db('directus9_roles').insert({
+	await db('directus_roles').insert({
 		id: roleID,
 		...defaultAdminRole,
 	});
 
-	await db('directus9_users').insert({
+	await db('directus_users').insert({
 		id: userID,
 		email: firstUser.email,
 		password: firstUser.password,

@@ -110,7 +110,7 @@ logoutReason:
 public_label: Κοινόχρηστο
 public_description: Ελέγχει ποια δεδομένα API είναι διαθέσιμα χωρίς ταυτοποίηση.
 not_allowed: Δεν Επιτρέπεται
-directus9_version: Έκδοση Directus9
+directus_version: Έκδοση Directus9
 node_version: Έκδοση Node
 os_type: Λειτουργικό
 os_version: Έκδοση Λειτουργικού
@@ -253,7 +253,7 @@ cancel: Ακύρωση
 collection: Συλλογή
 collections: Συλλογές
 fields:
-  directus9_activity:
+  directus_activity:
     item: Στοιχείο Πρωτεύον Κλειδί
     action: Ενέργεια
     collection: Συλλογή
@@ -262,12 +262,12 @@ fields:
     comment: Σχόλιο
     user_agent: Πράκτορας χρήστη
     ip: Διεύθυνση IP
-  directus9_collections:
+  directus_collections:
     collection: Συλλογή
     icon: Εικονίδιο
     note: Σημείωση
     hidden: Κρυφό
-  directus9_files:
+  directus_files:
     title: Τίτλος
     description: Περιγραφή
     tags: Ετικέτες
@@ -282,7 +282,7 @@ fields:
     uploaded_on: Μεταφορτώθηκε στις
     height: Ύψος
     duration: Διάρκεια
-  directus9_users:
+  directus_users:
     first_name: Όνομα
     last_name: Επώνυμο
     email: Ηλεκτρονικό ταχυδρομείο
@@ -297,39 +297,39 @@ fields:
     tfa_secret: Έλεγχος ταυτότητας δυο παραγόντων
     status: Κατάσταση
     role: Ρόλος
-  directus9_settings:
+  directus_settings:
     project_name: Όνομα Έργου
     module_bar: Γραμμή Ενθεμάτων
-  directus9_shares:
+  directus_shares:
     name: Όνομα
     role: Ρόλος
     password: Κωδικός
-  directus9_fields:
+  directus_fields:
     note: Σημείωση
     hidden: Κρυφό
     translation: Μεταφράσεις Ονόματος Πεδίου
-  directus9_roles:
+  directus_roles:
     name: Όνομα Ρόλου
     description: Περιγραφή
-  directus9_webhooks:
+  directus_webhooks:
     name: Όνομα
     status: Κατάσταση
     value: Τιμή
     collections: Συλλογές
 field_options:
-  directus9_activity:
+  directus_activity:
     create: Δημιουργία
     update: Ενημέρωση
-  directus9_collections:
+  directus_collections:
     language: Γλώσσα
     translation: Μετάφραση
     archive_divider: Αρχειοθέτηση
-  directus9_roles:
+  directus_roles:
     fields:
       icon_name: Εικονίδιο
       name_name: Όνομα
     collections_name: Συλλογές
-  directus9_webhooks:
+  directus_webhooks:
     actions_create: Δημιουργία
     actions_update: Ενημέρωση
     headers:

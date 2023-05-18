@@ -133,7 +133,7 @@ export default defineComponent({
 		return { t, permissionLevel, saving, setFullAccess, setNoAccess, openPermissions, appMinimalLevel };
 
 		async function openPermissions() {
-			// If this collection isn't "managed" yet, make sure to add it to directus9_collections first
+			// If this collection isn't "managed" yet, make sure to add it to directus_collections first
 			// before trying to associate any permissions with it
 			if (props.collection.meta === null) {
 				await api.patch(`/collections/${props.collection.collection}`, {

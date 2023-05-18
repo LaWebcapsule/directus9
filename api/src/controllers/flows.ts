@@ -13,7 +13,7 @@ import { sanitizeQuery } from '../utils/sanitize-query.js';
 
 const router = express.Router();
 
-router.use(useCollection('directus9_flows'));
+router.use(useCollection('directus_flows'));
 
 const webhookFlowHandler = asyncHandler(async (req, res, next) => {
 	const flowManager = getFlowManager();

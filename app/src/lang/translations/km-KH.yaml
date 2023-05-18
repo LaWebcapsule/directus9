@@ -21,5 +21,5 @@ field_o2m: O2M Relationship
 field_m2m: M2M Relationship
 field_translations: ការបកប្រែ
 field_options:
-  directus9_collections:
+  directus_collections:
     archive_divider: Archive

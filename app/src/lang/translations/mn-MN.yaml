@@ -94,7 +94,7 @@ public_label: Нээлттэй
 public_description: Нэвтэрч ороогүй үед API- ны ямар өгөгдөл авч болохыг удирдана.
 admin_description: Апп болон API дата руу хязгааргүй хандах эрхтэй үндсэн админ эрх.
 not_allowed: Зөвшөөрөгдөөгүй
-directus9_version: Directus9 хувилбар
+directus_version: Directus9 хувилбар
 node_version: Node хувилбар
 node_uptime: Node ажиллаж буй хугацаа
 os_type: Үйлдлийн системийн төрөл
@@ -108,14 +108,14 @@ archive_confirm_count: >-
 reset_system_permissions_to: 'Системийн зөвшөөрлийг буцааж хэвэнд нь оруулах:'
 reset_system_permissions_copy: Энэ үйлдлийг хийснээр өмнө нь тохируулсан зөвшөөрлийн тохиргоо дарагдана. Хийх үү?
 fields:
-  directus9_settings:
+  directus_settings:
     module_bar: Модулийн мөр
-  directus9_fields:
+  directus_fields:
     translation: Талбарын нэрний орчуулга
-  directus9_roles:
+  directus_roles:
     name: Үүргийн нэр
 field_options:
-  directus9_collections:
+  directus_collections:
     archive_divider: Архивлах
 limit: Хязгаар
 interfaces:

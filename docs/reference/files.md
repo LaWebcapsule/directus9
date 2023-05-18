@@ -7,7 +7,7 @@ pageClass: page-reference
 # Accessing Files
 
 > Every file managed by the platform is uploaded to the configured storage adapter, and its associated metadata is
-> tracked within the `directus9_files` system collection. Any requested file transformations are handled on the fly, and
+> tracked within the `directus_files` system collection. Any requested file transformations are handled on the fly, and
 > are only saved to storage.
 
 ---
@@ -276,7 +276,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	files: [directus9_files]
+	files: [directus_files]
 }
 ```
 
@@ -325,7 +325,7 @@ POST /graphql/system
 
 ```graphql
 type Query {
-	files_by_id(id: ID!): directus9_files
+	files_by_id(id: ID!): directus_files
 }
 ```
 
@@ -472,7 +472,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	import_file(url: String!, data: create_directus9_files_input!): directus9_files
+	import_file(url: String!, data: create_directus_files_input!): directus_files
 }
 ```
 
@@ -530,7 +530,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_files_item(id: ID!, data: update_directus9_files_input!): directus9_files
+	update_files_item(id: ID!, data: update_directus_files_input!): directus_files
 }
 ```
 
@@ -594,7 +594,7 @@ POST /graphql/system
 
 ```graphql
 type Mutation {
-	update_files_items(ids: [ID!]!, data: update_directus9_files!): [directus9_files]
+	update_files_items(ids: [ID!]!, data: update_directus_files!): [directus_files]
 }
 ```
 
