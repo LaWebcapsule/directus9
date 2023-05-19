@@ -1,17 +1,16 @@
-name: manage-changeset
-
+name: Changesets
 on:
   push:
     branches:
       - main
 
 env:
-  GHCR_IMAGE: ghcr.io/${{ github.repository }}
-  DOCKERHUB_IMAGE: ${{ github.repository }}
+  CI: true
+  PNPM_CACHE_FOLDER: .pnpm-store
 
 jobs:
-  release:
-    name: Release
+  version:
+    name: version
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -25,10 +24,9 @@ jobs:
       - name: install pnpm
         run: npm i pnpm@latest -g
 
-      - name: Create Release Pull Request or Publish to npm
-        id: changesets
+      - name: create and publish release
         uses: changesets/action@v1
         with:
-          - publish: yarn changeset tag
+          publish: pnpm changeset tag
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
