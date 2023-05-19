@@ -1,4 +1,4 @@
-import { spec } from '@directus/specs';
+import { spec } from '@directus9/specs';
 import type { Knex } from 'knex';
 import { cloneDeep, mergeWith } from 'lodash-es';
 import type {
@@ -9,7 +9,7 @@ import type {
 	SchemaObject,
 	TagObject,
 } from 'openapi3-ts';
-import type { Accountability, Field, Permission, Relation, SchemaOverview, Type } from '@directus/types';
+import type { Accountability, Field, Permission, Relation, SchemaOverview, Type } from '@directus9/types';
 import { version } from '../utils/package.js';
 import { OAS_REQUIRED_SCHEMAS } from '../constants.js';
 import getDatabase from '../database/index.js';

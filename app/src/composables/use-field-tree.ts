@@ -1,7 +1,7 @@
 import { useFieldsStore } from '@/stores/fields';
 import { useRelationsStore } from '@/stores/relations';
-import { Field, Relation, Type } from '@directus/types';
-import { getRelationType } from '@directus/utils';
+import { Field, Relation, Type } from '@directus9/types';
+import { getRelationType } from '@directus9/utils';
 import { isNil } from 'lodash';
 import { Ref, ref, watch } from 'vue';
 

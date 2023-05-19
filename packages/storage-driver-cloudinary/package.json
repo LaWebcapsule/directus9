@@ -1,19 +1,19 @@
 {
-	"name": "@directus/storage-driver-cloudinary",
-	"version": "9.26.0",
+	"name": "@directus9/storage-driver-cloudinary",
+	"version": "9.26.2",
 	"type": "module",
 	"scripts": {
 		"build": "tsc --build",
 		"dev": "tsc --watch",
 		"test": "vitest --watch=false"
 	},
-	"description": "Cloudinary file storage abstraction for `@directus/storage`",
+	"description": "Cloudinary file storage abstraction for `@directus9/storage`",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/directus/directus.git",
+		"url": "https://github.com/directus9/directus9.git",
 		"directory": "packages/storage-driver-cloudinary"
 	},
-	"funding": "https://github.com/directus/directus?sponsor=1",
+	"funding": "https://github.com/directus9/directus9?sponsor=1",
 	"license": "GPL-3.0",
 	"author": "Rijk van Zanten <rijkvanzanten@me.com>",
 	"exports": {
@@ -29,13 +29,13 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@directus/storage": "workspace:*",
-		"@directus/utils": "workspace:*",
+		"@directus9/storage": "workspace:*",
+		"@directus9/utils": "workspace:*",
 		"p-queue": "7.3.4",
 		"undici": "5.22.0"
 	},
 	"devDependencies": {
-		"@directus/tsconfig": "0.0.7",
+		"@directus9/tsconfig": "0.0.7",
 		"@ngneat/falso": "6.4.0",
 		"@vitest/coverage-c8": "0.30.1",
 		"typescript": "5.0.4",

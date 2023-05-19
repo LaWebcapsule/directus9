@@ -3,8 +3,8 @@ import { RelationM2A } from '@/composables/use-relation-m2a';
 import { RelationM2M } from '@/composables/use-relation-m2m';
 import { RelationO2M } from '@/composables/use-relation-o2m';
 import { unexpectedError } from '@/utils/unexpected-error';
-import { Filter, Item } from '@directus/types';
-import { getEndpoint, toArray } from '@directus/utils';
+import { Filter, Item } from '@directus9/types';
+import { getEndpoint, toArray } from '@directus9/utils';
 import { clamp, cloneDeep, get, isEqual, merge } from 'lodash';
 import { Ref, computed, ref, unref, watch } from 'vue';
 

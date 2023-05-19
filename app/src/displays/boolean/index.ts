@@ -1,4 +1,4 @@
-import { defineDisplay } from '@directus/utils';
+import { defineDisplay } from '@directus9/utils';
 import DisplayBoolean from './boolean.vue';
 
 export default defineDisplay({

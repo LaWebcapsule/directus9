@@ -1,5 +1,5 @@
-import { BaseException } from '@directus/exceptions';
-import { toArray } from '@directus/utils';
+import { BaseException } from '@directus9/exceptions';
+import { toArray } from '@directus9/utils';
 import type { ErrorRequestHandler } from 'express';
 import getDatabase from '../database/index.js';
 import emitter from '../emitter.js';

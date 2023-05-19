@@ -1,4 +1,4 @@
-import { EXTENSION_LANGUAGES } from '@directus/constants';
+import { EXTENSION_LANGUAGES } from '@directus9/constants';
 import { execa } from 'execa';
 import fse from 'fs-extra';
 import { resolve } from 'node:path';

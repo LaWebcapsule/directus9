@@ -1,4 +1,4 @@
-import type { Permission } from '@directus/types';
+import type { Permission } from '@directus9/types';
 import { merge } from 'lodash-es';
 import path, { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';

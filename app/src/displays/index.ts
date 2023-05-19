@@ -1,5 +1,5 @@
 import { App } from 'vue';
-import { DisplayConfig } from '@directus/types';
+import { DisplayConfig } from '@directus9/types';
 import { sortBy } from 'lodash';
 
 export function getInternalDisplays(): DisplayConfig[] {

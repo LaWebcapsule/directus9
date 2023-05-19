@@ -1,5 +1,5 @@
-import type { Column } from '@directus/schema';
-import type { FUNCTIONS, GEOMETRY_FORMATS, GEOMETRY_TYPES, LOCAL_TYPES, TYPES } from '@directus/constants';
+import type { Column } from '@directus9/schema';
+import type { FUNCTIONS, GEOMETRY_FORMATS, GEOMETRY_TYPES, LOCAL_TYPES, TYPES } from '@directus9/constants';
 import type { Filter, FilterOperator } from './filter.js';
 import type { DeepPartial } from './misc.js';
 

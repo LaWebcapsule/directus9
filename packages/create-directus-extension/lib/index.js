@@ -2,8 +2,8 @@
 'use strict';
 
 import inquirer from 'inquirer';
-import { EXTENSION_LANGUAGES, EXTENSION_TYPES, BUNDLE_EXTENSION_TYPES } from '@directus/constants';
-import { create } from '@directus/extensions-sdk/cli';
+import { EXTENSION_LANGUAGES, EXTENSION_TYPES, BUNDLE_EXTENSION_TYPES } from '@directus9/constants';
+import { create } from '@directus9/extensions-sdk/cli';
 
 run();
 

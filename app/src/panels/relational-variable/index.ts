@@ -1,4 +1,4 @@
-import { definePanel } from '@directus/utils';
+import { definePanel } from '@directus9/utils';
 import PanelRelationalVariable from './panel-relational-variable.vue';
 
 export default definePanel({

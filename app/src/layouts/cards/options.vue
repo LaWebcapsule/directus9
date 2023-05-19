@@ -48,8 +48,8 @@
 import { useI18n } from 'vue-i18n';
 import { defineComponent, PropType } from 'vue';
 
-import { Field } from '@directus/types';
-import { useSync } from '@directus/composables';
+import { Field } from '@directus9/types';
+import { useSync } from '@directus9/composables';
 
 export default defineComponent({
 	inheritAttrs: false,

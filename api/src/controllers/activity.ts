@@ -1,4 +1,4 @@
-import { Action } from '@directus/constants';
+import { Action } from '@directus9/constants';
 import express from 'express';
 import Joi from 'joi';
 import { ForbiddenException, InvalidPayloadException } from '../exceptions/index.js';

@@ -1,5 +1,5 @@
 import { App } from 'vue';
-import { PanelConfig } from '@directus/types';
+import { PanelConfig } from '@directus9/types';
 import { sortBy } from 'lodash';
 
 export function getInternalPanels(): PanelConfig[] {

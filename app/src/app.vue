@@ -26,7 +26,7 @@ import { useAppStore } from '@/stores/app';
 import { useServerStore } from '@/stores/server';
 import { useUserStore } from '@/stores/user';
 import { setFavicon } from '@/utils/set-favicon';
-import { User } from '@directus/types';
+import { User } from '@directus9/types';
 import { StyleValue, computed, onMounted, onUnmounted, toRefs, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { startIdleTracking, stopIdleTracking } from './idle';

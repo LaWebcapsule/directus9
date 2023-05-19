@@ -1,6 +1,6 @@
-import { EXTENSION_TYPES } from '@directus/constants';
-import type { Plural } from '@directus/types';
-import { depluralize, isIn } from '@directus/utils';
+import { EXTENSION_TYPES } from '@directus9/constants';
+import type { Plural } from '@directus9/types';
+import { depluralize, isIn } from '@directus9/utils';
 import { Router } from 'express';
 import env from '../env.js';
 import { RouteNotFoundException } from '../exceptions/index.js';

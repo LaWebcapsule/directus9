@@ -71,7 +71,7 @@
 </template>
 
 <script setup lang="ts">
-import { Field, ValidationError } from '@directus/types';
+import { Field, ValidationError } from '@directus9/types';
 import { isEqual } from 'lodash';
 import { computed, ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
@@ -81,7 +81,7 @@ import FormFieldMenu from './form-field-menu.vue';
 import { formatFieldFunction } from '@/utils/format-field-function';
 import { useClipboard } from '@/composables/use-clipboard';
 import FormFieldRawEditor from './form-field-raw-editor.vue';
-import { parseJSON } from '@directus/utils';
+import { parseJSON } from '@directus9/utils';
 
 interface Props {
 	field: Field;

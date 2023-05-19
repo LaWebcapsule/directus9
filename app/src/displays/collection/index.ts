@@ -1,4 +1,4 @@
-import { defineDisplay } from '@directus/utils';
+import { defineDisplay } from '@directus9/utils';
 import DisplayCollection from './collection.vue';
 import { useCollectionsStore } from '@/stores/collections';
 

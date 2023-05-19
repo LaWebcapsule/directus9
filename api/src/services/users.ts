@@ -1,6 +1,6 @@
-import { FailedValidationException } from '@directus/exceptions';
-import type { Query } from '@directus/types';
-import { getSimpleHash, toArray } from '@directus/utils';
+import { FailedValidationException } from '@directus9/exceptions';
+import type { Query } from '@directus9/types';
+import { getSimpleHash, toArray } from '@directus9/utils';
 import jwt from 'jsonwebtoken';
 import { cloneDeep, isEmpty } from 'lodash-es';
 import { performance } from 'perf_hooks';

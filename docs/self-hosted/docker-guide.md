@@ -60,7 +60,7 @@ Containers are ephemeral, and this means that whenever you stop a container, all
 be removed [unless you persist them](https://docs.docker.com/storage) when creating your container.
 
 Directus image by default
-[will use the following locations](https://github.com/directus/directus/blob/main/docker/Dockerfile#L56-L60) for data
+[will use the following locations](https://github.com/directus9/directus9/blob/main/docker/Dockerfile#L56-L60) for data
 persistence (note that these can be changed through environment variables)
 
 - `/directus/uploads` for uploads
