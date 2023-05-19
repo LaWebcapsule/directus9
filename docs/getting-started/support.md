@@ -14,7 +14,7 @@ If you're experiencing issues or think you have found a problem in Directus, be 
 
 1. Ensure your server and database meet the [minimum requirements](/self-hosted/docker-guide.html#supported-databases).
 2. Ensure you’re on the [latest version](https://github.com/directus9/directus9/releases/latest) of Directus.
-3. Stop `CTRL+C` and restart the server `npx directus start`.
+3. Stop `CTRL+C` and restart the server `npx directus9 start`.
 4. Run the database migration script: `directus database migrate:latest`\
    _Note: backup your database first._
 5. Disable any data-caching within your project.

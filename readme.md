@@ -21,6 +21,7 @@ Directus is a real-time API and App dashboard for managing SQL database content.
 
 ## 🚀 Directus Cloud
 
+
 [Directus Cloud](https://directus.io/pricing) allows you to create projects, hosted by the Directus team, in 90 seconds.
 
 - **No product limitations or service usage quotas (unlimited users, API requests, etc)**

@@ -59,13 +59,13 @@ directory. In general, you need the following flow:
 
 ```sh
 # Option 1
-npx directus bootstrap
-npx directus schema apply ./path/to/snapshot.yaml
+npx directus9 bootstrap
+npx directus9 schema apply ./path/to/snapshot.yaml
 
 # Option 2 - without bootstrap, you must ensure that you run all required `bootstrap` tasks
-npx directus database install
-npx directus database migrate:latest
-npx directus schema apply ./path/to/snapshot.yaml
+npx directus9 database install
+npx directus9 database migrate:latest
+npx directus9 schema apply ./path/to/snapshot.yaml
 ```
 
 Take notice here - to comply with this flow, `migrations` directory **must not contain** tasks that modify the contents
