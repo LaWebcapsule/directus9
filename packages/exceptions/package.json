@@ -1,6 +1,6 @@
 {
 	"name": "@directus9/exceptions",
-	"version": "9.26.0",
+	"version": "9.26.1",
 	"type": "module",
 	"scripts": {
 		"build": "tsc --build",
