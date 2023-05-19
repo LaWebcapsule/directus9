@@ -1,6 +1,6 @@
 {
 	"name": "@directus9/storage-driver-azure",
-	"version": "9.26.1",
+	"version": "9.26.2",
 	"type": "module",
 	"scripts": {
 		"build": "tsc --build",
