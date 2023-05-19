@@ -1,5 +1,14 @@
 # @directus9/storage-driver-cloudinary
 
+## 9.26.2
+
+### Patch Changes
+
+- 973f4bb: update packages
+- Updated dependencies [973f4bb]
+  - @directus9/storage@9.26.2
+  - @directus9/utils@9.26.2
+
 ## 9.26.1
 
 ### Patch Changes
