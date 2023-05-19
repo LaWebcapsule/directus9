@@ -18,7 +18,7 @@ RUN pnpm install --recursive --offline --frozen-lockfile
 
 RUN : \
 	&& npm_config_workspace_concurrency=1 pnpm run build \
-	&& pnpm --filter directus deploy --prod dist \
+	&& pnpm --filter directus9 deploy --prod dist \
 	&& cd dist \
 	&& pnpm pack \
 	&& tar -zxvf *.tgz package/package.json \
