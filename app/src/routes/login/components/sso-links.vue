@@ -27,7 +27,7 @@ import { AuthProvider } from '@/types/login';
 import { AUTH_SSO_DRIVERS } from '@/constants';
 import { translateAPIError } from '@/lang';
 import { getRootPath } from '@/utils/get-root-path';
-import formatTitle from '@directus/format-title';
+import formatTitle from '@directus9/format-title';
 
 export default defineComponent({
 	props: {
