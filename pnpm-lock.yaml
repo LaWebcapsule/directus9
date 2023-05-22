@@ -1,5 +1,8 @@
 lockfileVersion: '6.0'
 
+overrides:
+  vm2@<3.9.18: '>=3.9.18'
+
 importers:
 
   .:
@@ -311,8 +314,8 @@ importers:
         specifier: 0.0.3
         version: 0.0.3
       vm2:
-        specifier: 3.9.17
-        version: 3.9.17
+        specifier: '>=3.9.18'
+        version: 3.9.18
       wellknown:
         specifier: 0.5.0
         version: 0.5.0
@@ -1402,7 +1405,7 @@ importers:
         version: 6.3.3
       ts-jest:
         specifier: 29.1.0
-        version: 29.1.0(@babel/core@7.21.8)(jest@29.5.0)(typescript@5.0.4)
+        version: 29.1.0(@babel/core@7.21.4)(jest@29.5.0)(typescript@5.0.4)
       typescript:
         specifier: 5.0.4
         version: 5.0.4
@@ -18484,7 +18487,7 @@ packages:
     engines: {node: '>=6.10'}
     dev: true
 
-  /ts-jest@29.1.0(@babel/core@7.21.8)(jest@29.5.0)(typescript@5.0.4):
+  /ts-jest@29.1.0(@babel/core@7.21.4)(jest@29.5.0)(typescript@5.0.4):
     resolution: {integrity: sha512-ZhNr7Z4PcYa+JjMl62ir+zPiNJfXJN6E8hSLnaUKhOgqcn8vb3e537cpkd0FuAfRK3sR1LSqM1MOhliXNgOFPA==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     hasBin: true
@@ -18505,7 +18508,7 @@ packages:
       esbuild:
         optional: true
     dependencies:
-      '@babel/core': 7.21.8
+      '@babel/core': 7.21.4
       bs-logger: 0.2.6
       fast-json-stable-stringify: 2.1.0
       jest: 29.5.0
@@ -19292,8 +19295,8 @@ packages:
       - terser
     dev: true
 
-  /vm2@3.9.17:
-    resolution: {integrity: sha512-AqwtCnZ/ERcX+AVj9vUsphY56YANXxRuqMb7GsDtAr0m0PcQX3u0Aj3KWiXM0YAHy7i6JEeHrwOnwXbGYgRpAw==}
+  /vm2@3.9.18:
+    resolution: {integrity: sha512-iM7PchOElv6Uv6Q+0Hq7dcgDtWWT6SizYqVcvol+1WQc+E9HlgTCnPozbQNSP3yDV9oXHQOEQu530w2q/BCVZg==}
     engines: {node: '>=6.0'}
     hasBin: true
     dependencies:
