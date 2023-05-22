@@ -23,7 +23,7 @@
 
 <script lang="ts">
 import { defineComponent, computed, PropType } from 'vue';
-import formatTitle from '@directus/format-title';
+import formatTitle from '@directus9/format-title';
 import { isEmpty } from 'lodash';
 
 type Choice = {

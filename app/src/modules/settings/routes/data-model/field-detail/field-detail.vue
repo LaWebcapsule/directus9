@@ -50,7 +50,7 @@ import { useRouter } from 'vue-router';
 import { useCollectionsStore } from '@/stores/collections';
 import { useFieldsStore } from '@/stores/fields';
 import { useI18n } from 'vue-i18n';
-import formatTitle from '@directus/format-title';
+import formatTitle from '@directus9/format-title';
 import { useDialogRoute } from '@/composables/use-dialog-route';
 import { storeToRefs } from 'pinia';
 import { unexpectedError } from '@/utils/unexpected-error';

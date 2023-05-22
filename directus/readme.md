@@ -4,9 +4,13 @@
 
 <p>&nbsp;</p>
 
+**This repository is a fork of the Directus 9. Directus 9 was under BSL license and so is this repository. As Directus 10 is no more openSource, this repository aims to maintain an openSource version of Directus 9**
+
+
 ## Introduction
 
-**Directus is a free and open-source data platform for headless content management**. It can be installed on top of any
+
+**Directus 9 is a free and open-source data platform for headless content management**. It can be installed on top of any
 new or existing SQL database, instantly providing a dynamic API (REST+GraphQL) and accompanying App for managing
 content. Built entirely in TypeScript (in Node and Vue), Directus is completely modular and end-to-end extensible...
 with absolutely no paywalls or artificial limitations.
@@ -21,30 +25,41 @@ Aurora/Redshift or Google Cloud Platform SQL.
 
 Learn more at...
 
-- [Website](https://directus.io/)
+
 - [GitHub](https://github.com/directus9/directus9)
+
+**All the following links are for Directus v10 ; contribution are welcome to make specific documentation for the Directus 9**
+
+- [Website](https://directus.io/)
 - [Documentation](https://docs.directus.io/)
 - [Community](https://directus.chat/)
 - [Twitter](https://twitter.com/directus)
-- [Cloud](https://directus.cloud/)
+- [Cloud](https://directus.cloud/) 
 - [Marketplace](https://directus.market/)
 
 <p>&nbsp;</p>
 
 ## Installing
 
-Directus requires NodeJS 10+. Create a new project with our simple CLI tool:
+Directus requires NodeJS 10+. 
+
+Install Directus9 :
 
 ```
-npm init directus-project my-project
+npm install directus9
 ```
 
 Or using yarn:
 
 ```
-yarn create directus-project my-project
+yarn install directus9
 ```
 
+Create a new project with our simple CLI tool:
+
+```
+npx directus9 init
+```
 The above command will create a directory with your project name, then walk you through the database configuration and
 creation of your first admin user.
 
@@ -60,6 +75,38 @@ npm update
 
 <p>&nbsp;</p>
 
+## Migrating from directus@9.0.0^ to directus9
+
+You need to change your dependencies :
+1. In package.json
+```
+"directus":9.0.0^ --> "directus9": 9.0.0^
+"@directus/some-package" --> "@directus9/some-package"
+```
+
+2. Update your dependencies :
+```
+npm update
+```
+
+3. If you have some code :
+
+```ts
+import {...} from "directus"
+import {...} from "@directus/some-package"
+```
+should become :
+
+```ts
+import {...} from "directus9"
+import {...} from "@directus9/some-package"
+```
+
+4. You don't have to do any changes to your databases.
+Directus9 use the schema as directus@9.0.0^. As a consequence, you don't need other changes than the three step below.
+
+
+
 ## Contributing
 
 Please report any and all issues [on our GitHub](https://github.com/directus9/directus9/issues/new).
@@ -73,13 +120,7 @@ reach out a member of the Core Team via [GitHub](https://github.com/directus9/di
 
 ## Supporting
 
-Directus is a free and open-source project with development made possible by support from our passionate core team,
-amazing contributors, and generous sponsors. It's not easy building premium open-source software; if you would like to
-help ensure Directus stays free, please consider becoming a sponsor.
-
-- [Support us through GitHub Sponsors](https://github.com/sponsors/directus)
-- [One-time donation through PayPal](https://www.paypal.me/supportdirectus)
-- [Backing Directus](https://docs.directus.io/getting-started/backing-directus/)
+This is a fork of directus9. We welcome contribution and no support is asked.
 
 <p>&nbsp;</p>
 

@@ -20,7 +20,7 @@ import { CollectionsService } from './collections.js';
 import { FieldsService } from './fields.js';
 import { GraphQLService } from './graphql/index.js';
 import { RelationsService } from './relations.js';
-import formatTitle from '@directus/format-title';
+import formatTitle from '@directus9/format-title';
 
 export class SpecificationService {
 	accountability: Accountability | null;
