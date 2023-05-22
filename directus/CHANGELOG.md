@@ -1,5 +1,11 @@
 # directus9
 
+## 9.26.3
+
+### Patch Changes
+
+- b6ada1c: modify npm doc
+
 ## 9.26.2
 
 ### Patch Changes
