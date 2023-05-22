@@ -70,8 +70,7 @@ Issues marked "Community" are ready to be implemented by anybody at any point! I
 
 #### Contributor License Agreement
 
-All code contributors are required to sign the Contributor License Agreement (CLA). When you start a pull request, a
-GitHub Action will prompt you to review the CLA and sign it by adding your name to contributors.yml
+There are no license agreement. This repository is under the GPL license and your work will use the same license.
 
 #### Bug Fixes
 
