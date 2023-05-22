@@ -75,7 +75,7 @@ npm update
 
 <p>&nbsp;</p>
 
-## Migrating from directus@9.0.0^ to directus9
+## Migrating from directus@9.0.0^ to directus9@9.0.0^
 
 You need to change your dependencies :
 1. In package.json
@@ -103,7 +103,7 @@ import {...} from "@directus9/some-package"
 ```
 
 4. You don't have to do any changes to your databases.
-Directus9 use the schema as directus@9.0.0^. As a consequence, you don't need other changes than the three step below.
+Directus9 use the same schema as directus@9.0.0^. As a consequence, you don't need other changes than the three step below.
 
 
 
@@ -126,5 +126,4 @@ This is a fork of directus9. We welcome contribution and no support is asked.
 
 ## License
 
-Directus is released under the [GPLv3 license](./license). Monospace Inc owns all Directus trademarks, logos, and
-intellectual property on behalf of our project's community. Copyright © 2004-2020, Monospace Inc.
+Directus is released under the [GPLv3 license](./license). Monospace Inc owns all Directus trademarks, logos, and intellectual property on behalf of our project's community. Copyright © 2004-2020, Monospace Inc.
