@@ -6,6 +6,12 @@
 
 **This repository is a fork of the Directus 9. Directus 9 was under BSL license and so is this repository. As Directus 10 is no more openSource, this repository aims to maintain an openSource version of Directus 9**
 
+## Scope of the fork
+
+Our main goal with this repository is to release security updates and some fixes of the directus 9 version. All contributions are welcome.
+
+:exclamation: :construction_worker: The documentation is provided in the state it was for the directus 9 version and has link toward the directus platform. However the directus platform is now in v10 and the informations you can find there may not be reliable for the v9. 
+
 
 ## Introduction
 
@@ -75,7 +81,7 @@ npm update
 
 <p>&nbsp;</p>
 
-## Migrating from directus@9.0.0^ to directus9
+## Migrating from directus@9.0.0^ to directus9@9.0.0^
 
 You need to change your dependencies :
 1. In package.json
@@ -103,7 +109,7 @@ import {...} from "@directus9/some-package"
 ```
 
 4. You don't have to do any changes to your databases.
-Directus9 use the schema as directus@9.0.0^. As a consequence, you don't need other changes than the three step below.
+Directus9 use the same schema as directus@9.0.0^. As a consequence, you don't need other changes than the three step below.
 
 
 
@@ -126,5 +132,6 @@ This is a fork of directus9. We welcome contribution and no support is asked.
 
 ## License
 
-Directus is released under the [GPLv3 license](./license). Monospace Inc owns all Directus trademarks, logos, and
-intellectual property on behalf of our project's community. Copyright © 2004-2020, Monospace Inc.
+Directus is released under the [GPLv3 license](./license). Monospace Inc owns all Directus trademarks, logos, and intellectual property on behalf of our project's community. Copyright © 2004-2020, Monospace Inc.
+
+**This repository is a fork of the Directus 9. We have no intention to violate any rights of the Monoscpace Inc. If we misunderstood the scope of the license, please contact us and we will make the appropriate modification.**

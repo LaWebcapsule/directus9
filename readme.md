@@ -2,6 +2,8 @@
 
 <br />
 
+**This repository is a fork of the Directus 9. Directus 9 was under BSL license and so is this repository. As Directus 10 is no more openSource, this repository aims to maintain an openSource version of Directus 9**
+
 ## 🐰 Introduction
 
 Directus is a real-time API and App dashboard for managing SQL database content.
@@ -19,41 +21,8 @@ Directus is a real-time API and App dashboard for managing SQL database content.
 
 <br />
 
-## 🚀 Directus Cloud
+## License
 
-[Directus Cloud](https://directus.io/pricing) allows you to create projects, hosted by the Directus team, in 90 seconds.
+Directus is released under the [GPLv3 license](./license). Monospace Inc owns all Directus trademarks, logos, and intellectual property on behalf of our project's community. Copyright © 2004-2020, Monospace Inc.
 
-- **No product limitations or service usage quotas (unlimited users, API requests, etc)**
-- A modern self-service dashboard to create and monitor all your projects in one place
-- End-to-end solution: Directus, database, serverless auto-scaling, storage, and a global CDN
-- Select your desired region and provision a new project in ~90 seconds
-
-**[Create a Directus Cloud Project](https://directus.cloud)**
-
-<br />
-
-## 🤔 Community Help
-
-[The Directus Documentation](https://docs.directus.io) is a great place to start, or explore these other channels:
-
-- [Discord](https://directus.chat) (Questions, Live Discussions)
-- [GitHub Issues](https://github.com/directus9/directus9/issues) (Report Bugs)
-- [GitHub Discussions](https://github.com/directus9/directus9/discussions) (Feature Requests)
-- [Twitter](https://twitter.com/directus) (Latest News)
-- [YouTube](https://www.youtube.com/c/DirectusVideos/featured) (Video Tutorials)
-
-<br />
-
-## ❤️ Contributing & Sponsoring
-
-Please read our [Contributing Guide](./contributing.md) before submitting Pull Requests.
-
-All security vulnerabilities should be reported in accordance with our
-[Security Policy](https://docs.directus.io/contributing/introduction/#reporting-security-vulnerabilities).
-
-Directus is a premium open-source ([GPLv3](./license)) project, made possible with support from our passionate core
-team, talented contributors, and amazing [GitHub Sponsors](https://github.com/sponsors/directus). Thank you all!
-
-<br />
-
-© 2004-2023, Monospace Inc
+**This repository is a fork of the Directus 9. We have no intention to violate any rights of the Monoscpace Inc. If we misunderstood the scope of the license, please contact us and we will make the appropriate modification.**
