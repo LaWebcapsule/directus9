@@ -6,6 +6,12 @@
 
 **This repository is a fork of the Directus 9. Directus 9 was under BSL license and so is this repository. As Directus 10 is no more openSource, this repository aims to maintain an openSource version of Directus 9**
 
+## Scope of the fork
+
+Our main goal with this repository is to release security updates and some fixes of the directus 9 version. All contributions are welcome.
+
+:exclamation: :construction_worker: The documentation is provided in the state it was for the directus 9 version and has link toward the directus platform. However the directus platform is now in v10 and the informations you can find there may not be reliable for the v9. 
+
 
 ## Introduction
 
