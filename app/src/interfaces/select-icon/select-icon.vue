@@ -49,7 +49,7 @@
 import { useI18n } from 'vue-i18n';
 import icons from './icons.json';
 import { defineComponent, ref, computed } from 'vue';
-import formatTitle from '@directus/format-title';
+import formatTitle from '@directus9/format-title';
 
 export default defineComponent({
 	props: {

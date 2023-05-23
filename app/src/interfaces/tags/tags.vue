@@ -49,7 +49,7 @@
 <script lang="ts">
 import { useI18n } from 'vue-i18n';
 import { defineComponent, PropType, ref, computed, watch } from 'vue';
-import formatTitle from '@directus/format-title';
+import formatTitle from '@directus9/format-title';
 
 export default defineComponent({
 	props: {
