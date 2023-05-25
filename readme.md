@@ -2,7 +2,7 @@
 
 <br />
 
-**This repository is a fork of the Directus 9. Directus 9 was under BSL license and so is this repository. As Directus 10 is no more openSource, this repository aims to maintain an openSource version of Directus 9**
+**This repository is a fork of the Directus 9. Directus 9 was under BSL license and so is this repository. As Directus 10 is now <i>a premium open-source software</i>, this repository aims to maintain a standard openSource version of Directus 9**
 
 ## 🐰 Introduction
 
