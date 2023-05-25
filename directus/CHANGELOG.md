@@ -1,5 +1,11 @@
 # directus9
 
+## 9.26.4
+
+### Patch Changes
+
+- 6ba1d28: change readme
+
 ## 9.26.3
 
 ### Patch Changes
