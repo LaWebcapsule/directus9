@@ -1,5 +1,5 @@
-import type { KNEX_TYPES } from '@directus9/constants';
-import type { Field, Relation, Type } from '@directus9/types';
+import type { KNEX_TYPES } from '@wbce-d9/constants';
+import type { Field, Relation, Type } from '@wbce-d9/types';
 import type { Options } from '../types.js';
 import { SchemaHelper } from '../types.js';
 

@@ -1,5 +1,5 @@
 import { vi, afterEach, beforeEach, describe, expect, it } from 'vitest';
-import type { Filter } from '@directus9/types';
+import type { Filter } from '@wbce-d9/types';
 import { parseFilter } from './parse-filter.js';
 
 describe('', () => {

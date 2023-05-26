@@ -1,4 +1,4 @@
-import { DeepPartial, Field } from '@directus9/types';
+import { DeepPartial, Field } from '@wbce-d9/types';
 
 export type FormField = DeepPartial<Field> & {
 	field: string;

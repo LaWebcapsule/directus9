@@ -92,7 +92,7 @@
 
 <script lang="ts" setup>
 import { computed, ref, useSlots } from 'vue';
-import { ShowSelect } from '@directus9/types';
+import { ShowSelect } from '@wbce-d9/types';
 import { Header, HeaderRaw, Item, ItemSelectEvent, Sort } from './types';
 import TableHeader from './table-header.vue';
 import TableRow from './table-row.vue';

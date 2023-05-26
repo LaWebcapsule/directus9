@@ -1,4 +1,4 @@
-import { cssVar } from '@directus9/utils/browser';
+import { cssVar } from '@wbce-d9/utils/browser';
 
 const svg = (color: string, hide: boolean) => `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">

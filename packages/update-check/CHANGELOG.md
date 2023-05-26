@@ -1,4 +1,4 @@
-# @directus9/update-check
+# @wbce-d9/update-check
 
 ## 9.26.2
 

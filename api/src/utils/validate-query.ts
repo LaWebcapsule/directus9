@@ -1,4 +1,4 @@
-import type { Query } from '@directus9/types';
+import type { Query } from '@wbce-d9/types';
 import Joi from 'joi';
 import { isPlainObject, uniq } from 'lodash-es';
 import { stringify } from 'wellknown';

@@ -1,4 +1,4 @@
-# @directus9/specs
+# @wbce-d9/specs
 
 ## 9.26.2
 

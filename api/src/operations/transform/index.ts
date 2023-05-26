@@ -1,4 +1,4 @@
-import { defineOperationApi, optionToObject } from '@directus9/utils';
+import { defineOperationApi, optionToObject } from '@wbce-d9/utils';
 
 type Options = {
 	json: string | Record<string, any>;

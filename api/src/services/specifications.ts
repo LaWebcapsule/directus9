@@ -1,4 +1,4 @@
-import { spec } from '@directus9/specs';
+import { spec } from '@wbce-d9/specs';
 import type { Knex } from 'knex';
 import { cloneDeep, mergeWith } from 'lodash-es';
 import type {
@@ -9,7 +9,7 @@ import type {
 	SchemaObject,
 	TagObject,
 } from 'openapi3-ts';
-import type { Accountability, Field, Permission, Relation, SchemaOverview, Type } from '@directus9/types';
+import type { Accountability, Field, Permission, Relation, SchemaOverview, Type } from '@wbce-d9/types';
 import { version } from '../utils/package.js';
 import { OAS_REQUIRED_SCHEMAS } from '../constants.js';
 import getDatabase from '../database/index.js';
@@ -20,7 +20,7 @@ import { CollectionsService } from './collections.js';
 import { FieldsService } from './fields.js';
 import { GraphQLService } from './graphql/index.js';
 import { RelationsService } from './relations.js';
-import formatTitle from '@directus9/format-title';
+import formatTitle from '@wbce-d9/format-title';
 
 export class SpecificationService {
 	accountability: Accountability | null;

@@ -4,7 +4,7 @@ import { notify } from '@/utils/notify';
 import { unexpectedError } from '@/utils/unexpected-error';
 import { merge } from 'lodash';
 import { defineStore } from 'pinia';
-import { Settings } from '@directus9/types';
+import { Settings } from '@wbce-d9/types';
 import { useUserStore } from './user';
 
 export const useSettingsStore = defineStore({

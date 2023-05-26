@@ -32,7 +32,7 @@
 <script lang="ts">
 import api from '@/api';
 import { userName } from '@/utils/user-name';
-import { User } from '@directus9/types';
+import { User } from '@wbce-d9/types';
 import { computed, defineComponent, onUnmounted, ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { useRouter } from 'vue-router';

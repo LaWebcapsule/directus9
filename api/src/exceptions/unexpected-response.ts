@@ -1,4 +1,4 @@
-import { BaseException } from '@directus9/exceptions';
+import { BaseException } from '@wbce-d9/exceptions';
 
 export class UnexpectedResponseException extends BaseException {
 	constructor(message: string) {

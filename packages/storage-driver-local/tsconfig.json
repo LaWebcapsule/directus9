@@ -1,5 +1,5 @@
 {
-	"extends": "@directus9/tsconfig/node18-esm.json",
+	"extends": "@wbce-d9/tsconfig/node18-esm.json",
 	"compilerOptions": {
 		"outDir": "dist"
 	},

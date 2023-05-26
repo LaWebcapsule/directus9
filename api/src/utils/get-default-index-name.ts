@@ -1,4 +1,4 @@
-import { getSimpleHash } from '@directus9/utils';
+import { getSimpleHash } from '@wbce-d9/utils';
 /**
  * Generate an index name for a given collection + fields combination.
  *

@@ -1,4 +1,4 @@
-import { parseJSON, toArray } from '@directus9/utils';
+import { parseJSON, toArray } from '@wbce-d9/utils';
 import type { Knex } from 'knex';
 import { v4 as uuid } from 'uuid';
 

@@ -1,4 +1,4 @@
-import type { Accountability, SchemaOverview } from '@directus9/types';
+import type { Accountability, SchemaOverview } from '@wbce-d9/types';
 import fse from 'fs-extra';
 import type { Knex } from 'knex';
 import { Liquid } from 'liquidjs';

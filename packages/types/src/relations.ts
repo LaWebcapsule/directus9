@@ -1,4 +1,4 @@
-import type { ForeignKey } from '@directus9/schema';
+import type { ForeignKey } from '@wbce-d9/schema';
 
 export type RelationMeta = {
 	id: number;

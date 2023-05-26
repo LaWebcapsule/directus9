@@ -1,4 +1,4 @@
-import type { FieldFunction, Type } from '@directus9/types';
+import type { FieldFunction, Type } from '@wbce-d9/types';
 
 export function getOutputTypeForFunction(fn: FieldFunction): Type {
 	const typeMap: Record<FieldFunction, Type> = {

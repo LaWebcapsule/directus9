@@ -1,4 +1,4 @@
-import type { SchemaOverview } from '@directus9/types';
+import type { SchemaOverview } from '@wbce-d9/types';
 import type { Knex } from 'knex';
 import { fromPairs, isArray, isPlainObject, mapValues, omit, sortBy, toPairs } from 'lodash-es';
 import getDatabase, { getDatabaseClient } from '../database/index.js';

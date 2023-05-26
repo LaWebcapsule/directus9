@@ -188,8 +188,8 @@ npx directus9 count <collection-name>
 ## Client
 
 For the client-side CLI, all functionality can be accessed by running `npx directus9ctl <command>`. You can also install
-`@directus9/cli` on your project dependencies or globally on your machine. Note that if you run `directusctl` (installed
-globally) in a folder containing a project that has a version of `@directus9/cli` installed, the running global CLI will
+`@wbce-d9/cli` on your project dependencies or globally on your machine. Note that if you run `directusctl` (installed
+globally) in a folder containing a project that has a version of `@wbce-d9/cli` installed, the running global CLI will
 forward it's execution to the local installed version instead.
 
 ### Help & Documentation

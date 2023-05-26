@@ -1,4 +1,4 @@
-import * as exceptions from '@directus9/exceptions';
+import * as exceptions from '@wbce-d9/exceptions';
 
 const { BaseException } = exceptions;
 

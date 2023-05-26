@@ -1,4 +1,4 @@
-import { Field } from '@directus9/types';
+import { Field } from '@wbce-d9/types';
 import { Ref, unref, computed, ComputedRef } from 'vue';
 
 export function getDefaultValuesFromFields(fields: Field[] | Ref<Field[]>): ComputedRef<Record<string, any>> {

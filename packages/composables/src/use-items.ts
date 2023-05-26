@@ -1,5 +1,5 @@
-import type { Item, Query } from '@directus9/types';
-import { getEndpoint, moveInArray } from '@directus9/utils';
+import type { Item, Query } from '@wbce-d9/types';
+import { getEndpoint, moveInArray } from '@wbce-d9/utils';
 import axios from 'axios';
 import { isEqual, throttle } from 'lodash-es';
 import type { ComputedRef, Ref, WritableComputedRef } from 'vue';

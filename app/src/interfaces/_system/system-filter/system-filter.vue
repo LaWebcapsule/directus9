@@ -85,13 +85,13 @@
 <script lang="ts" setup>
 import { useFieldsStore } from '@/stores/fields';
 import { useRelationsStore } from '@/stores/relations';
-import { Filter, Type, FieldFunction } from '@directus9/types';
+import { Filter, Type, FieldFunction } from '@wbce-d9/types';
 import {
 	getFilterOperatorsForType,
 	getOutputTypeForFunction,
 	parseFilterFunctionPath,
 	parseJSON,
-} from '@directus9/utils';
+} from '@wbce-d9/utils';
 import { cloneDeep, get, isEmpty, set } from 'lodash';
 import { computed, inject, ref } from 'vue';
 import { useI18n } from 'vue-i18n';

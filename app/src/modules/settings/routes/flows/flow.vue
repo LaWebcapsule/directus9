@@ -182,7 +182,7 @@
 </template>
 
 <script setup lang="ts">
-import { FlowRaw, OperationRaw } from '@directus9/types';
+import { FlowRaw, OperationRaw } from '@wbce-d9/types';
 import { useI18n } from 'vue-i18n';
 
 import { computed, ref, watch } from 'vue';

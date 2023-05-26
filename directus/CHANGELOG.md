@@ -18,7 +18,7 @@
 
 - 973f4bb: update packages
 - Updated dependencies [973f4bb]
-  - @directus9/api@9.26.2
+  - @wbce-d9/api@9.26.2
 
 ## 9.26.1
 
@@ -26,4 +26,4 @@
 
 - 9e4a63a: @directus9
 - Updated dependencies [9e4a63a]
-  - @directus9/api@9.26.1
+  - @wbce-d9/api@9.26.1

@@ -1,4 +1,4 @@
-import { REGEX_BETWEEN_PARENS } from '@directus9/constants';
+import { REGEX_BETWEEN_PARENS } from '@wbce-d9/constants';
 
 /**
  * Strip the function declarations from a list of fields

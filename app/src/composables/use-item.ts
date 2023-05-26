@@ -8,13 +8,13 @@ import { notify } from '@/utils/notify';
 import { translate } from '@/utils/translate-object-values';
 import { unexpectedError } from '@/utils/unexpected-error';
 import { validateItem } from '@/utils/validate-item';
-import { useCollection } from '@directus9/composables';
-import { getEndpoint } from '@directus9/utils';
+import { useCollection } from '@wbce-d9/composables';
+import { getEndpoint } from '@wbce-d9/utils';
 import { AxiosResponse } from 'axios';
 import { mergeWith } from 'lodash';
 import { computed, ComputedRef, isRef, Ref, ref, unref, watch } from 'vue';
 import { usePermissions } from './use-permissions';
-import { Field, Query, Relation } from '@directus9/types';
+import { Field, Query, Relation } from '@wbce-d9/types';
 import { getDefaultValuesFromFields } from '@/utils/get-default-values-from-fields';
 
 type UsableItem = {

@@ -56,12 +56,12 @@ import api from '@/api';
 import { useFlowsStore } from '@/stores/flows';
 import { notify } from '@/utils/notify';
 import { unexpectedError } from '@/utils/unexpected-error';
-import { useCollection } from '@directus9/composables';
-import { FlowRaw } from '@directus9/types';
+import { useCollection } from '@wbce-d9/composables';
+import { FlowRaw } from '@wbce-d9/types';
 import { computed, ref, toRefs, unref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { translate } from '@/utils/translate-object-values';
-import formatTitle from '@directus9/format-title';
+import formatTitle from '@wbce-d9/format-title';
 
 interface Props {
 	collection: string;

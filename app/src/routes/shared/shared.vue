@@ -46,10 +46,10 @@ import { defineComponent, computed, ref } from 'vue';
 import { useAppStore } from '@/stores/app';
 import api, { RequestError } from '@/api';
 import { login, logout } from '@/auth';
-import { Share } from '@directus9/types';
+import { Share } from '@wbce-d9/types';
 import ShareItem from './components/share-item.vue';
 import { hydrate } from '@/hydrate';
-import { useCollection } from '@directus9/composables';
+import { useCollection } from '@wbce-d9/composables';
 
 type ShareInfo = Pick<
 	Share,

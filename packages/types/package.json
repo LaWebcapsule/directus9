@@ -1,5 +1,5 @@
 {
-	"name": "@directus9/types",
+	"name": "@wbce-d9/types",
 	"version": "9.26.2",
 	"type": "module",
 	"scripts": {
@@ -27,9 +27,9 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@directus9/constants": "workspace:*",
-		"@directus9/schema": "workspace:*",
-		"@directus9/tsconfig": "0.0.7",
+		"@wbce-d9/constants": "workspace:*",
+		"@wbce-d9/schema": "workspace:*",
+		"@wbce-d9/tsconfig": "0.0.7",
 		"@types/express": "4.17.17",
 		"@types/geojson": "7946.0.10",
 		"express": "4.18.2",

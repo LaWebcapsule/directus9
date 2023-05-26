@@ -1,4 +1,4 @@
-import { User } from '@directus9/types';
+import { User } from '@wbce-d9/types';
 
 export type Activity = {
 	id: number;

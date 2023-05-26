@@ -3,7 +3,7 @@ import logger from '../logger.js';
 import { access } from 'node:fs/promises';
 import { constants } from 'fs';
 import path from 'path';
-import { toArray } from '@directus9/utils';
+import { toArray } from '@wbce-d9/utils';
 
 export async function validateStorage(): Promise<void> {
 	if (env['DB_CLIENT'] === 'sqlite3') {

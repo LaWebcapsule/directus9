@@ -1,4 +1,4 @@
-import { defineOperationApi } from '@directus9/utils';
+import { defineOperationApi } from '@wbce-d9/utils';
 
 type Options = {
 	milliseconds: string | number;

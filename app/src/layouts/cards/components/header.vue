@@ -54,8 +54,8 @@
 <script lang="ts">
 import { useI18n } from 'vue-i18n';
 import { defineComponent, PropType, computed } from 'vue';
-import { Field, ShowSelect } from '@directus9/types';
-import { useSync } from '@directus9/composables';
+import { Field, ShowSelect } from '@wbce-d9/types';
+import { useSync } from '@wbce-d9/composables';
 
 export default defineComponent({
 	props: {

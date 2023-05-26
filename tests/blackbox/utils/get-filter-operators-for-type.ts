@@ -1,11 +1,11 @@
 /**
- * @NOTE This is copied from @directus9/utils. Once the tests are ESM too, this needs to be removed
- * in favor of using @directus9/utils
+ * @NOTE This is copied from @wbce-d9/utils. Once the tests are ESM too, this needs to be removed
+ * in favor of using @wbce-d9/utils
  *
  * @TODO
  */
 
-import type { ClientFilterOperator, Type } from '@directus9/types';
+import type { ClientFilterOperator, Type } from '@wbce-d9/types';
 
 type GetFilterOperationsForTypeOptions = {
 	includeValidation?: boolean;

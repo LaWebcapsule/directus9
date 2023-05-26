@@ -1,4 +1,4 @@
-import { TYPES } from '@directus9/constants';
+import { TYPES } from '@wbce-d9/constants';
 import Joi from 'joi';
 import { ALIAS_TYPES } from '../constants.js';
 import { getDatabaseClient } from '../database/index.js';

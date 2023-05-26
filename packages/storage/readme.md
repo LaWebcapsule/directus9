@@ -1,3 +1,3 @@
-# `@directus9/storage`
+# `@wbce-d9/storage`
 
 Storage abstraction for Directus

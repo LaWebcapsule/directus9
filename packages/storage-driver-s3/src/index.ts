@@ -14,9 +14,9 @@ import {
 	S3Client,
 } from '@aws-sdk/client-s3';
 import { Upload } from '@aws-sdk/lib-storage';
-import type { Driver, Range } from '@directus9/storage';
-import { normalizePath } from '@directus9/utils';
-import { isReadableStream } from '@directus9/utils/node';
+import type { Driver, Range } from '@wbce-d9/storage';
+import { normalizePath } from '@wbce-d9/utils';
+import { isReadableStream } from '@wbce-d9/utils/node';
 import { join } from 'node:path';
 import type { Readable } from 'node:stream';
 

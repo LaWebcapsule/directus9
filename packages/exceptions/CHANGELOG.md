@@ -1,4 +1,4 @@
-# @directus9/exceptions
+# @wbce-d9/exceptions
 
 ## 9.26.2
 

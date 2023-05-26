@@ -43,49 +43,49 @@ importers:
       '@aws-sdk/client-ses':
         specifier: 3.316.0
         version: 3.316.0
-      '@directus9/app':
+      '@wbce-d9/app':
         specifier: workspace:*
         version: link:../app
-      '@directus9/constants':
+      '@wbce-d9/constants':
         specifier: workspace:*
         version: link:../packages/constants
-      '@directus9/exceptions':
+      '@wbce-d9/exceptions':
         specifier: workspace:*
         version: link:../packages/exceptions
-      '@directus9/extensions-sdk':
+      '@wbce-d9/extensions-sdk':
         specifier: workspace:*
         version: link:../packages/extensions-sdk
-      '@directus9/format-title':
+      '@wbce-d9/format-title':
         specifier: 10.0.0
         version: 10.0.0
-      '@directus9/schema':
+      '@wbce-d9/schema':
         specifier: workspace:*
         version: link:../packages/schema
-      '@directus9/specs':
+      '@wbce-d9/specs':
         specifier: workspace:*
         version: link:../packages/specs
-      '@directus9/storage':
+      '@wbce-d9/storage':
         specifier: workspace:*
         version: link:../packages/storage
-      '@directus9/storage-driver-azure':
+      '@wbce-d9/storage-driver-azure':
         specifier: workspace:*
         version: link:../packages/storage-driver-azure
-      '@directus9/storage-driver-cloudinary':
+      '@wbce-d9/storage-driver-cloudinary':
         specifier: workspace:*
         version: link:../packages/storage-driver-cloudinary
-      '@directus9/storage-driver-gcs':
+      '@wbce-d9/storage-driver-gcs':
         specifier: workspace:*
         version: link:../packages/storage-driver-gcs
-      '@directus9/storage-driver-local':
+      '@wbce-d9/storage-driver-local':
         specifier: workspace:*
         version: link:../packages/storage-driver-local
-      '@directus9/storage-driver-s3':
+      '@wbce-d9/storage-driver-s3':
         specifier: workspace:*
         version: link:../packages/storage-driver-s3
-      '@directus9/update-check':
+      '@wbce-d9/update-check':
         specifier: workspace:*
         version: link:../packages/update-check
-      '@directus9/utils':
+      '@wbce-d9/utils':
         specifier: workspace:*
         version: link:../packages/utils
       '@godaddy/terminus':
@@ -348,10 +348,10 @@ importers:
         specifier: 16.0.0
         version: 16.0.0
     devDependencies:
-      '@directus9/tsconfig':
+      '@wbce-d9/tsconfig':
         specifier: 0.0.7
         version: 0.0.7
-      '@directus9/types':
+      '@wbce-d9/types':
         specifier: workspace:*
         version: link:../packages/types
       '@ngneat/falso':
@@ -489,7 +489,7 @@ importers:
 
   app:
     dependencies:
-      '@directus9/composables':
+      '@wbce-d9/composables':
         specifier: workspace:*
         version: link:../packages/composables
     devDependencies:
@@ -499,22 +499,22 @@ importers:
       '@babel/preset-env':
         specifier: 7.21.4
         version: 7.21.4(@babel/core@7.21.4)
-      '@directus9/constants':
+      '@wbce-d9/constants':
         specifier: workspace:*
         version: link:../packages/constants
-      '@directus9/exceptions':
+      '@wbce-d9/exceptions':
         specifier: workspace:*
         version: link:../packages/exceptions
-      '@directus9/extensions-sdk':
+      '@wbce-d9/extensions-sdk':
         specifier: workspace:*
         version: link:../packages/extensions-sdk
-      '@directus9/format-title':
+      '@wbce-d9/format-title':
         specifier: 10.0.0
         version: 10.0.0
-      '@directus9/types':
+      '@wbce-d9/types':
         specifier: workspace:*
         version: link:../packages/types
-      '@directus9/utils':
+      '@wbce-d9/utils':
         specifier: workspace:*
         version: link:../packages/utils
       '@fortawesome/fontawesome-svg-core':
@@ -811,7 +811,7 @@ importers:
 
   directus:
     dependencies:
-      '@directus9/api':
+      '@wbce-d9/api':
         specifier: workspace:*
         version: link:../api
 
@@ -839,10 +839,10 @@ importers:
 
   packages/composables:
     dependencies:
-      '@directus9/constants':
+      '@wbce-d9/constants':
         specifier: workspace:*
         version: link:../constants
-      '@directus9/utils':
+      '@wbce-d9/utils':
         specifier: workspace:*
         version: link:../utils
       lodash-es:
@@ -855,10 +855,10 @@ importers:
         specifier: 3.2.47
         version: 3.2.47
     devDependencies:
-      '@directus9/tsconfig':
+      '@wbce-d9/tsconfig':
         specifier: 0.0.7
         version: 0.0.7
-      '@directus9/types':
+      '@wbce-d9/types':
         specifier: workspace:*
         version: link:../types
       '@types/lodash-es':
@@ -886,7 +886,7 @@ importers:
         specifier: 3.21.4
         version: 3.21.4
     devDependencies:
-      '@directus9/tsconfig':
+      '@wbce-d9/tsconfig':
         specifier: 0.0.7
         version: 0.0.7
       typescript:
@@ -895,10 +895,10 @@ importers:
 
   packages/create-directus-extension:
     dependencies:
-      '@directus9/constants':
+      '@wbce-d9/constants':
         specifier: workspace:*
         version: link:../constants
-      '@directus9/extensions-sdk':
+      '@wbce-d9/extensions-sdk':
         specifier: workspace:*
         version: link:../extensions-sdk
       inquirer:
@@ -907,10 +907,10 @@ importers:
 
   packages/exceptions:
     devDependencies:
-      '@directus9/tsconfig':
+      '@wbce-d9/tsconfig':
         specifier: 0.0.7
         version: 0.0.7
-      '@directus9/types':
+      '@wbce-d9/types':
         specifier: workspace:*
         version: link:../types
       '@ngneat/falso':
@@ -931,16 +931,16 @@ importers:
 
   packages/extensions-sdk:
     dependencies:
-      '@directus9/composables':
+      '@wbce-d9/composables':
         specifier: workspace:*
         version: link:../composables
-      '@directus9/constants':
+      '@wbce-d9/constants':
         specifier: workspace:*
         version: link:../constants
-      '@directus9/types':
+      '@wbce-d9/types':
         specifier: workspace:*
         version: link:../types
-      '@directus9/utils':
+      '@wbce-d9/utils':
         specifier: workspace:*
         version: link:../utils
       '@rollup/plugin-commonjs':
@@ -998,7 +998,7 @@ importers:
         specifier: 6.0.0
         version: 6.0.0(@vue/compiler-sfc@3.2.47)
     devDependencies:
-      '@directus9/tsconfig':
+      '@wbce-d9/tsconfig':
         specifier: 0.0.7
         version: 0.0.7
       '@types/fs-extra':
@@ -1023,7 +1023,7 @@ importers:
         specifier: 2.4.2
         version: 2.4.2(mysql@2.18.1)(pg@8.10.0)(sqlite3@5.1.6)(tedious@16.0.0)
     devDependencies:
-      '@directus9/tsconfig':
+      '@wbce-d9/tsconfig':
         specifier: 0.0.7
         version: 0.0.7
       typescript:
@@ -1051,7 +1051,7 @@ importers:
 
   packages/storage:
     devDependencies:
-      '@directus9/tsconfig':
+      '@wbce-d9/tsconfig':
         specifier: 0.0.7
         version: 0.0.7
       '@vitest/coverage-c8':
@@ -1069,14 +1069,14 @@ importers:
       '@azure/storage-blob':
         specifier: 12.14.0
         version: 12.14.0
-      '@directus9/storage':
+      '@wbce-d9/storage':
         specifier: workspace:*
         version: link:../storage
-      '@directus9/utils':
+      '@wbce-d9/utils':
         specifier: workspace:*
         version: link:../utils
     devDependencies:
-      '@directus9/tsconfig':
+      '@wbce-d9/tsconfig':
         specifier: 0.0.7
         version: 0.0.7
       '@ngneat/falso':
@@ -1094,10 +1094,10 @@ importers:
 
   packages/storage-driver-cloudinary:
     dependencies:
-      '@directus9/storage':
+      '@wbce-d9/storage':
         specifier: workspace:*
         version: link:../storage
-      '@directus9/utils':
+      '@wbce-d9/utils':
         specifier: workspace:*
         version: link:../utils
       p-queue:
@@ -1107,7 +1107,7 @@ importers:
         specifier: 5.22.0
         version: 5.22.0
     devDependencies:
-      '@directus9/tsconfig':
+      '@wbce-d9/tsconfig':
         specifier: 0.0.7
         version: 0.0.7
       '@ngneat/falso':
@@ -1125,17 +1125,17 @@ importers:
 
   packages/storage-driver-gcs:
     dependencies:
-      '@directus9/storage':
+      '@wbce-d9/storage':
         specifier: workspace:*
         version: link:../storage
-      '@directus9/utils':
+      '@wbce-d9/utils':
         specifier: workspace:*
         version: link:../utils
       '@google-cloud/storage':
         specifier: 6.9.5
         version: 6.9.5
     devDependencies:
-      '@directus9/tsconfig':
+      '@wbce-d9/tsconfig':
         specifier: 0.0.7
         version: 0.0.7
       '@ngneat/falso':
@@ -1153,14 +1153,14 @@ importers:
 
   packages/storage-driver-local:
     dependencies:
-      '@directus9/storage':
+      '@wbce-d9/storage':
         specifier: workspace:*
         version: link:../storage
-      '@directus9/utils':
+      '@wbce-d9/utils':
         specifier: workspace:*
         version: link:../utils
     devDependencies:
-      '@directus9/tsconfig':
+      '@wbce-d9/tsconfig':
         specifier: 0.0.7
         version: 0.0.7
       '@ngneat/falso':
@@ -1187,14 +1187,14 @@ importers:
       '@aws-sdk/lib-storage':
         specifier: 3.317.0
         version: 3.317.0(@aws-sdk/abort-controller@3.310.0)(@aws-sdk/client-s3@3.317.0)
-      '@directus9/storage':
+      '@wbce-d9/storage':
         specifier: workspace:*
         version: link:../storage
-      '@directus9/utils':
+      '@wbce-d9/utils':
         specifier: workspace:*
         version: link:../utils
     devDependencies:
-      '@directus9/tsconfig':
+      '@wbce-d9/tsconfig':
         specifier: 0.0.7
         version: 0.0.7
       '@ngneat/falso':
@@ -1212,13 +1212,13 @@ importers:
 
   packages/types:
     devDependencies:
-      '@directus9/constants':
+      '@wbce-d9/constants':
         specifier: workspace:*
         version: link:../constants
-      '@directus9/schema':
+      '@wbce-d9/schema':
         specifier: workspace:*
         version: link:../schema
-      '@directus9/tsconfig':
+      '@wbce-d9/tsconfig':
         specifier: 0.0.7
         version: 0.0.7
       '@types/express':
@@ -1261,7 +1261,7 @@ importers:
         specifier: 5.22.0
         version: 5.22.0
     devDependencies:
-      '@directus9/tsconfig':
+      '@wbce-d9/tsconfig':
         specifier: 0.0.7
         version: 0.0.7
       '@ngneat/falso':
@@ -1282,10 +1282,10 @@ importers:
 
   packages/utils:
     dependencies:
-      '@directus9/constants':
+      '@wbce-d9/constants':
         specifier: workspace:*
         version: link:../constants
-      '@directus9/storage':
+      '@wbce-d9/storage':
         specifier: workspace:*
         version: link:../storage
       date-fns:
@@ -1310,10 +1310,10 @@ importers:
         specifier: 3.2.47
         version: 3.2.47
     devDependencies:
-      '@directus9/tsconfig':
+      '@wbce-d9/tsconfig':
         specifier: 0.0.7
         version: 0.0.7
-      '@directus9/types':
+      '@wbce-d9/types':
         specifier: workspace:*
         version: link:../types
       '@ngneat/falso':
@@ -1346,7 +1346,7 @@ importers:
 
   tests/blackbox:
     devDependencies:
-      '@directus9/types':
+      '@wbce-d9/types':
         specifier: workspace:*
         version: link:../../packages/types
       '@types/jest':
@@ -4422,11 +4422,11 @@ packages:
     dev: true
     optional: true
 
-  /@directus9/format-title@10.0.0:
+  /@wbce-d9/format-title@10.0.0:
     resolution: {integrity: sha512-i1RVpLOvrEVuxQ5hRmtY7o+G13bx7SzrS+FVV0Wnlni5y4uD/ndi3eWllbhqPKMKCsfb06yAjs4bPdg/zH/WcQ==}
     engines: {node: '>=6.0.0'}
 
-  /@directus9/tsconfig@0.0.7:
+  /@wbce-d9/tsconfig@0.0.7:
     resolution: {integrity: sha512-gESKEW0IhHd7rN8CMH8bwPQomoAqlLgV8EdTrmdwoAOCy9o2tgpSiuwoL7J36abrvEqVi3qDETEW9xE5nbnKhw==}
     dev: true
 

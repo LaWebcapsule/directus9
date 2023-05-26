@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useSync } from '@directus9/composables';
+import { useSync } from '@wbce-d9/composables';
 
 interface Props {
 	/** If the `modelValue` is an array of strings, activates the checkbox if the value is inside it */

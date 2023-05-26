@@ -1,5 +1,5 @@
-import { BaseException } from '@directus9/exceptions';
-import type { Accountability } from '@directus9/types';
+import { BaseException } from '@wbce-d9/exceptions';
+import type { Accountability } from '@wbce-d9/types';
 import type { GraphQLError, GraphQLFormattedError } from 'graphql';
 import logger from '../../../logger.js';
 

@@ -29,8 +29,8 @@ export default {
 
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n';
-import { useSync } from '@directus9/composables';
-import { Field } from '@directus9/types';
+import { useSync } from '@wbce-d9/composables';
+import { Field } from '@wbce-d9/types';
 
 interface Props {
 	fields: string[];

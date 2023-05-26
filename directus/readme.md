@@ -87,7 +87,7 @@ You need to change your dependencies :
 1. In package.json
 ```
 "directus":9.0.0^ --> "directus9": 9.0.0^
-"@directus/some-package" --> "@directus9/some-package"
+"@directus/some-package" --> "@wbce-d9/some-package"
 ```
 
 2. Update your dependencies :
@@ -105,7 +105,7 @@ should become :
 
 ```ts
 import {...} from "directus9"
-import {...} from "@directus9/some-package"
+import {...} from "@wbce-d9/some-package"
 ```
 
 4. You don't have to do any changes to your databases.

@@ -15,10 +15,10 @@ beforeEach(() => {
 import { useUserStore } from '@/stores/user';
 import { usePermissionsStore } from '@/stores/permissions';
 import { usePermissions } from './use-permissions';
-import { useCollection } from '@directus9/composables';
-import { Field } from '@directus9/types';
+import { useCollection } from '@wbce-d9/composables';
+import { Field } from '@wbce-d9/types';
 
-vi.mock('@directus9/composables');
+vi.mock('@wbce-d9/composables');
 
 const mockUser = {
 	id: '00000000-0000-0000-0000-000000000000',

@@ -1,6 +1,6 @@
 import { useExtension } from '@/composables/use-extension';
 import { useFieldsStore } from '@/stores/fields';
-import { Field } from '@directus9/types';
+import { Field } from '@wbce-d9/types';
 import { computed } from 'vue';
 
 export function adjustFieldsForDisplays(fields: readonly string[], parentCollection: string): string[] {

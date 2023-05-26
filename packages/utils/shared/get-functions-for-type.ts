@@ -1,4 +1,4 @@
-import type { Type, FieldFunction } from '@directus9/types';
+import type { Type, FieldFunction } from '@wbce-d9/types';
 
 export function getFunctionsForType(type: Type): FieldFunction[] {
 	switch (type) {

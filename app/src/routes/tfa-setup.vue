@@ -47,7 +47,7 @@ import { useTFASetup } from '@/composables/use-tfa-setup';
 import { useAppStore } from '@/stores/app';
 import { useUserStore } from '@/stores/user';
 import { router } from '@/router';
-import { User } from '@directus9/types';
+import { User } from '@wbce-d9/types';
 
 export default defineComponent({
 	setup() {

@@ -78,7 +78,7 @@ import vTooltip from '@/directives/tooltip';
 import { useFieldsStore } from '@/stores/fields';
 import { usePermissionsStore } from '@/stores/permissions';
 import { unexpectedError } from '@/utils/unexpected-error';
-import { toArray } from '@directus9/utils';
+import { toArray } from '@wbce-d9/utils';
 import { cloneDeep, isNil } from 'lodash';
 import { computed, ref, toRefs, watch } from 'vue';
 import { useI18n } from 'vue-i18n';

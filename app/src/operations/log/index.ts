@@ -1,4 +1,4 @@
-import { defineOperationApp } from '@directus9/utils';
+import { defineOperationApp } from '@wbce-d9/utils';
 
 export default defineOperationApp({
 	id: 'log',

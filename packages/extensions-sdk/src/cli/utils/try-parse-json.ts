@@ -1,4 +1,4 @@
-import type { JsonValue } from '@directus9/types';
+import type { JsonValue } from '@wbce-d9/types';
 
 export default function tryParseJson(str: string): JsonValue | undefined {
 	try {

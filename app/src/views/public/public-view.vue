@@ -62,7 +62,7 @@ import { useServerStore } from '@/stores/server';
 import { storeToRefs } from 'pinia';
 import { getRootPath } from '@/utils/get-root-path';
 import { useI18n } from 'vue-i18n';
-import { cssVar } from '@directus9/utils/browser';
+import { cssVar } from '@wbce-d9/utils/browser';
 import Color from 'color';
 import { getTheme } from '@/utils/get-theme';
 

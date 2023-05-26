@@ -1,4 +1,4 @@
-import { FailedValidationException } from '@directus9/exceptions';
+import { FailedValidationException } from '@wbce-d9/exceptions';
 import Joi from 'joi';
 import { InvalidPayloadException } from '../exceptions/index.js';
 import asyncHandler from '../utils/async-handler.js';

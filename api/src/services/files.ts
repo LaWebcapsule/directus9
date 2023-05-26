@@ -1,5 +1,5 @@
-import formatTitle from '@directus9/format-title';
-import { toArray } from '@directus9/utils';
+import formatTitle from '@wbce-d9/format-title';
+import { toArray } from '@wbce-d9/utils';
 import encodeURL from 'encodeurl';
 import exif from 'exif-reader';
 import type { IccProfile } from 'icc';

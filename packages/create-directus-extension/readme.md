@@ -7,9 +7,9 @@ A small util that will scaffold a Directus extension.
 This package is meant to be used through `npm` or `yarn`:
 
 ```
-npm init @directus9/directus-extension
+npm init @wbce-d9/directus-extension
 ```
 
 ```
-yarn create @directus9/directus-extension
+yarn create @wbce-d9/directus-extension
 ```

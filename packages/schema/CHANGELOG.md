@@ -1,4 +1,4 @@
-# @directus9/schema
+# @wbce-d9/schema
 
 ## 9.26.2
 

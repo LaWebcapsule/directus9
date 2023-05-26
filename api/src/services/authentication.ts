@@ -1,5 +1,5 @@
-import type { Accountability, SchemaOverview } from '@directus9/types';
-import { Action } from '@directus9/constants';
+import type { Accountability, SchemaOverview } from '@wbce-d9/types';
+import { Action } from '@wbce-d9/constants';
 import jwt from 'jsonwebtoken';
 import type { Knex } from 'knex';
 import { clone, cloneDeep } from 'lodash-es';

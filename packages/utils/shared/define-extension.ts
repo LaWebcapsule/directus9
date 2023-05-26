@@ -8,7 +8,7 @@ import type {
 	EndpointConfig,
 	OperationAppConfig,
 	OperationApiConfig,
-} from '@directus9/types';
+} from '@wbce-d9/types';
 
 export function defineInterface<T extends InterfaceConfig>(config: T): T {
 	return config;

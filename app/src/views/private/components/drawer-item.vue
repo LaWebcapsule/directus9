@@ -90,12 +90,12 @@ import { useFieldsStore } from '@/stores/fields';
 import { useRelationsStore } from '@/stores/relations';
 import { unexpectedError } from '@/utils/unexpected-error';
 import { validateItem } from '@/utils/validate-item';
-import { useCollection } from '@directus9/composables';
-import { Field, Relation } from '@directus9/types';
+import { useCollection } from '@wbce-d9/composables';
+import { Field, Relation } from '@wbce-d9/types';
 import { getDefaultValuesFromFields } from '@/utils/get-default-values-from-fields';
 import { useEditsGuard } from '@/composables/use-edits-guard';
 import { useRouter } from 'vue-router';
-import { getEndpoint } from '@directus9/utils';
+import { getEndpoint } from '@wbce-d9/utils';
 
 interface Props {
 	collection: string;

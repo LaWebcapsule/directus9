@@ -1,4 +1,4 @@
-import type { EXTENSION_LANGUAGES } from '@directus9/constants';
+import type { EXTENSION_LANGUAGES } from '@wbce-d9/constants';
 import type { Plugin, RollupOptions, OutputOptions as RollupOutputOptions } from 'rollup';
 
 export type Language = (typeof EXTENSION_LANGUAGES)[number];

@@ -1,4 +1,4 @@
-import { defineDisplay } from '@directus9/utils';
+import { defineDisplay } from '@wbce-d9/utils';
 import DisplayIcon from './icon.vue';
 
 export default defineDisplay({

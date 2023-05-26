@@ -46,11 +46,11 @@
 </template>
 
 <script lang="ts">
-import { Field } from '@directus9/types';
+import { Field } from '@wbce-d9/types';
 import { computed, defineComponent, PropType, ref, watch } from 'vue';
-import { ValidationError } from '@directus9/types';
+import { ValidationError } from '@wbce-d9/types';
 import { useI18n } from 'vue-i18n';
-import formatTitle from '@directus9/format-title';
+import formatTitle from '@wbce-d9/format-title';
 import { isEqual } from 'lodash';
 
 export default defineComponent({

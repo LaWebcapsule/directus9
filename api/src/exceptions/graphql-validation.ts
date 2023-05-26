@@ -1,4 +1,4 @@
-import * as sharedExceptions from '@directus9/exceptions';
+import * as sharedExceptions from '@wbce-d9/exceptions';
 
 export class GraphQLValidationException extends sharedExceptions.BaseException {
 	constructor(extensions: Record<string, any>) {

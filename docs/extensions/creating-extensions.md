@@ -22,7 +22,7 @@ If you want to combine and share dependencies between one or more extensions, us
 ### Extension Folder Structure
 
 The folder created by the utility is in fact an npm package. It comes with a few pre-installed packages depending on the
-extension type and the language you chose. The most important one is `@directus9/extensions-sdk`. This package includes a
+extension type and the language you chose. The most important one is `@wbce-d9/extensions-sdk`. This package includes a
 CLI, which allows you to build your extension and to scaffold additional extensions, and it provides Typescript helpers
 and other utilities.
 
@@ -55,7 +55,7 @@ npm run build
 ```
 
 The generated `package.json` contains a script that calls the `directus-extension` CLI which is part of
-`@directus9/extensions-sdk`:
+`@wbce-d9/extensions-sdk`:
 
 ```json
 {
@@ -132,7 +132,7 @@ on changes automatically.
 ## Publishing your Extension
 
 To make an extension available to all Directus users, you can publish the npm package created by
-`@directus9/extensions-sdk` to the npm registry. Make sure the name of the package follows the naming convention for
+`@wbce-d9/extensions-sdk` to the npm registry. Make sure the name of the package follows the naming convention for
 package extensions: `directus-extension-<extension-name>` or `@<scope>/directus-extension-<extension-name>`.
 `<extension-name>` has to be replaced with the name of your extension.
 

@@ -1,4 +1,4 @@
-# @directus9/extensions-sdk
+# @wbce-d9/extensions-sdk
 
 ## 9.26.2
 
@@ -6,10 +6,10 @@
 
 - 973f4bb: update packages
 - Updated dependencies [973f4bb]
-  - @directus9/composables@9.26.2
-  - @directus9/constants@9.26.2
-  - @directus9/types@9.26.2
-  - @directus9/utils@9.26.2
+  - @wbce-d9/composables@9.26.2
+  - @wbce-d9/constants@9.26.2
+  - @wbce-d9/types@9.26.2
+  - @wbce-d9/utils@9.26.2
 
 ## 9.26.1
 
@@ -17,7 +17,7 @@
 
 - 9e4a63a: @directus9
 - Updated dependencies [9e4a63a]
-  - @directus9/composables@9.26.1
-  - @directus9/constants@9.26.1
-  - @directus9/types@9.26.1
-  - @directus9/utils@9.26.1
+  - @wbce-d9/composables@9.26.1
+  - @wbce-d9/constants@9.26.1
+  - @wbce-d9/types@9.26.1
+  - @wbce-d9/utils@9.26.1

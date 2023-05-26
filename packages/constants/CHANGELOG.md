@@ -1,4 +1,4 @@
-# @directus9/constants
+# @wbce-d9/constants
 
 ## 9.26.2
 

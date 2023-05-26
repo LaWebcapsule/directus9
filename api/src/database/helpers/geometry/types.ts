@@ -1,4 +1,4 @@
-import type { Field, RawField } from '@directus9/types';
+import type { Field, RawField } from '@wbce-d9/types';
 import type { Knex } from 'knex';
 import type { GeoJSONGeometry } from 'wellknown';
 import { stringify as geojsonToWKT } from 'wellknown';

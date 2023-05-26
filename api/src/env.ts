@@ -3,7 +3,7 @@
  * For all possible keys, see: https://docs.directus.io/self-hosted/config-options/
  */
 
-import { parseJSON, toArray } from '@directus9/utils';
+import { parseJSON, toArray } from '@wbce-d9/utils';
 import dotenv from 'dotenv';
 import fs from 'fs';
 import { clone, toNumber, toString } from 'lodash-es';

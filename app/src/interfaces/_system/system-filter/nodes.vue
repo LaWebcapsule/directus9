@@ -103,9 +103,9 @@
 import { useFieldsStore } from '@/stores/fields';
 import { useRelationsStore } from '@/stores/relations';
 import { extractFieldFromFunction } from '@/utils/extract-field-from-function';
-import { useSync } from '@directus9/composables';
-import { FieldFilter, FieldFilterOperator, Filter, LogicalFilterAND, LogicalFilterOR, Type } from '@directus9/types';
-import { getFilterOperatorsForType, getOutputTypeForFunction, toArray } from '@directus9/utils';
+import { useSync } from '@wbce-d9/composables';
+import { FieldFilter, FieldFilterOperator, Filter, LogicalFilterAND, LogicalFilterOR, Type } from '@wbce-d9/types';
+import { getFilterOperatorsForType, getOutputTypeForFunction, toArray } from '@wbce-d9/utils';
 import { get } from 'lodash';
 import { computed, toRefs } from 'vue';
 import { useI18n } from 'vue-i18n';

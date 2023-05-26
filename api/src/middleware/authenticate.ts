@@ -1,4 +1,4 @@
-import type { Accountability } from '@directus9/types';
+import type { Accountability } from '@wbce-d9/types';
 import type { NextFunction, Request, Response } from 'express';
 import { isEqual } from 'lodash-es';
 import getDatabase from '../database/index.js';
