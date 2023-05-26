@@ -35,7 +35,7 @@ Aside from the above pages, there are three shorthand links:
   is automatically included, such as: version number, operating system, and environment type.
 
 - **Request Feature**\
-  A direct link to [submit a new feature request](https://github.com/directus9/directus9/discussions/new) on GitHub. Feature
+  A direct link to [submit a new feature request](https://github.com/LaWebcapsule/directus9/discussions/new) on GitHub. Feature
   requests are a great way to let our team know what should be prioritized next. Learn more about making feature requests
   in the [Contributing > Introduction](/contributing/introduction#feature-requests).
 

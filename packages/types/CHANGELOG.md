@@ -1,4 +1,4 @@
-# @directus9/types
+# @wbce-d9/types
 
 ## 9.26.2
 

@@ -6,8 +6,8 @@ import { getLiteralInterpolatedTranslation } from '@/utils/get-literal-interpola
 import { translate as translateLiteral } from '@/utils/translate-literal';
 import { translate } from '@/utils/translate-object-values';
 import { unexpectedError } from '@/utils/unexpected-error';
-import formatTitle from '@directus9/format-title';
-import { DeepPartial, Field, FieldRaw, Relation } from '@directus9/types';
+import formatTitle from '@wbce-d9/format-title';
+import { DeepPartial, Field, FieldRaw, Relation } from '@wbce-d9/types';
 import { isEqual, isNil, merge, omit, orderBy } from 'lodash';
 import { nanoid } from 'nanoid';
 import { defineStore } from 'pinia';

@@ -5,7 +5,7 @@ import {
 	EXTENSION_PKG_KEY,
 	EXTENSION_TYPES,
 	HYBRID_EXTENSION_TYPES,
-} from '@directus9/constants';
+} from '@wbce-d9/constants';
 import type {
 	ApiExtensionType,
 	AppExtensionType,
@@ -13,8 +13,8 @@ import type {
 	ExtensionOptions,
 	ExtensionType,
 	HybridExtensionType,
-} from '@directus9/types';
-import { isIn } from '@directus9/utils';
+} from '@wbce-d9/types';
+import { isIn } from '@wbce-d9/utils';
 import chalk from 'chalk';
 import { execa } from 'execa';
 import fse from 'fs-extra';

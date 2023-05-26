@@ -1,4 +1,4 @@
-import type { JsonValue, SplitEntrypoint } from '@directus9/types';
+import type { JsonValue, SplitEntrypoint } from '@wbce-d9/types';
 
 function validateNonPrimitive(value: JsonValue | undefined): value is JsonValue[] | { [key: string]: JsonValue } {
 	if (

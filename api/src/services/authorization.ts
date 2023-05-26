@@ -1,4 +1,4 @@
-import { FailedValidationException } from '@directus9/exceptions';
+import { FailedValidationException } from '@wbce-d9/exceptions';
 import type {
 	Accountability,
 	Aggregate,
@@ -7,8 +7,8 @@ import type {
 	PermissionsAction,
 	Query,
 	SchemaOverview,
-} from '@directus9/types';
-import { validatePayload } from '@directus9/utils';
+} from '@wbce-d9/types';
+import { validatePayload } from '@wbce-d9/utils';
 import type { Knex } from 'knex';
 import { cloneDeep, flatten, isArray, isNil, merge, reduce, uniq, uniqWith } from 'lodash-es';
 import { GENERATE_SPECIAL } from '../constants.js';

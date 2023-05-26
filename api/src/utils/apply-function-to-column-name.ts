@@ -1,4 +1,4 @@
-import { REGEX_BETWEEN_PARENS } from '@directus9/constants';
+import { REGEX_BETWEEN_PARENS } from '@wbce-d9/constants';
 
 /**
  * Takes in a column name, and transforms the original name with the generated column name based on

@@ -1,4 +1,4 @@
-import formatTitle from '@directus9/format-title';
+import formatTitle from '@wbce-d9/format-title';
 import fse from 'fs-extra';
 import type { Knex } from 'knex';
 import { orderBy } from 'lodash-es';

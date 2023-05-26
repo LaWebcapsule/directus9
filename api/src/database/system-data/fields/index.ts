@@ -1,10 +1,10 @@
-import type { FieldMeta } from '@directus9/types';
+import type { FieldMeta } from '@wbce-d9/types';
 import fse from 'fs-extra';
 import { merge } from 'lodash-es';
 import path from 'path';
 import { getAuthProviders } from '../../../utils/get-auth-providers.js';
 import { requireYAML } from '../../../utils/require-yaml.js';
-import formatTitle from '@directus9/format-title';
+import formatTitle from '@wbce-d9/format-title';
 import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);

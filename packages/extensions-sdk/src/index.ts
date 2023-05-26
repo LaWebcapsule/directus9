@@ -7,7 +7,7 @@ export {
 	useLayout,
 	useStores,
 	useSync,
-} from '@directus9/composables';
+} from '@wbce-d9/composables';
 export {
 	defineDisplay,
 	defineEndpoint,
@@ -20,4 +20,4 @@ export {
 	definePanel,
 	getFieldsFromTemplate,
 	getRelationType,
-} from '@directus9/utils';
+} from '@wbce-d9/utils';

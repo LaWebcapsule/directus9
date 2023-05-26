@@ -1,18 +1,18 @@
 {
-	"name": "@directus9/extensions-sdk",
+	"name": "@wbce-d9/extensions-sdk",
 	"version": "9.26.2",
 	"description": "A toolkit to develop extensions to extend Directus",
 	"homepage": "https://directus.io",
 	"type": "module",
 	"bugs": {
-		"url": "https://github.com/directus9/directus9/issues"
+		"url": "https://github.com/LaWebcapsule/directus9/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/directus9/directus9.git",
+		"url": "https://github.com/LaWebcapsule/directus9.git",
 		"directory": "packages/extensions-sdk"
 	},
-	"funding": "https://github.com/directus9/directus9?sponsor=1",
+	"funding": "https://github.com/LaWebcapsule/directus9?sponsor=1",
 	"author": "Nicola Krumschmidt",
 	"exports": {
 		".": "./dist/index.js",
@@ -34,10 +34,10 @@
 		"test": "vitest --watch=false"
 	},
 	"dependencies": {
-		"@directus9/composables": "workspace:*",
-		"@directus9/constants": "workspace:*",
-		"@directus9/types": "workspace:*",
-		"@directus9/utils": "workspace:*",
+		"@wbce-d9/composables": "workspace:*",
+		"@wbce-d9/constants": "workspace:*",
+		"@wbce-d9/types": "workspace:*",
+		"@wbce-d9/utils": "workspace:*",
 		"@rollup/plugin-commonjs": "24.1.0",
 		"@rollup/plugin-json": "6.0.0",
 		"@rollup/plugin-node-resolve": "15.0.2",
@@ -58,7 +58,7 @@
 		"rollup-plugin-vue": "6.0.0"
 	},
 	"devDependencies": {
-		"@directus9/tsconfig": "0.0.7",
+		"@wbce-d9/tsconfig": "0.0.7",
 		"@types/fs-extra": "11.0.1",
 		"@types/inquirer": "9.0.3",
 		"@vitest/coverage-c8": "0.30.1",

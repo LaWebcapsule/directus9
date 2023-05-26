@@ -1,4 +1,4 @@
-import { defineInterface } from '@directus9/utils';
+import { defineInterface } from '@wbce-d9/utils';
 import InterfaceTranslations from './translations.vue';
 import { useFieldsStore } from '@/stores/fields';
 import PreviewSVG from './preview.svg?raw';

@@ -13,7 +13,7 @@ our way of saying: **Thank you!**
 
 ## Code of Conduct
 
-**The Directus [Code of Conduct](https://github.com/directus9/directus9/blob/main/code_of_conduct.md) is one of the ways
+**The Directus [Code of Conduct](https://github.com/LaWebcapsule/directus9/blob/main/code_of_conduct.md) is one of the ways
 we put our values into practice. We expect all of our staff, contractors and contributors to know and follow this
 code.**
 
@@ -35,14 +35,14 @@ Examples of behavior that contributes to creating a positive environment include
 - Showing empathy towards other community members
 
 **Before continuing, please take a moment to read our full
-[Code of Conduct](https://github.com/directus9/directus9/blob/main/code_of_conduct.md).**
+[Code of Conduct](https://github.com/LaWebcapsule/directus9/blob/main/code_of_conduct.md).**
 
 ## Ways to Contribute
 
 ### Reporting Bugs
 
 If you happen to run into a bug, please post an Issue on our main GitHub Issue board:
-https://github.com/directus9/directus9/issues
+https://github.com/LaWebcapsule/directus9/issues
 
 Please be as explicit and detailed as you can in the bug report. The more information available, the easier it is for
 other contributors to help you find the solution or fix. Consider adding a schema snapshot file, or a database dump.
@@ -50,7 +50,7 @@ other contributors to help you find the solution or fix. Consider adding a schem
 ### Leaving Feedback
 
 If you have a great idea for an improvement of the platform, or any other feedback, please make sure to open a new
-Discussion on our GitHub Discussions board: https://github.com/directus9/directus9/discussions
+Discussion on our GitHub Discussions board: https://github.com/LaWebcapsule/directus9/discussions
 
 ### Document the Project
 
@@ -61,7 +61,7 @@ parts of the docs in dire need of some tender love and care? Feel free to open a
 
 The Directus community is growing quickly, which also means there's more and more people that have questions. Helping
 out your fellow developers by answering questions on [Discord](https://directus.chat) or
-[GitHub Discussions](https://github.com/directus9/directus9/discussions/categories/q-a) is a great way to help the
+[GitHub Discussions](https://github.com/LaWebcapsule/directus9/discussions/categories/q-a) is a great way to help the
 project.
 
 ### Pull Requests
@@ -98,7 +98,7 @@ New feature ideas reported directly to issues might be converted into a Discussi
 [the core team](https://github.com/orgs/directus/people)'s discretion first. This is often due to a lack of detail, or
 lack of proven interest.
 
-Each Pull Request that comes in is required to resolve [an open Issue](https://github.com/directus9/directus9/issues) that
+Each Pull Request that comes in is required to resolve [an open Issue](https://github.com/LaWebcapsule/directus9/issues) that
 is labeled "Bug", "Improvement", or "New Feature". This ensures that any code change made implements a known actionable
 item, be it a feature or otherwise.
 
@@ -106,7 +106,7 @@ item, be it a feature or otherwise.
 
 If you believe you have discovered a security issue within a Directus product or service, please reach out to us
 directly over email: [security@directus.io](mailto:security@directus.io). We will then open a
-[GitHub Security Advisory](https://github.com/directus9/directus9/security/advisories) for tracking the fix.
+[GitHub Security Advisory](https://github.com/LaWebcapsule/directus9/security/advisories) for tracking the fix.
 
 We value the members of the independent security research community who find security vulnerabilities and work with our
 team so that proper fixes can be issued to users. Our policy is to credit all researchers in the fix's release notes. In

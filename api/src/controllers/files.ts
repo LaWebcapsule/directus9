@@ -1,5 +1,5 @@
-import formatTitle from '@directus9/format-title';
-import { toArray } from '@directus9/utils';
+import formatTitle from '@wbce-d9/format-title';
+import { toArray } from '@wbce-d9/utils';
 import Busboy from 'busboy';
 import type { RequestHandler } from 'express';
 import express from 'express';

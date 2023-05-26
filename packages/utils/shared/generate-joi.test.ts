@@ -1,4 +1,4 @@
-import type { FieldFilter } from '@directus9/types';
+import type { FieldFilter } from '@wbce-d9/types';
 import { escapeRegExp } from 'lodash-es';
 import { describe, expect, it } from 'vitest';
 import type { JoiOptions, StringSchema } from './generate-joi.js';

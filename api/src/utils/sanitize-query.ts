@@ -1,5 +1,5 @@
-import type { Accountability, Aggregate, Filter, Query } from '@directus9/types';
-import { parseFilter, parseJSON } from '@directus9/utils';
+import type { Accountability, Aggregate, Filter, Query } from '@wbce-d9/types';
+import { parseFilter, parseJSON } from '@wbce-d9/utils';
 import { flatten, get, isPlainObject, merge, set } from 'lodash-es';
 import logger from '../logger.js';
 import { Meta } from '../types/index.js';

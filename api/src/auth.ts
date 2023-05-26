@@ -1,4 +1,4 @@
-import { toArray } from '@directus9/utils';
+import { toArray } from '@wbce-d9/utils';
 import type { AuthDriver } from './auth/auth.js';
 import {
 	LDAPAuthDriver,

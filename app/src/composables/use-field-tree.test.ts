@@ -19,7 +19,7 @@ beforeEach(() => {
 import { useFieldTree } from '@/composables/use-field-tree';
 import { useFieldsStore } from '@/stores/fields';
 import { useRelationsStore } from '@/stores/relations';
-import { Field, Relation } from '@directus9/types';
+import { Field, Relation } from '@wbce-d9/types';
 
 test('Returns tree list of same length', () => {
 	const fieldsStore = useFieldsStore();

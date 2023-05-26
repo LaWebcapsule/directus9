@@ -154,11 +154,11 @@ import { getLocalTypeForField } from '@/utils/get-local-type';
 import { getSpecialForType } from '@/utils/get-special-for-type';
 import { notify } from '@/utils/notify';
 import { unexpectedError } from '@/utils/unexpected-error';
-import { Field } from '@directus9/types';
+import { Field } from '@wbce-d9/types';
 import FieldSelectMenu from './field-select-menu.vue';
 import { hideDragImage } from '@/utils/hide-drag-image';
 import Draggable from 'vuedraggable';
-import formatTitle from '@directus9/format-title';
+import formatTitle from '@wbce-d9/format-title';
 import { useExtension } from '@/composables/use-extension';
 
 export default defineComponent({

@@ -1,4 +1,4 @@
-import { defineModule } from '@directus9/utils';
+import { defineModule } from '@wbce-d9/utils';
 import AddNew from './routes/add-new.vue';
 import Collection from './routes/collection.vue';
 import Item from './routes/item.vue';

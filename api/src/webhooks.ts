@@ -1,4 +1,4 @@
-import type { ActionHandler } from '@directus9/types';
+import type { ActionHandler } from '@wbce-d9/types';
 import getDatabase from './database/index.js';
 import emitter from './emitter.js';
 import logger from './logger.js';

@@ -135,9 +135,9 @@
 <script lang="ts">
 import { useI18n } from 'vue-i18n';
 import { defineComponent, computed } from 'vue';
-import { GEOMETRY_TYPES } from '@directus9/constants';
+import { GEOMETRY_TYPES } from '@wbce-d9/constants';
 import { translate } from '@/utils/translate-object-values';
-import { Type } from '@directus9/types';
+import { Type } from '@wbce-d9/types';
 import { TranslateResult } from 'vue-i18n';
 import { useFieldDetailStore, syncFieldDetailStoreProperty } from '../store';
 import { storeToRefs } from 'pinia';

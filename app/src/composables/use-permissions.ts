@@ -1,10 +1,10 @@
 import { usePermissionsStore } from '@/stores/permissions';
 import { useUserStore } from '@/stores/user';
-import { Field } from '@directus9/types';
+import { Field } from '@wbce-d9/types';
 import { computed, ComputedRef, Ref } from 'vue';
 import { cloneDeep } from 'lodash';
 import { isAllowed } from '../utils/is-allowed';
-import { useCollection } from '@directus9/composables';
+import { useCollection } from '@wbce-d9/composables';
 
 type UsablePermissions = {
 	createAllowed: ComputedRef<boolean>;

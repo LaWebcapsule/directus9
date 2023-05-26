@@ -1,5 +1,5 @@
 import { ref, watch } from 'vue';
-import { parseJSON } from '@directus9/utils';
+import { parseJSON } from '@wbce-d9/utils';
 
 type LocalStorageObjectType = string | number | boolean | object | null;
 

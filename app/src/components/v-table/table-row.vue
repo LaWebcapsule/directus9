@@ -40,7 +40,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue';
-import { ShowSelect } from '@directus9/types';
+import { ShowSelect } from '@wbce-d9/types';
 import { Header, Item } from './types';
 
 interface Props {

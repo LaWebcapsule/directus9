@@ -36,8 +36,8 @@ import { useFieldsStore } from '@/stores/fields';
 import { adjustFieldsForDisplays } from '@/utils/adjust-fields-for-displays';
 import { unexpectedError } from '@/utils/unexpected-error';
 import DrawerCollection from '@/views/private/components/drawer-collection.vue';
-import { Filter } from '@directus9/types';
-import { getEndpoint, getFieldsFromTemplate } from '@directus9/utils';
+import { Filter } from '@wbce-d9/types';
+import { getEndpoint, getFieldsFromTemplate } from '@wbce-d9/utils';
 import { computed, ref, toRefs, unref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 

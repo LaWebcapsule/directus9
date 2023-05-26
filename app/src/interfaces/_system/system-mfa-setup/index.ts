@@ -1,4 +1,4 @@
-import { defineInterface } from '@directus9/utils';
+import { defineInterface } from '@wbce-d9/utils';
 import InterfaceSystemMFASetup from './system-mfa-setup.vue';
 
 export default defineInterface({

@@ -1,4 +1,4 @@
-import type { RawField, FieldMeta } from '@directus9/types';
+import type { RawField, FieldMeta } from '@wbce-d9/types';
 
 /**
  * Add a flag to a field.

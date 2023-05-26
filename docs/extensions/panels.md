@@ -113,10 +113,10 @@ The Directus App uses Vue 3. There might be 3rd party libraries that aren't yet 
 ## Accessing Internal Systems
 
 To access internal systems like the API or the stores, you can use the `useApi()` and `useStores()` composables exported
-by the `@directus9/extensions-sdk` package. They can be used inside a `setup()` function like this:
+by the `@wbce-d9/extensions-sdk` package. They can be used inside a `setup()` function like this:
 
 ```js
-import { useApi, useStores } from '@directus9/extensions-sdk';
+import { useApi, useStores } from '@wbce-d9/extensions-sdk';
 
 export default {
 	setup() {

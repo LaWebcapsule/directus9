@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import type { Filter } from '@directus9/types';
+import type { Filter } from '@wbce-d9/types';
 import { validatePayload } from './validate-payload.js';
 
 describe('validatePayload', () => {

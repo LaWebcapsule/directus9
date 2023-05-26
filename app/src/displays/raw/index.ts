@@ -1,5 +1,5 @@
-import { defineDisplay } from '@directus9/utils';
-import { TYPES, LOCAL_TYPES } from '@directus9/constants';
+import { defineDisplay } from '@wbce-d9/utils';
+import { TYPES, LOCAL_TYPES } from '@wbce-d9/constants';
 
 export default defineDisplay({
 	id: 'raw',

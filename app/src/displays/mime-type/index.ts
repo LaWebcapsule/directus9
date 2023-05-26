@@ -1,4 +1,4 @@
-import { defineDisplay } from '@directus9/utils';
+import { defineDisplay } from '@wbce-d9/utils';
 import { readableMimeType } from '@/utils/readable-mime-type';
 import mime from 'mime/lite';
 import { h } from 'vue';

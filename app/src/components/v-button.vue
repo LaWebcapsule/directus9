@@ -41,7 +41,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { RouteLocationRaw, useRoute, useLink } from 'vue-router';
-import { useSizeClass, useGroupable } from '@directus9/composables';
+import { useSizeClass, useGroupable } from '@wbce-d9/composables';
 import { isEqual, isNil } from 'lodash';
 
 interface Props {
