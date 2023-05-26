@@ -32,7 +32,7 @@ Aurora/Redshift or Google Cloud Platform SQL.
 Learn more at...
 
 
-- [GitHub](https://github.com/directus9/directus9)
+- [GitHub](https://github.com/LaWebcapsule/directus9)
 
 **All the following links are for Directus v10 ; contribution are welcome to make specific documentation for the Directus 9**
 
@@ -52,19 +52,19 @@ Directus requires NodeJS 10+.
 Install Directus9 :
 
 ```
-npm install directus9
+npm install @wbce-d9/directus9
 ```
 
 Or using yarn:
 
 ```
-yarn install directus9
+yarn install @wbce-d9/directus9
 ```
 
 Create a new project with our simple CLI tool:
 
 ```
-npx directus9 init
+npx directus init
 ```
 The above command will create a directory with your project name, then walk you through the database configuration and
 creation of your first admin user.
@@ -115,11 +115,11 @@ Directus9 use the same schema as directus@9.0.0^. As a consequence, you don't ne
 
 ## Contributing
 
-Please report any and all issues [on our GitHub](https://github.com/directus9/directus9/issues/new).
+Please report any and all issues [on our GitHub](https://github.com/LaWebcapsule/directus9/issues/new).
 
 Pull-requests are more than welcome, and always appreciated. Please be sure to read our
 [Contributors Guide](https://docs.directus.io/contributing/introduction/) before starting work on a new feature/fix, or
-reach out a member of the Core Team via [GitHub](https://github.com/directus9/directus9/discussions) or
+reach out a member of the Core Team via [GitHub](https://github.com/LaWebcapsule/directus9/discussions) or
 [Discord](https://directus.chat) with any questions.
 
 <p>&nbsp;</p>

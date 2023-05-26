@@ -24,14 +24,14 @@
 	],
 	"homepage": "https://directus.io",
 	"bugs": {
-		"url": "https://github.com/directus9/directus9/issues"
+		"url": "https://github.com/LaWebcapsule/directus9/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/directus9/directus9.git",
+		"url": "https://github.com/LaWebcapsule/directus9.git",
 		"directory": "api"
 	},
-	"funding": "https://github.com/directus9/directus9?sponsor=1",
+	"funding": "https://github.com/LaWebcapsule/directus9?sponsor=1",
 	"license": "GPL-3.0-only",
 	"author": {
 		"name": "Monospace Inc",

@@ -17,12 +17,12 @@ readTime: 7 min read
 
 ## Server
 
-For server-side CLI, all functionality can be accessed by running `npx directus9 <command>` in your project folder.
+For server-side CLI, all functionality can be accessed by running `npx directus <command>` in your project folder.
 
 ### Initialize a New Project
 
 ```bash
-npx directus9 init
+npx directus init
 ```
 
 Will install the required database driver, and create a `.env` file based on the inputted values.
@@ -30,7 +30,7 @@ Will install the required database driver, and create a `.env` file based on the
 ### Bootstrap a Project
 
 ```bash
-npx directus9 bootstrap
+npx directus bootstrap
 ```
 
 Will use an existing `.env` file (or existing environment variables) to either install the database (if it's empty) or
@@ -57,7 +57,7 @@ custom migration or an external service, for example).
 ### Install the Database
 
 ```bash
-npx directus9 database install
+npx directus database install
 ```
 
 Installs the initial Directus system tables on an empty database. Used internally by `bootstrap`.
@@ -70,13 +70,13 @@ You may want to use `directus bootstrap` instead.
 ### Upgrade the Database
 
 ```bash
-npx directus9 database migrate:latest
-npx directus9 database migrate:up
-npx directus9 database migrate:down
+npx directus database migrate:latest
+npx directus database migrate:up
+npx directus database migrate:down
 ```
 
 Migrate the database up/down to match the versions of Directus. Once you update Directus itself, make sure to run
-`npx directus9 database migrate:latest` (or `npx directus9 bootstrap`) to update your database.
+`npx directus database migrate:latest` (or `npx directus bootstrap`) to update your database.
 
 ### Migrate Schema to a different Environment
 
@@ -90,13 +90,13 @@ collections, fields, and relations, and their configuration. This snapshot can b
 with your team. To generate the snapshot, run
 
 ```bash
-npx directus9 schema snapshot ./snapshot.yaml
+npx directus schema snapshot ./snapshot.yaml
 ```
 
 To run non-interactively (e.g. when running in a CI/CD workflow), run
 
 ```bash
-npx directus9 schema snapshot --yes ./snapshot.yaml
+npx directus schema snapshot --yes ./snapshot.yaml
 ```
 
 Note, that this will force overwrite existing snapshot files.
@@ -107,7 +107,7 @@ To keep multiple snapshot organized by date, create a folder `snapshots` in your
 following custom script to your `package.json`:
 
 ```bash
-"create-snapshot": "npx directus9 schema snapshot ./snapshots/\"$(date \"+%F\")\"-snapshot-\"$(date \"+%s\")\".yaml"
+"create-snapshot": "npx directus schema snapshot ./snapshots/\"$(date \"+%F\")\"-snapshot-\"$(date \"+%s\")\".yaml"
 ```
 
 When you run the command via `npm run create-snapshot` it will create a new snapshot with the following naming schema:
@@ -126,19 +126,19 @@ snapshot.
 To apply the generated snapshot, run
 
 ```bash
-npx directus9 schema apply ./path/to/snapshot.yaml
+npx directus schema apply ./path/to/snapshot.yaml
 ```
 
 To run non-interactively (e.g. when running in a CI/CD workflow), run
 
 ```bash
-npx directus9 schema apply --yes ./path/to/snapshot.yaml
+npx directus schema apply --yes ./path/to/snapshot.yaml
 ```
 
 To diff the schema and database and print out the planned changes, run
 
 ```bash
-npx directus9 schema apply --dry-run ./path/to/snapshot.yaml
+npx directus schema apply --dry-run ./path/to/snapshot.yaml
 ```
 
 ### Creating Users
@@ -146,7 +146,7 @@ npx directus9 schema apply --dry-run ./path/to/snapshot.yaml
 To create a new user with a specific role, run
 
 ```bash
-npx directus9 users create --email <user-email> --password <password> --role <role-uuid>
+npx directus users create --email <user-email> --password <password> --role <role-uuid>
 ```
 
 #### Updating User Password
@@ -154,7 +154,7 @@ npx directus9 users create --email <user-email> --password <password> --role <ro
 To update the password of an existing user, run
 
 ```bash
-npx directus9 users passwd --email <user-email> --password <new-password>
+npx directus users passwd --email <user-email> --password <new-password>
 ```
 
 ### Creating Roles
@@ -162,7 +162,7 @@ npx directus9 users passwd --email <user-email> --password <new-password>
 To create a new role, run
 
 ```bash
-npx directus9 roles create --role <role-name>
+npx directus roles create --role <role-name>
 ```
 
 These roles are created with the
@@ -172,7 +172,7 @@ the App by default.
 To create a new role with admin access, set the `--admin` flag to `true`, such as
 
 ```bash
-npx directus9 roles create --role <role-name> --admin true
+npx directus roles create --role <role-name> --admin true
 ```
 
 ### Count Items in a Collection
@@ -180,14 +180,14 @@ npx directus9 roles create --role <role-name> --admin true
 To count the amount of items in a given collection, run
 
 ```bash
-npx directus9 count <collection-name>
+npx directus count <collection-name>
 ```
 
 ---
 
 ## Client
 
-For the client-side CLI, all functionality can be accessed by running `npx directus9ctl <command>`. You can also install
+For the client-side CLI, all functionality can be accessed by running `npx directusctl <command>`. You can also install
 `@wbce-d9/cli` on your project dependencies or globally on your machine. Note that if you run `directusctl` (installed
 globally) in a folder containing a project that has a version of `@wbce-d9/cli` installed, the running global CLI will
 forward it's execution to the local installed version instead.

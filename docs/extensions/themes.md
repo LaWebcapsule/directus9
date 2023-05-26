@@ -16,12 +16,12 @@ the codebase all use CSS variables, and therefore it is easy to make comprehensi
 There are two themes included by default: Light and Dark. You can duplicate these files to create your own themes — with
 no limit to customization. Below are several code resources for key SCSS files.
 
-- **Themes** — See the [Light Theme](https://github.com/directus9/directus9/blob/main/app/src/styles/themes/_light.scss)
-  or [Dark Theme](https://github.com/directus9/directus9/blob/main/app/src/styles/themes/_dark.scss)
-- **Typography** — See the [Fonts](https://github.com/directus9/directus9/blob/main/app/src/styles/_type-styles.scss) and
-  [Type Styles](https://github.com/directus9/directus9/blob/main/app/src/styles/mixins/type-styles.scss)
+- **Themes** — See the [Light Theme](https://github.com/LaWebcapsule/directus9/blob/main/app/src/styles/themes/_light.scss)
+  or [Dark Theme](https://github.com/LaWebcapsule/directus9/blob/main/app/src/styles/themes/_dark.scss)
+- **Typography** — See the [Fonts](https://github.com/LaWebcapsule/directus9/blob/main/app/src/styles/_type-styles.scss) and
+  [Type Styles](https://github.com/LaWebcapsule/directus9/blob/main/app/src/styles/mixins/type-styles.scss)
 - **Variables** — See the
-  [Global Variables](https://github.com/directus9/directus9/blob/main/app/src/styles/_variables.scss)
+  [Global Variables](https://github.com/LaWebcapsule/directus9/blob/main/app/src/styles/_variables.scss)
 
 ## Project Styling
 
