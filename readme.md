@@ -2,7 +2,7 @@
 
 <br />
 
-**This repository is a fork of the Directus 9. Directus 9 was under BSL license and so is this repository. As Directus 10 is now <i>a premium open-source software</i>, this repository aims to maintain a standard openSource version of Directus 9**
+**This repository is a fork of the Directus 9. Directus 9 was under BSL license and so is this repository. As Directus 10 is now <i>a premium open-source software</i>, this repository aims to maintain a standard openSource version of Directus 9. This repository is not bound to the directus core team.**
 
 ## 🐰 Introduction
 
@@ -25,4 +25,4 @@ Directus is a real-time API and App dashboard for managing SQL database content.
 
 Directus is released under the [GPLv3 license](./license). Monospace Inc owns all Directus trademarks, logos, and intellectual property on behalf of our project's community. Copyright © 2004-2020, Monospace Inc.
 
-**This repository is a fork of the Directus 9. We have no intention to violate any rights of the Monoscpace Inc. If we misunderstood the scope of the license, please contact us and we will make the appropriate modification.**
+**This repository is a fork of the Directus 9. Directus 9 was under BSL license and so is this repository. As Directus 10 is now <i>a premium open-source software</i>, this repository aims to maintain a standard openSource version of Directus 9. This repository is not bound to the directus core team.**
