@@ -1,6 +1,6 @@
 {
 	"name": "@wbce-d9/schema",
-	"version": "9.26.2",
+	"version": "9.26.3",
 	"description": "Utility for extracting information about existing DB schema",
 	"type": "module",
 	"keywords": [

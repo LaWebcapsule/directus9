@@ -1,5 +1,14 @@
 # @wbce-d9/storage-driver-gcs
 
+## 9.26.3
+
+### Patch Changes
+
+- f1b4684: change package organization
+- Updated dependencies [f1b4684]
+  - @wbce-d9/storage@9.26.3
+  - @wbce-d9/utils@9.26.3
+
 ## 9.26.2
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @wbce-d9/types
 
+## 9.26.3
+
+### Patch Changes
+
+- f1b4684: change package organization
+
 ## 9.26.2
 
 ### Patch Changes
