@@ -4,7 +4,7 @@
 
 <p>&nbsp;</p>
 
-**This repository is a fork of the Directus 9. Directus 9 was under BSL license and so is this repository. As Directus 10 is now <i>a premium open-source software</i>, this repository aims to maintain a standard openSource version of Directus 9. This repository is not bound to the directus core team.**
+**This repository is a fork of the Directus 9. Directus 9 was under GPLv3 license and so is this repository. As Directus 10 is now <i>a premium open-source software</i>, this repository aims to maintain a standard openSource version of Directus 9. This repository is not bound to the directus core team.**
 
 ## Scope of the fork
 
@@ -135,4 +135,4 @@ This is a fork of directus9. We welcome contribution and no support is asked.
 Directus is released under the [GPLv3 license](./license). Monospace Inc owns all Directus trademarks, logos, and intellectual property on behalf of our project's community. Copyright © 2004-2020, Monospace Inc.
 
 
-**This repository is a fork of the Directus 9. Directus 9 was under BSL license and so is this repository. As Directus 10 is now <i>a premium open-source software</i>, this repository aims to maintain a standard openSource version of Directus 9. This repository is not bound to the directus core team.**
+**This repository is a fork of the Directus 9. Directus 9 was under GPLv3 license and so is this repository. As Directus 10 is now <i>a premium open-source software</i>, this repository aims to maintain a standard openSource version of Directus 9. This repository is not bound to the directus core team.**
