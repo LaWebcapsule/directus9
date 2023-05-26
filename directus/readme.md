@@ -104,7 +104,7 @@ import {...} from "@directus/some-package"
 should become :
 
 ```ts
-import {...} from "directus9"
+import {...} from "@wbce-d9/directus9"
 import {...} from "@wbce-d9/some-package"
 ```
 
