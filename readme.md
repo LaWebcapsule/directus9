@@ -21,6 +21,39 @@ Directus is a real-time API and App dashboard for managing SQL database content.
 
 <br />
 
+## Migrating from directus@9.0.0^ to @wbce-d9@9.0.0^
+
+You need to change your dependencies :
+1. In package.json
+```
+"directus":9.0.0^ --> "@wbce-d9/directus9": 9.0.0^
+"@directus/some-package" --> "@wbce-d9/some-package"
+```
+
+2. Update your dependencies :
+```
+npm update
+```
+
+3. If you have some code :
+
+```ts
+import {...} from "directus"
+import {...} from "@directus/some-package"
+```
+should become :
+
+```ts
+import {...} from "@wbce-d9/directus9"
+import {...} from "@wbce-d9/some-package"
+```
+
+4. You don't have to do any changes to your databases.
+Directus9 use the same schema as directus@9.0.0^. As a consequence, you don't need other changes than the three steps below.
+
+
+
+
 ## License
 
 Directus is released under the [GPLv3 license](./license). Monospace Inc owns all Directus trademarks, logos, and intellectual property on behalf of our project's community. Copyright © 2004-2020, Monospace Inc.
