@@ -3,9 +3,6 @@ lockfileVersion: '6.0'
 overrides:
   vm2@<3.9.18: '>=3.9.18'
 
-overrides:
-  vm2@<3.9.18: '>=3.9.18'
-
 importers:
 
   .:
