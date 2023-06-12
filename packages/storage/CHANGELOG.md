@@ -1,4 +1,10 @@
-# @directus9/storage
+# @wbce-d9/storage
+
+## 9.26.3
+
+### Patch Changes
+
+- f1b4684: change package organization
 
 ## 9.26.2
 

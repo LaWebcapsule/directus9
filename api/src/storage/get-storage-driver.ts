@@ -1,11 +1,11 @@
-import type { Driver } from '@directus9/storage';
+import type { Driver } from '@wbce-d9/storage';
 
 export const _aliasMap: Record<string, string> = {
-	local: '@directus9/storage-driver-local',
-	s3: '@directus9/storage-driver-s3',
-	gcs: '@directus9/storage-driver-gcs',
-	azure: '@directus9/storage-driver-azure',
-	cloudinary: '@directus9/storage-driver-cloudinary',
+	local: '@wbce-d9/storage-driver-local',
+	s3: '@wbce-d9/storage-driver-s3',
+	gcs: '@wbce-d9/storage-driver-gcs',
+	azure: '@wbce-d9/storage-driver-azure',
+	cloudinary: '@wbce-d9/storage-driver-cloudinary',
 };
 
 export const getStorageDriver = async (driverName: string): Promise<typeof Driver> => {

@@ -1,6 +1,6 @@
-import { BaseException } from '@directus9/exceptions';
-import type { Accountability } from '@directus9/types';
-import { parseJSON } from '@directus9/utils';
+import { BaseException } from '@wbce-d9/exceptions';
+import type { Accountability } from '@wbce-d9/types';
+import { parseJSON } from '@wbce-d9/utils';
 import express, { Router } from 'express';
 import flatten from 'flat';
 import jwt from 'jsonwebtoken';

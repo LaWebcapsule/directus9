@@ -138,13 +138,13 @@ import { useI18n } from 'vue-i18n';
 import { computed, ref } from 'vue';
 
 import SettingsNavigation from '../../components/navigation.vue';
-import { Preset, Filter } from '@directus9/types';
+import { Preset, Filter } from '@wbce-d9/types';
 import api from '@/api';
 import { useCollectionsStore } from '@/stores/collections';
 import { usePresetsStore } from '@/stores/presets';
 import { useRouter } from 'vue-router';
 import { unexpectedError } from '@/utils/unexpected-error';
-import { useLayout } from '@directus9/composables';
+import { useLayout } from '@wbce-d9/composables';
 import { useShortcut } from '@/composables/use-shortcut';
 import { useEditsGuard } from '@/composables/use-edits-guard';
 import { isEqual } from 'lodash';

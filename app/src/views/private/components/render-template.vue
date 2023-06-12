@@ -30,7 +30,7 @@ import { useExtension } from '@/composables/use-extension';
 import { useFieldsStore } from '@/stores/fields';
 import { getDefaultDisplayForType } from '@/utils/get-default-display-for-type';
 import { translate } from '@/utils/translate-literal';
-import { Field } from '@directus9/types';
+import { Field } from '@wbce-d9/types';
 import { get } from 'lodash';
 import { computed, ref } from 'vue';
 

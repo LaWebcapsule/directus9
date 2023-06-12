@@ -1,6 +1,6 @@
 {
-	"name": "@directus9/schema",
-	"version": "9.26.2",
+	"name": "@wbce-d9/schema",
+	"version": "9.26.3",
 	"description": "Utility for extracting information about existing DB schema",
 	"type": "module",
 	"keywords": [
@@ -15,14 +15,14 @@
 	],
 	"homepage": "https://directus.io",
 	"bugs": {
-		"url": "https://github.com/directus9/directus9/issues"
+		"url": "https://github.com/LaWebcapsule/directus9/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/directus9/directus9.git",
+		"url": "https://github.com/LaWebcapsule/directus9.git",
 		"directory": "packages/schema"
 	},
-	"funding": "https://github.com/directus9/directus9?sponsor=1",
+	"funding": "https://github.com/LaWebcapsule/directus9?sponsor=1",
 	"license": "GPL-3.0",
 	"author": "Rijk van Zanten <rijkvanzanten@me.com>",
 	"exports": {
@@ -45,7 +45,7 @@
 		"knex": "2.4.2"
 	},
 	"devDependencies": {
-		"@directus9/tsconfig": "0.0.7",
+		"@wbce-d9/tsconfig": "0.0.7",
 		"typescript": "5.0.4"
 	},
 	"publishConfig": {

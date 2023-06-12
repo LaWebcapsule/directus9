@@ -7,14 +7,14 @@ import {
 	ExtensionManifest,
 	ExtensionOptionsBundleEntries,
 	HYBRID_EXTENSION_TYPES,
-} from '@directus9/constants';
+} from '@wbce-d9/constants';
 import type {
 	ApiExtensionType,
 	AppExtensionType,
 	ExtensionOptionsBundleEntry,
 	ExtensionManifest as TExtensionManifest,
-} from '@directus9/types';
-import { isIn, isTypeIn } from '@directus9/utils';
+} from '@wbce-d9/types';
+import { isIn, isTypeIn } from '@wbce-d9/utils';
 import commonjsDefault from '@rollup/plugin-commonjs';
 import jsonDefault from '@rollup/plugin-json';
 import { nodeResolve } from '@rollup/plugin-node-resolve';

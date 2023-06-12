@@ -29,7 +29,7 @@
 </template>
 
 <script setup lang="ts">
-import { FlowRaw, TriggerType } from '@directus9/types';
+import { FlowRaw, TriggerType } from '@wbce-d9/types';
 import { computed, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { getTriggers } from '../triggers';

@@ -1,5 +1,5 @@
-import type { Accountability, SchemaOverview } from '@directus9/types';
-import { toArray } from '@directus9/utils';
+import type { Accountability, SchemaOverview } from '@wbce-d9/types';
+import { toArray } from '@wbce-d9/utils';
 import type { Knex } from 'knex';
 import { merge } from 'lodash-es';
 import { Readable } from 'node:stream';

@@ -1,5 +1,5 @@
-import type { Filter } from '@directus9/types';
-import { defineOperationApi, validatePayload } from '@directus9/utils';
+import type { Filter } from '@wbce-d9/types';
+import { defineOperationApi, validatePayload } from '@wbce-d9/utils';
 
 type Options = {
 	filter: Filter;

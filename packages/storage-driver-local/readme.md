@@ -1,3 +1,3 @@
-# `@directus9/storage-driver-local`
+# `@wbce-d9/storage-driver-local`
 
-Local file storage driver for `@directus9/storage`
+Local file storage driver for `@wbce-d9/storage`

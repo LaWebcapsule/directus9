@@ -1,6 +1,6 @@
 import { provide } from 'vue';
 import api from '@/api';
-import { API_INJECT, EXTENSIONS_INJECT, STORES_INJECT } from '@directus9/constants';
+import { API_INJECT, EXTENSIONS_INJECT, STORES_INJECT } from '@wbce-d9/constants';
 import { useAppStore } from '@/stores/app';
 import { useCollectionsStore } from '@/stores/collections';
 import { useFieldsStore } from '@/stores/fields';

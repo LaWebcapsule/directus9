@@ -1,5 +1,5 @@
-import type { Accountability, Query, SchemaOverview } from '@directus9/types';
-import { parseJSON, toArray } from '@directus9/utils';
+import type { Accountability, Query, SchemaOverview } from '@wbce-d9/types';
+import { parseJSON, toArray } from '@wbce-d9/utils';
 import { queue } from 'async';
 import csv from 'csv-parser';
 import destroyStream from 'destroy';

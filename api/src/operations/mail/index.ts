@@ -1,4 +1,4 @@
-import { defineOperationApi } from '@directus9/utils';
+import { defineOperationApi } from '@wbce-d9/utils';
 import type { EmailOptions } from '../../services/mail/index.js';
 import { MailService } from '../../services/mail/index.js';
 import { md } from '../../utils/md.js';

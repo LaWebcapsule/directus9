@@ -1,4 +1,4 @@
-import { Type } from '@directus9/types';
+import { Type } from '@wbce-d9/types';
 
 export const VALIDATION_TYPES = ['FAILED_VALIDATION', 'RECORD_NOT_UNIQUE'];
 

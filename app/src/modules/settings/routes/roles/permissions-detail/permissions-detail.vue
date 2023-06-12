@@ -48,7 +48,7 @@
 import { useI18n } from 'vue-i18n';
 import { defineComponent, ref, computed, watch } from 'vue';
 import api from '@/api';
-import { Permission, Role } from '@directus9/types';
+import { Permission, Role } from '@wbce-d9/types';
 import { useCollectionsStore } from '@/stores/collections';
 import { useRouter } from 'vue-router';
 import Actions from './components/actions.vue';

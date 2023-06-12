@@ -1,7 +1,7 @@
-import { defineDisplay } from '@directus9/utils';
+import { defineDisplay } from '@wbce-d9/utils';
 import DisplayJsonValue from './formatted-json-value.vue';
 import { render } from 'micromustache';
-import { toArray } from '@directus9/utils';
+import { toArray } from '@wbce-d9/utils';
 
 export default defineDisplay({
 	id: 'formatted-json-value',

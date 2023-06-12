@@ -1,4 +1,4 @@
-import type { FieldMeta, Type } from '@directus9/types';
+import type { FieldMeta, Type } from '@wbce-d9/types';
 
 const localTypeMap: Record<string, Type | 'unknown'> = {
 	// Shared

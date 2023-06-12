@@ -1,4 +1,4 @@
-import { Type } from '@directus9/types';
+import { Type } from '@wbce-d9/types';
 
 const defaultInterfaceMap: Record<Type, string> = {
 	alias: 'input',

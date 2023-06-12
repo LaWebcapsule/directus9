@@ -1,4 +1,10 @@
-# @directus9/exceptions
+# @wbce-d9/exceptions
+
+## 9.26.3
+
+### Patch Changes
+
+- f1b4684: change package organization
 
 ## 9.26.2
 

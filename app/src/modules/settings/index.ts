@@ -1,5 +1,5 @@
 import api from '@/api';
-import { defineModule } from '@directus9/utils';
+import { defineModule } from '@wbce-d9/utils';
 import { useCollectionsStore } from '@/stores/collections';
 import { useFieldsStore } from '@/stores/fields';
 import { useFlowsStore } from '@/stores/flows';

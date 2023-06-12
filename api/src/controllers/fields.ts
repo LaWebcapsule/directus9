@@ -1,5 +1,5 @@
-import { TYPES } from '@directus9/constants';
-import type { Field, Type } from '@directus9/types';
+import { TYPES } from '@wbce-d9/constants';
+import type { Field, Type } from '@wbce-d9/types';
 import { Router } from 'express';
 import Joi from 'joi';
 import { ALIAS_TYPES } from '../constants.js';

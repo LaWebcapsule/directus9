@@ -1,6 +1,6 @@
-import { Field } from '@directus9/types';
+import { Field } from '@wbce-d9/types';
 import { parseFilter } from '@/utils/parse-filter';
-import { validatePayload } from '@directus9/utils';
+import { validatePayload } from '@wbce-d9/utils';
 import { merge } from 'lodash';
 
 export function applyConditions(item: Record<string, any>, field: Field) {

@@ -42,6 +42,7 @@ TODO
 /schema.json
 /api/uploads
 /api/extensions
+/api/snapshot.yaml
 /tests/blackbox/uploads
 /tests/blackbox/server-log-*
 /packages/extensions-sdk/temp-extension-*

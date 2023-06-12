@@ -26,7 +26,7 @@ import 'codemirror/addon/comment/comment.js';
 import 'codemirror/addon/dialog/dialog.js';
 import 'codemirror/keymap/sublime.js';
 
-import formatTitle from '@directus9/format-title';
+import formatTitle from '@wbce-d9/format-title';
 import importCodemirrorMode from './import-codemirror-mode';
 import { useWindowSize } from '@/composables/use-window-size';
 

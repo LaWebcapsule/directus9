@@ -1,4 +1,4 @@
-import type { Field } from '@directus9/types';
+import type { Field } from '@wbce-d9/types';
 import type { ComputedRef, Ref } from 'vue';
 import { computed } from 'vue';
 

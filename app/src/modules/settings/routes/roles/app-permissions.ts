@@ -1,4 +1,4 @@
-import { Permission } from '@directus9/types';
+import { Permission } from '@wbce-d9/types';
 
 export const appRecommendedPermissions: Partial<Permission>[] = [
 	{

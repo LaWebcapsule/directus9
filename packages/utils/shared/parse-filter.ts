@@ -1,5 +1,5 @@
-import { REGEX_BETWEEN_PARENS } from '@directus9/constants';
-import type { Accountability, Filter, Role, User } from '@directus9/types';
+import { REGEX_BETWEEN_PARENS } from '@wbce-d9/constants';
+import type { Accountability, Filter, Role, User } from '@wbce-d9/types';
 import { isObjectLike } from 'lodash-es';
 import { adjustDate } from './adjust-date.js';
 import { deepMap } from './deep-map.js';

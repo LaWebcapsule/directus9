@@ -2,6 +2,8 @@
 
 <br />
 
+**This repository is a fork of the Directus 9. Directus 9 was under GPLv3 license and so is this repository. As Directus 10 is now <i>a premium open-source software</i>, this repository aims to maintain a standard openSource version of Directus 9. This repository is not bound to the directus core team.**
+
 ## 🐰 Introduction
 
 Directus is a real-time API and App dashboard for managing SQL database content.
@@ -19,41 +21,41 @@ Directus is a real-time API and App dashboard for managing SQL database content.
 
 <br />
 
-## 🚀 Directus Cloud
+## Migrating from directus@9.0.0^ to @wbce-d9@9.0.0^
 
-[Directus Cloud](https://directus.io/pricing) allows you to create projects, hosted by the Directus team, in 90 seconds.
+You need to change your dependencies :
+1. In package.json
+```
+"directus":9.0.0^ --> "@wbce-d9/directus9": 9.0.0^
+"@directus/some-package" --> "@wbce-d9/some-package"
+```
 
-- **No product limitations or service usage quotas (unlimited users, API requests, etc)**
-- A modern self-service dashboard to create and monitor all your projects in one place
-- End-to-end solution: Directus, database, serverless auto-scaling, storage, and a global CDN
-- Select your desired region and provision a new project in ~90 seconds
+2. Update your dependencies :
+```
+npm update
+```
 
-**[Create a Directus Cloud Project](https://directus.cloud)**
+3. If you have some code :
 
-<br />
+```ts
+import {...} from "directus"
+import {...} from "@directus/some-package"
+```
+should become :
 
-## 🤔 Community Help
+```ts
+import {...} from "@wbce-d9/directus9"
+import {...} from "@wbce-d9/some-package"
+```
 
-[The Directus Documentation](https://docs.directus.io) is a great place to start, or explore these other channels:
+4. You don't have to do any changes to your databases.
+Directus9 use the same schema as directus@9.0.0^. As a consequence, you don't need other changes than the three steps below.
 
-- [Discord](https://directus.chat) (Questions, Live Discussions)
-- [GitHub Issues](https://github.com/directus9/directus9/issues) (Report Bugs)
-- [GitHub Discussions](https://github.com/directus9/directus9/discussions) (Feature Requests)
-- [Twitter](https://twitter.com/directus) (Latest News)
-- [YouTube](https://www.youtube.com/c/DirectusVideos/featured) (Video Tutorials)
 
-<br />
 
-## ❤️ Contributing & Sponsoring
 
-Please read our [Contributing Guide](./contributing.md) before submitting Pull Requests.
+## License
 
-All security vulnerabilities should be reported in accordance with our
-[Security Policy](https://docs.directus.io/contributing/introduction/#reporting-security-vulnerabilities).
+Directus is released under the [GPLv3 license](./license). Monospace Inc owns all Directus trademarks, logos, and intellectual property on behalf of our project's community. Copyright © 2004-2020, Monospace Inc.
 
-Directus is a premium open-source ([GPLv3](./license)) project, made possible with support from our passionate core
-team, talented contributors, and amazing [GitHub Sponsors](https://github.com/sponsors/directus). Thank you all!
-
-<br />
-
-© 2004-2023, Monospace Inc
+**This repository is a fork of the Directus 9. Directus 9 was under GPLv3 license and so is this repository. As Directus 10 is now <i>a premium open-source software</i>, this repository aims to maintain a standard openSource version of Directus 9. This repository is not bound to the directus core team.**

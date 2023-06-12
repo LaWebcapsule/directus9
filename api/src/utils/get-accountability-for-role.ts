@@ -1,4 +1,4 @@
-import type { Accountability, SchemaOverview } from '@directus9/types';
+import type { Accountability, SchemaOverview } from '@wbce-d9/types';
 import type { Knex } from 'knex';
 import { InvalidConfigException } from '../exceptions/index.js';
 import { getPermissions } from './get-permissions.js';

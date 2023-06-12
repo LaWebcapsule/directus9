@@ -1,4 +1,4 @@
-import type { SchemaOverview } from '@directus9/types';
+import type { SchemaOverview } from '@wbce-d9/types';
 import type { Knex } from 'knex';
 import { getCache } from '../cache.js';
 import getDatabase from '../database/index.js';

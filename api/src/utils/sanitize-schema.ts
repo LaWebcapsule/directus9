@@ -1,5 +1,5 @@
-import type { Column } from '@directus9/schema';
-import type { Field, Relation } from '@directus9/types';
+import type { Column } from '@wbce-d9/schema';
+import type { Field, Relation } from '@wbce-d9/types';
 import { pick } from 'lodash-es';
 import type { Collection } from '../types/index.js';
 

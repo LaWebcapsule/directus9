@@ -1,4 +1,4 @@
-import { parseJSON } from '@directus9/utils';
+import { parseJSON } from '@wbce-d9/utils';
 import type { Knex } from 'knex';
 
 // Change image metadata structure to match the output from 'exifr'

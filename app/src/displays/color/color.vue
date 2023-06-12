@@ -7,7 +7,7 @@
 
 <script lang="ts" setup>
 import { isHex } from '@/utils/is-hex';
-import { cssVar } from '@directus9/utils/browser';
+import { cssVar } from '@wbce-d9/utils/browser';
 import Color from 'color';
 import { computed } from 'vue';
 

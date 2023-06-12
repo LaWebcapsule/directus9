@@ -1,5 +1,5 @@
-import type { Accountability, Permission, SchemaOverview } from '@directus9/types';
-import { deepMap, parseFilter, parseJSON, parsePreset } from '@directus9/utils';
+import type { Accountability, Permission, SchemaOverview } from '@wbce-d9/types';
+import { deepMap, parseFilter, parseJSON, parsePreset } from '@wbce-d9/utils';
 import { cloneDeep } from 'lodash-es';
 import hash from 'object-hash';
 import { getCache, getCacheValue, getSystemCache, setCacheValue, setSystemCache } from '../cache.js';

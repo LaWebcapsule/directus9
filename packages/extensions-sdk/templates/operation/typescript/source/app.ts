@@ -1,4 +1,4 @@
-import { defineOperationApp } from '@directus9/extensions-sdk';
+import { defineOperationApp } from '@wbce-d9/extensions-sdk';
 
 export default defineOperationApp({
 	id: 'custom',

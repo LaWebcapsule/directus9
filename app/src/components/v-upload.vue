@@ -100,7 +100,7 @@ import DrawerCollection from '@/views/private/components/drawer-collection.vue';
 import api from '@/api';
 import emitter, { Events } from '@/events';
 import { unexpectedError } from '@/utils/unexpected-error';
-import { Filter } from '@directus9/types';
+import { Filter } from '@wbce-d9/types';
 
 interface Props {
 	multiple?: boolean;

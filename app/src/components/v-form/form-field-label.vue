@@ -35,7 +35,7 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
-import { Field } from '@directus9/types';
+import { Field } from '@wbce-d9/types';
 
 interface Props {
 	field: Field;

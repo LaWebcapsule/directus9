@@ -40,7 +40,7 @@
 
 <script lang="ts" setup>
 import { ref, computed, toRefs, watch } from 'vue';
-import { LocalType } from '@directus9/types';
+import { LocalType } from '@wbce-d9/types';
 import { useFieldDetailStore } from './store/';
 import FieldDetailSimple from './field-detail-simple/field-detail-simple.vue';
 import FieldDetailAdvanced from './field-detail-advanced/field-detail-advanced.vue';
@@ -50,7 +50,7 @@ import { useRouter } from 'vue-router';
 import { useCollectionsStore } from '@/stores/collections';
 import { useFieldsStore } from '@/stores/fields';
 import { useI18n } from 'vue-i18n';
-import formatTitle from '@directus9/format-title';
+import formatTitle from '@wbce-d9/format-title';
 import { useDialogRoute } from '@/composables/use-dialog-route';
 import { storeToRefs } from 'pinia';
 import { unexpectedError } from '@/utils/unexpected-error';

@@ -1,5 +1,5 @@
 import { App } from 'vue';
-import { LayoutConfig } from '@directus9/types';
+import { LayoutConfig } from '@wbce-d9/types';
 import { sortBy } from 'lodash';
 
 export function getInternalLayouts(): LayoutConfig[] {

@@ -21,7 +21,7 @@
 
 <script lang="ts">
 import { defineComponent, computed, PropType } from 'vue';
-import formatTitle from '@directus9/format-title';
+import formatTitle from '@wbce-d9/format-title';
 import { decode } from 'html-entities';
 import { useI18n } from 'vue-i18n';
 import { isNil } from 'lodash';

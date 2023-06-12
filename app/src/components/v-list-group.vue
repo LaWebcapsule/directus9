@@ -38,7 +38,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useGroupable } from '@directus9/composables';
+import { useGroupable } from '@wbce-d9/composables';
 
 interface Props {
 	/** If enabled, multiple elements can be selected */

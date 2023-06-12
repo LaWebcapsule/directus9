@@ -1,7 +1,7 @@
 import { beforeEach, expect, test } from 'vitest';
 
 import { validateItem } from '@/utils/validate-item';
-import { DeepPartial, Field } from '@directus9/types';
+import { DeepPartial, Field } from '@wbce-d9/types';
 import { createTestingPinia } from '@pinia/testing';
 import { setActivePinia } from 'pinia';
 

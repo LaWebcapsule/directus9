@@ -1,15 +1,15 @@
 {
-	"name": "@directus9/specs",
-	"version": "9.26.2",
+	"name": "@wbce-d9/specs",
+	"version": "9.26.3",
 	"description": "OpenAPI Specification of the Directus API",
 	"homepage": "https://directus.io",
 	"type": "module",
 	"bugs": {
-		"url": "https://github.com/directus9/directus9/issues"
+		"url": "https://github.com/LaWebcapsule/directus9/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/directus9/directus9.git",
+		"url": "https://github.com/LaWebcapsule/directus9.git",
 		"directory": "packages/specs"
 	},
 	"license": "GPL-3.0",

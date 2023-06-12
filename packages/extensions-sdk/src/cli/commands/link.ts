@@ -1,4 +1,4 @@
-import { ExtensionManifest } from '@directus9/constants';
+import { ExtensionManifest } from '@wbce-d9/constants';
 import fs from 'fs-extra';
 import path from 'path';
 import { log } from '../utils/logger.js';

@@ -8,8 +8,8 @@ import type {
 	Relation,
 	SchemaOverview,
 	Type,
-} from '@directus9/types';
-import { getFilterOperatorsForType, getOutputTypeForFunction } from '@directus9/utils';
+} from '@wbce-d9/types';
+import { getFilterOperatorsForType, getOutputTypeForFunction } from '@wbce-d9/utils';
 import type { Knex } from 'knex';
 import { clone, isPlainObject } from 'lodash-es';
 import validate from 'uuid-validate';

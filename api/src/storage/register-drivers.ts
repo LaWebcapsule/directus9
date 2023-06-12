@@ -1,6 +1,6 @@
 import { getEnv } from '../env.js';
 import { getStorageDriver } from './get-storage-driver.js';
-import type { StorageManager } from '@directus9/storage';
+import type { StorageManager } from '@wbce-d9/storage';
 
 export const registerDrivers = async (storage: StorageManager) => {
 	const env = getEnv();

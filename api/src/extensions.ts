@@ -3,8 +3,8 @@ import {
 	APP_SHARED_DEPS,
 	HYBRID_EXTENSION_TYPES,
 	NESTED_EXTENSION_TYPES,
-} from '@directus9/constants';
-import * as sharedExceptions from '@directus9/exceptions';
+} from '@wbce-d9/constants';
+import * as sharedExceptions from '@wbce-d9/exceptions';
 import type {
 	ActionHandler,
 	ApiExtension,
@@ -21,8 +21,8 @@ import type {
 	NestedExtensionType,
 	OperationApiConfig,
 	ScheduleHandler,
-} from '@directus9/types';
-import { isIn, isTypeIn, pluralize } from '@directus9/utils';
+} from '@wbce-d9/types';
+import { isIn, isTypeIn, pluralize } from '@wbce-d9/utils';
 import {
 	ensureExtensionDirs,
 	generateExtensionsEntrypoint,
@@ -31,7 +31,7 @@ import {
 	pathToRelativeUrl,
 	resolvePackage,
 	resolvePackageExtensions,
-} from '@directus9/utils/node';
+} from '@wbce-d9/utils/node';
 import aliasDefault from '@rollup/plugin-alias';
 import nodeResolveDefault from '@rollup/plugin-node-resolve';
 import virtualDefault from '@rollup/plugin-virtual';
@@ -401,7 +401,7 @@ class ExtensionManager {
 	}
 
 	private async getSharedDepsMapping(deps: string[]): Promise<Record<string, string>> {
-		const appDir = await readdir(path.join(resolvePackage('@directus9/app', __dirname), 'dist', 'assets'));
+		const appDir = await readdir(path.join(resolvePackage('@wbce-d9/app', __dirname), 'dist', 'assets'));
 
 		const depsMapping: Record<string, string> = {};
 

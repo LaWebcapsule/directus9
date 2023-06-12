@@ -1,4 +1,4 @@
-import type { Table } from '@directus9/schema';
+import type { Table } from '@wbce-d9/schema';
 
 type Translations = {
 	language: string;
