@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-      - fix/blackbox-workflow
     paths:
       - api/**
       - tests/blackbox/**
