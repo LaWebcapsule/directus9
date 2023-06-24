@@ -174,15 +174,15 @@ export const userSchema = {
 					note: null,
 					alias: false,
 					validation: {
-						"_and": [
+						_and: [
 							{
-								"name": {
-									"_contains": "toto"
-								}
-							}
-						]
+								name: {
+									_contains: 'toto',
+								},
+							},
+						],
 					},
-					validation_message: "The name should contain toto.",
+					validation_message: 'The name should contain toto.',
 				},
 				items: {
 					field: 'items',
@@ -197,15 +197,15 @@ export const userSchema = {
 					note: null,
 					alias: true,
 					validation: {
-						"_and": [
+						_and: [
 							{
-								"count(items)": {
-									"_lt": "3"
-								}
-							}
-						]
+								'count(items)': {
+									_lt: '3',
+								},
+							},
+						],
 					},
-					validation_message: "The number of items for this author is too hight.",
+					validation_message: 'The number of items for this author is too hight.',
 				},
 			},
 		},
