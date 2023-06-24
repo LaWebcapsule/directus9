@@ -7,7 +7,7 @@ import { APIError } from '@/types/error';
 import { notify } from '@/utils/notify';
 import { translate } from '@/utils/translate-object-values';
 import { unexpectedError } from '@/utils/unexpected-error';
-import { validateItemConditions } from '@/utils/validate-item';
+import { validateItemConditions } from '@/utils/validate-item-conditions';
 import { useCollection } from '@wbce-d9/composables';
 import { getEndpoint } from '@wbce-d9/utils';
 import { AxiosResponse } from 'axios';

@@ -1452,4 +1452,39 @@ describe('Integration Tests', () => {
 			expect(response).toStrictEqual(testDefaultValues);
 		});
 	});
+
+	describe('createOne author with validation on nested object should fail', () => {
+		const item = { id: '6107c897-9182-40f7-b22e-4f044d1258d2', name: 'John Doe',
+		 items: {
+			create:[{title: "first book"},{title: "second book"},{title: "thrid book"},{title: "fourth book"}],
+			update:[],
+			delete:[]
+		} 
+		};
+		const schema = 'user';
+		it("should succeed to validate and return the right error messages.",
+			async () => {
+				const table = schemas[schema].tables[0];
+
+				const itemsService = new ItemsService(table, {
+					knex: db,
+					accountability: { role: 'admin', admin: true },
+					schema: schemas[schema].schema,
+				});
+
+				const response = await itemsService.createOne(item, { emitEvents: false });
+				console.log(response);
+
+				expect(tracker.history.insert.length).toBe(1);
+				expect(tracker.history.insert[0]!.bindings).toStrictEqual([item.id, item.name]);
+
+				expect(tracker.history.insert[0]!.sql).toBe(
+					`insert into "${table}" (${sqlFieldList(schemas[schema].schema, table)}) values (?, ?)`
+				);
+
+				expect(response).toBe(item.id);
+			}
+		);
+
+	});
 });

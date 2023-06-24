@@ -10,7 +10,7 @@ import type {
 } from '@wbce-d9/types';
 import { validatePayload } from '@wbce-d9/utils';
 import type { Knex } from 'knex';
-import { cloneDeep, flatten, isArray, isNil, merge, reduce, uniq, uniqWith } from 'lodash-es';
+import { cloneDeep, flatten, isArray, isNil, merge, reduce, uniq, uniqWith, isObject } from 'lodash-es';
 import { GENERATE_SPECIAL } from '../constants.js';
 import getDatabase from '../database/index.js';
 import { ForbiddenException } from '../exceptions/index.js';
@@ -575,6 +575,14 @@ export class AuthorizationService {
 		}
 
 		const validationErrors: FailedValidationException[] = [];
+
+		// nested relations needs be flattened here so we can run a validation against them.
+		// mutiple case ->
+		// nested object is created and it will appear right, it's not and we will get it's id as a string
+		// in this case object has to be fetched so we can run the validation agains it
+		// Many to one relations that exist on the current collection
+		
+		// Current algorithm will only fetch objects where a validation has to be run against
 
 		validationErrors.push(
 			...flatten(
