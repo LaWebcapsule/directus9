@@ -77,6 +77,18 @@ describe('validatePayload', () => {
 		expect(validatePayload(mockFilter, mockPayload)).toHaveLength(0);
 	});
 
+	it('returns an empty array when there is no error for filter field that does not exist in payload with special function', () => {
+		const mockFilter = {
+			'count(items)': {
+				_lt: '3',
+			},
+		};
+
+		// intentionally empty payload to simulate "items" was never included in payload
+		const mockPayload = {};
+		expect(validatePayload(mockFilter, mockPayload)).toHaveLength(0);
+	});
+
 	it('returns an array of 1 when there is required error for filter field that does not exist in payload and requireAll option flag is true', () => {
 		const mockFilter = { field: { _eq: 'field' } } as Filter;
 		// intentionally empty payload to simulate "field" was never included in payload
