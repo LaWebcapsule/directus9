@@ -38,6 +38,13 @@ export function injectFunctionResults(payload: Record<string, any>, filter: Filt
 				if (!fieldKey || !functionName) continue;
 				const currentValuePath = parentPath ? parentPath + '.' + fieldKey : fieldKey;
 				const currentValue = get(newInput, currentValuePath);
+
+				// TODO: check what to do for hours functions
+				if(functionName === "count" && currentValue === undefined){
+					// we are trying to apply a function on an object that is not present on the payload
+					// return an empty result
+					continue;
+				}
 				set(newInput, path, functions[functionName](currentValue));
 			}
 		}
