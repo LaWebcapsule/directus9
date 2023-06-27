@@ -619,9 +619,10 @@ export class AuthorizationService {
 							schema: this.schema,
 						});
 
-						for (let i = 0; i < keys.length; i++) {
-							const primaryKey = keys[i] as PrimaryKey;
-							const originalItem = await mainItemService.readOne(primaryKey);
+						const originalItems = await mainItemService.readMany(keys);
+
+						for (let i = 0; i < originalItems.length; i++) {
+							const originalItem: Item = originalItems[i]!;
 							const emptyItemsToAdd = originalItem[fieldKey].length - field.update?.length - field.delete?.length;
 							const finalArrayToValidate = arrayToValidate.concat(Array(emptyItemsToAdd).fill({}));
 
