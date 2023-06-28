@@ -5,7 +5,9 @@ import { validatePayload } from '@wbce-d9/utils';
 import { cloneDeep, flatten, isEmpty, isNil } from 'lodash';
 import { applyConditions } from './apply-conditions';
 
-export function validateItem(item: Record<string, any>, fields: Field[], isNew: boolean) {
+export function validateItemConditions(item: Record<string, any>, fields: Field[], isNew: boolean) {
+	// checks that the item conditions are respected
+
 	const relationsStore = useRelationsStore();
 
 	const validationRules = {

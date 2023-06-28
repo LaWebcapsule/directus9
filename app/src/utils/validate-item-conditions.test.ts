@@ -1,6 +1,6 @@
 import { beforeEach, expect, test } from 'vitest';
 
-import { validateItem } from '@/utils/validate-item';
+import { validateItemConditions } from '@/utils/validate-item-conditions';
 import { DeepPartial, Field } from '@wbce-d9/types';
 import { createTestingPinia } from '@pinia/testing';
 import { setActivePinia } from 'pinia';
@@ -60,7 +60,7 @@ beforeEach(() => {
 });
 
 test('Required fields', () => {
-	let result = validateItem(
+	let result = validateItemConditions(
 		{
 			id: 1,
 			name: 'test',
@@ -73,7 +73,7 @@ test('Required fields', () => {
 
 	expect(result.length).toEqual(0);
 
-	result = validateItem(
+	result = validateItemConditions(
 		{
 			id: 1,
 			name: 'test',

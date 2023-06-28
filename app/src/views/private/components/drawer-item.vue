@@ -89,7 +89,7 @@ import { useTemplateData } from '@/composables/use-template-data';
 import { useFieldsStore } from '@/stores/fields';
 import { useRelationsStore } from '@/stores/relations';
 import { unexpectedError } from '@/utils/unexpected-error';
-import { validateItem } from '@/utils/validate-item';
+import { validateItemConditions } from '@/utils/validate-item-conditions';
 import { useCollection } from '@wbce-d9/composables';
 import { Field, Relation } from '@wbce-d9/types';
 import { getDefaultValuesFromFields } from '@/utils/get-default-values-from-fields';
@@ -396,7 +396,7 @@ function useActions() {
 		const defaultValues = getDefaultValuesFromFields(fieldsToValidate);
 		const existingValues = props.junctionField ? initialValues?.value?.[props.junctionField] : initialValues?.value;
 
-		let errors = validateItem(
+		let errors = validateItemConditions(
 			merge({}, defaultValues.value, existingValues, editsToValidate),
 			fieldsToValidate,
 			isNew.value

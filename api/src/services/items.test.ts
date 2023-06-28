@@ -64,7 +64,7 @@ describe('Integration Tests', () => {
 	});
 
 	describe('createOne', () => {
-		const item = { id: '6107c897-9182-40f7-b22e-4f044d1258d2', name: 'A.G.' };
+		const item = { id: '6107c897-9182-40f7-b22e-4f044d1258d2', name: 'toto A.G.' };
 
 		it.each(Object.keys(schemas))(
 			`%s creates one item in collection as an admin, accountability: "null"`,
@@ -962,7 +962,7 @@ describe('Integration Tests', () => {
 	});
 
 	describe('updateOne', () => {
-		const item = { id: '6107c897-9182-40f7-b22e-4f044d1258d2', name: 'Item name', items: [] };
+		const item = { id: '6107c897-9182-40f7-b22e-4f044d1258d2', name: 'Item name toto', items: [] };
 
 		it.each(Object.keys(schemas))(
 			'%s updates relational field in one item without read permissions',
@@ -1077,8 +1077,8 @@ describe('Integration Tests', () => {
 
 	describe('updateBatch', () => {
 		const items = [
-			{ id: '6107c897-9182-40f7-b22e-4f044d1258d2', name: 'Item 1' },
-			{ id: '6e7d4a2c-e62f-43b4-a343-9196f4b1783f', name: 'Item 2' },
+			{ id: '6107c897-9182-40f7-b22e-4f044d1258d2', name: 'Item 1 toto' },
+			{ id: '6e7d4a2c-e62f-43b4-a343-9196f4b1783f', name: 'Item 2 toto' },
 		];
 
 		it.each(Object.keys(schemas))('%s batch update should only clear cache once', async (schema) => {
@@ -1450,6 +1450,113 @@ describe('Integration Tests', () => {
 
 			expect(tracker.history.select.length).toBe(1);
 			expect(response).toStrictEqual(testDefaultValues);
+		});
+	});
+
+	describe('createOne author with validation on nested object should fail', () => {
+		const item = {
+			id: '6107c897-9182-40f7-b22e-4f044d1258d2',
+			name: 'John Doe',
+			items: {
+				create: [{ title: 'first book' }, { title: 'second book' }, { title: 'thrid book' }, { title: 'fourth book' }],
+				update: [],
+				delete: [],
+			},
+		};
+
+		const schema = 'user';
+
+		it.fails('should fail to create and return the right error messages.', async () => {
+			const tableAuthor = schemas[schema].tables[0];
+
+			const itemsService = new ItemsService(tableAuthor, {
+				knex: db,
+				accountability: { role: 'admin', admin: true },
+				schema: schemas[schema].schema,
+			});
+
+			const expectedErros = [
+				{
+					status: 400,
+					code: 'FAILED_VALIDATION',
+					extensions: {
+						field: 'name',
+						type: 'contains',
+						substring: 'toto',
+					},
+				},
+				{
+					status: 400,
+					code: 'FAILED_VALIDATION',
+					extensions: {
+						field: 'count(items)',
+						type: 'lt',
+						valid: 3,
+					},
+				},
+			];
+
+			await itemsService.createOne(item, { emitEvents: false }).catch((err) => expect(err).toBe(expectedErros));
+
+			expect(tracker.history.insert.length).toBe(0);
+		});
+	});
+
+	describe('update M2O relationship with count validation should fail', () => {
+		const childItem = {
+			title: 'A new child item',
+		};
+
+		const item = { id: '6107c897-9182-40f7-b22e-4f044d1258d2', name: 'Item name toto', items: [childItem] };
+
+		const schema = 'user';
+
+		it.fails('update should fail because of count validation', async () => {
+			const childTable = schemas[schema].tables[1];
+
+			const expectedErros = [
+				{
+					status: 400,
+					code: 'FAILED_VALIDATION',
+					extensions: {
+						field: 'count(items)',
+						type: 'lt',
+						valid: 3,
+					},
+				},
+			];
+
+			tracker.on.select(childTable).response([childItem]);
+			tracker.on.update(childTable).response(childItem);
+
+			const table = schemas[schema].tables[0];
+			schemas[schema].accountability = null;
+
+			tracker.on.select(table).response([item]);
+
+			const itemsService = new ItemsService(table, {
+				knex: db,
+				accountability: {
+					role: 'admin',
+					admin: true,
+				},
+				schema: schemas[schema].schema,
+			});
+
+			// item has alreay one item, we need 2 more to break count validation
+			await itemsService
+				.updateOne(
+					item.id,
+					{
+						items: {
+							create: [{ title: 'first book' }, { title: 'second book' }],
+							update: [],
+							delete: [],
+						},
+					},
+					{ emitEvents: false }
+				)
+				.catch((err) => expect(err.toBe(expectedErros)));
 		});
 	});
 });

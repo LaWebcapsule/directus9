@@ -173,7 +173,16 @@ export const userSchema = {
 					special: [],
 					note: null,
 					alias: false,
-					validation: null,
+					validation: {
+						_and: [
+							{
+								name: {
+									_contains: 'toto',
+								},
+							},
+						],
+					},
+					validation_message: 'The name should contain toto.',
 				},
 				items: {
 					field: 'items',
@@ -187,7 +196,16 @@ export const userSchema = {
 					special: ['o2m'],
 					note: null,
 					alias: true,
-					validation: null,
+					validation: {
+						_and: [
+							{
+								'count(items)': {
+									_lt: '3',
+								},
+							},
+						],
+					},
+					validation_message: 'The number of items for this author is too hight.',
 				},
 			},
 		},

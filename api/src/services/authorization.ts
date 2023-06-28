@@ -10,10 +10,10 @@ import type {
 } from '@wbce-d9/types';
 import { validatePayload } from '@wbce-d9/utils';
 import type { Knex } from 'knex';
-import { cloneDeep, flatten, isArray, isNil, merge, reduce, uniq, uniqWith } from 'lodash-es';
+import { cloneDeep, flatten, isArray, isNil, merge, reduce, uniq, uniqWith, clone } from 'lodash-es';
 import { GENERATE_SPECIAL } from '../constants.js';
 import getDatabase from '../database/index.js';
-import { ForbiddenException } from '../exceptions/index.js';
+import { ForbiddenException, UnprocessableEntityException } from '../exceptions/index.js';
 import type {
 	AbstractServiceOptions,
 	AST,
@@ -478,7 +478,12 @@ export class AuthorizationService {
 	/**
 	 * Checks if the provided payload matches the configured permissions, and adds the presets to the payload.
 	 */
-	validatePayload(action: PermissionsAction, collection: string, data: Partial<Item>): Partial<Item> {
+	async validatePayload(
+		action: PermissionsAction,
+		collection: string,
+		data: Partial<Item>,
+		keys?: PrimaryKey[]
+	): Promise<Partial<Item>> {
 		const payload = cloneDeep(data);
 
 		let permission: Permission | undefined;
@@ -516,12 +521,11 @@ export class AuthorizationService {
 		}
 
 		const preset = permission.presets ?? {};
+		const fields = Object.values(this.schema.collections[collection]!.fields);
 
 		const payloadWithPresets = merge({}, preset, payload);
 
-		const fieldValidationRules = Object.values(this.schema.collections[collection]!.fields)
-			.map((field) => field.validation)
-			.filter((v) => v) as Filter[];
+		const fieldValidationRules = fields.map((field) => field.validation).filter((v) => v) as Filter[];
 
 		const hasValidationRules =
 			isNil(permission.validation) === false && Object.keys(permission.validation ?? {}).length > 0;
@@ -530,7 +534,7 @@ export class AuthorizationService {
 
 		const requiredColumns: SchemaOverview['collections'][string]['fields'][string][] = [];
 
-		for (const field of Object.values(this.schema.collections[collection]!.fields)) {
+		for (const field of fields) {
 			const specials = field?.special ?? [];
 
 			const hasGenerateSpecial = GENERATE_SPECIAL.some((name) => specials.includes(name));
@@ -576,9 +580,78 @@ export class AuthorizationService {
 
 		const validationErrors: FailedValidationException[] = [];
 
+		const payloadWithPresetsFlattened = clone(payloadWithPresets);
+
+		// In case the object has O2M relations, refactor it's arrays validation can 'count' on them
+		const relations = this.schema.relations.filter((relation) => {
+			return relation.related_collection === collection;
+		});
+
+		// Filter out 02M collections
+		const relationsToProcess = relations.filter((relation) => {
+			if (!relation.meta?.one_field) return false;
+			return relation.meta.one_field in payloadWithPresets;
+		});
+
+		for (const relation of relationsToProcess) {
+			// Nested array of individual items
+			const fieldKey = relation.meta!.one_field!;
+			const field = payloadWithPresets[fieldKey];
+
+			if (!field || Array.isArray(field)) {
+				// if the field is already an array or is empty we do nothing
+				continue;
+			}
+			// Object w/ create/update/delete
+			// This is horribly intricated because this functions can apply to many items on updates
+			else {
+				// lets add object in create and update
+				const arrayToValidate = field.create.concat(field.update);
+
+				if (action == 'update') {
+					if (typeof keys === 'undefined') {
+						throw new UnprocessableEntityException('keys are required when updating an object');
+					} else {
+						// get the number of items already linked to the object
+						const mainItemService = new ItemsService(collection, {
+							accountability: this.accountability,
+							knex: this.knex,
+							schema: this.schema,
+						});
+
+						const originalItems = await mainItemService.readMany(keys);
+
+						for (let i = 0; i < originalItems.length; i++) {
+							const originalItem: Item = originalItems[i]!;
+							const emptyItemsToAdd = originalItem[fieldKey].length - field.update?.length - field.delete?.length;
+							const finalArrayToValidate = arrayToValidate.concat(Array(emptyItemsToAdd).fill({}));
+
+							// validate partial items until the last key
+							if (i == keys.length - 1) {
+								payloadWithPresetsFlattened[fieldKey] = finalArrayToValidate;
+							} else {
+								const partialItemToValidate = { fieldKey: finalArrayToValidate };
+
+								validationErrors.push(
+									...flatten(
+										validatePayload(permission.validation!, partialItemToValidate).map((error) =>
+											error.details.map((details) => new FailedValidationException(details))
+										)
+									)
+								);
+							}
+						}
+					}
+				} else {
+					// set the payload to validate as a well formated array
+					payloadWithPresetsFlattened[fieldKey] = arrayToValidate;
+				}
+			}
+		}
+
 		validationErrors.push(
 			...flatten(
-				validatePayload(permission.validation!, payloadWithPresets).map((error) =>
+				validatePayload(permission.validation!, payloadWithPresetsFlattened).map((error) =>
 					error.details.map((details) => new FailedValidationException(details))
 				)
 			)

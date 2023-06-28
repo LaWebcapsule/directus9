@@ -150,7 +150,7 @@ export class ItemsService<Item extends AnyItem = AnyItem> implements AbstractSer
 					: payload;
 
 			const payloadWithPresets = this.accountability
-				? authorizationService.validatePayload('create', this.collection, payloadAfterHooks)
+				? await authorizationService.validatePayload('create', this.collection, payloadAfterHooks)
 				: payloadAfterHooks;
 
 			if (opts.preMutationException) {
@@ -598,7 +598,7 @@ export class ItemsService<Item extends AnyItem = AnyItem> implements AbstractSer
 		}
 
 		const payloadWithPresets = this.accountability
-			? authorizationService.validatePayload('update', this.collection, payloadAfterHooks)
+			? await authorizationService.validatePayload('update', this.collection, payloadAfterHooks, keys)
 			: payloadAfterHooks;
 
 		if (opts.preMutationException) {
