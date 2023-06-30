@@ -1,5 +1,11 @@
 # directus9
 
+## 9.26.6
+
+### Patch Changes
+
+- @wbce-d9/api@9.26.4
+
 ## 9.26.5
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @wbce-d9/utils
 
+## 9.27.0
+
+### Minor Changes
+
+- 9740cc5: FIX - Unify count behaviour on validate payloads
+
 ## 9.26.3
 
 ### Patch Changes
