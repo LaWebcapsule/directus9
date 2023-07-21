@@ -1,5 +1,11 @@
 # @wbce-d9/storage-driver-s3
 
+## 9.26.5
+
+### Patch Changes
+
+- b2b739e: update aws-sdk
+
 ## 9.26.4
 
 ### Patch Changes
