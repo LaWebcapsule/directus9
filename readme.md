@@ -51,8 +51,23 @@ import {...} from "@wbce-d9/some-package"
 4. You don't have to do any changes to your databases.
 Directus9 use the same schema as directus@9.0.0^. As a consequence, you don't need other changes than the three steps below.
 
+### JS SDK
 
+A JS sdk is also realeased under *@wbce-d9*, you can install it via:
 
+```bash
+npm install --save @wbce-d9/sdk
+```
+
+### Extensions
+
+All classic Directus versions 9 extensions should work without any hurdle with this open source branch.
+
+If you want to start building a new extension the utility tool is also realeased, use is as so:
+
+```bash
+npm init @wbce-d9/directus-extension@latest
+```
 
 ## License
 
