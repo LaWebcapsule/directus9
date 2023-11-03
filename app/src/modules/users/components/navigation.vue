@@ -23,7 +23,7 @@
 
 		<v-divider v-if="(roles && roles.length > 0) || loading" />
 
-		<navigation-bookmark v-for="bookmark in childBookmarks" :key="bookmark.id" :bookmark="bookmark"  go-to="/users" />
+		<navigation-bookmark v-for="bookmark in childBookmarks" :key="bookmark.id" :bookmark="bookmark" go-to="/users" />
 	</v-list>
 </template>
 
@@ -38,7 +38,6 @@ import { useCollectionsStore } from '@/stores/collections';
 import useNavigation from '../composables/use-navigation';
 import NavigationRole from './navigation-role.vue';
 import NavigationBookmark from '@/modules/content/components/navigation-bookmark.vue';
-
 
 export default defineComponent({
 	components: { NavigationRole, NavigationBookmark },
@@ -55,11 +54,13 @@ export default defineComponent({
 
 		const presetsStore = usePresetsStore();
 		const collectionsStore = useCollectionsStore();
+
 		const collection = computed(() =>
 			collectionsStore.crudSafeSystemCollections.find(
 				(collection: Collection) => collection.collection === 'directus_users'
 			)
 		);
+
 		const childBookmarks = computed(() => (collection.value ? getChildBookmarks(collection.value) : []));
 
 		const lastAdminRoleId = computed(() => {
@@ -73,7 +74,7 @@ export default defineComponent({
 		// TODO: we could centralize this logic
 		function getChildBookmarks(collection: Collection) {
 			return presetsStore.bookmarks.filter((bookmark) => bookmark.collection === collection.collection);
-		}	
+		}
 	},
 });
 </script>

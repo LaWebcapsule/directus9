@@ -34,13 +34,7 @@
 						@save="createBookmark"
 					>
 						<template #activator="{ on }">
-							<v-icon
-								v-tooltip.right="t('create_bookmark')"
-								class="toggle"
-								clickable
-								name="bookmark"
-								@click="on"
-							/>
+							<v-icon v-tooltip.right="t('create_bookmark')" class="toggle" clickable name="bookmark" @click="on" />
 						</template>
 					</bookmark-add>
 
@@ -249,7 +243,7 @@ import DrawerBatch from '@/views/private/components/drawer-batch.vue';
 import LayoutSidebarDetail from '@/views/private/components/layout-sidebar-detail.vue';
 import RefreshSidebarDetail from '@/views/private/components/refresh-sidebar-detail.vue';
 import SearchInput from '@/views/private/components/search-input.vue';
-import { useLayout } from '@wbce-d9/composables'
+import { useLayout } from '@wbce-d9/composables';
 import { Role } from '@wbce-d9/types';
 import { mergeFilters } from '@wbce-d9/utils';
 import { onBeforeRouteLeave, onBeforeRouteUpdate } from 'vue-router';
@@ -285,6 +279,7 @@ const selection = ref<Item[]>([]);
 const router = useRouter();
 
 const bookmark = computed(() => (props?.bookmark ? +props.bookmark : null));
+
 const {
 	layout,
 	layoutOptions,
@@ -336,6 +331,7 @@ const canInviteUsers = computed(() => {
 	const usersCreatePermission = permissionsStore.permissions.find(
 		(permission) => permission.collection === 'directus_users' && permission.action === 'create'
 	);
+
 	const rolesReadPermission = permissionsStore.permissions.find(
 		(permission) => permission.collection === 'directus_roles' && permission.action === 'read'
 	);
@@ -350,6 +346,7 @@ const { batchEditAllowed, batchDeleteAllowed, createAllowed } = usePermissions()
 onBeforeRouteLeave(() => {
 	selection.value = [];
 });
+
 onBeforeRouteUpdate(() => {
 	selection.value = [];
 });
@@ -438,6 +435,7 @@ function useBookmarks() {
 				icon: bookmark.icon,
 				color: bookmark.color,
 			});
+
 			router.push(`/users/?bookmark=${newBookmark.id}`);
 
 			bookmarkDialogActive.value = false;
@@ -462,6 +460,7 @@ function usePermissions() {
 		const updatePermissions = permissionsStore.permissions.find(
 			(permission) => permission.action === 'update' && permission.collection === 'directus_users'
 		);
+
 		return !!updatePermissions;
 	});
 
@@ -472,6 +471,7 @@ function usePermissions() {
 		const deletePermissions = permissionsStore.permissions.find(
 			(permission) => permission.action === 'delete' && permission.collection === 'directus_users'
 		);
+
 		return !!deletePermissions;
 	});
 
@@ -482,6 +482,7 @@ function usePermissions() {
 		const createPermissions = permissionsStore.permissions.find(
 			(permission) => permission.action === 'create' && permission.collection === 'directus_users'
 		);
+
 		return !!createPermissions;
 	});
 
