@@ -38,7 +38,7 @@
 								v-tooltip.right="t('create_bookmark')"
 								class="toggle"
 								clickable
-								name="bookmark_outline"
+								name="bookmark"
 								@click="on"
 							/>
 						</template>
@@ -171,7 +171,7 @@
 
 			<users-invite v-if="canInviteUsers" v-model="userInviteModalActive" @update:model-value="refresh" />
 
-			<component :is="`layout-${layout}`" class="layout" v-bind="layoutState">
+			<component :is="`layout-${layout}`" v-bind="layoutState">
 				<template #no-results>
 					<v-info v-if="!filter && !search" :title="t('user_count', 0)" icon="people_alt" center>
 						{{ t('no_users_copy') }}
@@ -213,7 +213,7 @@
 			/>
 
 			<template #sidebar>
-				<sidebar-detail icon="info_outline" :title="t('information')" close>
+				<sidebar-detail icon="info" :title="t('information')" close>
 					<div v-md="t('page_help_users_collection')" class="page-description" />
 				</sidebar-detail>
 				<layout-sidebar-detail v-model="layout">
@@ -501,5 +501,50 @@ function usePermissions() {
 
 .layout {
 	--layout-offset-top: 64px;
+}
+.bookmark-controls {
+	.add,
+	.save,
+	.saved,
+	.clear {
+		display: inline-block;
+		margin-left: 8px;
+	}
+
+	.add,
+	.save,
+	.clear {
+		cursor: pointer;
+		transition: color var(--fast) var(--transition);
+	}
+
+	.add {
+		color: var(--foreground-subdued);
+
+		&:hover {
+			color: var(--foreground-normal);
+		}
+	}
+
+	.save {
+		color: var(--warning);
+
+		&:hover {
+			color: var(--warning-125);
+		}
+	}
+
+	.clear {
+		margin-left: 4px;
+		color: var(--foreground-subdued);
+
+		&:hover {
+			color: var(--warning);
+		}
+	}
+
+	.saved {
+		color: var(--primary);
+	}
 }
 </style>

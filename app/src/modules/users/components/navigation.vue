@@ -23,7 +23,7 @@
 
 		<v-divider v-if="(roles && roles.length > 0) || loading" />
 
-		<navigation-bookmark v-for="bookmark in childBookmarks" :key="bookmark.id" :bookmark="bookmark" />
+		<navigation-bookmark v-for="bookmark in childBookmarks" :key="bookmark.id" :bookmark="bookmark"  go-to="/users" />
 	</v-list>
 </template>
 
