@@ -1,5 +1,11 @@
 # @wbce-d9/app
 
+## 9.27.0
+
+### Minor Changes
+
+- Added bookmark support for users module
+
 ## 9.26.4
 
 ### Patch Changes
