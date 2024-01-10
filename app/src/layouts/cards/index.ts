@@ -54,14 +54,18 @@ export default defineLayout<LayoutOptions, LayoutQuery>({
 		const { sort, limit, page, fields } = useLayoutQuery();
 
 		const { items, loading, error, totalPages, itemCount, totalCount, getItems, getTotalCount, getItemCount } =
-			useItems(collection, {
-				sort,
-				limit,
-				page,
-				fields,
-				filter,
-				search,
-			});
+			useItems(
+				collection,
+				{
+					sort,
+					limit,
+					page,
+					fields,
+					filter,
+					search,
+				},
+				true
+			);
 
 		const showingCount = computed(() => {
 			const filtering = Boolean((itemCount.value || 0) < (totalCount.value || 0) && filterUser.value);
