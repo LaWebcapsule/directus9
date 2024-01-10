@@ -1,5 +1,16 @@
 # @wbce-d9/composables
 
+## 9.27.0
+
+### Minor Changes
+
+- 7c1b7c7: Fix M2M panel visualization for collections
+
+### Patch Changes
+
+- Updated dependencies [7c1b7c7]
+  - @wbce-d9/utils@9.28.0
+
 ## 9.26.4
 
 ### Patch Changes

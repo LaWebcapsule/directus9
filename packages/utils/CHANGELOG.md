@@ -1,5 +1,11 @@
 # @wbce-d9/utils
 
+## 9.28.0
+
+### Minor Changes
+
+- 7c1b7c7: Fix M2M panel visualization for collections
+
 ## 9.27.0
 
 ### Minor Changes

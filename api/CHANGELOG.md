@@ -1,5 +1,23 @@
 # @wbce-d9/api
 
+## 9.27.0
+
+### Minor Changes
+
+- 7c1b7c7: Fix M2M panel visualization for collections
+
+### Patch Changes
+
+- Updated dependencies [7c1b7c7]
+  - @wbce-d9/utils@9.28.0
+  - @wbce-d9/app@9.28.0
+  - @wbce-d9/extensions-sdk@9.26.5
+  - @wbce-d9/storage-driver-azure@9.26.5
+  - @wbce-d9/storage-driver-cloudinary@9.26.5
+  - @wbce-d9/storage-driver-gcs@9.26.5
+  - @wbce-d9/storage-driver-local@9.26.5
+  - @wbce-d9/storage-driver-s3@9.26.7
+
 ## 9.26.7
 
 ### Patch Changes
