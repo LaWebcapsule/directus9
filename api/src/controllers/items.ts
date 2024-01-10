@@ -58,7 +58,12 @@ router.post(
 );
 
 const readHandler = asyncHandler(async (req, res, next) => {
-	if (req.params['collection']!.startsWith('directus_')) throw new ForbiddenException();
+	// [issues-33] we allow directus_collections to be read as items for m2m collection visualization
+	if (
+		req.params['collection']!.valueOf() !== 'directus_collections' &&
+		req.params['collection']!.startsWith('directus_')
+	)
+		throw new ForbiddenException();
 
 	const service = new ItemsService(req.collection, {
 		accountability: req.accountability,

@@ -63,15 +63,19 @@ export default defineLayout<LayoutOptions, LayoutQuery>({
 			getItems,
 			getItemCount,
 			getTotalCount,
-		} = useItems(collection, {
-			sort,
-			limit,
-			page,
-			fields: fieldsWithRelationalAliased,
-			alias: aliasQuery,
-			filter,
-			search,
-		});
+		} = useItems(
+			collection,
+			{
+				sort,
+				limit,
+				page,
+				fields: fieldsWithRelationalAliased,
+				alias: aliasQuery,
+				filter,
+				search,
+			},
+			true
+		);
 
 		const {
 			tableSort,
