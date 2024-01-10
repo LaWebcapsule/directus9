@@ -6,6 +6,10 @@ describe('getEndpoint', () => {
 		expect(getEndpoint('directus_system_collection')).toBe('/system_collection');
 	});
 
+	it('When directus_collections is passed in', () => {
+		expect(getEndpoint('directus_collections')).toBe('/items/directus_collections');
+	});
+
 	it('When a non-system collection is passed in', () => {
 		expect(getEndpoint('user_collection')).toBe('/items/user_collection');
 	});
