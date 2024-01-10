@@ -95,7 +95,6 @@ export default defineComponent({
 		const { internalSelection, onSelect } = useSelection();
 
 		const { collection } = toRefs(props);
-
 		const { info: collectionInfo } = useCollection(collection);
 		const { layout, layoutOptions, layoutQuery, search, filter: presetFilter } = usePreset(collection, ref(null), true);
 
