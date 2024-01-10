@@ -1,6 +1,6 @@
 {
 	"name": "@wbce-d9/composables",
-	"version": "9.26.4",
+	"version": "9.27.0",
 	"type": "module",
 	"scripts": {
 		"build": "tsc --build",

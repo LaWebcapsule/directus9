@@ -1,6 +1,6 @@
 {
 	"name": "@wbce-d9/utils",
-	"version": "9.27.0",
+	"version": "9.28.0",
 	"type": "module",
 	"scripts": {
 		"build": "tsc --project browser/tsconfig.json && tsc --project node/tsconfig.json && tsc --project shared/tsconfig.json",
