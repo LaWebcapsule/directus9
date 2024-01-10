@@ -349,6 +349,7 @@ export function useRelationMultiple(
 					filter._and.push(previewQuery.value.filter);
 				}
 
+				// Get already linked items
 				const response = await api.get(getEndpoint(targetCollection), {
 					params: {
 						search: previewQuery.value.search,
