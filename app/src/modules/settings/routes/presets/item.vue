@@ -528,7 +528,7 @@ function useForm() {
 			type: 'string',
 			meta: {
 				interface: 'input',
-				width: 'half',
+				width: 'full',
 				options: {
 					placeholder: t('search_items'),
 				},
@@ -540,7 +540,7 @@ function useForm() {
 			type: 'json',
 			meta: {
 				interface: 'system-filter',
-				width: 'half',
+				width: 'full',
 				options: {
 					collectionField: 'collection',
 				},
