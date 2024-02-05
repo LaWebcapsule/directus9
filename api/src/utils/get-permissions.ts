@@ -37,7 +37,8 @@ export async function getPermissions(accountability: Accountability, schema: Sch
 
 			const cachedFilterContext = await getCacheValue(
 				cache,
-				`filterContext-${hash({ user, role, permissions: cachedPermissions['permissions'] })}`
+				`filterContext-${hash({ user, role, permissions: cachedPermissions['permissions'] })}`,
+				true
 			);
 
 			if (cachedFilterContext) {
