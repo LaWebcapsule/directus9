@@ -5,7 +5,6 @@ import Keyv from 'keyv';
 import env from './env.js';
 import logger from './logger.js';
 import { getMessenger } from './messenger.js';
-import { compress, decompress } from './utils/compress.js';
 import { getConfigFromEnv } from './utils/get-config-from-env.js';
 import { getMilliseconds } from './utils/get-milliseconds.js';
 import { validateEnv } from './utils/validate-env.js';
