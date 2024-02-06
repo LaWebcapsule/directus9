@@ -35,7 +35,7 @@ const checkCacheMiddleware: RequestHandler = asyncHandler(async (req, res, next)
 		let cacheExpiryDate;
 
 		try {
-			cacheExpiryDate = (await getCacheValue(cache, `${key}__expires_at`, true))?.exp;
+			cacheExpiryDate = (await getCacheValue(cache, `${key}__expires_at`))?.exp;
 		} catch (err: any) {
 			logger.warn(err, `[cache] Couldn't read key ${`${key}__expires_at`}. ${err.message}`);
 			if (env['CACHE_STATUS_HEADER']) res.setHeader(`${env['CACHE_STATUS_HEADER']}`, 'MISS');
@@ -48,9 +48,7 @@ const checkCacheMiddleware: RequestHandler = asyncHandler(async (req, res, next)
 		res.setHeader('Vary', 'Origin, Cache-Control');
 		if (env['CACHE_STATUS_HEADER']) res.setHeader(`${env['CACHE_STATUS_HEADER']}`, 'HIT');
 
-		res.writeHead(200, ['Content-Type', 'application/json']);
-		res.write(cachedData);
-		return res.end();
+		return res.json(cachedData);
 	} else {
 		if (env['CACHE_STATUS_HEADER']) res.setHeader(`${env['CACHE_STATUS_HEADER']}`, 'MISS');
 		return next();
