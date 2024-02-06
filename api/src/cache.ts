@@ -110,7 +110,7 @@ export async function setSystemCache(key: string, value: any, ttl?: number): Pro
 export async function getSystemCache(key: string): Promise<Record<string, any>> {
 	const { systemCache } = getCache();
 
-	return await getCacheValue(systemCache, key, true);
+	return await getCacheValue(systemCache, key);
 }
 
 export async function setSchemaCache(schema: SchemaOverview): Promise<void> {
@@ -141,15 +141,13 @@ export async function setCacheValue(
 	value: Record<string, any> | Record<string, any>[],
 	ttl?: number
 ) {
-	const compressed = await compress(value);
-	await cache.set(key, compressed, ttl);
+	await cache.set(key, value, ttl);
 }
 
-export async function getCacheValue(cache: Keyv, key: string, parse: boolean): Promise<any> {
+export async function getCacheValue(cache: Keyv, key: string): Promise<any> {
 	const value = await cache.get(key);
 	if (!value) return undefined;
-	const decompressed = await decompress(value, parse);
-	return decompressed;
+	return value;
 }
 
 function getKeyvInstance(store: Store, ttl: number | undefined, namespaceSuffix?: string): Keyv {
