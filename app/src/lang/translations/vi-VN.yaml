@@ -1,4 +1,3 @@
----
 ## Be aware:
 #Due to the way this is imported, JavaScript reserved words, including "delete", "private",
 #"void", etc are stripped out. See
@@ -19,1121 +18,2145 @@
 #'Int32Array', 'Uint32Array', 'Float32Array', 'Float64Array', 'Map', 'Set', 'WeakMap', 'WeakSet',
 #'SIMD', 'ArrayBuffer', 'DataView', 'JSON', 'Promise', 'Generator', 'GeneratorFunction', 'Reflect',
 #'Proxy', 'Intl'
-identifier: Định danh
-avatar: Ảnh đại diện
-application: Ứng dụng
-default_provider: Mặc định
-method: Phương thức
-published: Đã xuất bản
-draft: Bản nháp
-archived: Đã lưu trữ
-modules: Mô đun
-module_bar: Thanh công cụ
-logs: Nhật ký
-reset_width: Đặt lại Chiều rộng
-tile_size: Kích thước tệp
-edit_field: Sửa trường
-conditions: Điều kiện
-location: Vị trí
-condition_rules: Điều kiện
-input: Nhập
-maps: Bản đồ
-switch_user: Đổi tài khoản
-item_creation: Khởi tạo item
-item_revision: Xem Phiên bản
-enter_a_name: Nhập Tên...
-duplicate_field: Nhân bản Trường
-half_width: Nửa chiều Rộng
-full_width: Rộng toàn bộ
-group: Chọn nhóm
-export_items: Xuất các mục
-and: Và
-or: Hoặc
-init: Khởi tạo
-dataset_too_large_currently_showing_n_items: Cơ sở dữ liệu quá lớn. Hiển thị {n} dòng đầu tiên.
-custom: Tuỳ chỉnh
-fill_width: Rộng toàn bộ
-field_name_translations: Hiển thị Ngôn ngữ Khác
-enter_password_to_enable_tfa: Nhập mật khẩu của bạn để kích hoạt Bảo Mật 2 Lớp
-add_field: Thêm trường
-role_name: Tên Quyền
-branch: Chọn nhánh
-indeterminate: Không xác định
-edit_collection: Chỉnh sửa Bộ sưu tập
-exclusive: Độc nhất
-children: Trẻ em
-db_only_click_to_configure: 'Dành riêng cho dữ liệu: Chọn để cấu hình'
-show_active_items: Hiển thị các mục đang hoạt động
-show_archived_items: Hiển thị các mục đã Lưu Trữ
-show_all_items: Hiển thị tất cả các mục
-edited: Giá trị đã được chỉnh sửa
-required: Bắt buộc
-required_for_app_access: Yêu Cầu cho Kết Nối
-requires_value: Giá trị bắt buộc
-create_preset: Tạo Định dạng
-create_panel: Tạo bảng
-create_role: Tạo vai trò (phân quyền)
-create_user: Tạo Người dùng
-message: Tin nhắn
-delete_panel: Xóa bảng
-create_webhook: Tạo Webhook
-create_translation_string: Tạo Các Bản Dịch
-no_translation_string: Không có bản dịch
-no_translation_string_copy: Không có bản dịch nào.
-translation_string_translations_placeholder: Thêm bản dịch mới
-invite_users: Mời Người dùng
-invite: Mời
-email_already_invited: Email "{email}" đã được mời
-subject: Chủ đề
-inbox: Hộp thư đến
-emails: Email
-connection_excellent: Kết nối Tuyệt vời
-connection_good: Kết nối Tốt
-connection_fair: Kết nối Kém
-connection_poor: Kết nối Yếu
-primary: Khóa chính
-rename_folder: Đổi Tên Thư Mục
-delete_folder: Xóa thư mục
-prefix: Tiền tố
-suffix: Hậu tố
-reset_bookmark: Đặt lại Dấu trang
-update_bookmark: Cập nhật Dấu trang
-delete_bookmark: Xoá dấu trang
+identifier: Identifier
+avatar: Avatar
+application: Application
+default_provider: Default
+method: Method
+published: Published
+draft: Draft
+archived: Archived
+modules: Modules
+module_bar: Module Bar
+logs: Logs
+reset_width: Reset Width
+tile_size: Tile Size
+edit_field: Edit Field
+conditions: Conditions
+location: Location
+condition_rules: Condition Rules
+input: Input
+maps: Maps
+switch_user: Switch User
+item_creation: Item Creation
+item_revision: Item Revision
+enter_a_name: Enter a Name...
+duplicate_field: Duplicate Field
+half_width: Half Width
+full_width: Full Width
+group: Group
+export_items: Export Items
+and: And
+or: Or
+init: Init
+dataset_too_large_currently_showing_n_items: Dataset is too large. Currently showing the first {n} items.
+modifier: Modifier
+custom: Custom
+hook: Hook
+fill_width: Fill Width
+field_name_translations: Field Name Translations
+enter_password_to_enable_tfa: Enter your password to enable Two-Factor Authentication
+add_field: Add Field
+role_name: Role Name
+branch: Branch
+leaf: Leaf
+indeterminate: Indeterminate
+edit_collection: Edit Collection
+exclusive: Exclusive
+children: Children
+db_only_click_to_configure: 'Database Only: Click to Configure'
+show_active_items: Show Active Items
+show_archived_items: Show Archived Items
+show_all_items: Show All Items
+edited: Value Edited
+required: Required
+required_for_app_access: Required for App Access
+requires_value: Requires value
+create_preset: Create Preset
+create_panel: Create Panel
+create_role: Create Role
+create_user: Create User
+message: Message
+delete_panel: Delete Panel
+create_webhook: Create Webhook
+create_translation_string: Create Translation String
+no_translation_string: No Translation Strings
+no_translation_string_copy: There are no translation strings yet.
+translation_string_key_placeholder: Translation string key...
+translation_string_translations_placeholder: Add a new translation
+edit_translation_string: Edit Translation String
+delete_translation_string_copy: >-
+  Are you sure you want to delete the translation string "{key}"? This action can not be undone.
+invite_users: Invite Users
+invite: Invite
+email_already_invited: Email "{email}" has already been invited
+subject: Subject
+inbox: Inbox
+emails: Emails
+connection_excellent: Excellent Connection
+connection_good: Good Connection
+connection_fair: Fair Connection
+connection_poor: Poor Connection
+primary: Primary
+rename_folder: Rename Folder
+delete_folder: Delete Folder
+prefix: Prefix
+suffix: Suffix
+reset_bookmark: Reset Bookmark
+update_bookmark: Update Bookmark
+delete_bookmark: Delete Bookmark
 delete_bookmark_copy: >-
-  Bạn có chắc chắn muốn xóa đánh dấu "{bookmark}" này? Dữ liệu đã xóa sẽ không thể khôi phục lại được.
-delete_personal_bookmark: Xóa đánh dấu trang cá nhân
+  Are you sure you want to delete the "{bookmark}" bookmark? This action cannot be undone.
+delete_personal_bookmark: Delete Personal Bookmark
+delete_role_bookmark: Delete Role Bookmark
+delete_global_bookmark: Delete Global Bookmark
 logoutReason:
-  SIGN_OUT: Đăng Xuất
-  SESSION_EXPIRED: Phiên làm việc đã Hết hạn
-public_label: Công khai
-public_description: Kiểm soát dữ liệu API nào có thể truy cập mà không cần đăng nhập.
-not_allowed: Không Cho Phép
-directus_version: Phiên bản hệ thống
-node_version: Phiên bản Node
-node_uptime: Thời gian Hoạt động
-os_type: Hệ điều hành
-os_version: Phiên bản hệ điều hành
-os_uptime: Thời gian Hoạt động
-os_totalmem: Bộ nhớ
-archive: Lưu trữ
-archive_confirm: Bạn có chắc chắn muốn lưu trữ mục này không?
+  SIGN_OUT: Signed out
+  SESSION_EXPIRED: Session expired
+public_label: Public
+public_description: Controls what API data is available without authenticating.
+admin_description: Initial administrative role with unrestricted App/API access.
+not_allowed: Not Allowed
+directus_version: Directus Version
+node_version: Node Version
+node_uptime: Node Uptime
+os_type: OS Type
+os_version: OS Version
+os_uptime: OS Uptime
+os_totalmem: OS Memory
+archive: Archive
+archive_confirm: Are you sure you want to archive this item?
 archive_confirm_count: >-
-  Chưa chọn mục nào | Bạn có chắc chắn muốn lưu trữ mục này không? | Bạn có chắc chắn muốn lưu trữ {count} mục này không?
-reset_system_permissions_to: 'Đặt lại Quyền Hệ Thống cho:'
-reset_system_permissions_copy: Thao tác này sẽ ghi đè lên bất cứ quyền hạn đã được tùy biến bởi bạn trước đây tới các bảng hệ thống. Bạn có chắc chắn không?
-app_access_minimum: Quyền truy cập Ứng dụng Tối thiểu
-recommended_defaults: Các giá trị mặc định Khuyên dùng
-unarchive: Ngừng lưu trữ
-unarchive_confirm: Bạn có chắc chắn muốn mở lưu trữ mục này không?
-nested_files_folders_will_be_moved: Các files và thư mục sẽ được di chuyển lên thư mục trên.
-validation_errors_notice: 'Các trường sau đây có giá trị không hợp lệ:'
+  No Items Selected | Are you sure you want to archive this item? | Are you sure you want to archive these {count} items?
+reset_system_permissions_to: 'Reset System Permissions to:'
+reset_system_permissions_copy:
+  - This action will overwrite any custom permissions you may have applied to the system collections. Are you sure?
+the_following_are_minimum_permissions:
+  - The following minimum permissions are automatically applied when "App Access" is enabled. You can grant additional permissions if needed, but you cannot reduce permissions below this level.
+app_access_minimum: App Access Minimum
+recommended_defaults: Recommended Defaults
+unarchive: Unarchive
+unarchive_confirm: Are you sure you want to unarchive this item?
+nested_files_folders_will_be_moved: Nested files and folders will be moved one level up.
+validation_errors_notice: 'The following fields have invalid values:'
 validationError:
-  eq: Dữ liệu phải là {valid}
-  neq: Dữ liệu không thể là {invalid}
-  in: Dữ liệu phải là một trong số {valid}
-  nin: Dữ liệu không thể là một trong số {invalid}
-  contains: Dữ liệu phải chứa {substring}
-  ncontains: Dữ liệu không thể chứa {substring}
-  gt: Giá trị phải lớn hơn {valid}
-  gte: Giá trị phải lớn hơn hoặc bằng {valid}
-  lt: Giá trị phải nhỏ hơn {valid}
-  lte: Giá trị phải nhỏ hơn hoặc bằng {valid}
-  empty: Dữ liệu phải để trống
-  nempty: Dữ liệu không thể để trống
-  null: Dữ liệu phải để rỗng
-  nnull: Dữ liệu không thể để rỗng
-  required: Dữ liệu là bắt buộc
-  unique: Giá trị phải là duy nhất
-  regex: Giá trị không có định dạng đúng
-all_access: Toàn Quyền
-no_access: Cấm Truy Cập
-use_custom: Chọn Lọc
-nullable: Có thể rỗng
-allow_null_value: Cho phép NULL
-allow_multiple: Cho phép nhiều
-enter_value_to_replace_nulls: Vui lòng nhập một giá trị mới để thay thế giá trị NULL hiện có trong trường này.
-field_standard: Tiêu chuẩn
-field_presentation: Trình Bày và Bí Danh
-field_file: Tập tin đơn
-field_files: Nhiều Tập Tin
-field_m2o: Quan hệ Nhiều -> Một
-field_m2a: Quan hệ M2A
-field_o2m: Quan hệ Một -> Nhiều
-field_m2m: Quan hệ Nhiều -> Nhiều
-field_translations: Các Bản Dịch
-field_group: Nhóm dữ liệu
-item_permissions: Quyền truy cập Bảng ghi
-field_permissions: Quyền truy cập Trường
-field_validation: Xác Thực Trường
-field_presets: Các Mẫu Trường Tạo Sẵn
-changes_made: Các thay đổi trong phiên bản này hiển thị bên dưới.
-top: Trên cùng
-bottom: Dưới cùng
-hide_field: Ẩn trường
-hide_field_on_detail: Ẩn chi tiết
-show_field_on_detail: Hiển thị chi tiết
-delete_field: Xóa Trường
-fields_and_layout: Trường Dữ Liệu & Bố Cục
-field_create_success: 'Trường đã tạo: "{field}"'
-field_update_success: 'Trường đã cập nhật: "{field}"'
-duplicate_where_to: Bạn muốn nhân bản trường này đến đâu?
-language: Ngôn ngữ
-language_placeholder: Chọn một ngôn ngữ...
-aggregate_function: Hàm tập hợp
-global: Toàn cục
-admins_have_all_permissions: Các quản trị viên có toàn quyền
+  eq: Value has to be {valid}
+  neq: Value can't be {invalid}
+  in: Value has to be one of {valid}
+  nin: Value can't be one of {invalid}
+  contains: Value has to contain {substring}
+  ncontains: Value can't contain {substring}
+  gt: Value has to be greater than {valid}
+  gte: Value has to be greater than or equal to {valid}
+  lt: Value has to be less than {valid}
+  lte: Value has to be less than or equal to {valid}
+  empty: Value has to be empty
+  nempty: Value can't be empty
+  null: Value has to be null
+  nnull: Value can't be null
+  required: Value is required
+  unique: Value has to be unique
+  regex: Value doesn't have the correct format
+all_access: All Access
+no_access: No Access
+use_custom: Use Custom
+nullable: Nullable
+allow_null_value: Allow NULL value
+allow_multiple: Allow Multiple
+allow_multiple_to_be_open: Allow Multiple to be Opened
+enter_value_to_replace_nulls: Please enter a new value to replace any NULLs currently within this field.
+field_standard: Standard
+field_presentation: Presentation & Aliases
+field_file: Single File
+field_files: Multiple Files
+field_m2o: M2O Relationship
+field_m2a: M2A Relationship
+field_o2m: O2M Relationship
+field_m2m: M2M Relationship
+field_translations: Translations
+field_group: Field Group
+item_permissions: Item Permissions
+field_permissions: Field Permissions
+field_validation: Field Validation
+field_presets: Field Presets
+permissions_for_role: 'Items the {role} Role can {action}.'
+fields_for_role: 'Fields the {role} Role can {action}.'
+validation_for_role: 'Field {action} rules the {role} Role must obey.'
+presets_for_role: 'Field value defaults for the {role} Role.'
+presentation_and_aliases: Presentation & Aliases
+revision_post_create: Here is what this item looked like when it was created.
+revision_post_update: Here is what this item looked like after the update.
+changes_made: Below are the specific changes made in this revision.
+no_relational_data: Keep in mind that relational data is not included here.
+junction_field_location: Junction Fields Location
+top: Top
+bottom: Bottom
+hide_field: Hide Field
+hide_field_on_detail: Hide Field on Detail
+show_field_on_detail: Show Field on Detail
+delete_field: Delete Field
+fields_and_layout: Fields & Layout
+field_create_success: 'Created Field: "{field}"'
+field_update_success: 'Updated Field: "{field}"'
+duplicate_where_to: Where would you like to duplicate this field to?
+language: Language
+language_placeholder: Select a language...
+aggregate_function: Aggregate Function
+aggregate_precision: Aggregate Precision
+group_aggregation: Group Aggregation
+group_precision: Group Precision
+global: Global
+admins_have_all_permissions: Admins have all permissions
 camera: Camera
-show_zero: Hiển số không
-create_in_advanced_field_creation_mode: Tạo trường trong chế độ nâng cao
-continue_in_advanced_field_creation_mode: Tiếp tục tạo trường trong chế độ nâng cao
-sum: Tổng
-avg: Trung bình
-min: Tối thiểu
-max: Tối đa
-exposure: Độ phơi sáng
-shutter: Màn trập
+show_zero: Show Zero
+create_in_advanced_field_creation_mode: Create Field in Advanced Mode
+continue_in_advanced_field_creation_mode: Continue in Advanced Field Creation Mode
+validation: Validation
+sum: Sum
+sum_distinct: Sum Distinct
+avg: Average
+avg_distinct: Average Distinct
+count: Count
+count_distinct: Count Distinct
+min: Min
+max: Max
+exposure: Exposure
+shutter: Shutter
 iso: ISO
-focal_length: Tiêu cự
-create_field: Tạo thêm trường
-creating_new_field: 'Trường Mới ({collection})'
+focal_length: Focal Length
+schema_setup_key: This field's database column name and API key
+create_field: Create Field
+creating_new_field: 'New Field ({collection})'
 field_in_collection: '{field} ({collection})'
-reset_page_preferences: Đặt Lại Tùy Chọn cho Trang
-hidden_field: Trường Ẩn
-hidden_on_detail: Không hiển thị trong trang chi tiết
-disabled_editing_value: Cấm sửa đổi dữ liệu
-key: Khóa
-alias: Bí danh
+reset_page_preferences: Reset Page Preferences
+hidden_field: Hidden Field
+hidden_on_detail: Hidden on Detail
+disabled_editing_value: Disable editing value
+key: Key
+alias: Alias
 bigInteger: Big Integer
 boolean: Boolean
-date: Ngày tháng
-date_range: Khoảng thời gian
-datetime: Ngày Giờ
-dateTime: Ngày Giờ
-precision: Độ chính xác
-decimal: Dạng thập phân
-float: Số thực
-integer: Số nguyên
+date: Date
+date_range: Date Range
+datetime: DateTime
+dateTime: DateTime
+precision: Precision
+decimal: Decimal
+float: Float
+integer: Integer
 json: JSON
 xml: XML
-string: Chuỗi
-text: Đoạn văn bản
-time: Thời gian
-timestamp: Mốc thời gian
+yaml: YAML
+string: String
+text: Text
+time: Time
+timestamp: Timestamp
 uuid: UUID
 hash: Hash
+geometry: Geometry (All)
 geometry.Point: Point
 geometry.LineString: LineString
 geometry.Polygon: Polygon
 geometry.MultiPoint: MultiPoint
-not_available_for_type: Không khả dụng đối với Kiểu này
-create_translations: Tạo Các Bản Dịch
-auto_refresh: Tự động Làm mới
-refresh_interval: Thời gian làm mới
-no_refresh: Không tự làm mới
-refresh_interval_seconds: Mỗi giây | Mỗi {seconds} giây
-refresh_interval_minutes: Mỗi phút | Mỗi {minutes} phút
-auto_generate: Tự khởi tạo
-this_will_auto_setup_fields_relations: Các trường và mối quan hệ bắt buộc sẽ được tự động tạo ra.
-click_here: Nhấn vào đây
-to_manually_setup_translations: để tạo các bản dịch một cách thủ công.
+geometry.MultiLineString: MultiLineString
+geometry.MultiPolygon: MultiPolygon
+not_available_for_type: Not Available for this Type
+create_translations: Create Translations
+auto_refresh: Auto Refresh
+refresh_interval: Refresh Interval
+no_refresh: Do not refresh
+refresh_interval_seconds: Refresh Instantly | Every Second | Every {seconds} Seconds
+refresh_interval_minutes: Every Minute | Every {minutes} Minutes
+auto_generate: Auto-Generate
+this_will_auto_setup_fields_relations: This will automatically setup all required fields and relations.
+click_here: Click here
+to_manually_setup_translations: to manually setup translations.
 click_to_manage_translated_fields: >-
-  Chưa có trường dịch thuật. Ấn vào đây để tạo. | Có một trường dịch thuật. Ấn vào để quản lý trường. | Có {count} trường dịch thuật. Ấn vào đây để quản lý.
-fields_group: Nhóm dữ liệu
-no_collections_found: Không có bảng dữ liệu.
-search_collection: Chọn Bảng...
-search_field: Tìm trường...
-new_field: 'Trường mới'
-new_collection: 'Tạo bảng mới'
-add_m2o_to_collection: 'Quan hệ nhiều một "{collection}"'
-add_o2m_to_collection: 'Quan hệ một nhiều "{collection}"'
-add_m2m_to_collection: 'Quan hệ nhiều nhiều "{collection}"'
-choose_a_type: Chọn một Kiểu...
-determined_by_relationship: Xác định theo Quan hệ
-add_note: Thêm ghi chú hữu ích cho người dùng...
-add_link: Thêm liên kết
-custom_link: Chỉnh sửa liên kết
-default_value: Giá trị mặc định
-standard_field: Trường tiêu chuẩn
-single_file: Tập tin đơn
-multiple_files: Nhiều Tập Tin
-m2o_relationship: Quan hệ Nhiều - Một
-o2m_relationship: Quan hệ Một - Nhiều
-m2m_relationship: Quan hệ Nhiều - Nhiều
-m2a_relationship: Quan hệ Nhiều - Bất Kỳ
-invalid_item: Mục Không hợp lệ
-next: Tiếp theo
-field_name: Tên Trường
-translations: Các Bản Dịch
-no_translations: Không có bản dịch
-left_to_right: Trái sang phải
-right_to_left: Phải sang trái
-note: Ghi chú
-enter_a_value: Nhập vào một giá trị...
-enter_a_placeholder: Nhập vào dòng nhắc...
-length: Độ dài
-precision_scale: Độ chính xác & Mở rộng
-readonly: Chỉ đọc
-unique: Duy nhất
-updated_on: Cập nhật Vào lúc
-updated_by: Cập Nhật bởi
-primary_key: Khoá chính
-foreign_key: Khóa Ngoại
-finish_setup: Hoàn Tất Cài Đặt
-dismiss: Bỏ qua
+  There are no translated fields yet. Click here to create them. | There is one translated field. Click here to manage it. | There are {count} translated fields. Click here to manage them.
+fields_group: Fields Group
+no_collections_found: No collections found.
+new_data_alert: 'The following will be created within your Data Model:'
+search_collection: Search Collection...
+search_field: Search Field...
+new_field: 'New Field'
+new_collection: 'New Collection'
+add_m2o_to_collection: 'Add M2O to "{collection}"'
+add_o2m_to_collection: 'Add O2M to "{collection}"'
+add_m2m_to_collection: 'Add M2M to "{collection}"'
+choose_a_type: Choose a Type...
+determined_by_relationship: Determined by Relationship
+add_note: Add a helpful note for users...
+add_link: Add Link
+custom_link: Custom Link
+default_value: Default Value
+standard_field: Standard Field
+single_file: Single File
+multiple_files: Multiple Files
+m2o_relationship: Many to One Relationship
+o2m_relationship: One to Many Relationship
+m2m_relationship: Many to Many Relationship
+m2a_relationship: Many to Any Relationship
+invalid_item: Invalid Item
+require_confirmation: Require Confirmation
+dialog: Dialog
+modal: Modal
+confirmation_dialog: Confirmation Dialog
+confirmation_description: Confirmation Description
+confirmation_input_fields: Confirmation Input Fields
+next: Next
+field_name: Field Name
+translations: Translations
+no_translations: No Translations
+left_to_right: Left to Right
+right_to_left: Right to Left
+note: Note
+enter_a_value: Enter a value...
+enter_a_placeholder: Enter a placeholder...
+length: Length
+soft_length: Soft Limit
+precision_scale: Precision & Scale
+readonly: Readonly
+unique: Unique
+updated_on: Updated On
+updated_by: Updated By
+primary_key: Primary Key
+foreign_key: Foreign Key
+field_key: Field Key
+finish_setup: Finish Setup
+dismiss: Dismiss
+toggle_raw_editor: Toggle Raw Editor
 raw_editor_placeholder: "{'{'}{'{'}$trigger.payload.example{'}'}{'}'}"
-raw_value: Dữ liệu thực tế
-copy_raw_value_success: Đã sao chép
-paste_raw_value: Dán dữ liệu thô
-paste_raw_value_success: Dán
-paste_raw_value_fail: Dán thất bại
-view_raw_value: Hiện dữ liệu thô
-edit_raw_value: Thay đổi dữ liệu thực tế
-enter_raw_value: Nhập vào giá trị thực tế...
-clear_value: Xoá giá trị
-clear_changes: Xoá thay đổi
-reset_to_default: Khôi phục về mặc định
-undo_changes: Hoàn tác thay đổi
-notifications: Thông báo
-show_all_activity: Hiển Thị Tất Cả Hoạt Động
-page_not_found: Không tìm thấy trang này
-page_not_found_body: Trang bạn đang tìm kiếm không tồn tại.
-confirm_revert: Xác Nhận Hoàn Nguyên
-confirm_revert_body: Bản ghi sẽ được cập nhật về mốc thời gian đã chọn.
-display: Hiển thị
-settings_update_success: Cài đặt đã được cập nhật
-title: Tiêu đề
-revision_delta_created: Đã tạo
-revision_delta_updated: 'Cập nhật 1 Trường | Cập nhật {count} Trường'
-revision_delta_deleted: Đã xóa
-revision_delta_reverted: Phục hồi
-revision_delta_update_message: Trường này đã được cập nhật nhưng giá trị của nó đang bị ẩn vì lý do bảo mật.
-revision_delta_other: Phiên bản
-revision_delta_by: '{date} bởi {user}'
-download_page_as_csv: 'Tải về dưới dạng CSV'
-private_user: Riêng tư hóa
-creation_preview: Xem trước tạo mới
-revision_preview: Xem trước sửa đổi
-updates_made: Thực hiện nâng cấp
-leave_comment: Để lại bình luận...
-post_comment_success: Bình luận đã đăng
-post_comment_updated: Bình luận đã được cập nhật
-item_create_success: Bản Ghi Đã Được Tạo | Các Bản Ghi Đã Được Tạo
-item_update_success: Bản Ghi Đã Được Cập Nhật | Các Bản Ghi Đã Được Cập Nhật
-item_delete_success: Bản ghi đã xoá| Các bản ghi đã xoá
-this_collection: Danh mục này
-related_collection: Danh mục liên quan
-related_collections: Những Danh mục liên quan
-translations_collection: Dịch thuật
-languages_collection: Ngôn ngữ
-import_data_input_placeholder: CSV hoặc JSON...
-label_import: Nhập
-label_export: Xuất
-import_export: Nhập / Xuất
-format: Định dạng
-last_page: Trang cuối
-last_access: Truy cập lần cuối
-fill_template: Điền với Giá trị Mẫu
-submit: Gửi đi
-move_to_folder: Chuyển tới Thư mục
-move: Di Chuyển
-system: Hệ thống
-add_field_related: Thêm Trường vào Danh Mục Liên Quan
-interface_label: Giao diện
-today: Hôm nay
-yesterday: Hôm qua
-delete_comment: Xóa Bình luận
+raw_value: Raw value
+copy_raw_value: Copy Raw Value
+copy_raw_value_success: Copied
+copy_raw_value_fail: Copy Failed
+paste_raw_value: Paste Raw Value
+paste_raw_value_success: Pasted
+paste_raw_value_fail: Paste Failed
+view_raw_value: View Raw Value
+edit_raw_value: Edit Raw Value
+enter_raw_value: Enter raw value...
+clear_value: Clear Value
+clear_changes: Clear Changes
+clear_items: Clear Items
+reset_to_default: Reset to Default
+undo_changes: Undo Changes
+notifications: Notifications
+show_all_activity: Show All Activity
+page_not_found: Page Not Found
+page_not_found_body: The page you are looking for doesn't seem to exist.
+confirm_revert: Confirm Revert
+confirm_revert_body: This will revert the item to the selected state.
+display: Display
+settings_update_success: Settings updated
+title: Title
+revision_delta_created: Created
+revision_delta_created_externally: Created Externally
+revision_delta_updated: 'Updated 1 Field | Updated {count} Fields'
+revision_delta_deleted: Deleted
+revision_delta_reverted: Reverted
+revision_delta_update_message: This field has been updated but its value is being concealed for security reasons.
+revision_delta_other: Revision
+revision_delta_by: '{date} by {user}'
+presentation_text_values_cannot_be_reimported: "Uses presentation text, values can not be re-imported."
+download_page_as_csv: 'Download Page as CSV'
+private_user: Private User
+creation_preview: Creation Preview
+revision_preview: Revision Preview
+updates_made: Updates Made
+leave_comment: Leave a comment...
+post_comment_success: Comment posted
+post_comment_updated: Comment updated
+item_create_success: Item Created | Items Created
+item_update_success: Item Updated | Items Updated
+item_delete_success: Item Deleted | Items Deleted
+this_collection: This Collection
+related_collection: Related Collection
+related_collections: Related Collections
+translations_collection: Translation Collection
+languages_collection: Languages Collection
+import_data_input_placeholder: CSV or JSON...
+import_data_button: Start Import
+import_data_indeterminate: Importing Data...
+import_data_success: Data successfully imported from {filename}
+import_data_error: This file's data structure doesn't match the collection.
+label_import: Import
+label_export: Export
+import_export: Import / Export
+format: Format
+last_page: Last Page
+last_access: Last Access
+fill_template: Fill with Template Value
+a_unique_table_name: A unique table name...
+a_unique_column_name: A unique column name...
+enable_custom_values: Enable custom values
+submit: Submit
+move_to_folder: Move to Folder
+move: Move
+system: System
+add_field_related: Add Field to Related Collection
+interface_label: Interface
+today: Today
+yesterday: Yesterday
+delete_comment: Delete Comment
+delete_share: Delete Share
 functions:
-  year: Năm
-  month: Tháng
-  week: Tuần
-  day: Ngày
-  weekday: Ngày trong tuần
-  hour: Giờ
-  minute: Phút
-  second: Giây
-minutes: Phút
-hours: Giờ
-month: Tháng
-year: Năm
-select_all: Chọn Tất Cả
+  year: Year
+  month: Month
+  week: Week
+  day: Day
+  weekday: Weekday
+  hour: Hour
+  minute: Minute
+  second: Second
+  count: Count
+date-fns_date: PPP
+date-fns_time: 'h:mm:ss a'
+date-fns_time_no_seconds: 'h:mm a'
+date-fns_time_24hour: 'HH:mm:ss'
+date-fns_time_no_seconds_24hour: 'HH:mm'
+date-fns_date_short: 'MMM d, u'
+date-fns_time_short: 'h:mma'
+date-fns_date_short_no_year: MMM d
+minutes: Minutes
+hours: Hours
+month: Month
+year: Year
+select_all: Select All
 months:
-  january: Tháng một
-  february: Tháng hai
-  march: Tháng ba
-  april: Tháng tư
-  may: Tháng năm
-  june: Tháng sáu
-  july: Tháng bảy
-  august: Tháng tám
-  september: Tháng chín
-  october: Tháng mười
-  november: Tháng mười một
-  december: Tháng mười hai
-drag_mode: Chế Độ Kéo Thả
-cancel_crop: Hủy Cắt Xén
-original: Nguyên bản
-url: Đường Dẫn
-import_label: Nhập
-file_details: Thông Tin Chi Tiết của Tập Tin
-dimensions: Kích thước
-size: Kích thước
-created: Đã tạo
-modified: Đã sửa đổi
-checksum: Giá trị checksum
-owner: Sở hữu bởi
-edited_by: Chỉnh sửa bởi
-folder: Thư mục
-zoom: Thu phóng
-download: Tải xuống
-open: Mở
-open_in_new_window: Mở trong Cửa Sổ Mới
-open_folder: Mở thư mục "{folder}"
-foreground_color: Màu Tô
-background_color: Màu Nền
-upload_from_device: Tải Tập Tin lên từ Thiết Bị
-choose_from_library: Chọn Tập Tin từ Thư viện
-import_from_url: Nhập Thư mục từ URL
-replace_from_device: Hoán đổi với Tập Tin từ Thiết Bị
-replace_from_library: Hoán đổi với Tập Tin từ Thư Viện
-replace_from_url: Hoán đổi với Tập Tin từ một Đường Dẫn
-no_file_selected: Chưa Có Tập Tin Nào Được Chọn
-download_file: Tải Xuống Tập Tin
-open_file_in_tab: Mở file trong tab mới
-exporting_all_items_in_collection: Xuất tất cả {total} bản ghi trong {collection}.
-exporting_no_items_to_export: Không có mục nào để xuất dữ liệu. Điều chỉnh cấu hình xuất dữ liệu ở bên dưới.
-exporting_download_hint: Một khi hoàn thành, tập tin {format} sẽ tự động tải về thiết bị.
-collection_key: Khóa Của Danh Mục
-name: Tên
-primary_key_field: Khóa Chính
-type: Kiểu
-creating_new_collection: Tạo Danh Mục Mới
-created_by: Tạo bởi
-created_on: Tạo lúc
-creating_collection_info: Đặt tên cho danh mục và thiết lập trường "khóa" duy nhất của nó...
-creating_collection_system: Bật và đổi tên bất kỳ trường tùy chọn nào trong số này.
-auto_increment_integer: Số nguyên tự-động-tăng-dần
-generated_uuid: Chuỗi ngẫu nhiên
-manual_string: Chuỗi nhập thủ công
-save_and_create_new: Lưu và Tạo Mới
-save_and_stay: Lưu và Tiếp Tục Sửa Đổi
-save_as_copy: Lưu thành bản sao
-add_existing: Thêm Dữ Liệu Sẵn Có
-enable_create_button: Bật Nút Tạo
-allow_duplicates: Cho phép Trùng lặp
-comments: Bình luận
-no_comments: Chưa Có Bình Luận
-click_to_expand: Nhấn vào để Mở rộng
-select_item: Chọn Bản Ghi
-no_items: Không có bản ghi nào
-search_items: Tìm kiếm...
-disabled: Đã tắt
-information: Thông tin
-report_bug: Báo Cáo Lỗi
-request_feature: Yêu cầu tính năng
-interface_not_found: 'Giao diện "{interface}" không tồn tại.'
-reset_interface: Cài đặt lại Giao diện
-display_not_found: 'Hiển thị "{display}" không tồn tại.'
-reset_display: Cài đặt lại Hiển thị
-item_count: 'Không có bản ghi | Có 1 bản ghi | Có {count} bản ghi'
-no_items_copy: Chưa có bản ghi nào trong danh mục này.
-file_count: 'Không Có Tập Tin | Có Một Tập Tin | {count} Tập Tin'
-no_files_copy: Không có tập tin nào ở đây.
-user_count: 'Không Có Người Dùng | Có Một Người Dùng | {count} Người Dùng'
-no_notifications: Không có thông báo
-activity_log: Nhật ký hoạt động
-all_items: Tất cả các mục
-any: Bất kỳ
+  january: January
+  february: February
+  march: March
+  april: April
+  may: May
+  june: June
+  july: July
+  august: August
+  september: September
+  october: October
+  november: November
+  december: December
+drag_mode: Drag Mode
+cancel_crop: Cancel Crop
+original: Original
+url: URL
+import_label: Import
+file_details: File Details
+dimensions: Dimensions
+size: Size
+created: Created
+modified: Modified
+checksum: Checksum
+owner: Owner
+edited_by: Edited by
+folder: Folder
+zoom: Zoom
+download: Download
+open: Open
+open_in_new_window: Open in New Window
+open_folder: Open "{folder}" folder
+foreground_color: Foreground Color
+background_color: Background Color
+upload_from_device: Upload File from Device
+choose_from_library: Choose File from Library
+import_from_url: Import File from URL
+replace_from_device: Replace File from Device
+replace_from_library: Replace File from Library
+replace_from_url: Replace File from URL
+no_file_selected: No File Selected
+download_file: Download File
+open_file_in_tab: Open file in new tab
+start_export: Start Export
+not_available_for_local_downloads: Not available for local downloads
+exporting_all_items_in_collection: Exporting all {total} items within {collection}.
+exporting_limited_items_in_collection: Exporting {limit} out of {total} items within {collection}.
+exporting_no_items_to_export: No items to export. Adjust the exporting configuration below.
+exporting_download_hint: Once completed, this {format} file will automatically be downloaded to your device.
+exporting_batch_hint:
+  - This export will be processed in batches, and once completed, the {format} file will be saved to the File Library.
+exporting_batch_hint_forced:
+  - Due to the large number of items, this export must be processed in batches, and once completed, the {format} file will
+  - be saved to the File Library.
+collection_key: Collection Key
+name: Name
+primary_key_field: Primary Key Field
+type: Type
+creating_new_collection: Creating New Collection
+created_by: Created By
+created_on: Created On
+creating_collection_info: Name the collection and setup its unique “key” field...
+creating_collection_system: Enable and rename any of these optional fields.
+auto_increment_integer: Auto-incremented integer
+auto_increment_big_integer: Auto-incremented big integer
+generated_uuid: Generated UUID
+manual_string: Manually entered string
+save_and_create_new: Save and Create New
+save_and_stay: Save and Stay
+save_as_copy: Save as Copy
+add_existing: Add Existing
+creating_items: Creating Items
+enable_create_button: Enable Create Button
+selecting_items: Selecting Items
+enable_select_button: Enable Select Button
+allow_duplicates: Allow Duplicates
+comments: Comments
+no_comments: No Comments Yet
+click_to_expand: Click to Expand
+select_item: Select Item
+no_items: No items
+search_items: Search items...
+disabled: Disabled
+information: Information
+report_bug: Report Bug
+request_feature: Request Feature
+request_body: Request Body
+interface_not_found: 'Interface "{interface}" not found.'
+operation_not_found: 'Operation "{operation}" not found.'
+reset_interface: Reset Interface
+display_not_found: 'Display "{display}" not found.'
+reset_display: Reset Display
+list-m2a: Builder (M2A)
+item_count: 'No Items | One Item | {count} Items'
+no_items_copy: There are no items in this collection yet.
+file_count: 'No Files | One File | {count} Files'
+no_files_copy: There are no files here.
+user_count: 'No Users | One User | {count} Users'
+no_users_copy: There are no users in this role yet.
+webhooks_count: 'No Webhooks | One Webhook | {count} Webhooks'
+no_webhooks_copy: No webhooks have been configured yet. Get started by creating one below.
+no_notifications: No Notifications
+no_notifications_copy: You're all caught up!
+activity_log: Activity Log
+all_items: All Items
+any: Any
 csv: CSV
-no_collections: Chưa có Bảng nào
-create_collection: Tạo Danh mục mới
-no_collections_copy_admin: Bạn chưa có Bộ sưu tập nào. Bấm nút bên dưới để bắt đầu.
-no_collections_copy: Bạn chưa có Bộ sưu tập nào. Vui lòng liên hệ với quản trị viên hệ thống.
-relationship_not_setup: Cấu trúc dữ liệu chưa được cài đặt chính xác
-select_a_collection: Chọn Bảng
-select_a_field: Chọn một trường
-active: Kích hoạt
-move_to: Chuyển tới...
-copy: Sao chép
-copy_to: Sao chép đến...
-no_other_dashboards_copy: Bạn chưa có Bảng điều khiển nào.
-inactive: Không hoạt động
-users: Tài khoản
-activity: Hoạt động
-action: Hành động
-ip_address: Địa chỉ IP
-user_agent: Tài khoản người dùng
+no_collections: No Collections
+create_collection: Create Collection
+no_collections_copy_admin: You don’t have any Collections yet. Click the button below to get started.
+no_collections_copy: You don’t have any Collections yet. Please contact your system administrator.
+relationship_not_setup: The relationship hasn't been configured correctly
+no_singleton_relations: Relationships to Singletons are not supported
+display_template_not_setup: The display template option is misconfigured
+collection_field_not_setup: The collection field option is misconfigured
+select_a_collection: Select a Collection
+select_a_field: Select a Field
+active: Active
+move_to: Move To...
+copy: Copy
+copy_to: Copy To...
+no_other_dashboards_copy: You don't have any other Dashboards yet.
+inactive: Inactive
+users: Users
+activity: Activity
+activity_item: Activity Item
+action: Action
+ip_address: IP Address
+user_agent: User Agent
+origin: Origin
 webhooks: Webhooks
-min_value: Giá trị nhỏ nhất
-max_value: Giá trị lớn nhất
-automatic: Tự động
-field_width: Độ rộng trường
-add_filter: Thêm bộ lọc
-upper_limit: Giới hạn trên...
-lower_limit: Hạn chế dưới...
-user_directory: Danh mục tài khoản
-documentation: Tài liệu
-sidebar: Thanh bên
-duration: Thời lượng
-charset: Bảng mã
-second: giây
-file_moved: Đã di chuyển Tập tin
-collection_created: Bảng đã được Tạo
-modified_on: Sửa đổi vào
-card_size: Kích thước Card
-sort_field: Sắp xếp theo trường
-add_sort_field: Sắp xếp theo trường
-sort: Sắp xếp
-status: Trạng thái
-remove: Xoá
-toggle_manual_sorting: Kích hoạt sắp xếp thủ công
-bookmark_doesnt_exist: Bookmark Không Tồn Tại
-bookmark_doesnt_exist_copy: Không thể tìm thấy Bookmark bạn đang muốn mở.
-bookmark_doesnt_exist_cta: Trở lại bảng
-select_an_item: Chọn một bản ghi...
-edit: Sửa
-enabled: Đã kích hoạt
-disable_tfa: Tắt Xác thực 2 bước
-tfa_scan_code: Quét mã trong ứng dụng xác thực của bạn để hoàn tất thiết lập Xác thực 2 bước
-enter_otp_to_disable_tfa: Nhập mã OTP để tắt Xác thực 2 bước
-create_account: Tạo Tài khoản
-account_created_successfully: Tài Khoản Đã Tạo Thành Công
-auto_fill: Tự động Điền
-corresponding_field: Trường tương ứng
+decimals: Decimals
+value_decimals: Value Decimals
+min_value: Min Value
+max_value: Max Value
+automatic: Automatic
+field_width: Field Width
+add_filter: Add Filter
+upper_limit: Upper limit...
+lower_limit: Lower limit...
+user_directory: User Directory
+documentation: Documentation
+sidebar: Sidebar
+duration: Duration
+charset: Charset
+second: second
+file_moved: File Moved
+collection_created: Collection Created
+modified_on: Modified On
+card_size: Card Size
+sort_field: Sort Field
+add_sort_field: Add Sort Field
+sort: Sort
+status: Status
+remove: Remove
+toggle_manual_sorting: Toggle Manual Sorting
+bookmark_doesnt_exist: Bookmark Doesn't Exist
+bookmark_doesnt_exist_copy: The bookmark you're trying to open couldn't be found.
+bookmark_doesnt_exist_cta: Return to collection
+select_an_item: Select an item...
+edit: Edit
+enabled: Enabled
+disable_tfa: Disable 2FA
+admin_disable_tfa_text: Are you sure you want to disable 2FA for this user?
+tfa_setup: Setup 2FA
+tfa_scan_code: Scan the code in your authenticator app to finish setting up 2FA
+enter_otp_to_disable_tfa: Enter the OTP to disable 2FA
+create_account: Create Account
+account_created_successfully: Account Created Successfully
+auto_fill: Auto Fill
+corresponding_field: Corresponding Field
 errors:
-  COLLECTION_NOT_FOUND: "Danh mục không tồn tại"
-  FIELD_NOT_FOUND: Trường không tồn tại
-  FORBIDDEN: Cấm
-  INVALID_CREDENTIALS: Sai tên người dùng hoặc mật khẩu
-  INVALID_OTP: Sai mật khẩu dùng một lần
-  INVALID_PAYLOAD: Dữ liệu không hợp lệ
-  INVALID_QUERY: Truy vấn không hợp lệ
-  INVALID_CONFIG: Cấu hình không hợp lệ
-  INVALID_TOKEN: Token không hợp lệ
-  INVALID_IP: Địa chỉ IP không được phép
-  ITEM_LIMIT_REACHED: Đạt mức giới hạn của bản ghi
-  ITEM_NOT_FOUND: Bản ghi không tồn tại
-  ROUTE_NOT_FOUND: Không tìm thấy
-  RECORD_NOT_UNIQUE: Phát hiện giá trị trùng lặp
-  USER_SUSPENDED: Tài khoản bị vô hiệu
-  CONTAINS_NULL_VALUES: Trường chứa giá trị rỗng
-  INTERNAL_SERVER_ERROR: Lỗi Bất Thường
-  NOT_NULL_VIOLATION: Dữ liệu không thể để rỗng
-  ILLEGAL_ASSET_TRANSFORMATION: Nguồn ảnh quá lớn để xem trước
-  VALUE_TOO_LONG: Dữ liệu quá dài
-  VALUE_OUT_OF_RANGE: Giá trị ngoài khoảng cho phép
-  UNKNOWN: Lỗi Bất Thường
-  SERVICE_UNAVAILABLE: Dịch vụ không khả dụng
-  UNSUPPORTED_MEDIA_TYPE: Loại tập tin không được hỗ trợ
-security: Bảo mật
-value_hashed: Dữ Liệu Mã Hóa An Toàn
-bookmark_name: Tên Dấu trang...
-create_bookmark: Tạo Dấu trang
-edit_bookmark: Chỉnh sửa Dấu trang
-bookmarks: Đánh dấu
-presets: Mẫu thiết lập
-unexpected_error: Lỗi Bất Thường
-unexpected_error_copy: Đã có lỗi không xác định xảy ra. Vui lòng thử lại sau.
-copy_details: Sao chép Chi tiết
-no_app_access: Không Có Quyền Truy Cập Chương Trình
-no_app_access_copy: Người dùng này không có quyền truy cập chương trình quản trị.
-password_reset_successful: Mật khẩu được đặt lại thành công
-back: Trở lại
-filter: Bộ lọc
-edit_image: Chỉnh sửa hình ảnh
-editing_image: Chỉnh sửa Hình ảnh
-square: Hình vuông
-free: Miễn phí
-flip_horizontal: Lật Ngang
-flip_vertical: Lật Dọc
-aspect_ratio: Tỉ lệ
-rotate: Xoay
-all_users: Tất cả Người dùng
-delete_collection: Xoá Danh Mục
-update_collection_success: Đã Cập Nhật Danh Mục
-delete_collection_success: Đã Xoá Danh Mục
-make_collection_visible: Ẩn bộ sưu tập
-make_collection_hidden: Hiện bộ sưu tập
-make_folder_visible: Hiện thư mục
-make_folder_hidden: Ẩn thư mục
-goto_collection_content: Xem Nội dung
-start_end_of_count_items: 'Bản ghi {start}-{end} trong tổng số {count}'
-start_end_of_count_filtered_items: 'Bản ghi {start}-{end} trong tổng số {count}'
-one_item: '1 sản phẩm'
-one_filtered_item: 'Đã lọc được 1 mục'
-collections_shown: Những Danh Mục Đang Hiển Thị
-visible_collections: Ứng dụng có thể nhìn thấy
-hidden_collections: Bảng Ẩn
-show_hidden_collections: Hiện các Bảng Ẩn
-hide_hidden_collections: Ẩn các Bảng Ẩn
-show_header: Hiện Tiêu đề
-system_collections: Các Bảng Hệ Thống
-placeholder: Chỗ điền
-icon_left: Biểu tượng bên trái
-icon_right: Biểu tượng bên phải
-font: Phông chữ
+  COLLECTION_NOT_FOUND: "Collection doesn't exist"
+  FIELD_NOT_FOUND: Field not found
+  FORBIDDEN: Forbidden
+  INVALID_CREDENTIALS: Wrong username or password
+  INVALID_OTP: Wrong one-time password
+  INVALID_PAYLOAD: Invalid payload
+  INVALID_PROVIDER: User belongs to a different auth provider
+  INVALID_QUERY: Invalid query
+  INVALID_CONFIG: Invalid config
+  INVALID_TOKEN: Invalid token
+  INVALID_IP: IP Address not allowed
+  INVALID_USER: Failed to authenticate user
+  ITEM_LIMIT_REACHED: Item limit reached
+  ITEM_NOT_FOUND: Item not found
+  ROUTE_NOT_FOUND: Not found
+  RECORD_NOT_UNIQUE: Duplicate value detected
+  USER_SUSPENDED: User Suspended
+  CONTAINS_NULL_VALUES: Field contains null values
+  UNPROCESSABLE_ENTITY: Unprocessable entity
+  INTERNAL_SERVER_ERROR: Unexpected Error
+  NOT_NULL_VIOLATION: Value can't be null
+  ILLEGAL_ASSET_TRANSFORMATION: Image source too large to preview
+  VALUE_TOO_LONG: Value is too long
+  VALUE_OUT_OF_RANGE: Value is out of range
+  INVALID_FOREIGN_KEY: Invalid foreign key
+  UNKNOWN: Unexpected Error
+  GRAPHQL_VALIDATION_EXCEPTION: GraphQL Validation Exception
+  SERVICE_UNAVAILABLE: Service Unavailable
+  UNSUPPORTED_MEDIA_TYPE: Unsupported media type
+  UNEXPECTED_RESPONSE: Unexpected response
+  TOKEN_EXPIRED: Token expired
+  RANGE_NOT_SATISFIABLE: Invalid range
+  METHOD_NOT_ALLOWED: Method not allowed
+  REQUESTS_EXCEEDED: Requests limit reached
+security: Security
+value_hashed: Value Securely Hashed
+bookmark_name: Bookmark name...
+create_bookmark: Create Bookmark
+edit_bookmark: Edit Bookmark
+edit_personal_bookmark: Edit Personal Bookmark
+edit_role_bookmark: Edit Role Bookmark
+edit_global_bookmark: Edit Global Bookmark
+cannot_edit_role_bookmarks: Can't Edit Role Bookmarks
+cannot_edit_global_bookmarks: Can't Edit Global Bookmarks
+bookmarks: Bookmarks
+presets: Presets
+unexpected_error: Unexpected Error
+unexpected_error_copy: An unexpected error has occurred. Please try again later.
+copy_details: Copy Details
+no_app_access: No App Access
+no_app_access_copy: This user isn't allowed to use the admin app.
+password_reset_sent: If you have an account, we've sent you a secure link to reset your password
+password_reset_successful: Password successfully reset
+back: Back
+filter: Filter
+edit_image: Edit Image
+editing_image: Editing Image
+square: Square
+free: Free
+flip_horizontal: Flip Horizontal
+flip_vertical: Flip Vertical
+aspect_ratio: Aspect Ratio
+rotate: Rotate
+all_users: All Users
+delete_collection: Delete Collection
+update_collection_success: Updated Collection
+delete_collection_success: Deleted Collection
+make_collection_visible: Make Collection Visible
+make_collection_hidden: Make Collection Hidden
+make_folder_visible: Make Folder Visible
+make_folder_hidden: Make Folder Hidden
+goto_collection_content: View Content
+start_end_of_count_items: '{start}-{end} of {count} items'
+start_end_of_count_filtered_items: '{start}-{end} of {count} filtered items'
+one_item: '1 item'
+one_filtered_item: '1 filtered item'
+delete_collection_are_you_sure: >-
+  Are you sure you want to delete the collection "{collection}"? This will delete the collection and all items in it. This action is permanent.
+delete_folder_are_you_sure: Are you sure you want to delete the folder "{folder}"? Nested folders and collections will be moved to the top most level.
+delete_collection_peer_dependencies: The following fields will be deleted as well, as they are related to the current collection.
+collections_shown: Collections Shown
+visible_collections: Visible Collections
+hidden_collections: Hidden Collections
+show_hidden_collections: Show Hidden Collections
+hide_hidden_collections: Hide Hidden Collections
+show_header: Show Header
+unmanaged_collections: Unconfigured Collections
+system_collections: System Collections
+placeholder: Placeholder
+icon_left: Icon Left
+icon_right: Icon Right
+count_other_revisions: '{count} Other Revisions'
+font: Font
 sans_serif: Sans Serif
 serif: Serif
-monospace: Khoảng cách như nhau
-divider: Bộ chia
-color: Màu sắc
-circle: Vòng tròn
-empty_item: Mục trống
-log_in_with: 'Đăng nhập với {provider}'
-advanced_filter: Bộ Lọc Nâng Cao
-delete_advanced_filter: Xoá Bộ Lọc
-advanced: Nâng cao
+monospace: Monospace
+divider: Divider
+color: Color
+circle: Circle
+empty_item: Empty Item
+log_in_with: 'Log In with {provider}'
+conditional_styles: Conditional Styles
+advanced_settings: Advanced Settings
+advanced_filter: Advanced Filter
+delete_advanced_filter: Delete Filter
+change_advanced_filter_operator: Change Operator
+advanced: Advanced
 operators:
-  eq: Bằng
-  neq: Không bằng
-  lt: Nhỏ hơn
-  gt: Lớn hơn
-  lte: Nhỏ hơn hoặc bằng
-  gte: Lớn hơn hoặc bằng
-  in: Là một trong
-  nin: Không phải là một trong
-  null: Là NULL
-  nnull: Không NULL
-  contains: Chứa
-  ncontains: Không chứa
-  icontains: Chứa
-  starts_with: Bắt đầu với
-  nstarts_with: Không bắt đầu với
-  ends_with: Kết thúc với
-  nends_with: Không kết thúc với
-  between: Trong khoảng
-  nbetween: Ngoài khoảng
-  empty: Bị rỗng
-  nempty: Không rỗng
-loading: Đang tải...
-drop_to_upload: Kéo vào để tải lên
-upload_file: Tải lên tập tin
-upload_file_indeterminate: Đang tải tệp lên...
-upload_file_success: Tệp tin được tải lên
-upload_files_indeterminate: 'Đang tải lên thư mục {done}/{total}'
-upload_files_success: '{count} Tệp được tải lên'
-upload_pending: Đang chờ tải lên
-drag_file_here: Kéo & thả tệp vào đây
-click_to_browse: Bấm để Tìm kiếm
-interface_options: Tùy chọn giao diện
-layout_options: Các Tuỳ Chọn Bố Cục
-rows: Các hàng
-columns: Các cột
-collection_setup: Cài đặt Bộ sưu tập
-value_unique: Giá trị phải là duy nhất
-all_activity: Tất cả hoạt động
-create_item: Tạo Bản Ghi
-display_template: Mẫu hiển thị
-per_page: Mỗi trang
-all_files: Tất cả các tệp
-my_files: Tập tin của tôi
-recent_files: Các tệp gần đây
-create_folder: Tạo Thư mục
-edit_folder: Chỉnh sửa thư mục
-folder_name: Tên thư mục...
-folder_key: Khóa Thư mục...
-add_file: Thêm tập tin
-replace_file: Thay thế tập tin
-no_results: Không có kết quả
-no_results_copy: Điều chỉnh hoặc xóa bộ lọc tìm kiếm để tìm được kết quả.
-clear_filters: Xoá các bộ lọc
-saves_automatically: Lưu tự động
-role: Phân quyền
-rule: Quy tắc
-user: Người dùng
-create: Tạo
-on_update: Khi cập nhật
-read: Đọc
-update: Cập nhật
-select_fields: Chọn trường
-format_text: Định dạng văn bản
-format_value: Định dạng giá trị
-bold: In đậm
-icon_on: Biểu tượng của trạng thái Bật
-icon_off: Biểu tượng của trạng thái Tắt
-label: Nhãn
-flow_name: Tên
-flow_tracking_null: Không theo dõi bất cứ điều gì
-code: Mã nguồn
-dashboard: Bảng điều khiển
-panel: Bảng
-panel_options: Tùy chọn Bảng
-panel_note_placeholder: Chi tiết tùy chọn về bảng...
-panel_delete_confirm: Bạn có chắc muốn xóa bảng này? Hành động này không thể hoàn tác.
-dashboard_delete_confirm: Bạn có chắc muốn xóa bảng này? Hành động này không thể hoàn tác.
-visible: Hiển thị
-no_data: Không có dữ liệu
-full_screen: Toàn màn hình
-center_align: Căn giữa
-left_align: Căn trái
-right_align: Căn phải
-fit_to_screen: Vừa màn hình
-quality: Chất lượng
-width: Độ rộng
-height: Độ dài
-source: Nguồn
-url_placeholder: Nhập một địa chỉ...
-unlimited: Không giới hạn
-current_tab: Thẻ hiện tại
-save_image: Lưu ảnh
+  eq: Equals
+  neq: Doesn't equal
+  lt: Less than
+  gt: Greater than
+  lte: Less than or equal to
+  gte: Greater than or equal to
+  in: Is one of
+  nin: Is not one of
+  null: Is null
+  nnull: Isn't null
+  contains: Contains
+  ncontains: Doesn't contain
+  icontains: Contains (insensitive)
+  starts_with: Starts with
+  nstarts_with: Doesn't start with
+  ends_with: Ends with
+  nends_with: Doesn't end with
+  between: Is between
+  nbetween: Isn't between
+  empty: Is empty
+  nempty: Isn't empty
+  all: Contains these keys
+  has: Contains some of these keys
+  intersects: Intersects
+  nintersects: Doesn't intersect
+  intersects_bbox: Intersects bounding box
+  nintersects_bbox: Doesn't intersect bounding box
+  regex: Matches RegExp
+custom_validation_message: Custom Validation Message
+loading: Loading...
+drop_to_upload: Drop to Upload
+item: Item
+items: Items
+upload_file: Upload File
+upload_file_indeterminate: Uploading File...
+upload_file_success: File Uploaded
+upload_files_indeterminate: 'Uploading files {done}/{total}'
+upload_files_success: '{count} Files Uploaded'
+upload_pending: Upload Pending
+drag_file_here: Drag & Drop a File Here
+click_to_browse: Click to Browse
+interface_options: Interface Options
+layout_options: Layout Options
+rows: Rows
+columns: Columns
+collection_setup: Collection Setup
+optional_system_fields: Optional System Fields
+value_unique: Value has to be unique
+all_activity: All Activity
+create_item: Create Item
+display_template: Display Template
+language_display_template: Language Display Template
+translations_display_template: Translations Display Template
+n_items_selected: 'No Items Selected | 1 Item Selected | {n} Items Selected'
+per_page: Per Page
+all_files: All Files
+my_files: My Files
+recent_files: Recent Files
+create_folder: Create Folder
+edit_folder: Edit Folder
+folder_name: Folder Name...
+folder_key: Folder Key...
+add_file: Add File
+replace_file: Replace File
+no_results: No Results
+no_results_copy: Adjust or clear search filters to see results.
+no_visible_fields: Empty Form
+no_visible_fields_copy: This form has no visible fields.
+clear_filters: Clear Filters
+saves_automatically: Saves Automatically
+role: Role
+edit_role: Edit Role
+rule: Rule
+user: User
+no_presets: No Presets
+no_presets_copy: No presets or bookmarks have been saved yet.
+no_presets_cta: Add Preset
+presets_only: Presets Only
+create: Create
+on_create: On Create
+on_update: On Update
+read: Read
+update: Update
+delete: Delete
+select_fields: Select Fields
+format_text: Format Text
+format_value: Format Value
+abbreviate_value: Abbreviate Value
+operator: Operator
+bold: Bold
+toggle: Toggle
+icon_on: Icon On
+icon_off: Icon Off
+label: Label
+flows: Flows
+flow: Flow
+select_a_flow: Select a Flow
+run_flow_confirm: Are you sure you want to execute this flow?
+run_flow_on_current_collection: Run Flow on Current Collection
+run_flow_on_current: Run Flow on Current Item
+run_flow_on_current_edited_confirm: This item may be updated by this flow, are you sure you want to execute it?
+run_flow_on_selected: Select One or More Items First | Run Flow on 1 Selected Item | Run Flow on {n} Selected Items
+run_flow: Run Flow
+run_flow_success: Flow "{flow}" ran successfully
+field_name_placeholder: Enter field name...
+field_key_placeholder: Enter field key...
+trigger: Trigger
+trigger_options: Trigger Options
+view_trigger: View Trigger
+create_trigger: Create Trigger
+trigger_setup: Trigger Setup
+change_trigger: Change Trigger
+flow_delete_confirm: Are you sure you want to delete Flow "{flow}"? This action can not be undone.
+set_flow_active: Set Flow to Active
+set_flow_inactive: Set Flow to Inactive
+edit_flow: Edit Flow
+delete_flow: Delete Flow
+no_other_flows_copy: You don't have any other Flows yet.
+no_flows: No Flows
+no_flows_copy: You don't have any Flows yet.
+create_flow: Create Flow
+creating_new_flow: Creating New Flow
+updating_flow: Updating Flow
+flow_setup: Flow Setup
+flow_name: Name
+flow_tracking: Activity & Logs Tracking
+flow_tracking_all: Track Activity & Logs
+flow_tracking_activity: Only Track Activity
+flow_tracking_null: Do Not Track Anything
+start_flow: Start Flow
+stop_flow: Stop Flow
+create_operation: Create Operation
+edit_operation: Edit Operation
+code: Code
+operation_options: Operation Options
+operation_name: Name of operation...
+operation_key: Identifier for reference...
+operation_key_unique_error: Operation keys must be unique in a Flow
+operation_handle_resolve: 'Resolve: Click to Add or Drag to Reroute'
+operation_handle_reject: 'Reject: Click to Add or Drag to Reroute'
+insights: Insights
+dashboard: Dashboard
+panel: Panel
+panel_options: Panel Options
+panel_header: Panel Header
+panel_name_placeholder: Name this panel...
+panel_note_placeholder: Optional details about this panel...
+panel_delete_confirm: Are you sure you want to delete this panel? This action can not be undone.
+list_panel_allow_edit: Allow Inline Editing
+dashboard_delete_confirm: Are you sure you want to delete this dashboard? This action can not be undone.
+edit_dashboard: Edit Dashboard
+delete_dashboard: Delete Dashboard
+visible: Visible
+prefix_placeholder: Text before value...
+suffix_placeholder: Text after value...
+decimals_placeholder: Number of decimal places...
+no_dashboards: No Dashboards
+no_dashboards_copy: You don’t have any Dashboards yet.
+create_dashboard: Create Dashboard
+dashboard_name: Dashboard Name
+no_data: No Data
+no_data_in_flow: No data was produced or accessed within this Flow
+accountability: Accountability
+payload: Payload
+details: Details
+full_screen: Full Screen
+full_text_search: Full-Text Search
+edit_panels: Edit Panels
+center_align: Center Align
+left_align: Left Align
+right_align: Right Align
+fit_to_screen: Fit to Screen
+image_url: Image Url
+alt_text: Alternative Text
+media: Media
+quality: Quality
+width: Width
+height: Height
+transformation_preset_key: Transformation Preset Key
+source: Source
+url_placeholder: Enter an url...
+display_text: Display Text
+display_text_placeholder: Enter a display text...
+interface_group_text_and_numbers: Text & Numbers
+interface_group_selection: Selection
+interface_group_relational: Relational
+interface_group_presentation: Presentation
+interface_group_groups: Groups
+interface_group_other: Other
+tooltip: Tooltip
+tooltip_placeholder: Enter a tooltip...
+unlimited: Unlimited
+open_link_in: Open link in
+new_tab: New tab
+current_tab: Current tab
+save_image: Save Image
+save_media: Save Media
 wysiwyg_options:
-  aligncenter: Canh giữa
-  alignjustify: Canh đều hai bên
-  alignleft: Canh lề trái
-  alignnone: Không canh lề
-  alignright: Canh phải
-  forecolor: Màu Tô
-  backcolor: Màu Nền
-  bold: In đậm
-  italic: Nghiêng
-  underline: Gạch chân
-  strikethrough: Gạch ngang
-  subscript: Đăng ký
-  superscript: Chỉ số trên
-  codeblock: Mã nguồn
-  blockquote: Trích dẫn
-  bullist: Danh sách dấu đầu dòng
-  numlist: Danh Sách Đánh Số
-  hr: Thước ngang
-  link: Thêm/Sửa Liên kết
-  unlink: Loại bỏ liên kết
-  media: Thêm/Sửa Phương tiện
-  image: Thêm/Sửa hình ảnh
-  copy: Sao chép
-  cut: Cắt
-  paste: Dán
-  heading: Đầu mục
-  h1: Đầu mục 1
-  h2: Đầu mục 2
-  h3: Đầu mục 3
-  h4: Đầu mục 4
-  h5: Đầu mục 5
-  h6: Đầu mục 6
-  fontselect: Chọn kiểu chữ
-  fontsizeselect: Chọn kích thước phông chữ
-  indent: Canh lề
-  outdent: Lề ngoài
-  undo: Hoàn tác
-  remove: Xoá
-  removeformat: Xóa bỏ định dạng
-  selectall: Chọn Tất Cả
-  table: Bảng
-  source_code: Chỉnh sửa mã nguồn
-  fullscreen: Toàn màn hình
-dropdown: Tuỳ chọn dạng thả xuống
-choices: Lựa chọn
-deselect: Bỏ chọn
-deselect_all: Bỏ chọn tất cả
-other: Khác...
-adding_user: Đã thêm người dùng
-unknown_user: Người dùng không xác định
-creating_in: 'Đang Tạo Bản Ghi {collection} Mới'
-editing_in: 'Chỉnh sửa mục trong {collection}'
-creating_unit: 'Đang tạo {unit}'
-editing_unit: 'Đang sửa {unit}'
-editing_in_batch: 'Sửa cùng lúc {count} mục'
-no_options_available: Không có tùy chọn sẵn có
-settings_data_model: Mô Hình Dữ Liệu
-settings_permissions: Vai trò & Quyền hạn
-settings_project: Cài Đặt Chung
+  aligncenter: Align Center
+  alignjustify: Align Justify
+  alignleft: Align Left
+  alignnone: Align None
+  alignright: Align Right
+  forecolor: Foreground Color
+  backcolor: Background Color
+  bold: Bold
+  italic: Italic
+  underline: Underline
+  strikethrough: Strikethrough
+  subscript: Subscript
+  superscript: Superscript
+  codeblock: Code
+  blockquote: Blockquote
+  bullist: Bullet List
+  numlist: Numbered List
+  hr: Horizontal Rule
+  link: Add/Edit Link
+  unlink: Remove Link
+  media: Add/Edit Media
+  image: Add/Edit Image
+  copy: Copy
+  cut: Cut
+  paste: Paste
+  heading: Heading
+  h1: Heading 1
+  h2: Heading 2
+  h3: Heading 3
+  h4: Heading 4
+  h5: Heading 5
+  h6: Heading 6
+  fontselect: Select Font
+  fontsizeselect: Select Font Size
+  indent: Indent
+  outdent: Outdent
+  undo: Undo
+  redo: Redo
+  remove: Remove
+  removeformat: Remove Format
+  selectall: Select All
+  table: Table
+  visualaid: View invisible elements
+  source_code: Edit Source Code
+  fullscreen: Full Screen
+  directionality: Directionality
+dropdown: Dropdown
+choices: Choices
+choices_option_configured_incorrectly: Choices configured incorrectly
+deselect: Deselect
+deselect_all: Deselect All
+other: Other...
+adding_user: Adding User
+unknown_user: Unknown User
+creating_in: 'Creating Item in {collection}'
+editing_in: 'Editing Item in {collection}'
+viewing_in: 'Viewing Item in {collection}'
+creating_unit: 'Creating {unit}'
+editing_unit: 'Editing {unit}'
+editing_in_batch: 'Batch Editing {count} Items'
+no_options_available: No options available
+settings_data_model: Data Model
+settings_permissions: Roles & Permissions
+settings_project: Project Settings
 settings_webhooks: Webhooks
-one_or_more_options_are_missing: Một hoặc nhiều tùy chọn còn thiếu
-scope: Phạm vi
-select: Chọn...
-layout: Bố cục
-changes_are_permanent: Thay đổi là lâu dài
-preset_search_placeholder: Tìm kiếm truy vấn...
-layout_preview: Xem Trước Bố Cục
-layout_setup: Cài Đặt Bố Cục
-data: Dữ liệu
-unsaved_changes: Những thay đổi chưa được lưu
-unsaved_changes_copy: Bạn có chắc chắn muốn rời khỏi trang này không?
-discard_changes: Hủy thay đổi
-keep_editing: Tiếp tục chỉnh sửa
+settings_flows: Flows
+settings_presets: Presets & Bookmarks
+settings_translation_strings: Translation Strings
+one_or_more_options_are_missing: One or more options are missing
+scope: Scope
+actions: Actions
+select: Select...
+layout: Layout
+tree_view: Tree View
+changes_are_permanent: Changes are permanent
+preset_name_placeholder: Serves as default when empty...
+preset_search_placeholder: Search query...
+editing_preset: Editing Preset
+layout_preview: Layout Preview
+layout_setup: Layout Setup
+data: Data
+unsaved_changes: Unsaved Changes
+unsaved_changes_copy: Are you sure you want to leave this page?
+discard_changes: Discard Changes
+discard_all_changes: Discard All Changes
+discard_changes_copy: Are you sure you want to discard all the changes made?
+show_x_axis: Show X Axis
+show_y_axis: Show Y Axis
+keep_editing: Keep Editing
+page_help_collections_overview: '**Collections Overview** — List of all collections you have access to.'
 page_help_collections_collection: >-
-  ** Duyệt các mục ** - Liệt kê tất cả các mục trong {collection} mà bạn có quyền truy cập. Tùy chỉnh bố cục, bộ lọc và sắp xếp để điều chỉnh chế độ xem của bạn và thậm chí lưu dấu trang của các cấu hình khác nhau này để truy cập nhanh.
-add_new: Thêm mới
-create_new: Tạo Mới
-all: Tất cả
-no_layout_collection_selected_yet: Không có bố cục/danh mục nào được chọn
+  **Browse Items** — Lists all {collection} items you have access to. Customize layout, filters, and sorting to tailor your view, and even save bookmarks of these different configurations for quick access.
+page_help_collections_item: >-
+  **Item Detail** — A form for viewing and managing this item. This sidebar also contains a full history of revisions, and embedded comments.
+page_help_activity_collection: >-
+  **Browse Activity** — A comprehensive listing of all your user's system and content activity.
+page_help_docs_global: >-
+  **Documentation Overview** — Docs tailored specifically to this project's version and schema.
+page_help_files_collection: >-
+  **File Library** — Lists all file assets uploaded to this project. Customize layout, filters, and sorting to tailor your view, and even save bookmarks of these different configurations for quick access.
+page_help_files_item: >-
+  **File Detail** — A form for managing file metadata, editing the original asset, and updating access settings.
+page_help_settings_project: "**Project Settings** — Your project's global configuration options."
+page_help_settings_datamodel_collections: >-
+  **Data Model: Collections** — Lists all collections available. This includes visible, hidden, and system collections, as well as unmanaged database tables that can be added.
+page_help_settings_datamodel_fields: >-
+  **Data Model: Collection** — A form for managing this collection and its fields.
+page_help_settings_roles_collection: '**Browse Roles** — Lists the Admin, Public and custom User Roles.'
+page_help_settings_roles_item: "**Role Detail** — Manage a role's permissions and other settings."
+page_help_settings_presets_collection: >-
+  **Browse Presets** — Lists all presets in the project, including: user, role, and global bookmarks, as well as default views.
+page_help_settings_presets_item: >-
+  **Preset Detail** — A form for managing bookmarks and default collection presets.
+page_help_settings_webhooks_collection: '**Browse Webhooks** — Lists all webhooks within the project.'
+page_help_settings_webhooks_item: '**Webhook Detail** — A form for creating and managing project webhooks.'
+page_help_settings_flows_collection: '**Browse Flows** — Lists all Flows within the project.'
+page_help_settings_flows_item: '**Flow Detail** — Workspace for managing one or more operations.'
+page_help_settings_translation_strings_collection:
+  - '''**Browse Translation Strings** — Lists all translation strings within the project.'''
+page_help_users_collection: '**User Directory** — Lists all system users within this project.'
+page_help_users_item: >-
+  **User Detail** — Manage your account information, or view the details of other users.
+page_help_insights_overview: '**Insights** — List of dashboards you have access to.'
+page_help_insights_dashboard: '**Dashboard** — Workspace for managing one or more panels'
+activity_feed: Activity Feed
+add_new: Add New
+create_new: Create New
+all: All
+none: None
+no_layout_collection_selected_yet: No layout/collection selected yet
 batch_delete_confirm: >-
-  Không có mục nào được chọn | Bạn có chắc chắc xoá mục này? Dữ liệu đã xóa sẽ không thể phục hồi lại được. | Bạn có chắc chắn xoá {count} mục đã chọn? Dữ liệu đã xóa sẽ không thể phục hồi lại được.
-cancel: Huỷ
-collection: Danh mục
-collections: Danh mục
-content: Nội dung
-system_fields_locked: Trường hệ thống đang bị khoá và không thể chỉnh sửa được
+  No items have been selected | Are you sure you want to delete this item? This action can not be undone. | Are you sure you want to delete these {count} items? This action can not be undone.
+cancel: Cancel
+no_upscale: Don't upscale images
+collection: Collection
+collections: Collections
+content: Content
+singleton: Singleton
+singleton_label: Treat as single object
+system_fields_locked: System fields are locked and can't be edited
+directus_collection:
+  directus_activity: Accountability logs for all events
+  directus_collections: Additional collection configuration and metadata
+  directus_dashboards: Dashboards within the Insights module
+  directus_fields: Additional field configuration and metadata
+  directus_files: Metadata for all managed file assets
+  directus_flows: Automation flows
+  directus_folders: Provides virtual directories for files
+  directus_migrations: What version of the database you're using
+  directus_notifications: Notifications sent to users
+  directus_operations: Operations that run in Flows
+  directus_panels: Individual panels within Insights dashboards
+  directus_permissions: Access permissions for each role
+  directus_presets: Presets for collection defaults and bookmarks
+  directus_relations: Relationship configuration and metadata
+  directus_revisions: Data snapshots for all activity
+  directus_roles: Permission groups for system users
+  directus_sessions: User session information
+  directus_settings: Project configuration options
+  directus_shares: Tracks externally shared items
+  directus_users: System users for the platform
+  directus_webhooks: Configuration for event-based HTTP requests
 fields:
   directus_activity:
-    item: Trường khoá chính định danh
-    action: Hành động
-    collection: Danh mục
-    timestamp: Hành động tại
-    user: Thực hiện bởi
-    comment: Bình luận
-    user_agent: Tài khoản người dùng
-    ip: Địa chỉ IP
-    revisions: Bản điều chỉnh
+    item: Item Primary Key
+    action: Action
+    collection: Collection
+    timestamp: Action On
+    user: Action By
+    comment: Comment
+    user_agent: User Agent
+    origin: Origin
+    ip: IP Address
+    revisions: Revisions
   directus_collections:
-    collection: Danh mục
-    icon: Biểu tượng
-    note: Ghi chú
-    color: Màu sắc
-    display_template: Mẫu hiển thị
-    hidden: Ẩn
-    sort_field: Sắp xếp theo trường
+    collection: Collection
+    icon: Icon
+    note: Note
+    color: Color
+    display_template: Display Template
+    hidden: Hidden
+    singleton: Singleton
+    translations: Collection Naming Translations
+    archive_app_filter: Archive App Filter
+    archive_value: Archive Value
+    unarchive_value: Unarchive Value
+    sort_field: Sort Field
+    accountability: Activity & Revision Tracking
+    archive_field: Archive Field
+    item_duplication_fields: Item Duplication Fields
   directus_files:
-    title: Tiêu đề
-    description: Mô tả
+    $thumbnail: Thumbnail
+    title: Title
+    description: Description
     tags: Tags
-    location: Vị trí
-    storage: Lưu trữ
-    metadata: Thông tin metadata
-    type: Định dạng
-    filesize: Kích thước tệp
-    modified_by: Sửa đổi bởi
-    modified_on: Sửa đổi vào
-    created_on: Tạo lúc
-    created_by: Tạo bởi
-    embed: Nhúng
-    uploaded_by: Tài khoản tải lên
-    folder: Thư mục
-    width: Độ rộng
-    uploaded_on: Thời điểm tải lên
-    height: Độ dài
-    charset: Bảng mã
-    duration: Thời lượng
+    location: Location
+    storage: Storage
+    filename_disk: Filename (Disk)
+    filename_download: Filename (Download)
+    metadata: Metadata
+    type: Mime Type
+    filesize: Filesize
+    modified_by: Modified By
+    modified_on: Modified On
+    created_on: Created On
+    created_by: Created By
+    embed: Embed
+    uploaded_by: Uploaded By
+    folder: Folder
+    width: Width
+    uploaded_on: Uploaded On
+    height: Height
+    charset: Charset
+    duration: Duration
   directus_users:
-    first_name: Tên
-    last_name: Họ
-    email: Địa chỉ email
-    password: Mật khẩu
-    avatar: Ảnh đại diện
-    location: Vị trí
-    title: Tiêu đề
-    description: Mô tả
+    first_name: First Name
+    last_name: Last Name
+    email: Email
+    password: Password
+    avatar: Avatar
+    location: Location
+    title: Title
+    description: Description
     tags: Tags
-    user_preferences: Tuỳ chọn người dùng
-    language: Ngôn ngữ
+    user_preferences: User Preferences
+    language: Language
     theme: Theme
-    theme_auto: Tự động (Dựa vào hệ thống)
-    theme_light: Chế độ Sáng
-    theme_dark: Chế độ Tối
-    tfa_secret: Xác thực hai yếu tố
-    status: Trạng thái
-    status_draft: Bản nháp
-    status_invited: Mời
-    status_active: Kích hoạt
-    status_suspended: Tạm ngưng
-    status_archived: Đã lưu trữ
-    role: Phân quyền
+    theme_auto: Automatic (Based on System)
+    theme_light: Light Mode
+    theme_dark: Dark Mode
+    tfa_secret: Two-Factor Authentication
+    admin_options: Admin Options
+    status: Status
+    status_draft: Draft
+    status_invited: Invited
+    status_active: Active
+    status_suspended: Suspended
+    status_archived: Archived
+    role: Role
     token: Token
-    last_page: Trang cuối
-    last_access: Truy cập lần cuối
-    email_notifications: Thông báo email
+    provider: Provider
+    external_identifier: External Identifier
+    last_page: Last Page
+    last_access: Last Access
+    email_notifications: Email Notifications
   directus_settings:
-    project_name: Tên Dự Án
-    auth_password_policy: Quy định về mật khẩu
-    storage_default_folder: Thư mục mặc định
-    custom_css: Tuỳ chỉnh CSS
-    module_bar: Thanh công cụ
-    image_editor: Trình chỉnh sửa ảnh
+    jpg: JPEG
+    png: PNG
+    webP: WebP
+    tiff: Tiff
+    avif: AVIF
+    mapping: Mapping
+    basemaps: Basemaps
+    basemaps_raster: Raster
+    basemaps_tile: Raster TileJSON
+    basemaps_style: Mapbox Style
+    mapbox_key: Mapbox Access Token
+    mapbox_placeholder: pk.eyJ1Ijo.....
+    attribution: Attribution
+    attribution_placeholder: '© OpenStreetMap contributors'
+    transforms_note:
+      - The Sharp method name and its arguments. See https://sharp.pixelplumbing.com/api-constructor for more information.
+    additional_transforms: Additional Transformations
+    project_name: Project Name
+    project_descriptor: Project Descriptor
+    project_url: Project URL
+    project_color: Project Color
+    project_logo: Project Logo
+    default_language: Default Language
+    branding: Branding & Style
+    public_foreground: Public Foreground
+    public_background: Public Background
+    public_note: Public Note
+    auth_password_policy: Auth Password Policy
+    auth_login_attempts: Auth Login Attempts
+    files_and_thumbnails: Files & Storage
+    storage_default_folder: Default Folder
+    storage_asset_presets: Transformation Presets
+    storage_asset_transform: Allowed Transformations
+    overrides: App Overrides
+    custom_css: Custom CSS
+    module_bar: Module Bar
+    transformations_all: Allow all transformations
+    transformations_none: Disable transformations
+    transformations_presets: Limit transformations to presets below
+    image_editor: Image Editor
+    custom_aspect_ratios: Custom Aspect Ratios
   directus_shares:
-    name: Tên
-    role: Phân quyền
-    password: Mật khẩu
-    date_start: Ngày bắt đầu
-    date_end: Ngày kết thúc
-    times_used: Thời gian sử dụng
+    name: Name
+    role: Role
+    password: Password
+    date_start: Date Start
+    date_end: Date End
+    max_uses: Max Uses
+    times_used: Times Used
   directus_fields:
-    icon: Biểu tượng của Danh mục
-    note: Ghi chú
-    hidden: Ẩn
-    translation: Hiển thị Ngôn ngữ Khác
-    display_template: Mẫu
+    collection: Collection Name
+    icon: Collection Icon
+    note: Note
+    hidden: Hidden
+    singleton: Singleton
+    translation: Field Name Translations
+    display_template: Template
   directus_roles:
-    name: Tên Quyền
-    description: Mô tả
+    name: Role Name
+    icon: Role Icon
+    description: Description
+    app_access: App Access
+    admin_access: Admin Access
+    ip_access: IP Access
+    enforce_tfa: Require 2FA
+    users: Users in Role
+    module_list: Module Navigation
   directus_webhooks:
-    name: Tên
-    method: Phương thức
-    status: Trạng thái
-    data: Dữ liệu
-    value: Giá trị
-    collections: Danh mục
+    name: Name
+    method: Method
+    status: Status
+    data: Data
+    header: Header
+    value: Value
+    headers: Request Headers
+    data_label: Send Event Data
+    triggers: Triggers
+    actions: Actions
+    collections: Collections
 field_options:
   directus_settings:
-    security_divider_title: Bảo mật
+    project_name_placeholder: My project...
+    project_color_note: Login & Logo Background
+    project_logo_note: White 40x40 SVG/PNG
+    public_note_placeholder: A short, public message that supports markdown formatting...
+    security_divider_title: Security
     auth_password_policy:
-      none_text: Không có - Không khuyến nghị
+      none_text: None – Not Recommended
+      weak_text: Weak – Minimum 8 Characters
+      strong_text: Strong – Upper / Lowercase / Numbers / Special
+    storage_asset_presets:
+      fit_label: Fit
+      upscaling: Upscaling
+      fit:
+        contain_text: Contain (preserve aspect ratio)
+        cover_text: Cover (forces exact size)
+        fit_text: Fit inside
+        outside_text: Fit outside
+    additional_transforms: Additional Transformations
+    transforms_note:
+      - The Sharp method name and its arguments. See https://sharp.pixelplumbing.com/api-constructor for more information.
+    mapbox_key: Mapbox Access Token
+    mapbox_placeholder: pk.eyJ1Ijo.....
+    basemaps: Basemaps
+    basemaps_name_placeholder: Enter the basemap name...
+    basemaps_raster: Raster
+    basemaps_tile: Raster TileJSON
+    basemaps_style: Mapbox Style
+    files_divider_title: Files & Thumbnails
+    overrides_divider_title: App Overrides
   directus_activity:
-    login: Đăng nhập
-    create: Tạo
-    update: Cập nhật
-    delete: Xóa
+    login: Login
+    create: Create
+    update: Update
+    delete: Delete
   directus_collections:
-    collection_setup: Cài đặt Bộ sưu tập
-    language: Ngôn ngữ
-    translation: Bản dịch
-    archive_divider: Lưu trữ
-    archive_field_placeholder: Chọn một trường...
-    sort_divider: Sắp xếp
-    sort_field: Chọn một trường...
+    track_activity_revisions: Track Activity & Revisions
+    only_track_activity: Only Track Activity
+    do_not_track_anything: Do Not Track Anything
+    collection_setup: Collection Setup
+    note_placeholder: A description of this collection...
+    hidden_label: Hide within the App
+    singleton: Treat as single object
+    language: Language
+    translation: Translation
+    translation_placeholder: Enter a translation...
+    collection_name: Collection Name
+    singular_unit: Singular Unit
+    plural_unit: Plural Unit
+    archive_divider: Archive
+    archive_field_placeholder: Choose a field...
+    archive_app_filter: Enable App Archive Filter
+    archive_value: Value set when archiving...
+    unarchive_value: Value set when unarchiving...
+    sort_divider: Sort
+    sort_field: Choose a field...
+    accountability_divider: Accountability
+    duplication_divider: Duplication
+  directus_files:
+    title: A unique title...
+    description: An optional description...
+    location: An optional location...
+    storage_divider: File Naming
+    filename_disk: Name on disk storage...
+    filename_download: Name when downloading...
   directus_roles:
+    name: The unique name for this role...
+    description: A description of this role...
+    ip_access: Add allowed IP addresses, leave empty to allow all...
     fields:
-      icon_name: Biểu tượng
-      name_name: Tên
-    collections_name: Danh mục
+      icon_name: Icon
+      name_name: Name
+      name_placeholder: Enter a title...
+      link_name: Link
+      link_placeholder: Relative or absolute URL...
+    collections_name: Collections
+    collections_addLabel: Add Collection...
   directus_users:
-    preferences_divider: Tuỳ chọn người dùng
-    dropdown_auto: Tự động (Dựa vào hệ thống)
-    dropdown_light: Chế độ Sáng
-    dropdown_dark: Chế độ Tối
-    status_dropdown_draft: Bản nháp
-    status_dropdown_invited: Mời
-    status_dropdown_active: Kích hoạt
-    status_dropdown_suspended: Tạm ngưng
-    status_dropdown_archived: Đã lưu trữ
+    preferences_divider: User Preferences
+    dropdown_auto: Automatic (Based on System)
+    dropdown_light: Light Mode
+    dropdown_dark: Dark Mode
+    admin_divider: Admin Options
+    status_dropdown_draft: Draft
+    status_dropdown_invited: Invited
+    status_dropdown_active: Active
+    status_dropdown_suspended: Suspended
+    status_dropdown_archived: Archived
+    token: Enter a secure access token...
   directus_webhooks:
-    status_options_active: Kích hoạt
-    status_options_inactive: Không hoạt động
-    actions_create: Tạo
-    actions_update: Cập nhật
-    actions_login: Đăng nhập
+    status_options_active: Active
+    status_options_inactive: Inactive
+    data_label: Send Event Data
+    triggers_divider: Triggers
+    actions_create: Create
+    actions_update: Update
+    actions_delete: Delete
+    actions_login: Login
     headers:
-      value: Giá trị
-no_value: Không có giá trị
-comment: Bình luận
-expired: Đã hết hạn
-share: Chia sẻ
-share_access_not_found_desc: Vui lòng liên hệ với người dùng được ủy quyền của dự án này để yêu cầu quyền truy cập.
-referential_action_set_null: Vô hiệu hóa trường {field}
-continue_label: Tiếp tục
+      header: Header
+      value: Value
+      add: Add Header
+no_fields_in_collection: 'There are no fields in "{collection}" yet'
+no_value: No value
+do_nothing: Do Nothing
+generate_and_save_uuid: Generate and Save UUID
+save_current_user_id: Save Current User ID
+save_current_user_role: Save Current User Role
+save_current_datetime: Save Current Date/Time
+always_open: Always Open
+start_open: Start Open
+start_collapsed: Start Collapsed
+block: Block
+inline: Inline
+comment: Comment
+shares: Shares
+unlimited_usage: Unlimited usage
+uses_left: No uses left | 1 use left | {n} uses left
+no_shares: No shares to show
+new_share: New Share
+expired: Expired
+upcoming: Upcoming
+share: Share
+share_item: Share Item
+shared_with_you: An item has been shared with you
+shared_enter_passcode: Enter your passcode to continue...
+shared_leave_blank_for_unlimited: Leave blank for unlimited
+shared_times_remaining: This link can only be used {n} times
+shared_last_remaining: This link can only be used once
+shared_uses_left:
+  - For added security, this shared page has been configured with a limited number of views. There are currently {n} views
+  - remaining, after which, the page will no longer be accessible.
+share_access_page: Access Shared Page
+share_access_not_found:
+  - This shared page either does not exist or has already exceeded the maximum number of allowed uses.
+share_access_not_found_desc: Please contact an authorized user of this project to request access.
+share_access_not_found_title: Unknown Share Page
+share_copy_link: Copy Link
+share_copy_link_success: Link Copied
+share_copy_link_error: Unable to Copy Link
+share_send_link: Send Link
+relational_triggers: Relational Triggers
+referential_action_field_label_m2o: On Delete of {collection}...
+referential_action_field_label_o2m: On Deselect of {collection}...
+referential_action_no_action: Prevent the deletion
+referential_action_cascade: Delete the {collection} item (cascade)
+referential_action_set_null: Nullify the {field} field
+referential_action_set_default: Set {field} to its default value
+choose_action: Choose Action
+continue_label: Continue
 continue_as: >-
-  Đang đăng nhập {name}. Nhấn tiếp tục để đăng nhập.
+  {name} is currently authenticated. If you recognize this account, press continue.
+editing_role: '{role} Role'
+creating_webhook: Creating Webhook
+default_label: Default
+delete_label: Delete
+delete_are_you_sure: >-
+  This action is permanent and can not be undone. Are you sure you would like to proceed?
 delete_field_are_you_sure: >-
-  Bạn có chắc chắn muốn xóa trường "{field}"? Dữ liệu đã xóa sẽ không thể phục hồi lại được.
-description: Mô tả
-done: Hoàn thành
-duplicate: Nhân bản
-email: Địa chỉ email
-embed: Nhúng
-fallback_icon: Biểu tượng Dự phòng
-field: Trường | Các trường
-file: Tệp
-file_library: Thư viện tệp
-forgot_password: Quên mật khẩu
-hidden: Ẩn
-icon: Biểu tượng
-info: Thông tin
+  Are you sure you want to delete the field "{field}"? This action can not be undone.
+description: Description
+done: Done
+duplicate: Duplicate
+limit: Limit
+email: Email
+embed: Embed
+fallback_icon: Fallback Icon
+field: Field | Fields
+file: File
+file_library: File Library
+forgot_password: Forgot Password
+hidden: Hidden
+hidden_in_group: Hidden in {group}
+icon: Icon
+info: Info
+normal: Normal
+success: Success
+warning: Warning
+danger: Danger
 colors:
-  purple: Tím
-  green: Xanh lá
-  yellow: Vàng
-  orange: Cam
-  red: Đỏ
-  black: Đen
-  gray: Xám
-  white: Trắng
-junction_collection: Danh mục liên kết
-latency: Độ trễ
-login: Đăng nhập
-my_activity: Hoạt động cá nhân
-not_authenticated: Chưa xác thực
-authenticated: Đã xác thực
-options: Tuỳ chọn
-otp: Mật khẩu sử dụng một lần
-password: Mật khẩu
-permissions: Các quyền
-relationship: Quan hệ
-reset: Thiết lập lại
-reset_password: Đặt lại Mật khẩu
-revert: Phục hồi
-save: Lưu
-schema: Cấu trúc dữ liệu
-search: Tìm kiếm
-select_existing: Chọn có sẵn
-select_interface: Chọn một giao diện
-settings: Cài đặt
-sign_in: Đăng nhập
-sign_out: Đăng xuất
-sign_out_confirm: Bạn có chắc bạn muốn đăng xuất không?
-something_went_wrong: Đã xảy ra lỗi.
-sort_direction: Chiều sắp xếp
-sort_asc: Sắp xếp tăng dần
-sort_desc: Sắp xếp giảm dần
-template: Mẫu
-translation: Bản dịch
-value: Giá trị
-table: Bảng
-list: Danh sách
+  purple: Purple
+  blue: Blue
+  green: Green
+  yellow: Yellow
+  orange: Orange
+  red: Red
+  black: Black
+  gray: Gray
+  white: White
+junction_collection: Junction Collection
+latency: Latency
+login: Log in
+my_activity: My Activity
+not_authenticated: Not Authenticated
+authenticated: Authenticated
+options: Options
+otp: One-Time Password
+password: Password
+permissions: Permissions
+relationship: Relationship
+reset: Reset
+reset_password: Reset Password
+revisions: Revisions
+no_revisions: No Revisions Yet
+no_logs: No Logs Yet
+revert: Revert
+save: Save
+schema: Schema
+search: Search
+select_existing: Select Existing
+select_field_type: Select a field type
+select_interface: Select an interface
+settings: Settings
+sign_in: Sign In
+sign_out: Sign Out
+sign_out_confirm: Are you sure you want to sign out?
+something_went_wrong: Something went wrong.
+sort_direction: Sort Direction
+export_location: Export Location
+export_started: Export Started
+export_started_copy: Your export has started. You'll be notified when it's ready to download.
+sort_asc: Sort Ascending
+sort_desc: Sort Descending
+disable_sort: Disable Sorting
+template: Template
+require_value_to_be_set: Require value to be set on creation
+translation: Translation
+translation_placeholder: Enter a translation...
+value: Value
+view_project: View Project
+weeks: { }
+report_error: Report Error
+start: Start
+table: Table
+list: List
+search_filter: Search & Filter
+enable_search_filter: Enable searching & filtering
+item_link: Item link
+show_link_to_item: Show a link to the item
+navigate_to_item: Navigate to Item
+undo_removed_item: Undo Removed Item
+remove_item: Remove Item
+delete_item: Delete Item
 interfaces:
   filter:
-    name: Bộ lọc
-    add_filter: Thêm bộ lọc
-    all: Tất cả
-    any: Bất kỳ
-    no_rules: Không có quy tắc nào được thiết lập
+    name: Filter
+    description: Configure a filter object.
+    add_filter: Add Filter
+    add_group: And / Or group
+    add_value: Add Value
+    logic_type_and: AND
+    logic_type_or: OR
+    all: All
+    any: Any
+    and: and
+    of_the_following: of the following
+    no_rules: No configured rules
+    change_value: Click to change value
+    placeholder: Drag rules here
+    add_key_placeholder: Add a key and press enter...
+  fields:
+    name: Fields
+  group-accordion:
+    name: Accordion
+    description: Display fields or groups as accordion sections
+    start: Start
+    all_closed: All Closed
+    first_opened: First Opened
+    all_opened: All Opened
+    accordion_mode: Accordion Mode
+    max_one_section_open: Max 1 Section Open
   presentation-links:
-    primary: Khóa chính
+    presentation-links: Button Links
+    links: Links
+    description: Configurable link buttons for launching dynamic URLs
+    style: Style
+    primary: Primary
+    link: Links
+    button: Buttons
+    error: Cannot perform action
+  select-multiple-checkbox:
+    checkboxes: Checkboxes
+    description: Choose between multiple options via checkboxes
+    allow_other: Allow Other
+    show_more: 'Show {count} more'
+    items_shown: Items Shown
+  select-multiple-checkbox-tree:
+    name: Checkboxes (Tree)
+    description: Choose between multiple options via nested checkboxes
+    value_combining: Value Combining
+    value_combining_note: Controls what value is stored when nested selections are made.
+    show_all: Show All
+    show_selected: Show Selected
   input-code:
-    code: Mã nguồn
+    code: Code
+    description: Write or share code snippets
+    line_number: Line Number
+    line_wrapping: Line Wrapping
+    placeholder: Enter code here...
   system-collection:
-    collection: Danh mục
-    description: Chọn trong các danh mục hiện có
+    collection: Collection
+    description: Select between existing collections
+    include_system_collections: Include System Collections
   system-collections:
-    collections: Danh mục
-    description: Chọn trong các danh mục hiện có
+    collections: Collections
+    description: Select between existing collections
+    include_system_collections: Include System Collections
   select-color:
-    color: Màu sắc
+    color: Color
+    description: Enter or select a color value
+    placeholder: Choose a color...
+    preset_colors: Preset Colors
+    opacity: Opacity
+    preset_colors_add_label: Add new color...
+    name_placeholder: Enter color name...
   datetime:
-    datetime: Ngày giờ
-    use_24: Sử dụng Định dạng 24-giờ
+    datetime: Datetime
+    description: Enter dates and times
+    include_seconds: Include Seconds
+    set_to_now: Set to Now
+    use_24: Use 24-Hour Format
+    placeholder: Choose a datetime...
   system-fields:
-    select_a_collection: Chọn Bảng
+    select_a_collection: Select a Collection
+    no_fields: No fields
   system-display-template:
-    display-template: Mẫu hiển thị
-    select_a_collection: Chọn Bảng
+    display-template: Display Template
+    description: Mix static text and dynamic field values
+    collection_field: Collection field
+    collection_field_not_setup: The collection field option is misconfigured
+    select_a_collection: Select a Collection
   presentation-divider:
-    divider: Bộ chia
+    divider: Divider
+    description: Label and divide fields into sections
+    title_placeholder: Enter a title, or leave blank to only show a line...
+    inline_title: Inline Title
+    inline_title_label: Show title inside line
+    margin_top: Margin Top
+    margin_top_label: Increase Top Margin
   select-dropdown:
-    choices_value_placeholder: Nhập vào một giá trị...
+    description: Select a value from a dropdown
+    choices_placeholder: Add a new choice
+    allow_other: Allow Other
+    allow_other_label: Allow Other Values
+    allow_none: Allow None
+    allow_none_label: Allow No Selection
+    choices_name_placeholder: Enter a name...
+    choices_value_placeholder: Enter a value...
+    preview_threshold: Preview Threshold
+  select-multiple-dropdown:
+    select-multiple-dropdown: Dropdown (Multiple)
+    description: Select multiple values from a dropdown
   file:
-    file: Tệp
+    file: File
+    description: Select or upload a file
   files:
-    files: Tệp
+    files: Files
+    description: Select or upload multiple files
   input-hash:
     hash: Hash
+    description: Enter a value to be hashed
+    masked: Masked
+    masked_label: Hide the true values
   select-icon:
-    icon: Biểu tượng
+    icon: Icon
+    description: Select an icon from a dropdown
+    search_for_icon: Search for icon...
+  file-image:
+    image: Image
+    description: Select or upload an image
+    crop: Crop to Fit
+    crop_label: Crop image as needed
   system-interface:
-    interface: Giao diện
+    interface: Interface
+    description: Select an existing interface
+    placeholder: Select an interface...
+  system-interface-options:
+    interface-options: Interface Options
+    description: A modal for selecting options of an interface
   list-m2m:
-    many-to-many: Quan hệ nhiều - nhiều
+    many-to-many: Many to Many
+    description: Select multiple related junction items
+    columns_configure_notice: You can configure the columns after creating this field.
+    display_template_configure_notice: You can configure the display template after creating this field.
   select-dropdown-m2o:
-    many-to-one: Quan hệ nhiều - một
-    display_template: Mẫu hiển thị
+    many-to-one: Many to One
+    description: Select a single related item
+    display_template: Display Template
+  collection-item-dropdown:
+    collection-item-dropdown: Collection Item Dropdown
+    description: Select an item from a collection in JSON format
   input-rich-text-md:
-    edit: Sửa
+    markdown: Markdown
+    description: Enter and preview markdown
+    edit: Edit
+    preview: Preview
+    editorFont: Editor Font
+    previewFont: Preview Font
+    customSyntax: Custom Blocks
+    customSyntax_label: Add custom syntax types
+    customSyntax_add: Add custom syntax
+    box: Block / Inline
+    imageToken: Static Access Token
+    imageToken_label: Static access token is appended to the assets' URL
   map:
-    map: Bản đồ
-    zoom: Thu phóng
+    map: Map
+    description: Select a location on a map
+    zoom: Zoom
+    geometry_type: Geometry Type
+    geometry_format: Geometry Format
+    default_view: Default View
+    invalid_options: Invalid options
+    invalid_format: Invalid format ({format})
+    unexpected_geometry: Expected {expected}, got {got}.
+    fit_bounds: Fit view to data
+    native: Native
+    geojson: GeoJSON
+    lnglat: Longitude, Latitude
+    wkt: WKT
+    wkb: WKB
+    click_to_select: Click to select {geometry}
+  presentation-notice:
+    notice: Notice
+    description: Display a short notice
+    text: Enter notice content here...
   list-o2m:
-    one-to-many: Quan hệ một - nhiều
+    one-to-many: One to Many
+    description: Select multiple related items
+    no_collection: The collection could not be found
   system-folder:
-    folder: Thư mục
-    description: Chọn một thư mục
+    folder: Folder
+    description: Select a folder
+    field_hint: Default folder for uploaded files without a folder specified. Does not affect existing files.
+    root_name: File Library Root
+    system_default: System Defaults
+  select-radio:
+    radio-buttons: Radio Buttons
+    description: Select one of multiple choices
   list:
-    sort: Sắp xếp
-    sort_placeholder: Thủ công
+    repeater: Repeater
+    description: Create multiple entries of the same structure
+    edit_fields: Edit Fields
+    add_label: '"Create New" Label'
+    sort: Sort
+    sort_placeholder: Manual
+    field_note_placeholder: Enter field note...
+    incompatible_data:
+      - The current data is not compatible with the repeater interface and will be overridden when adding items to the
+      - repeater
   slider:
-    slider: Thanh trượt
+    slider: Slider
+    description: Select a number using a slider
+    always_show_value: Always show value
   tags:
     tags: Tags
+    description: Select or add tags
+    whitespace: Whitespace
+    hyphen: Replace with hyphen
+    underscore: Replace with underscore
+    remove: Remove whitespace
+    capitalization: Capitalization
+    uppercase: Convert Uppercase
+    lowercase: Convert Lowercase
+    auto_formatter: Use Title Auto-Formatter
+    alphabetize: Alphabetize
+    alphabetize_label: Force Alphabetical Order
+    add_tags: Add a tag and press Enter...
   input:
-    minimum_value: Giá trị tối thiểu
-    maximum_value: Giá trị tối đa
+    input: Input
+    description: Manually enter a value
+    trim: Trim
+    trim_label: Trim the start and end
+    mask: Masked
+    mask_label: Hide the real value
+    clear: Cleared Value
+    clear_label: Save as empty string
+    minimum_value: Minimum Value
+    maximum_value: Maximum Value
+    step_interval: Step Interval
+    slug: Slugify
+    slug_label: Make entered value URL safe
+  input-multiline:
+    textarea: Textarea
+    description: Enter multiline plain-text
   input-translated-string:
-    search_placeholder: Tìm kiếm...
+    input-translated-string: Translated Strings
+    description: Select or add translation string
+    search_placeholder: Search...
+    new_translation_string: New Translation String
   boolean:
-    label_default: Đã kích hoạt
+    toggle: Toggle
+    description: Switch between on and off
+    color_on: Color On
+    color_off: Color Off
+    label_placeholder: Enter a label...
+    label_default: Enabled
   translations:
-    display_template: Mẫu hiển thị
+    display_template: Display Template
+    no_collection: No Collection
+    toggle_split_view: Toggle Split View
+    enable: Enable
+    user_language: Use Current User Language
+    default_language: Default Language
+    language_field: Language Indicator Field
+    language_direction_field: Language Direction Field
+  list-o2m-tree-view:
+    description: Tree view for nested recursive one-to-many items
+    recursive_only: The tree view interface only works for recursive relationships.
   user:
-    user: Người dùng
+    user: User
+    description: Select an existing directus user
+    select_mode: Select Mode
     modes:
-      dropdown: Tuỳ chọn dạng thả xuống
+      auto: Auto
+      dropdown: Dropdown
+      modal: Modal
+  input-rich-text-html:
+    wysiwyg: WYSIWYG
+    description: A rich-text editor writing HTML content
+    toolbar: Toolbar
+    custom_formats: Custom Formats
+    options_override: Options Override
+    folder_note: Folder for uploaded files. Does not affect existing files.
+    imageToken: Static Access Token
+    imageToken_label: Static access token is appended to the assets' URL
+  input-autocomplete-api:
+    input-autocomplete-api: Autocomplete Input (API)
+    description: A search typeahead for external API values.
+    results_path: Results Path
+    value_path: Value Path
+    text_path: Text Path
+    trigger: Trigger
+    rate: Rate
+  group-raw:
+    name: Raw Group
+    description: Render the fields as-is
+  group-detail:
+    name: Detail Group
+    description: Render the fields as a collapsable section
+    show_header: Show Group Header
+    header_icon: Header Icon
+    header_color: Header Color
+    start_open: Start Open
+    start_closed: Start Closed
   system-token:
     system-token: Token
+    description: Manage static access token
+    placeholder: Click "Generate Token" to create a new static access token
+    value_securely_saved: Value Securely Saved
+    generate: Generate Token
+    regenerate: Regenerate Token
+    generate_success_copy: Make sure to backup and copy the token above. For security reasons, you will not be able to view the token again after saving and navigate off this page.
+    remove_token: Remove Token
+  system-raw-editor:
+    system-raw-editor: Raw Editor
+    description: Allow entering of raw or mustache templating values
 displays:
   translations:
-    translations: Các Bản Dịch
+    translations: Translations
+    description: Preview translations
+    enable: Enable
+    user_language: Use Current User Language
+    default_language: Default Language
+    language_field: Language Indicator Field
   boolean:
     boolean: Boolean
-    icon_on: Biểu tượng của trạng thái Bật
-    icon_off: Biểu tượng của trạng thái Tắt
+    description: Display on and off states
+    label_on: Label On
+    label_on_placeholder: Enter an on label...
+    label_off: Label Off
+    label_off_placeholder: Enter an off label...
+    icon_on: Icon On
+    icon_off: Icon Off
+    color_on: Color On
+    color_off: Color Off
   collection:
-    collection: Danh mục
-    icon_label: Hiển thị biểu tượng của danh mục
+    collection: Collection
+    description: Display a collection
+    icon_label: Show the collection's icon
   color:
-    color: Màu sắc
+    color: Color
+    description: Display a colored dot
+    default_color: Default Color
   datetime:
-    datetime: Ngày giờ
-    format: Định dạng
-    suffix: Hậu tố
+    datetime: Datetime
+    description: Display values related to time
+    format: Format
+    format_note: >-
+      The custom format accepts the __[Date Field Symbol Table](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table)__
+    long: Long
+    short: Short
+    relative: Relative
+    relative_label: 'Show relative time, eg: 5 minutes ago'
+    suffix: Suffix
+    suffix_label: Show relative indicator
+    suffix_note: Uses words like 'in' and 'ago'
+    strict: Strict
+    strict_label: Use strict units
+    strict_note: Removes words like 'almost', 'over', 'less than'
+    round: Round
+    round_note: Choose a rounding function to use
+    down: Down
+    nearest: Nearest
+    up: Up
   file:
-    file: Tệp
+    file: File
+    description: Display files
   filesize:
-    filesize: Kích thước tệp
+    filesize: File Size
+    description: Display the size of a file
   formatted-value:
-    format: Định dạng
-    font: Phông chữ
+    formatted-value: Formatted Value
+    description: Display a formatted version of the text
+    format: Format
+    format_label: Auto format
+    font: Font
+    font_sans_serif: Sans serif
     font_serif: Serif
-    font_monospace: Khoảng cách như nhau
-    bold: In đậm
-    italic: Nghiêng
-    prefix: Tiền tố
-    suffix: Hậu tố
-    color: Màu sắc
-    icon: Biểu tượng
-    text: Đoạn văn bản
+    font_monospace: Monospace
+    bold: Bold
+    bold_label: Use bold style
+    italic: Italic
+    italic_label: Use italic style
+    prefix: Prefix
+    prefix_label: Prepend text
+    suffix: Suffix
+    suffix_label: Appended Text
+    color: Color
+    background: Background
+    icon: Icon
+    border: Border
+    border_label: Show border
+    text: Text
+    text_placeholder: Optional value override...
+  formatted-json-value:
+    formatted-json-value: Formatted JSON value
+    description: Display a formatted version of the object
   icon:
-    icon: Biểu tượng
-    description: Hiển thị một biểu tượng
+    icon: Icon
+    description: Display an icon
+    filled: Filled
+    filled_label: Use the filled variant
   image:
-    circle: Vòng tròn
+    image: Image
+    description: Display a tiny image preview
+    circle: Circle
+    circle_label: Display as a circle
   labels:
-    choices_value_placeholder: Nhập vào một giá trị...
+    labels: Labels
+    description: Display either a single or a list of labels
+    default_foreground: Default Foreground
+    default_background: Default Background
+    format_label: Format each label
+    show_as_dot: Show As Dot
+    choices_value_placeholder: Enter a value...
+    choices_text_placeholder: Enter a text...
   mime-type:
-    mime-type: Định dạng
+    mime-type: MIME Type
+    description: Show the MIME-Type of a file
+    extension_only: Extension Only
+    extension_only_label: Only show the file extension
   rating:
-    rating: Xếp hạng
+    rating: Rating
+    description: Visualize a number as stars relative to the max-value
+    simple: Simple
+    simple_label: Show stars in a simple format
+  raw:
+    raw: Raw Value
+  related-values:
+    related-values: Related Values
+    description: Display relative values
+    display_template_configure_notice: You can configure the display template after creating this field.
   user:
-    user: Người dùng
-    avatar: Ảnh đại diện
-    name: Tên
-    both: Cả hai
+    user: User
+    description: Display a directus user
+    avatar: Avatar
+    name: Name
+    both: Both
+    circle_label: Show user in a circle
 layouts:
   cards:
-    cards: Thẻ
-    image_source: Nguồn ảnh
-    title: Tiêu đề
-    subtitle: Tiêu đề phụ
+    cards: Cards
+    image_source: Image Source
+    image_fit: Image Fit
+    crop: Crop
+    contain: Contain
+    title: Title
+    subtitle: Subtitle
   tabular:
-    tabular: Bảng
-    spacing: Khoảng cách
-    comfortable: Thoải mái
-    compact: Thu gọn
-    cozy: Khít
+    tabular: Table
+    spacing: Spacing
+    comfortable: Comfortable
+    compact: Compact
+    cozy: Cozy
   calendar:
-    calendar: Lịch
+    calendar: Calendar
+    start_date_field: Start Date Field
+    end_date_field: End Date Field
+    optional: Optional
+    first_day: First Day of the Week
   map:
-    map: Bản đồ
+    map: Map
+    basemap: Basemap
+    layers: Layers
+    cluster_options: Clustering options
+    cluster: Cluster Nearby Data
+    cluster_radius: Cluster radius
+    cluster_minpoints: Cluster minimum size
+    cluster_maxzoom: Maximum zoom for clustering
+    field: Geospatial Field
+    invalid_geometry: Invalid geometry
+    find_location: Find location...
+    default_template: Using Collection Default...
+    no_compatible_fields: No compatible fields
   kanban:
-    advanced: Nâng cao
-both: Cả hai
+    name: Kanban
+    group_field: Group By
+    group_field_placeholder: Field to group by...
+    group_title: Group Title
+    group_title_placeholder: Field for group titles...
+    title: Card Title
+    title_placeholder: Optional title field...
+    text: Card Text
+    text_placeholder: Optional text field...
+    date: Card Date
+    date_placeholder: Optional date field...
+    tags: Card Tags
+    tags_placeholder: Optional tags field...
+    user: Card User
+    user_placeholder: Optional user field...
+    image: Card Image
+    image_placeholder: Optional image field...
+    image_fit: Card Image Fit
+    crop: Crop
+    advanced: Advanced
+    edit_group: Edit Group
+    delete_group: Delete Group
+    add_group: Add Group
+    add_group_placeholder: Enter a new group title...
+    show_ungrouped: Show Ungrouped
+    show: Show
+    no_group: No Group
+    not_all_loaded: Could only load the first 1000 items.
+horizontal: Horizontal
+vertical: Vertical
+x_axis: X-Axis
+y_axis: Y-Axis
+y_axis_function: Y-Axis Function
+show_x_only: Show X-Axis Only
+show_y_only: Show Y-Axis Only
+show_data_label: Show Data Label
+both: Both
+show_axis_labels: Show Axis Labels
+function: Function
+half_circle: Half Circle
+full_circle: Full Circle
+stroke_width: Stroke Width
+rounded_stroke: Rounded Stroke
+thin: Thin
+medium: Medium
+broad: Broad
+show_labels: Show Labels
+show_legend: Show Legend
+right: Right
+left: Left
+donut: Donut
 panels:
+  metric:
+    name: Metric
+    description: Show a single value based on a query
+    field: Field
+  time_series:
+    name: Time Series
+    description: Render a line chart based on values over time
+    date_field: Date Field
+    value_field: Value Field
+    fill_type: Fill Type
+    curve_type: Curve Type
   label:
-    name: Nhãn
+    name: Label
+    description: Show some text
   list:
-    name: Danh sách
+    name: List
+    description: Filter and list fields from a collection
   barchart:
-    name: Biểu đồ cột
+    name: Bar Chart
+    description: Bar or column charts for comparing groups of values
+    horizontal: Horizontal
+    select_collection: You must select a collection.
+  linechart:
+    name: Line Chart
+    description: Line chart for comparing change of a field
+    disabled_grouping: Disabled when grouping is selected.
+    disabled_no_grouping: Disabled when no grouping is selected.
+    show_marker: Show Tooltip Marker
+    curve_type: Curve Type
+    smooth: Smooth
+    straight: Straight
+    step_line: Step Line
+  meter:
+    name: Meter
+    description: Meter for tracking values
+  piechart:
+    name: Pie or Donut Chart
+    description: Circular chart showing the ratios of groups on a column
+  variable:
+    name: Global Variable
+    description: Set a global value for use in other Panels' filters
+    variable_key: Variable Key
+  relational-variable:
+    name: Global Relational Variable
+    description: Set a global relational value for use in other Panels' filters
+    variable_key: Variable Key
+    multiple: Multiple
+    multiple-label: Select multiple items
 triggers:
+  common:
+    response_body: Response Body
+    response_body_all: All Data
+    response_body_last: Data of Last Operation
+  event:
+    name: Event Hook
+    description: Triggers on platform or data events
+    action: 'Action (Non-Blocking)'
+    filter: 'Filter (Blocking)'
   webhook:
-    method: Phương thức
+    name: Webhook
+    description: Triggers on an incoming HTTP request
+    method: Method
+    async: Asynchronous
+  operation:
+    name: Another Flow
+    description: Triggered by another Flow, for chaining
+    preview: Triggered by an operation in a different Flow
+  schedule:
+    name: Schedule (CRON)
+    description: Triggers at regular points in time
+    cron: Interval
+  manual:
+    name: Manual
+    description: Triggers on manual run within selected collection(s)
+    collection_and_item: Collection & Item Pages
+    collection_only: Collection Page Only
+    item_only: Item Page Only
+    collection_page: Collection Page
+    require_selection: Requires Selection
+a_flow_uuid: Select a Flow to trigger...
+any_string_or_json: Any string or JSON...
+item_payload_placeholder: This is the JSON used to update the item's field values...
+operation_variables_note: You can access flow data with variables such as **{'{'}{'{'}$last{'}'}{'}'}**, **{'{'}{'{'}$trigger{'}'}{'}'}** and **{'{'}{'{'}$accountability{'}'}{'}'}**, or reference previous operations using **{'{'}{'{'}operation_key{'}'}{'}'}**.'
 operations:
+  condition:
+    name: Condition
+    description: Route a flow based on If / Else logic
+  exec:
+    name: Run Script
+    description: Execute arbitrary code to modify the payload
+    modules: 'The following **Node modules** can be used:'
+  item-create:
+    name: Create Data
+    description: Create items in the database
+    payload: Payload
+    emit_events: Emit Events
+  item-delete:
+    name: Delete Data
+    description: Delete items in the database
+    emit_events: Emit Events
+    key: IDs
+    query: Query
+  item-read:
+    name: Read Data
+    description: Read items from the database
+    key: IDs
+    query: Query
+    emit_events: Emit Events
+  item-update:
+    name: Update Data
+    description: Update items in the database
+    emit_events: Emit Events
+    key: IDs
+    payload: Payload
+    query: Query
   log:
-    message: Tin nhắn
+    name: Log to Console
+    description: Output something to the console
+    message: Message
+    message_placeholder: Enter a message to show in the console...
   mail:
-    template: Mẫu
-    data: Dữ liệu
+    name: Send Email
+    description: Send an email to one or more people
+    to: To
+    to_placeholder: Add e-mail addresses and press enter...
+    body: Body
+    template: Template
+    data: Data
   notification:
-    recipient: Người dùng
-    message: Tin nhắn
+    name: Send Notification
+    description: Send an in-app notification to one or more users
+    recipient: User
+    recipient_placeholder: Enter a UUID...
+    recipient_note: Add user UUID and press enter...
+    message: Message
   request:
-    url: Đường Dẫn
-    method: Phương thức
-    data: Dữ liệu
-    header_placeholder: Đang xác thực...
+    name: Webhook / Request URL
+    description: "Make a request to a URL"
+    url: URL
+    url_placeholder: https://example.com/example
+    method: Method
+    data: Data
+    headers: Headers
+    header: Header
+    header_placeholder: Authorization...
+    value_placeholder: Bearer eyJhbGciOi...
+  sleep:
+    name: Sleep
+    description: Wait a given number of milliseconds
+    milliseconds: Milliseconds
+  transform:
+    name: Transform Payload
+    description: Alter the Flow's JSON payload
   trigger:
-    data: Dữ liệu
+    name: Trigger Flow
+    description: Pass this data to another flow
+    flows: Flows
+    flow: Flow
+    data: Data
+    iteration_mode: Iteration Mode
+    iteration_mode_note: Mode for iterating over arrays.
+    serial: Serial
+    parallel: Parallel
+    batch: Batch
+    batch_size: Batch Size
+Enable CORS: Enable CORS

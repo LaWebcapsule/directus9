@@ -1,4 +1,3 @@
----
 ## Be aware:
 #Due to the way this is imported, JavaScript reserved words, including "delete", "private",
 #"void", etc are stripped out. See
@@ -19,388 +18,398 @@
 #'Int32Array', 'Uint32Array', 'Float32Array', 'Float64Array', 'Map', 'Set', 'WeakMap', 'WeakSet',
 #'SIMD', 'ArrayBuffer', 'DataView', 'JSON', 'Promise', 'Generator', 'GeneratorFunction', 'Reflect',
 #'Proxy', 'Intl'
-identifier: Pengenal
+identifier: Identifier
 avatar: Avatar
-application: Aplikasi
-default_provider: Bawaan
-method: Metode
-published: Dipublikasikan
-draft: Konsep
-archived: Diarsipkan
-modules: Modul
-module_bar: Papan Modul
-logs: Catatan
-reset_width: Atur Ulang Lebar
-tile_size: Ukuran Corak
-edit_field: Edit Kolom
-conditions: Kondisi
-location: Lokasi
-condition_rules: Gaya Bersyarat
+application: Application
+default_provider: Default
+method: Method
+published: Published
+draft: Draft
+archived: Archived
+modules: Modules
+module_bar: Module Bar
+logs: Logs
+reset_width: Reset Width
+tile_size: Tile Size
+edit_field: Edit Field
+conditions: Conditions
+location: Location
+condition_rules: Condition Rules
 input: Input
-maps: Peta
-switch_user: Beralih/ganti pengguna
-item_creation: Pembuatan Item
-item_revision: Revisi Item
-enter_a_name: Masukkan sebuah Nama...
-duplicate_field: Kolom Duplikat
-half_width: Lebar Setengah
-full_width: Lebar Penuh
-group: Grup
-export_items: Ekspor Item
-and: Dan
-or: Atau
-init: Awal
-dataset_too_large_currently_showing_n_items: Himpunan data terlalu besar. Saat ini menampilkan {n} item pertama.
-modifier: Pengubah
-custom: Kustomisasi
+maps: Maps
+switch_user: Switch User
+item_creation: Item Creation
+item_revision: Item Revision
+enter_a_name: Enter a Name...
+duplicate_field: Duplicate Field
+half_width: Half Width
+full_width: Full Width
+group: Group
+export_items: Export Items
+and: And
+or: Or
+init: Init
+dataset_too_large_currently_showing_n_items: Dataset is too large. Currently showing the first {n} items.
+modifier: Modifier
+custom: Custom
 hook: Hook
-fill_width: Lebar Penuh
-field_name_translations: Terjemahan Nama Kolom
-enter_password_to_enable_tfa: Masukkan password anda untuk Two-Factor Authentication
-add_field: Tambah Kolom
-role_name: Nama Peran
-branch: Cabang
-leaf: Daun
-indeterminate: Tidak tentu
-edit_collection: Edit Koleksi
-exclusive: Ekklusif
-children: Anak
-db_only_click_to_configure: 'Hanya Database: Tekan untuk Konfigurasi'
-show_active_items: Tampilkan Item Aktif
-show_archived_items: Tampilkan Yang Diarsipkan
-show_all_items: Tampilkan semua item
-edited: Nilai Diedit
-required: Diperlukan
-required_for_app_access: Diperlukan untuk Akses Aplikasi
-requires_value: Wajib memiliki nilai
-create_preset: Buat Preset
-create_panel: Buat Panel
-create_role: Buat Peran
-create_user: Buat User
-message: Pesan
-delete_panel: Hapus Panel
-create_webhook: Buat Webhook
-create_translation_string: Buat Terjemahan
-no_translation_string: Tidak ditemukan terjemahan
-no_translation_string_copy: Belum ada terjemahan tersedia.
-translation_string_key_placeholder: Kunci string terjemahan...
-translation_string_translations_placeholder: Tambahkan terjemahan baru
-edit_translation_string: Sunting Terjemahan
+fill_width: Fill Width
+field_name_translations: Field Name Translations
+enter_password_to_enable_tfa: Enter your password to enable Two-Factor Authentication
+add_field: Add Field
+role_name: Role Name
+branch: Branch
+leaf: Leaf
+indeterminate: Indeterminate
+edit_collection: Edit Collection
+exclusive: Exclusive
+children: Children
+db_only_click_to_configure: 'Database Only: Click to Configure'
+show_active_items: Show Active Items
+show_archived_items: Show Archived Items
+show_all_items: Show All Items
+edited: Value Edited
+required: Required
+required_for_app_access: Required for App Access
+requires_value: Requires value
+create_preset: Create Preset
+create_panel: Create Panel
+create_role: Create Role
+create_user: Create User
+message: Message
+delete_panel: Delete Panel
+create_webhook: Create Webhook
+create_translation_string: Create Translation String
+no_translation_string: No Translation Strings
+no_translation_string_copy: There are no translation strings yet.
+translation_string_key_placeholder: Translation string key...
+translation_string_translations_placeholder: Add a new translation
+edit_translation_string: Edit Translation String
 delete_translation_string_copy: >-
-  Apakah Anda yakin ingin menghapus bidang terjemahan "{key}" ini? Tindakan ini tidak dapat dikembalikan.
-invite_users: Undang Pengguna Lain
-invite: Undang
-email_already_invited: Email "{email}" sudah diundang
-subject: Subjek
-inbox: Kotak Masuk
-emails: Surel
-connection_excellent: Koneksi Luar Biasa
-connection_good: Koneksi Bagus
-connection_fair: Koneksi Standar
-connection_poor: Koneksi Buruk
-primary: Primer
-rename_folder: Ubah nama folder
-delete_folder: Hapus Folder
-prefix: Awalan
-suffix: Akhiran
-reset_bookmark: Hapus Markah
-update_bookmark: Hapus Markah
-delete_bookmark: Hapus Markah
+  Are you sure you want to delete the translation string "{key}"? This action can not be undone.
+invite_users: Invite Users
+invite: Invite
+email_already_invited: Email "{email}" has already been invited
+subject: Subject
+inbox: Inbox
+emails: Emails
+connection_excellent: Excellent Connection
+connection_good: Good Connection
+connection_fair: Fair Connection
+connection_poor: Poor Connection
+primary: Primary
+rename_folder: Rename Folder
+delete_folder: Delete Folder
+prefix: Prefix
+suffix: Suffix
+reset_bookmark: Reset Bookmark
+update_bookmark: Update Bookmark
+delete_bookmark: Delete Bookmark
 delete_bookmark_copy: >-
-  Apakah anda yakin ingin menghapus markah "{bookmark}"? Tindakan ini tidak dapat dikembalikan.
-delete_personal_bookmark: Hapus Markah Pribadi
-delete_role_bookmark: Hapus Markah Peran
-delete_global_bookmark: Hapus Markah Global
+  Are you sure you want to delete the "{bookmark}" bookmark? This action cannot be undone.
+delete_personal_bookmark: Delete Personal Bookmark
+delete_role_bookmark: Delete Role Bookmark
+delete_global_bookmark: Delete Global Bookmark
 logoutReason:
-  SIGN_OUT: Telah keluar
-  SESSION_EXPIRED: Sesi kadaluarsa
-public_label: Publik
-public_description: Kendalikan data API yang tersedia tanpa autentikasi.
-admin_description: Peran administratif awal tanpa batasan akses aplikasi/API.
-not_allowed: Tidak Diizinkan
-directus_version: Versi Directus
-node_version: Versi Node
-node_uptime: Waktu Jalan Node
-os_type: Tipe OS
-os_version: Versi OS
-os_uptime: Waktu Jalan OS
-os_totalmem: Memori OS
-archive: Arsip
-archive_confirm: Apakah Anda yakin ingin mengarsipkan item ini?
+  SIGN_OUT: Signed out
+  SESSION_EXPIRED: Session expired
+public_label: Public
+public_description: Controls what API data is available without authenticating.
+admin_description: Initial administrative role with unrestricted App/API access.
+not_allowed: Not Allowed
+directus_version: Directus Version
+node_version: Node Version
+node_uptime: Node Uptime
+os_type: OS Type
+os_version: OS Version
+os_uptime: OS Uptime
+os_totalmem: OS Memory
+archive: Archive
+archive_confirm: Are you sure you want to archive this item?
 archive_confirm_count: >-
-  Tidak ada item terpilih | Apakah Anda yakin ingin mengarsipkan item ini? | Apakah Anda yakin ingin mengarsipkan {count} item ini?
-reset_system_permissions_to: 'Set Ulang Perizinan Sistem ke:'
-reset_system_permissions_copy: Tindakan ini akan menimpa perizinan kustom apapun yang mungkin telah diterapkan ke koleksi sistem. Apakah Anda yakin?
-app_access_minimum: Minimum Akses Aplikasi
-recommended_defaults: Bawaan yang Direkomendasikan
-unarchive: Batalkan pengarsipan
-unarchive_confirm: Apakah Anda yakin ingin membatalkan arsip dari item ini?
-nested_files_folders_will_be_moved: Berkas dan folder yang disarang akan dipindahkan satu tingkat keatas.
-validation_errors_notice: 'Bidang berikut memiliki nilai-nilai yang tidak sah:'
+  No Items Selected | Are you sure you want to archive this item? | Are you sure you want to archive these {count} items?
+reset_system_permissions_to: 'Reset System Permissions to:'
+reset_system_permissions_copy:
+  - This action will overwrite any custom permissions you may have applied to the system collections. Are you sure?
+the_following_are_minimum_permissions:
+  - The following minimum permissions are automatically applied when "App Access" is enabled. You can grant additional permissions if needed, but you cannot reduce permissions below this level.
+app_access_minimum: App Access Minimum
+recommended_defaults: Recommended Defaults
+unarchive: Unarchive
+unarchive_confirm: Are you sure you want to unarchive this item?
+nested_files_folders_will_be_moved: Nested files and folders will be moved one level up.
+validation_errors_notice: 'The following fields have invalid values:'
 validationError:
-  eq: Nilai harus {valid}
-  neq: Nilai tidak boleh {invalid}
-  in: Nilai harus salah satu dari {valid}
-  nin: Nilai tidal boleh salah satu dari {invalid}
-  contains: Nilai harus memiliki {substring}
-  ncontains: Nilai tidak boleh memiliki {substring}
-  gt: Nilai harus lebih besar dari {valid}
-  gte: Nilai harus lebih besar atau sama dengan {valid}
-  lt: Nilai harus kurang dari {valid}
-  lte: Nilai harus kurang dari ataus sama dengan {valid}
-  empty: Nilai harus kosong
-  nempty: Nilai tidak boleh kosong
-  null: Nilai harus kosong
-  nnull: Nilai tidak boleh kosong
-  required: Nilai diperlukan
-  unique: Nilai harus unik
-  regex: Format nilai tidak tepat
-all_access: Semua Akses
-no_access: Tidak Ada Akses
-use_custom: Gunakan Kustom
-nullable: Dapat dikosongkan
-allow_null_value: Izinkan nilai KOSONG
-allow_multiple: Izinkan Beberapa
-allow_multiple_to_be_open: Izinkan Beberapa untuk Dibuka
-enter_value_to_replace_nulls: Harap masukkan nilai baru untuk menggantikan nilai kosong pada kolom ini.
-field_standard: Standar
-field_presentation: Presentasi & Alias
-field_file: Satu Berkas
-field_files: Beberapa Berkas
-field_m2o: Hubungan M2O
-field_m2a: Hubungan M2A
-field_o2m: Hubungan O2M
-field_m2m: Hubungan M2M
-field_translations: Terjemahan
-field_group: Grup Bidang
-item_permissions: Perizinan Item
-field_permissions: Perizinan Baris
-field_validation: Validasi Baris
-field_presets: Preset Baris
-permissions_for_role: 'Item {role} Peran dapat {action}.'
-fields_for_role: 'Baris {role} Peran dapat {action}.'
-validation_for_role: 'Aturan baris {action} Peran {role} harus tunduk.'
-presets_for_role: 'Nilai bawaan baris untuk Peran {role}.'
-presentation_and_aliases: Presentasi & Alias
-revision_post_create: Ini adalah bagaimana item ini terlihat ketika dibuat.
-revision_post_update: Ini adalah bagaimana item ini terlihat setelah pembaruan.
-changes_made: Dibawah adalah perubahan spesifik yang dibuat dalam revisi ini.
-no_relational_data: Ingat bahwa data yang berhubungan tidak termasuk disini.
-junction_field_location: Lokasi Kolom yang bersimpangan
-top: Atas
-bottom: Bawah
-hide_field: Sembunyikan bidang
-hide_field_on_detail: Sembunyikan Baris pada Rincian
-show_field_on_detail: Tampilkan Baris pada Rincian
-delete_field: Hapus Baris
-fields_and_layout: Baris & Layout
-field_create_success: 'Buat Baris: "{field}"'
-field_update_success: 'Perbarui Baris: "{field}"'
-duplicate_where_to: Dimana Anda ingin menggandakan baris ini?
-language: Bahasa
-language_placeholder: Pilih sebuah bahasa...
-aggregate_function: Fungsi Agregat
-aggregate_precision: Presisi Agregat
-group_aggregation: Grup Agregat
-group_precision: Grup Presisi
+  eq: Value has to be {valid}
+  neq: Value can't be {invalid}
+  in: Value has to be one of {valid}
+  nin: Value can't be one of {invalid}
+  contains: Value has to contain {substring}
+  ncontains: Value can't contain {substring}
+  gt: Value has to be greater than {valid}
+  gte: Value has to be greater than or equal to {valid}
+  lt: Value has to be less than {valid}
+  lte: Value has to be less than or equal to {valid}
+  empty: Value has to be empty
+  nempty: Value can't be empty
+  null: Value has to be null
+  nnull: Value can't be null
+  required: Value is required
+  unique: Value has to be unique
+  regex: Value doesn't have the correct format
+all_access: All Access
+no_access: No Access
+use_custom: Use Custom
+nullable: Nullable
+allow_null_value: Allow NULL value
+allow_multiple: Allow Multiple
+allow_multiple_to_be_open: Allow Multiple to be Opened
+enter_value_to_replace_nulls: Please enter a new value to replace any NULLs currently within this field.
+field_standard: Standard
+field_presentation: Presentation & Aliases
+field_file: Single File
+field_files: Multiple Files
+field_m2o: M2O Relationship
+field_m2a: M2A Relationship
+field_o2m: O2M Relationship
+field_m2m: M2M Relationship
+field_translations: Translations
+field_group: Field Group
+item_permissions: Item Permissions
+field_permissions: Field Permissions
+field_validation: Field Validation
+field_presets: Field Presets
+permissions_for_role: 'Items the {role} Role can {action}.'
+fields_for_role: 'Fields the {role} Role can {action}.'
+validation_for_role: 'Field {action} rules the {role} Role must obey.'
+presets_for_role: 'Field value defaults for the {role} Role.'
+presentation_and_aliases: Presentation & Aliases
+revision_post_create: Here is what this item looked like when it was created.
+revision_post_update: Here is what this item looked like after the update.
+changes_made: Below are the specific changes made in this revision.
+no_relational_data: Keep in mind that relational data is not included here.
+junction_field_location: Junction Fields Location
+top: Top
+bottom: Bottom
+hide_field: Hide Field
+hide_field_on_detail: Hide Field on Detail
+show_field_on_detail: Show Field on Detail
+delete_field: Delete Field
+fields_and_layout: Fields & Layout
+field_create_success: 'Created Field: "{field}"'
+field_update_success: 'Updated Field: "{field}"'
+duplicate_where_to: Where would you like to duplicate this field to?
+language: Language
+language_placeholder: Select a language...
+aggregate_function: Aggregate Function
+aggregate_precision: Aggregate Precision
+group_aggregation: Group Aggregation
+group_precision: Group Precision
 global: Global
-admins_have_all_permissions: Admin memiliki semua perizinan
-camera: Kamera
-show_zero: Tampilkan Kosong
-create_in_advanced_field_creation_mode: Buat Bidang dalam Mode Lanjutan
-continue_in_advanced_field_creation_mode: Lanjutkan di Mode Pembuatan Bidang Lanjutan
-validation: Validasi
-sum: Jumlah
-sum_distinct: Perbedaan Jumlah
-avg: Rata-rata
-avg_distinct: Perbedaan Rata-rata
-count: Hitung
-count_distinct: Perbedaan Hitung
+admins_have_all_permissions: Admins have all permissions
+camera: Camera
+show_zero: Show Zero
+create_in_advanced_field_creation_mode: Create Field in Advanced Mode
+continue_in_advanced_field_creation_mode: Continue in Advanced Field Creation Mode
+validation: Validation
+sum: Sum
+sum_distinct: Sum Distinct
+avg: Average
+avg_distinct: Average Distinct
+count: Count
+count_distinct: Count Distinct
 min: Min
-max: Maks
-exposure: Eksposur
+max: Max
+exposure: Exposure
 shutter: Shutter
 iso: ISO
-focal_length: Jarak Fokus
-schema_setup_key: Nama kolom baris database ini dan kunci API
-create_field: Buat Bidang
-creating_new_field: 'Kolom Baru ({collection})'
+focal_length: Focal Length
+schema_setup_key: This field's database column name and API key
+create_field: Create Field
+creating_new_field: 'New Field ({collection})'
 field_in_collection: '{field} ({collection})'
-reset_page_preferences: Reset Preferensi Halaman
-hidden_field: Kolom Tersembunyi
-hidden_on_detail: Disembunyikan dalam Rincian
-disabled_editing_value: Nonaktifkan mengubah nilai
-key: Kunci
+reset_page_preferences: Reset Page Preferences
+hidden_field: Hidden Field
+hidden_on_detail: Hidden on Detail
+disabled_editing_value: Disable editing value
+key: Key
 alias: Alias
 bigInteger: Big Integer
 boolean: Boolean
-date: Tanggal
-date_range: Rentang Tanggal
+date: Date
+date_range: Date Range
 datetime: DateTime
 dateTime: DateTime
-precision: Presisi
-decimal: Desimal
+precision: Precision
+decimal: Decimal
 float: Float
 integer: Integer
 json: JSON
 xml: XML
 yaml: YAML
 string: String
-text: Teks
+text: Text
 time: Time
 timestamp: Timestamp
 uuid: UUID
 hash: Hash
-geometry: Geometri (Semua)
-geometry.Point: Titik
-geometry.LineString: StringGaris
-geometry.Polygon: Poligon
-geometry.MultiPoint: TitikMulti
-geometry.MultiLineString: Rangkaian beberapa baris
-geometry.MultiPolygon: Banyak poligon
-not_available_for_type: Tidak Tersedia Untuk Tipe Ini
-create_translations: Buat Terjemahan
-auto_refresh: Penyegaran Otomatis
-refresh_interval: Selang Waktu Segarkan
-no_refresh: Jangan Segarkan
-refresh_interval_seconds: Segarkan secara Instan | Setiap Detik | Setiap {seconds} Detik
-refresh_interval_minutes: Setiap Menit | Setiap {minutes} Menit
-auto_generate: Buat Otomatis
-this_will_auto_setup_fields_relations: Ini akan secara otomatis menkonfigurasi seluruh kolom dan hubungan yang dibutuhkan.
-click_here: Tekan di sini
-to_manually_setup_translations: untuk secara manual menkonfirgurasi penerjemah.
+geometry: Geometry (All)
+geometry.Point: Point
+geometry.LineString: LineString
+geometry.Polygon: Polygon
+geometry.MultiPoint: MultiPoint
+geometry.MultiLineString: MultiLineString
+geometry.MultiPolygon: MultiPolygon
+not_available_for_type: Not Available for this Type
+create_translations: Create Translations
+auto_refresh: Auto Refresh
+refresh_interval: Refresh Interval
+no_refresh: Do not refresh
+refresh_interval_seconds: Refresh Instantly | Every Second | Every {seconds} Seconds
+refresh_interval_minutes: Every Minute | Every {minutes} Minutes
+auto_generate: Auto-Generate
+this_will_auto_setup_fields_relations: This will automatically setup all required fields and relations.
+click_here: Click here
+to_manually_setup_translations: to manually setup translations.
 click_to_manage_translated_fields: >-
-  Belum ada baris yang diterjemahkan. Klik disini untuk membuatnya. | Terdapat satu baris yang diterjemahan. Klik disini untuk mengelolanya. | Terdapat {count} baris yang diterjemahkan. Klik disini untuk mengelola baris tersebut.
-fields_group: Grup kolom-kolom
-no_collections_found: Tidak ada koleksi ditemukan.
-new_data_alert: 'Berikut ini akan dibuat menurut Model Data Anda:'
-search_collection: Cari Koleksi...
-search_field: Kolom Pencarian...
-new_field: 'Baris Baru'
-new_collection: 'Koleksi Baru'
-add_m2o_to_collection: 'Tambah M2O ke "{collection}"'
-add_o2m_to_collection: 'Tambah O2M ke "{collection}"'
-add_m2m_to_collection: 'Tambah M2M ke "{collection}"'
-choose_a_type: Pilih tipe...
-determined_by_relationship: Ditentukan oleh relasi
-add_note: Tambahkan catatan untuk pengguna...
-add_link: Tambahkan Tautan
-custom_link: Tautan khusus
-default_value: Nilai Bawaan
-standard_field: Kolom Standar
-single_file: Satu Berkas
-multiple_files: Beberapa Berkas
-m2o_relationship: Relasi Banyak ke Satu
-o2m_relationship: Relasi Satu ke Banyak
-m2m_relationship: Relasi Banyak ke Banyak
-m2a_relationship: Relasi Banyak ke Semua
-invalid_item: Item tidak Valid
-next: Lanjut
-field_name: Nama Kolom
-translations: Terjemahan
-no_translations: Tidak ada terjemahan
-left_to_right: Kiri ke Kanan
-right_to_left: Kanan ke Kiri
-note: Catatan
-enter_a_value: Masukkan sebuah nilai...
-enter_a_placeholder: Masukkan sebuah placeholder...
-length: Panjang
-soft_length: Batasan Umum
-precision_scale: Presisi & Skala
-readonly: Hanya-baca
-unique: Unik
-updated_on: Diperbarui Pada
-updated_by: Diperbarui Oleh
+  There are no translated fields yet. Click here to create them. | There is one translated field. Click here to manage it. | There are {count} translated fields. Click here to manage them.
+fields_group: Fields Group
+no_collections_found: No collections found.
+new_data_alert: 'The following will be created within your Data Model:'
+search_collection: Search Collection...
+search_field: Search Field...
+new_field: 'New Field'
+new_collection: 'New Collection'
+add_m2o_to_collection: 'Add M2O to "{collection}"'
+add_o2m_to_collection: 'Add O2M to "{collection}"'
+add_m2m_to_collection: 'Add M2M to "{collection}"'
+choose_a_type: Choose a Type...
+determined_by_relationship: Determined by Relationship
+add_note: Add a helpful note for users...
+add_link: Add Link
+custom_link: Custom Link
+default_value: Default Value
+standard_field: Standard Field
+single_file: Single File
+multiple_files: Multiple Files
+m2o_relationship: Many to One Relationship
+o2m_relationship: One to Many Relationship
+m2m_relationship: Many to Many Relationship
+m2a_relationship: Many to Any Relationship
+invalid_item: Invalid Item
+require_confirmation: Require Confirmation
+dialog: Dialog
+modal: Modal
+confirmation_dialog: Confirmation Dialog
+confirmation_description: Confirmation Description
+confirmation_input_fields: Confirmation Input Fields
+next: Next
+field_name: Field Name
+translations: Translations
+no_translations: No Translations
+left_to_right: Left to Right
+right_to_left: Right to Left
+note: Note
+enter_a_value: Enter a value...
+enter_a_placeholder: Enter a placeholder...
+length: Length
+soft_length: Soft Limit
+precision_scale: Precision & Scale
+readonly: Readonly
+unique: Unique
+updated_on: Updated On
+updated_by: Updated By
 primary_key: Primary Key
-foreign_key: Kunci Asing
-finish_setup: Selesai Setup
-dismiss: Abaikan
-toggle_raw_editor: Ganti Editor Raw
+foreign_key: Foreign Key
+field_key: Field Key
+finish_setup: Finish Setup
+dismiss: Dismiss
+toggle_raw_editor: Toggle Raw Editor
 raw_editor_placeholder: "{'{'}{'{'}$trigger.payload.example{'}'}{'}'}"
-raw_value: Nilai mentah
-copy_raw_value: Salin Nilai Asli
-copy_raw_value_success: Disalin
-copy_raw_value_fail: Gagal menyalin
-paste_raw_value: Tempel Nilai Asli
-paste_raw_value_success: Ditempelkan
-paste_raw_value_fail: Gagal Menempelkan
-view_raw_value: Lihat Nilai Asli
-edit_raw_value: Sunting Nilai Mentah
-enter_raw_value: Masukkan nilai mentah...
-clear_value: Kosongkan Nilai
-clear_changes: Kosongkan Perubahan
-clear_items: Kosongkan Item
-reset_to_default: Atur Ulang ke Bawaan
-undo_changes: Batalkan Perubahan
-notifications: Notifikasi
-show_all_activity: Tampilkan Semua Aktivitas
-page_not_found: Halaman Tidak Ditemukan
-page_not_found_body: Halaman yang Anda cari sepertinya tidak ada.
-confirm_revert: Konfirmasi Kembalikan
-confirm_revert_body: Ini akan mengembalikan item ke keadaaan yang dipilih.
-display: Tampilkan
-settings_update_success: Pengaturan telah diperbarui
-title: Judul
-revision_delta_created: Dibuat
-revision_delta_created_externally: Buat secara Eksternal
-revision_delta_updated: 'Diperbarui 1 Baris | Diperbarui {count} Baris'
-revision_delta_deleted: Terhapus
-revision_delta_reverted: Dikembalikan
-revision_delta_update_message: Kolom ini telah diperbarui namun nilainya sedang disembunyikan demi alasan keamanan.
-revision_delta_other: Revisi
-revision_delta_by: '{date} oleh {user}'
-presentation_text_values_cannot_be_reimported: "Menggunakan teks untuk presentasi, nilai tidak dapat diimpor ulang."
-download_page_as_csv: 'Unduh Halaman sebagai CSV'
-private_user: Pengguna Pribadi
-creation_preview: Pratinjau Kreasi
-revision_preview: Pratinjau Revisi
-updates_made: Pembaruan Dibuat
-leave_comment: Tinggalkan komentar...
-post_comment_success: Komentar telah diposting
-post_comment_updated: Komentar diperbarui
-item_create_success: Item telah Dibuat | Item telah Dibuat
-item_update_success: Item telah Diperbarui | Item telah Diperbarui
-item_delete_success: Item telah Dihapus | Item telah Dihapus
-this_collection: Pengumpulan ini
-related_collection: Pengumpulan Terkait
-related_collections: Koleksi Terkait
-translations_collection: Koleksi Terjemahan
-languages_collection: Koleksi Bahasa
-import_data_input_placeholder: CSV atau JSON...
-import_data_button: Mulai Impor
-import_data_indeterminate: Mengimpor Data...
-import_data_success: Data berhasil diimpor dari {filename}
-import_data_error: Struktur Data dari Berkas ini tidak sesuai dengan Koleksi.
-label_import: Impor
-label_export: Ekspor
-import_export: Impor / Ekspor
+raw_value: Raw value
+copy_raw_value: Copy Raw Value
+copy_raw_value_success: Copied
+copy_raw_value_fail: Copy Failed
+paste_raw_value: Paste Raw Value
+paste_raw_value_success: Pasted
+paste_raw_value_fail: Paste Failed
+view_raw_value: View Raw Value
+edit_raw_value: Edit Raw Value
+enter_raw_value: Enter raw value...
+clear_value: Clear Value
+clear_changes: Clear Changes
+clear_items: Clear Items
+reset_to_default: Reset to Default
+undo_changes: Undo Changes
+notifications: Notifications
+show_all_activity: Show All Activity
+page_not_found: Page Not Found
+page_not_found_body: The page you are looking for doesn't seem to exist.
+confirm_revert: Confirm Revert
+confirm_revert_body: This will revert the item to the selected state.
+display: Display
+settings_update_success: Settings updated
+title: Title
+revision_delta_created: Created
+revision_delta_created_externally: Created Externally
+revision_delta_updated: 'Updated 1 Field | Updated {count} Fields'
+revision_delta_deleted: Deleted
+revision_delta_reverted: Reverted
+revision_delta_update_message: This field has been updated but its value is being concealed for security reasons.
+revision_delta_other: Revision
+revision_delta_by: '{date} by {user}'
+presentation_text_values_cannot_be_reimported: "Uses presentation text, values can not be re-imported."
+download_page_as_csv: 'Download Page as CSV'
+private_user: Private User
+creation_preview: Creation Preview
+revision_preview: Revision Preview
+updates_made: Updates Made
+leave_comment: Leave a comment...
+post_comment_success: Comment posted
+post_comment_updated: Comment updated
+item_create_success: Item Created | Items Created
+item_update_success: Item Updated | Items Updated
+item_delete_success: Item Deleted | Items Deleted
+this_collection: This Collection
+related_collection: Related Collection
+related_collections: Related Collections
+translations_collection: Translation Collection
+languages_collection: Languages Collection
+import_data_input_placeholder: CSV or JSON...
+import_data_button: Start Import
+import_data_indeterminate: Importing Data...
+import_data_success: Data successfully imported from {filename}
+import_data_error: This file's data structure doesn't match the collection.
+label_import: Import
+label_export: Export
+import_export: Import / Export
 format: Format
-last_page: Halaman Terakhir
-last_access: Akses Terakhir
-fill_template: Isi dengan Nilai Template
-a_unique_table_name: Sebuah nama tabel unik...
-a_unique_column_name: Sebuah nama kolom unik...
-enable_custom_values: Aktifkan nilai khusus
-submit: Kirim
-move_to_folder: Pindahkan ke Folder
-move: Pindah
-system: Sistem
-add_field_related: Tambah Baris ke Koleksi Terkait
-interface_label: Antarmuka
-today: Hari Ini
-yesterday: Kemarin
-delete_comment: Hapus Komentar
-delete_share: Hapus Berbagi
+last_page: Last Page
+last_access: Last Access
+fill_template: Fill with Template Value
+a_unique_table_name: A unique table name...
+a_unique_column_name: A unique column name...
+enable_custom_values: Enable custom values
+submit: Submit
+move_to_folder: Move to Folder
+move: Move
+system: System
+add_field_related: Add Field to Related Collection
+interface_label: Interface
+today: Today
+yesterday: Yesterday
+delete_comment: Delete Comment
+delete_share: Delete Share
 functions:
-  year: Tahun
-  month: Bulan
-  week: Pekan
-  day: Hari
-  weekday: Hari Kerja
-  hour: Jam
-  minute: Menit
-  second: Detik
-  count: Hitung
+  year: Year
+  month: Month
+  week: Week
+  day: Day
+  weekday: Weekday
+  hour: Hour
+  minute: Minute
+  second: Second
+  count: Count
 date-fns_date: PPP
 date-fns_time: 'h:mm:ss a'
 date-fns_time_no_seconds: 'h:mm a'
@@ -409,1082 +418,1745 @@ date-fns_time_no_seconds_24hour: 'HH:mm'
 date-fns_date_short: 'MMM d, u'
 date-fns_time_short: 'h:mma'
 date-fns_date_short_no_year: MMM d
-minutes: Menit
-hours: Jam
-month: Bulan
-year: Tahun
-select_all: Pilih Semua
+minutes: Minutes
+hours: Hours
+month: Month
+year: Year
+select_all: Select All
 months:
-  january: Januari
-  february: Februari
-  march: Maret
+  january: January
+  february: February
+  march: March
   april: April
-  may: Mei
-  june: Juni
-  july: Juli
-  august: Agustus
+  may: May
+  june: June
+  july: July
+  august: August
   september: September
-  october: Oktober
+  october: October
   november: November
-  december: Desember
-drag_mode: Mode Tarik
-cancel_crop: Batalkan Pemotongan
-original: Orisinal
+  december: December
+drag_mode: Drag Mode
+cancel_crop: Cancel Crop
+original: Original
 url: URL
-import_label: Impor
-file_details: Rincian Berkas
-dimensions: Dimensi
-size: Ukuran
-created: Dibuat
-modified: Telah dimodifikasi
+import_label: Import
+file_details: File Details
+dimensions: Dimensions
+size: Size
+created: Created
+modified: Modified
 checksum: Checksum
-owner: Pemilik
-edited_by: Diedit oleh
-folder: Direktori
-zoom: Perbesar
-download: Unduh
-open: Buka
-open_in_new_window: Buka di Jendela Baru
-open_folder: Buka folder "{folder}"
-foreground_color: Warna Latar Depan
-background_color: Warna Latar Belakang
-upload_from_device: Unggah Berkas dari Perangkat
-choose_from_library: Pilih Berkas dari Pustaka
-import_from_url: Impor Berkas dari URL
-replace_from_device: Menggantikan Berkas dari Perangkat
-replace_from_library: Menggantikan Berkas dari Pustaka
-replace_from_url: Menggantikan Berkas dari URL
-no_file_selected: Tidak Ada Berkas Yang Dipilih
-download_file: Unduh Berkas
-open_file_in_tab: Buka file di tab baru
-start_export: Mulai Ekspor
-not_available_for_local_downloads: Tidak tersedia untuk unduhan lokal
-exporting_all_items_in_collection: Ekspor semua {total} item dalam {collection}.
-exporting_limited_items_in_collection: Ekspor {limit} dari {total} keseluruhan item dalam {collection}.
-exporting_no_items_to_export: Tidak ada item untuk dieskpor. Atur proses ekspor melalui konfigurasi dibawah.
-exporting_download_hint: Setelah selesai, {format} berkas ini akan secara otomatis terunduh ke perangkat anda.
-exporting_batch_hint: Proses ekspor ini akan dilakukan melalui proses batch, dan ketika sudah selesai, {format} berkas ini akan disimpan kedalam Pustaka Berkas.
-exporting_batch_hint_forced: Dikarenakan jumlah item yang sangat banyak, maka proses ekspor ini harus dilakukan melalui proses batch, dan ketika sudah selesai, {format} berkas ini akan tersimpan kedalam Pustaka Berkas.
-collection_key: Kunci Koleksi
-name: Nama
-primary_key_field: Kolom Primary Key
-type: Tipe
-creating_new_collection: Membuat Koleksi Baru
-created_by: Dibuat Oleh
-created_on: Dibuat Pada
-creating_collection_info: Nama dari koleksi dan pengaturan/setup baris "kunci" unik...
-creating_collection_system: Aktifkan dan ganti nama baris opsional manapun ini.
-auto_increment_integer: Integer bertambah-otomatis
-auto_increment_big_integer: Nilai big integer yang otomatis bertambah
-generated_uuid: UUID yang Dihasilkan
-manual_string: String yang diinput manual
-save_and_create_new: Simpan dan Buat Baru
-save_and_stay: Simpan dan Tinggal
-save_as_copy: Simpan sebagai Salinan
-add_existing: Tambahkan Yang Ada
-creating_items: Membuat Item
-enable_create_button: Aktifkan Tombol Buat Baru
-selecting_items: Memilih item
-enable_select_button: Aktifkan Tombol Pemilihan
-allow_duplicates: Izinkan Duplikasi
-comments: Komentar
-no_comments: Belum Ada Komentar
-click_to_expand: Tekan Untuk Memperluas
-select_item: Pilih Item
-no_items: Tidak Ada Item
-search_items: Cari item...
-disabled: Dinonaktifkan
-information: Informasi
-report_bug: Laporkan Bug
-request_feature: Meminta Fitur
-request_body: Body Permintaan
-interface_not_found: 'Antarmuka "{interface}" tidak ditemukan.'
-operation_not_found: 'Operasi "{operation}" tidak ditemukan.'
-reset_interface: Atur ulang Antarmuka
-display_not_found: 'Tampilan "{display}" tidka ditemukan.'
-reset_display: Set ulang Tampilan
-list-m2a: Pembangun (M2A)
-item_count: 'Tidak Ada Item | Satu Item | {count} Item'
-no_items_copy: Belum ada item pada koleksi ini.
-file_count: 'Tidak Ada Berkas | Satu Berkas | {count} Berkas'
-no_files_copy: Tidak ada berkas disini.
-user_count: 'Tidak Ada Pengguna | Satu Pengguna | {count} Pengguna'
-no_users_copy: Belum ada pengguna didalam peran ini.
-webhooks_count: 'Tidak Ada Webhook | Satu Webhook | {count} Webhook'
-no_webhooks_copy: Belum ada webhook yang dikonfigurasi. Mulailah dengan membuat satu di bawah ini.
-no_notifications: Tidak ada Pemberitahuan
-no_notifications_copy: Selesai!
-activity_log: Catatan Aktifitas
-all_items: Semua Item
-any: Setiap
+owner: Owner
+edited_by: Edited by
+folder: Folder
+zoom: Zoom
+download: Download
+open: Open
+open_in_new_window: Open in New Window
+open_folder: Open "{folder}" folder
+foreground_color: Foreground Color
+background_color: Background Color
+upload_from_device: Upload File from Device
+choose_from_library: Choose File from Library
+import_from_url: Import File from URL
+replace_from_device: Replace File from Device
+replace_from_library: Replace File from Library
+replace_from_url: Replace File from URL
+no_file_selected: No File Selected
+download_file: Download File
+open_file_in_tab: Open file in new tab
+start_export: Start Export
+not_available_for_local_downloads: Not available for local downloads
+exporting_all_items_in_collection: Exporting all {total} items within {collection}.
+exporting_limited_items_in_collection: Exporting {limit} out of {total} items within {collection}.
+exporting_no_items_to_export: No items to export. Adjust the exporting configuration below.
+exporting_download_hint: Once completed, this {format} file will automatically be downloaded to your device.
+exporting_batch_hint:
+  - This export will be processed in batches, and once completed, the {format} file will be saved to the File Library.
+exporting_batch_hint_forced:
+  - Due to the large number of items, this export must be processed in batches, and once completed, the {format} file will
+  - be saved to the File Library.
+collection_key: Collection Key
+name: Name
+primary_key_field: Primary Key Field
+type: Type
+creating_new_collection: Creating New Collection
+created_by: Created By
+created_on: Created On
+creating_collection_info: Name the collection and setup its unique “key” field...
+creating_collection_system: Enable and rename any of these optional fields.
+auto_increment_integer: Auto-incremented integer
+auto_increment_big_integer: Auto-incremented big integer
+generated_uuid: Generated UUID
+manual_string: Manually entered string
+save_and_create_new: Save and Create New
+save_and_stay: Save and Stay
+save_as_copy: Save as Copy
+add_existing: Add Existing
+creating_items: Creating Items
+enable_create_button: Enable Create Button
+selecting_items: Selecting Items
+enable_select_button: Enable Select Button
+allow_duplicates: Allow Duplicates
+comments: Comments
+no_comments: No Comments Yet
+click_to_expand: Click to Expand
+select_item: Select Item
+no_items: No items
+search_items: Search items...
+disabled: Disabled
+information: Information
+report_bug: Report Bug
+request_feature: Request Feature
+request_body: Request Body
+interface_not_found: 'Interface "{interface}" not found.'
+operation_not_found: 'Operation "{operation}" not found.'
+reset_interface: Reset Interface
+display_not_found: 'Display "{display}" not found.'
+reset_display: Reset Display
+list-m2a: Builder (M2A)
+item_count: 'No Items | One Item | {count} Items'
+no_items_copy: There are no items in this collection yet.
+file_count: 'No Files | One File | {count} Files'
+no_files_copy: There are no files here.
+user_count: 'No Users | One User | {count} Users'
+no_users_copy: There are no users in this role yet.
+webhooks_count: 'No Webhooks | One Webhook | {count} Webhooks'
+no_webhooks_copy: No webhooks have been configured yet. Get started by creating one below.
+no_notifications: No Notifications
+no_notifications_copy: You're all caught up!
+activity_log: Activity Log
+all_items: All Items
+any: Any
 csv: CSV
-no_collections: Tidak ada koleksi
-create_collection: Buat Pengumpulan
-no_collections_copy_admin: Kamu belum punya Koleksi. Klik tombol di bawah ini untuk memulai.
-no_collections_copy: Kamu belum memiliki Koleksi. Silakan hubungi administrator sistem.
-relationship_not_setup: Relasi tidak dikonfigurasi dengan benar
-display_template_not_setup: Opsi templat tampilan disalahkonfigurasikan
-collection_field_not_setup: Opsi bidang koleksi disalahkonfigurasikan
-select_a_collection: Pilih Koleksi
-select_a_field: Pilih Bidang
-active: Aktif
-move_to: Pindahkan ke...
-copy: Salin
-copy_to: Salin ke...
-no_other_dashboards_copy: Anda belum memiliki Dasbor lainnya.
-inactive: Tidak aktif
-users: Pengguna
-activity: Aktivitas
-activity_item: Item Aktifitas
-action: Aksi
-ip_address: Alamat IP
-user_agent: Agen pengguna
-origin: Asal
+no_collections: No Collections
+create_collection: Create Collection
+no_collections_copy_admin: You don’t have any Collections yet. Click the button below to get started.
+no_collections_copy: You don’t have any Collections yet. Please contact your system administrator.
+relationship_not_setup: The relationship hasn't been configured correctly
+no_singleton_relations: Relationships to Singletons are not supported
+display_template_not_setup: The display template option is misconfigured
+collection_field_not_setup: The collection field option is misconfigured
+select_a_collection: Select a Collection
+select_a_field: Select a Field
+active: Active
+move_to: Move To...
+copy: Copy
+copy_to: Copy To...
+no_other_dashboards_copy: You don't have any other Dashboards yet.
+inactive: Inactive
+users: Users
+activity: Activity
+activity_item: Activity Item
+action: Action
+ip_address: IP Address
+user_agent: User Agent
+origin: Origin
 webhooks: Webhooks
-decimals: Desimal
-value_decimals: Nilai Desimal
-min_value: Nilai minimal
-max_value: Nilai maksimal
-automatic: Otomatis
-field_width: Lebar Bidang
-add_filter: Tambah Filter
-upper_limit: Batas atas...
-lower_limit: Batas bawah...
-user_directory: Direktori Pengguna
-documentation: Dokumentasi
-sidebar: Bilahsamping
-duration: Durasi
+decimals: Decimals
+value_decimals: Value Decimals
+min_value: Min Value
+max_value: Max Value
+automatic: Automatic
+field_width: Field Width
+add_filter: Add Filter
+upper_limit: Upper limit...
+lower_limit: Lower limit...
+user_directory: User Directory
+documentation: Documentation
+sidebar: Sidebar
+duration: Duration
 charset: Charset
-second: detik
-file_moved: Berkas Dipindahkan
-collection_created: Koleksi Dibuat
-modified_on: Dimodifikasi Pada
-card_size: Ukuran Kartu
-sort_field: Sortir Baris
-add_sort_field: Tambah Baris Sortir
-sort: Sortir
+second: second
+file_moved: File Moved
+collection_created: Collection Created
+modified_on: Modified On
+card_size: Card Size
+sort_field: Sort Field
+add_sort_field: Add Sort Field
+sort: Sort
 status: Status
-remove: Hapus
-toggle_manual_sorting: Aktifkan Sortir Manual
-bookmark_doesnt_exist: Bookmark Tidak Tersedia
-bookmark_doesnt_exist_copy: Bookmark yang Anda ingin bukan tidak dapat ditemukan.
-bookmark_doesnt_exist_cta: Kembali ke koleksi
-select_an_item: Pilih sebuah item...
+remove: Remove
+toggle_manual_sorting: Toggle Manual Sorting
+bookmark_doesnt_exist: Bookmark Doesn't Exist
+bookmark_doesnt_exist_copy: The bookmark you're trying to open couldn't be found.
+bookmark_doesnt_exist_cta: Return to collection
+select_an_item: Select an item...
 edit: Edit
-enabled: Diaktifkan
-disable_tfa: Nonaktifkan 2FA
-admin_disable_tfa_text: Apa Anda yakin ingin menonaktifkan 2FA pada user ini?
-tfa_setup: Mempersiapkan 2FA
-tfa_scan_code: Scan kode pada aplikasi peng-autentifikasi untuk menyelesaikan pengaturan 2FA
-enter_otp_to_disable_tfa: Masukkan kode OTP untuk menonaktifkan 2FA
-create_account: Buat Akun
-account_created_successfully: Akun Berhasil Dibuat
-auto_fill: Isi Otomatis
-corresponding_field: Bidang yang sesuai
+enabled: Enabled
+disable_tfa: Disable 2FA
+admin_disable_tfa_text: Are you sure you want to disable 2FA for this user?
+tfa_setup: Setup 2FA
+tfa_scan_code: Scan the code in your authenticator app to finish setting up 2FA
+enter_otp_to_disable_tfa: Enter the OTP to disable 2FA
+create_account: Create Account
+account_created_successfully: Account Created Successfully
+auto_fill: Auto Fill
+corresponding_field: Corresponding Field
 errors:
-  COLLECTION_NOT_FOUND: "Koleksi tidak tersedia"
-  FIELD_NOT_FOUND: Baris tidak ditemukan
-  FORBIDDEN: Dilarang
-  INVALID_CREDENTIALS: Nama pengguna atau kata sandi salah
-  INVALID_OTP: Kata sandi satu-kali salah
-  INVALID_PAYLOAD: Payload tidak valid
-  INVALID_PROVIDER: Pengguna termasuk kedalam penyedia autentikasi yang berbeda
-  INVALID_QUERY: Kueri tidak valid
-  INVALID_CONFIG: Konfigurasi yang tidak valid
-  INVALID_TOKEN: Token tidak valid
-  INVALID_IP: Alamat IP tidak diperbolehkan
-  INVALID_USER: Gagal untuk mengautentikasi pengguna
-  ITEM_LIMIT_REACHED: Batas item tercapai
-  ITEM_NOT_FOUND: Item tidak ditemukan
-  ROUTE_NOT_FOUND: Tidak ditemukan
-  RECORD_NOT_UNIQUE: Nilai duplikat terdeteksi
-  USER_SUSPENDED: Pengguna Ditangguhkan
-  CONTAINS_NULL_VALUES: Bidang berisi nilai nol
-  UNPROCESSABLE_ENTITY: Entitas yang tidak dapat diproses
-  INTERNAL_SERVER_ERROR: Kesalahan Tidak Terduga
-  NOT_NULL_VIOLATION: Nilai tidak boleh kosong
-  ILLEGAL_ASSET_TRANSFORMATION: Sumber gambar terlalu besar untuk diratinjau
-  VALUE_TOO_LONG: Nilai terlalu panjang
-  VALUE_OUT_OF_RANGE: Nilai di luar rentang
-  INVALID_FOREIGN_KEY: Foreign key tidak valid
-  UNKNOWN: Kesalahan Tidak Terduga
-  GRAPHQL_VALIDATION_EXCEPTION: Pengecualian Validasi GraphQL
-  SERVICE_UNAVAILABLE: Layanan Tidak Tersedia
-  UNSUPPORTED_MEDIA_TYPE: Jenis media tidak didukung
-  UNEXPECTED_RESPONSE: Respon tidak terduga
-  TOKEN_EXPIRED: Token kedaluwarsa
-  RANGE_NOT_SATISFIABLE: Rentang tidak valid
-  METHOD_NOT_ALLOWED: Metode Tidak Diizinkan
-  REQUESTS_EXCEEDED: Batas permintaan telah tercapai
-security: Keamanan
-value_hashed: Nilai telah Di-hash secara Aman
-bookmark_name: Nama bookmark...
-create_bookmark: Buat Bookmark
-edit_bookmark: Sunting Bookmark
-edit_personal_bookmark: Sunting Markah Pribadi
-edit_role_bookmark: Mengubah Markah Peran
-edit_global_bookmark: Sunting Markah Global
-cannot_edit_role_bookmarks: Tidak dapat mengubah Markah Peran
-cannot_edit_global_bookmarks: Tidak dapat mengubah Markah Peran secara Global
-bookmarks: Markah
-presets: Preset
-unexpected_error: Kesalahan Tidak Terduga
-unexpected_error_copy: Terjadi galat yang tidak terduga, Silahkan mencoba lagi nanti.
-copy_details: Salin Rincian
-no_app_access: Tidak Ada Akses Aplikasi
-no_app_access_copy: Pengguna ini tidak diperbolehkan untuk menggunakan aplikasi admin.
-password_reset_sent: Jika Anda memiliki akun, kami telah mengirimkan tautan yang aman untuk mengatur ulang kata sandi Anda
-password_reset_successful: Sandi berhasil diatur ulang
-back: Kembali
-filter: Penyaring
-edit_image: Sunting Gambar
-editing_image: Menyunting Gambar
-square: Persegi
-free: Bebas
-flip_horizontal: Balik Horisontal
-flip_vertical: Balik Vertikal
-aspect_ratio: Rasio Aspek
-rotate: Putar
-all_users: Semua Pengguna
-delete_collection: Hapus Koleksi
-update_collection_success: Perbarui Koleksi
-delete_collection_success: Koleksi yang Dihapus
-make_collection_visible: Buat Koleksi Terlihat
-make_collection_hidden: Buat Koleksi Tersembunyi
-make_folder_visible: Buat Folder Terlihat
-make_folder_hidden: Buat Folder Tersembunyi
-goto_collection_content: Tampilkan konten
-start_end_of_count_items: '{start}-{end} dari {count} item'
-start_end_of_count_filtered_items: '{start}-{end} dari {count} item yang di filter'
+  COLLECTION_NOT_FOUND: "Collection doesn't exist"
+  FIELD_NOT_FOUND: Field not found
+  FORBIDDEN: Forbidden
+  INVALID_CREDENTIALS: Wrong username or password
+  INVALID_OTP: Wrong one-time password
+  INVALID_PAYLOAD: Invalid payload
+  INVALID_PROVIDER: User belongs to a different auth provider
+  INVALID_QUERY: Invalid query
+  INVALID_CONFIG: Invalid config
+  INVALID_TOKEN: Invalid token
+  INVALID_IP: IP Address not allowed
+  INVALID_USER: Failed to authenticate user
+  ITEM_LIMIT_REACHED: Item limit reached
+  ITEM_NOT_FOUND: Item not found
+  ROUTE_NOT_FOUND: Not found
+  RECORD_NOT_UNIQUE: Duplicate value detected
+  USER_SUSPENDED: User Suspended
+  CONTAINS_NULL_VALUES: Field contains null values
+  UNPROCESSABLE_ENTITY: Unprocessable entity
+  INTERNAL_SERVER_ERROR: Unexpected Error
+  NOT_NULL_VIOLATION: Value can't be null
+  ILLEGAL_ASSET_TRANSFORMATION: Image source too large to preview
+  VALUE_TOO_LONG: Value is too long
+  VALUE_OUT_OF_RANGE: Value is out of range
+  INVALID_FOREIGN_KEY: Invalid foreign key
+  UNKNOWN: Unexpected Error
+  GRAPHQL_VALIDATION_EXCEPTION: GraphQL Validation Exception
+  SERVICE_UNAVAILABLE: Service Unavailable
+  UNSUPPORTED_MEDIA_TYPE: Unsupported media type
+  UNEXPECTED_RESPONSE: Unexpected response
+  TOKEN_EXPIRED: Token expired
+  RANGE_NOT_SATISFIABLE: Invalid range
+  METHOD_NOT_ALLOWED: Method not allowed
+  REQUESTS_EXCEEDED: Requests limit reached
+security: Security
+value_hashed: Value Securely Hashed
+bookmark_name: Bookmark name...
+create_bookmark: Create Bookmark
+edit_bookmark: Edit Bookmark
+edit_personal_bookmark: Edit Personal Bookmark
+edit_role_bookmark: Edit Role Bookmark
+edit_global_bookmark: Edit Global Bookmark
+cannot_edit_role_bookmarks: Can't Edit Role Bookmarks
+cannot_edit_global_bookmarks: Can't Edit Global Bookmarks
+bookmarks: Bookmarks
+presets: Presets
+unexpected_error: Unexpected Error
+unexpected_error_copy: An unexpected error has occurred. Please try again later.
+copy_details: Copy Details
+no_app_access: No App Access
+no_app_access_copy: This user isn't allowed to use the admin app.
+password_reset_sent: If you have an account, we've sent you a secure link to reset your password
+password_reset_successful: Password successfully reset
+back: Back
+filter: Filter
+edit_image: Edit Image
+editing_image: Editing Image
+square: Square
+free: Free
+flip_horizontal: Flip Horizontal
+flip_vertical: Flip Vertical
+aspect_ratio: Aspect Ratio
+rotate: Rotate
+all_users: All Users
+delete_collection: Delete Collection
+update_collection_success: Updated Collection
+delete_collection_success: Deleted Collection
+make_collection_visible: Make Collection Visible
+make_collection_hidden: Make Collection Hidden
+make_folder_visible: Make Folder Visible
+make_folder_hidden: Make Folder Hidden
+goto_collection_content: View Content
+start_end_of_count_items: '{start}-{end} of {count} items'
+start_end_of_count_filtered_items: '{start}-{end} of {count} filtered items'
 one_item: '1 item'
-one_filtered_item: '1 item yang di filter'
+one_filtered_item: '1 filtered item'
 delete_collection_are_you_sure: >-
-  Apakah anda yakin ingin menghapus koleksi "{collection}"? Hal ini akan menghapus koleksi dan semua item di dalamnya. Aksi ini bersifat permanen.
-delete_folder_are_you_sure: Anda yakin ingin menghapus folder "{folder}"? Susunan folder dan koleksi akan dipindahkan ke level paling atas.
-collections_shown: Koleksi yang ditampilkan
-visible_collections: Koleksi yang terlihat
-hidden_collections: Koleksi yang tersembunyi
-show_hidden_collections: Tampilkan koleksi yang tersembunyi
-hide_hidden_collections: Sembunyikan koleksi yang tersembunyi
-show_header: Tampilkan Tajuk
-unmanaged_collections: Koleksi yang tidak dikonfigurasi
-system_collections: Koleksi Sistem
-placeholder: Tulisan default pada input
-icon_left: Ikon Kiri
-icon_right: Ikon Kanan
-count_other_revisions: '{count} Perbaikan lainnya'
-font: Huruf
+  Are you sure you want to delete the collection "{collection}"? This will delete the collection and all items in it. This action is permanent.
+delete_folder_are_you_sure: Are you sure you want to delete the folder "{folder}"? Nested folders and collections will be moved to the top most level.
+delete_collection_peer_dependencies: The following fields will be deleted as well, as they are related to the current collection.
+collections_shown: Collections Shown
+visible_collections: Visible Collections
+hidden_collections: Hidden Collections
+show_hidden_collections: Show Hidden Collections
+hide_hidden_collections: Hide Hidden Collections
+show_header: Show Header
+unmanaged_collections: Unconfigured Collections
+system_collections: System Collections
+placeholder: Placeholder
+icon_left: Icon Left
+icon_right: Icon Right
+count_other_revisions: '{count} Other Revisions'
+font: Font
 sans_serif: Sans Serif
 serif: Serif
 monospace: Monospace
-divider: Pembagi/Pemecah
-color: Warna
-circle: Lingkaran
-empty_item: Item kosong
-log_in_with: 'Masuk dengan {provider}'
-conditional_styles: Gaya Bersyarat
-advanced_settings: Pengaturan Lanjutan
-advanced_filter: Filter Lanjutan
-delete_advanced_filter: Hapus Filter
-change_advanced_filter_operator: Ganti Operator
-advanced: Tingkat lanjut
+divider: Divider
+color: Color
+circle: Circle
+empty_item: Empty Item
+log_in_with: 'Log In with {provider}'
+conditional_styles: Conditional Styles
+advanced_settings: Advanced Settings
+advanced_filter: Advanced Filter
+delete_advanced_filter: Delete Filter
+change_advanced_filter_operator: Change Operator
+advanced: Advanced
 operators:
-  eq: Sama dengan
-  neq: Tidak sama dengan
-  lt: Kurang dari
-  gt: Lebih besar dari
-  lte: Kurang dari atau sama dengan
-  gte: Lebih besar dari atau sama dengan
-  in: Adalah salah satu dari
-  nin: Bukan salah satu dari
-  null: Adalah kosong
-  nnull: Bukan null
-  contains: Mengandung
-  ncontains: Tidak mengandung
-  icontains: Mengandung (tidak sensitif)
-  starts_with: Dimulai dengan
-  nstarts_with: Tidak dimulai dengan
-  ends_with: Berakhir dengan
-  nends_with: Tidak berakhir dengan
-  between: Diantara
-  nbetween: Tidak Diantara
-  empty: Kosong
-  nempty: Tidak kosong
-  all: Berisi kunci-kunci ini
-  has: Berisi sebagian kunci ini
-  intersects: Beririsan
-  nintersects: Tidak beririsan
-  intersects_bbox: Memotong kotak pembatas
-  nintersects_bbox: Tidak memotong kotak pembatas
-  regex: Mencocokkan RegExp
-custom_validation_message: Pesan Validasi Kustom
-loading: Memuat...
-drop_to_upload: Lepas untuk mengunggah
-item: Barang
-items: Barang-barang
-upload_file: Unggah Berkas
-upload_file_indeterminate: Mengunggah Berkas...
-upload_file_success: Berkas Diunggah
-upload_files_indeterminate: 'Mengunggah berkas {done}/{total}'
-upload_files_success: '{count} Berkas Diunggah'
-upload_pending: Unggahan Tertunda
-drag_file_here: Geser & Lepas berkas disini
-click_to_browse: Klik untuk jelajahi
-interface_options: Pilihan Antarmuka
-layout_options: Pilihan Tata Letak
-rows: Baris
-columns: Kolom
-collection_setup: Penyiapan Koleksi
-optional_system_fields: Bidang sistem opsional
-value_unique: Nilai harus unik
-all_activity: Semua Aktivitas
-create_item: Buat item
-display_template: Tampilan Template
-language_display_template: Templat Tampilan Bahasa
-translations_display_template: Templat Tampilan Terjemahan
-n_items_selected: 'Tidak ada Item yang Dipilih | 1 Item Dipilih | {n} Item Dipilih'
-per_page: Per Halaman
-all_files: Semua Berkas
-my_files: Berkas Saya
-recent_files: Berkas Terbaru
-create_folder: Buat Map
-edit_folder: Sunting Map
-folder_name: Nama Folder...
-folder_key: Kunci Map...
-add_file: Tambahkan berkas
-replace_file: Ganti berkas
-no_results: Tidak Ada Hasil
-no_results_copy: Sesuaikan atau bersihkan filter pencarian untuk melihat hasil.
-no_visible_fields: Formulir Kosong
-no_visible_fields_copy: Formulir ini tidak memiliki kolom yang dapat dilihat.
-clear_filters: Bersihkan Filter
-saves_automatically: Menyimpan Secara Otomatis
-role: Peran
-edit_role: Sunting Peran
-rule: Aturan
-user: Pengguna
-no_presets: Tidak ada preset
-no_presets_copy: Belum ada preset atau penanda buku yang disimpan.
-no_presets_cta: Tambahkan preset
-presets_only: Hanya Preset
-create: Buat
-on_create: Saat Dibuat
-on_update: Saat Pembaruan
-read: Baca
-update: Perbarui
-delete: Hapus
-select_fields: Pilih Bidang
-format_text: Format Teks
-format_value: Nilai Format
-abbreviate_value: Singkatan Nilai
+  eq: Equals
+  neq: Doesn't equal
+  lt: Less than
+  gt: Greater than
+  lte: Less than or equal to
+  gte: Greater than or equal to
+  in: Is one of
+  nin: Is not one of
+  null: Is null
+  nnull: Isn't null
+  contains: Contains
+  ncontains: Doesn't contain
+  icontains: Contains (insensitive)
+  starts_with: Starts with
+  nstarts_with: Doesn't start with
+  ends_with: Ends with
+  nends_with: Doesn't end with
+  between: Is between
+  nbetween: Isn't between
+  empty: Is empty
+  nempty: Isn't empty
+  all: Contains these keys
+  has: Contains some of these keys
+  intersects: Intersects
+  nintersects: Doesn't intersect
+  intersects_bbox: Intersects bounding box
+  nintersects_bbox: Doesn't intersect bounding box
+  regex: Matches RegExp
+custom_validation_message: Custom Validation Message
+loading: Loading...
+drop_to_upload: Drop to Upload
+item: Item
+items: Items
+upload_file: Upload File
+upload_file_indeterminate: Uploading File...
+upload_file_success: File Uploaded
+upload_files_indeterminate: 'Uploading files {done}/{total}'
+upload_files_success: '{count} Files Uploaded'
+upload_pending: Upload Pending
+drag_file_here: Drag & Drop a File Here
+click_to_browse: Click to Browse
+interface_options: Interface Options
+layout_options: Layout Options
+rows: Rows
+columns: Columns
+collection_setup: Collection Setup
+optional_system_fields: Optional System Fields
+value_unique: Value has to be unique
+all_activity: All Activity
+create_item: Create Item
+display_template: Display Template
+language_display_template: Language Display Template
+translations_display_template: Translations Display Template
+n_items_selected: 'No Items Selected | 1 Item Selected | {n} Items Selected'
+per_page: Per Page
+all_files: All Files
+my_files: My Files
+recent_files: Recent Files
+create_folder: Create Folder
+edit_folder: Edit Folder
+folder_name: Folder Name...
+folder_key: Folder Key...
+add_file: Add File
+replace_file: Replace File
+no_results: No Results
+no_results_copy: Adjust or clear search filters to see results.
+no_visible_fields: Empty Form
+no_visible_fields_copy: This form has no visible fields.
+clear_filters: Clear Filters
+saves_automatically: Saves Automatically
+role: Role
+edit_role: Edit Role
+rule: Rule
+user: User
+no_presets: No Presets
+no_presets_copy: No presets or bookmarks have been saved yet.
+no_presets_cta: Add Preset
+presets_only: Presets Only
+create: Create
+on_create: On Create
+on_update: On Update
+read: Read
+update: Update
+delete: Delete
+select_fields: Select Fields
+format_text: Format Text
+format_value: Format Value
+abbreviate_value: Abbreviate Value
 operator: Operator
-bold: Tebal
-toggle: Beralih
-icon_on: Ikon Aktif
-icon_off: Ikon Tidak Aktif
+bold: Bold
+toggle: Toggle
+icon_on: Icon On
+icon_off: Icon Off
 label: Label
-flows: Kumpulan Alur
-flow: Alur
-select_a_flow: Pilih Alur
-run_flow_on_current_edited_confirm: Item ini mungkin akan diperbarui sesuai dengan alur ini, apakah anda yakin akan menjalankannya?
-run_flow_success: Alur "{flow}" berhasil dijalankan
-trigger: Pemicu
-trigger_options: Opsi Pemicu
-view_trigger: Lihat Pemicu
-create_trigger: Buat Pemicu
-trigger_setup: Mempersiapkan Pemicu
-change_trigger: Ubah Pemicu
-flow_delete_confirm: Apakah anda yakin akan menghapus Alur "{flow}"? Tindakan ini tidak dapat dibatalkan.
-set_flow_active: Setel Alur menjadi Aktif
-set_flow_inactive: Setel Alur menjadi Tidak aktif
-edit_flow: Ubah Alur
-delete_flow: Hapus Alur
-no_other_flows_copy: Anda belum memiliki Alur lainnya.
-no_flows: Tidak ada Alur
-no_flows_copy: Anda belum memiliki Alur.
-create_flow: Buat Alur
-creating_new_flow: Membuat Alur Baru
-updating_flow: Memperbarui Alur
-flow_setup: Penyiapan Alur
-flow_name: Nama
-flow_tracking: Pelacakan Log & Aktifitas
-flow_tracking_all: Lacak Log & Aktifitas
-flow_tracking_activity: Hanya Aktifitas Melacak
-flow_tracking_null: Jangan Lacak Apapun
-start_flow: Mulai Alur
-stop_flow: Hentikan Alur
-create_operation: Buat Operasi
-edit_operation: Sunting Operasi
-code: Kode
-operation_options: Opsi Operasi
-operation_name: Nama dari operasi...
-operation_key: Pengenal untuk referensi...
-operation_key_unique_error: Tombol operasi harus unik
-operation_handle_resolve: 'Solusi: klik untuk menambahkan atau geser untuk mengatur ulang'
-operation_handle_reject: 'Membatalkan: klik untuk menambahkan atau geser untuk mengatur ulang'
-insights: Wawasan
-dashboard: Dasbor
+flows: Flows
+flow: Flow
+select_a_flow: Select a Flow
+run_flow_confirm: Are you sure you want to execute this flow?
+run_flow_on_current_collection: Run Flow on Current Collection
+run_flow_on_current: Run Flow on Current Item
+run_flow_on_current_edited_confirm: This item may be updated by this flow, are you sure you want to execute it?
+run_flow_on_selected: Select One or More Items First | Run Flow on 1 Selected Item | Run Flow on {n} Selected Items
+run_flow: Run Flow
+run_flow_success: Flow "{flow}" ran successfully
+field_name_placeholder: Enter field name...
+field_key_placeholder: Enter field key...
+trigger: Trigger
+trigger_options: Trigger Options
+view_trigger: View Trigger
+create_trigger: Create Trigger
+trigger_setup: Trigger Setup
+change_trigger: Change Trigger
+flow_delete_confirm: Are you sure you want to delete Flow "{flow}"? This action can not be undone.
+set_flow_active: Set Flow to Active
+set_flow_inactive: Set Flow to Inactive
+edit_flow: Edit Flow
+delete_flow: Delete Flow
+no_other_flows_copy: You don't have any other Flows yet.
+no_flows: No Flows
+no_flows_copy: You don't have any Flows yet.
+create_flow: Create Flow
+creating_new_flow: Creating New Flow
+updating_flow: Updating Flow
+flow_setup: Flow Setup
+flow_name: Name
+flow_tracking: Activity & Logs Tracking
+flow_tracking_all: Track Activity & Logs
+flow_tracking_activity: Only Track Activity
+flow_tracking_null: Do Not Track Anything
+start_flow: Start Flow
+stop_flow: Stop Flow
+create_operation: Create Operation
+edit_operation: Edit Operation
+code: Code
+operation_options: Operation Options
+operation_name: Name of operation...
+operation_key: Identifier for reference...
+operation_key_unique_error: Operation keys must be unique in a Flow
+operation_handle_resolve: 'Resolve: Click to Add or Drag to Reroute'
+operation_handle_reject: 'Reject: Click to Add or Drag to Reroute'
+insights: Insights
+dashboard: Dashboard
 panel: Panel
-panel_options: Opsi Panel
-panel_header: Judul Panel
-panel_name_placeholder: Beri nama panel ini...
-panel_note_placeholder: Opsi detail tentang panel ini...
-panel_delete_confirm: Apakah Anda yakin ingin menghapus panel ini? Tindakan ini tidak dapat dibatalkan.
-list_panel_allow_edit: Izinkan mengedit
-dashboard_delete_confirm: Apakah Anda yakin ingin menghapus dasbor ini? Tindakan ini tidak dapat dibatalkan.
-edit_dashboard: Sunting papan instrumen
-delete_dashboard: Menghapus Dasbor
-visible: Terlihat
-prefix_placeholder: Teks sebelum nilai...
-suffix_placeholder: Teks setelah nilai...
-decimals_placeholder: Jumlah tempat desimal...
-no_dashboards: Tidak ada Dasbor
-no_dashboards_copy: Anda belum memiliki dasbor.
-create_dashboard: Buat Dasbor
-dashboard_name: Nama Dasbor
-no_data: Tidak ada Data
-no_data_in_flow: Tidak ada data yang dihasilkan atau diakses dalam Flow ini
-accountability: Akuntabilitas
-payload: Muatan
-details: Rincian
-full_screen: Layar Penuh
-full_text_search: Pencarian teks lengkap
-edit_panels: Sunting Panel
-center_align: Rata Tengah
-left_align: Rata Kiri
-right_align: Rata kanan
-fit_to_screen: Sesuaikan dengan Layar
-image_url: Tautan Gambar
-alt_text: Teks Alternatif
+panel_options: Panel Options
+panel_header: Panel Header
+panel_name_placeholder: Name this panel...
+panel_note_placeholder: Optional details about this panel...
+panel_delete_confirm: Are you sure you want to delete this panel? This action can not be undone.
+list_panel_allow_edit: Allow Inline Editing
+dashboard_delete_confirm: Are you sure you want to delete this dashboard? This action can not be undone.
+edit_dashboard: Edit Dashboard
+delete_dashboard: Delete Dashboard
+visible: Visible
+prefix_placeholder: Text before value...
+suffix_placeholder: Text after value...
+decimals_placeholder: Number of decimal places...
+no_dashboards: No Dashboards
+no_dashboards_copy: You don’t have any Dashboards yet.
+create_dashboard: Create Dashboard
+dashboard_name: Dashboard Name
+no_data: No Data
+no_data_in_flow: No data was produced or accessed within this Flow
+accountability: Accountability
+payload: Payload
+details: Details
+full_screen: Full Screen
+full_text_search: Full-Text Search
+edit_panels: Edit Panels
+center_align: Center Align
+left_align: Left Align
+right_align: Right Align
+fit_to_screen: Fit to Screen
+image_url: Image Url
+alt_text: Alternative Text
 media: Media
-quality: Kualitas
-width: Lebar
-height: Tinggi
-transformation_preset_key: Tombol pengaturan ulang transformasi
-source: Sumber
-url_placeholder: Masukkan tautan...
-display_text: Teks Tampilan
-display_text_placeholder: Masukkan teks tampilan...
-interface_group_text_and_numbers: Teks & Angka
-interface_group_selection: Pilihan
-interface_group_relational: Relasional
-interface_group_presentation: Presentasi
-interface_group_groups: Kelompok
-interface_group_other: Lainnya
-tooltip: Keterangan alat
-tooltip_placeholder: Masukkan keterangan alat...
-unlimited: Tak terbatas
-open_link_in: Buka tautan di
-new_tab: Tab baru
-current_tab: Tab saat ini
-save_image: Simpan Gambar
-save_media: Simpan Media
+quality: Quality
+width: Width
+height: Height
+transformation_preset_key: Transformation Preset Key
+source: Source
+url_placeholder: Enter an url...
+display_text: Display Text
+display_text_placeholder: Enter a display text...
+interface_group_text_and_numbers: Text & Numbers
+interface_group_selection: Selection
+interface_group_relational: Relational
+interface_group_presentation: Presentation
+interface_group_groups: Groups
+interface_group_other: Other
+tooltip: Tooltip
+tooltip_placeholder: Enter a tooltip...
+unlimited: Unlimited
+open_link_in: Open link in
+new_tab: New tab
+current_tab: Current tab
+save_image: Save Image
+save_media: Save Media
 wysiwyg_options:
-  aligncenter: Rata Tengah
-  alignjustify: Rata Kanan-Kiri
-  alignleft: Rata Kiri
-  alignnone: Tidak Sejajar
-  alignright: Rata Kanan
-  forecolor: Warna Latar Depan
-  backcolor: Warna Latar Belakang
-  bold: Tebal
-  italic: Miring
-  underline: Garis Bawah
-  strikethrough: Coret Garis
-  subscript: Berlangganan
+  aligncenter: Align Center
+  alignjustify: Align Justify
+  alignleft: Align Left
+  alignnone: Align None
+  alignright: Align Right
+  forecolor: Foreground Color
+  backcolor: Background Color
+  bold: Bold
+  italic: Italic
+  underline: Underline
+  strikethrough: Strikethrough
+  subscript: Subscript
   superscript: Superscript
-  codeblock: Kode
+  codeblock: Code
   blockquote: Blockquote
-  bullist: Daftar Bullet
-  numlist: Daftar Nomor
-  hr: Garis Horizontal
-  link: Tambah/Sunting Tautan
-  unlink: Hapus Tautan
-  media: Tambah /Sunting Media
-  image: Tambahkan/Sunting Gambar
-  copy: Salin
-  cut: Potong
-  paste: Tempel
-  heading: Judul
-  h1: Judul 1
-  h2: Judul 2
-  h3: Judul 3
-  h4: Judul 4
-  h5: Judul 5
-  h6: Judul 6
-  fontselect: Pilih Fon
-  fontsizeselect: Pilih Ukuran Fon
-  indent: Indentasi
+  bullist: Bullet List
+  numlist: Numbered List
+  hr: Horizontal Rule
+  link: Add/Edit Link
+  unlink: Remove Link
+  media: Add/Edit Media
+  image: Add/Edit Image
+  copy: Copy
+  cut: Cut
+  paste: Paste
+  heading: Heading
+  h1: Heading 1
+  h2: Heading 2
+  h3: Heading 3
+  h4: Heading 4
+  h5: Heading 5
+  h6: Heading 6
+  fontselect: Select Font
+  fontsizeselect: Select Font Size
+  indent: Indent
   outdent: Outdent
   undo: Undo
-  redo: Ulangi
-  remove: Hapus
-  removeformat: Hapus Format
-  selectall: Pilih Semua
-  table: Tabel
-  visualaid: Lihat elemen tak terlihat
-  source_code: Edit Kode Sumber
-  fullscreen: Layar Penuh
-  directionality: Keterarahan
-dropdown: Dropwdown
-choices: Pilihan
-choices_option_configured_incorrectly: Pilihan dikonfigurasi dengan tidak benar
-deselect: Hapus pilihan
-deselect_all: Hapus Semua
-other: Lainnya...
-adding_user: Menambahkan Pengguna
-unknown_user: Pengguna Tidak Dikenal
-creating_in: 'Membuat Item di {collection}'
-editing_in: 'Mengedit Item di {collection}'
-viewing_in: 'Melihat Item di {collection}'
-creating_unit: 'Membuat {unit}'
-editing_unit: 'Mengedit {unit}'
-editing_in_batch: 'Mengedit Masal {count} item'
-no_options_available: Tidak ada opsi tersedia
-settings_data_model: Model Data
-settings_permissions: Peran dan Izin
-settings_project: Pengaturan Proyek
+  redo: Redo
+  remove: Remove
+  removeformat: Remove Format
+  selectall: Select All
+  table: Table
+  visualaid: View invisible elements
+  source_code: Edit Source Code
+  fullscreen: Full Screen
+  directionality: Directionality
+dropdown: Dropdown
+choices: Choices
+choices_option_configured_incorrectly: Choices configured incorrectly
+deselect: Deselect
+deselect_all: Deselect All
+other: Other...
+adding_user: Adding User
+unknown_user: Unknown User
+creating_in: 'Creating Item in {collection}'
+editing_in: 'Editing Item in {collection}'
+viewing_in: 'Viewing Item in {collection}'
+creating_unit: 'Creating {unit}'
+editing_unit: 'Editing {unit}'
+editing_in_batch: 'Batch Editing {count} Items'
+no_options_available: No options available
+settings_data_model: Data Model
+settings_permissions: Roles & Permissions
+settings_project: Project Settings
 settings_webhooks: Webhooks
-settings_flows: Kumpulan Alur
-settings_presets: Preset & Markah
-settings_translation_strings: Terjemahan
-one_or_more_options_are_missing: Satu atau lebih opsi hilang
-scope: Lingkup
-actions: Aksi
-select: Pilih...
-layout: Tata letak
-tree_view: Tampilan Pohon
-changes_are_permanent: Perubahan bersifat permanen
-preset_name_placeholder: Berfungsi sebagai bawaan saat kosong...
-preset_search_placeholder: Kueri penelusuran...
-editing_preset: Mengedit Preset
-layout_preview: Pratinjau Tata Letak
-layout_setup: Pengaturan Tata Letak
+settings_flows: Flows
+settings_presets: Presets & Bookmarks
+settings_translation_strings: Translation Strings
+one_or_more_options_are_missing: One or more options are missing
+scope: Scope
+actions: Actions
+select: Select...
+layout: Layout
+tree_view: Tree View
+changes_are_permanent: Changes are permanent
+preset_name_placeholder: Serves as default when empty...
+preset_search_placeholder: Search query...
+editing_preset: Editing Preset
+layout_preview: Layout Preview
+layout_setup: Layout Setup
 data: Data
-unsaved_changes: Perubahan Tidak Disimpan
-unsaved_changes_copy: Anda yakin ingin meninggalkan halaman ini?
-discard_changes: Batalkan Perubahan
-discard_all_changes: Buang Semua Perubahan
-discard_changes_copy: Apakah Anda yakin ingin membatalkan semua perubahan yang dibuat?
-show_x_axis: Menunjukkan Sumbu X
-show_y_axis: Menunjukkan Sumbu Y
-keep_editing: Tetap Mengedit
-page_help_collections_overview: '**Ikhtisar Koleksi** - — Daftar semua koleksi yang perlu anda akses.'
+unsaved_changes: Unsaved Changes
+unsaved_changes_copy: Are you sure you want to leave this page?
+discard_changes: Discard Changes
+discard_all_changes: Discard All Changes
+discard_changes_copy: Are you sure you want to discard all the changes made?
+show_x_axis: Show X Axis
+show_y_axis: Show Y Axis
+keep_editing: Keep Editing
+page_help_collections_overview: '**Collections Overview** — List of all collections you have access to.'
 page_help_collections_collection: >-
-  **Jelajahi Item** — Daftar semua {collection} item yang perlu Anda akses. Sesuaikan tata letak, filter, dan pengurutan untuk menyesuaikan tampilan Anda, dan bahkan simpan markah dari konfigurasi yang berbeda ini untuk akses cepat.
+  **Browse Items** — Lists all {collection} items you have access to. Customize layout, filters, and sorting to tailor your view, and even save bookmarks of these different configurations for quick access.
 page_help_collections_item: >-
-  **Detail Item** — Sebuah formulir untuk melihat dan mengelola item. Sidebar ini juga berisi riwayat, revisi, dan komentar yang disematkan.
+  **Item Detail** — A form for viewing and managing this item. This sidebar also contains a full history of revisions, and embedded comments.
 page_help_activity_collection: >-
-  ***Jelajahi Aktivitas** - Daftar lengkap dari seluruh aktivitas content dan pengguna system.
+  **Browse Activity** — A comprehensive listing of all your user's system and content activity.
 page_help_docs_global: >-
-  **Gambaran Dokumentasi ** — Dokumen yang disesuaikan khusus untuk versi dan skema proyek ini.
+  **Documentation Overview** — Docs tailored specifically to this project's version and schema.
 page_help_files_collection: >-
-  **Berkas Pustaka** — Daftar semua aset berkas yang diunggah ke proyek ini. Sesuaikan tata letak, filter, dan penyortiran untuk menyesuaikan tampilan Anda, dan bahkan simpan bookmark dari konfigurasi yang berbeda ini untuk akses cepat.
+  **File Library** — Lists all file assets uploaded to this project. Customize layout, filters, and sorting to tailor your view, and even save bookmarks of these different configurations for quick access.
 page_help_files_item: >-
-  **Detail Berkas** — Sebuah formulir untuk mengelola metadata berkas, mengedit aset asli, dan memperbarui pengaturan akses.
-page_help_settings_project: "**Konfigurasi Proyek** — Opsi konfigurasi global proyek Anda."
+  **File Detail** — A form for managing file metadata, editing the original asset, and updating access settings.
+page_help_settings_project: "**Project Settings** — Your project's global configuration options."
 page_help_settings_datamodel_collections: >-
-  **Model Data: Collection** — Menampilkan semua Collection yang tersedia. Ini mencakup Collection yang terlihat, tersembunyi, dan sistem, serta tabel basis data yang tidak dikelola yang dapat ditambahkan.
+  **Data Model: Collections** — Lists all collections available. This includes visible, hidden, and system collections, as well as unmanaged database tables that can be added.
 page_help_settings_datamodel_fields: >-
-  **Model Data: Collection** — Formulir untuk mengelola Collection ini dan fieldnya.
-activity_feed: Feed Aktifitas
-add_new: Tambah Baru
-create_new: Buat baru
-all: Semua
-none: Tidak ada
+  **Data Model: Collection** — A form for managing this collection and its fields.
+page_help_settings_roles_collection: '**Browse Roles** — Lists the Admin, Public and custom User Roles.'
+page_help_settings_roles_item: "**Role Detail** — Manage a role's permissions and other settings."
+page_help_settings_presets_collection: >-
+  **Browse Presets** — Lists all presets in the project, including: user, role, and global bookmarks, as well as default views.
+page_help_settings_presets_item: >-
+  **Preset Detail** — A form for managing bookmarks and default collection presets.
+page_help_settings_webhooks_collection: '**Browse Webhooks** — Lists all webhooks within the project.'
+page_help_settings_webhooks_item: '**Webhook Detail** — A form for creating and managing project webhooks.'
+page_help_settings_flows_collection: '**Browse Flows** — Lists all Flows within the project.'
+page_help_settings_flows_item: '**Flow Detail** — Workspace for managing one or more operations.'
+page_help_settings_translation_strings_collection:
+  - '''**Browse Translation Strings** — Lists all translation strings within the project.'''
+page_help_users_collection: '**User Directory** — Lists all system users within this project.'
+page_help_users_item: >-
+  **User Detail** — Manage your account information, or view the details of other users.
+page_help_insights_overview: '**Insights** — List of dashboards you have access to.'
+page_help_insights_dashboard: '**Dashboard** — Workspace for managing one or more panels'
+activity_feed: Activity Feed
+add_new: Add New
+create_new: Create New
+all: All
+none: None
+no_layout_collection_selected_yet: No layout/collection selected yet
 batch_delete_confirm: >-
-  Tidak ada item terpilih | Apakah Anda yakin ingin menghapus item ini? Tindakan ini tidak dapat dibatalkan. | Apakah Anda yakin ingin menghapus {count} item ini? Tindakan ini tidak dapat dibatalkan.
-cancel: Batal
-collection: Koleksi
-collections: Pengumpulan
-content: Konten
+  No items have been selected | Are you sure you want to delete this item? This action can not be undone. | Are you sure you want to delete these {count} items? This action can not be undone.
+cancel: Cancel
+no_upscale: Don't upscale images
+collection: Collection
+collections: Collections
+content: Content
 singleton: Singleton
-singleton_label: Perlakukan sebagai objek tunggal
+singleton_label: Treat as single object
+system_fields_locked: System fields are locked and can't be edited
 directus_collection:
-  directus_activity: Log akuntabilitas untuk semua kejadian
-  directus_collections: Konfigurasi koleksi tambahan dan metadata
-  directus_fields: Isian konfigurasi tambahan dan metadata
-  directus_permissions: Izin akses untuk setiap peran
+  directus_activity: Accountability logs for all events
+  directus_collections: Additional collection configuration and metadata
+  directus_dashboards: Dashboards within the Insights module
+  directus_fields: Additional field configuration and metadata
+  directus_files: Metadata for all managed file assets
+  directus_flows: Automation flows
+  directus_folders: Provides virtual directories for files
+  directus_migrations: What version of the database you're using
+  directus_notifications: Notifications sent to users
+  directus_operations: Operations that run in Flows
+  directus_panels: Individual panels within Insights dashboards
+  directus_permissions: Access permissions for each role
+  directus_presets: Presets for collection defaults and bookmarks
+  directus_relations: Relationship configuration and metadata
+  directus_revisions: Data snapshots for all activity
+  directus_roles: Permission groups for system users
+  directus_sessions: User session information
+  directus_settings: Project configuration options
+  directus_shares: Tracks externally shared items
+  directus_users: System users for the platform
+  directus_webhooks: Configuration for event-based HTTP requests
 fields:
   directus_activity:
-    item: Kunci Utama Item
-    action: Aksi
-    collection: Koleksi
-    timestamp: Aksi Saat
-    user: Aksi oleh
-    comment: Komentar
-    user_agent: Agen pengguna
-    origin: Asal
-    ip: Alamat IP
-    revisions: Revisi
+    item: Item Primary Key
+    action: Action
+    collection: Collection
+    timestamp: Action On
+    user: Action By
+    comment: Comment
+    user_agent: User Agent
+    origin: Origin
+    ip: IP Address
+    revisions: Revisions
   directus_collections:
-    collection: Koleksi
-    icon: Ikon
-    note: Catatan
-    color: Warna
-    display_template: Tampilan Template
-    hidden: Tersembunyi
+    collection: Collection
+    icon: Icon
+    note: Note
+    color: Color
+    display_template: Display Template
+    hidden: Hidden
     singleton: Singleton
-    archive_app_filter: Filter Aplikasi Arsip
-    archive_value: Nilai Arsip
-    unarchive_value: Batalkan pengarsipan Nilai
-    sort_field: Sortir Baris
-    accountability: Pelacakan Aktifitas & Revisi
-    archive_field: Bidang Arsip
-    item_duplication_fields: Bidang Duplikasi Item
+    translations: Collection Naming Translations
+    archive_app_filter: Archive App Filter
+    archive_value: Archive Value
+    unarchive_value: Unarchive Value
+    sort_field: Sort Field
+    accountability: Activity & Revision Tracking
+    archive_field: Archive Field
+    item_duplication_fields: Item Duplication Fields
   directus_files:
-    $thumbnail: Gambar kecil
-    title: Judul
-    description: Deskripsi
-    tags: Tagar
-    location: Lokasi
-    storage: Penyimpanan
-    filename_disk: Nama file (Piringan)
-    filename_download: Nama file (Unduh)
+    $thumbnail: Thumbnail
+    title: Title
+    description: Description
+    tags: Tags
+    location: Location
+    storage: Storage
+    filename_disk: Filename (Disk)
+    filename_download: Filename (Download)
     metadata: Metadata
-    type: Tipe Mime
-    filesize: Ukuran berkas
-    modified_by: Dimodifikasi Oleh
-    modified_on: Dimodifikasi Pada
-    created_on: Dibuat Pada
-    created_by: Dibuat Oleh
-    embed: Lampirkan
-    uploaded_by: Diunggah Oleh
-    folder: Direktori
-    width: Lebar
-    uploaded_on: Diunggah Pada
-    height: Tinggi
+    type: Mime Type
+    filesize: Filesize
+    modified_by: Modified By
+    modified_on: Modified On
+    created_on: Created On
+    created_by: Created By
+    embed: Embed
+    uploaded_by: Uploaded By
+    folder: Folder
+    width: Width
+    uploaded_on: Uploaded On
+    height: Height
     charset: Charset
-    duration: Durasi
+    duration: Duration
   directus_users:
-    first_name: Nama Depan
-    last_name: Nama belakang
+    first_name: First Name
+    last_name: Last Name
     email: Email
-    password: Kata Sandi
+    password: Password
     avatar: Avatar
-    location: Lokasi
-    title: Judul
-    description: Deskripsi
-    tags: Tagar
-    user_preferences: Preferensi Pengguna
-    language: Bahasa
-    theme: Tema
-    theme_auto: Otomatis (Berdasarkan Sistem)
-    theme_light: Mode Terang
-    theme_dark: Mode Gelap
-    tfa_secret: Otentikasi Dua Faktor
-    admin_options: Opsi Admin
+    location: Location
+    title: Title
+    description: Description
+    tags: Tags
+    user_preferences: User Preferences
+    language: Language
+    theme: Theme
+    theme_auto: Automatic (Based on System)
+    theme_light: Light Mode
+    theme_dark: Dark Mode
+    tfa_secret: Two-Factor Authentication
+    admin_options: Admin Options
     status: Status
-    status_draft: Konsep
-    status_invited: Diundang
-    status_active: Aktif
-    status_suspended: Tergantung
-    status_archived: Diarsipkan
-    role: Peran
+    status_draft: Draft
+    status_invited: Invited
+    status_active: Active
+    status_suspended: Suspended
+    status_archived: Archived
+    role: Role
     token: Token
-    provider: Penyedia
-    external_identifier: Pengidentifikasi Eksternal
-    last_page: Halaman Terakhir
-    last_access: Akses Terakhir
-    email_notifications: Email pemberitahuan
+    provider: Provider
+    external_identifier: External Identifier
+    last_page: Last Page
+    last_access: Last Access
+    email_notifications: Email Notifications
   directus_settings:
     jpg: JPEG
     png: PNG
-    webP: JaringanP
-    tiff: Bercekcok
-    mapping: Pemetaan
-    basemaps: Peta dasar
+    webP: WebP
+    tiff: Tiff
+    avif: AVIF
+    mapping: Mapping
+    basemaps: Basemaps
     basemaps_raster: Raster
-    basemaps_tile: Ubin RasterJSON
-    basemaps_style: Gaya Kotak peta
-    mapbox_key: Token Akses Kotak peta
-    attribution: Atribusi
-    attribution_placeholder: Kontributor © OpenStreetMap
-    transforms_note: Nama metode Sharp dan argumennya. Lihat konstruktor https://sharp.pixelplumbing.com/api- untuk informasi lebih.
-    additional_transforms: Transformasi Tambahan
-    project_name: Nama Proyek
-    project_descriptor: Deskriptor Proyek
-    project_url: URL Proyek
-    project_color: Warna Proyek
-    project_logo: Logo Proyek
-    default_language: Bahasa bawaan
-    branding: Merk & Gaya
-    public_foreground: Latar depan Publik
-    public_background: Latar belakang Publik
-    public_note: Catatan Publik
-    auth_password_policy: Kebijakan Kata sandi Autentik
-    auth_login_attempts: Upaya Login Autentik
-    files_and_thumbnails: File & Penyimpanan
-    storage_default_folder: Folder bawaan
-    custom_css: CSS Kustomisasi
-    module_bar: Papan Modul
-    image_editor: Editor Gambar
+    basemaps_tile: Raster TileJSON
+    basemaps_style: Mapbox Style
+    mapbox_key: Mapbox Access Token
+    mapbox_placeholder: pk.eyJ1Ijo.....
+    attribution: Attribution
+    attribution_placeholder: '© OpenStreetMap contributors'
+    transforms_note:
+      - The Sharp method name and its arguments. See https://sharp.pixelplumbing.com/api-constructor for more information.
+    additional_transforms: Additional Transformations
+    project_name: Project Name
+    project_descriptor: Project Descriptor
+    project_url: Project URL
+    project_color: Project Color
+    project_logo: Project Logo
+    default_language: Default Language
+    branding: Branding & Style
+    public_foreground: Public Foreground
+    public_background: Public Background
+    public_note: Public Note
+    auth_password_policy: Auth Password Policy
+    auth_login_attempts: Auth Login Attempts
+    files_and_thumbnails: Files & Storage
+    storage_default_folder: Default Folder
+    storage_asset_presets: Transformation Presets
+    storage_asset_transform: Allowed Transformations
+    overrides: App Overrides
+    custom_css: Custom CSS
+    module_bar: Module Bar
+    transformations_all: Allow all transformations
+    transformations_none: Disable transformations
+    transformations_presets: Limit transformations to presets below
+    image_editor: Image Editor
+    custom_aspect_ratios: Custom Aspect Ratios
   directus_shares:
-    name: Nama
-    role: Peran
-    password: Kata Sandi
-    date_start: Tanggal Mulai
-    times_used: Waktu yang digunakan
+    name: Name
+    role: Role
+    password: Password
+    date_start: Date Start
+    date_end: Date End
+    max_uses: Max Uses
+    times_used: Times Used
   directus_fields:
-    note: Catatan
-    hidden: Tersembunyi
+    collection: Collection Name
+    icon: Collection Icon
+    note: Note
+    hidden: Hidden
     singleton: Singleton
-    translation: Terjemahan Nama Kolom
-    display_template: Templat
+    translation: Field Name Translations
+    display_template: Template
   directus_roles:
-    name: Nama Peran
-    description: Deskripsi
+    name: Role Name
+    icon: Role Icon
+    description: Description
+    app_access: App Access
+    admin_access: Admin Access
+    ip_access: IP Access
+    enforce_tfa: Require 2FA
+    users: Users in Role
+    module_list: Module Navigation
   directus_webhooks:
-    name: Nama
+    name: Name
+    method: Method
     status: Status
-    value: Nilai
-    collections: Pengumpulan
+    data: Data
+    header: Header
+    value: Value
+    headers: Request Headers
+    data_label: Send Event Data
+    triggers: Triggers
+    actions: Actions
+    collections: Collections
 field_options:
   directus_settings:
-    security_divider_title: Keamanan
-    additional_transforms: Transformasi Tambahan
-    transforms_note: Nama metode Sharp dan argumennya. Lihat konstruktor https://sharp.pixelplumbing.com/api- untuk informasi lebih.
-    mapbox_key: Token Akses Kotak peta
-    basemaps: Peta dasar
+    project_name_placeholder: My project...
+    project_color_note: Login & Logo Background
+    project_logo_note: White 40x40 SVG/PNG
+    public_note_placeholder: A short, public message that supports markdown formatting...
+    security_divider_title: Security
+    auth_password_policy:
+      none_text: None – Not Recommended
+      weak_text: Weak – Minimum 8 Characters
+      strong_text: Strong – Upper / Lowercase / Numbers / Special
+    storage_asset_presets:
+      fit_label: Fit
+      upscaling: Upscaling
+      fit:
+        contain_text: Contain (preserve aspect ratio)
+        cover_text: Cover (forces exact size)
+        fit_text: Fit inside
+        outside_text: Fit outside
+    additional_transforms: Additional Transformations
+    transforms_note:
+      - The Sharp method name and its arguments. See https://sharp.pixelplumbing.com/api-constructor for more information.
+    mapbox_key: Mapbox Access Token
+    mapbox_placeholder: pk.eyJ1Ijo.....
+    basemaps: Basemaps
+    basemaps_name_placeholder: Enter the basemap name...
     basemaps_raster: Raster
-    basemaps_tile: Ubin RasterJSON
-    basemaps_style: Gaya Kotak peta
+    basemaps_tile: Raster TileJSON
+    basemaps_style: Mapbox Style
+    files_divider_title: Files & Thumbnails
+    overrides_divider_title: App Overrides
   directus_activity:
-    login: Masuk
-    create: Buat
-    update: Perbarui
-    delete: Hapus
+    login: Login
+    create: Create
+    update: Update
+    delete: Delete
   directus_collections:
-    track_activity_revisions: Lacak Aktifitas & Revisi
-    only_track_activity: Hanya Aktifitas Melacak
-    do_not_track_anything: Jangan Lacak Apapun
-    collection_setup: Penyiapan Koleksi
-    note_placeholder: Deskripsi koleksi ini...
-    hidden_label: Sembunyikan di dalam Aplikasi
-    singleton: Perlakukan sebagai objek tunggal
-    language: Bahasa
-    translation: Terjemahan
-    translation_placeholder: Masukkan terjemahan...
-    collection_name: Nama Koleksi
-    singular_unit: Satuan Tunggal
-    plural_unit: Satuan Jamak
-    archive_divider: Arsip
-    archive_field_placeholder: Pilih bidang...
-    archive_app_filter: Aktifkan Filter Arsip Aplikasi
-    archive_value: Nilai yang ditetapkan saat pengarsipan...
-    unarchive_value: Nilai yang ditetapkan saat membatalkan pengarsipan...
-    sort_divider: Sortir
-    sort_field: Pilih bidang...
-    accountability_divider: Akuntabilitas
-    duplication_divider: Duplikasi
+    track_activity_revisions: Track Activity & Revisions
+    only_track_activity: Only Track Activity
+    do_not_track_anything: Do Not Track Anything
+    collection_setup: Collection Setup
+    note_placeholder: A description of this collection...
+    hidden_label: Hide within the App
+    singleton: Treat as single object
+    language: Language
+    translation: Translation
+    translation_placeholder: Enter a translation...
+    collection_name: Collection Name
+    singular_unit: Singular Unit
+    plural_unit: Plural Unit
+    archive_divider: Archive
+    archive_field_placeholder: Choose a field...
+    archive_app_filter: Enable App Archive Filter
+    archive_value: Value set when archiving...
+    unarchive_value: Value set when unarchiving...
+    sort_divider: Sort
+    sort_field: Choose a field...
+    accountability_divider: Accountability
+    duplication_divider: Duplication
   directus_files:
-    title: Judul yang unik...
-    description: Deskripsi opsional...
-    location: Lokasi opsional...
-    storage_divider: Penamaan File
-    filename_disk: Nama pada penyimpanan disk...
-    filename_download: Nama saat mengunduh...
+    title: A unique title...
+    description: An optional description...
+    location: An optional location...
+    storage_divider: File Naming
+    filename_disk: Name on disk storage...
+    filename_download: Name when downloading...
   directus_roles:
-    name: Nama unik untuk peran ini...
-    description: Deskripsi peran ini...
-    ip_access: Tambahkan alamat IP yang diizinkan, biarkan kosong untuk mengizinkan semua...
+    name: The unique name for this role...
+    description: A description of this role...
+    ip_access: Add allowed IP addresses, leave empty to allow all...
     fields:
-      icon_name: Ikon
-      name_name: Nama
-      name_placeholder: Masukkan judul...
-      link_name: Tautan
-      link_placeholder: URL Relatif atau absolut...
-    collections_name: Pengumpulan
-    collections_addLabel: Tambah Koleksi...
+      icon_name: Icon
+      name_name: Name
+      name_placeholder: Enter a title...
+      link_name: Link
+      link_placeholder: Relative or absolute URL...
+    collections_name: Collections
+    collections_addLabel: Add Collection...
   directus_users:
-    preferences_divider: Preferensi Pengguna
-    dropdown_auto: Otomatis (Berdasarkan Sistem)
-    dropdown_light: Mode Terang
-    dropdown_dark: Mode Gelap
-    admin_divider: Opsi Admin
-    status_dropdown_draft: Konsep
-    status_dropdown_invited: Diundang
-    status_dropdown_active: Aktif
-    status_dropdown_suspended: Tergantung
-    status_dropdown_archived: Diarsipkan
-    token: Masukkan token akses aman...
+    preferences_divider: User Preferences
+    dropdown_auto: Automatic (Based on System)
+    dropdown_light: Light Mode
+    dropdown_dark: Dark Mode
+    admin_divider: Admin Options
+    status_dropdown_draft: Draft
+    status_dropdown_invited: Invited
+    status_dropdown_active: Active
+    status_dropdown_suspended: Suspended
+    status_dropdown_archived: Archived
+    token: Enter a secure access token...
   directus_webhooks:
-    status_options_active: Aktif
-    status_options_inactive: Tidak aktif
-    data_label: Kirim Data Acara
-    triggers_divider: Pencetus
-    actions_create: Buat
-    actions_update: Perbarui
-    actions_delete: Hapus
-    actions_login: Masuk
+    status_options_active: Active
+    status_options_inactive: Inactive
+    data_label: Send Event Data
+    triggers_divider: Triggers
+    actions_create: Create
+    actions_update: Update
+    actions_delete: Delete
+    actions_login: Login
     headers:
       header: Header
-      value: Nilai
-      add: Tambah Header
-no_fields_in_collection: 'Belum ada bidang pada "{collection}" ini'
-no_value: Tidak berharga
-do_nothing: Tidak Ada
-generate_and_save_uuid: Hasilkan dan Simpan UUID
-save_current_user_id: Simpan ID Pengguna Saat ini
-save_current_user_role: Simpan Peran Pengguna Saat ini
-save_current_datetime: Simpan Tanggal/Waktu Saat ini
-always_open: Selalu Buka
-start_open: Mulai Terbuka
-start_collapsed: Mulai Runtuh
-block: Blokir
+      value: Value
+      add: Add Header
+no_fields_in_collection: 'There are no fields in "{collection}" yet'
+no_value: No value
+do_nothing: Do Nothing
+generate_and_save_uuid: Generate and Save UUID
+save_current_user_id: Save Current User ID
+save_current_user_role: Save Current User Role
+save_current_datetime: Save Current Date/Time
+always_open: Always Open
+start_open: Start Open
+start_collapsed: Start Collapsed
+block: Block
 inline: Inline
-comment: Komentar
-expired: Kedaluwarsa
-share: Bagikan
-continue_label: Lanjut
-editing_role: 'Peraturan {role}'
-delete_label: Hapus
+comment: Comment
+shares: Shares
+unlimited_usage: Unlimited usage
+uses_left: No uses left | 1 use left | {n} uses left
+no_shares: No shares to show
+new_share: New Share
+expired: Expired
+upcoming: Upcoming
+share: Share
+share_item: Share Item
+shared_with_you: An item has been shared with you
+shared_enter_passcode: Enter your passcode to continue...
+shared_leave_blank_for_unlimited: Leave blank for unlimited
+shared_times_remaining: This link can only be used {n} times
+shared_last_remaining: This link can only be used once
+shared_uses_left:
+  - For added security, this shared page has been configured with a limited number of views. There are currently {n} views
+  - remaining, after which, the page will no longer be accessible.
+share_access_page: Access Shared Page
+share_access_not_found:
+  - This shared page either does not exist or has already exceeded the maximum number of allowed uses.
+share_access_not_found_desc: Please contact an authorized user of this project to request access.
+share_access_not_found_title: Unknown Share Page
+share_copy_link: Copy Link
+share_copy_link_success: Link Copied
+share_copy_link_error: Unable to Copy Link
+share_send_link: Send Link
+relational_triggers: Relational Triggers
+referential_action_field_label_m2o: On Delete of {collection}...
+referential_action_field_label_o2m: On Deselect of {collection}...
+referential_action_no_action: Prevent the deletion
+referential_action_cascade: Delete the {collection} item (cascade)
+referential_action_set_null: Nullify the {field} field
+referential_action_set_default: Set {field} to its default value
+choose_action: Choose Action
+continue_label: Continue
+continue_as: >-
+  {name} is currently authenticated. If you recognize this account, press continue.
+editing_role: '{role} Role'
+creating_webhook: Creating Webhook
+default_label: Default
+delete_label: Delete
+delete_are_you_sure: >-
+  This action is permanent and can not be undone. Are you sure you would like to proceed?
 delete_field_are_you_sure: >-
-  Apakah Anda yakin Anda ingin menghapus bidang "{field}" ini? Tindakan ini tidak dapat dikembalikan.
-description: Deskripsi
-done: Selesai
-duplicate: Gandakan
-limit: Batas
+  Are you sure you want to delete the field "{field}"? This action can not be undone.
+description: Description
+done: Done
+duplicate: Duplicate
+limit: Limit
 email: Email
-embed: Lampirkan
-file: Berkas
-file_library: Pustaka Berkas
-forgot_password: Lupa Kata Sandi
-hidden: Tersembunyi
-icon: Ikon
+embed: Embed
+fallback_icon: Fallback Icon
+field: Field | Fields
+file: File
+file_library: File Library
+forgot_password: Forgot Password
+hidden: Hidden
+hidden_in_group: Hidden in {group}
+icon: Icon
 info: Info
 normal: Normal
-success: Sukses
-warning: Peringatan
-danger: Bahaya
-junction_collection: Pengumpulan Persimpangan
-latency: Latensi
-login: Masuk
-my_activity: Aktivitas Saya
-not_authenticated: Tidak diautentikasi
-authenticated: Terautentikasi
-options: Pilihan
-otp: Kata Sandi Sekali Pakai
-password: Kata Sandi
-permissions: Izin
-relationship: Hubungan
-reset: Setel ulang
-reset_password: Atur Ulang Kata Sandi
-revisions: Revisi
-no_revisions: Belum Ada Revisi
-revert: Pulihkan
-save: Simpan
-schema: Skema
-search: Cari
-select_existing: Pilih yang Ada
-select_field_type: Pilih kolom
-select_interface: Pilih antarmuka
-settings: Pengaturan
-sign_in: Masuk
-sign_out: Keluar
-sign_out_confirm: Apakah Anda yakin ingin keluar?
-something_went_wrong: Ada yang salah.
-sort_desc: Mengurut Turun
-template: Templat
-translation: Terjemahan
-translation_placeholder: Masukkan terjemahan...
-value: Nilai
-view_project: Lihat Proyek
-report_error: Lapor Kesalahan
-start: Mulai
-table: Tabel
+success: Success
+warning: Warning
+danger: Danger
+colors:
+  purple: Purple
+  blue: Blue
+  green: Green
+  yellow: Yellow
+  orange: Orange
+  red: Red
+  black: Black
+  gray: Gray
+  white: White
+junction_collection: Junction Collection
+latency: Latency
+login: Log in
+my_activity: My Activity
+not_authenticated: Not Authenticated
+authenticated: Authenticated
+options: Options
+otp: One-Time Password
+password: Password
+permissions: Permissions
+relationship: Relationship
+reset: Reset
+reset_password: Reset Password
+revisions: Revisions
+no_revisions: No Revisions Yet
+no_logs: No Logs Yet
+revert: Revert
+save: Save
+schema: Schema
+search: Search
+select_existing: Select Existing
+select_field_type: Select a field type
+select_interface: Select an interface
+settings: Settings
+sign_in: Sign In
+sign_out: Sign Out
+sign_out_confirm: Are you sure you want to sign out?
+something_went_wrong: Something went wrong.
+sort_direction: Sort Direction
+export_location: Export Location
+export_started: Export Started
+export_started_copy: Your export has started. You'll be notified when it's ready to download.
+sort_asc: Sort Ascending
+sort_desc: Sort Descending
+disable_sort: Disable Sorting
+template: Template
+require_value_to_be_set: Require value to be set on creation
+translation: Translation
+translation_placeholder: Enter a translation...
+value: Value
+view_project: View Project
+weeks: { }
+report_error: Report Error
+start: Start
+table: Table
+list: List
+search_filter: Search & Filter
+enable_search_filter: Enable searching & filtering
+item_link: Item link
+show_link_to_item: Show a link to the item
+navigate_to_item: Navigate to Item
+undo_removed_item: Undo Removed Item
+remove_item: Remove Item
+delete_item: Delete Item
 interfaces:
   filter:
-    name: Penyaring
-    description: Konfigurasikan filter objek.
-    add_filter: Tambah Filter
-    add_group: Dan / Atau kelompok
-    add_value: Tambahkan Nilai
-    logic_type_and: DAN
-    logic_type_or: ATAU
-    all: Semua
-    any: Setiap
-    and: dan
-    of_the_following: sebagai berikut
-    no_rules: Tidak ada aturan yang dikonfigurasi
-    change_value: Klik untuk ubah nilai
-    placeholder: Seret aturan di sini
+    name: Filter
+    description: Configure a filter object.
+    add_filter: Add Filter
+    add_group: And / Or group
+    add_value: Add Value
+    logic_type_and: AND
+    logic_type_or: OR
+    all: All
+    any: Any
+    and: and
+    of_the_following: of the following
+    no_rules: No configured rules
+    change_value: Click to change value
+    placeholder: Drag rules here
+    add_key_placeholder: Add a key and press enter...
+  fields:
+    name: Fields
   group-accordion:
-    name: Akordeon
-    description: Tampilkan bidang atau grup sebagai bagian akordeon
-    start: Mulai
-    all_closed: Semua Tertutup
-    first_opened: Pertama kali Dibuka
-    all_opened: Semua Dibuka
-    accordion_mode: Mode Akordeon
-    max_one_section_open: Maks 1 Bagian Dibuka
+    name: Accordion
+    description: Display fields or groups as accordion sections
+    start: Start
+    all_closed: All Closed
+    first_opened: First Opened
+    all_opened: All Opened
+    accordion_mode: Accordion Mode
+    max_one_section_open: Max 1 Section Open
   presentation-links:
-    presentation-links: Tautan Tombol
-    links: Tautan
-    description: Tombol tautan yang dapat dikonfigurasi untuk meluncurkan URL dinamis
-    style: Gaya
-    primary: Primer
-    link: Tautan
-    button: Tombol
-    error: Tidak dapat melakukan aksi ini
+    presentation-links: Button Links
+    links: Links
+    description: Configurable link buttons for launching dynamic URLs
+    style: Style
+    primary: Primary
+    link: Links
+    button: Buttons
+    error: Cannot perform action
   select-multiple-checkbox:
-    checkboxes: Kotak centang
-    description: Pilih diantara beberapa opsi melalui kotak centang
-    allow_other: Izinkan Lainnya
-    show_more: 'Tampilkan {count} lebih banyak'
-    items_shown: Items yang Ditampilkan
+    checkboxes: Checkboxes
+    description: Choose between multiple options via checkboxes
+    allow_other: Allow Other
+    show_more: 'Show {count} more'
+    items_shown: Items Shown
   select-multiple-checkbox-tree:
-    name: Kotak centang (Pohon)
-    description: Pilih diantara beberapa opsi melalui kotak centang bersarang
-    value_combining: Menggabungkan Nilai
-    value_combining_note: Mengontrol nilai apa yang disimpan saat pilihan bersarang dibuat.
-    show_all: Tampilkan Semua
-    show_selected: Tampilkan yang Dipilih
+    name: Checkboxes (Tree)
+    description: Choose between multiple options via nested checkboxes
+    value_combining: Value Combining
+    value_combining_note: Controls what value is stored when nested selections are made.
+    show_all: Show All
+    show_selected: Show Selected
   input-code:
-    code: Kode
-    description: Tulis atau bagikan cuplikan kode
-    line_number: Nomor Baris
-    line_wrapping: Pembungkus Garis
-    placeholder: Masukkan kode di sini...
+    code: Code
+    description: Write or share code snippets
+    line_number: Line Number
+    line_wrapping: Line Wrapping
+    placeholder: Enter code here...
   system-collection:
-    collection: Koleksi
-    description: Pilih diantara koleksi yang ada
-    include_system_collections: Termasuk Koleksi Sistem
+    collection: Collection
+    description: Select between existing collections
+    include_system_collections: Include System Collections
   system-collections:
-    collections: Pengumpulan
-    description: Pilih diantara koleksi yang ada
-    include_system_collections: Termasuk Koleksi Sistem
+    collections: Collections
+    description: Select between existing collections
+    include_system_collections: Include System Collections
   select-color:
-    color: Warna
-    description: Masukan atau pilih nilai warna
+    color: Color
+    description: Enter or select a color value
+    placeholder: Choose a color...
+    preset_colors: Preset Colors
+    opacity: Opacity
+    preset_colors_add_label: Add new color...
+    name_placeholder: Enter color name...
   datetime:
     datetime: Datetime
+    description: Enter dates and times
+    include_seconds: Include Seconds
+    set_to_now: Set to Now
+    use_24: Use 24-Hour Format
+    placeholder: Choose a datetime...
   system-fields:
-    select_a_collection: Pilih Koleksi
+    select_a_collection: Select a Collection
+    no_fields: No fields
   system-display-template:
-    display-template: Tampilan Template
-    collection_field_not_setup: Opsi bidang koleksi disalahkonfigurasikan
-    select_a_collection: Pilih Koleksi
+    display-template: Display Template
+    description: Mix static text and dynamic field values
+    collection_field: Collection field
+    collection_field_not_setup: The collection field option is misconfigured
+    select_a_collection: Select a Collection
   presentation-divider:
-    divider: Pembagi/Pemecah
+    divider: Divider
+    description: Label and divide fields into sections
+    title_placeholder: Enter a title, or leave blank to only show a line...
+    inline_title: Inline Title
+    inline_title_label: Show title inside line
+    margin_top: Margin Top
+    margin_top_label: Increase Top Margin
   select-dropdown:
-    allow_other: Izinkan Lainnya
-    choices_value_placeholder: Masukkan sebuah nilai...
+    description: Select a value from a dropdown
+    choices_placeholder: Add a new choice
+    allow_other: Allow Other
+    allow_other_label: Allow Other Values
+    allow_none: Allow None
+    allow_none_label: Allow No Selection
+    choices_name_placeholder: Enter a name...
+    choices_value_placeholder: Enter a value...
+    preview_threshold: Preview Threshold
+  select-multiple-dropdown:
+    select-multiple-dropdown: Dropdown (Multiple)
+    description: Select multiple values from a dropdown
   file:
-    file: Berkas
+    file: File
+    description: Select or upload a file
   files:
-    files: Berkas
+    files: Files
+    description: Select or upload multiple files
   input-hash:
     hash: Hash
+    description: Enter a value to be hashed
+    masked: Masked
+    masked_label: Hide the true values
   select-icon:
-    icon: Ikon
-    search_for_icon: Cari ikon...
+    icon: Icon
+    description: Select an icon from a dropdown
+    search_for_icon: Search for icon...
   file-image:
-    image: Gambar
+    image: Image
+    description: Select or upload an image
+    crop: Crop to Fit
+    crop_label: Crop image as needed
   system-interface:
-    interface: Antarmuka
+    interface: Interface
+    description: Select an existing interface
+    placeholder: Select an interface...
+  system-interface-options:
+    interface-options: Interface Options
+    description: A modal for selecting options of an interface
+  list-m2m:
+    many-to-many: Many to Many
+    description: Select multiple related junction items
+    columns_configure_notice: You can configure the columns after creating this field.
+    display_template_configure_notice: You can configure the display template after creating this field.
   select-dropdown-m2o:
-    display_template: Tampilan Template
+    many-to-one: Many to One
+    description: Select a single related item
+    display_template: Display Template
+  collection-item-dropdown:
+    collection-item-dropdown: Collection Item Dropdown
+    description: Select an item from a collection in JSON format
   input-rich-text-md:
+    markdown: Markdown
+    description: Enter and preview markdown
     edit: Edit
-    previewFont: Font Pratinjau
-    customSyntax: Blok Kustom
-    customSyntax_label: Tambahkan jenis sintaks khusus
-    customSyntax_add: Tambahkan sintaks khusus
-    box: Blokir / Sebaris
+    preview: Preview
+    editorFont: Editor Font
+    previewFont: Preview Font
+    customSyntax: Custom Blocks
+    customSyntax_label: Add custom syntax types
+    customSyntax_add: Add custom syntax
+    box: Block / Inline
+    imageToken: Static Access Token
+    imageToken_label: Static access token is appended to the assets' URL
   map:
-    zoom: Perbesar
+    map: Map
+    description: Select a location on a map
+    zoom: Zoom
+    geometry_type: Geometry Type
+    geometry_format: Geometry Format
+    default_view: Default View
+    invalid_options: Invalid options
+    invalid_format: Invalid format ({format})
+    unexpected_geometry: Expected {expected}, got {got}.
+    fit_bounds: Fit view to data
+    native: Native
+    geojson: GeoJSON
+    lnglat: Longitude, Latitude
+    wkt: WKT
+    wkb: WKB
+    click_to_select: Click to select {geometry}
+  presentation-notice:
+    notice: Notice
+    description: Display a short notice
+    text: Enter notice content here...
+  list-o2m:
+    one-to-many: One to Many
+    description: Select multiple related items
+    no_collection: The collection could not be found
   system-folder:
-    folder: Direktori
+    folder: Folder
+    description: Select a folder
+    field_hint: Default folder for uploaded files without a folder specified. Does not affect existing files.
+    root_name: File Library Root
+    system_default: System Defaults
+  select-radio:
+    radio-buttons: Radio Buttons
+    description: Select one of multiple choices
   list:
-    sort: Sortir
+    repeater: Repeater
+    description: Create multiple entries of the same structure
+    edit_fields: Edit Fields
+    add_label: '"Create New" Label'
+    sort: Sort
+    sort_placeholder: Manual
+    field_note_placeholder: Enter field note...
+    incompatible_data:
+      - The current data is not compatible with the repeater interface and will be overridden when adding items to the
+      - repeater
+  slider:
+    slider: Slider
+    description: Select a number using a slider
+    always_show_value: Always show value
   tags:
-    tags: Tagar
+    tags: Tags
+    description: Select or add tags
+    whitespace: Whitespace
+    hyphen: Replace with hyphen
+    underscore: Replace with underscore
+    remove: Remove whitespace
+    capitalization: Capitalization
+    uppercase: Convert Uppercase
+    lowercase: Convert Lowercase
+    auto_formatter: Use Title Auto-Formatter
+    alphabetize: Alphabetize
+    alphabetize_label: Force Alphabetical Order
+    add_tags: Add a tag and press Enter...
+  input:
+    input: Input
+    description: Manually enter a value
+    trim: Trim
+    trim_label: Trim the start and end
+    mask: Masked
+    mask_label: Hide the real value
+    clear: Cleared Value
+    clear_label: Save as empty string
+    minimum_value: Minimum Value
+    maximum_value: Maximum Value
+    step_interval: Step Interval
+    slug: Slugify
+    slug_label: Make entered value URL safe
+  input-multiline:
+    textarea: Textarea
+    description: Enter multiline plain-text
+  input-translated-string:
+    input-translated-string: Translated Strings
+    description: Select or add translation string
+    search_placeholder: Search...
+    new_translation_string: New Translation String
   boolean:
-    toggle: Beralih
-    label_default: Diaktifkan
+    toggle: Toggle
+    description: Switch between on and off
+    color_on: Color On
+    color_off: Color Off
+    label_placeholder: Enter a label...
+    label_default: Enabled
   translations:
-    display_template: Tampilan Template
+    display_template: Display Template
+    no_collection: No Collection
+    toggle_split_view: Toggle Split View
+    enable: Enable
+    user_language: Use Current User Language
+    default_language: Default Language
+    language_field: Language Indicator Field
+    language_direction_field: Language Direction Field
+  list-o2m-tree-view:
+    description: Tree view for nested recursive one-to-many items
+    recursive_only: The tree view interface only works for recursive relationships.
   user:
-    user: Pengguna
+    user: User
+    description: Select an existing directus user
+    select_mode: Select Mode
     modes:
-      dropdown: Dropwdown
+      auto: Auto
+      dropdown: Dropdown
+      modal: Modal
+  input-rich-text-html:
+    wysiwyg: WYSIWYG
+    description: A rich-text editor writing HTML content
+    toolbar: Toolbar
+    custom_formats: Custom Formats
+    options_override: Options Override
+    folder_note: Folder for uploaded files. Does not affect existing files.
+    imageToken: Static Access Token
+    imageToken_label: Static access token is appended to the assets' URL
+  input-autocomplete-api:
+    input-autocomplete-api: Autocomplete Input (API)
+    description: A search typeahead for external API values.
+    results_path: Results Path
+    value_path: Value Path
+    text_path: Text Path
+    trigger: Trigger
+    rate: Rate
+  group-raw:
+    name: Raw Group
+    description: Render the fields as-is
+  group-detail:
+    name: Detail Group
+    description: Render the fields as a collapsable section
+    show_header: Show Group Header
+    header_icon: Header Icon
+    header_color: Header Color
+    start_open: Start Open
+    start_closed: Start Closed
   system-token:
     system-token: Token
+    description: Manage static access token
+    placeholder: Click "Generate Token" to create a new static access token
+    value_securely_saved: Value Securely Saved
+    generate: Generate Token
+    regenerate: Regenerate Token
+    generate_success_copy: Make sure to backup and copy the token above. For security reasons, you will not be able to view the token again after saving and navigate off this page.
+    remove_token: Remove Token
+  system-raw-editor:
+    system-raw-editor: Raw Editor
+    description: Allow entering of raw or mustache templating values
 displays:
   translations:
-    translations: Terjemahan
+    translations: Translations
+    description: Preview translations
+    enable: Enable
+    user_language: Use Current User Language
+    default_language: Default Language
+    language_field: Language Indicator Field
   boolean:
     boolean: Boolean
-    icon_on: Ikon Aktif
-    icon_off: Ikon Tidak Aktif
+    description: Display on and off states
+    label_on: Label On
+    label_on_placeholder: Enter an on label...
+    label_off: Label Off
+    label_off_placeholder: Enter an off label...
+    icon_on: Icon On
+    icon_off: Icon Off
+    color_on: Color On
+    color_off: Color Off
   collection:
-    collection: Koleksi
+    collection: Collection
+    description: Display a collection
+    icon_label: Show the collection's icon
   color:
-    color: Warna
+    color: Color
+    description: Display a colored dot
+    default_color: Default Color
   datetime:
     datetime: Datetime
+    description: Display values related to time
     format: Format
-    suffix: Akhiran
+    format_note: >-
+      The custom format accepts the __[Date Field Symbol Table](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table)__
+    long: Long
+    short: Short
+    relative: Relative
+    relative_label: 'Show relative time, eg: 5 minutes ago'
+    suffix: Suffix
+    suffix_label: Show relative indicator
+    suffix_note: Uses words like 'in' and 'ago'
+    strict: Strict
+    strict_label: Use strict units
+    strict_note: Removes words like 'almost', 'over', 'less than'
+    round: Round
+    round_note: Choose a rounding function to use
+    down: Down
+    nearest: Nearest
+    up: Up
   file:
-    file: Berkas
+    file: File
+    description: Display files
   filesize:
-    filesize: Ukuran Berkas
+    filesize: File Size
+    description: Display the size of a file
   formatted-value:
+    formatted-value: Formatted Value
+    description: Display a formatted version of the text
     format: Format
-    font: Huruf
+    format_label: Auto format
+    font: Font
+    font_sans_serif: Sans serif
     font_serif: Serif
     font_monospace: Monospace
-    bold: Tebal
-    italic: Miring
-    prefix: Awalan
-    suffix: Akhiran
-    color: Warna
-    icon: Ikon
-    text: Teks
+    bold: Bold
+    bold_label: Use bold style
+    italic: Italic
+    italic_label: Use italic style
+    prefix: Prefix
+    prefix_label: Prepend text
+    suffix: Suffix
+    suffix_label: Appended Text
+    color: Color
+    background: Background
+    icon: Icon
+    border: Border
+    border_label: Show border
+    text: Text
+    text_placeholder: Optional value override...
+  formatted-json-value:
+    formatted-json-value: Formatted JSON value
+    description: Display a formatted version of the object
   icon:
-    icon: Ikon
+    icon: Icon
+    description: Display an icon
+    filled: Filled
+    filled_label: Use the filled variant
   image:
-    circle: Lingkaran
+    image: Image
+    description: Display a tiny image preview
+    circle: Circle
+    circle_label: Display as a circle
   labels:
-    choices_value_placeholder: Masukkan sebuah nilai...
+    labels: Labels
+    description: Display either a single or a list of labels
+    default_foreground: Default Foreground
+    default_background: Default Background
+    format_label: Format each label
+    show_as_dot: Show As Dot
+    choices_value_placeholder: Enter a value...
+    choices_text_placeholder: Enter a text...
+  mime-type:
+    mime-type: MIME Type
+    description: Show the MIME-Type of a file
+    extension_only: Extension Only
+    extension_only_label: Only show the file extension
+  rating:
+    rating: Rating
+    description: Visualize a number as stars relative to the max-value
+    simple: Simple
+    simple_label: Show stars in a simple format
+  raw:
+    raw: Raw Value
+  related-values:
+    related-values: Related Values
+    description: Display relative values
+    display_template_configure_notice: You can configure the display template after creating this field.
   user:
-    user: Pengguna
+    user: User
+    description: Display a directus user
     avatar: Avatar
-    name: Nama
-    both: Keduanya
+    name: Name
+    both: Both
+    circle_label: Show user in a circle
 layouts:
   cards:
-    cards: Kartu
-    image_source: Sumber Gambar
-    title: Judul
-    subtitle: Subjudul
+    cards: Cards
+    image_source: Image Source
+    image_fit: Image Fit
+    crop: Crop
+    contain: Contain
+    title: Title
+    subtitle: Subtitle
   tabular:
-    tabular: Tabel
-    spacing: Spasi
-    comfortable: Longgar
-    compact: Rapat
-    cozy: Normal
+    tabular: Table
+    spacing: Spacing
+    comfortable: Comfortable
+    compact: Compact
+    cozy: Cozy
+  calendar:
+    calendar: Calendar
+    start_date_field: Start Date Field
+    end_date_field: End Date Field
+    optional: Optional
+    first_day: First Day of the Week
+  map:
+    map: Map
+    basemap: Basemap
+    layers: Layers
+    cluster_options: Clustering options
+    cluster: Cluster Nearby Data
+    cluster_radius: Cluster radius
+    cluster_minpoints: Cluster minimum size
+    cluster_maxzoom: Maximum zoom for clustering
+    field: Geospatial Field
+    invalid_geometry: Invalid geometry
+    find_location: Find location...
+    default_template: Using Collection Default...
+    no_compatible_fields: No compatible fields
   kanban:
-    advanced: Tingkat lanjut
-both: Keduanya
+    name: Kanban
+    group_field: Group By
+    group_field_placeholder: Field to group by...
+    group_title: Group Title
+    group_title_placeholder: Field for group titles...
+    title: Card Title
+    title_placeholder: Optional title field...
+    text: Card Text
+    text_placeholder: Optional text field...
+    date: Card Date
+    date_placeholder: Optional date field...
+    tags: Card Tags
+    tags_placeholder: Optional tags field...
+    user: Card User
+    user_placeholder: Optional user field...
+    image: Card Image
+    image_placeholder: Optional image field...
+    image_fit: Card Image Fit
+    crop: Crop
+    advanced: Advanced
+    edit_group: Edit Group
+    delete_group: Delete Group
+    add_group: Add Group
+    add_group_placeholder: Enter a new group title...
+    show_ungrouped: Show Ungrouped
+    show: Show
+    no_group: No Group
+    not_all_loaded: Could only load the first 1000 items.
+horizontal: Horizontal
+vertical: Vertical
+x_axis: X-Axis
+y_axis: Y-Axis
+y_axis_function: Y-Axis Function
+show_x_only: Show X-Axis Only
+show_y_only: Show Y-Axis Only
+show_data_label: Show Data Label
+both: Both
+show_axis_labels: Show Axis Labels
+function: Function
+half_circle: Half Circle
+full_circle: Full Circle
+stroke_width: Stroke Width
+rounded_stroke: Rounded Stroke
+thin: Thin
+medium: Medium
+broad: Broad
+show_labels: Show Labels
+show_legend: Show Legend
+right: Right
+left: Left
+donut: Donut
 panels:
+  metric:
+    name: Metric
+    description: Show a single value based on a query
+    field: Field
+  time_series:
+    name: Time Series
+    description: Render a line chart based on values over time
+    date_field: Date Field
+    value_field: Value Field
+    fill_type: Fill Type
+    curve_type: Curve Type
   label:
     name: Label
+    description: Show some text
+  list:
+    name: List
+    description: Filter and list fields from a collection
+  barchart:
+    name: Bar Chart
+    description: Bar or column charts for comparing groups of values
+    horizontal: Horizontal
+    select_collection: You must select a collection.
+  linechart:
+    name: Line Chart
+    description: Line chart for comparing change of a field
+    disabled_grouping: Disabled when grouping is selected.
+    disabled_no_grouping: Disabled when no grouping is selected.
+    show_marker: Show Tooltip Marker
+    curve_type: Curve Type
+    smooth: Smooth
+    straight: Straight
+    step_line: Step Line
+  meter:
+    name: Meter
+    description: Meter for tracking values
+  piechart:
+    name: Pie or Donut Chart
+    description: Circular chart showing the ratios of groups on a column
+  variable:
+    name: Global Variable
+    description: Set a global value for use in other Panels' filters
+    variable_key: Variable Key
+  relational-variable:
+    name: Global Relational Variable
+    description: Set a global relational value for use in other Panels' filters
+    variable_key: Variable Key
+    multiple: Multiple
+    multiple-label: Select multiple items
+triggers:
+  common:
+    response_body: Response Body
+    response_body_all: All Data
+    response_body_last: Data of Last Operation
+  event:
+    name: Event Hook
+    description: Triggers on platform or data events
+    action: 'Action (Non-Blocking)'
+    filter: 'Filter (Blocking)'
+  webhook:
+    name: Webhook
+    description: Triggers on an incoming HTTP request
+    method: Method
+    async: Asynchronous
+  operation:
+    name: Another Flow
+    description: Triggered by another Flow, for chaining
+    preview: Triggered by an operation in a different Flow
+  schedule:
+    name: Schedule (CRON)
+    description: Triggers at regular points in time
+    cron: Interval
+  manual:
+    name: Manual
+    description: Triggers on manual run within selected collection(s)
+    collection_and_item: Collection & Item Pages
+    collection_only: Collection Page Only
+    item_only: Item Page Only
+    collection_page: Collection Page
+    require_selection: Requires Selection
+a_flow_uuid: Select a Flow to trigger...
+any_string_or_json: Any string or JSON...
+item_payload_placeholder: This is the JSON used to update the item's field values...
+operation_variables_note: You can access flow data with variables such as **{'{'}{'{'}$last{'}'}{'}'}**, **{'{'}{'{'}$trigger{'}'}{'}'}** and **{'{'}{'{'}$accountability{'}'}{'}'}**, or reference previous operations using **{'{'}{'{'}operation_key{'}'}{'}'}**.'
 operations:
+  condition:
+    name: Condition
+    description: Route a flow based on If / Else logic
+  exec:
+    name: Run Script
+    description: Execute arbitrary code to modify the payload
+    modules: 'The following **Node modules** can be used:'
   item-create:
-    payload: Muatan
+    name: Create Data
+    description: Create items in the database
+    payload: Payload
+    emit_events: Emit Events
+  item-delete:
+    name: Delete Data
+    description: Delete items in the database
+    emit_events: Emit Events
+    key: IDs
+    query: Query
+  item-read:
+    name: Read Data
+    description: Read items from the database
+    key: IDs
+    query: Query
+    emit_events: Emit Events
   item-update:
-    payload: Muatan
+    name: Update Data
+    description: Update items in the database
+    emit_events: Emit Events
+    key: IDs
+    payload: Payload
+    query: Query
   log:
-    message: Pesan
+    name: Log to Console
+    description: Output something to the console
+    message: Message
+    message_placeholder: Enter a message to show in the console...
   mail:
-    template: Templat
+    name: Send Email
+    description: Send an email to one or more people
+    to: To
+    to_placeholder: Add e-mail addresses and press enter...
+    body: Body
+    template: Template
+    data: Data
   notification:
-    recipient: Pengguna
-    message: Pesan
+    name: Send Notification
+    description: Send an in-app notification to one or more users
+    recipient: User
+    recipient_placeholder: Enter a UUID...
+    recipient_note: Add user UUID and press enter...
+    message: Message
   request:
+    name: Webhook / Request URL
+    description: "Make a request to a URL"
     url: URL
+    url_placeholder: https://example.com/example
+    method: Method
+    data: Data
+    headers: Headers
+    header: Header
+    header_placeholder: Authorization...
+    value_placeholder: Bearer eyJhbGciOi...
+  sleep:
+    name: Sleep
+    description: Wait a given number of milliseconds
+    milliseconds: Milliseconds
+  transform:
+    name: Transform Payload
+    description: Alter the Flow's JSON payload
   trigger:
-    flows: Kumpulan Alur
-    flow: Alur
+    name: Trigger Flow
+    description: Pass this data to another flow
+    flows: Flows
+    flow: Flow
+    data: Data
+    iteration_mode: Iteration Mode
+    iteration_mode_note: Mode for iterating over arrays.
+    serial: Serial
+    parallel: Parallel
+    batch: Batch
+    batch_size: Batch Size
+Enable CORS: Enable CORS
