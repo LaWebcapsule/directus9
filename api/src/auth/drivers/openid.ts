@@ -261,7 +261,14 @@ export class OpenIDAuthDriver extends LocalAuthDriver {
 						auth_data: JSON.stringify({ refreshToken: tokenSet.refresh_token }),
 					});
 				}
-			} catch (e) {
+			} catch (e: any) {
+				if (e.error === 'invalid_grant') {
+					// Remove invalid token from the user store
+					await this.usersService.updateOne(user.id, {
+						auth_data: null,
+					});
+				}
+
 				throw handleError(e);
 			}
 		}
