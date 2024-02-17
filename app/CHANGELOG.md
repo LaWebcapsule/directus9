@@ -1,5 +1,11 @@
 # @wbce-d9/app
 
+## 9.29.0
+
+### Minor Changes
+
+- 9d909a7: Cosmetic change on presets panel
+
 ## 9.28.0
 
 ### Minor Changes

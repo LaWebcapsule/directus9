@@ -1,5 +1,17 @@
 # @wbce-d9/api
 
+## 9.28.0
+
+### Minor Changes
+
+- 7255037: Fix openid connector for keycloack
+- 6d7f40e: fix cache compression
+
+### Patch Changes
+
+- Updated dependencies [9d909a7]
+  - @wbce-d9/app@9.29.0
+
 ## 9.27.0
 
 ### Minor Changes
