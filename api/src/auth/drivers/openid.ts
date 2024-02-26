@@ -254,6 +254,8 @@ export class OpenIDAuthDriver extends LocalAuthDriver {
 				await this.usersService.updateOne(user.id, {
 					auth_data: null,
 				});
+
+				logger.info(`[OpenID] Session closed for user.`);
 			} catch (e: any) {
 				throw handleError(e);
 			}
