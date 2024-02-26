@@ -235,6 +235,31 @@ export class OpenIDAuthDriver extends LocalAuthDriver {
 		return (await this.fetchUserId(identifier)) as string;
 	}
 
+	override async logout(user: User): Promise<void> {
+		let authData = user.auth_data as AuthData;
+
+		if (typeof authData === 'string') {
+			try {
+				authData = parseJSON(authData);
+			} catch {
+				logger.warn(`[OpenID] Session data isn't valid JSON: ${authData}`);
+			}
+		}
+
+		if (authData?.['refreshToken']) {
+			try {
+				const client = await this.client;
+				await client.revoke(authData['refreshToken']);
+
+				await this.usersService.updateOne(user.id, {
+					auth_data: null,
+				});
+			} catch (e: any) {
+				throw handleError(e);
+			}
+		}
+	}
+
 	override async login(user: User): Promise<void> {
 		return this.refresh(user);
 	}
