@@ -1,5 +1,11 @@
 # @wbce-d9/api
 
+## 9.29.0
+
+### Minor Changes
+
+- 41a3210: Revoke tokens on sessions logout for OpenId SSO
+
 ## 9.28.0
 
 ### Minor Changes
