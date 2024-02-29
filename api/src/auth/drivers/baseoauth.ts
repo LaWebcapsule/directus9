@@ -115,7 +115,7 @@ export abstract class BaseOAuthDriver extends LocalAuthDriver {
 			await this.getUserService().createOne(updatedUserPayload);
 		} catch (e) {
 			if (e instanceof RecordNotUniqueException) {
-				logger.warn(e, '[${this.getClientName()}] Failed to register user. User not unique');
+				logger.warn(e, `[${this.getClientName()}] Failed to register user. User not unique`);
 				throw new InvalidProviderException();
 			}
 
