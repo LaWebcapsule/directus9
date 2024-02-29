@@ -169,7 +169,10 @@ export class OAuth2AuthDriver extends LocalAuthDriver {
 			);
 
 			// Update user to update refresh_token and other properties that might have changed
-			await this.usersService.updateOne(userId, updatedUserPayload);
+			await this.usersService.updateOne(userId, {
+				...updatedUserPayload,
+				auth_data: userPayload.auth_data,
+			});
 
 			return userId;
 		}
@@ -207,6 +210,34 @@ export class OAuth2AuthDriver extends LocalAuthDriver {
 		return (await this.fetchUserId(identifier)) as string;
 	}
 
+	override async logout(user: User): Promise<void> {
+		let authData = user.auth_data as AuthData;
+
+		if (typeof authData === 'string') {
+			try {
+				authData = parseJSON(authData);
+			} catch {
+				logger.warn(`[OAuth2] Session data isn't valid JSON: ${authData}`);
+			}
+		}
+
+		if (authData?.['refreshToken']) {
+			try {
+				await this.client.revoke(authData['refreshToken'], 'refresh_token');
+
+				await this.usersService.updateOne(user.id, {
+					auth_data: null,
+				});
+
+				logger.info(`[OAuth2] Session closed for user.`);
+			} catch (e: any) {
+				throw handleError(e);
+			}
+		}
+
+		logger.warn(`[OAuth2] Session closed for user without auth_data`);
+	}
+
 	override async login(user: User): Promise<void> {
 		return this.refresh(user);
 	}
@@ -236,6 +267,10 @@ export class OAuth2AuthDriver extends LocalAuthDriver {
 				throw handleError(e);
 			}
 		}
+
+		// If no auth connexion, throw user out
+		logger.error(`No [OAuth2] Session found`);
+		throw new InvalidCredentialsException();
 	}
 }
 
