@@ -3,19 +3,11 @@ import type { Accountability } from '@wbce-d9/types';
 import express, { Router } from 'express';
 import flatten from 'flat';
 import jwt from 'jsonwebtoken';
-import type { BaseClient, Client } from 'openid-client';
+import type { BaseClient, Client, TokenSet } from 'openid-client';
 import { generators, Issuer } from 'openid-client';
 import { getAuthProvider } from '../../auth.js';
-import getDatabase from '../../database/index.js';
-import emitter from '../../emitter.js';
 import env from '../../env.js';
-import { RecordNotUniqueException } from '../../exceptions/database/record-not-unique.js';
-import {
-	InvalidConfigException,
-	InvalidCredentialsException,
-	InvalidProviderException,
-	InvalidTokenException,
-} from '../../exceptions/index.js';
+import { InvalidConfigException, InvalidCredentialsException, InvalidTokenException } from '../../exceptions/index.js';
 import logger from '../../logger.js';
 import { respond } from '../../middleware/respond.js';
 import { AuthenticationService } from '../../services/authentication.js';
@@ -26,7 +18,7 @@ import { getConfigFromEnv } from '../../utils/get-config-from-env.js';
 import { getIPFromReq } from '../../utils/get-ip-from-req.js';
 import { getMilliseconds } from '../../utils/get-milliseconds.js';
 import { Url } from '../../utils/url.js';
-import { BaseOAuthDriver } from './baseoauth.js';
+import { BaseOAuthDriver, UserPayload } from './baseoauth.js';
 
 export class OpenIDAuthDriver extends BaseOAuthDriver {
 	client: Promise<Client>;
@@ -127,12 +119,9 @@ export class OpenIDAuthDriver extends BaseOAuthDriver {
 		}
 	}
 
-	override async getUserID(payload: Record<string, any>): Promise<string> {
-		if (!payload['code'] || !payload['codeVerifier'] || !payload['state']) {
-			logger.warn('[OpenID] No code, codeVerifier or state in payload');
-			throw new InvalidCredentialsException();
-		}
-
+	async getTokenSetAndUserInfo(
+		payload: Record<string, any>
+	): Promise<[TokenSet, Record<string, unknown>, UserPayload]> {
 		let tokenSet;
 		let userInfo;
 
@@ -161,7 +150,7 @@ export class OpenIDAuthDriver extends BaseOAuthDriver {
 		// Flatten response to support dot indexes
 		userInfo = flatten(userInfo) as Record<string, unknown>;
 
-		const { provider, identifierKey, allowPublicRegistration, requireVerifiedEmail } = this.config;
+		const { provider, identifierKey } = this.config;
 
 		const email = userInfo['email'] ? String(userInfo['email']) : undefined;
 		// Fallback to email if explicit identifier not found
@@ -182,66 +171,7 @@ export class OpenIDAuthDriver extends BaseOAuthDriver {
 			auth_data: tokenSet.refresh_token && JSON.stringify({ refreshToken: tokenSet.refresh_token }),
 		};
 
-		const userId = await this.fetchUserId(identifier);
-
-		if (userId) {
-			// Run hook so the end user has the chance to augment the
-			// user that is about to be updated
-			const updatedUserPayload = await emitter.emitFilter(
-				`auth.update`,
-				{},
-				{
-					identifier,
-					provider: this.config['provider'],
-					providerPayload: { accessToken: tokenSet.access_token, userInfo },
-				},
-				{ database: getDatabase(), schema: this.schema, accountability: null }
-			);
-
-			// Update user to update refresh_token and other properties that might have changed
-			await this.usersService.updateOne(userId, {
-				...updatedUserPayload,
-				auth_data: userPayload.auth_data,
-			});
-
-			return userId;
-		}
-
-		//  --- NEW USER ----
-
-		const isEmailVerified = !requireVerifiedEmail || userInfo['email_verified'];
-
-		// Is public registration allowed?
-		if (!allowPublicRegistration || !isEmailVerified) {
-			logger.warn(`[OpenID] User doesn't exist, and public registration not allowed for provider "${provider}"`);
-			throw new InvalidCredentialsException();
-		}
-
-		// Run hook so the end user has the chance to augment the
-		// user that is about to be created
-		const updatedUserPayload = await emitter.emitFilter(
-			`auth.create`,
-			userPayload,
-			{
-				identifier,
-				provider: this.config['provider'],
-				providerPayload: { accessToken: tokenSet.access_token, userInfo },
-			},
-			{ database: getDatabase(), schema: this.schema, accountability: null }
-		);
-
-		try {
-			await this.usersService.createOne(updatedUserPayload);
-		} catch (e) {
-			if (e instanceof RecordNotUniqueException) {
-				logger.warn(e, '[OpenID] Failed to register user. User not unique');
-				throw new InvalidProviderException();
-			}
-
-			throw e;
-		}
-
-		return (await this.fetchUserId(identifier)) as string;
+		return [tokenSet, userInfo, userPayload];
 	}
 }
 
