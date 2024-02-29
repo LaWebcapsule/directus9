@@ -185,7 +185,7 @@ export class OpenIDAuthDriver extends LocalAuthDriver {
 			// user that is about to be updated
 			const updatedUserPayload = await emitter.emitFilter(
 				`auth.update`,
-				{},
+				{ auth_data: userPayload.auth_data },
 				{
 					identifier,
 					provider: this.config['provider'],
@@ -199,6 +199,8 @@ export class OpenIDAuthDriver extends LocalAuthDriver {
 
 			return userId;
 		}
+
+		//  --- NEW USER ----
 
 		const isEmailVerified = !requireVerifiedEmail || userInfo['email_verified'];
 
@@ -260,6 +262,8 @@ export class OpenIDAuthDriver extends LocalAuthDriver {
 				throw handleError(e);
 			}
 		}
+
+		logger.warn(`[OpenID] Session closed for user without auth_data`);
 	}
 
 	override async login(user: User): Promise<void> {
@@ -289,16 +293,13 @@ export class OpenIDAuthDriver extends LocalAuthDriver {
 					});
 				}
 			} catch (e: any) {
-				if (e.error === 'invalid_grant') {
-					// Remove invalid token from the user store
-					await this.usersService.updateOne(user.id, {
-						auth_data: null,
-					});
-				}
-
 				throw handleError(e);
 			}
 		}
+
+		// If no auth connexion, throw user out
+		logger.error(`No [OpenID] Session found`);
+		throw new InvalidCredentialsException();
 	}
 }
 
