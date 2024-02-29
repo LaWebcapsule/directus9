@@ -1,11 +1,10 @@
 import { BaseException } from '@wbce-d9/exceptions';
 import type { Accountability } from '@wbce-d9/types';
-import { parseJSON } from '@wbce-d9/utils';
 import express, { Router } from 'express';
 import flatten from 'flat';
 import jwt from 'jsonwebtoken';
-import type { Client } from 'openid-client';
-import { errors, generators, Issuer } from 'openid-client';
+import type { BaseClient, Client } from 'openid-client';
+import { generators, Issuer } from 'openid-client';
 import { getAuthProvider } from '../../auth.js';
 import getDatabase from '../../database/index.js';
 import emitter from '../../emitter.js';
@@ -16,25 +15,44 @@ import {
 	InvalidCredentialsException,
 	InvalidProviderException,
 	InvalidTokenException,
-	ServiceUnavailableException,
 } from '../../exceptions/index.js';
 import logger from '../../logger.js';
 import { respond } from '../../middleware/respond.js';
 import { AuthenticationService } from '../../services/authentication.js';
 import { UsersService } from '../../services/users.js';
-import type { AuthData, AuthDriverOptions, User } from '../../types/index.js';
+import type { AuthDriverOptions } from '../../types/index.js';
 import asyncHandler from '../../utils/async-handler.js';
 import { getConfigFromEnv } from '../../utils/get-config-from-env.js';
 import { getIPFromReq } from '../../utils/get-ip-from-req.js';
 import { getMilliseconds } from '../../utils/get-milliseconds.js';
 import { Url } from '../../utils/url.js';
-import { LocalAuthDriver } from './local.js';
+import { BaseOAuthDriver } from './baseoauth.js';
 
-export class OAuth2AuthDriver extends LocalAuthDriver {
+export class OAuth2AuthDriver extends BaseOAuthDriver {
 	client: Client;
 	redirectUrl: string;
 	usersService: UsersService;
 	config: Record<string, any>;
+
+	getClient(): Promise<BaseClient> {
+		return Promise.resolve(this.client);
+	}
+
+	getredirectUrl(): string {
+		return this.redirectUrl;
+	}
+
+	getUserService(): UsersService {
+		return this.usersService;
+	}
+
+	getConfig(): Record<string, any> {
+		return this.config;
+	}
+
+	getClientName(): string {
+		return 'OAuth2';
+	}
 
 	constructor(options: AuthDriverOptions, config: Record<string, any>) {
 		super(options, config);
@@ -73,10 +91,6 @@ export class OAuth2AuthDriver extends LocalAuthDriver {
 		});
 	}
 
-	generateCodeVerifier(): string {
-		return generators.codeVerifier();
-	}
-
 	generateAuthUrl(codeVerifier: string, prompt = false): string {
 		try {
 			const codeChallenge = generators.codeChallenge(codeVerifier);
@@ -95,16 +109,6 @@ export class OAuth2AuthDriver extends LocalAuthDriver {
 		} catch (e) {
 			throw handleError(e);
 		}
-	}
-
-	private async fetchUserId(identifier: string): Promise<string | undefined> {
-		const user = await this.knex
-			.select('id')
-			.from('directus_users')
-			.whereRaw('LOWER(??) = ?', ['external_identifier', identifier.toLowerCase()])
-			.first();
-
-		return user?.id;
 	}
 
 	override async getUserID(payload: Record<string, any>): Promise<string> {
@@ -209,94 +213,7 @@ export class OAuth2AuthDriver extends LocalAuthDriver {
 
 		return (await this.fetchUserId(identifier)) as string;
 	}
-
-	override async logout(user: User): Promise<void> {
-		let authData = user.auth_data as AuthData;
-
-		if (typeof authData === 'string') {
-			try {
-				authData = parseJSON(authData);
-			} catch {
-				logger.warn(`[OAuth2] Session data isn't valid JSON: ${authData}`);
-			}
-		}
-
-		if (authData?.['refreshToken']) {
-			try {
-				await this.client.revoke(authData['refreshToken'], 'refresh_token');
-
-				await this.usersService.updateOne(user.id, {
-					auth_data: null,
-				});
-
-				logger.info(`[OAuth2] Session closed for user.`);
-			} catch (e: any) {
-				throw handleError(e);
-			}
-		}
-
-		logger.warn(`[OAuth2] Session closed for user without auth_data`);
-	}
-
-	override async login(user: User): Promise<void> {
-		return this.refresh(user);
-	}
-
-	override async refresh(user: User): Promise<void> {
-		let authData = user.auth_data as AuthData;
-
-		if (typeof authData === 'string') {
-			try {
-				authData = parseJSON(authData);
-			} catch {
-				logger.warn(`[OAuth2] Session data isn't valid JSON: ${authData}`);
-			}
-		}
-
-		if (authData?.['refreshToken']) {
-			try {
-				const tokenSet = await this.client.refresh(authData['refreshToken']);
-
-				// Update user refreshToken if provided
-				if (tokenSet.refresh_token) {
-					await this.usersService.updateOne(user.id, {
-						auth_data: JSON.stringify({ refreshToken: tokenSet.refresh_token }),
-					});
-				}
-			} catch (e) {
-				throw handleError(e);
-			}
-		}
-
-		// If no auth connexion, throw user out
-		logger.error(`No [OAuth2] Session found`);
-		throw new InvalidCredentialsException();
-	}
 }
-
-const handleError = (e: any) => {
-	if (e instanceof errors.OPError) {
-		if (e.error === 'invalid_grant') {
-			// Invalid token
-			logger.trace(e, `[OAuth2] Invalid grant`);
-			return new InvalidTokenException();
-		}
-
-		// Server response error
-		logger.trace(e, `[OAuth2] Unknown OP error`);
-		return new ServiceUnavailableException('Service returned unexpected response', {
-			service: 'oauth2',
-			message: e.error_description,
-		});
-	} else if (e instanceof errors.RPError) {
-		// Internal client error
-		logger.trace(e, `[OAuth2] Unknown RP error`);
-		return new InvalidCredentialsException();
-	}
-
-	logger.trace(e, `[OAuth2] Unknown error`);
-	return e;
-};
 
 export function createOAuth2AuthRouter(providerName: string): Router {
 	const router = Router();

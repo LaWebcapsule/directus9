@@ -1,11 +1,10 @@
 import { BaseException } from '@wbce-d9/exceptions';
 import type { Accountability } from '@wbce-d9/types';
-import { parseJSON } from '@wbce-d9/utils';
 import express, { Router } from 'express';
 import flatten from 'flat';
 import jwt from 'jsonwebtoken';
-import type { Client } from 'openid-client';
-import { errors, generators, Issuer } from 'openid-client';
+import type { BaseClient, Client } from 'openid-client';
+import { generators, Issuer } from 'openid-client';
 import { getAuthProvider } from '../../auth.js';
 import getDatabase from '../../database/index.js';
 import emitter from '../../emitter.js';
@@ -16,25 +15,44 @@ import {
 	InvalidCredentialsException,
 	InvalidProviderException,
 	InvalidTokenException,
-	ServiceUnavailableException,
 } from '../../exceptions/index.js';
 import logger from '../../logger.js';
 import { respond } from '../../middleware/respond.js';
 import { AuthenticationService } from '../../services/authentication.js';
 import { UsersService } from '../../services/users.js';
-import type { AuthData, AuthDriverOptions, User } from '../../types/index.js';
+import type { AuthDriverOptions } from '../../types/index.js';
 import asyncHandler from '../../utils/async-handler.js';
 import { getConfigFromEnv } from '../../utils/get-config-from-env.js';
 import { getIPFromReq } from '../../utils/get-ip-from-req.js';
 import { getMilliseconds } from '../../utils/get-milliseconds.js';
 import { Url } from '../../utils/url.js';
-import { LocalAuthDriver } from './local.js';
+import { BaseOAuthDriver } from './baseoauth.js';
 
-export class OpenIDAuthDriver extends LocalAuthDriver {
+export class OpenIDAuthDriver extends BaseOAuthDriver {
 	client: Promise<Client>;
 	redirectUrl: string;
 	usersService: UsersService;
 	config: Record<string, any>;
+
+	getClient(): Promise<BaseClient> {
+		return this.client;
+	}
+
+	getredirectUrl(): string {
+		return this.redirectUrl;
+	}
+
+	getUserService(): UsersService {
+		return this.usersService;
+	}
+
+	getConfig(): Record<string, any> {
+		return this.config;
+	}
+
+	getClientName(): string {
+		return 'OpenID';
+	}
 
 	constructor(options: AuthDriverOptions, config: Record<string, any>) {
 		super(options, config);
@@ -87,10 +105,6 @@ export class OpenIDAuthDriver extends LocalAuthDriver {
 		});
 	}
 
-	generateCodeVerifier(): string {
-		return generators.codeVerifier();
-	}
-
 	async generateAuthUrl(codeVerifier: string, prompt = false): Promise<string> {
 		try {
 			const client = await this.client;
@@ -109,18 +123,8 @@ export class OpenIDAuthDriver extends LocalAuthDriver {
 				nonce: codeChallenge,
 			});
 		} catch (e) {
-			throw handleError(e);
+			throw this.handleError(e);
 		}
-	}
-
-	private async fetchUserId(identifier: string): Promise<string | undefined> {
-		const user = await this.knex
-			.select('id')
-			.from('directus_users')
-			.whereRaw('LOWER(??) = ?', ['external_identifier', identifier.toLowerCase()])
-			.first();
-
-		return user?.id;
 	}
 
 	override async getUserID(payload: Record<string, any>): Promise<string> {
@@ -151,7 +155,7 @@ export class OpenIDAuthDriver extends LocalAuthDriver {
 				};
 			}
 		} catch (e) {
-			throw handleError(e);
+			throw this.handleError(e);
 		}
 
 		// Flatten response to support dot indexes
@@ -239,96 +243,7 @@ export class OpenIDAuthDriver extends LocalAuthDriver {
 
 		return (await this.fetchUserId(identifier)) as string;
 	}
-
-	override async logout(user: User): Promise<void> {
-		let authData = user.auth_data as AuthData;
-
-		if (typeof authData === 'string') {
-			try {
-				authData = parseJSON(authData);
-			} catch {
-				logger.warn(`[OpenID] Session data isn't valid JSON: ${authData}`);
-			}
-		}
-
-		if (authData?.['refreshToken']) {
-			try {
-				const client = await this.client;
-				await client.revoke(authData['refreshToken']);
-
-				await this.usersService.updateOne(user.id, {
-					auth_data: null,
-				});
-
-				logger.info(`[OpenID] Session closed for user.`);
-			} catch (e: any) {
-				throw handleError(e);
-			}
-		}
-
-		logger.warn(`[OpenID] Session closed for user without auth_data`);
-	}
-
-	override async login(user: User): Promise<void> {
-		return this.refresh(user);
-	}
-
-	override async refresh(user: User): Promise<void> {
-		let authData = user.auth_data as AuthData;
-
-		if (typeof authData === 'string') {
-			try {
-				authData = parseJSON(authData);
-			} catch {
-				logger.warn(`[OpenID] Session data isn't valid JSON: ${authData}`);
-			}
-		}
-
-		if (authData?.['refreshToken']) {
-			try {
-				const client = await this.client;
-				const tokenSet = await client.refresh(authData['refreshToken']);
-
-				// Update user refreshToken if provided
-				if (tokenSet.refresh_token) {
-					await this.usersService.updateOne(user.id, {
-						auth_data: JSON.stringify({ refreshToken: tokenSet.refresh_token }),
-					});
-				}
-			} catch (e: any) {
-				throw handleError(e);
-			}
-		}
-
-		// If no auth connexion, throw user out
-		logger.error(`No [OpenID] Session found`);
-		throw new InvalidCredentialsException();
-	}
 }
-
-const handleError = (e: any) => {
-	if (e instanceof errors.OPError) {
-		if (e.error === 'invalid_grant') {
-			// Invalid token
-			logger.trace(e, `[OpenID] Invalid grant`);
-			return new InvalidTokenException();
-		}
-
-		// Server response error
-		logger.trace(e, `[OpenID] Unknown OP error`);
-		return new ServiceUnavailableException('Service returned unexpected response', {
-			service: 'openid',
-			message: e.error_description,
-		});
-	} else if (e instanceof errors.RPError) {
-		// Internal client error
-		logger.trace(e, `[OpenID] Unknown RP error`);
-		return new InvalidCredentialsException();
-	}
-
-	logger.trace(e, `[OpenID] Unknown error`);
-	return e;
-};
 
 export function createOpenIDAuthRouter(providerName: string): Router {
 	const router = Router();
