@@ -18,7 +18,7 @@ import { getConfigFromEnv } from '../../utils/get-config-from-env.js';
 import { getIPFromReq } from '../../utils/get-ip-from-req.js';
 import { getMilliseconds } from '../../utils/get-milliseconds.js';
 import { Url } from '../../utils/url.js';
-import { BaseOAuthDriver, UserPayload } from './baseoauth.js';
+import { BaseOAuthDriver, type UserPayload } from './baseoauth.js';
 
 export class OAuth2AuthDriver extends BaseOAuthDriver {
 	client: Client;
