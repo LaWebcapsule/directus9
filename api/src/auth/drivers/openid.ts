@@ -3,7 +3,7 @@ import type { Accountability } from '@wbce-d9/types';
 import express, { Router } from 'express';
 import flatten from 'flat';
 import jwt from 'jsonwebtoken';
-import type { BaseClient, Client, TokenSet } from 'openid-client';
+import type { AuthorizationParameters, BaseClient, Client, TokenSet } from 'openid-client';
 import { generators, Issuer } from 'openid-client';
 import { getAuthProvider } from '../../auth.js';
 import env from '../../env.js';
@@ -97,7 +97,11 @@ export class OpenIDAuthDriver extends BaseOAuthDriver {
 		});
 	}
 
-	async generateAuthUrl(codeVerifier: string, prompt = false): Promise<string> {
+	async generateAuthUrl(
+		codeVerifier: string,
+		prompt = false,
+		additionalParams?: AuthorizationParameters | undefined
+	): Promise<string> {
 		try {
 			const client = await this.client;
 			const codeChallenge = generators.codeChallenge(codeVerifier);
@@ -113,6 +117,7 @@ export class OpenIDAuthDriver extends BaseOAuthDriver {
 				// Some providers require state even with PKCE
 				state: codeChallenge,
 				nonce: codeChallenge,
+				...additionalParams,
 			});
 		} catch (e) {
 			throw this.handleError(e);
@@ -199,7 +204,11 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 				sameSite: 'lax',
 			});
 
-			return res.redirect(await provider.generateAuthUrl(codeVerifier, prompt));
+			const additionalParams = { ...req.query };
+			delete additionalParams['prompt'];
+			delete additionalParams['redirect'];
+
+			return res.redirect(await provider.generateAuthUrl(codeVerifier, prompt, additionalParams));
 		}),
 		respond
 	);

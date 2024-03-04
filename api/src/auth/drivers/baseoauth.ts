@@ -40,11 +40,7 @@ export abstract class BaseOAuthDriver extends LocalAuthDriver {
 	}
 
 	async fetchUserId(identifier: string): Promise<string | undefined> {
-		const user = await this.knex
-			.select('id')
-			.from('directus_users')
-			.whereRaw('LOWER(??) = ?', ['external_identifier', identifier.toLowerCase()])
-			.first();
+		const user = await this.knex.select('id').from('directus_users').where('external_identifier', identifier).first();
 
 		return user?.id;
 	}
@@ -62,11 +58,21 @@ export abstract class BaseOAuthDriver extends LocalAuthDriver {
 		const userId = await this.fetchUserId(identifier);
 
 		if (userId) {
+			let updateReq = {};
+
+			if (this.getConfig()['updateUserOnLogin'] ?? false) {
+				updateReq = {
+					first_name: userPayload.first_name,
+					last_name: userPayload.last_name,
+					email: userPayload.email,
+				};
+			}
+
 			// Run hook so the end user has the chance to augment the
 			// user that is about to be updated
 			const updatedUserPayload = await emitter.emitFilter(
 				`auth.update`,
-				{},
+				updateReq,
 				{
 					identifier,
 					provider: this.getConfig()['provider'],
@@ -139,7 +145,11 @@ export abstract class BaseOAuthDriver extends LocalAuthDriver {
 		if (authData?.['refreshToken']) {
 			try {
 				const client = await this.getClient();
-				await client.revoke(authData['refreshToken']);
+				const tokenSet = await client.refresh(authData['refreshToken']);
+
+				if (tokenSet.refresh_token) {
+					await client.revoke(tokenSet.refresh_token, 'refresh_token');
+				}
 
 				await this.getUserService().updateOne(user.id, {
 					auth_data: null,
