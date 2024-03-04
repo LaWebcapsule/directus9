@@ -149,9 +149,9 @@ export abstract class BaseOAuthDriver extends LocalAuthDriver {
 			} catch (e: any) {
 				throw this.handleError(e);
 			}
+		} else {
+			logger.warn(`[${this.getClientName()}] Session closed for user without auth_data`);
 		}
-
-		logger.warn(`[${this.getClientName()}] Session closed for user without auth_data`);
 	}
 
 	override async login(user: User): Promise<void> {
@@ -183,11 +183,11 @@ export abstract class BaseOAuthDriver extends LocalAuthDriver {
 			} catch (e: any) {
 				throw this.handleError(e);
 			}
+		} else {
+			// If no auth connexion, throw user out
+			logger.error(`No [${this.getClientName()}] Session found`);
+			throw new InvalidCredentialsException();
 		}
-
-		// If no auth connexion, throw user out
-		logger.error(`No [${this.getClientName()}] Session found`);
-		throw new InvalidCredentialsException();
 	}
 
 	handleError = (e: any) => {
