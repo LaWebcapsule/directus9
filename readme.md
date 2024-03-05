@@ -26,7 +26,7 @@ Directus is a real-time API and App dashboard for managing SQL database content.
 You need to change your dependencies :
 1. In package.json
 ```
-"directus":9.0.0^ --> "@wbce-d9/directus9": 9.0.0^
+"directus":9.0.0^ --> "@wbce-d9/directus9": 10.0.0^
 "@directus/some-package" --> "@wbce-d9/some-package"
 ```
 
@@ -50,6 +50,10 @@ import {...} from "@wbce-d9/some-package"
 
 4. You don't have to do any changes to your databases.
 Directus9 use the same schema as directus@9.0.0^. As a consequence, you don't need other changes than the three steps below.
+
+## Migrating from version @wbce-d9@9.0.0^ to @wbce-d9@10.0.0^
+
+We've recognized and rectified an issue within Directus 9 related to Single Sign-On (SSO) management, ensuring standardization. While exceptionally uncommon, this could occasionally cause a discrepancy between your SSO user and Directus. Should this occur, we advise synchronizing Directus' external_id with your SSO. Please note that IDs are now case-sensitive.
 
 ### JS SDK
 
