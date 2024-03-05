@@ -1,5 +1,15 @@
 # @wbce-d9/api
 
+## 10.0.0
+
+### Major Changes
+
+- 65185c3: Refactored and fixed Oauth and OpendId flows
+
+### Minor Changes
+
+- 65185c3: Revoke tokens on sessions logout for OpenId SSO
+
 ## 9.29.0
 
 ### Minor Changes

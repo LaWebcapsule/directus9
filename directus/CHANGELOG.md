@@ -1,5 +1,17 @@
 # directus9
 
+## 10.0.0
+
+### Major Changes
+
+- 65185c3: Refactored and fixed Oauth and OpendId flows
+
+### Patch Changes
+
+- Updated dependencies [65185c3]
+- Updated dependencies [65185c3]
+  - @wbce-d9/api@10.0.0
+
 ## 9.26.12
 
 ### Patch Changes
