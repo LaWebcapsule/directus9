@@ -1,40 +1,50 @@
 import { BaseException } from '@wbce-d9/exceptions';
 import type { Accountability } from '@wbce-d9/types';
-import { parseJSON } from '@wbce-d9/utils';
 import express, { Router } from 'express';
 import flatten from 'flat';
 import jwt from 'jsonwebtoken';
-import type { Client } from 'openid-client';
-import { errors, generators, Issuer } from 'openid-client';
+import type { AuthorizationParameters, BaseClient, Client, TokenSet } from 'openid-client';
+import { generators, Issuer } from 'openid-client';
 import { getAuthProvider } from '../../auth.js';
-import getDatabase from '../../database/index.js';
-import emitter from '../../emitter.js';
 import env from '../../env.js';
-import { RecordNotUniqueException } from '../../exceptions/database/record-not-unique.js';
-import {
-	InvalidConfigException,
-	InvalidCredentialsException,
-	InvalidProviderException,
-	InvalidTokenException,
-	ServiceUnavailableException,
-} from '../../exceptions/index.js';
+import { InvalidConfigException, InvalidCredentialsException, InvalidTokenException } from '../../exceptions/index.js';
 import logger from '../../logger.js';
 import { respond } from '../../middleware/respond.js';
 import { AuthenticationService } from '../../services/authentication.js';
 import { UsersService } from '../../services/users.js';
-import type { AuthData, AuthDriverOptions, User } from '../../types/index.js';
+import type { AuthDriverOptions } from '../../types/index.js';
 import asyncHandler from '../../utils/async-handler.js';
 import { getConfigFromEnv } from '../../utils/get-config-from-env.js';
 import { getIPFromReq } from '../../utils/get-ip-from-req.js';
 import { getMilliseconds } from '../../utils/get-milliseconds.js';
 import { Url } from '../../utils/url.js';
-import { LocalAuthDriver } from './local.js';
+import { BaseOAuthDriver, type UserPayload } from './baseoauth.js';
 
-export class OpenIDAuthDriver extends LocalAuthDriver {
+export class OpenIDAuthDriver extends BaseOAuthDriver {
 	client: Promise<Client>;
 	redirectUrl: string;
 	usersService: UsersService;
 	config: Record<string, any>;
+
+	getClient(): Promise<BaseClient> {
+		return this.client;
+	}
+
+	getredirectUrl(): string {
+		return this.redirectUrl;
+	}
+
+	getUserService(): UsersService {
+		return this.usersService;
+	}
+
+	getConfig(): Record<string, any> {
+		return this.config;
+	}
+
+	getClientName(): string {
+		return 'OpenID';
+	}
 
 	constructor(options: AuthDriverOptions, config: Record<string, any>) {
 		super(options, config);
@@ -87,11 +97,11 @@ export class OpenIDAuthDriver extends LocalAuthDriver {
 		});
 	}
 
-	generateCodeVerifier(): string {
-		return generators.codeVerifier();
-	}
-
-	async generateAuthUrl(codeVerifier: string, prompt = false): Promise<string> {
+	async generateAuthUrl(
+		codeVerifier: string,
+		prompt = false,
+		additionalParams?: AuthorizationParameters | undefined
+	): Promise<string> {
 		try {
 			const client = await this.client;
 			const codeChallenge = generators.codeChallenge(codeVerifier);
@@ -107,28 +117,16 @@ export class OpenIDAuthDriver extends LocalAuthDriver {
 				// Some providers require state even with PKCE
 				state: codeChallenge,
 				nonce: codeChallenge,
+				...additionalParams,
 			});
 		} catch (e) {
-			throw handleError(e);
+			throw this.handleError(e);
 		}
 	}
 
-	private async fetchUserId(identifier: string): Promise<string | undefined> {
-		const user = await this.knex
-			.select('id')
-			.from('directus_users')
-			.whereRaw('LOWER(??) = ?', ['external_identifier', identifier.toLowerCase()])
-			.first();
-
-		return user?.id;
-	}
-
-	override async getUserID(payload: Record<string, any>): Promise<string> {
-		if (!payload['code'] || !payload['codeVerifier'] || !payload['state']) {
-			logger.warn('[OpenID] No code, codeVerifier or state in payload');
-			throw new InvalidCredentialsException();
-		}
-
+	async getTokenSetAndUserInfo(
+		payload: Record<string, any>
+	): Promise<[TokenSet, Record<string, unknown>, UserPayload]> {
 		let tokenSet;
 		let userInfo;
 
@@ -151,13 +149,13 @@ export class OpenIDAuthDriver extends LocalAuthDriver {
 				};
 			}
 		} catch (e) {
-			throw handleError(e);
+			throw this.handleError(e);
 		}
 
 		// Flatten response to support dot indexes
 		userInfo = flatten(userInfo) as Record<string, unknown>;
 
-		const { provider, identifierKey, allowPublicRegistration, requireVerifiedEmail } = this.config;
+		const { provider, identifierKey } = this.config;
 
 		const email = userInfo['email'] ? String(userInfo['email']) : undefined;
 		// Fallback to email if explicit identifier not found
@@ -178,153 +176,9 @@ export class OpenIDAuthDriver extends LocalAuthDriver {
 			auth_data: tokenSet.refresh_token && JSON.stringify({ refreshToken: tokenSet.refresh_token }),
 		};
 
-		const userId = await this.fetchUserId(identifier);
-
-		if (userId) {
-			// Run hook so the end user has the chance to augment the
-			// user that is about to be updated
-			const updatedUserPayload = await emitter.emitFilter(
-				`auth.update`,
-				{},
-				{
-					identifier,
-					provider: this.config['provider'],
-					providerPayload: { accessToken: tokenSet.access_token, userInfo },
-				},
-				{ database: getDatabase(), schema: this.schema, accountability: null }
-			);
-
-			// Update user to update refresh_token and other properties that might have changed
-			await this.usersService.updateOne(userId, updatedUserPayload);
-
-			return userId;
-		}
-
-		const isEmailVerified = !requireVerifiedEmail || userInfo['email_verified'];
-
-		// Is public registration allowed?
-		if (!allowPublicRegistration || !isEmailVerified) {
-			logger.warn(`[OpenID] User doesn't exist, and public registration not allowed for provider "${provider}"`);
-			throw new InvalidCredentialsException();
-		}
-
-		// Run hook so the end user has the chance to augment the
-		// user that is about to be created
-		const updatedUserPayload = await emitter.emitFilter(
-			`auth.create`,
-			userPayload,
-			{
-				identifier,
-				provider: this.config['provider'],
-				providerPayload: { accessToken: tokenSet.access_token, userInfo },
-			},
-			{ database: getDatabase(), schema: this.schema, accountability: null }
-		);
-
-		try {
-			await this.usersService.createOne(updatedUserPayload);
-		} catch (e) {
-			if (e instanceof RecordNotUniqueException) {
-				logger.warn(e, '[OpenID] Failed to register user. User not unique');
-				throw new InvalidProviderException();
-			}
-
-			throw e;
-		}
-
-		return (await this.fetchUserId(identifier)) as string;
-	}
-
-	override async logout(user: User): Promise<void> {
-		let authData = user.auth_data as AuthData;
-
-		if (typeof authData === 'string') {
-			try {
-				authData = parseJSON(authData);
-			} catch {
-				logger.warn(`[OpenID] Session data isn't valid JSON: ${authData}`);
-			}
-		}
-
-		if (authData?.['refreshToken']) {
-			try {
-				const client = await this.client;
-				await client.revoke(authData['refreshToken']);
-
-				await this.usersService.updateOne(user.id, {
-					auth_data: null,
-				});
-
-				logger.info(`[OpenID] Session closed for user.`);
-			} catch (e: any) {
-				throw handleError(e);
-			}
-		}
-	}
-
-	override async login(user: User): Promise<void> {
-		return this.refresh(user);
-	}
-
-	override async refresh(user: User): Promise<void> {
-		let authData = user.auth_data as AuthData;
-
-		if (typeof authData === 'string') {
-			try {
-				authData = parseJSON(authData);
-			} catch {
-				logger.warn(`[OpenID] Session data isn't valid JSON: ${authData}`);
-			}
-		}
-
-		if (authData?.['refreshToken']) {
-			try {
-				const client = await this.client;
-				const tokenSet = await client.refresh(authData['refreshToken']);
-
-				// Update user refreshToken if provided
-				if (tokenSet.refresh_token) {
-					await this.usersService.updateOne(user.id, {
-						auth_data: JSON.stringify({ refreshToken: tokenSet.refresh_token }),
-					});
-				}
-			} catch (e: any) {
-				if (e.error === 'invalid_grant') {
-					// Remove invalid token from the user store
-					await this.usersService.updateOne(user.id, {
-						auth_data: null,
-					});
-				}
-
-				throw handleError(e);
-			}
-		}
+		return [tokenSet, userInfo, userPayload];
 	}
 }
-
-const handleError = (e: any) => {
-	if (e instanceof errors.OPError) {
-		if (e.error === 'invalid_grant') {
-			// Invalid token
-			logger.trace(e, `[OpenID] Invalid grant`);
-			return new InvalidTokenException();
-		}
-
-		// Server response error
-		logger.trace(e, `[OpenID] Unknown OP error`);
-		return new ServiceUnavailableException('Service returned unexpected response', {
-			service: 'openid',
-			message: e.error_description,
-		});
-	} else if (e instanceof errors.RPError) {
-		// Internal client error
-		logger.trace(e, `[OpenID] Unknown RP error`);
-		return new InvalidCredentialsException();
-	}
-
-	logger.trace(e, `[OpenID] Unknown error`);
-	return e;
-};
 
 export function createOpenIDAuthRouter(providerName: string): Router {
 	const router = Router();
@@ -350,7 +204,11 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 				sameSite: 'lax',
 			});
 
-			return res.redirect(await provider.generateAuthUrl(codeVerifier, prompt));
+			const additionalParams = { ...req.query };
+			delete additionalParams['prompt'];
+			delete additionalParams['redirect'];
+
+			return res.redirect(await provider.generateAuthUrl(codeVerifier, prompt, additionalParams));
 		}),
 		respond
 	);

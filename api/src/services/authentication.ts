@@ -128,7 +128,7 @@ export class AuthenticationService {
 				await stall(STALL_TIME, timeStart);
 				throw new InvalidCredentialsException();
 			}
-		} else if (user.provider !== providerName) {
+		} else if (user.provider.toLowerCase() !== providerName.toLowerCase()) {
 			await stall(STALL_TIME, timeStart);
 			throw new InvalidProviderException();
 		}

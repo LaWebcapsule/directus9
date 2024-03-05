@@ -21,11 +21,13 @@ const providerNames = toArray(env['AUTH_PROVIDERS']);
 const providers: Map<string, AuthDriver> = new Map();
 
 export function getAuthProvider(provider: string): AuthDriver {
-	if (!providers.has(provider)) {
+	const name = provider.toLowerCase();
+
+	if (!providers.has(name)) {
 		throw new InvalidConfigException('Auth provider not configured', { provider });
 	}
 
-	return providers.get(provider)!;
+	return providers.get(name)!;
 }
 
 export async function registerAuthProviders(): Promise<void> {
@@ -64,7 +66,7 @@ export async function registerAuthProviders(): Promise<void> {
 			return;
 		}
 
-		providers.set(name, provider);
+		providers.set(name.toLowerCase(), provider);
 	});
 }
 
