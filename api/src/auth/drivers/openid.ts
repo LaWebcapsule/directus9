@@ -296,16 +296,9 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 			const { accessToken, refreshToken, expires } = authResponse;
 
 			if (redirect) {
-				// Regular expression pattern to match domain
-				const pattern = /^(?:https?:\/\/)?(?:www\.)?([a-zA-Z0-9-]+\.[a-zA-Z]{2,})(?:\/|$)/;
-
-				// Match the pattern in the URL
-				const match = redirect.match(pattern);
-				const domain = match ? match[1] : undefined; // Get the domain from the match or null if no match found
-
 				res.cookie(env['REFRESH_TOKEN_COOKIE_NAME'], refreshToken, {
 					httpOnly: true,
-					domain: domain,
+					domain: env['REFRESH_TOKEN_COOKIE_DOMAIN'],
 					maxAge: getMilliseconds(env['REFRESH_TOKEN_TTL']),
 					secure: env['REFRESH_TOKEN_COOKIE_SECURE'] ?? false,
 					sameSite: (env['REFRESH_TOKEN_COOKIE_SAME_SITE'] as 'lax' | 'strict' | 'none') || 'strict',
