@@ -75,7 +75,7 @@ export const GET_SET_HEADER = (cookieValue: string) => {
 		env['REFRESH_TOKEN_TTL']
 	)}; Secure=${env['REFRESH_TOKEN_COOKIE_SECURE'] ?? false}; SameSite=${
 		(env['REFRESH_TOKEN_COOKIE_SAME_SITE'] as 'lax' | 'strict' | 'none') || 'strict'
-	};${domainHeader}${partitionedHeader}`;
+	}; Path=/;${domainHeader}${partitionedHeader}`;
 
 	return cookieHeaderValue;
 };
