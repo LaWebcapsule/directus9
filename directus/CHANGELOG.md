@@ -1,5 +1,16 @@
 # directus9
 
+## 10.1.0
+
+### Minor Changes
+
+- bce4637: Make patitionned optional
+
+### Patch Changes
+
+- Updated dependencies [bce4637]
+  - @wbce-d9/api@10.2.0
+
 ## 10.0.1
 
 ### Patch Changes
