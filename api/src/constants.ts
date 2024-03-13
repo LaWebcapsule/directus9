@@ -69,7 +69,7 @@ export const COOKIE_OPTIONS: CookieOptions = {
 
 export const GET_SET_HEADER = (cookieValue: string) => {
 	const domainHeader = env['REFRESH_TOKEN_COOKIE_DOMAIN'] ? ` Domain=${env['REFRESH_TOKEN_COOKIE_DOMAIN']};` : '';
-	const partitionedHeader = env['REFRESH_TOKEN_COOKIE_PARTITIONED'] == false ? '' : ` Partitioned;`;
+	const partitionedHeader = env['REFRESH_TOKEN_COOKIE_PARTITIONED'] == true ? ' Partitioned;' : '';
 
 	const cookieHeaderValue = `${env['REFRESH_TOKEN_COOKIE_NAME']}=${cookieValue}; HttpOnly; Max-Age=${getMilliseconds(
 		env['REFRESH_TOKEN_TTL']
