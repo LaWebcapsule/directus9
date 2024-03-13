@@ -3,7 +3,7 @@ import { BaseException } from '@wbce-d9/exceptions';
 import express, { Router } from 'express';
 import * as samlify from 'samlify';
 import { getAuthProvider } from '../../auth.js';
-import { COOKIE_OPTIONS } from '../../constants.js';
+import { COOKIE_OPTIONS, GET_SET_HEADER } from '../../constants.js';
 import getDatabase from '../../database/index.js';
 import emitter from '../../emitter.js';
 import env from '../../env.js';
@@ -170,7 +170,7 @@ export function createSAMLAuthRouter(providerName: string) {
 				};
 
 				if (relayState) {
-					res.cookie(env['REFRESH_TOKEN_COOKIE_NAME'], refreshToken, COOKIE_OPTIONS);
+					res.setHeader('Set-Cookie', GET_SET_HEADER(refreshToken));
 					return res.redirect(relayState);
 				}
 
