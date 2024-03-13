@@ -67,6 +67,19 @@ export const COOKIE_OPTIONS: CookieOptions = {
 	sameSite: (env['REFRESH_TOKEN_COOKIE_SAME_SITE'] as 'lax' | 'strict' | 'none') || 'strict',
 };
 
+export const GET_SET_HEADER = (cookieValue: string) => {
+	const domainHeader = env['REFRESH_TOKEN_COOKIE_DOMAIN'] ? ` Domain=${env['REFRESH_TOKEN_COOKIE_DOMAIN']};` : '';
+	const partitionedHeader = env['REFRESH_TOKEN_COOKIE_PARTITIONED'] == false ? '' : ` Partitioned;`;
+
+	const cookieHeaderValue = `${env['REFRESH_TOKEN_COOKIE_NAME']}=${cookieValue}; HttpOnly; Max-Age=${getMilliseconds(
+		env['REFRESH_TOKEN_TTL']
+	)}; Secure=${env['REFRESH_TOKEN_COOKIE_SECURE'] ?? false}; SameSite=${
+		(env['REFRESH_TOKEN_COOKIE_SAME_SITE'] as 'lax' | 'strict' | 'none') || 'strict'
+	}; Path=/;${domainHeader}${partitionedHeader}`;
+
+	return cookieHeaderValue;
+};
+
 export const OAS_REQUIRED_SCHEMAS = ['Diff', 'Schema', 'Query', 'x-metadata'];
 
 /** Formats from which transformation is supported */

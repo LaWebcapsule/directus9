@@ -6,6 +6,7 @@ import jwt from 'jsonwebtoken';
 import type { AuthorizationParameters, BaseClient, Client, TokenSet } from 'openid-client';
 import { generators, Issuer } from 'openid-client';
 import { getAuthProvider } from '../../auth.js';
+import { GET_SET_HEADER } from '../../constants.js';
 import env from '../../env.js';
 import { InvalidConfigException, InvalidCredentialsException, InvalidTokenException } from '../../exceptions/index.js';
 import logger from '../../logger.js';
@@ -16,7 +17,6 @@ import type { AuthDriverOptions } from '../../types/index.js';
 import asyncHandler from '../../utils/async-handler.js';
 import { getConfigFromEnv } from '../../utils/get-config-from-env.js';
 import { getIPFromReq } from '../../utils/get-ip-from-req.js';
-import { getMilliseconds } from '../../utils/get-milliseconds.js';
 import { Url } from '../../utils/url.js';
 import { BaseOAuthDriver, type UserPayload } from './baseoauth.js';
 
@@ -296,14 +296,7 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 			const { accessToken, refreshToken, expires } = authResponse;
 
 			if (redirect) {
-				res.cookie(env['REFRESH_TOKEN_COOKIE_NAME'], refreshToken, {
-					httpOnly: true,
-					domain: env['REFRESH_TOKEN_COOKIE_DOMAIN'],
-					maxAge: getMilliseconds(env['REFRESH_TOKEN_TTL']),
-					secure: env['REFRESH_TOKEN_COOKIE_SECURE'] ?? false,
-					sameSite: (env['REFRESH_TOKEN_COOKIE_SAME_SITE'] as 'lax' | 'strict' | 'none') || 'strict',
-				});
-
+				res.setHeader('Set-Cookie', GET_SET_HEADER(refreshToken));
 				return res.redirect(redirect);
 			}
 
