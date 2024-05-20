@@ -19,8 +19,8 @@
 <script lang="ts">
 import { useI18n } from 'vue-i18n';
 import { ref, defineComponent, PropType, watch, onMounted, onUnmounted, computed, toRefs } from 'vue';
-import { GEOMETRY_TYPES } from '@wbce-d9/constants';
-import { Field, GeometryType, GeometryOptions } from '@wbce-d9/types';
+import { GEOMETRY_TYPES } from '@db-studio/constants';
+import { Field, GeometryType, GeometryOptions } from '@db-studio/types';
 import { getBasemapSources, getStyleFromBasemapSource } from '@/utils/geometry/basemap';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import { Map, CameraOptions } from 'maplibre-gl';

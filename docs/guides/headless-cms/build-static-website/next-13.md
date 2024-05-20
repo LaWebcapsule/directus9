@@ -49,7 +49,7 @@ To share a single instance of the Directus JavaScript SDK between multiple pages
 file that can be imported later. Create a new directory called `lib` and a new file called `directus.js` inside of it.
 
 ```js
-import { Directus } from '@wbce-d9/sdk';
+import { Directus } from '@db-studio/sdk';
 const directus = new Directus('https://your-project-id.directus.app/');
 export default directus;
 ```

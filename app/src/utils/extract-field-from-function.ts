@@ -1,5 +1,5 @@
-import { REGEX_BETWEEN_PARENS } from '@wbce-d9/constants';
-import { FieldFunction } from '@wbce-d9/types';
+import { REGEX_BETWEEN_PARENS } from '@db-studio/constants';
+import { FieldFunction } from '@db-studio/types';
 
 /**
  * Extracts the function and field name of a field wrapped in a function

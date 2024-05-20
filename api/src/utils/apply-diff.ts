@@ -1,4 +1,4 @@
-import type { Field, Relation, SchemaOverview } from '@wbce-d9/types';
+import type { Field, Relation, SchemaOverview } from '@db-studio/types';
 import type { Diff, DiffDeleted, DiffNew } from 'deep-diff';
 import deepDiff from 'deep-diff';
 import type { Knex } from 'knex';

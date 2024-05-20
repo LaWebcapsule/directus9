@@ -43,7 +43,7 @@
 <script lang="ts">
 import { useI18n } from 'vue-i18n';
 import { defineComponent, PropType, computed, ref, watchEffect } from 'vue';
-import { useSync } from '@wbce-d9/composables';
+import { useSync } from '@db-studio/composables';
 import { Revision } from '@/types/revisions';
 import RevisionsDrawerPicker from './revisions-drawer-picker.vue';
 import RevisionsDrawerPreview from './revisions-drawer-preview.vue';

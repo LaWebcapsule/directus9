@@ -78,7 +78,7 @@
 
 <script lang="ts">
 import { computed, defineComponent, PropType } from 'vue';
-import { Field } from '@wbce-d9/types';
+import { Field } from '@db-studio/types';
 import { useI18n } from 'vue-i18n';
 import { getLocalTypeForField } from '@/utils/get-local-type';
 

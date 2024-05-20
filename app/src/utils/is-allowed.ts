@@ -1,7 +1,7 @@
 import { usePermissionsStore } from '@/stores/permissions';
 import { useUserStore } from '@/stores/user';
-import { FieldFilter, Permission } from '@wbce-d9/types';
-import { generateJoi } from '@wbce-d9/utils';
+import { FieldFilter, Permission } from '@db-studio/types';
+import { generateJoi } from '@db-studio/utils';
 
 export function isAllowed(
 	collection: string,

@@ -1,4 +1,4 @@
-import type { ActionHandler, FilterHandler, InitHandler } from '@wbce-d9/types';
+import type { ActionHandler, FilterHandler, InitHandler } from '@db-studio/types';
 import type { ScheduledTask } from 'node-cron';
 
 export type EventHandler =

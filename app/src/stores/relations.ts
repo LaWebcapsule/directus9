@@ -1,8 +1,8 @@
 import api from '@/api';
 import { useFieldsStore } from '@/stores/fields';
 import { unexpectedError } from '@/utils/unexpected-error';
-import { Relation, DeepPartial } from '@wbce-d9/types';
-import { getRelationType } from '@wbce-d9/utils';
+import { Relation, DeepPartial } from '@db-studio/types';
+import { getRelationType } from '@db-studio/utils';
 import { isEqual } from 'lodash';
 import { defineStore } from 'pinia';
 

@@ -1,4 +1,4 @@
-import { parseJSON } from '@wbce-d9/utils';
+import { parseJSON } from '@db-studio/utils';
 import Busboy from 'busboy';
 import type { RequestHandler } from 'express';
 import express from 'express';
@@ -60,7 +60,7 @@ const schemaMultipartHandler: RequestHandler = (req, res, next) => {
 
 		isFileIncluded = true;
 
-		const { readableStreamToString } = await import('@wbce-d9/utils/node');
+		const { readableStreamToString } = await import('@db-studio/utils/node');
 
 		try {
 			const uploadedString = await readableStreamToString(fileStream);

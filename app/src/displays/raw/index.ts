@@ -1,5 +1,5 @@
-import { defineDisplay } from '@wbce-d9/utils';
-import { TYPES, LOCAL_TYPES } from '@wbce-d9/constants';
+import { defineDisplay } from '@db-studio/utils';
+import { TYPES, LOCAL_TYPES } from '@db-studio/constants';
 
 export default defineDisplay({
 	id: 'raw',

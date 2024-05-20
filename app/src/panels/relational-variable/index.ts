@@ -1,4 +1,4 @@
-import { definePanel } from '@wbce-d9/utils';
+import { definePanel } from '@db-studio/utils';
 import PanelRelationalVariable from './panel-relational-variable.vue';
 
 export default definePanel({

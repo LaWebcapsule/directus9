@@ -1,4 +1,4 @@
-import { parseJSON } from '@wbce-d9/utils';
+import { parseJSON } from '@db-studio/utils';
 import type { Client, TokenSet } from 'openid-client';
 import { errors, generators } from 'openid-client';
 import getDatabase from '../../database/index.js';

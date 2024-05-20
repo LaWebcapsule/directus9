@@ -1,4 +1,4 @@
-import { normalizePath } from '@wbce-d9/utils';
+import { normalizePath } from '@db-studio/utils';
 import { Bucket, Storage } from '@google-cloud/storage';
 import {
 	randDirectoryPath,
@@ -19,8 +19,8 @@ import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import type { DriverGCSConfig } from './index.js';
 import { DriverGCS } from './index.js';
 
-vi.mock('@wbce-d9/utils/node');
-vi.mock('@wbce-d9/utils');
+vi.mock('@db-studio/utils/node');
+vi.mock('@db-studio/utils');
 vi.mock('@google-cloud/storage');
 vi.mock('node:path');
 vi.mock('node:stream/promises');

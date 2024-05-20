@@ -43,7 +43,7 @@ To expose an npm package available globally in your Nuxt project you must create
 `plugins` and a new file called `directus.js` inside of it.
 
 ```js
-import { Directus } from '@wbce-d9/sdk';
+import { Directus } from '@db-studio/sdk';
 const directus = new Directus('https://your-project-id.directus.app');
 
 export default defineNuxtPlugin(() => {

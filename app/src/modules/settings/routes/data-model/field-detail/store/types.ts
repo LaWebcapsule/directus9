@@ -1,5 +1,5 @@
 import { useFieldDetailStore } from './index';
-import { DeepPartial } from '@wbce-d9/types';
+import { DeepPartial } from '@db-studio/types';
 
 export type StateUpdates = DeepPartial<ReturnType<typeof useFieldDetailStore>['$state']>;
 export type State = ReturnType<typeof useFieldDetailStore>['$state'];

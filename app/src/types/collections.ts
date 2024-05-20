@@ -1,4 +1,4 @@
-import { Collection as CollectionRaw, CollectionType } from '@wbce-d9/types';
+import { Collection as CollectionRaw, CollectionType } from '@db-studio/types';
 import { TranslateResult } from 'vue-i18n';
 
 export interface Collection extends CollectionRaw {

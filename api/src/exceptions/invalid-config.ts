@@ -1,4 +1,4 @@
-import { BaseException } from '@wbce-d9/exceptions';
+import { BaseException } from '@db-studio/exceptions';
 
 export class InvalidConfigException extends BaseException {
 	constructor(message = 'Invalid config', extensions?: Record<string, any>) {

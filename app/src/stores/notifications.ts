@@ -2,7 +2,7 @@ import { Snackbar, SnackbarRaw } from '@/types/notifications';
 import { reverse, sortBy } from 'lodash';
 import { nanoid } from 'nanoid';
 import { defineStore } from 'pinia';
-import { Notification } from '@wbce-d9/types';
+import { Notification } from '@db-studio/types';
 import api from '@/api';
 import { useUserStore } from './user';
 

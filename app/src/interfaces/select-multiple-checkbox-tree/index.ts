@@ -1,5 +1,5 @@
-import { defineInterface } from '@wbce-d9/utils';
-import { DeepPartial, Field } from '@wbce-d9/types';
+import { defineInterface } from '@db-studio/utils';
+import { DeepPartial, Field } from '@db-studio/types';
 import InterfaceSelectMultipleCheckboxesTree from './select-multiple-checkbox-tree.vue';
 import PreviewSVG from './preview.svg?raw';
 

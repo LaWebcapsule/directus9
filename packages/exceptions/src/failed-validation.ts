@@ -1,4 +1,4 @@
-import type { FilterOperator } from '@wbce-d9/types';
+import type { FilterOperator } from '@db-studio/types';
 import type { ValidationErrorItem } from 'joi';
 import { BaseException } from './base.js';
 

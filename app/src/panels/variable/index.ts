@@ -1,4 +1,4 @@
-import { definePanel } from '@wbce-d9/utils';
+import { definePanel } from '@db-studio/utils';
 import PanelVariable from './panel-variable.vue';
 import { useI18n } from 'vue-i18n';
 import { FIELD_TYPES_SELECT } from '@/constants';

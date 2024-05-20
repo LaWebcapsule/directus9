@@ -40,7 +40,7 @@
 
 <script lang="ts" setup>
 import { computed, toRefs, watch } from 'vue';
-import { Collection } from '@wbce-d9/types';
+import { Collection } from '@db-studio/types';
 import { useI18n } from 'vue-i18n';
 import { orderBy } from 'lodash';
 import { syncFieldDetailStoreProperty, useFieldDetailStore } from '../store/';

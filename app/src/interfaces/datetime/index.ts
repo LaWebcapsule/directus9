@@ -1,4 +1,4 @@
-import { defineInterface } from '@wbce-d9/utils';
+import { defineInterface } from '@db-studio/utils';
 import InterfaceDateTime from './datetime.vue';
 import PreviewSVG from './preview.svg?raw';
 

@@ -184,7 +184,7 @@ import useLink from './useLink';
 import useMedia from './useMedia';
 import useSourceCode from './useSourceCode';
 import { useSettingsStore } from '@/stores/settings';
-import { SettingsStorageAssetPreset } from '@wbce-d9/types';
+import { SettingsStorageAssetPreset } from '@db-studio/types';
 
 import 'tinymce/tinymce';
 import 'tinymce/models/dom';

@@ -1,4 +1,4 @@
-import type { FieldMeta, Type } from '@wbce-d9/types';
+import type { FieldMeta, Type } from '@db-studio/types';
 
 const localTypeMap: Record<string, Type | 'unknown'> = {
 	// Shared

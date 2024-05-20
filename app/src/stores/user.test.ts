@@ -12,7 +12,7 @@ beforeEach(() => {
 	);
 });
 
-import { User } from '@wbce-d9/types';
+import { User } from '@db-studio/types';
 import { pick } from 'lodash';
 import { useLatencyStore } from './latency';
 import { useUserStore } from './user';

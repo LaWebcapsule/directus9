@@ -1,4 +1,4 @@
-import { BaseException } from '@wbce-d9/exceptions';
+import { BaseException } from '@db-studio/exceptions';
 
 export class InvalidPayloadException extends BaseException {
 	constructor(message: string, extensions?: Record<string, unknown>) {

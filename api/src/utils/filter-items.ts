@@ -1,5 +1,5 @@
-import type { FieldFilter, Query } from '@wbce-d9/types';
-import { generateJoi } from '@wbce-d9/utils';
+import type { FieldFilter, Query } from '@db-studio/types';
+import { generateJoi } from '@db-studio/utils';
 
 /*
  Note: Filtering is normally done through SQL in run-ast. This function can be used in case an already

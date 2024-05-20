@@ -1,4 +1,4 @@
-import { defineOperationApi, isValidJSON } from '@wbce-d9/utils';
+import { defineOperationApi, isValidJSON } from '@db-studio/utils';
 import encodeUrl from 'encodeurl';
 import { getAxios } from '../../request/index.js';
 import { isAxiosError } from 'axios';

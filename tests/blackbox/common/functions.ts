@@ -2,7 +2,7 @@ import request from 'supertest';
 import { Env, getUrl } from './config';
 import * as common from './index';
 import vendors from './get-dbs-to-test';
-import type { Query } from '@wbce-d9/types';
+import type { Query } from '@db-studio/types';
 import { omit } from 'lodash';
 
 export function DisableTestCachingSetup() {

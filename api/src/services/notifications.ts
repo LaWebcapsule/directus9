@@ -1,4 +1,4 @@
-import type { Notification } from '@wbce-d9/types';
+import type { Notification } from '@db-studio/types';
 import env from '../env.js';
 import logger from '../logger.js';
 import type { AbstractServiceOptions, MutationOptions, PrimaryKey } from '../types/index.js';

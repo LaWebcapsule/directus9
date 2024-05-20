@@ -35,7 +35,7 @@
 
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
-import { Field } from '@wbce-d9/types';
+import { Field } from '@db-studio/types';
 
 interface Props {
 	field: Field;

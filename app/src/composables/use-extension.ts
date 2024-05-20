@@ -1,7 +1,7 @@
 import { Ref, computed, unref } from 'vue';
-import { AppExtensionConfigs, AppExtensionType, HybridExtensionType, Plural } from '@wbce-d9/types';
+import { AppExtensionConfigs, AppExtensionType, HybridExtensionType, Plural } from '@db-studio/types';
 import { useExtensions } from '@/extensions';
-import { pluralize } from '@wbce-d9/utils';
+import { pluralize } from '@db-studio/utils';
 
 export function useExtension<T extends AppExtensionType | HybridExtensionType>(
 	type: T | Ref<T>,

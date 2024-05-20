@@ -1,5 +1,5 @@
-import type { Item, Query, SchemaOverview } from '@wbce-d9/types';
-import { toArray } from '@wbce-d9/utils';
+import type { Item, Query, SchemaOverview } from '@db-studio/types';
+import { toArray } from '@db-studio/utils';
 import type { Knex } from 'knex';
 import { clone, cloneDeep, isNil, merge, pick, uniq } from 'lodash-es';
 import { getHelpers } from '../database/helpers/index.js';

@@ -1,4 +1,4 @@
-import { defineInterface } from '@wbce-d9/utils';
+import { defineInterface } from '@db-studio/utils';
 import InterfaceListO2M from './list-o2m.vue';
 import PreviewSVG from './preview.svg?raw';
 

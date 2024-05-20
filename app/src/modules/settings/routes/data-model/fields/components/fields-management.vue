@@ -52,14 +52,14 @@
 <script lang="ts">
 import { useI18n } from 'vue-i18n';
 import { defineComponent, computed, toRefs } from 'vue';
-import { useCollection } from '@wbce-d9/composables';
+import { useCollection } from '@db-studio/composables';
 import Draggable from 'vuedraggable';
-import { Field } from '@wbce-d9/types';
+import { Field } from '@db-studio/types';
 import { useFieldsStore } from '@/stores/fields';
 import FieldSelect from './field-select.vue';
 import { hideDragImage } from '@/utils/hide-drag-image';
 import { orderBy, isNil } from 'lodash';
-import { LocalType } from '@wbce-d9/types';
+import { LocalType } from '@db-studio/types';
 
 export default defineComponent({
 	name: 'FieldsManagement',

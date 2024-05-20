@@ -1,4 +1,4 @@
-import { defineInterface } from '@wbce-d9/utils';
+import { defineInterface } from '@db-studio/utils';
 import InterfaceInputAutocompleteAPI from './input-autocomplete-api.vue';
 import PreviewSVG from './preview.svg?raw';
 

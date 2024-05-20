@@ -89,7 +89,7 @@ import { useI18n } from 'vue-i18n';
 import { defineComponent, ref, watch, computed, nextTick } from 'vue';
 import { useUserStore } from '@/stores/user';
 import { useTFASetup } from '@/composables/use-tfa-setup';
-import { User } from '@wbce-d9/types';
+import { User } from '@db-studio/types';
 
 export default defineComponent({
 	props: {

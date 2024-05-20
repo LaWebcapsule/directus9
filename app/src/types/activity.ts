@@ -1,4 +1,4 @@
-import { User } from '@wbce-d9/types';
+import { User } from '@db-studio/types';
 
 export type Activity = {
 	id: number;

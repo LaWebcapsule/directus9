@@ -1,4 +1,4 @@
-import { defineInterface } from '@wbce-d9/utils';
+import { defineInterface } from '@db-studio/utils';
 import InterfaceSelectIcon from './select-icon.vue';
 import PreviewSVG from './preview.svg?raw';
 

@@ -80,10 +80,10 @@ import { defineComponent, watch, PropType, ref, inject, Ref } from 'vue';
 
 import Card from './components/card.vue';
 import CardsHeader from './components/header.vue';
-import { Field, Item } from '@wbce-d9/types';
-import { useSync, useElementSize } from '@wbce-d9/composables';
+import { Field, Item } from '@db-studio/types';
+import { useSync, useElementSize } from '@db-studio/composables';
 import { Collection } from '@/types/collections';
-import { Filter, ShowSelect } from '@wbce-d9/types';
+import { Filter, ShowSelect } from '@db-studio/types';
 
 export default defineComponent({
 	components: { Card, CardsHeader },

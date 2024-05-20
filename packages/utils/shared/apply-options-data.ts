@@ -1,4 +1,4 @@
-import type { JsonValue } from '@wbce-d9/types';
+import type { JsonValue } from '@db-studio/types';
 import type { ResolveFn, Scope } from 'micromustache';
 import { get, renderFn } from 'micromustache';
 import { parseJSON } from './parse-json.js';

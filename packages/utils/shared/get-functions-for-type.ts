@@ -1,4 +1,4 @@
-import type { Type, FieldFunction } from '@wbce-d9/types';
+import type { Type, FieldFunction } from '@db-studio/types';
 
 export function getFunctionsForType(type: Type): FieldFunction[] {
 	switch (type) {

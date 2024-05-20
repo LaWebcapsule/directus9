@@ -1,11 +1,11 @@
 /**
- * @NOTE This is copied from @wbce-d9/utils. Once the tests are ESM too, this needs to be removed
- * in favor of using @wbce-d9/utils
+ * @NOTE This is copied from @db-studio/utils. Once the tests are ESM too, this needs to be removed
+ * in favor of using @db-studio/utils
  *
  * @TODO
  */
 
-import type { ClientFilterOperator, Type } from '@wbce-d9/types';
+import type { ClientFilterOperator, Type } from '@db-studio/types';
 
 type GetFilterOperationsForTypeOptions = {
 	includeValidation?: boolean;

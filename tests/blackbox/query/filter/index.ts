@@ -1,7 +1,7 @@
 import { PrepareRequest, RequestOptions } from '@utils/prepare-request';
 import vendors from '@common/get-dbs-to-test';
 import * as testsSchema from '@schema/index';
-import type { ClientFilterOperator } from '@wbce-d9/types';
+import type { ClientFilterOperator } from '@db-studio/types';
 import { get, set } from 'lodash';
 import { PrimaryKeyType } from '@common/types';
 

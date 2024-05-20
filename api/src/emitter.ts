@@ -1,4 +1,4 @@
-import type { ActionHandler, EventContext, FilterHandler, InitHandler } from '@wbce-d9/types';
+import type { ActionHandler, EventContext, FilterHandler, InitHandler } from '@db-studio/types';
 import ee2 from 'eventemitter2';
 import logger from './logger.js';
 

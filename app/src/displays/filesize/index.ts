@@ -1,4 +1,4 @@
-import { defineDisplay } from '@wbce-d9/utils';
+import { defineDisplay } from '@db-studio/utils';
 import { formatFilesize } from '@/utils/format-filesize';
 import { h } from 'vue';
 

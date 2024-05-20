@@ -140,7 +140,7 @@
 <script lang="ts" setup>
 import { useExtensions } from '@/extensions';
 import { Vector2 } from '@/utils/vector2';
-import { FlowRaw } from '@wbce-d9/types';
+import { FlowRaw } from '@db-studio/types';
 import { computed, ref, toRefs } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { ATTACHMENT_OFFSET, REJECT_OFFSET, RESOLVE_OFFSET } from '../constants';

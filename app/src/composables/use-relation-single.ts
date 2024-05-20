@@ -1,5 +1,5 @@
 import api from '@/api';
-import { getEndpoint } from '@wbce-d9/utils';
+import { getEndpoint } from '@db-studio/utils';
 import { unexpectedError } from '@/utils/unexpected-error';
 import { merge } from 'lodash';
 import { ref, Ref, watch } from 'vue';

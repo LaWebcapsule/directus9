@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia';
 import { has, isEmpty, orderBy, cloneDeep } from 'lodash';
-import { InterfaceConfig, DisplayConfig, DeepPartial, Field, Relation, Collection, LocalType } from '@wbce-d9/types';
-import { LOCAL_TYPES } from '@wbce-d9/constants';
+import { InterfaceConfig, DisplayConfig, DeepPartial, Field, Relation, Collection, LocalType } from '@db-studio/types';
+import { LOCAL_TYPES } from '@db-studio/constants';
 import { computed } from 'vue';
 import { get, set } from 'lodash';
 import { unexpectedError } from '@/utils/unexpected-error';

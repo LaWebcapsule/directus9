@@ -6,7 +6,8 @@
 		"format": "prettier --write \"**/*.{md,y?(a)ml,json}\"",
 		"lint": "eslint .",
 		"test": "pnpm --recursive --filter '!tests-blackbox' test",
-		"test:blackbox": "pnpm --filter directus9 deploy --prod dist && pnpm --filter tests-blackbox test"
+		"deploy": "pnpm --filter db-studio deploy --prod dist",
+		"test:blackbox": "pnpm --filter db-studio deploy --prod dist && pnpm --filter tests-blackbox test"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.26.1",
@@ -19,10 +20,10 @@
 		"eslint-plugin-vue": "9.11.0",
 		"prettier": "2.8.7"
 	},
-	"packageManager": "pnpm@8.3.1",
+	"packageManager": "pnpm@9.1.1",
 	"engines": {
-		"node": ">=18.0.0",
-		"pnpm": ">=8.1.0"
+		"node": ">=22.0.0",
+		"pnpm": ">=9.1.1"
 	},
 	"pnpm": {
 		"overrides": {

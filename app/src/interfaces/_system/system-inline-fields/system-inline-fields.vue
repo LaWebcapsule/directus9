@@ -10,8 +10,8 @@
 <script lang="ts" setup>
 import { FIELD_TYPES_SELECT } from '@/constants';
 import { translate } from '@/utils/translate-object-values';
-import formatTitle from '@wbce-d9/format-title';
-import { Field } from '@wbce-d9/types';
+import formatTitle from '@db-studio/format-title';
+import { Field } from '@db-studio/types';
 import { set } from 'lodash';
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';

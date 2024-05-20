@@ -1,4 +1,4 @@
-import type { Table } from '@wbce-d9/schema';
+import type { Table } from '@db-studio/schema';
 
 type Translations = {
 	language: string;

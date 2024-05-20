@@ -3,21 +3,21 @@ import {
 	APP_OR_HYBRID_EXTENSION_TYPES,
 	APP_SHARED_DEPS,
 	NESTED_EXTENSION_TYPES,
-} from '@wbce-d9/constants';
+} from '@db-studio/constants';
 import {
 	ensureExtensionDirs,
 	generateExtensionsEntrypoint,
 	getLocalExtensions,
 	getPackageExtensions,
 	resolvePackageExtensions,
-} from '@wbce-d9/utils/node';
+} from '@db-studio/utils/node';
 import yaml from '@rollup/plugin-yaml';
 import vue from '@vitejs/plugin-vue';
 import fs from 'node:fs';
 import path from 'node:path';
 import { searchForWorkspaceRoot } from 'vite';
 import { defineConfig } from 'vitest/config';
-import { version } from '../directus/package.json';
+import { version } from '../db-studio/package.json';
 
 const API_PATH = path.join('..', 'api');
 const EXTENSIONS_PATH = path.join(API_PATH, 'extensions');

@@ -1,4 +1,4 @@
-import type { Relation, RelationMeta } from '@wbce-d9/types';
+import type { Relation, RelationMeta } from '@db-studio/types';
 import { getRelationType } from './get-relation-type.js';
 
 type RelationInfo = {

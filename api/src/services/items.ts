@@ -1,5 +1,5 @@
-import type { Accountability, PermissionsAction, Query, SchemaOverview } from '@wbce-d9/types';
-import { Action } from '@wbce-d9/constants';
+import type { Accountability, PermissionsAction, Query, SchemaOverview } from '@db-studio/types';
+import { Action } from '@db-studio/constants';
 import type Keyv from 'keyv';
 import type { Knex } from 'knex';
 import { assign, clone, cloneDeep, omit, pick, without } from 'lodash-es';

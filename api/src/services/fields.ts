@@ -1,8 +1,8 @@
-import { KNEX_TYPES, REGEX_BETWEEN_PARENS } from '@wbce-d9/constants';
-import type { Column, SchemaInspector } from '@wbce-d9/schema';
-import { createInspector } from '@wbce-d9/schema';
-import type { Accountability, Field, FieldMeta, RawField, SchemaOverview, Type } from '@wbce-d9/types';
-import { addFieldFlag, toArray } from '@wbce-d9/utils';
+import { KNEX_TYPES, REGEX_BETWEEN_PARENS } from '@db-studio/constants';
+import type { Column, SchemaInspector } from '@db-studio/schema';
+import { createInspector } from '@db-studio/schema';
+import type { Accountability, Field, FieldMeta, RawField, SchemaOverview, Type } from '@db-studio/types';
+import { addFieldFlag, toArray } from '@db-studio/utils';
 import type Keyv from 'keyv';
 import type { Knex } from 'knex';
 import { isEqual, isNil } from 'lodash-es';

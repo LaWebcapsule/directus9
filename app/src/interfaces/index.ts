@@ -1,5 +1,5 @@
 import { App } from 'vue';
-import { InterfaceConfig } from '@wbce-d9/types';
+import { InterfaceConfig } from '@db-studio/types';
 import { sortBy } from 'lodash';
 
 export function getInternalInterfaces(): InterfaceConfig[] {

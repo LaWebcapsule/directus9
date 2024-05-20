@@ -1,4 +1,4 @@
-import { EXTENSION_LANGUAGES } from '@wbce-d9/constants';
+import { EXTENSION_LANGUAGES } from '@db-studio/constants';
 import type { Language, LanguageShort } from '../types.js';
 
 export function isLanguage(language: string): language is Language {

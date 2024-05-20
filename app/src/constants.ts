@@ -1,4 +1,4 @@
-import { Type } from '@wbce-d9/types';
+import { Type } from '@db-studio/types';
 
 export const VALIDATION_TYPES = ['FAILED_VALIDATION', 'RECORD_NOT_UNIQUE'];
 

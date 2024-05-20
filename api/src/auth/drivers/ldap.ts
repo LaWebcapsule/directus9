@@ -1,4 +1,4 @@
-import type { Accountability } from '@wbce-d9/types';
+import type { Accountability } from '@db-studio/types';
 import { Router } from 'express';
 import Joi from 'joi';
 import type { Client, Error, LDAPResult, SearchCallbackResponse, SearchEntry } from 'ldapjs';

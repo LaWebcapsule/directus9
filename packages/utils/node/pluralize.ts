@@ -1,4 +1,4 @@
-import type { Plural } from '@wbce-d9/types';
+import type { Plural } from '@db-studio/types';
 
 export function pluralize<T extends string>(str: T): Plural<T> {
 	return `${str}s`;

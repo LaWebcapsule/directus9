@@ -21,7 +21,7 @@
 
 <script setup lang="ts">
 import { FieldTree } from './types';
-import formatTitle from '@wbce-d9/format-title';
+import formatTitle from '@db-studio/format-title';
 
 interface Props {
 	field: FieldTree;

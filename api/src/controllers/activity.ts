@@ -1,4 +1,4 @@
-import { Action } from '@wbce-d9/constants';
+import { Action } from '@db-studio/constants';
 import express from 'express';
 import Joi from 'joi';
 import { ForbiddenException, InvalidPayloadException } from '../exceptions/index.js';

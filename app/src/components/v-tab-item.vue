@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { useGroupable } from '@wbce-d9/composables';
+import { useGroupable } from '@db-studio/composables';
 
 interface Props {
 	/** Custom value to use for selection state */

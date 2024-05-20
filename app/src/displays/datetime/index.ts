@@ -1,6 +1,6 @@
 import { localizedFormat } from '@/utils/localized-format';
 import { localizedFormatDistance } from '@/utils/localized-format-distance';
-import { defineDisplay } from '@wbce-d9/utils';
+import { defineDisplay } from '@db-studio/utils';
 import { parse, parseISO } from 'date-fns';
 import { i18n } from '@/lang';
 import DisplayDateTime from './datetime.vue';

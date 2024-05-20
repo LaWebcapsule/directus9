@@ -1,4 +1,4 @@
-import { cssVar } from '@wbce-d9/utils/browser';
+import { cssVar } from '@db-studio/utils/browser';
 
 export function getMapStyle() {
 	return [

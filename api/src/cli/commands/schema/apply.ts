@@ -1,4 +1,4 @@
-import { parseJSON } from '@wbce-d9/utils';
+import { parseJSON } from '@db-studio/utils';
 import chalk from 'chalk';
 import { promises as fs } from 'fs';
 import inquirer from 'inquirer';

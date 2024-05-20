@@ -23,7 +23,7 @@
 <script setup lang="ts">
 import { RouteLocation, useLink, useRoute } from 'vue-router';
 import { computed } from 'vue';
-import { useGroupable } from '@wbce-d9/composables';
+import { useGroupable } from '@db-studio/composables';
 import { isEqual } from 'lodash';
 
 interface Props {

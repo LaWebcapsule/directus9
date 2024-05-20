@@ -1,4 +1,4 @@
-import { defineDisplay } from '@wbce-d9/utils';
+import { defineDisplay } from '@db-studio/utils';
 import DisplayCollection from './collection.vue';
 import { useCollectionsStore } from '@/stores/collections';
 

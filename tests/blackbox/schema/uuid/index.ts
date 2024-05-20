@@ -1,6 +1,6 @@
-/** @TODO replace with import from @wbce-d9/utils */
+/** @TODO replace with import from @db-studio/utils */
 import { getFilterOperatorsForType } from '../../utils/get-filter-operators-for-type';
-import type { ClientFilterOperator } from '@wbce-d9/types';
+import type { ClientFilterOperator } from '@db-studio/types';
 import { FilterValidator, FilterEmptyValidator } from '@query/filter';
 import { GeneratedFilter } from '..';
 

@@ -1,4 +1,4 @@
-import type { Permission, PermissionsAction, SchemaOverview } from '@wbce-d9/types';
+import type { Permission, PermissionsAction, SchemaOverview } from '@db-studio/types';
 import { uniq } from 'lodash-es';
 
 /**

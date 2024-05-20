@@ -1,7 +1,7 @@
 import { validateEnv } from '../utils/validate-env.js';
 import { registerDrivers } from './register-drivers.js';
 import { registerLocations } from './register-locations.js';
-import type { StorageManager } from '@wbce-d9/storage';
+import type { StorageManager } from '@db-studio/storage';
 
 export const _cache: { storage: any | null } = {
 	storage: null,
@@ -10,7 +10,7 @@ export const _cache: { storage: any | null } = {
 export const getStorage = async (): Promise<StorageManager> => {
 	if (_cache.storage) return _cache.storage;
 
-	const { StorageManager } = await import('@wbce-d9/storage');
+	const { StorageManager } = await import('@db-studio/storage');
 
 	validateEnv(['STORAGE_LOCATIONS']);
 

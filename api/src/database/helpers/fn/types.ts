@@ -1,4 +1,4 @@
-import type { Query, SchemaOverview } from '@wbce-d9/types';
+import type { Query, SchemaOverview } from '@db-studio/types';
 import type { Knex } from 'knex';
 import { applyFilter } from '../../../utils/apply-query.js';
 import { DatabaseHelper } from '../types.js';

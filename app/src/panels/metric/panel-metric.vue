@@ -9,9 +9,9 @@
 </template>
 
 <script setup lang="ts">
-import { Filter } from '@wbce-d9/types';
-import { abbreviateNumber } from '@wbce-d9/utils';
-import { cssVar } from '@wbce-d9/utils/browser';
+import { Filter } from '@db-studio/types';
+import { abbreviateNumber } from '@db-studio/utils';
+import { cssVar } from '@db-studio/utils/browser';
 import { isNil } from 'lodash';
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';

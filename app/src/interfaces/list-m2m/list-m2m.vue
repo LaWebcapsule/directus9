@@ -204,8 +204,8 @@
 import { useRelationM2M } from '@/composables/use-relation-m2m';
 import { useRelationMultiple, RelationQueryMultiple, DisplayItem } from '@/composables/use-relation-multiple';
 import { parseFilter } from '@/utils/parse-filter';
-import { Filter } from '@wbce-d9/types';
-import { deepMap, getFieldsFromTemplate } from '@wbce-d9/utils';
+import { Filter } from '@db-studio/types';
+import { deepMap, getFieldsFromTemplate } from '@db-studio/utils';
 import { render } from 'micromustache';
 import { computed, inject, ref, toRefs, watch } from 'vue';
 import { useI18n } from 'vue-i18n';

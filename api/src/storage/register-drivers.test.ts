@@ -3,7 +3,7 @@ import { afterEach, beforeEach, expect, test, vi } from 'vitest';
 import { getEnv } from '../env.js';
 import { getStorageDriver } from './get-storage-driver.js';
 import { registerDrivers } from './register-drivers.js';
-import type { Driver, StorageManager } from '@wbce-d9/storage';
+import type { Driver, StorageManager } from '@db-studio/storage';
 
 vi.mock('./get-storage-driver.js');
 vi.mock('../env');

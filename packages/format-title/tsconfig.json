@@ -1,5 +1,5 @@
 {
-	"extends": "@directus/tsconfig/node18-esm",
+	"extends": "@db-studio/config/tsconfig/node18-esm",
 	"include": ["src"],
 	"typedocOptions": {
 		"entryPoints": ["./src"]

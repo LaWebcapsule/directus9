@@ -1,4 +1,4 @@
-import { REGEX_BETWEEN_PARENS } from '@wbce-d9/constants';
+import { REGEX_BETWEEN_PARENS } from '@db-studio/constants';
 
 /**
  * Parse count(a.b.c) as a.b.count(c) and a.b.count(c.d) as a.b.c.count(d)

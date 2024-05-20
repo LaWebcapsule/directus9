@@ -1,6 +1,6 @@
 import { useServerStore } from '@/stores/server';
-import { DeepPartial, Field } from '@wbce-d9/types';
-import { defineOperationApp } from '@wbce-d9/utils';
+import { DeepPartial, Field } from '@db-studio/types';
+import { defineOperationApp } from '@db-studio/utils';
 import { i18n } from '@/lang';
 
 export default defineOperationApp({

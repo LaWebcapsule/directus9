@@ -1,4 +1,4 @@
-import type { Field, RawField } from '@wbce-d9/types';
+import type { Field, RawField } from '@db-studio/types';
 import type { Knex } from 'knex';
 import { GeometryHelper } from '../types.js';
 

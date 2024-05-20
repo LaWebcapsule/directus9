@@ -1,4 +1,4 @@
-import type { Filter, LayoutConfig, ShowSelect } from '@wbce-d9/types';
+import type { Filter, LayoutConfig, ShowSelect } from '@db-studio/types';
 import type { Component, ComputedRef, PropType, Ref } from 'vue';
 import { computed, defineComponent, reactive, toRefs } from 'vue';
 import { useExtensions } from './use-system.js';

@@ -1,4 +1,4 @@
-import type { User } from '@wbce-d9/types';
+import type { User } from '@db-studio/types';
 
 export function userName(user: Partial<User>): string {
 	if (!user) {

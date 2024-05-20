@@ -1,5 +1,5 @@
-import type { Accountability, SchemaOverview } from '@wbce-d9/types';
-import { toArray } from '@wbce-d9/utils';
+import type { Accountability, SchemaOverview } from '@db-studio/types';
+import { toArray } from '@db-studio/utils';
 import type { Knex } from 'knex';
 import { merge } from 'lodash-es';
 import { Readable } from 'node:stream';

@@ -35,7 +35,7 @@
 <script lang="ts" setup>
 import { FieldNode, useFieldTree } from '@/composables/use-field-tree';
 import { useFieldsStore } from '@/stores/fields';
-import { Field } from '@wbce-d9/types';
+import { Field } from '@db-studio/types';
 import { debounce, isNil } from 'lodash';
 import { computed, ref, toRefs, unref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';

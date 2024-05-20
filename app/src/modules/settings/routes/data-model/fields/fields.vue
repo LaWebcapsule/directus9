@@ -103,7 +103,7 @@
 import { useI18n } from 'vue-i18n';
 import { defineComponent, computed, toRefs, ref } from 'vue';
 import SettingsNavigation from '../../../components/navigation.vue';
-import { useCollection } from '@wbce-d9/composables';
+import { useCollection } from '@db-studio/composables';
 import FieldsManagement from './components/fields-management.vue';
 
 import { useItem } from '@/composables/use-item';

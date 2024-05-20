@@ -1,6 +1,6 @@
 import api from '@/api';
 import { unexpectedError } from '@/utils/unexpected-error';
-import { Role } from '@wbce-d9/types';
+import { Role } from '@db-studio/types';
 import { ref, Ref } from 'vue';
 
 let roles: Ref<BasicRole[] | null> | null = null;

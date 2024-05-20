@@ -1,4 +1,4 @@
-import type { DeepPartial } from '@wbce-d9/types';
+import type { DeepPartial } from '@db-studio/types';
 import { expect, test } from 'vitest';
 import { InvalidQueryException } from '../../src/exceptions/index.js';
 import type { ColPathProps } from '../../src/utils/get-column-path.js';

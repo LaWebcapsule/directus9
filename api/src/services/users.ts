@@ -1,6 +1,6 @@
-import { FailedValidationException } from '@wbce-d9/exceptions';
-import type { Query } from '@wbce-d9/types';
-import { getSimpleHash, toArray } from '@wbce-d9/utils';
+import { FailedValidationException } from '@db-studio/exceptions';
+import type { Query } from '@db-studio/types';
+import { getSimpleHash, toArray } from '@db-studio/utils';
 import jwt from 'jsonwebtoken';
 import { cloneDeep, isEmpty } from 'lodash-es';
 import { performance } from 'perf_hooks';

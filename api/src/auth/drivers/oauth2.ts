@@ -1,5 +1,5 @@
-import { BaseException } from '@wbce-d9/exceptions';
-import type { Accountability } from '@wbce-d9/types';
+import { BaseException } from '@db-studio/exceptions';
+import type { Accountability } from '@db-studio/types';
 import express, { Router } from 'express';
 import flatten from 'flat';
 import jwt from 'jsonwebtoken';

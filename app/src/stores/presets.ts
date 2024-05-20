@@ -1,6 +1,6 @@
 import api from '@/api';
 import { useUserStore } from '@/stores/user';
-import { Preset } from '@wbce-d9/types';
+import { Preset } from '@db-studio/types';
 import { cloneDeep, merge, orderBy } from 'lodash';
 import { nanoid } from 'nanoid';
 import { defineStore } from 'pinia';

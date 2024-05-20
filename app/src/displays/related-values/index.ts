@@ -1,6 +1,6 @@
-import { defineDisplay } from '@wbce-d9/utils';
+import { defineDisplay } from '@db-studio/utils';
 import { adjustFieldsForDisplays } from '@/utils/adjust-fields-for-displays';
-import { getFieldsFromTemplate } from '@wbce-d9/utils';
+import { getFieldsFromTemplate } from '@db-studio/utils';
 import { getRelatedCollection } from '@/utils/get-related-collection';
 import DisplayRelatedValues from './related-values.vue';
 import { useFieldsStore } from '@/stores/fields';

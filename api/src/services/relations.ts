@@ -1,7 +1,7 @@
-import type { ForeignKey, SchemaInspector } from '@wbce-d9/schema';
-import { createInspector } from '@wbce-d9/schema';
-import type { Accountability, Query, Relation, RelationMeta, SchemaOverview } from '@wbce-d9/types';
-import { toArray } from '@wbce-d9/utils';
+import type { ForeignKey, SchemaInspector } from '@db-studio/schema';
+import { createInspector } from '@db-studio/schema';
+import type { Accountability, Query, Relation, RelationMeta, SchemaOverview } from '@db-studio/types';
+import { toArray } from '@db-studio/utils';
 import type Keyv from 'keyv';
 import type { Knex } from 'knex';
 import { clearSystemCache, getCache } from '../cache.js';

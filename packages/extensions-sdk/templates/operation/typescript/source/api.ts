@@ -1,4 +1,4 @@
-import { defineOperationApi } from '@wbce-d9/extensions-sdk';
+import { defineOperationApi } from '@db-studio/extensions-sdk';
 
 type Options = {
 	text: string;

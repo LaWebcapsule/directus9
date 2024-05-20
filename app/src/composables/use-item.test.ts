@@ -1,6 +1,6 @@
 import api from '@/api';
-import { useCollection } from '@wbce-d9/composables';
-import { AppCollection, Field } from '@wbce-d9/types';
+import { useCollection } from '@db-studio/composables';
+import { AppCollection, Field } from '@db-studio/types';
 import { createTestingPinia } from '@pinia/testing';
 import { setActivePinia } from 'pinia';
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
@@ -21,7 +21,7 @@ vi.mock('@/api', () => {
 	};
 });
 
-vi.mock('@wbce-d9/composables');
+vi.mock('@db-studio/composables');
 
 beforeEach(() => {
 	setActivePinia(

@@ -1,4 +1,4 @@
-import { pathToRelativeUrl } from '@wbce-d9/utils/node';
+import { pathToRelativeUrl } from '@db-studio/utils/node';
 import fse from 'fs-extra';
 import path from 'path';
 import { fileURLToPath } from 'url';

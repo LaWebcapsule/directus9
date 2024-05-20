@@ -4,7 +4,7 @@ import request from 'supertest';
 import vendors from '@common/get-dbs-to-test';
 import knex from 'knex';
 import type { Knex } from 'knex';
-import type { FieldRaw } from '@wbce-d9/types';
+import type { FieldRaw } from '@db-studio/types';
 import { sortedUniq } from 'lodash';
 import { collection } from './crud.seed';
 import { requestGraphQL } from '@common/index';

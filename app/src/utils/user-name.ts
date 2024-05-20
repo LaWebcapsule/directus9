@@ -1,5 +1,5 @@
 import { i18n } from '@/lang';
-import { User } from '@wbce-d9/types';
+import { User } from '@db-studio/types';
 
 export function userName(user?: Partial<User>): string {
 	if (!user) {

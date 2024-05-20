@@ -11,7 +11,7 @@ import type {
 	LOCAL_TYPES,
 	NESTED_EXTENSION_TYPES,
 	SplitEntrypoint,
-} from '@wbce-d9/constants';
+} from '@db-studio/constants';
 import type { Knex } from 'knex';
 import type { Logger } from 'pino';
 import type { z } from 'zod';

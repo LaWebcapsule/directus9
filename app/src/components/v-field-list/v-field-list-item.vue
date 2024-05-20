@@ -69,8 +69,8 @@ export default {
 
 <script lang="ts" setup>
 import { FieldNode } from '@/composables/use-field-tree';
-import formatTitle from '@wbce-d9/format-title';
-import { getFunctionsForType } from '@wbce-d9/utils';
+import formatTitle from '@db-studio/format-title';
+import { getFunctionsForType } from '@db-studio/utils';
 import { computed } from 'vue';
 import { useI18n } from 'vue-i18n';
 

@@ -1,5 +1,5 @@
-import type { Accountability } from '@wbce-d9/types';
-import { defineOperationApi, optionToString, toArray } from '@wbce-d9/utils';
+import type { Accountability } from '@db-studio/types';
+import { defineOperationApi, optionToString, toArray } from '@db-studio/utils';
 import { NotificationsService } from '../../services/notifications.js';
 import { getAccountabilityForRole } from '../../utils/get-accountability-for-role.js';
 

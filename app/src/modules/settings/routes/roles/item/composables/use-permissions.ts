@@ -1,5 +1,5 @@
 import api from '@/api';
-import { Permission } from '@wbce-d9/types';
+import { Permission } from '@db-studio/types';
 import { ref, Ref, watch } from 'vue';
 
 type UsablePermissions = {

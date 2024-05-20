@@ -1,4 +1,4 @@
-import { normalizePath } from '@wbce-d9/utils';
+import { normalizePath } from '@db-studio/utils';
 import {
 	rand,
 	randAlphaNumeric,
@@ -28,8 +28,8 @@ import { IMAGE_EXTENSIONS, VIDEO_EXTENSIONS } from './constants.js';
 import type { DriverCloudinaryConfig } from './index.js';
 import { DriverCloudinary } from './index.js';
 
-vi.mock('@wbce-d9/utils/node');
-vi.mock('@wbce-d9/utils');
+vi.mock('@db-studio/utils/node');
+vi.mock('@db-studio/utils');
 vi.mock('node:path');
 vi.mock('node:crypto');
 vi.mock('undici');

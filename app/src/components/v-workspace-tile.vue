@@ -83,7 +83,7 @@
 </template>
 
 <script setup lang="ts">
-import { Panel } from '@wbce-d9/types';
+import { Panel } from '@db-studio/types';
 import { computed, ref, reactive, StyleValue } from 'vue';
 import { throttle } from 'lodash';
 import { useI18n } from 'vue-i18n';

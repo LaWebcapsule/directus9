@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import type { Relation } from '@wbce-d9/types';
+import type { Relation } from '@db-studio/types';
 import { getRelationType } from './get-relation-type.js';
 
 describe('getRelationType', () => {

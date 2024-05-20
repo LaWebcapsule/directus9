@@ -75,7 +75,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useElementSize } from '@wbce-d9/composables';
+import { useElementSize } from '@db-studio/composables';
 import { useEventListener } from '@/composables/use-event-listener';
 import { useLocalStorage } from '@/composables/use-local-storage';
 import { useTitle } from '@/composables/use-title';

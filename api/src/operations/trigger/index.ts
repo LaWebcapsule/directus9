@@ -1,4 +1,4 @@
-import { defineOperationApi, optionToObject } from '@wbce-d9/utils';
+import { defineOperationApi, optionToObject } from '@db-studio/utils';
 import { omit } from 'lodash-es';
 import { getFlowManager } from '../../flows.js';
 

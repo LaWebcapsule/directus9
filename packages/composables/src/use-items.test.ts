@@ -1,4 +1,4 @@
-import type { Field, Filter } from '@wbce-d9/types';
+import type { Field, Filter } from '@db-studio/types';
 import { flushPromises } from '@vue/test-utils';
 import type { AxiosRequestConfig } from 'axios';
 import { isEqual } from 'lodash-es';

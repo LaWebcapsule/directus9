@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { useSync } from '@wbce-d9/composables';
+import { useSync } from '@db-studio/composables';
 
 export default defineComponent({
 	props: {

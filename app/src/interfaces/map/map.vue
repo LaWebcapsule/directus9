@@ -79,7 +79,7 @@ import { computed, defineComponent, onMounted, onUnmounted, PropType, ref, toRef
 import { useSettingsStore } from '@/stores/settings';
 import { flatten, getBBox, getGeometryFormatForType, getParser, getSerializer } from '@/utils/geometry';
 import { ButtonControl } from '@/utils/geometry/controls';
-import { Field, GeoJSONParser, GeoJSONSerializer, GeometryType, MultiGeometry, SimpleGeometry } from '@wbce-d9/types';
+import { Field, GeoJSONParser, GeoJSONSerializer, GeometryType, MultiGeometry, SimpleGeometry } from '@db-studio/types';
 // @ts-ignore
 import StaticMode from '@mapbox/mapbox-gl-draw-static-mode';
 import MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';

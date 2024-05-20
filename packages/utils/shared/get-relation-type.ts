@@ -1,4 +1,4 @@
-import type { Relation } from '@wbce-d9/types';
+import type { Relation } from '@db-studio/types';
 
 export function getRelationType(getRelationOptions: {
 	relation: Relation;

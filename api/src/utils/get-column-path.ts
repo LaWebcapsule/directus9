@@ -1,4 +1,4 @@
-import type { Relation, SchemaOverview } from '@wbce-d9/types';
+import type { Relation, SchemaOverview } from '@db-studio/types';
 import { InvalidQueryException } from '../exceptions/index.js';
 import { getRelationInfo } from './get-relation-info.js';
 

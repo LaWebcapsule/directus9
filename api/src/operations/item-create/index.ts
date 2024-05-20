@@ -1,5 +1,5 @@
-import type { Accountability, PrimaryKey } from '@wbce-d9/types';
-import { defineOperationApi, optionToObject, toArray } from '@wbce-d9/utils';
+import type { Accountability, PrimaryKey } from '@db-studio/types';
+import { defineOperationApi, optionToObject, toArray } from '@db-studio/utils';
 import { ItemsService } from '../../services/items.js';
 import type { Item } from '../../types/index.js';
 import { getAccountabilityForRole } from '../../utils/get-accountability-for-role.js';

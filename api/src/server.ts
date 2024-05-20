@@ -1,4 +1,4 @@
-import { isUpToDate } from '@wbce-d9/update-check';
+import { isUpToDate } from '@db-studio/update-check';
 import type { TerminusOptions } from '@godaddy/terminus';
 import { createTerminus } from '@godaddy/terminus';
 import type { Request } from 'express';

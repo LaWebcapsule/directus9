@@ -1,4 +1,4 @@
-import { defineModule } from '@wbce-d9/utils';
+import { defineModule } from '@db-studio/utils';
 import { addQueryToPath } from '@/utils/add-query-to-path';
 import RouterPass from '@/utils/router-passthrough';
 import { LocationQuery, NavigationGuard } from 'vue-router';
@@ -7,7 +7,7 @@ import Item from './routes/item.vue';
 import ItemNotFound from './routes/not-found.vue';
 import NoCollections from './routes/no-collections.vue';
 import { useCollectionsStore } from '@/stores/collections';
-import { Collection } from '@wbce-d9/types';
+import { Collection } from '@db-studio/types';
 import { orderBy, isNil } from 'lodash';
 import { useNavigation } from './composables/use-navigation';
 import { useLocalStorage } from '@/composables/use-local-storage';

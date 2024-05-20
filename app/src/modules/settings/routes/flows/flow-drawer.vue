@@ -122,7 +122,7 @@
 import api from '@/api';
 import { useFlowsStore } from '@/stores/flows';
 import { unexpectedError } from '@/utils/unexpected-error';
-import { TriggerType } from '@wbce-d9/types';
+import { TriggerType } from '@db-studio/types';
 import { computed, reactive, ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { getTriggers } from './triggers';

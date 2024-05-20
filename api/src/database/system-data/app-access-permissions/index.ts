@@ -1,4 +1,4 @@
-import type { Permission } from '@wbce-d9/types';
+import type { Permission } from '@db-studio/types';
 import { merge } from 'lodash-es';
 import path, { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';

@@ -2,7 +2,7 @@
  * Custom properties on the req object in express
  */
 
-import { Accountability, Query, SchemaOverview } from '@wbce-d9/types';
+import { Accountability, Query, SchemaOverview } from '@db-studio/types';
 
 export {};
 

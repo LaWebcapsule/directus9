@@ -4,8 +4,8 @@ import {
 	HYBRID_EXTENSION_TYPES,
 	NESTED_EXTENSION_TYPES,
 	ExtensionManifest,
-} from '@wbce-d9/constants';
-import type { ApiExtensionType, AppExtensionType, Extension } from '@wbce-d9/types';
+} from '@db-studio/constants';
+import type { ApiExtensionType, AppExtensionType, Extension } from '@db-studio/types';
 import fse from 'fs-extra';
 import path from 'path';
 import { isIn, isTypeIn } from './array-helpers.js';

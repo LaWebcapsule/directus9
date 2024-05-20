@@ -1,4 +1,4 @@
-import { defineOperationApp } from '@wbce-d9/extensions-sdk';
+import { defineOperationApp } from '@db-studio/extensions-sdk';
 
 export default defineOperationApp({
 	id: 'custom',

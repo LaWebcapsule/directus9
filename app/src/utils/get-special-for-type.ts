@@ -1,4 +1,4 @@
-import { Type } from '@wbce-d9/types';
+import { Type } from '@db-studio/types';
 
 export function getSpecialForType(type: Type): string[] | null {
 	switch (type) {

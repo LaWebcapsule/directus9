@@ -1,8 +1,8 @@
 import { getGeometryFormatForType, toGeoJSON } from '@/utils/geometry';
 import { syncRefProperty } from '@/utils/sync-ref-property';
-import { useCollection, useItems, useSync } from '@wbce-d9/composables';
-import { Field, Filter, GeometryOptions, Item } from '@wbce-d9/types';
-import { defineLayout, getFieldsFromTemplate } from '@wbce-d9/utils';
+import { useCollection, useItems, useSync } from '@db-studio/composables';
+import { Field, Filter, GeometryOptions, Item } from '@db-studio/types';
+import { defineLayout, getFieldsFromTemplate } from '@db-studio/utils';
 import { cloneDeep, merge } from 'lodash';
 import { computed, ref, toRefs, watch } from 'vue';
 import { useRouter } from 'vue-router';

@@ -1,4 +1,4 @@
-import type { Accountability } from '@wbce-d9/types';
+import type { Accountability } from '@db-studio/types';
 import argon2 from 'argon2';
 import { Router } from 'express';
 import Joi from 'joi';

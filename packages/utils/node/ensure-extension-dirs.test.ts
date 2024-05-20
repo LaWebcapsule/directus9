@@ -1,4 +1,4 @@
-import { NESTED_EXTENSION_TYPES } from '@wbce-d9/constants';
+import { NESTED_EXTENSION_TYPES } from '@db-studio/constants';
 import type { DirResult } from 'tmp';
 import { dirSync } from 'tmp';
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';

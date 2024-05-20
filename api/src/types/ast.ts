@@ -1,4 +1,4 @@
-import type { Query, Relation } from '@wbce-d9/types';
+import type { Query, Relation } from '@db-studio/types';
 
 export type M2ONode = {
 	type: 'm2o';

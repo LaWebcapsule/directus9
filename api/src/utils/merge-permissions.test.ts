@@ -1,4 +1,4 @@
-import type { Filter, Permission } from '@wbce-d9/types';
+import type { Filter, Permission } from '@db-studio/types';
 import { describe, expect, test } from 'vitest';
 import { mergePermission } from './merge-permissions.js';
 

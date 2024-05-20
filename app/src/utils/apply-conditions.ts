@@ -1,6 +1,6 @@
-import { Field } from '@wbce-d9/types';
+import { Field } from '@db-studio/types';
 import { parseFilter } from '@/utils/parse-filter';
-import { validatePayload } from '@wbce-d9/utils';
+import { validatePayload } from '@db-studio/utils';
 import { merge } from 'lodash';
 
 export function applyConditions(item: Record<string, any>, field: Field) {

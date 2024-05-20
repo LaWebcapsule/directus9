@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { defineComponent } from 'vue';
-import type { Type } from '@wbce-d9/types';
+import type { Type } from '@db-studio/types';
 import {
 	defineDisplay,
 	defineEndpoint,

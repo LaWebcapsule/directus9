@@ -1,4 +1,4 @@
-import { BaseException } from '@wbce-d9/exceptions';
+import { BaseException } from '@db-studio/exceptions';
 
 export class InvalidQueryException extends BaseException {
 	constructor(message: string) {

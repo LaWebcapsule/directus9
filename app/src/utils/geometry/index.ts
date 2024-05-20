@@ -8,7 +8,7 @@ import {
 	AllGeoJSON,
 	GeoJSONParser,
 	SimpleGeometry,
-} from '@wbce-d9/types';
+} from '@db-studio/types';
 import { BBox, Point, Feature, FeatureCollection } from 'geojson';
 import { coordEach } from '@turf/meta';
 import { i18n } from '@/lang';

@@ -1,4 +1,4 @@
-import type { SchemaOverview } from '@wbce-d9/types';
+import type { SchemaOverview } from '@db-studio/types';
 import type { Knex } from 'knex';
 import getDatabase, {
 	hasDatabaseConnection,

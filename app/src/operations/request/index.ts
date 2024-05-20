@@ -1,4 +1,4 @@
-import { defineOperationApp } from '@wbce-d9/utils';
+import { defineOperationApp } from '@db-studio/utils';
 
 export default defineOperationApp({
 	id: 'request',

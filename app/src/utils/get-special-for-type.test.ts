@@ -1,4 +1,4 @@
-import { TYPES } from '@wbce-d9/constants';
+import { TYPES } from '@db-studio/constants';
 import { expect, test } from 'vitest';
 import { getSpecialForType } from './get-special-for-type';
 

@@ -1,4 +1,4 @@
-import { defineDisplay } from '@wbce-d9/utils';
+import { defineDisplay } from '@db-studio/utils';
 import DisplayUser from './user.vue';
 import { userName } from '@/utils/user-name';
 

@@ -1,5 +1,5 @@
-import type { KNEX_TYPES } from '@wbce-d9/constants';
-import type { Field, Relation, Type } from '@wbce-d9/types';
+import type { KNEX_TYPES } from '@db-studio/constants';
+import type { Field, Relation, Type } from '@db-studio/types';
 import type { Knex } from 'knex';
 import type { DatabaseClient } from '../../../types/index.js';
 import { getDatabaseClient } from '../../index.js';

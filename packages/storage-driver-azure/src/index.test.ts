@@ -1,8 +1,8 @@
 import type { ContainerClient } from '@azure/storage-blob';
 import type { Mock } from 'vitest';
 import { BlobServiceClient, StorageSharedKeyCredential } from '@azure/storage-blob';
-import { normalizePath } from '@wbce-d9/utils';
-import { isReadableStream } from '@wbce-d9/utils/node';
+import { normalizePath } from '@db-studio/utils';
+import { isReadableStream } from '@db-studio/utils/node';
 import { join } from 'node:path';
 import { PassThrough } from 'node:stream';
 import { afterEach, describe, expect, test, vi, beforeEach } from 'vitest';
@@ -23,8 +23,8 @@ import {
 	randGitShortSha as randUnique,
 } from '@ngneat/falso';
 
-vi.mock('@wbce-d9/utils/node');
-vi.mock('@wbce-d9/utils');
+vi.mock('@db-studio/utils/node');
+vi.mock('@db-studio/utils');
 vi.mock('@azure/storage-blob');
 vi.mock('node:path');
 

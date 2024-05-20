@@ -1,4 +1,4 @@
-import type { AppCollection, Field } from '@wbce-d9/types';
+import type { AppCollection, Field } from '@db-studio/types';
 import type { ComputedRef, Ref } from 'vue';
 import { computed, ref } from 'vue';
 import { useStores } from './use-system.js';

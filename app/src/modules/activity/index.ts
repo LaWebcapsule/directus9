@@ -1,4 +1,4 @@
-import { defineModule } from '@wbce-d9/utils';
+import { defineModule } from '@db-studio/utils';
 import ActivityCollection from './routes/collection.vue';
 import ActivityItem from './routes/item.vue';
 

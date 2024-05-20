@@ -5,15 +5,15 @@ import {
 	EXTENSION_TYPES,
 	ExtensionManifest,
 	HYBRID_EXTENSION_TYPES,
-} from '@wbce-d9/constants';
+} from '@db-studio/constants';
 import type {
 	ExtensionOptions,
 	ExtensionOptionsBundleEntry,
 	NestedExtensionType,
 	ExtensionManifest as TExtensionManifest,
-} from '@wbce-d9/types';
-import { isIn, isTypeIn } from '@wbce-d9/utils';
-import { pathToRelativeUrl } from '@wbce-d9/utils/node';
+} from '@db-studio/types';
+import { isIn, isTypeIn } from '@db-studio/utils';
+import { pathToRelativeUrl } from '@db-studio/utils/node';
 import chalk from 'chalk';
 import { execa } from 'execa';
 import fse from 'fs-extra';

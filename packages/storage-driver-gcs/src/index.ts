@@ -1,5 +1,5 @@
-import type { Driver, Range } from '@wbce-d9/storage';
-import { normalizePath } from '@wbce-d9/utils';
+import type { Driver, Range } from '@db-studio/storage';
+import { normalizePath } from '@db-studio/utils';
 import type { Bucket, GetFilesOptions } from '@google-cloud/storage';
 import { Storage } from '@google-cloud/storage';
 import { join } from 'node:path';

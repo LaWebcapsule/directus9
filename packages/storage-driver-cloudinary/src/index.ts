@@ -1,5 +1,5 @@
-import type { Driver, Range } from '@wbce-d9/storage';
-import { normalizePath } from '@wbce-d9/utils';
+import type { Driver, Range } from '@db-studio/storage';
+import { normalizePath } from '@db-studio/utils';
 import { Blob, Buffer } from 'node:buffer';
 import { createHash } from 'node:crypto';
 import { extname, join, parse } from 'node:path';

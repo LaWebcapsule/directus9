@@ -1,4 +1,4 @@
-import { Field } from '@wbce-d9/types';
+import { Field } from '@db-studio/types';
 
 export function getJSType(field: Field): string {
 	if (

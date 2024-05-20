@@ -1,4 +1,4 @@
-import { toArray } from '@wbce-d9/utils';
+import { toArray } from '@db-studio/utils';
 import logger from '../logger.js';
 import { URL } from 'url';
 

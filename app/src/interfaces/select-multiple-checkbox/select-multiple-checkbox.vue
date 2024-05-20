@@ -64,7 +64,7 @@
 <script lang="ts">
 import { useI18n } from 'vue-i18n';
 import { defineComponent, computed, toRefs, PropType, ref } from 'vue';
-import { useCustomSelectionMultiple } from '@wbce-d9/composables';
+import { useCustomSelectionMultiple } from '@db-studio/composables';
 
 type Option = {
 	text: string;

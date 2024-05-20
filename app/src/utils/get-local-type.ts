@@ -1,6 +1,6 @@
 import { useFieldsStore } from '@/stores/fields';
 import { useRelationsStore } from '@/stores/relations';
-import { LocalType, Relation } from '@wbce-d9/types';
+import { LocalType, Relation } from '@db-studio/types';
 
 export function getLocalTypeForField(collection: string, field: string): LocalType | null {
 	const fieldsStore = useFieldsStore();

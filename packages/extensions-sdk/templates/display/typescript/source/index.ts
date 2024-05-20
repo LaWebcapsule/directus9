@@ -1,4 +1,4 @@
-import { defineDisplay } from '@wbce-d9/extensions-sdk';
+import { defineDisplay } from '@db-studio/extensions-sdk';
 import DisplayComponent from './display.vue';
 
 export default defineDisplay({

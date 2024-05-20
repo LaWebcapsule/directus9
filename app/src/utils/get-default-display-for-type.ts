@@ -1,4 +1,4 @@
-import { Type } from '@wbce-d9/types';
+import { Type } from '@db-studio/types';
 
 const defaultDisplayMap: Record<Type, string> = {
 	alias: 'raw',

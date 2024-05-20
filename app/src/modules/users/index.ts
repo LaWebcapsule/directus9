@@ -1,4 +1,4 @@
-import { defineModule } from '@wbce-d9/utils';
+import { defineModule } from '@db-studio/utils';
 import Collection from './routes/collection.vue';
 import Item from './routes/item.vue';
 

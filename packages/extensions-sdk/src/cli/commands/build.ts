@@ -7,14 +7,14 @@ import {
 	ExtensionManifest,
 	ExtensionOptionsBundleEntries,
 	HYBRID_EXTENSION_TYPES,
-} from '@wbce-d9/constants';
+} from '@db-studio/constants';
 import type {
 	ApiExtensionType,
 	AppExtensionType,
 	ExtensionOptionsBundleEntry,
 	ExtensionManifest as TExtensionManifest,
-} from '@wbce-d9/types';
-import { isIn, isTypeIn } from '@wbce-d9/utils';
+} from '@db-studio/types';
+import { isIn, isTypeIn } from '@db-studio/utils';
 import commonjsDefault from '@rollup/plugin-commonjs';
 import jsonDefault from '@rollup/plugin-json';
 import { nodeResolve } from '@rollup/plugin-node-resolve';

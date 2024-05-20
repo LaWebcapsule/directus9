@@ -25,9 +25,9 @@
 </template>
 
 <script lang="ts">
-import { Field } from '@wbce-d9/types';
+import { Field } from '@db-studio/types';
 import { defineComponent, PropType, ref, watch } from 'vue';
-import { ValidationError } from '@wbce-d9/types';
+import { ValidationError } from '@db-studio/types';
 import AccordionSection from './accordion-section.vue';
 import { isEqual } from 'lodash';
 

@@ -24,7 +24,7 @@ This is the starting point to use the JS SDK. After you've created the `Directus
 methods from it to access your project and data.
 
 ```js
-import { Directus } from '@wbce-d9/sdk';
+import { Directus } from '@db-studio/sdk';
 
 const directus = new Directus('http://directus.example.com');
 ```
@@ -96,7 +96,7 @@ sometimes you may need to customize these defaults.
 ### Constructor
 
 ```js
-import { Directus } from '@wbce-d9/sdk';
+import { Directus } from '@db-studio/sdk';
 
 const directus = new Directus(url, init);
 ```
@@ -203,7 +203,7 @@ It is possible to provide a custom implementation by extending `IAuth`. While th
 situations, it is not needed for most use-cases.
 
 ```js
-import { IAuth, Directus } from '@wbce-d9/sdk';
+import { IAuth, Directus } from '@db-studio/sdk';
 
 class MyAuth extends IAuth {
 	async login() {
@@ -280,7 +280,7 @@ It is possible to provide a custom implementation by extending `BaseStorage`. Wh
 advanced situations, it is not needed for most use-cases.
 
 ```js
-import { BaseStorage, Directus } from '@wbce-d9/sdk';
+import { BaseStorage, Directus } from '@db-studio/sdk';
 
 class SessionStorage extends BaseStorage {
 	get(key) {
@@ -374,7 +374,7 @@ different HTTP libraries. While this could be useful in certain advanced situati
 use-cases.
 
 ```js
-import { ITransport, Directus } from '@wbce-d9/sdk';
+import { ITransport, Directus } from '@db-studio/sdk';
 
 class MyTransport extends ITransport {
 	buildResponse() {
@@ -453,7 +453,7 @@ const settings = await posts.singleton('settings').read();
 You can also extend the Directus system type information by providing type information for system collections as well.
 
 ```ts
-import { Directus } from '@wbce-d9/sdk';
+import { Directus } from '@db-studio/sdk';
 
 // Custom fields added to Directus user collection.
 type UserType = {
@@ -581,7 +581,7 @@ You can get an instance of the item handler by providing the collection (and typ
 > JavaScript
 
 ```js
-// import { Directus, ID } from '@wbce-d9/sdk';
+// import { Directus, ID } from '@db-studio/sdk';
 const { Directus } = require('@wbce-d9/sdk');
 
 const directus = new Directus('https://example.directus.app');
@@ -592,7 +592,7 @@ const articles = directus.items('articles');
 > TypeScript
 
 ```ts
-import { Directus, ID } from '@wbce-d9/sdk';
+import { Directus, ID } from '@db-studio/sdk';
 
 // Map your collection structure based on its fields.
 type Article = {

@@ -1,5 +1,5 @@
-import formatTitle from '@wbce-d9/format-title';
-import { toArray } from '@wbce-d9/utils';
+import formatTitle from '@db-studio/format-title';
+import { toArray } from '@db-studio/utils';
 import encodeURL from 'encodeurl';
 import exif from 'exif-reader';
 import type { IccProfile } from 'icc';

@@ -1,6 +1,6 @@
 import api from '@/api';
-import { Permission } from '@wbce-d9/types';
-import { deepMap } from '@wbce-d9/utils';
+import { Permission } from '@db-studio/types';
+import { deepMap } from '@db-studio/utils';
 import { parseFilter } from '@/utils/parse-filter';
 import { parsePreset } from '@/utils/parse-preset';
 import { defineStore } from 'pinia';

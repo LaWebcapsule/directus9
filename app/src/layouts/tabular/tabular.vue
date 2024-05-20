@@ -180,11 +180,11 @@ export default {
 <script lang="ts" setup>
 import { useShortcut } from '@/composables/use-shortcut';
 import { Collection } from '@/types/collections';
-import { useSync } from '@wbce-d9/composables';
-import { Field, Filter, Item, ShowSelect } from '@wbce-d9/types';
+import { useSync } from '@db-studio/composables';
+import { Field, Filter, Item, ShowSelect } from '@db-studio/types';
 import { ComponentPublicInstance, inject, ref, Ref, watch, computed, toRefs } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { get } from '@wbce-d9/utils';
+import { get } from '@db-studio/utils';
 import { AliasFields } from '@/composables/use-alias-fields';
 import { usePermissionsStore } from '@/stores/permissions';
 import { useUserStore } from '@/stores/user';

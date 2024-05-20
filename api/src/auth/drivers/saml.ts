@@ -1,5 +1,5 @@
 import * as validator from '@authenio/samlify-node-xmllint';
-import { BaseException } from '@wbce-d9/exceptions';
+import { BaseException } from '@db-studio/exceptions';
 import express, { Router } from 'express';
 import * as samlify from 'samlify';
 import { getAuthProvider } from '../../auth.js';

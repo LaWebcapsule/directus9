@@ -3,7 +3,7 @@ import { setActivePinia } from 'pinia';
 import { beforeEach, describe, expect, test, vi } from 'vitest';
 
 import { i18n } from '@/lang';
-import { Field } from '@wbce-d9/types';
+import { Field } from '@db-studio/types';
 import { merge } from 'lodash';
 import { useFieldsStore } from './fields';
 

@@ -1,4 +1,4 @@
-import { EXTENSION_LANGUAGES } from '@wbce-d9/constants';
+import { EXTENSION_LANGUAGES } from '@db-studio/constants';
 import { execa } from 'execa';
 import fse from 'fs-extra';
 import { resolve } from 'node:path';

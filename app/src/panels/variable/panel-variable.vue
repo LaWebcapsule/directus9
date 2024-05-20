@@ -13,7 +13,7 @@
 </template>
 
 <script lang="ts" setup>
-import { Type } from '@wbce-d9/types';
+import { Type } from '@db-studio/types';
 import { computed } from 'vue';
 import { useInsightsStore } from '@/stores/insights';
 

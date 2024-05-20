@@ -1,4 +1,4 @@
-import type { Query } from '@wbce-d9/types';
+import type { Query } from '@db-studio/types';
 import { ForbiddenException, UnprocessableEntityException } from '../exceptions/index.js';
 import type { AbstractServiceOptions, Alterations, Item, MutationOptions, PrimaryKey } from '../types/index.js';
 import { ItemsService } from './items.js';

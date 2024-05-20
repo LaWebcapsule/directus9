@@ -1,7 +1,7 @@
-import type { SchemaInspector, Table } from '@wbce-d9/schema';
-import { createInspector } from '@wbce-d9/schema';
-import type { Accountability, FieldMeta, RawField, SchemaOverview } from '@wbce-d9/types';
-import { addFieldFlag } from '@wbce-d9/utils';
+import type { SchemaInspector, Table } from '@db-studio/schema';
+import { createInspector } from '@db-studio/schema';
+import type { Accountability, FieldMeta, RawField, SchemaOverview } from '@db-studio/types';
+import { addFieldFlag } from '@db-studio/utils';
 import type Keyv from 'keyv';
 import type { Knex } from 'knex';
 import { chunk, omit } from 'lodash-es';

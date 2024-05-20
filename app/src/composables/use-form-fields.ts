@@ -1,5 +1,5 @@
 import { FormField } from '@/components/v-form/types';
-import { Field } from '@wbce-d9/types';
+import { Field } from '@db-studio/types';
 import { getDefaultInterfaceForType } from '@/utils/get-default-interface-for-type';
 import { cloneDeep, orderBy } from 'lodash';
 import { computed, ComputedRef, Ref } from 'vue';

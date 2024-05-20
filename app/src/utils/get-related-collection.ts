@@ -1,5 +1,5 @@
 import { useRelationsStore } from '@/stores/relations';
-import { Relation } from '@wbce-d9/types';
+import { Relation } from '@db-studio/types';
 import { getLocalTypeForField } from './get-local-type';
 
 export interface RelatedCollectionData {

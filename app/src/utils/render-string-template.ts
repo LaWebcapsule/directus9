@@ -1,7 +1,7 @@
 import { useAliasFields } from '@/composables/use-alias-fields';
 import { useFieldsStore } from '@/stores/fields';
-import { Field } from '@wbce-d9/types';
-import { get, getFieldsFromTemplate } from '@wbce-d9/utils';
+import { Field } from '@db-studio/types';
+import { get, getFieldsFromTemplate } from '@db-studio/utils';
 import { render, renderFn } from 'micromustache';
 import { computed, ComputedRef, Ref, ref, unref } from 'vue';
 import { set } from 'lodash';

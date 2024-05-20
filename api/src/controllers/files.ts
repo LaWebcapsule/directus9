@@ -1,5 +1,5 @@
-import formatTitle from '@wbce-d9/format-title';
-import { toArray } from '@wbce-d9/utils';
+import formatTitle from '@db-studio/format-title';
+import { toArray } from '@db-studio/utils';
 import Busboy from 'busboy';
 import type { RequestHandler } from 'express';
 import express from 'express';

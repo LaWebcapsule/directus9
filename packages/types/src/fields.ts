@@ -1,5 +1,5 @@
-import type { Column } from '@wbce-d9/schema';
-import type { FUNCTIONS, GEOMETRY_FORMATS, GEOMETRY_TYPES, LOCAL_TYPES, TYPES } from '@wbce-d9/constants';
+import type { Column } from '@db-studio/schema';
+import type { FUNCTIONS, GEOMETRY_FORMATS, GEOMETRY_TYPES, LOCAL_TYPES, TYPES } from '@db-studio/constants';
 import type { Filter, FilterOperator } from './filter.js';
 import type { DeepPartial } from './misc.js';
 

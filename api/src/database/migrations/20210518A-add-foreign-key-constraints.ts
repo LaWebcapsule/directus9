@@ -1,6 +1,6 @@
-import type { RelationMeta } from '@wbce-d9/types';
+import type { RelationMeta } from '@db-studio/types';
 import type { Knex } from 'knex';
-import { createInspector } from '@wbce-d9/schema';
+import { createInspector } from '@db-studio/schema';
 import logger from '../../logger.js';
 import { getDefaultIndexName } from '../../utils/get-default-index-name.js';
 

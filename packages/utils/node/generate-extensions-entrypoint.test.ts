@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
-import type { Extension } from '@wbce-d9/types';
+import type { Extension } from '@db-studio/types';
 import { generateExtensionsEntrypoint } from './generate-extensions-entrypoint.js';
 
 describe('generateExtensionsEntrypoint', () => {

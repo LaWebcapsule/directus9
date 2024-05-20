@@ -1,5 +1,5 @@
-import type { Accountability, Query, SchemaOverview } from '@wbce-d9/types';
-import { parseJSON, toArray } from '@wbce-d9/utils';
+import type { Accountability, Query, SchemaOverview } from '@db-studio/types';
+import { parseJSON, toArray } from '@db-studio/utils';
 import { format, isValid, parseISO } from 'date-fns';
 import flat from 'flat';
 import Joi from 'joi';

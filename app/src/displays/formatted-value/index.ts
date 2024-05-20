@@ -1,7 +1,7 @@
-import { defineDisplay } from '@wbce-d9/utils';
-import { DisplayConfig } from '@wbce-d9/types';
+import { defineDisplay } from '@db-studio/utils';
+import { DisplayConfig } from '@db-studio/types';
 import DisplayFormattedValue from './formatted-value.vue';
-import formatTitle from '@wbce-d9/format-title';
+import formatTitle from '@db-studio/format-title';
 import { decode } from 'html-entities';
 import dompurify from 'dompurify';
 

@@ -1,7 +1,7 @@
 import InsightsOverview from './routes/overview.vue';
 import InsightsDashboard from './routes/dashboard.vue';
 import InsightsPanelConfiguration from './routes/panel-configuration.vue';
-import { defineModule } from '@wbce-d9/utils';
+import { defineModule } from '@db-studio/utils';
 import { useInsightsStore } from '@/stores/insights';
 
 export default defineModule({

@@ -1,4 +1,4 @@
-import { definePanel } from '@wbce-d9/extensions-sdk';
+import { definePanel } from '@db-studio/extensions-sdk';
 import PanelComponent from './panel.vue';
 
 export default definePanel({

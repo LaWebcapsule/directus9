@@ -2,8 +2,8 @@
 'use strict';
 
 import inquirer from 'inquirer';
-import { EXTENSION_LANGUAGES, EXTENSION_TYPES, BUNDLE_EXTENSION_TYPES } from '@wbce-d9/constants';
-import { create } from '@wbce-d9/extensions-sdk/cli';
+import { EXTENSION_LANGUAGES, EXTENSION_TYPES, BUNDLE_EXTENSION_TYPES } from '@db-studio/constants';
+import { create } from '@db-studio/extensions-sdk/cli';
 
 run();
 

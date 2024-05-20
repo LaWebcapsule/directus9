@@ -1,6 +1,6 @@
 import { BlobServiceClient, ContainerClient, StorageSharedKeyCredential } from '@azure/storage-blob';
-import type { Driver, Range } from '@wbce-d9/storage';
-import { normalizePath } from '@wbce-d9/utils';
+import type { Driver, Range } from '@db-studio/storage';
+import { normalizePath } from '@db-studio/utils';
 import { join } from 'node:path';
 import type { Readable } from 'node:stream';
 

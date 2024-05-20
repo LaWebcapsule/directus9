@@ -1,4 +1,4 @@
-import * as sharedExceptions from '@wbce-d9/exceptions';
+import * as sharedExceptions from '@db-studio/exceptions';
 import type {
 	Accountability,
 	ActionHandler,
@@ -7,9 +7,9 @@ import type {
 	Operation,
 	OperationHandler,
 	SchemaOverview,
-} from '@wbce-d9/types';
-import { Action } from '@wbce-d9/constants';
-import { applyOptionsData, isValidJSON, parseJSON, toArray } from '@wbce-d9/utils';
+} from '@db-studio/types';
+import { Action } from '@db-studio/constants';
+import { applyOptionsData, isValidJSON, parseJSON, toArray } from '@db-studio/utils';
 import fastRedact from 'fast-redact';
 import type { Knex } from 'knex';
 import { omit, pick } from 'lodash-es';
@@ -19,7 +19,7 @@ import getDatabase from './database/index.js';
 import emitter from './emitter.js';
 import env from './env.js';
 import * as exceptions from './exceptions/index.js';
-import { BaseException } from '@wbce-d9/exceptions';
+import { BaseException } from '@db-studio/exceptions';
 import logger from './logger.js';
 import { getMessenger } from './messenger.js';
 import { ActivityService } from './services/activity.js';

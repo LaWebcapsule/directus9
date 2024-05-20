@@ -210,7 +210,7 @@ import { useInsightsStore } from '@/stores/insights';
 import { usePermissionsStore } from '@/stores/permissions';
 import { pointOnLine } from '@/utils/point-on-line';
 import RefreshSidebarDetail from '@/views/private/components/refresh-sidebar-detail.vue';
-import { applyOptionsData } from '@wbce-d9/utils';
+import { applyOptionsData } from '@db-studio/utils';
 import { assign, isEmpty } from 'lodash';
 import { computed, ref, toRefs, unref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';

@@ -41,9 +41,9 @@
 import { useI18n } from 'vue-i18n';
 import { defineComponent, PropType, computed } from 'vue';
 import Repeater from './list.vue';
-import { Field, FieldMeta } from '@wbce-d9/types';
+import { Field, FieldMeta } from '@db-studio/types';
 import { FIELD_TYPES_SELECT } from '@/constants';
-import { DeepPartial } from '@wbce-d9/types';
+import { DeepPartial } from '@db-studio/types';
 import { translate } from '@/utils/translate-object-values';
 
 export default defineComponent({

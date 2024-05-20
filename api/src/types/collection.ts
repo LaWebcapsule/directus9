@@ -1,5 +1,5 @@
-import type { Field } from '@wbce-d9/types';
-import type { Table } from '@wbce-d9/schema';
+import type { Field } from '@db-studio/types';
+import type { Table } from '@db-studio/schema';
 
 export type CollectionMeta = {
 	collection: string;

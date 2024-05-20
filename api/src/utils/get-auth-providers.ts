@@ -1,4 +1,4 @@
-import { toArray } from '@wbce-d9/utils';
+import { toArray } from '@db-studio/utils';
 import env from '../env.js';
 
 interface AuthProvider {

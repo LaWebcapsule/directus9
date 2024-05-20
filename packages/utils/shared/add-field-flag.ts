@@ -1,4 +1,4 @@
-import type { RawField, FieldMeta } from '@wbce-d9/types';
+import type { RawField, FieldMeta } from '@db-studio/types';
 
 /**
  * Add a flag to a field.

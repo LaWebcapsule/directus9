@@ -1,4 +1,4 @@
-import { defineInterface } from '@wbce-d9/extensions-sdk';
+import { defineInterface } from '@db-studio/extensions-sdk';
 import InterfaceComponent from './interface.vue';
 
 export default defineInterface({

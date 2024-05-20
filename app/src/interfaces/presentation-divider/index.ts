@@ -1,4 +1,4 @@
-import { defineInterface } from '@wbce-d9/utils';
+import { defineInterface } from '@db-studio/utils';
 import InterfacePresentationDivider from './presentation-divider.vue';
 import PreviewSVG from './preview.svg?raw';
 

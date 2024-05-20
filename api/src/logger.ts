@@ -1,4 +1,4 @@
-import { toArray } from '@wbce-d9/utils';
+import { toArray } from '@db-studio/utils';
 import { merge } from 'lodash-es';
 import { pino } from 'pino';
 import type { LoggerOptions } from 'pino';

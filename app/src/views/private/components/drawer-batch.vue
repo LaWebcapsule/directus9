@@ -30,7 +30,7 @@ import api from '@/api';
 import { VALIDATION_TYPES } from '@/constants';
 import { APIError } from '@/types/error';
 import { unexpectedError } from '@/utils/unexpected-error';
-import { getEndpoint } from '@wbce-d9/utils';
+import { getEndpoint } from '@db-studio/utils';
 
 export default defineComponent({
 	props: {

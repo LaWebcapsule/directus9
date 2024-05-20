@@ -1,4 +1,4 @@
-import { defineModule } from '@wbce-d9/extensions-sdk';
+import { defineModule } from '@db-studio/extensions-sdk';
 import ModuleComponent from './module.vue';
 
 export default defineModule({

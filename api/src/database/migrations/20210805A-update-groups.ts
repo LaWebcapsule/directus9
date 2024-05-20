@@ -1,4 +1,4 @@
-import { parseJSON } from '@wbce-d9/utils';
+import { parseJSON } from '@db-studio/utils';
 import type { Knex } from 'knex';
 
 export async function up(knex: Knex): Promise<void> {

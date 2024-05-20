@@ -1,4 +1,4 @@
-import { getSimpleHash } from '@wbce-d9/utils';
+import { getSimpleHash } from '@db-studio/utils';
 /**
  * Generate an index name for a given collection + fields combination.
  *

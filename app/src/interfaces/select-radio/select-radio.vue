@@ -40,7 +40,7 @@
 <script lang="ts">
 import { useI18n } from 'vue-i18n';
 import { defineComponent, computed, toRefs, PropType } from 'vue';
-import { useCustomSelection } from '@wbce-d9/composables';
+import { useCustomSelection } from '@db-studio/composables';
 
 type Option = {
 	text: string;

@@ -1,5 +1,5 @@
-import { APP_EXTENSION_TYPES, HYBRID_EXTENSION_TYPES } from '@wbce-d9/constants';
-import type { AppExtension, BundleExtension, Extension, HybridExtension } from '@wbce-d9/types';
+import { APP_EXTENSION_TYPES, HYBRID_EXTENSION_TYPES } from '@db-studio/constants';
+import type { AppExtension, BundleExtension, Extension, HybridExtension } from '@db-studio/types';
 import path from 'path';
 import { isIn, isTypeIn } from './array-helpers.js';
 import { pluralize } from './pluralize.js';

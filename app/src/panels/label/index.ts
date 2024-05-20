@@ -1,4 +1,4 @@
-import { definePanel } from '@wbce-d9/utils';
+import { definePanel } from '@db-studio/utils';
 import PanelLabel from './panel-label.vue';
 
 export default definePanel({

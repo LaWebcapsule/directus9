@@ -45,9 +45,9 @@
 <script lang="ts">
 import { useI18n } from 'vue-i18n';
 import { defineComponent, ref, watch, PropType, computed, inject, Ref } from 'vue';
-import { Filter } from '@wbce-d9/types';
+import { Filter } from '@db-studio/types';
 import { isObject } from 'lodash';
-import { useElementSize } from '@wbce-d9/composables';
+import { useElementSize } from '@db-studio/composables';
 
 export default defineComponent({
 	props: {

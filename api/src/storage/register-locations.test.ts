@@ -1,5 +1,5 @@
-import { toArray } from '@wbce-d9/utils';
-import type { StorageManager } from '@wbce-d9/storage';
+import { toArray } from '@db-studio/utils';
+import type { StorageManager } from '@db-studio/storage';
 import { randNumber, randWord } from '@ngneat/falso';
 import { afterEach, beforeEach, expect, test, vi } from 'vitest';
 import { getEnv } from '../env.js';
@@ -7,7 +7,7 @@ import { getConfigFromEnv } from '../utils/get-config-from-env.js';
 import { registerLocations } from './register-locations.js';
 
 vi.mock('../env.js');
-vi.mock('@wbce-d9/utils');
+vi.mock('@db-studio/utils');
 vi.mock('../utils/get-config-from-env.js');
 
 let sample: {

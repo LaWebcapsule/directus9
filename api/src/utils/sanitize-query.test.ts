@@ -2,8 +2,8 @@ import { describe, expect, test, vi } from 'vitest';
 
 import { sanitizeQuery } from './sanitize-query.js';
 
-vi.mock('@wbce-d9/utils', async () => {
-	const actual = (await vi.importActual('@wbce-d9/utils')) as any;
+vi.mock('@db-studio/utils', async () => {
+	const actual = (await vi.importActual('@db-studio/utils')) as any;
 
 	return {
 		...actual,

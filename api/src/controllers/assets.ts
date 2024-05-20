@@ -1,5 +1,5 @@
-import type { Range } from '@wbce-d9/storage';
-import { parseJSON } from '@wbce-d9/utils';
+import type { Range } from '@db-studio/storage';
+import { parseJSON } from '@db-studio/utils';
 import contentDisposition from 'content-disposition';
 import { Router } from 'express';
 import { merge, pick } from 'lodash-es';

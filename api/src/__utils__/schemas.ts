@@ -1,4 +1,4 @@
-import type { CollectionsOverview, Relation } from '@wbce-d9/types';
+import type { CollectionsOverview, Relation } from '@db-studio/types';
 
 export const systemSchema = {
 	collections: {

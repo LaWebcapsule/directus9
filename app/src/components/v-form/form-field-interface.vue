@@ -48,7 +48,7 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n';
 import { computed } from 'vue';
-import { Field } from '@wbce-d9/types';
+import { Field } from '@db-studio/types';
 import { getDefaultInterfaceForType } from '@/utils/get-default-interface-for-type';
 import { useExtension } from '@/composables/use-extension';
 

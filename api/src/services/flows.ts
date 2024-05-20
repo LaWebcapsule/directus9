@@ -1,4 +1,4 @@
-import type { FlowRaw } from '@wbce-d9/types';
+import type { FlowRaw } from '@db-studio/types';
 import { getFlowManager } from '../flows.js';
 import type { AbstractServiceOptions, Item, MutationOptions, PrimaryKey } from '../types/index.js';
 import { ItemsService } from './items.js';

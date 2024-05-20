@@ -1,4 +1,4 @@
-import type { NestedExtensionType } from '@wbce-d9/types';
+import type { NestedExtensionType } from '@db-studio/types';
 import fse from 'fs-extra';
 import path from 'path';
 import { pluralize } from './pluralize.js';

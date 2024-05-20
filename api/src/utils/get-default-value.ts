@@ -1,6 +1,6 @@
-import type { SchemaOverview } from '@wbce-d9/schema/types/overview';
-import { parseJSON } from '@wbce-d9/utils';
-import type { Column } from '@wbce-d9/schema';
+import type { SchemaOverview } from '@db-studio/schema/types/overview';
+import { parseJSON } from '@db-studio/utils';
+import type { Column } from '@db-studio/schema';
 import env from '../env.js';
 import logger from '../logger.js';
 import getLocalType from './get-local-type.js';

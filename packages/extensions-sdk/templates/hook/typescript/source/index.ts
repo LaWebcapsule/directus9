@@ -1,4 +1,4 @@
-import { defineHook } from '@wbce-d9/extensions-sdk';
+import { defineHook } from '@db-studio/extensions-sdk';
 
 export default defineHook(({ filter, action }) => {
 	filter('items.create', () => {

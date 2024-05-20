@@ -8,7 +8,7 @@ import type {
 	EndpointConfig,
 	OperationAppConfig,
 	OperationApiConfig,
-} from '@wbce-d9/types';
+} from '@db-studio/types';
 
 export function defineInterface<T extends InterfaceConfig>(config: T): T {
 	return config;

@@ -1,5 +1,5 @@
 import api from '@/api';
-import { Permission, Collection } from '@wbce-d9/types';
+import { Permission, Collection } from '@db-studio/types';
 import { unexpectedError } from '@/utils/unexpected-error';
 import { inject, ref, Ref } from 'vue';
 

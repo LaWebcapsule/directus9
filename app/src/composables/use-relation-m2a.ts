@@ -2,7 +2,7 @@ import { useCollectionsStore } from '@/stores/collections';
 import { useFieldsStore } from '@/stores/fields';
 import { useRelationsStore } from '@/stores/relations';
 import { Collection } from '@/types/collections';
-import { Field, Relation } from '@wbce-d9/types';
+import { Field, Relation } from '@db-studio/types';
 import { computed, Ref } from 'vue';
 
 export type RelationM2A = {

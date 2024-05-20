@@ -1,5 +1,5 @@
-import { defineOperationApp } from '@wbce-d9/utils';
-import { toArray } from '@wbce-d9/utils';
+import { defineOperationApp } from '@db-studio/utils';
+import { toArray } from '@db-studio/utils';
 
 export default defineOperationApp({
 	id: 'item-read',

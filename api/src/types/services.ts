@@ -1,4 +1,4 @@
-import type { Accountability, Query, SchemaOverview } from '@wbce-d9/types';
+import type { Accountability, Query, SchemaOverview } from '@db-studio/types';
 import type { Knex } from 'knex';
 import type { Item, PrimaryKey } from './items.js';
 

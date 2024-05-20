@@ -9,7 +9,7 @@
 import { computed } from 'vue';
 import { flatten } from 'lodash';
 import { remove as removeDiacritics } from 'diacritics';
-import { toArray } from '@wbce-d9/utils';
+import { toArray } from '@db-studio/utils';
 
 type HighlightPart = {
 	text: string;

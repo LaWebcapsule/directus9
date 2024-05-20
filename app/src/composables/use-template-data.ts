@@ -1,7 +1,7 @@
 import api from '@/api';
 import { Collection } from '@/types/collections';
 import { adjustFieldsForDisplays } from '@/utils/adjust-fields-for-displays';
-import { getEndpoint, getFieldsFromTemplate } from '@wbce-d9/utils';
+import { getEndpoint, getFieldsFromTemplate } from '@db-studio/utils';
 import { computed, Ref, ref, watch } from 'vue';
 
 type UsableTemplateData = {

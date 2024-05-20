@@ -1,4 +1,4 @@
-import type { Role } from '@wbce-d9/types';
+import type { Role } from '@db-studio/types';
 import express from 'express';
 import Joi from 'joi';
 import { ForbiddenException, InvalidCredentialsException, InvalidPayloadException } from '../exceptions/index.js';

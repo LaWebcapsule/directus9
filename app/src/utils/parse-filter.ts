@@ -1,7 +1,7 @@
 import { useUserStore } from '@/stores/user';
-import { Accountability } from '@wbce-d9/types';
-import { parseFilter as parseFilterShared } from '@wbce-d9/utils';
-import { Filter } from '@wbce-d9/types';
+import { Accountability } from '@db-studio/types';
+import { parseFilter as parseFilterShared } from '@db-studio/utils';
+import { Filter } from '@db-studio/types';
 
 export function parseFilter(filter: Filter | null): Filter {
 	const userStore = useUserStore();

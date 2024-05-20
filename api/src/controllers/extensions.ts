@@ -1,6 +1,6 @@
-import { EXTENSION_TYPES } from '@wbce-d9/constants';
-import type { Plural } from '@wbce-d9/types';
-import { depluralize, isIn } from '@wbce-d9/utils';
+import { EXTENSION_TYPES } from '@db-studio/constants';
+import type { Plural } from '@db-studio/types';
+import { depluralize, isIn } from '@db-studio/utils';
 import { Router } from 'express';
 import env from '../env.js';
 import { RouteNotFoundException } from '../exceptions/index.js';

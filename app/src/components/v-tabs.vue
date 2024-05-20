@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import { toRefs, provide, ref } from 'vue';
-import { useGroupableParent } from '@wbce-d9/composables';
+import { useGroupableParent } from '@db-studio/composables';
 
 interface Props {
 	/** Display the tabs in a vertical format */

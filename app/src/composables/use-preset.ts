@@ -1,7 +1,7 @@
 import { usePresetsStore } from '@/stores/presets';
 import { useUserStore } from '@/stores/user';
 import { translate } from '@/utils/translate-literal';
-import { Filter, Preset } from '@wbce-d9/types';
+import { Filter, Preset } from '@db-studio/types';
 import { assign, debounce, isEqual } from 'lodash';
 import { computed, ComputedRef, ref, Ref, watch } from 'vue';
 

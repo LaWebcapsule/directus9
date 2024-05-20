@@ -2,8 +2,8 @@ import { useCollectionsStore } from '@/stores/collections';
 import { useFieldsStore } from '@/stores/fields';
 import { adjustFieldsForDisplays } from '@/utils/adjust-fields-for-displays';
 import { unexpectedError } from '@/utils/unexpected-error';
-import { getEndpoint, getFieldsFromTemplate } from '@wbce-d9/utils';
-import { useApi } from '@wbce-d9/composables';
+import { getEndpoint, getFieldsFromTemplate } from '@db-studio/utils';
+import { useApi } from '@db-studio/composables';
 import { computed, Ref, ref, watch } from 'vue';
 
 export default function useDisplayItems(collection: Ref<string>, template: Ref<string>, ids: Ref<(string | number)[]>) {

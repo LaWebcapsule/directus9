@@ -1,4 +1,4 @@
-import { defineOperationApp } from '@wbce-d9/utils';
+import { defineOperationApp } from '@db-studio/utils';
 import { useFlowsStore } from '@/stores/flows';
 
 export default defineOperationApp({

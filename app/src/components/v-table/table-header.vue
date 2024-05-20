@@ -100,13 +100,13 @@
 <script lang="ts" setup>
 import { useI18n } from 'vue-i18n';
 import { computed, ref, useSlots } from 'vue';
-import { ShowSelect } from '@wbce-d9/types';
+import { ShowSelect } from '@db-studio/types';
 import { useEventListener } from '@/composables/use-event-listener';
 import { Header, Sort } from './types';
 import { throttle, clone } from 'lodash';
 import Draggable from 'vuedraggable';
 import { hideDragImage } from '@/utils/hide-drag-image';
-import { useSync } from '@wbce-d9/composables';
+import { useSync } from '@db-studio/composables';
 
 interface Props {
 	headers: Header[];

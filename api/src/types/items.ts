@@ -3,8 +3,8 @@
  * expecting an item vs any other generic object.
  */
 
-import type { BaseException } from '@wbce-d9/exceptions';
-import type { EventContext } from '@wbce-d9/types';
+import type { BaseException } from '@db-studio/exceptions';
+import type { EventContext } from '@db-studio/types';
 import type { MutationTracker } from '../services/items.js';
 
 export type Item = Record<string, any>;

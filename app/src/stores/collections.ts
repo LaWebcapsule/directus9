@@ -1,12 +1,12 @@
 import api from '@/api';
 import { i18n } from '@/lang';
-import { Collection as CollectionRaw, DeepPartial, Field } from '@wbce-d9/types';
+import { Collection as CollectionRaw, DeepPartial, Field } from '@db-studio/types';
 import { Collection } from '@/types/collections';
-import { getCollectionType } from '@wbce-d9/utils';
+import { getCollectionType } from '@db-studio/utils';
 import { notify } from '@/utils/notify';
 import { getLiteralInterpolatedTranslation } from '@/utils/get-literal-interpolated-translation';
 import { unexpectedError } from '@/utils/unexpected-error';
-import formatTitle from '@wbce-d9/format-title';
+import formatTitle from '@db-studio/format-title';
 import { defineStore } from 'pinia';
 import { COLLECTIONS_DENY_LIST } from '@/constants';
 import { isEqual, orderBy, omit, isNil } from 'lodash';

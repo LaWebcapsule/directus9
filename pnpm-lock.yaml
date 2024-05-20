@@ -224,7 +224,7 @@ importers:
         version: 4.5.2
       knex:
         specifier: 2.4.2
-        version: 2.4.2(mysql@2.18.1)(pg@8.10.0)(sqlite3@5.1.6(encoding@0.1.13))(tedious@16.0.0)
+        version: 2.4.2(mysql@2.18.1)(pg@8.10.0)(sqlite3@5.1.6(encoding@0.1.13))(tedious@18.0.0)
       ldapjs:
         specifier: 2.3.3
         version: 2.3.3
@@ -356,8 +356,8 @@ importers:
         specifier: 5.1.6
         version: 5.1.6(encoding@0.1.13)
       tedious:
-        specifier: 16.0.0
-        version: 16.0.0
+        specifier: 18.0.0
+        version: 18.0.0
     devDependencies:
       '@db-studio/config':
         specifier: workspace:*
@@ -487,7 +487,7 @@ importers:
         version: 4.0.0
       knex-mock-client:
         specifier: 2.0.0
-        version: 2.0.0(knex@2.4.2(mysql@2.18.1)(pg@8.10.0)(sqlite3@5.1.6(encoding@0.1.13))(tedious@16.0.0))
+        version: 2.0.0(knex@2.4.2(mysql@2.18.1)(pg@8.10.0)(sqlite3@5.1.6(encoding@0.1.13))(tedious@18.0.0))
       supertest:
         specifier: 6.3.3
         version: 6.3.3
@@ -820,7 +820,7 @@ importers:
         specifier: 0.5.0
         version: 0.5.0
 
-  directus:
+  db-studio:
     dependencies:
       '@db-studio/api':
         specifier: workspace:*
@@ -1049,7 +1049,7 @@ importers:
     dependencies:
       knex:
         specifier: 2.4.2
-        version: 2.4.2(mysql@2.18.1)(pg@8.10.0)(sqlite3@5.1.6(encoding@0.1.13))(tedious@16.0.0)
+        version: 2.4.2(mysql@2.18.1)(pg@8.10.0)(sqlite3@5.1.6(encoding@0.1.13))(tedious@18.0.0)
     devDependencies:
       '@db-studio/config':
         specifier: workspace:*
@@ -1263,7 +1263,7 @@ importers:
         version: 0.5.0
       knex:
         specifier: 2.4.2
-        version: 2.4.2(mysql@2.18.1)(pg@8.10.0)(sqlite3@5.1.6(encoding@0.1.13))(tedious@16.0.0)
+        version: 2.4.2(mysql@2.18.1)(pg@8.10.0)(sqlite3@5.1.6(encoding@0.1.13))(tedious@18.0.0)
       pino:
         specifier: 8.11.0
         version: 8.11.0
@@ -1418,7 +1418,7 @@ importers:
         version: 2.2.5
       knex:
         specifier: 2.4.2
-        version: 2.4.2(mysql@2.18.1)(pg@8.10.0)(sqlite3@5.1.6(encoding@0.1.13))(tedious@16.0.0)
+        version: 2.4.2(mysql@2.18.1)(pg@8.10.0)(sqlite3@5.1.6(encoding@0.1.13))(tedious@18.0.0)
       listr2:
         specifier: 6.3.1
         version: 6.3.1(enquirer@2.3.6)
@@ -1747,9 +1747,17 @@ packages:
     resolution: {integrity: sha512-TrRLIoSQVzfAJX9H1JeFjzAoDGcoK1IYX1UImfceTZpsyYfWr09Ss1aHW1y5TrrR3iq6RZLBwJ3E24uwPhwahw==}
     engines: {node: '>=12.0.0'}
 
+  '@azure/abort-controller@2.1.2':
+    resolution: {integrity: sha512-nBrLsEWm4J2u5LpAPjxADTlq3trDgVZZXHNKabeXZtpq3d3AbN/KGO82R87rdDz5/lYB024rtEf10/q0urNgsA==}
+    engines: {node: '>=18.0.0'}
+
   '@azure/core-auth@1.4.0':
     resolution: {integrity: sha512-HFrcTgmuSuukRf/EdPmqBrc5l6Q5Uu+2TbuhaKbgaCpP2TfAeiNaQPAadxO+CYBRHGUzIDteMAjFspFLDLnKVQ==}
     engines: {node: '>=12.0.0'}
+
+  '@azure/core-auth@1.7.2':
+    resolution: {integrity: sha512-Igm/S3fDYmnMq1uKS38Ae1/m37B3zigdlZw+kocwEhh5GjyKjPrXKO2J6rzpC1wAxrNil/jX9BJRqBshyjnF3g==}
+    engines: {node: '>=18.0.0'}
 
   '@azure/core-client@1.7.2':
     resolution: {integrity: sha512-ye5554gnVnXdfZ64hptUtETgacXoRWxYv1JF5MctoAzTSH5dXhDPZd9gOjDPyWMcLIk58pnP5+p5vGX6PYn1ag==}
@@ -1787,9 +1795,13 @@ packages:
     resolution: {integrity: sha512-2bECOUh88RvL1pMZTcc6OzfobBeWDBf5oBbhjIhT1MV9otMVWCzpOJkkiKtrnO88y5GGBelgY8At73KGAdbkeQ==}
     engines: {node: '>=14.0.0'}
 
-  '@azure/identity@2.1.0':
-    resolution: {integrity: sha512-BPDz1sK7Ul9t0l9YKLEa8PHqWU4iCfhGJ+ELJl6c8CP3TpJt2urNCbm0ZHsthmxRsYoMPbz2Dvzj30zXZVmAFw==}
-    engines: {node: '>=12.0.0'}
+  '@azure/core-util@1.9.0':
+    resolution: {integrity: sha512-AfalUQ1ZppaKuxPPMsFEUdX6GZPB3d9paR9d/TTL7Ow2De8cJaC7ibi7kWVlFAVPCYo31OcnGymc0R89DX8Oaw==}
+    engines: {node: '>=18.0.0'}
+
+  '@azure/identity@3.4.2':
+    resolution: {integrity: sha512-0q5DL4uyR0EZ4RXQKD8MadGH6zTIcloUoS/RVbCpNpej4pwte0xpqYxk8K97Py2RiuUvI7F4GXpoT4046VfufA==}
+    engines: {node: '>=14.0.0'}
 
   '@azure/keyvault-keys@4.7.0':
     resolution: {integrity: sha512-HScWdORbRCKi1vdKI6EChe/t/P/zV7jcGZWfj18BOyeensk5d1/Ynfx1t6xfAy5zUIQvAWVU97hXdCznDpULbQ==}
@@ -1799,21 +1811,17 @@ packages:
     resolution: {integrity: sha512-ustrPY8MryhloQj7OWGe+HrYx+aoiOxzbXTtgblbV3xwCqpzUK36phH3XNHQKj3EPonyFUuDTfR3qFhTEAuZEg==}
     engines: {node: '>=14.0.0'}
 
-  '@azure/msal-browser@2.37.0':
-    resolution: {integrity: sha512-YNGD/W/tw/5wDWlXOfmrVILaxVsorVLxYU2ovmL1PDvxkdudbQRyGk/76l4emqgDAl/kPQeqyivxjOU6w1YfvQ==}
+  '@azure/msal-browser@3.14.0':
+    resolution: {integrity: sha512-Un85LhOoecJ3HDTS3Uv3UWnXC9/43ZSO+Kc+anSqpZvcEt58SiO/3DuVCAe1A3I5UIBYJNMgTmZPGXQ0MVYrwA==}
     engines: {node: '>=0.8.0'}
 
-  '@azure/msal-common@13.0.0':
-    resolution: {integrity: sha512-GqCOg5H5bouvLij9NFXFkh+asRRxsPBRwnTDsfK7o0KcxYHJbuidKw8/VXpycahGXNxgtuhqtK/n5he+5NhyEA==}
+  '@azure/msal-common@14.10.0':
+    resolution: {integrity: sha512-Zk6DPDz7e1wPgLoLgAp0349Yay9RvcjPM5We/ehuenDNsz/t9QEFI7tRoHpp/e47I4p20XE3FiDlhKwAo3utDA==}
     engines: {node: '>=0.8.0'}
 
-  '@azure/msal-common@7.6.0':
-    resolution: {integrity: sha512-XqfbglUTVLdkHQ8F9UQJtKseRr3sSnr9ysboxtoswvaMVaEfvyLtMoHv9XdKUfOc0qKGzNgRFd9yRjIWVepl6Q==}
-    engines: {node: '>=0.8.0'}
-
-  '@azure/msal-node@1.17.2':
-    resolution: {integrity: sha512-l8edYnA2LQj4ue3pjxVz1Qy4HuU5xbcoebfe2bGTRvBL9Q6n2Df47aGftkLIyimD1HxHuA4ZZOe23a/HshoYXw==}
-    engines: {node: 10 || 12 || 14 || 16 || 18}
+  '@azure/msal-node@2.8.1':
+    resolution: {integrity: sha512-VcZZM+5VvCWRBTOF7SxMKaxrz+EXjntx2u5AQe7QE06e6FuPJElGBrImgNgCh5QmFaNCfVFO+3qNR7UoFD/Gfw==}
+    engines: {node: '>=16'}
 
   '@azure/storage-blob@12.14.0':
     resolution: {integrity: sha512-g8GNUDpMisGXzBeD+sKphhH5yLwesB4JkHr1U6be/X3F+cAMcyGLPD1P89g2M7wbEtUJWoikry1rlr83nNRBzg==}
@@ -3169,8 +3177,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.18':
     resolution: {integrity: sha512-w+niJYzMHdd7USdiH2U6869nqhD2nbfZXND5Yp93qIbEmnDNk7PD48o+YchRVpzMU7M6jVCbenTR7PA1FLQ9pA==}
 
-  '@js-joda/core@5.5.3':
-    resolution: {integrity: sha512-7dqNYwG8gCt4hfg5PKgM7xLEcgSBcx/UgC92OMnhMmvAnq11QzDFPrxUkNR/u5kn17WWLZ8beZ4A3Qrz4pZcmQ==}
+  '@js-joda/core@5.6.2':
+    resolution: {integrity: sha512-ow4R+7C24xeTjiMTTZ4k6lvxj7MRBqvqLCQjThQff3RjOmIMokMP20LNYVFhGafJtUx/Xo2Qp4qU8eNoTVH0SA==}
 
   '@jsdevtools/ono@7.1.3':
     resolution: {integrity: sha512-4JQNk+3mVzK3xh2rqd6RB4J46qUR19azEHBneZyTZM+c456qOrbbM/5xcR8huNCCcbVt7+UmizG6GuUvPvKUYg==}
@@ -4364,6 +4372,9 @@ packages:
   '@types/react@18.2.7':
     resolution: {integrity: sha512-ojrXpSH2XFCmHm7Jy3q44nXDyN54+EYKP2lBhJ2bqfyPj6cIUW/FZW/Csdia34NQgq7KYcAlHi5184m4X88+yw==}
 
+  '@types/readable-stream@4.0.14':
+    resolution: {integrity: sha512-xZn/AuUbCMShGsqH/ehZtGDwQtbx00M9rZ2ENLe4tOjFZ/JFeWMhEZkk2fEe1jAUqqEAURIkFJ7Az/go8mM1/w==}
+
   '@types/request@2.48.8':
     resolution: {integrity: sha512-whjk1EDJPcAR2kYHRbFl/lKeeKYTi05A15K9bnLInCVroNDCtXce57xKdI0/rQaA3K+6q0eFyUBPmqfSndUZdQ==}
 
@@ -5114,6 +5125,9 @@ packages:
 
   bl@5.1.0:
     resolution: {integrity: sha512-tv1ZJHLfTDnXE6tMHv73YgSJaWR2AFuPwMntBe7XL/GBFHnT0CLnsHMogfk5+GzCDC5ZWarSCYaIGATZt9dNsQ==}
+
+  bl@6.0.12:
+    resolution: {integrity: sha512-EnEYHilP93oaOa2MnmNEjAcovPS3JlQZOyzGXi3EyEpPhm9qWvdDp7BmAVEVusGzp8LlwQK56Av+OkDoRjzE0w==}
 
   bluebird@3.7.2:
     resolution: {integrity: sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==}
@@ -6190,10 +6204,6 @@ packages:
 
   es-abstract@1.21.2:
     resolution: {integrity: sha512-y/B5POM2iBnIxCiernH1G7rC9qQoM77lLIMQLuob0zhp8C56Po81+2Nj0WFKnd0pNReDTnkYryc+zhOzpEIROg==}
-    engines: {node: '>= 0.4'}
-
-  es-aggregate-error@1.0.9:
-    resolution: {integrity: sha512-fvnX40sb538wdU6r4s35cq4EY6Lr09Upj40BEVem4LEsuW8XgQep9yD5Q1U2KftokNp1rWODFJ2qwZSsAjFpbg==}
     engines: {node: '>= 0.4'}
 
   es-module-lexer@0.9.3:
@@ -7557,9 +7567,6 @@ packages:
   js2xmlparser@5.0.0:
     resolution: {integrity: sha512-ckXs0Fzd6icWurbeAXuqo+3Mhq2m8pOPygsQjTPh8K5UWgKaUgDSHrdDxAfexmT11xvBKOQ6sgYwPkYc5RW/bg==}
 
-  jsbi@4.3.0:
-    resolution: {integrity: sha512-SnZNcinB4RIcnEyZqFPdGPVgrg2AcnykiBy0sHVJQKHYeaLUvi3Exj+iaPpLnFVkDPZIV4U0yvgC9/R4uEAZ9g==}
-
   jsbn@0.1.1:
     resolution: {integrity: sha512-UVU9dibq2JcFWxQPA6KCqj5O42VOmAY3zQUfEKxU0KpTGXwNoCjkX1e13eHNvw/xPynt6pU0rZ1htjWTNTSXsg==}
 
@@ -8383,9 +8390,6 @@ packages:
   node-abi@3.40.0:
     resolution: {integrity: sha512-zNy02qivjjRosswoYmPi8hIKJRr8MpQyeKT6qlcq/OnOgA3Rhoae+IYOqsM9V5+JnHWmxKnWOT2GxvtqdtOCXA==}
     engines: {node: '>=10'}
-
-  node-abort-controller@3.1.1:
-    resolution: {integrity: sha512-AGK2yQKIjRuqnc6VkX2Xj5d+QW8xZ87pa1UK6yA6ouUyuxfHuMP6umE5QK7UmTeOAymo+Zx1Fxiuw9rVx8taHQ==}
 
   node-addon-api@4.3.0:
     resolution: {integrity: sha512-73sE9+3UaLYYFmDsFZnqCInzPyh3MqIwZO9cw58yIqAZhONrrabrYyYe3TuIqtIiOuTXVhsGau8hcrhhwSsDIQ==}
@@ -10002,8 +10006,8 @@ packages:
   sprintf-js@1.0.3:
     resolution: {integrity: sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==}
 
-  sprintf-js@1.1.2:
-    resolution: {integrity: sha512-VE0SOVEHCk7Qc8ulkWw3ntAzXuqf7S2lvwQaDLRnUeIEaKNQJzV6BwmLKhOqT61aGhfUMrXeaBk+oDGCzvhcug==}
+  sprintf-js@1.1.3:
+    resolution: {integrity: sha512-Oo+0REFV59/rz3gfJNKQiBlwfHaSESl1pcGyABQsnnIfWOFt6JNj5gCog2U6MLZ//IGYD+nA8nI+mTShREReaA==}
 
   sqlite3@5.1.6:
     resolution: {integrity: sha512-olYkWoKFVNSSSQNvxVUfjiVbz3YtBwTJj+mfV5zpHmqW3sELx2Cf4QCdirMelhM5Zh+KDVaKgQHqCxrqiWHybw==}
@@ -10306,9 +10310,9 @@ packages:
     resolution: {integrity: sha512-51LAVKUSZSVfI05vjPESNc5vwqqZpbXCsU+/+wxlOrUjk2SnFTt97v9ZgQrD4YmxYW1Px6w2KjaDitCfkvgxMQ==}
     engines: {node: '>=8.0.0'}
 
-  tedious@16.0.0:
-    resolution: {integrity: sha512-8Obq4NoAgjr4iTihRU8tGFX6FbUQc5fbn5vsTbScQQhLsi7nrY7h2rPBE+JS8wjLLKYMmZBt9KfpTFqDdLf93w==}
-    engines: {node: '>=16'}
+  tedious@18.0.0:
+    resolution: {integrity: sha512-4BxZelVqXC6GBzUU/DSKt4rdTHNkP5xYiV4+wU0O2kAlYfHi3ZVuNNwWDKh3bdFHIymNWc5wvin/pdszPHOmzA==}
+    engines: {node: '>=18'}
 
   teeny-request@8.0.3:
     resolution: {integrity: sha512-jJZpA5He2y52yUhA7pyAGZlgQpcB+xLjcN0eUFxr9c8hP/H7uOXbBNVo/O0C/xVfJLJs680jvkFgVJEEvk9+ww==}
@@ -10527,6 +10531,9 @@ packages:
 
   tslib@2.5.2:
     resolution: {integrity: sha512-5svOrSA2w3iGFDs1HibEVBGbDrAY82bFQ3HZ3ixB+88nsbsWQoKqDRb5UBYAUPEzbBn6dAp5gRNXglySbx1MlA==}
+
+  tslib@2.6.2:
+    resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
 
   tsup@8.0.2:
     resolution: {integrity: sha512-NY8xtQXdH7hDUAZwcQdY/Vzlw9johQsaqf7iwZ6g1DOUlFYQ5/AtVAjTvihhEyeRlGo4dLRVHtrRaL35M1daqQ==}
@@ -12042,18 +12049,30 @@ snapshots:
     dependencies:
       tslib: 2.5.2
 
+  '@azure/abort-controller@2.1.2':
+    dependencies:
+      tslib: 2.6.2
+    optional: true
+
   '@azure/core-auth@1.4.0':
     dependencies:
       '@azure/abort-controller': 1.1.0
       tslib: 2.5.2
 
+  '@azure/core-auth@1.7.2':
+    dependencies:
+      '@azure/abort-controller': 2.1.2
+      '@azure/core-util': 1.9.0
+      tslib: 2.6.2
+    optional: true
+
   '@azure/core-client@1.7.2':
     dependencies:
       '@azure/abort-controller': 1.1.0
-      '@azure/core-auth': 1.4.0
+      '@azure/core-auth': 1.7.2
       '@azure/core-rest-pipeline': 1.10.3
       '@azure/core-tracing': 1.0.1
-      '@azure/core-util': 1.3.2
+      '@azure/core-util': 1.9.0
       '@azure/logger': 1.0.4
       tslib: 2.5.2
     transitivePeerDependencies:
@@ -12102,9 +12121,9 @@ snapshots:
   '@azure/core-rest-pipeline@1.10.3':
     dependencies:
       '@azure/abort-controller': 1.1.0
-      '@azure/core-auth': 1.4.0
+      '@azure/core-auth': 1.7.2
       '@azure/core-tracing': 1.0.1
-      '@azure/core-util': 1.3.2
+      '@azure/core-util': 1.9.0
       '@azure/logger': 1.0.4
       form-data: 4.0.0
       http-proxy-agent: 5.0.0
@@ -12129,24 +12148,28 @@ snapshots:
       '@azure/abort-controller': 1.1.0
       tslib: 2.5.2
 
-  '@azure/identity@2.1.0':
+  '@azure/core-util@1.9.0':
+    dependencies:
+      '@azure/abort-controller': 2.1.2
+      tslib: 2.6.2
+    optional: true
+
+  '@azure/identity@3.4.2':
     dependencies:
       '@azure/abort-controller': 1.1.0
-      '@azure/core-auth': 1.4.0
+      '@azure/core-auth': 1.7.2
       '@azure/core-client': 1.7.2
       '@azure/core-rest-pipeline': 1.10.3
       '@azure/core-tracing': 1.0.1
-      '@azure/core-util': 1.3.2
+      '@azure/core-util': 1.9.0
       '@azure/logger': 1.0.4
-      '@azure/msal-browser': 2.37.0
-      '@azure/msal-common': 7.6.0
-      '@azure/msal-node': 1.17.2
+      '@azure/msal-browser': 3.14.0
+      '@azure/msal-node': 2.8.1
       events: 3.3.0
       jws: 4.0.0
       open: 8.4.2
       stoppable: 1.1.0
       tslib: 2.5.2
-      uuid: 8.3.2
     transitivePeerDependencies:
       - supports-color
     optional: true
@@ -12172,20 +12195,17 @@ snapshots:
     dependencies:
       tslib: 2.5.2
 
-  '@azure/msal-browser@2.37.0':
+  '@azure/msal-browser@3.14.0':
     dependencies:
-      '@azure/msal-common': 13.0.0
+      '@azure/msal-common': 14.10.0
     optional: true
 
-  '@azure/msal-common@13.0.0':
+  '@azure/msal-common@14.10.0':
     optional: true
 
-  '@azure/msal-common@7.6.0':
-    optional: true
-
-  '@azure/msal-node@1.17.2':
+  '@azure/msal-node@2.8.1':
     dependencies:
-      '@azure/msal-common': 13.0.0
+      '@azure/msal-common': 14.10.0
       jsonwebtoken: 9.0.0
       uuid: 8.3.2
     optional: true
@@ -13854,7 +13874,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
 
-  '@js-joda/core@5.5.3':
+  '@js-joda/core@5.6.2':
     optional: true
 
   '@jsdevtools/ono@7.1.3': {}
@@ -15514,6 +15534,12 @@ snapshots:
       '@types/scheduler': 0.16.3
       csstype: 3.1.2
 
+  '@types/readable-stream@4.0.14':
+    dependencies:
+      '@types/node': 18.15.13
+      safe-buffer: 5.1.2
+    optional: true
+
   '@types/request@2.48.8':
     dependencies:
       '@types/caseless': 0.12.2
@@ -16471,6 +16497,14 @@ snapshots:
       buffer: 6.0.3
       inherits: 2.0.4
       readable-stream: 3.6.2
+
+  bl@6.0.12:
+    dependencies:
+      '@types/readable-stream': 4.0.14
+      buffer: 6.0.3
+      inherits: 2.0.4
+      readable-stream: 4.4.0
+    optional: true
 
   bluebird@3.7.2:
     optional: true
@@ -17481,17 +17515,6 @@ snapshots:
       typed-array-length: 1.0.4
       unbox-primitive: 1.0.2
       which-typed-array: 1.1.9
-
-  es-aggregate-error@1.0.9:
-    dependencies:
-      define-properties: 1.2.0
-      es-abstract: 1.21.2
-      function-bind: 1.1.1
-      functions-have-names: 1.2.3
-      get-intrinsic: 1.2.1
-      globalthis: 1.0.3
-      has-property-descriptors: 1.0.0
-    optional: true
 
   es-module-lexer@0.9.3: {}
 
@@ -19246,9 +19269,6 @@ snapshots:
     dependencies:
       xmlcreate: 2.0.4
 
-  jsbi@4.3.0:
-    optional: true
-
   jsbn@0.1.1:
     optional: true
 
@@ -19427,12 +19447,12 @@ snapshots:
 
   kleur@4.1.5: {}
 
-  knex-mock-client@2.0.0(knex@2.4.2(mysql@2.18.1)(pg@8.10.0)(sqlite3@5.1.6(encoding@0.1.13))(tedious@16.0.0)):
+  knex-mock-client@2.0.0(knex@2.4.2(mysql@2.18.1)(pg@8.10.0)(sqlite3@5.1.6(encoding@0.1.13))(tedious@18.0.0)):
     dependencies:
-      knex: 2.4.2(mysql@2.18.1)(pg@8.10.0)(sqlite3@5.1.6(encoding@0.1.13))(tedious@16.0.0)
+      knex: 2.4.2(mysql@2.18.1)(pg@8.10.0)(sqlite3@5.1.6(encoding@0.1.13))(tedious@18.0.0)
       lodash.clonedeep: 4.5.0
 
-  knex@2.4.2(mysql@2.18.1)(pg@8.10.0)(sqlite3@5.1.6(encoding@0.1.13))(tedious@16.0.0):
+  knex@2.4.2(mysql@2.18.1)(pg@8.10.0)(sqlite3@5.1.6(encoding@0.1.13))(tedious@18.0.0):
     dependencies:
       colorette: 2.0.19
       commander: 9.5.0
@@ -19452,7 +19472,7 @@ snapshots:
       mysql: 2.18.1
       pg: 8.10.0
       sqlite3: 5.1.6(encoding@0.1.13)
-      tedious: 16.0.0
+      tedious: 18.0.0
     transitivePeerDependencies:
       - supports-color
 
@@ -20325,9 +20345,6 @@ snapshots:
   node-abi@3.40.0:
     dependencies:
       semver: 7.5.2
-
-  node-abort-controller@3.1.1:
-    optional: true
 
   node-addon-api@4.3.0:
     optional: true
@@ -22355,7 +22372,7 @@ snapshots:
 
   sprintf-js@1.0.3: {}
 
-  sprintf-js@1.1.2:
+  sprintf-js@1.1.3:
     optional: true
 
   sqlite3@5.1.6(encoding@0.1.13):
@@ -22732,20 +22749,17 @@ snapshots:
 
   tarn@3.0.2: {}
 
-  tedious@16.0.0:
+  tedious@18.0.0:
     dependencies:
-      '@azure/identity': 2.1.0
+      '@azure/identity': 3.4.2
       '@azure/keyvault-keys': 4.7.0
-      '@js-joda/core': 5.5.3
-      bl: 5.1.0
-      es-aggregate-error: 1.0.9
+      '@js-joda/core': 5.6.2
+      '@types/node': 18.15.13
+      bl: 6.0.12
       iconv-lite: 0.6.3
       js-md4: 0.3.2
-      jsbi: 4.3.0
       native-duplexpair: 1.0.0
-      node-abort-controller: 3.1.1
-      punycode: 2.3.0
-      sprintf-js: 1.1.2
+      sprintf-js: 1.1.3
     transitivePeerDependencies:
       - supports-color
     optional: true
@@ -22936,6 +22950,9 @@ snapshots:
   tslib@1.14.1: {}
 
   tslib@2.5.2: {}
+
+  tslib@2.6.2:
+    optional: true
 
   tsup@8.0.2(postcss@8.4.38)(typescript@5.4.5):
     dependencies:

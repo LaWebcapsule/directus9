@@ -44,7 +44,7 @@
 import { useI18n } from 'vue-i18n';
 import { defineComponent, ref, computed } from 'vue';
 import SettingsNavigation from '../../components/navigation.vue';
-import { useCollection } from '@wbce-d9/composables';
+import { useCollection } from '@db-studio/composables';
 import { useSettingsStore } from '@/stores/settings';
 import { useServerStore } from '@/stores/server';
 import ProjectInfoSidebarDetail from './components/project-info-sidebar-detail.vue';

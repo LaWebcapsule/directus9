@@ -1,5 +1,5 @@
-import type { Filter, LogicalFilterAND } from '@wbce-d9/types';
-import { parseJSON } from '@wbce-d9/utils';
+import type { Filter, LogicalFilterAND } from '@db-studio/types';
+import { parseJSON } from '@db-studio/utils';
 import type { Knex } from 'knex';
 
 type OldFilter = {

@@ -1,5 +1,5 @@
-import type { Filter } from '@wbce-d9/types';
-import { defineOperationApi, validatePayload } from '@wbce-d9/utils';
+import type { Filter } from '@db-studio/types';
+import { defineOperationApi, validatePayload } from '@db-studio/utils';
 
 type Options = {
 	filter: Filter;

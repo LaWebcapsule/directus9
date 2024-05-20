@@ -116,7 +116,7 @@ To access internal systems like the API or the stores, you can use the `useApi()
 by the `@wbce-d9/extensions-sdk` package. They can be used inside a `setup()` function like this:
 
 ```js
-import { useApi, useStores } from '@wbce-d9/extensions-sdk';
+import { useApi, useStores } from '@db-studio/extensions-sdk';
 
 export default {
 	setup() {

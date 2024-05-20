@@ -101,7 +101,7 @@ import { defineComponent, computed, ref } from 'vue';
 import SettingsNavigation from '../../components/navigation.vue';
 import LayoutSidebarDetail from '@/views/private/components/layout-sidebar-detail.vue';
 import { usePreset } from '@/composables/use-preset';
-import { useLayout } from '@wbce-d9/composables';
+import { useLayout } from '@db-studio/composables';
 import api from '@/api';
 import SearchInput from '@/views/private/components/search-input.vue';
 import { useExtension } from '@/composables/use-extension';

@@ -21,10 +21,10 @@ import { computed, inject, ref, toRefs } from 'vue';
 import { render } from 'micromustache';
 import { omit } from 'lodash';
 import { useItem } from '@/composables/use-item';
-import { getFieldsFromTemplate } from '@wbce-d9/utils';
-import { Query } from '@wbce-d9/types';
-import { useCollection } from '@wbce-d9/composables';
-import { RELATIONAL_TYPES } from '@wbce-d9/constants';
+import { getFieldsFromTemplate } from '@db-studio/utils';
+import { Query } from '@db-studio/types';
+import { useCollection } from '@db-studio/composables';
+import { RELATIONAL_TYPES } from '@db-studio/constants';
 
 type Link = {
 	icon: string;

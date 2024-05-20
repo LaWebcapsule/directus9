@@ -1,5 +1,5 @@
-import type { Range, Stat } from '@wbce-d9/storage';
-import type { Accountability } from '@wbce-d9/types';
+import type { Range, Stat } from '@db-studio/storage';
+import type { Accountability } from '@db-studio/types';
 import type { Knex } from 'knex';
 import { clamp } from 'lodash-es';
 import { contentType } from 'mime-types';

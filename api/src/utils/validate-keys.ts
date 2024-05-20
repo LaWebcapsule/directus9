@@ -1,4 +1,4 @@
-import type { SchemaOverview } from '@wbce-d9/types';
+import type { SchemaOverview } from '@db-studio/types';
 import validateUUID from 'uuid-validate';
 import { ForbiddenException } from '../exceptions/forbidden.js';
 import type { PrimaryKey } from '../types/index.js';

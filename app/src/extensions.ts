@@ -1,4 +1,4 @@
-import { AppExtensionConfigs, RefRecord } from '@wbce-d9/types';
+import { AppExtensionConfigs, RefRecord } from '@db-studio/types';
 import { App, shallowRef, watch } from 'vue';
 import { getInternalDisplays, registerDisplays } from './displays';
 import { getInternalInterfaces, registerInterfaces } from './interfaces';

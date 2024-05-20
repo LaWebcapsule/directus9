@@ -1,4 +1,4 @@
-import type { Flow, FlowRaw, Operation, OperationRaw } from '@wbce-d9/types';
+import type { Flow, FlowRaw, Operation, OperationRaw } from '@db-studio/types';
 import { omit } from 'lodash-es';
 
 export function constructFlowTree(flow: FlowRaw): Flow {

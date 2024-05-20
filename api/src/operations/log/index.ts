@@ -1,4 +1,4 @@
-import { defineOperationApi, optionToString } from '@wbce-d9/utils';
+import { defineOperationApi, optionToString } from '@db-studio/utils';
 import logger from '../../logger.js';
 
 type Options = {

@@ -1,5 +1,5 @@
-import { BaseException } from '@wbce-d9/exceptions';
-import type { Range } from '@wbce-d9/storage';
+import { BaseException } from '@db-studio/exceptions';
+import type { Range } from '@db-studio/storage';
 
 export class RangeNotSatisfiableException extends BaseException {
 	constructor(range?: Range) {

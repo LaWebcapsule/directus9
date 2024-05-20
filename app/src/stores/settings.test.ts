@@ -1,5 +1,5 @@
 import api from '@/api';
-import { Settings } from '@wbce-d9/types';
+import { Settings } from '@db-studio/types';
 import { createTestingPinia } from '@pinia/testing';
 import * as notifyUtil from '@/utils/notify';
 import * as unexpectedErrorUtil from '@/utils/unexpected-error';

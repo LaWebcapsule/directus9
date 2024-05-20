@@ -2,7 +2,7 @@ import { router } from '@/router';
 import { usePermissionsStore } from '@/stores/permissions';
 import { useUserStore } from '@/stores/user';
 import RouterPass from '@/utils/router-passthrough';
-import { ModuleConfig } from '@wbce-d9/types';
+import { ModuleConfig } from '@db-studio/types';
 import { ShallowRef, shallowRef } from 'vue';
 import { sortBy } from 'lodash';
 

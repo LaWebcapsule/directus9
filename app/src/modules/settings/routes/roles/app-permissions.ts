@@ -1,4 +1,4 @@
-import { Permission } from '@wbce-d9/types';
+import { Permission } from '@db-studio/types';
 
 export const appRecommendedPermissions: Partial<Permission>[] = [
 	{

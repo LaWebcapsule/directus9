@@ -11,7 +11,7 @@ import 'codemirror/addon/mode/simple';
 import { computed, onMounted, ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { mustacheMode } from './mustacheMode';
-import { parseJSON } from '@wbce-d9/utils';
+import { parseJSON } from '@db-studio/utils';
 
 const props = withDefaults(
 	defineProps<{

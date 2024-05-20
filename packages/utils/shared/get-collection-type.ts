@@ -1,4 +1,4 @@
-import type { Collection, CollectionType } from '@wbce-d9/types';
+import type { Collection, CollectionType } from '@db-studio/types';
 
 /**
  * Get the type of collection. One of alias | table. (And later: view)

@@ -1,11 +1,11 @@
-import { StorageManager } from '@wbce-d9/storage';
+import { StorageManager } from '@db-studio/storage';
 import { afterEach, beforeEach, expect, test, vi } from 'vitest';
 import { validateEnv } from '../utils/validate-env.js';
 import { getStorage, _cache } from './index.js';
 import { registerDrivers } from './register-drivers.js';
 import { registerLocations } from './register-locations.js';
 
-vi.mock('@wbce-d9/storage');
+vi.mock('@db-studio/storage');
 vi.mock('./register-drivers.js');
 vi.mock('./register-locations.js');
 vi.mock('../utils/validate-env.js');

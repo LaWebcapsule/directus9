@@ -1,7 +1,7 @@
-import { API_EXTENSION_TYPES, APP_EXTENSION_TYPES, HYBRID_EXTENSION_TYPES } from '@wbce-d9/constants';
-import type { ExtensionOptionsBundleEntry } from '@wbce-d9/types';
-import { isIn, isTypeIn, pluralize } from '@wbce-d9/utils';
-import { pathToRelativeUrl } from '@wbce-d9/utils/node';
+import { API_EXTENSION_TYPES, APP_EXTENSION_TYPES, HYBRID_EXTENSION_TYPES } from '@db-studio/constants';
+import type { ExtensionOptionsBundleEntry } from '@db-studio/types';
+import { isIn, isTypeIn, pluralize } from '@db-studio/utils';
+import { pathToRelativeUrl } from '@db-studio/utils/node';
 import path from 'path';
 
 export default function generateBundleEntrypoint(mode: 'app' | 'api', entries: ExtensionOptionsBundleEntry[]): string {

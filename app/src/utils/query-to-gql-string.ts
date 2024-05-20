@@ -1,6 +1,6 @@
 import { useFieldsStore } from '@/stores/fields';
-import { Filter, Query } from '@wbce-d9/types';
-import { parseJSON, toArray } from '@wbce-d9/utils';
+import { Filter, Query } from '@db-studio/types';
+import { parseJSON, toArray } from '@db-studio/utils';
 import { jsonToGraphQLQuery } from 'json-to-graphql-query';
 import { isEmpty, pick, set, omitBy, isUndefined, transform } from 'lodash';
 import { extractFieldFromFunction } from './extract-field-from-function';

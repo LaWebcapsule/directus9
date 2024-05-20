@@ -1,5 +1,5 @@
-import { DeepPartial, Field, FlowRaw, TriggerType, Width } from '@wbce-d9/types';
-import { toArray } from '@wbce-d9/utils';
+import { DeepPartial, Field, FlowRaw, TriggerType, Width } from '@db-studio/types';
+import { toArray } from '@db-studio/utils';
 import { useI18n } from 'vue-i18n';
 import { getPublicURL } from '../../../../utils/get-root-path';
 

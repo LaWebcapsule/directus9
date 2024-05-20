@@ -50,7 +50,7 @@
 import { ref, computed, watch, toRefs } from 'vue';
 import { useI18n } from 'vue-i18n';
 import { isEqual } from 'lodash';
-import { Field, DeepPartial } from '@wbce-d9/types';
+import { Field, DeepPartial } from '@db-studio/types';
 import { useTranslationStrings, TranslationString } from '@/composables/use-translation-strings';
 
 interface Props {

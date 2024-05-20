@@ -71,7 +71,7 @@
 </template>
 
 <script setup lang="ts">
-import { Field, ValidationError } from '@wbce-d9/types';
+import { Field, ValidationError } from '@db-studio/types';
 import { isEqual } from 'lodash';
 import { computed, ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
@@ -81,7 +81,7 @@ import FormFieldMenu from './form-field-menu.vue';
 import { formatFieldFunction } from '@/utils/format-field-function';
 import { useClipboard } from '@/composables/use-clipboard';
 import FormFieldRawEditor from './form-field-raw-editor.vue';
-import { parseJSON } from '@wbce-d9/utils';
+import { parseJSON } from '@db-studio/utils';
 
 interface Props {
 	field: Field;

@@ -1,5 +1,5 @@
-import type { StorageManager } from '@wbce-d9/storage';
-import { toArray } from '@wbce-d9/utils';
+import type { StorageManager } from '@db-studio/storage';
+import { toArray } from '@db-studio/utils';
 import { getEnv } from '../env.js';
 import { getConfigFromEnv } from '../utils/get-config-from-env.js';
 

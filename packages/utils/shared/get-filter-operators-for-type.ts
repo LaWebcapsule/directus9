@@ -1,4 +1,4 @@
-import type { ClientFilterOperator, Type } from '@wbce-d9/types';
+import type { ClientFilterOperator, Type } from '@db-studio/types';
 
 type GetFilterOperationsForTypeOptions = {
 	includeValidation?: boolean;

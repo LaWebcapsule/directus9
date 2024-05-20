@@ -6,9 +6,9 @@
 
 <script setup lang="ts">
 import { useFieldsStore } from '@/stores/fields';
-import { Filter } from '@wbce-d9/types';
-import { abbreviateNumber, adjustDate } from '@wbce-d9/utils';
-import { cssVar } from '@wbce-d9/utils/browser';
+import { Filter } from '@db-studio/types';
+import { abbreviateNumber, adjustDate } from '@db-studio/utils';
+import { cssVar } from '@db-studio/utils/browser';
 import ApexCharts from 'apexcharts';
 import { addWeeks } from 'date-fns';
 import { isNil, snakeCase } from 'lodash';

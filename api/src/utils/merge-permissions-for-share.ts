@@ -1,4 +1,4 @@
-import type { Accountability, Filter, Permission, SchemaOverview } from '@wbce-d9/types';
+import type { Accountability, Filter, Permission, SchemaOverview } from '@db-studio/types';
 import { assign, set, uniq } from 'lodash-es';
 import { schemaPermissions } from '../database/system-data/app-access-permissions/index.js';
 import { mergePermissions } from './merge-permissions.js';

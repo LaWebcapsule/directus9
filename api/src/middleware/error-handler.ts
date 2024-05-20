@@ -1,5 +1,5 @@
-import { BaseException } from '@wbce-d9/exceptions';
-import { toArray } from '@wbce-d9/utils';
+import { BaseException } from '@db-studio/exceptions';
+import { toArray } from '@db-studio/utils';
 import type { ErrorRequestHandler } from 'express';
 import getDatabase from '../database/index.js';
 import emitter from '../emitter.js';

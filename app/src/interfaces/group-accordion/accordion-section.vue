@@ -36,8 +36,8 @@
 <script lang="ts">
 import { defineComponent, PropType, computed } from 'vue';
 import { merge, isNil } from 'lodash';
-import { Field } from '@wbce-d9/types';
-import { ValidationError } from '@wbce-d9/types';
+import { Field } from '@db-studio/types';
+import { ValidationError } from '@db-studio/types';
 import { useI18n } from 'vue-i18n';
 
 export default defineComponent({

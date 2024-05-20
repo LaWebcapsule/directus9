@@ -20,7 +20,7 @@
 </template>
 
 <script lang="ts">
-import { Field, ValidationError } from '@wbce-d9/types';
+import { Field, ValidationError } from '@db-studio/types';
 import { defineComponent, PropType } from 'vue';
 export default defineComponent({
 	name: 'InterfaceGroupRaw',

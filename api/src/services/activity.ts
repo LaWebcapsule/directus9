@@ -1,5 +1,5 @@
-import type { Accountability } from '@wbce-d9/types';
-import { Action } from '@wbce-d9/constants';
+import type { Accountability } from '@db-studio/types';
+import { Action } from '@db-studio/constants';
 import { uniq } from 'lodash-es';
 import validateUUID from 'uuid-validate';
 import env from '../env.js';

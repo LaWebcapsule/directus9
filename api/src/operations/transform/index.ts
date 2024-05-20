@@ -1,4 +1,4 @@
-import { defineOperationApi, optionToObject } from '@wbce-d9/utils';
+import { defineOperationApi, optionToObject } from '@db-studio/utils';
 
 type Options = {
 	json: string | Record<string, any>;

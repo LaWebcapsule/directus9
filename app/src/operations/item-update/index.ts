@@ -1,4 +1,4 @@
-import { defineOperationApp, toArray } from '@wbce-d9/utils';
+import { defineOperationApp, toArray } from '@db-studio/utils';
 
 export default defineOperationApp({
 	id: 'item-update',

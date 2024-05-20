@@ -1,4 +1,4 @@
-import type { FieldFilter } from '@wbce-d9/types';
+import type { FieldFilter } from '@db-studio/types';
 import type { AnySchema, StringSchema as BaseStringSchema, DateSchema, NumberSchema } from 'joi';
 import BaseJoi from 'joi';
 import { escapeRegExp, merge } from 'lodash-es';

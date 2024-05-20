@@ -1,5 +1,5 @@
 import { test, expect } from 'vitest';
-import { Field } from '@wbce-d9/types';
+import { Field } from '@db-studio/types';
 import { getJSType } from './get-js-type';
 
 test('Returns object for relational fields', () => {

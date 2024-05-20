@@ -1,6 +1,6 @@
-import { API_EXTENSION_TYPES, APP_EXTENSION_TYPES, HYBRID_EXTENSION_TYPES } from '@wbce-d9/constants';
-import type { ExtensionType } from '@wbce-d9/types';
-import { isIn } from '@wbce-d9/utils';
+import { API_EXTENSION_TYPES, APP_EXTENSION_TYPES, HYBRID_EXTENSION_TYPES } from '@db-studio/constants';
+import type { ExtensionType } from '@db-studio/types';
+import { isIn } from '@db-studio/utils';
 import type { Language } from '../../types.js';
 import getPackageVersion from '../../utils/get-package-version.js';
 import getSdkVersion from '../../utils/get-sdk-version.js';
@@ -13,7 +13,7 @@ export default async function getExtensionDevDeps(
 	const languages = Array.isArray(language) ? language : [language];
 
 	const deps: Record<string, string> = {
-		'@wbce-d9/extensions-sdk': getSdkVersion(),
+		'@db-studio/extensions-sdk': getSdkVersion(),
 	};
 
 	if (languages.includes('typescript')) {

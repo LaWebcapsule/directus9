@@ -1,4 +1,4 @@
-import type { CollectionsOverview, NestedDeepQuery } from '@wbce-d9/types';
+import type { CollectionsOverview, NestedDeepQuery } from '@db-studio/types';
 import type { Knex } from 'knex';
 import knex from 'knex';
 import { MockClient, Tracker, createTracker } from 'knex-mock-client';

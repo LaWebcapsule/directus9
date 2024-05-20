@@ -1,7 +1,7 @@
-import { Action, FUNCTIONS } from '@wbce-d9/constants';
-import type { BaseException } from '@wbce-d9/exceptions';
-import type { Accountability, Aggregate, Filter, PrimaryKey, Query, SchemaOverview } from '@wbce-d9/types';
-import { parseFilterFunctionPath } from '@wbce-d9/utils';
+import { Action, FUNCTIONS } from '@db-studio/constants';
+import type { BaseException } from '@db-studio/exceptions';
+import type { Accountability, Aggregate, Filter, PrimaryKey, Query, SchemaOverview } from '@db-studio/types';
+import { parseFilterFunctionPath } from '@db-studio/utils';
 import argon2 from 'argon2';
 import type {
 	ArgumentNode,

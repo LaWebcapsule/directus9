@@ -1,4 +1,4 @@
-import type { FieldFunction } from '@wbce-d9/types';
+import type { FieldFunction } from '@db-studio/types';
 import { getDate, getDay, getWeek, parseISO } from 'date-fns';
 
 export const functions: Record<FieldFunction, (val: any) => any> = {

@@ -1,4 +1,4 @@
-import { defineInterface } from '@wbce-d9/utils';
+import { defineInterface } from '@db-studio/utils';
 import InterfaceInputMultiline from './input-multiline.vue';
 import Preview from './preview.svg?raw';
 

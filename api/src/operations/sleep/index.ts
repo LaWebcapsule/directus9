@@ -1,4 +1,4 @@
-import { defineOperationApi } from '@wbce-d9/utils';
+import { defineOperationApi } from '@db-studio/utils';
 
 type Options = {
 	milliseconds: string | number;

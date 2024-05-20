@@ -1,4 +1,4 @@
-import type { KNEX_TYPES } from '@wbce-d9/constants';
+import type { KNEX_TYPES } from '@db-studio/constants';
 import type { Options } from '../types.js';
 import { SchemaHelper } from '../types.js';
 

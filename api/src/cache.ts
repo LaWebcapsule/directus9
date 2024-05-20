@@ -1,5 +1,5 @@
-import type { SchemaOverview } from '@wbce-d9/types';
-import { getSimpleHash } from '@wbce-d9/utils';
+import type { SchemaOverview } from '@db-studio/types';
+import { getSimpleHash } from '@db-studio/utils';
 import type { Options } from 'keyv';
 import Keyv from 'keyv';
 import env from './env.js';

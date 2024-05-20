@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import type { Collection } from '@wbce-d9/types';
+import type { Collection } from '@db-studio/types';
 import { getCollectionType } from './get-collection-type.js';
 
 const TableCollection: Collection = {

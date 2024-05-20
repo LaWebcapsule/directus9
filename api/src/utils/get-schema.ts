@@ -1,7 +1,7 @@
-import type { SchemaInspector } from '@wbce-d9/schema';
-import { createInspector } from '@wbce-d9/schema';
-import type { Filter, SchemaOverview } from '@wbce-d9/types';
-import { parseJSON, toArray } from '@wbce-d9/utils';
+import type { SchemaInspector } from '@db-studio/schema';
+import { createInspector } from '@db-studio/schema';
+import type { Filter, SchemaOverview } from '@db-studio/types';
+import { parseJSON, toArray } from '@db-studio/utils';
 import type { Knex } from 'knex';
 import { mapValues } from 'lodash-es';
 import { getSchemaCache, setSchemaCache } from '../cache.js';

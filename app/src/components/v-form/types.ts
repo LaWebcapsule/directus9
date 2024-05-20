@@ -1,4 +1,4 @@
-import { DeepPartial, Field } from '@wbce-d9/types';
+import { DeepPartial, Field } from '@db-studio/types';
 
 export type FormField = DeepPartial<Field> & {
 	field: string;
