@@ -1,34 +1,34 @@
 ---
 description:
-  This guide explains how to install the _Development_ version of Directus locally so that you can work on the
+  This guide explains how to install the _Development_ version of DB Studio (Formerly Directus v9) locally so that you can work on the
   platform's source code.
 readTime: 4 min read
 ---
 
 # Running Locally
 
-> This guide explains how to install the _Development_ version of Directus locally so that you can work on the
+> This guide explains how to install the _Development_ version of DB Studio (Formerly Directus v9) locally so that you can work on the
 > platform's source code. To install the _Production_ version locally, please follow to our
 > [Docker Guide](/self-hosted/docker-guide).
 
 ::: tip Minimum Requirements
 
 You will need to have [the latest version of Node](https://nodejs.org/en/download/current) to _build_ a Development
-version of Directus.
+version of DB Studio (Formerly Directus v9).
 
 You will also need to have the package manager [pnpm](https://pnpm.io) installed.
 
 :::
 
-## 1. Fork the Directus repository
+## 1. Fork the DB Studio (Formerly Directus v9) repository
 
-Go to the [repository](https://github.com/LaWebcapsule/directus9) and fork it to your GitHub account. A fork is your copy of
-the Directus repository which allows you to freely experiment with changes without affecting the original project.
+Go to the [repository](https://github.com/pxslip/db-studio) and fork it to your GitHub account. A fork is your copy of
+the DB Studio (Formerly Directus v9) repository which allows you to freely experiment with changes without affecting the original project.
 
 ## 2. Clone from your repository
 
 ```bash
-git clone git@github.com:YOUR-USERNAME/directus.git
+git clone git@github.com:YOUR-USERNAME/db-studio.git
 ```
 
 ## 3. Make a new branch
@@ -55,7 +55,7 @@ The `KEY`& `SECRET` config options from [Security](https://docs.directus.io/self
 are mandatory.
 
 Also the [Database Configuration](https://docs.directus.io/self-hosted/config-options.html#database) must be specified.
-You might want to use the [docker-compose.yml](https://github.com/LaWebcapsule/directus9/blob/main/docker-compose.yml) file
+You might want to use the [docker-compose.yml](https://github.com/pxslip/db-studio/blob/main/docker-compose.yml) file
 to spin up a test database.
 
 :::
@@ -78,7 +78,7 @@ To start the initialization run the following command:
 pnpm --filter api cli bootstrap
 ```
 
-This will set-up the required tables for Directus and make sure all the migrations have run.
+This will set-up the required tables for DB Studio (Formerly Directus v9) and make sure all the migrations have run.
 
 ## 7. Start the development server
 
@@ -145,12 +145,12 @@ If you encounter errors during this installation process, make sure your node ve
 
 ## 8. Make your fixes/changes
 
-At this point you are ready to start working on Directus! Before diving in however, it's worth reading through the
+At this point you are ready to start working on DB Studio (Formerly Directus v9)! Before diving in however, it's worth reading through the
 introduction to [Contributing](/contributing/introduction).
 
 ::: tip Debugging
 
-Check our Wiki for a [guide](https://github.com/LaWebcapsule/directus9/wiki/debugging) on debugging the app and API.
+Check our Wiki for a [guide](https://github.com/pxslip/db-studio/wiki/debugging) on debugging the app and API.
 
 :::
 

@@ -1,10 +1,7 @@
-<p align="center"><img alt="Directus Logo" src="https://user-images.githubusercontent.com/522079/158864859-0fbeae62-9d7a-4619-b35e-f8fa5f68e0c8.png"></p>
-
-<br />
-
 ## 🐰 Introduction
+TODO: Update the readme for the `docs` package
 
-This is the official documentation for the Directus data platform. These docs are also available via
+This is the official documentation for the DB Studio (Formerly Directus v9) data platform. These docs are also available via
 [a public website](https://docs.directus.io).
 
 **[Learn more about Directus](https://directus.io)**
@@ -13,11 +10,11 @@ This is the official documentation for the Directus data platform. These docs ar
 
 ## 🤔 Community Help
 
-[The Directus Documentation](https://docs.directus.io) is a great place to start, or explore these other channels:
 
-- [Discord](https://directus.chat) (Questions, Live Discussions)
-- [GitHub Issues](https://github.com/LaWebcapsule/directus9/issues) (Report Bugs)
-- [GitHub Discussions](https://github.com/LaWebcapsule/directus9/discussions) (Feature Requests)
+
+
+- [GitHub Issues](https://github.com/pxslip/db-studio/issues) (Report Bugs)
+- [GitHub Discussions](https://github.com/pxslip/db-studio/discussions) (Feature Requests)
 - [Twitter](https://twitter.com/directus) (Latest News)
 - [YouTube](https://www.youtube.com/c/DirectusVideos/featured) (Video Tutorials)
 

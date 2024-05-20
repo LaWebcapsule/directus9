@@ -3,8 +3,8 @@ import { defineConfig } from 'vitepress';
 export default defineConfig({
 	base: '/',
 	lang: 'en-US',
-	title: 'Directus Docs',
-	description: 'Directus. An Instant App & API for your SQL Database.',
+	title: 'DB Studio (Formerly Directus v9) Docs',
+	description: 'DB Studio (Formerly Directus v9). An Instant App & API for your SQL Database.',
 	ignoreDeadLinks: true,
 	markdown: {
 		theme: 'material-theme-palenight',
@@ -13,52 +13,6 @@ export default defineConfig({
 		},
 	},
 	head: [
-		[
-			'script',
-			{
-				type: 'text/javascript',
-				async: true,
-				defer: true,
-				src: 'https://js-na1.hs-scripts.com/20534155.js',
-			},
-		],
-		[
-			'script',
-			{
-				type: 'text/javascript',
-				async: true,
-				src: 'https://ws.zoominfo.com/pixel/636535e8d10f825332bbd795',
-				'referrer-policy': 'unsafe-url',
-			},
-		],
-		[
-			'script',
-			{
-				type: 'text/javascript',
-				async: true,
-				defer: false,
-				src: 'https://www.googletagmanager.com/gtag/js?id=UA-24637628-7',
-			},
-		],
-		[
-			'script',
-			{},
-			`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-			new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-			j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-			'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-			})(window,document,'script','dataLayer','GTM-PTLT3GH');`,
-		],
-		[
-			'script',
-			{},
-			`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'UA-24637628-7');
-			`,
-		],
 		['link', { rel: 'shortcut icon', type: 'image/svg+xml', href: '/favicon.svg' }],
 		[
 			'link',
@@ -128,9 +82,7 @@ gtag('config', 'UA-24637628-7');
 		nav: [
 			{ text: 'Docs', link: '/' },
 			// { text: 'Cookbook', link: '/cookbook/add-a-recipe', activeMatch: '/cookbook/' },
-			{ text: 'Website', link: 'https://directus.io/' },
-			{ text: 'Cloud', link: 'https://directus.cloud/' },
-			{ text: 'GitHub', link: 'https://github.com/LaWebcapsule/directus9' },
+			{ text: 'GitHub', link: 'https://github.com/pxslip/db-studio' },
 		],
 		algolia: {
 			appId: 'T5BDNEU205',
@@ -142,7 +94,7 @@ gtag('config', 'UA-24637628-7');
 			'/': sidebar(),
 		},
 		editLink: {
-			pattern: 'https://github.com/LaWebcapsule/directus9/edit/main/docs/:path',
+			pattern: 'https://github.com/pxslip/db-studio/edit/main/docs/:path',
 		},
 	},
 });

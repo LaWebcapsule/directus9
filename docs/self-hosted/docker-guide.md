@@ -1,9 +1,12 @@
 ---
-description: How to host Directus on Docker.
+description: How to host DB Studio (Formerly Directus v9) on Docker.
 readTime: 3 min read
 ---
 
 # Docker Guide
+::: warning Out of Date Content
+TODO: The Docker hosting guide needs to be updated
+:::
 
 ::: info Non-Docker Guides
 
@@ -60,7 +63,7 @@ Containers are ephemeral, and this means that whenever you stop a container, all
 be removed [unless you persist them](https://docs.docker.com/storage) when creating your container.
 
 Directus image by default
-[will use the following locations](https://github.com/LaWebcapsule/directus9/blob/main/docker/Dockerfile#L56-L60) for data
+[will use the following locations](https://github.com/pxslip/db-studio/blob/main/docker/Dockerfile#L56-L60) for data
 persistence (note that these can be changed through environment variables)
 
 - `/directus/uploads` for uploads
