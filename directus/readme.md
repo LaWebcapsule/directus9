@@ -32,7 +32,7 @@ Aurora/Redshift or Google Cloud Platform SQL.
 Learn more at...
 
 
-- [GitHub](https://github.com/LaWebcapsule/directus9)
+- [GitHub](https://github.com/pxslip/db-studio)
 
 **All the following links are for Directus v10 ; contribution are welcome to make specific documentation for the Directus 9**
 
@@ -115,11 +115,11 @@ Directus9 use the same schema as directus@9.0.0^. As a consequence, you don't ne
 
 ## Contributing
 
-Please report any and all issues [on our GitHub](https://github.com/LaWebcapsule/directus9/issues/new).
+Please report any and all issues [on our GitHub](https://github.com/pxslip/db-studio/issues/new).
 
 Pull-requests are more than welcome, and always appreciated. Please be sure to read our
 [Contributors Guide](https://docs.directus.io/contributing/introduction/) before starting work on a new feature/fix, or
-reach out a member of the Core Team via [GitHub](https://github.com/LaWebcapsule/directus9/discussions) or
+reach out a member of the Core Team via [GitHub](https://github.com/pxslip/db-studio/discussions) or
 [Discord](https://directus.chat) with any questions.
 
 <p>&nbsp;</p>
