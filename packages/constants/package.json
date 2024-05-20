@@ -1,20 +1,19 @@
 {
-	"name": "@wbce-d9/constants",
-	"version": "9.26.3",
+	"name": "@db-studio/constants",
+	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
 		"build": "tsc --build",
 		"dev": "tsc --watch"
 	},
-	"description": "Shared constants for Directus",
+	"description": "Shared constants for DB Studio (formerly Directus v9)",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/LaWebcapsule/directus9.git",
+		"url": "https://github.com/pxslip/db-studio.git",
 		"directory": "packages/constants"
 	},
-	"funding": "https://github.com/LaWebcapsule/directus9?sponsor=1",
+	"funding": "https://github.com/pxslip/db-studio?sponsor=1",
 	"license": "GPL-3.0",
-	"author": "Rijk van Zanten <rijkvanzanten@me.com>",
 	"exports": {
 		".": "./dist/index.js",
 		"./package.json": "./package.json"
@@ -27,7 +26,7 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@wbce-d9/tsconfig": "0.0.7",
+		"@db-studio/config": "workspace:*",
 		"typescript": "5.0.4"
 	},
 	"dependencies": {

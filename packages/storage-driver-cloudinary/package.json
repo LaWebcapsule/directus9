@@ -1,21 +1,20 @@
 {
-	"name": "@wbce-d9/storage-driver-cloudinary",
-	"version": "9.26.5",
+	"name": "@db-studio/storage-driver-cloudinary",
+	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
 		"build": "tsc --build",
 		"dev": "tsc --watch",
 		"test": "vitest --watch=false"
 	},
-	"description": "Cloudinary file storage abstraction for `@wbce-d9/storage`",
+	"description": "Cloudinary file storage abstraction for `@db-studio/storage`",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/LaWebcapsule/directus9.git",
+		"url": "https://github.com/pxslip/db-studio.git",
 		"directory": "packages/storage-driver-cloudinary"
 	},
-	"funding": "https://github.com/LaWebcapsule/directus9?sponsor=1",
+	"funding": "https://github.com/pxslip/db-studio?sponsor=1",
 	"license": "GPL-3.0",
-	"author": "Rijk van Zanten <rijkvanzanten@me.com>",
 	"exports": {
 		".": "./dist/index.js",
 		"./package.json": "./package.json"
@@ -29,13 +28,13 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@wbce-d9/storage": "workspace:*",
-		"@wbce-d9/utils": "workspace:*",
+		"@db-studio/storage": "workspace:*",
+		"@db-studio/utils": "workspace:*",
 		"p-queue": "7.3.4",
 		"undici": "5.22.0"
 	},
 	"devDependencies": {
-		"@wbce-d9/tsconfig": "0.0.7",
+		"@db-studio/config": "workspace:*",
 		"@ngneat/falso": "6.4.0",
 		"@vitest/coverage-c8": "0.30.1",
 		"typescript": "5.0.4",

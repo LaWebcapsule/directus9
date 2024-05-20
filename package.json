@@ -1,5 +1,5 @@
 {
-	"name": "directus9-monorepo",
+	"name": "db-studio-monorepo",
 	"private": true,
 	"scripts": {
 		"build": "pnpm --recursive --filter '!docs' run build",

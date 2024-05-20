@@ -5,7 +5,7 @@
 		"test": "jest"
 	},
 	"devDependencies": {
-		"@wbce-d9/types": "workspace:*",
+		"@db-studio/types": "workspace:*",
 		"@types/jest": "29.5.1",
 		"@types/js-yaml": "4.0.5",
 		"@types/lodash": "4.14.194",
@@ -28,5 +28,5 @@
 		"typescript": "5.0.4",
 		"uuid": "9.0.0"
 	},
-	"version": "9.26.0"
+	"version": "1.0.0"
 }

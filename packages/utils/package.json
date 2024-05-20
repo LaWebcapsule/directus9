@@ -1,6 +1,6 @@
 {
-	"name": "@wbce-d9/utils",
-	"version": "9.28.0",
+	"name": "@db-studio/utils",
+	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
 		"build": "tsc --project browser/tsconfig.json && tsc --project node/tsconfig.json && tsc --project shared/tsconfig.json",
@@ -10,12 +10,11 @@
 	"description": "Utilities shared between the Directus packages",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/LaWebcapsule/directus9.git",
+		"url": "https://github.com/pxslip/db-studio.git",
 		"directory": "packages/utils"
 	},
-	"funding": "https://github.com/LaWebcapsule/directus9?sponsor=1",
+	"funding": "https://github.com/pxslip/db-studio?sponsor=1",
 	"license": "GPL-3.0",
-	"author": "Rijk van Zanten <rijkvanzanten@me.com>",
 	"exports": {
 		".": {
 			"types": "./dist/shared/index.d.ts",
@@ -40,8 +39,8 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@wbce-d9/constants": "workspace:*",
-		"@wbce-d9/storage": "workspace:*",
+		"@db-studio/constants": "workspace:*",
+		"@db-studio/storage": "workspace:*",
 		"date-fns": "2.29.3",
 		"fs-extra": "11.1.1",
 		"joi": "17.9.1",
@@ -51,8 +50,8 @@
 		"vue": "3.2.47"
 	},
 	"devDependencies": {
-		"@wbce-d9/tsconfig": "0.0.7",
-		"@wbce-d9/types": "workspace:*",
+		"@db-studio/config": "workspace:*",
+		"@db-studio/types": "workspace:*",
 		"@ngneat/falso": "6.4.0",
 		"@types/fs-extra": "11.0.1",
 		"@types/lodash-es": "4.17.7",

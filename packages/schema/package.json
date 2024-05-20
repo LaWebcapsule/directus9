@@ -1,5 +1,5 @@
 {
-	"name": "@wbce-d9/schema",
+	"name": "@db-studio/schema",
 	"version": "9.26.3",
 	"description": "Utility for extracting information about existing DB schema",
 	"type": "module",
@@ -13,18 +13,17 @@
 		"sqlite3",
 		"javascript"
 	],
-	"homepage": "https://directus.io",
+	"homepage": "https://github.com/pxslip/db-studio",
 	"bugs": {
-		"url": "https://github.com/LaWebcapsule/directus9/issues"
+		"url": "https://github.com/pxslip/db-studio/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/LaWebcapsule/directus9.git",
+		"url": "https://github.com/pxslip/db-studio.git",
 		"directory": "packages/schema"
 	},
-	"funding": "https://github.com/LaWebcapsule/directus9?sponsor=1",
+	"funding": "https://github.com/pxslip/db-studio?sponsor=1",
 	"license": "GPL-3.0",
-	"author": "Rijk van Zanten <rijkvanzanten@me.com>",
 	"exports": {
 		".": "./dist/index.js",
 		"./package.json": "./package.json",
@@ -45,7 +44,7 @@
 		"knex": "2.4.2"
 	},
 	"devDependencies": {
-		"@wbce-d9/tsconfig": "0.0.7",
+		"@db-studio/config": "workspace:*",
 		"typescript": "5.0.4"
 	},
 	"publishConfig": {

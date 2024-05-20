@@ -1,40 +1,34 @@
 {
-	"name": "@wbce-d9/create-directus-extension",
-	"version": "9.26.5",
-	"description": "A small util that will scaffold a Directus extension",
+	"name": "@db-studio/create-directus-extension",
+	"version": "1.0.0",
+	"description": "A small util that will scaffold a DB Studio (forrmerly Directus v9) extension",
 	"keywords": [
-		"directus",
 		"extensions"
 	],
 	"type": "module",
-	"homepage": "https://directus.io",
+	"homepage": "https://github.com/pxslip/db-studio",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/LaWebcapsule/directus9.git",
+		"url": "https://github.com/pxslip/db-studio.git",
 		"directory": "packages/create-directus-extension"
 	},
-	"funding": "https://github.com/LaWebcapsule/directus9?sponsor=1",
+	"funding": "https://github.com/pxslip/db-studio?sponsor=1",
 	"license": "GPL-3.0-only",
-	"author": "Nicola Krumschmidt",
-	"contributors": [
-		"Joonas Palosuo <joonas.palosuo@gmail.com>",
-		"Rijk van Zanten <rijkvanzanten@me.com>"
-	],
 	"exports": {
 		".": "./lib/index.js",
 		"./package.json": "./package.json"
 	},
 	"main": "lib/index.js",
 	"bin": {
-		"cde": "./lib/index.js",
-		"create-directus-extension": "./lib/index.js"
+		"cdbse": "./lib/index.js",
+		"create-db-studio-extension": "./lib/index.js"
 	},
 	"files": [
 		"lib/index.js"
 	],
 	"dependencies": {
-		"@wbce-d9/constants": "workspace:*",
-		"@wbce-d9/extensions-sdk": "workspace:*",
+		"@db-studio/constants": "workspace:*",
+		"@db-studio/extensions-sdk": "workspace:*",
 		"inquirer": "9.1.5"
 	}
 }

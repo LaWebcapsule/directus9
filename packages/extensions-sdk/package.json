@@ -1,19 +1,18 @@
 {
-	"name": "@wbce-d9/extensions-sdk",
-	"version": "9.26.5",
-	"description": "A toolkit to develop extensions to extend Directus",
-	"homepage": "https://directus.io",
+	"name": "@db-studio/extensions-sdk",
+	"version": "1.0.0",
+	"description": "A toolkit to develop extensions to extend DB Studio (formerly Directus v9)",
+	"homepage": "https://github.com/pxslip/db-studio",
 	"type": "module",
 	"bugs": {
-		"url": "https://github.com/LaWebcapsule/directus9/issues"
+		"url": "https://github.com/pxslip/db-studio/issues"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/LaWebcapsule/directus9.git",
+		"url": "https://github.com/pxslip/db-studio.git",
 		"directory": "packages/extensions-sdk"
 	},
-	"funding": "https://github.com/LaWebcapsule/directus9?sponsor=1",
-	"author": "Nicola Krumschmidt",
+	"funding": "https://github.com/pxslip/db-studio?sponsor=1",
 	"exports": {
 		".": "./dist/index.js",
 		"./cli": "./dist/cli/index.js",
@@ -21,7 +20,7 @@
 	},
 	"main": "dist/index.js",
 	"bin": {
-		"directus-extension": "cli.js"
+		"dbs-extension": "cli.js"
 	},
 	"files": [
 		"dist",
@@ -34,10 +33,10 @@
 		"test": "vitest --watch=false"
 	},
 	"dependencies": {
-		"@wbce-d9/composables": "workspace:*",
-		"@wbce-d9/constants": "workspace:*",
-		"@wbce-d9/types": "workspace:*",
-		"@wbce-d9/utils": "workspace:*",
+		"@db-studio/composables": "workspace:*",
+		"@db-studio/constants": "workspace:*",
+		"@db-studio/types": "workspace:*",
+		"@db-studio/utils": "workspace:*",
 		"@rollup/plugin-commonjs": "24.1.0",
 		"@rollup/plugin-json": "6.0.0",
 		"@rollup/plugin-node-resolve": "15.0.2",
@@ -58,7 +57,7 @@
 		"rollup-plugin-vue": "6.0.0"
 	},
 	"devDependencies": {
-		"@wbce-d9/tsconfig": "0.0.7",
+		"@db-studio/config": "workspace:*",
 		"@types/fs-extra": "11.0.1",
 		"@types/inquirer": "9.0.3",
 		"@vitest/coverage-c8": "0.30.1",

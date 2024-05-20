@@ -1,0 +1,13 @@
+{
+  "name": "@db-studio/config",
+  "version": "1.0.0",
+  "description": "Configuration files for DB Studio (formerly Directus v9) packages",
+  "main": "index.js",
+  "keywords": [
+    "tsconfig"
+  ],
+  "license": "MIT",
+  "files": [
+    "./tsconfig/node18-esm.json"
+  ]
+}
