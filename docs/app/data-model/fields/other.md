@@ -4,10 +4,6 @@
 
 ## Hash
 
-![Form text input. Value is "value to hash on save"](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-hash.webp)
-
-![Form text input that shows the value is securely hashed.](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-hash-secure.webp)
-
 Text input that allows users to hash the value on save. Both the API and SDK provide methods to
 [verify the hash](https://docs.directus.io/reference/system/utilities.html#verify-a-hash).
 
@@ -16,8 +12,6 @@ Text input that allows users to hash the value on save. Both the API and SDK pro
 - **Masked**: Hide the true values on input before save.
 
 ## Slider
-
-![A standard form text input](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-slider.webp)
 
 Range input that allows users to select a number with an interactive slider.
 

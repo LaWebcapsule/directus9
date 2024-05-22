@@ -32,8 +32,6 @@ All configuration options are described in detail below.
 
 ## General
 
-![How to Configure General Project Settings](https://cdn.directus.io/docs/v9/configuration/project-settings/project-settings-20220815/general-project-settings-20220811A.webp)
-
 - **Project Name** — Sets the name on the [Navigation Bar](/app/overview.html#_2-navigation-bar), as well as login and
   public pages.
 - **Project Descriptor** — Sets the descriptor shown below the Project Name.
@@ -84,8 +82,6 @@ it easier to identify different Directus projects.
 
 ## Security
 
-![How to Configure Security in Project Settings](https://cdn.directus.io/docs/v9/configuration/project-settings/project-settings-20220815/security-project-settings-20220811A.webp)
-
 - **Auth Password Policy** — Sets a policy requirement for all user's passwords via a JavaScript regex. Supports the
   following options:
   - **None** — Not recommended.
@@ -128,8 +124,6 @@ To learn more, please see the API guide on [transformation presets](/reference/f
 :::
 
 ## Mapping
-
-![How to Configure Mapping in Directus](https://cdn.directus.io/docs/v9/configuration/project-settings/project-settings-20220815/mapping-project-settings-20220815A.webp)
 
 - **Mapbox Access Token** — Create a [Mapbox Access Token](https://docs.mapbox.com/help/glossary/access-token) and enter
   it here to improve the platform's mapping experience.

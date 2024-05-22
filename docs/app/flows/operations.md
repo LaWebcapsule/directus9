@@ -22,8 +22,6 @@ configuration options, as well as any well as other relevant details. We will as
 
 ## Condition
 
-![Condition](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/condition-20220603A.webp)
-
 A **Condition** operation lets you choose a **success path** or **failure path** by validating data passed into it with
 [Filter Rules](/reference/filter-rules).
 
@@ -54,8 +52,9 @@ flow ends with a condition that executes with a `reject` path, it will cancel yo
 </video>
 -->
 
-This operation lets you add a custom script using vanilla JavaScript or TypeScript.
-The script will be executed securely in an isolated sandbox. No interactions take place between the sandbox and the host except for sharing input and output values. This means, for example, no access to the file system and no ability to do network requests.
+This operation lets you add a custom script using vanilla JavaScript or TypeScript. The script will be executed securely
+in an isolated sandbox. No interactions take place between the sandbox and the host except for sharing input and output
+values. This means, for example, no access to the file system and no ability to do network requests.
 
 **Options**
 
@@ -128,8 +127,6 @@ For security reasons, module usage is disabled by default. You can configure wha
 
 ## Create Data
 
-![Create Data](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/create-data-20220603A.webp)
-
 This operation creates item(s) in a collection.
 
 **Options**
@@ -164,8 +161,6 @@ To learn about payload requirements when creating an item, see [API Reference > 
 
 ## Delete Data
 
-![Delete Data](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/delete-data-20220603A.webp)
-
 This operation deletes item(s) from a collection.
 
 **Options**
@@ -194,8 +189,6 @@ triggers other event hooks.
 :::
 
 ## Read Data
-
-![Read Data](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/read-data-20220603A.webp)
 
 This operation reads item(s) from a collection and adds them onto the data chain. You may select Items by their ID or by
 running a query.
@@ -226,8 +219,6 @@ triggers other event hooks.
 :::
 
 ## Update Data
-
-![Update Data](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/update-data-20220603A.webp)
 
 This operation updates item(s) in a collection. You may select item(s) to update by their ID or by running a query.
 
@@ -265,8 +256,6 @@ To learn about `payload` requirements when updating an item, see [API Reference 
 
 ## Log to Console
 
-![Log to Console](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/log-to-console-20220603A.webp)
-
 This operation outputs information to the server-side console as well as the [Logs](/configuration/flows#logs) within
 the Data Studio. This is a key tool for troubleshooting flow configuration. A Log operation's key will have a null value
 on the data chain.
@@ -285,8 +274,6 @@ append a `null` value on the `operationKey`.
 For more details, see the section on [Logs](/configuration/flows#logs).
 
 ## Send Email
-
-![Send Email](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/send-email-20220603A.webp)
 
 This operation sends off emails.
 
@@ -318,8 +305,6 @@ may send it there automatically.
 
 ## Send Notification
 
-![Send Notification](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/send-notification-20220603A.webp)
-
 This operation pushes notifications to Directus Users. If the operation executes successfully, a list containing the IDs
 of all sent notifications generated is appended under this operation's key.
 
@@ -345,8 +330,6 @@ You can input an array of UUIDs in the `To` input option to send off multiple em
 
 ## Webhook / Request URL
 
-![Webhook / Request URL](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/webhook-20220603A.webp)
-
 This operation makes a request to another URL.
 
 **Options**
@@ -362,8 +345,6 @@ When an operation completes successfully, the `response` is appended under its `
 
 ## Sleep
 
-![Sleep](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/sleep-20220603A.webp)
-
 This operation creates a delay in the Flow for a given amount of milliseconds, then continues to the next operation.
 
 **Options**
@@ -375,8 +356,6 @@ This operation creates a delay in the Flow for a given amount of milliseconds, t
 This operation does not generate data. It will append a `null` value on its `operationKey`.
 
 ## Transform Payload
-
-![Transform Payload](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/transform-payload-20220603A.webp)
 
 This operation lets you custom define your own JSON payload for use in subsequent operations. This enables you to take
 multiple sources of data and "tidy them up" into a single payload.
@@ -409,8 +388,6 @@ Then you could stitch together all this data to create a new JSON object, like s
 ```
 
 ## Trigger Flow
-
-![Trigger Flow](https://cdn.directus.io/docs/v9/configuration/flows/operations/operations-20220603A/trigger-flow-20220603A.webp)
 
 This operation starts another flow and _(optionally)_ passes data into it. It should be used in combination with the
 [Another Flow](/configuration/flows/triggers#another-flow) trigger.

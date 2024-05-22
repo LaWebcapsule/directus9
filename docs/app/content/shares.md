@@ -3,11 +3,6 @@
 > The Shares utility enables you to share an Item with anyone, regardless of their permissions, even if they are not
 > users within the project.
 
-<video autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/app-guide/content/data-sharing/data-sharing-20220217A/data-shares-20220217A.mp4" type="video/mp4" />
-<p>Your browser is not displaying the video for some reason. Here's a <a href="https://cdn.directus.io/docs/v9/app-guide/content/data-sharing/data-sharing-20220217A/data-shares-20220217A.mp4">link to the video</a> instead.</p>
-</video>
-
 <!--
 @TODO
 Create a :::tip Before You Begin
@@ -40,11 +35,6 @@ to configure Shares properly.
 
 ## How It Works
 
-<video autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/app-guide/content/data-sharing/data-sharing-20220217A/how-shares-work-20220217A.mp4" type="video/mp4" />
-<p>If your browser is not displaying the video for some reason, here's a <a href="https://cdn.directus.io/docs/v9/app-guide/content/data-sharing/data-sharing-20220217A/how-shares-work-20220217A.mp4">link to the video</a> instead.</p>
-</video>
-
 1. Navigate to the Content Module.
 2. Navigate to the Collection of the Item you want to share.
 3. Click the Item to open its Item Page.
@@ -59,9 +49,6 @@ to configure Shares properly.
 7. Click <span mi btn>check</span> in the Menu Header once you have set a name, a Role and constraints. You will see
    your new Share under **Shares** in the sidebar.
 8. Click the <span mi icon>more_horiz</span> button on the right side of your Share.
-
-![copy send edit delete shares menu](https://cdn.directus.io/docs/v9/app-guide/content/data-sharing/data-sharing-20220217A/copy-send-edit-delete-shares-menu-20220217A.webp)
-
 9. Here you have 4 options:
    - **Copy Link** – Creates a hyperlink that you can copy and paste.
    - **Send Link** – Creates prompt for the User to add email(s) and share the link.
@@ -79,8 +66,6 @@ tab.
 :::
 
 ## Share Options Menu
-
-![Share Options Menu](https://cdn.directus.io/docs/v9/app-guide/content/data-sharing/data-sharing-20220217A/share-options-menu-20220217A.webp)
 
 - **Name** – Adds a name to describe the Share.
 - **Role** – [Assigns a Role](#assigning-a-role) from which the Share will inherit permissions.
@@ -126,8 +111,6 @@ linked Collections.
 The Role option in the [Share Options Menu](#share-options-menu) lets you associate a Role to the Share. The Share will
 then inherit permissions of that Role.
 
-![Select Role for Share](https://cdn.directus.io/docs/v9/app-guide/content/data-sharing/data-sharing-20220217A/select-existing-role-menu-20220217A.webp)
-
 ### Assign an Existing Role
 
 1. Navigate to the **Share Options Menu**.
@@ -140,8 +123,6 @@ then inherit permissions of that Role.
 _If your Role has the correct permissions configured_, you can create a new Role and assign it to a Share _"on the fly"_
 in the Share Options Menu. However, you will still need to navigate to **Settings > Roles and Permissions > [Role
 Name]** to configure any read permissions.
-
-![Creating / Editing a Role within Shares](https://cdn.directus.io/docs/v9/app-guide/content/data-sharing/data-sharing-20220217A/creating-and-edit-roles-menu-20220217A.webp)
 
 ### Create a New Role
 

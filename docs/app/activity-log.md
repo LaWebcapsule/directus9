@@ -49,8 +49,6 @@ please see [Revert an Item](/app/content/items#revert-an-item).
 
 ## View an Activity Log Item
 
-![Activity Log Default Fields](https://cdn.directus.io/docs/v9/configuration/activity-log/activity-log-20220816/activity-log-default-fields-20220816A.webp)
-
 Click any item in the Activity Log and a side drawer will open, displaying its logged details. The following information
 is stored for each item.
 

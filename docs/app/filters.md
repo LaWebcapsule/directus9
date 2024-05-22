@@ -12,8 +12,6 @@ readTime: 5 min read
 > restricting Item access permissions for specific Users or Roles, building dashboard analytics with the Insights
 > module, and more.
 
-![Filters](https://cdn.directus.io/docs/v9/app-guide/filters/filters-20220303A/filters-20220303A.webp)
-
 ::: warning There Are Two Filters Documents
 
 This page is a non-technical guide to using Filters. For more technical info, see
@@ -61,8 +59,6 @@ automatically display. An exhaustive list of Operators and what they do can be f
 
 `AND` Groups give the option to filter for Items that meet _all of several criteria_. On the other hand, `OR` Groups
 filter for Items that meet _any one of several criteria_.
-
-![AND/OR Groups](https://cdn.directus.io/docs/v9/app-guide/filters/filters-20220303A/and-or-groups-20220303A.webp)
 
 1. Click "Add Filter".
 2. Click "And/OR Group" at the very top of the dropdown menu.
@@ -122,8 +118,6 @@ Here are step-by-step instructions on how to filter by Fields in other Collectio
 4. Set the Operator and Value as desired.
 
 ## Unfilterable Fields
-
-![Unfilterable Fields](https://cdn.directus.io/docs/v9/app-guide/filters/filters-20220303A/unfilterable-fields-20220303A.webp)
 
 Not all Fields can be filtered. As seen above in [Filtering by Related Collections](#filtering-by-related-collections),
 Alias Fields cannot be filtered; they instead provide a dropdown menu to access Fields from a related Collection.

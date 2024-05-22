@@ -4,8 +4,6 @@
 
 ## Toggle
 
-![A toggle form input with label named "Enabled"](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-toggle.webp)
-
 A checkbox input that allows user to toggle value between on and off / true and false.
 
 - **Types**: `Boolean`
@@ -18,8 +16,6 @@ A checkbox input that allows user to toggle value between on and off / true and 
 
 ## Datetime
 
-![A date picker input. User can select a calendar date and input a time. ](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-datetime.webp)
-
 Date picker input that allows user to select a date and time.
 
 - **Types**: `DateTime`, `Date`, `Time`, `Timestamp`
@@ -27,10 +23,6 @@ Date picker input that allows user to select a date and time.
 - **Use 24-Hour Format**: Use 24 hour time system instead of 12 hour
 
 ## Repeater
-
-![A standard form text input](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-repeater.webp)
-
-![A standard form text input](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-repeater-open.webp)
 
 Interface for repeating groups of fields.
 
@@ -56,16 +48,12 @@ Value is stored as a JSON array of objects.
 
 ## Map
 
-![An interactive map interface that shows a single point on the east coast of the United States. Map has buttons for zoom, search, and full screen.](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-map.webp)
-
 Interface that shows geospatial data on an interactive map.
 
 - **Types**: `Point`, `LineString`, `Polygon`, `Multipoint`, `MultiLineString`, `MultiPolygon`, `Geometry (All)`, `JSON`
 - **Default View**: The default location and zoom settings on the map to show by default
 
 ## Color
-
-![A text input for color hex codes that allows user to select color modes ](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-color.webp)
 
 A color picker interface that allows users to input color codes and convert between different color modes.
 
@@ -74,8 +62,6 @@ A color picker interface that allows users to input color codes and convert betw
 - **Preset Colors**: Preset colors that users can select.
 
 ## Dropdown
-
-![A select input with a dropdown of options.](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-dropdown.webp)
 
 Input that allows user to select a value from a list of options.
 
@@ -90,15 +76,11 @@ Input that allows user to select a value from a list of options.
 
 ## Icon
 
-![A select input with a dropdown grid of icon choices.](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-icon.webp)
-
 Search input that allows user to select from a list of icons.
 
 - **Types**: `String`
 
 ## Checkboxes
-
-![A form input with multiple checkboxes.](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-checkboxes.webp)
 
 Input that allows user to select multiple checkboxes.
 
@@ -114,8 +96,6 @@ Input that allows user to select multiple checkboxes.
 
 ## Checkboxes (Tree)
 
-![A form input with a nested tree of multiple parent and child checkboxes.](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-checkboxes-tree.webp)
-
 Nested tree of checkboxes that can be expanded or collapsed.
 
 - **Types**: `JSON`, `CSV`
@@ -126,8 +106,6 @@ Nested tree of checkboxes that can be expanded or collapsed.
 - **Value Combining**: Controls what value is stored when nested selections are made.
 
 ## Dropdown (Multiple)
-
-![A select input where user can select multiple options from a dropdown.](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-dropdown-multiple.webp)
 
 Input that allows user to select multiple values from a list of options.
 
@@ -141,8 +119,6 @@ Input that allows user to select multiple values from a list of options.
 - **Placeholder**: Placeholder text for the dropdown.
 
 ## Radio Buttons
-
-![A radio button form input with different options to select](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-radio-buttons.webp)
 
 Radio button input that allows users to select a single value from multiple choices.
 

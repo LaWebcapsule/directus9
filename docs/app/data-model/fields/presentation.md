@@ -4,8 +4,6 @@
 
 ## Divider
 
-![A horizontal divider between two form fields](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-divider.webp)
-
 A horizontal divider to separate fields into different sections.
 
 - **Title**: Enter a title, or leave blank to only show the divider line.
@@ -14,10 +12,6 @@ A horizontal divider to separate fields into different sections.
 - **Inline Title**: Show title inside the divider line or above the line.
 
 ## Button Links
-
-![A group of two buttons. One primary button. One default button.](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-buttonlinks.webp)
-
-![A form for creating new Button Links. Form has four fields: "Label", "Icon", "Type", "URL"](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-buttonlinks-new.webp)
 
 Group of one or more buttons that link to a preset or dynamic url.
 
@@ -29,8 +23,6 @@ Group of one or more buttons that link to a preset or dynamic url.
     URL dynamically.
 
 ## Notice
-
-![A standard warning notice in yellow with a hazard icon.](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-notice.webp)
 
 An alert or notice interface to notify users of important information.
 

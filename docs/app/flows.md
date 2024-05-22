@@ -55,8 +55,6 @@ Async/Sync ->
 
 ## What's a Flow?
 
-![What's a Flow?](https://cdn.directus.io/docs/v9/configuration/flows/flows/flows-20220603A/whats-a-flow-20220603A.webp)
-
 <!--
 <video title="What's a Flow" autoplay playsinline muted loop controls>
 <source src="" type="video/mp4" />

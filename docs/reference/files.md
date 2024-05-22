@@ -43,8 +43,7 @@ permissions and other built-in features.
 
 :::
 
-![Original File](https://cdn.directus.io/docs/v9/reference/files/original-20220216A.jpg) _Original File Used — 602KB and
-1800x1200_
+1800x1200\_
 
 ---
 

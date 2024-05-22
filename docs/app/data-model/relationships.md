@@ -49,8 +49,6 @@ To create an M2O relationship, we add a foreign key field to the parent collecti
 collection to items in the related collection. If we have two tables, `cities` and `countries`, we can create a
 `cities.country_id` foreign key field.
 
-![Many-to-One Relational Diagram](https://cdn.directus.io/docs/v9/configuration/data-model/relationships/relations-20221026/m2o-20221026A.webp)
-
 Let's take a look at the schema.
 
 ```
@@ -94,8 +92,6 @@ of the [M2O](#many-to-one-m2o) section, we learned that configuring an M2O in Di
 items within an Item Page on the related collection. In Directus, configuring an O2M creates an
 [Alias](/getting-started/glossary#alias) field, which lets us access related items. To demonstrate this, let's continue
 with the `cities` and `countries` example relationship used in the M2O section.
-
-![One-to-Many Relational Diagram](https://cdn.directus.io/docs/v9/configuration/data-model/relationships/relations-20221026/o2m-20221026A.webp)
 
 Let's take a look at the schema.
 
@@ -148,11 +144,7 @@ of the capital city directly. But this would create [duplicate data](/configurat
 because the same city would exist in both `countries.capital_city` as well as `cities.name`. But remember, we want to
 _avoid duplicate data!_
 
-![Duplicate Data from Capital Cities](https://cdn.directus.io/docs/v9/configuration/data-model/relationships/relations-20221026/o2o-duplicate-20221026A.webp)
-
 Instead, we want to use an O2O relationship. Let's try adding a `cities.capital_of` field.
-
-![An inefficient One-to-One Relationship](https://cdn.directus.io/docs/v9/configuration/data-model/relationships/relations-20221026/o2o-inefficient-20221026A.webp)
 
 Let's take a look at the schema.
 
@@ -175,8 +167,6 @@ The O2O relationship in the schema above works, and in some cases it may not mat
 O2O onto. But in this case it is sub-optimal. Since _most cities_ are not capital cities, the column will mostly contain
 `NULL` values. However, every single country has a capital city. So if we create the O2O on the `countries` collection,
 it will be much more efficient.
-
-![A One-to-One Relationship](https://cdn.directus.io/docs/v9/configuration/data-model/relationships/relations-20221026/o2o-20221026A.webp)
 
 Let's take a look at the schema.
 
@@ -211,8 +201,8 @@ Note the following points from the schema above. When we create an O2O in Direct
 
 The easiest way to configure an O2O is to follow the guide on how to
 [create a field (standard)](/configuration/data-model/fields/#create-a-field-standard) and select the **M2O** field type
-from the template wizard. Then, configure the field's schema, toggling on
-**Unique** so that each value in the M2O field is unique, resulting in an O2O relationship.
+from the template wizard. Then, configure the field's schema, toggling on **Unique** so that each value in the M2O field
+is unique, resulting in an O2O relationship.
 
 :::
 
@@ -229,8 +219,6 @@ relationships between rows, no matter how many exist.
 
 To demonstrate this, let's think about the relationship between recipes and ingredients: a _recipe_ can have many
 _ingredients_, and _ingredients_ can be in many _recipes_.
-
-![Many-to-Many Relational Diagram](https://cdn.directus.io/docs/v9/configuration/data-model/relationships/relationships-20220805/m2m-20220805A.webp)
 
 Let's take a look at the schema.
 
@@ -298,8 +286,6 @@ _(the name of the collection)_ for related collections.
 
 One common example of when M2As are used is for _page builders_, which have a `pages` collection that combines multiple
 collections for each type of page section, such as `heading`, `text_bodies`, `image`, `video`, _etc_.
-
-![Many-to-Any Relational Diagram](https://cdn.directus.io/docs/v9/configuration/data-model/relationships/relationships-20220805/m2a-20220805A.webp)
 
 Let's take a look at the schema:
 
@@ -369,8 +355,6 @@ the Translations O2M alias field. But behind the scenes, it is powered by an M2M
 
 To demonstrate, let's create a Translations O2M relationship for `articles`, a common content type that you may want to
 translate.
-
-![Translations O2M](https://cdn.directus.io/docs/v9/configuration/data-model/relationships/relationships-20220805/o2m-translations-20220805A.webp)
 
 Let's take a look at the schema.
 

@@ -27,10 +27,6 @@ Add links once "archive item" is created
 
 ## Create an Item
 
-<video autoplay playsinline muted loop controls title="Create an Item">
-	<source src="https://cdn.directus.io/docs/v9/app-guide/content/content-items/content-items-20220415A/create-an-item-20220415A.mp4" type="video/mp4" />
-</video>
-
 To create an Item, follow these steps.
 
 1. Navigate to the Content Module and select the desired Collection.
@@ -46,10 +42,6 @@ model settings, the App will skip step two above and automatically open the Item
 :::
 
 ## Edit an Item
-
-<video autoplay playsinline muted loop controls title="Edit an Item">
-	<source src="https://cdn.directus.io/docs/v9/app-guide/content/content-items/content-items-20220415A/edit-an-item-20220415A.mp4" type="video/mp4" />
-</video>
 
 To edit an Item's field values, follow these steps.
 
@@ -79,10 +71,6 @@ automatically open the Item Page.
 
 ## Advanced Save Options
 
-<video autoplay playsinline muted loop controls title="Advanced Save Options">
-	<source src="https://cdn.directus.io/docs/v9/app-guide/content/content-items/content-items-20220816/advanced-save-options-20220816A.mp4" type="video/mp4" />
-</video>
-
 To do an advanced save when you create or edit an item, follow these steps.
 
 1. Begin to [create an item](#create-an-item) or [edit an item](#edit-an-item).
@@ -94,10 +82,6 @@ To do an advanced save when you create or edit an item, follow these steps.
    - **Discard all Changes**
 
 ## Archive an Item
-
-<video autoplay playsinline muted loop controls title="Archive an Item">
-	<source src="https://cdn.directus.io/docs/v9/app-guide/content/content-items/content-items-20220415A/archive-an-item-20220415A.mp4" type="video/mp4" />
-</video>
 
 To archive an Item, follow these steps.
 
@@ -114,10 +98,6 @@ model settings.
 :::
 
 ## Revert an Item
-
-<video autoplay playsinline muted loop controls title="Revert an Item">
-	<source src="https://cdn.directus.io/docs/v9/app-guide/content/content-items/content-items-20220415A/revert-an-item-20220415A.mp4" type="video/mp4" />
-</video>
 
 As you update Field Values on Items, Directus saves these [Revisions](/getting-started/glossary#revisions), and they can
 be compared side-by-side to the current state. To revert an Item, follow these steps.
@@ -145,10 +125,6 @@ You can also revert Items [programmatically via the API](/reference/system/revis
 
 ## Comment on an Item
 
-<video autoplay playsinline muted loop controls title="Comment on an Item">
-	<source src="https://cdn.directus.io/docs/v9/app-guide/content/content-items/content-items-20220415A/comment-on-an-item-20220415A.mp4" type="video/mp4" />
-</video>
-
 Comments is a collaborative tool that are left on an Item in the sidebar and remain there for you and other team members
 to view. To create a comment, follow these steps.
 
@@ -174,10 +150,6 @@ to delete the comment.
 :::
 
 ## Delete an Item
-
-<video autoplay playsinline muted loop controls title="Comment on an Item">
-	<source src="https://cdn.directus.io/docs/v9/app-guide/content/content-items/content-items-20220415A/delete-an-item-20220415A.mp4" type="video/mp4" />
-</video>
 
 To delete an Item, follow these steps.
 

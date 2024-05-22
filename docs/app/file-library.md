@@ -9,8 +9,6 @@ readTime: 7 min read
 > full-featured Digital Asset Management (DAM) system for storing, organizing, browsing, and transforming your various
 > files and assets.
 
-![File Library](https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220305A/file-library-20220307A.webp)
-
 ::: warning More Documents on Folder and File Management
 
 This is a non-technical, no-code guide to the File Library Module. Please note there is documentation on programmatic
@@ -57,8 +55,6 @@ When a file is clicked in the File Listing Page, the File Details Page appears. 
 and embeds, with core Fields included out-of-the-box (see below), and the ability for Administrators to add additional
 custom Fields. This page has the same features and functionality as the [Item Page](/getting-started/glossary#items).
 
-![Files](https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220305A/files-20220305A.webp)
-
 ### Action Buttons
 
 Notice the following Buttons in the Header:
@@ -83,8 +79,6 @@ constraint of your File Field to `SET NULL` or `CASCADE` when the File is delete
 The Files Collection comes pre-configured with the following Fields out of the box. New Fields can be created and
 customized as needed in **Settings > Data Model**. However the pre-configured Fields cannot be changed or deleted.
 
-![File Details](https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220305A/file-details-20220305A.webp)
-
 - **Preview** – A preview of the image or file.
 - **Title** – A title for the File.
 - **Description** – A description of the File.
@@ -97,8 +91,6 @@ customized as needed in **Settings > Data Model**. However the pre-configured Fi
 ### File Sidebar
 
 The file sidebar also includes the following details, which are not editable and serve as metadata.
-
-![File Sidebar](https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220305A/file-sidebar-20220305A.webp)
 
 - **Type** – The MIME type of the file, displayed in the App as a formatted media type.
 - **Dimensions** – _Images only_. The width and height of the image in pixels.
@@ -152,8 +144,6 @@ When a file is replaced, its existing info and all relationships are kept.
 ## Folders
 
 Folders provide the organization system for Files.
-
-![Folders](https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220305A/folders-20220305A.webp)
 
 They can be named, renamed, and nested as sub-folders anywhere in the Folder hierarchy. Once a Folder is selected from
 the Navigation Bar, File Listing Page opens. The File Listing Page displays all Files within a Folder. It also enables

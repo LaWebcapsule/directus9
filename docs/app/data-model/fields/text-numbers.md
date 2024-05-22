@@ -5,8 +5,6 @@
 
 ## Input
 
-![A standard form text input](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-input.webp)
-
 A standard form input.
 
 - **Types**: `String`, `Text`, `UUID`, `Integer`, `Big Integer`, `Float`, `Decimal`
@@ -18,8 +16,6 @@ A standard form input.
 - **Slugify**: Make the entered value URL safe.
 
 ## Autocomplete Input (API)
-
-![An autocomplete form text input that shows a dropdown list of options based on a search query](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-autocomplete.webp)
 
 A search input that will populate dropdown choices by making a request to a given URL.
 
@@ -33,8 +29,6 @@ A search input that will populate dropdown choices by making a request to a give
 
 ## Code
 
-![A code editor input](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-code.webp)
-
 Code editor for pre-formatted text.
 
 - **Types**: `String`, `Text`, `JSON`, `Geometry (All)`
@@ -46,16 +40,12 @@ Code editor for pre-formatted text.
 
 ## Textarea
 
-![A standard form textarea input](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-textarea.webp)
-
 Textarea input for longer plain text.
 
 - **Types**: `Text`
 - **Soft Limit**: Used to limit the number of characters within the Data Studio. There is no hard limit in the database.
 
 ## WYSIWYG
-
-![A What You See Is What You Get (WYSIWYG) form input that has a toolbar for formatting](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-wysiwyg.webp)
 
 The What You See Is What You Get (WYSIWYG) interface provides a text area with rich formatting options in the toolbar.
 
@@ -71,8 +61,6 @@ The What You See Is What You Get (WYSIWYG) interface provides a text area with r
 
 ## Markdown
 
-![A markdown text editor with a toolbar with formatting options. Edit and preview tabs.](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-markdown.webp)
-
 Markdown text editor with formatting options in the toolbar. You can switch between Edit and Preview modes.
 
 - **Types**: `Text`
@@ -85,8 +73,6 @@ Markdown text editor with formatting options in the toolbar. You can switch betw
 - **Custom Blocks**: Add custom markdown syntax types.
 
 ## Tags
-
-![A standard form text input where user can select, add, and remove tags.](https://cdn.directus.io/docs/v9/configuration/data-model/fields/interfaces-20230308/interface-tags.webp)
 
 A text input that allows users to apply any number of tags. When adding new tag, press Enter to save the tag.
 
