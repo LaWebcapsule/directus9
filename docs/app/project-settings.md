@@ -18,10 +18,6 @@ To manage your project settings programmatically, see our API documentation on [
 
 ## Configure Project Settings
 
-<video title="How to Configure Project Settings" autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/configuration/project-settings/project-settings-20220815/configure-a-project-20220815A.mp4" type="video/mp4" />
-</video>
-
 To configure Project Settings, follow these steps.
 
 1. Navigate to **Settings > Project Settings**.
@@ -39,10 +35,6 @@ All configuration options are described in detail below.
 - **Default Language** — Sets the default language used within the app.
 
 ## Branding & Style
-
-<video title="How to Configure Branding and Style in Project Settings" autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/configuration/project-settings/project-settings-20220815/branding-and-style-20220811A.mp4" type="video/mp4" />
-</video>
 
 - **Project Color** — Sets color on the project logo, FavIcon and login/public pages.
 - **Project Logo** — Adds a 40x40px logo at the top of the [Module Bar](/app/overview.html#_1-module-bar) and on the
@@ -66,10 +58,6 @@ it easier to identify different Directus projects.
 
 ## Modules
 
-<video title="How to Configure the Module Bar in Project Settings" autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/configuration/project-settings/project-settings-20220815/module-bar-20220811A.mp4" type="video/mp4" />
-</video>
-
 - **Module Bar** — Allows the following customization of links displayed in the
   [Module Bar](/app/overview.html#_1-module-bar).
   - **Toggle Visibility** — Toggle <span mi icon>check_box_outline_blank</span> to set module link visibility in the
@@ -92,10 +80,6 @@ it easier to identify different Directus projects.
   locked, an Admin user is required to unlock the account.
 
 ## Files & Storage
-
-<video title="How to configure Files and Storage in Project Settings" autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/configuration/project-settings/project-settings-20220815/transformation-presets-20220815A.mp4" type="video/mp4" />
-</video>
 
 The platform's file middleware allows for cropping and transforming image assets on the fly. This means you can simply
 request an original image, include any desired parameters, and you'll be served the new asset as a response.
@@ -135,10 +119,6 @@ To learn more, please see the API guide on [transformation presets](/reference/f
   - **Attribution** — Sets attribution information.
 
 ## Image Editor
-
-<video title="How to configure Image Editor Project Settings in Directus" autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/configuration/project-settings/project-settings-20220815/image-editor-20220815A.mp4" type="video/mp4" />
-</video>
 
 - **Custom Aspect Ratios** — Adds custom aspect ratios in the [image editor](/app/file-library#edit-an-image).
   - **Text** — Sets a name to identify the aspect ratio.

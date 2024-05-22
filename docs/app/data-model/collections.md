@@ -19,17 +19,9 @@ API documentation
 
 ## Overview
 
-<video title="Overview" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/data-model/data-model-20220805/collections-20220805A.mp4" type="video/mp4" />
-</video>
-
 Collections are data tables. Typically, you access items within a collection in the [Content Module](/app/content).
 
 ## System Collections
-
-<video title="System Collections" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/data-model/collections/collections-20220805/system-collections-20220805A.mp4" type="video/mp4" />
-</video>
 
 System collections store the data and configuration details required to power your project.
 
@@ -120,10 +112,6 @@ and it will automatically appear within your Directus project. The first time yo
 
 ## Toggle Collection Visibility
 
-<video title="Hide a Collection" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/data-model/collections/collections-20220805/toggle-collection-visibility-20220805A.mp4" type="video/mp4" />
-</video>
-
 To toggle whether a collection is hidden by default in the Content Module, follow these steps.
 
 1. Navigate to **Settings > Data Model**.
@@ -140,10 +128,6 @@ Collections**.
 
 ## Create a Folder
 
-<video title="Create a Folder" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/data-model/collections/collections-20220805/create-a-folder-20220805A.mp4" type="video/mp4" />
-</video>
-
 Folders allow you to sub-nest and group how collections are displayed. This feature simply changes how the collections
 are displayed under **Settings > Data Model** and in the Content Module. It has no impact on the data model. To create a
 folder, follow these steps.
@@ -156,10 +140,6 @@ folder, follow these steps.
 
 ## Toggle Folder Display
 
-<video title="Toggle Folder Display" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/data-model/collections/collections-20220805/toggle-folder-display-20220805A.mp4" type="video/mp4" />
-</video>
-
 To toggle folder display, follow these steps.
 
 1. Navigate to **Settings > Data Model**.
@@ -170,10 +150,6 @@ To toggle folder display, follow these steps.
 
 ## Sort and Nest Collections
 
-<video title="Configure a Collection" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/data-model/collections/collections-20220805/sort-and-nest-collections.mp4" type="video/mp4" />
-</video>
-
 To sort and nest collections in **Settings > Data Model** and **Content Module**, follow these steps.
 
 1. Navigate to **Settings > Data Model**.
@@ -181,10 +157,6 @@ To sort and nest collections in **Settings > Data Model** and **Content Module**
    To nest a collection, drag below and to the right of an intended parent folder or collection.
 
 ## Configure a Collection
-
-<video title="Configure a Collection" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/data-model/collections/collections-20220805/configure-a-collection-20220805A.mp4" type="video/mp4" />
-</video>
 
 To configure a collection, follow these steps.
 
@@ -201,19 +173,11 @@ To configure a collection, follow these steps.
 
 ### Fields & Layout
 
-<video title="Fields and Layout" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/data-model/collections/collections-20220805/fields-and-layout-20220805A.mp4" type="video/mp4" />
-</video>
-
 This section allows you to create and configure fields, as well as configure how fields are displayed on the
 [Item Details Page](/app/content/items). To learn more, please see the documentation on
 [fields](/configuration/data-model/fields/).
 
 ### Collection Setup
-
-<video title="Collection Setup" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/data-model/collections/collections-20220805/collection-setup-20220805A.mp4" type="video/mp4" />
-</video>
 
 These controls allow you to modify how the collection is displayed within the Content Module.
 
@@ -248,10 +212,6 @@ A collection that only contains one single item. For example, a website's **Abou
 
 ### Archive
 
-<video title="Archive" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/data-model/collections/collections-20220805/archive-20220805A.mp4" type="video/mp4" />
-</video>
-
 Selects a field to handle archiving items. This provides a _soft-delete_ functionality for items in a collection.
 Archived items will still exist in the collection and database, but are filtered within the Data Studio. To configure an
 archive field, set the following four input fields as desired.
@@ -285,10 +245,6 @@ filtered out. This gives you the flexibility to manage archived items however yo
 :::
 
 ### Sort Field
-
-<video autoplay playsinline muted loop controls title="Batch Edit Items">
-	<source src="https://cdn.directus.io/docs/v9/app-guide/content/content-collections/content-collections-20220415A/manually-sort-items-20220415A.mp4" type="video/mp4" />
-</video>
 
 The sort feature enables users to [manually sort Items](/app/content/collections#manually-sort-items) within the Data
 Studio. This is typically shown on the **Content Module > Collection Page**. It can also be used for sorting items
@@ -330,10 +286,6 @@ You can also set this field to be **Hidden** so it doesn't show up within the It
 
 ### Accountability
 
-<video title="Accountability" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/data-model/collections/collections-20220805/acountability-20220805A.mp4" type="video/mp4" />
-</video>
-
 By default, your Directus Project tracks all [activity](/reference/system/activity) and
 [revisions](/reference/system/revisions) for collections. However, you can override this and choose what data is
 tracked.
@@ -353,10 +305,6 @@ Accountability is a log of _who does what_ in your project. It is for your team'
 
 ### Duplication
 
-<video title="Duplication" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/data-model/collections/collections-20220805/duplicate-20220805A.mp4" type="video/mp4" />
-</video>
-
 The **Save as Copy** option on the Item Details Page offers a way to effectively duplicate the current item. Since there
 may be unique or relational data within the item, it's important to control exactly what will be copied. Duplication
 lets you configure which parent & relational field values will be copied when you use **Save as Copy** on an item.
@@ -364,10 +312,6 @@ lets you configure which parent & relational field values will be copied when yo
 - **Item Duplication Fields** — Check the field(s) to copy values for when duplicating an item.
 
 ## Delete a Collection
-
-<video title="Delete a Collection" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/data-model/collections/collections-20220805/delete-a-collection-20220805A.mp4" type="video/mp4" />
-</video>
 
 To delete a collection, follow these steps.
 

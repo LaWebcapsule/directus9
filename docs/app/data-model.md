@@ -322,10 +322,6 @@ manage a data model is time consuming.
 
 ## Data Models in Directus
 
-<video title="Settings > Data Model" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/data-model/data-model-20220805/data-model-overview-20220805A.mp4" type="video/mp4" />
-</video>
-
 All relational data model concepts listed above apply in Directus. You get complete, un-opinionated, relational data
 model design and configuration. The difference is that Directus handles all SQL, builds the API, and provides a Data
 Studio which lets business users work with data in a human-friendly way.
@@ -351,10 +347,6 @@ Directus terms and map them to classic relational database concepts.
 
 ## Collections
 
-<video title="Collections" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/data-model/data-model-20220805/collections-20220805A.mp4" type="video/mp4" />
-</video>
-
 A collection _is a set of [items](#items)_. This can be a 1-1 match-up with a data table in SQL, a group of other
 collections, or a readonly view.
 
@@ -363,10 +355,6 @@ Data Model**. From there, click a collection to open its configurations page. To
 [collections](/configuration/data-model/collections).
 
 ## Fields
-
-<video title="Fields" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/data-model/data-model-20220805/fields-20220805A.mp4" type="video/mp4" />
-</video>
 
 Fields are database columns, but with a twist.
 
@@ -377,10 +365,6 @@ configuration over how to the data is displayed and interacted with in the Data 
 see our guide on [fields](/configuration/data-model/fields/).
 
 ## Items
-
-<video title="Collections" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/data-model/data-model-20220805/items-20220805A.mp4" type="video/mp4" />
-</video>
 
 Items are data table rows, but with a twist.
 
@@ -399,10 +383,6 @@ Directus abstracts type differences between SQL vendors with a
 
 ## Keys and IDs
 
-<video title="Keys and IDs" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/data-model/data-model-20220805/keys-and-ids-20220805A.mp4" type="video/mp4" />
-</video>
-
 Primary keys are called IDs in Directus fairly frequently. When you
 [create a collection](/configuration/data-model/collections#create-a-collection), you must add an `id` field. Directus
 supports the following types of IDs:
@@ -416,10 +396,6 @@ supports the following types of IDs:
 - **Manually Entered String** — You manually type out a unique string as the ID for each item.
 
 ## Relationships
-
-<video title="Relations" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/data-model/data-model-20220805/relationships-20220805A.mp4" type="video/mp4" />
-</video>
 
 Directus supports all standard [types of relationships](#types-of-relationships), as well as a few more of its own
 compound types. To learn more, see our guide on [relationships](/configuration/data-model/relationships).

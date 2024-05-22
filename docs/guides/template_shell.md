@@ -37,10 +37,6 @@ roles, permssions, flows, etc. that they need to use your recipe.
 
 :::
 
-<video autoplay playsinline muted loop controls>
-	<source src="" type="video/mp4" />
-</video>
-
 <!--
 VIDEO IS OPTIONAL: delete if not needed
 -->

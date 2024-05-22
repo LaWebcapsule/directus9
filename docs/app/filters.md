@@ -33,10 +33,6 @@ A basic filter is composed of 3 parts: A **Field** from the Collection being Fil
 [Operator](/reference/filter-rules#filter-operators), and some specified **Value** to filter for within each Item's
 Field.
 
-<video autoplay playsinline muted loop controls title="How Filters Work">
-	<source src="https://cdn.directus.io/docs/v9/app-guide/filters/filters-20220303A/how-filters-work-20220303A.mp4" type="video/mp4" />
-</video>
-
 2. Click <span mi icon>filter_list</span> or **"Add Filter"**.
 3. Select the Field to filter by.
 4. Select the Operator as desired.
@@ -81,10 +77,6 @@ conditions inside of OR Groups.
 
 The following video shows how to filter for Blog posts written within the past 60 days.
 
-<video autoplay playsinline muted loop controls title="How Filters Work">
-	<source src="https://cdn.directus.io/docs/v9/app-guide/filters/filters-20220303A/dynamic-variables-20220307A.mp4" type="video/mp4" />
-</video>
-
 The following Dynamic Variables are built into Directus to make Filtering easier: `$CURRENT_USER`, `$CURRENT_ROLE`,
 `$NOW` and `$NOW(<adjustment>)`. For more information, please see the Dynamic Variables section in
 [Filter Rules](/reference/filter-rules).
@@ -107,10 +99,6 @@ You will notice a <span mi icon>chevron_right</span> icon beside relational Fiel
 one of these Fields, you can run Filters on the current Collection by Field values in a related Collection.
 
 Here are step-by-step instructions on how to filter by Fields in other Collections:
-
-<video autoplay playsinline muted loop controls title="How Filters Work">
-	<source src="https://cdn.directus.io/docs/v9/app-guide/filters/filters-20220303A/filtering-by-related-collections-20220303A.mp4" type="video/mp4" />
-</video>
 
 1. Click "Add Filter".
 2. Click the desired relational Field. This will pop down and display the related Collection Fields.

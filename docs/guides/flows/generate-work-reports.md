@@ -40,10 +40,6 @@ You'll need something to validate against.
 
 :::
 
-<video autoplay playsinline muted loop controls>
-	<source src="" type="video/mp4" />
-</video>
-
 <!--
 VIDEO IS OPTIONAL: delete if not needed
 -->

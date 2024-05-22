@@ -80,10 +80,6 @@ To learn more, see our documentation [Collections](/app/content/collections).
 With the Collection created, it's time to start adding some Fields. Click the **"Create Field"** button, and select
 **"Input"**:
 
-<video autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/getting-started/quickstart/quickstart-20220217A/add-field-20220217A.mp4" type="video/mp4" />
-</video>
-
 We'll be calling our Field `title`. While Directus offers a range of powerful field customization options, we'll be
 sticking to the defaults for now. These defaults use the "String" datatype.
 

@@ -27,8 +27,6 @@ Link to tutorial
 
 ## Collection Page
 
-
-
 The Content Module consists of Collection Pages and Item Pages. Use the Navigation Bar on the left to move between
 Collections. Each Collection Page displays all Items in its Collection and comes with highly configurable
 [Layouts](/getting-started/glossary#layouts) for browsing, visualizing, and managing Items. The Page Header includes key
@@ -45,17 +43,11 @@ results in changes to the data model. To learn more, see our guide on
 
 ## Item Page
 
-
-
 When you click an Item on the Collection page, its Item Page will open. The Item Page is a form that enables you to
 view, edit or delete an Item and its field values. You can also comment on, share, archive, or revert an Item from this
 form. To learn more, see our guide on the [Item Page](/app/content/items).
 
 ## Shares
-
-<video title="Data Sharing" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/app-guide/content/content/content-20220415A/data-shares-20220415A.mp4" type="video/mp4" />
-</video>
 
 In any project, certain Collections will have limited access permissions. In some cases, you may need to share one of
 the Items within the collection with an individual or group of individuals who don't yet have permission. In this case,

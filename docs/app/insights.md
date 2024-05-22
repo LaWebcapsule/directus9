@@ -9,15 +9,7 @@ readTime: 9 min read
 > use-case _(be it business intelligence, user progress tracking, web traffic conversions, or whatever!)_ you will be
 > able to setup key data metrics in just a few clicks.
 
-<video autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/insights-dashboards-20220216A.mp4" type="video/mp4" />
-</video>
-
 ## How it Works
-
-<video autoplay playsinline muted loop controls>
-<source src="https://cdn.directus.io/docs/v9/app-guide/insights/insights-20220216A/insights-how-it-works-20220216A_1.mp4" type="video/mp4" />
-</video>
 
 First, create a Dashboard, then fill the Dashboard with Panels.
 

@@ -106,10 +106,6 @@ The file sidebar also includes the following details, which are not editable and
 
 Rotate, crop, flip, or adjust aspect ratios of an image.
 
-<video alt="Edit an Image" loop muted controls autoplay playsinline>
-  <source src="https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220516A/edit-an-image-20220516A.mp4" type="video/mp4">
-</video>
-
 1. From the **File Library**, click a file to open its detail page.
 2. Click the <span mi btn sec>tune</span> button in the top right to open the image editor.
 3. Make your changes and click <span mi btn>check</span> in the top right to save the updates.
@@ -131,10 +127,6 @@ be [uploaded programmatically via the API](/reference/files).
 
 When a file is replaced, its existing info and all relationships are kept.
 
-<video alt="Replace a File" loop muted controls autoplay playsinline>
-  <source src="https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220608A/replace-a-file-20220608A.mp4" type="video/mp4">
-</video>
-
 1. Click the Image Preview on the File Detail page. A popup will appear.
 2. Upload your file. You have 3 options:
    - Drag a file from your desktop to the popup.
@@ -153,19 +145,11 @@ batch deleting, sorting, filtering, searching, etc. Folders can also be managed
 
 ## Create a Folder
 
-<video alt="Create a Folder" loop muted controls autoplay playsinline>
-  <source src="https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220305A/create-a-folder-20220305A.mp4" type="video/mp4">
-</video>
-
 1. From the **File Library**, click on the <span mi btn sec>create_new_folder</span> button located in the Header.
 2. Fill in a Folder name as desired.
 3. Click **"Save"**.
 
 ## Rename a Folder
-
-<video alt="Renaming a Folder" loop muted controls autoplay playsinline>
-  <source src="https://cdn.directus.io/docs/v9/app-guide/file-library/rename-a-folder-20220215A.mp4" type="video/mp4">
-</video>
 
 1. From the **File Library**, right-click on the Folder you wish to rename and select "Rename Folder".
 2. Update the Folder name as desired.
@@ -173,20 +157,12 @@ batch deleting, sorting, filtering, searching, etc. Folders can also be managed
 
 ## Move a Folder
 
-<video alt="Moving a Folder" loop muted controls autoplay playsinline>
-  <source src="https://cdn.directus.io/docs/v9/app-guide/file-library/file-library-20220305A/move-a-folder20220305A.mp4" type="video/mp4">
-</video>
-
 1. From the **File Library**, right-click on the folder you wish to move and select **"Move to Folder"**. A popup will
    appear.
 2. Select a Folder to serve as the new Parent Folder.
 3. Click **"Save"**.
 
 ## Delete a Folder
-
-<video alt="Deleting a Folder" loop muted controls autoplay playsinline>
-  <source src="https://cdn.directus.io/docs/v9/app-guide/file-library/delete-a-folder-20220215A.mp4" type="video/mp4">
-</video>
 
 1. From the **File Library**, right-click on the Folder you wish to delete and select **"Delete Folder"**.
 2. Click **"Delete"**.

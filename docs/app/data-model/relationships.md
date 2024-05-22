@@ -332,12 +332,6 @@ Note the following points from the schema above. When we create an M2A in Direct
 
 :::tip Configure an M2A
 
-<!--
-<video title="Configure an M2A Relationship" autoplay playsinline muted loop controls>
-	<source src="" type="video/mp4" />
-</video>
--->
-
 The easiest way to configure an M2A is to follow the guide on how to
 [create a field (standard)](/configuration/data-model/fields/#create-a-field-standard) and select the **Many to Any**
 Interface from the template wizard.
@@ -397,9 +391,6 @@ Note the following points from the schema above. When we create a Translations O
 :::tip Configure a Translations O2M
 
 <!--
-<video title="Configure a Translations O2M" autoplay playsinline muted loop controls>
-	<source src="" type="video/mp4" />
-</video>
 -->
 
 The easiest way to configure a Translations relationship is to follow the guide on how to

@@ -19,10 +19,6 @@ To configure permissions programmatically, see our API documentation on [permiss
 
 ## Configure Permissions
 
-<video title="Configure Role Permissions" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/users-roles-permissions/permissions-20220909/configure-permissions-20220907A.mp4" type="video/mp4" />
-</video>
-
 To configure a role's access permissions, follow these steps.
 
 1. Navigate to **Settings > Roles & Permissions > [Role]** and scroll to **Permissions**.\
@@ -51,10 +47,6 @@ If you [configured the role's details](/configuration/users-roles-permissions/ro
 
 ## Configure Custom Permissions
 
-<video title="Configure Role Permissions" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/users-roles-permissions/permissions-20220909/custom-access-permissions-20220909A.mp4" type="video/mp4" />
-</video>
-
 To configure custom access permissions for a role, follow these steps.
 
 1. Follow the steps to [configure permissions](#configure-permissions) and choose <span mi icon muted>rule</span> **Use
@@ -73,10 +65,6 @@ To configure custom access permissions for a role, follow these steps.
 
 ## Toggle All Collection Permissions
 
-<video title="Toggle all Collection Permissions" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/users-roles-permissions/permissions-20220909/toggle-all-permissions-20220907A.mp4" type="video/mp4" />
-</video>
-
 To grant or restrict all CRUDS permissions to a collection at once, follow these steps.
 
 1. Navigate to **Settings > Roles & Permissions > [Role]**.
@@ -85,10 +73,6 @@ To grant or restrict all CRUDS permissions to a collection at once, follow these
    - **None** — Click to restrict all CRUDS permissions for a collection.
 
 ## Reset System Permissions
-
-<video title="Reset System Permissions" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/users-roles-permissions/permissions-20220909/reset-system-permissions-20220908A.mp4" type="video/mp4" />
-</video>
 
 This is only available when **App Access** is enabled when you
 [configure role details](/configuration/users-roles-permissions/roles.md#configure-role-details). If you made any custom

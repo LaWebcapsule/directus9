@@ -109,10 +109,6 @@ It is common to have multiple, complex business rules in a project.
 
 ## How it Works in Directus
 
-<video title="How Users, Roles, & Permissions Work" autoplay playsinline muted loop controls>
-	<source src="https://cdn.directus.io/docs/v9/configuration/users-roles-permissions/users-roles-permissions-20220909/how-users-roles-and-permissions-work-20220909A.mp4" type="video/mp4" />
-</video>
-
 While you have full reign to configure these using SQL, Directus also provides a complete system to configure and manage
 users, roles, and permissions without writing a single line of SQL. The process has three key steps.
 
