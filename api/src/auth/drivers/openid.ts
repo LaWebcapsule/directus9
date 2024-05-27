@@ -8,7 +8,7 @@ import { generators, Issuer } from 'openid-client';
 import { getAuthProvider } from '../../auth.js';
 import { GET_SET_HEADER } from '../../constants.js';
 import env from '../../env.js';
-import { InvalidConfigException, InvalidCredentialsException, InvalidTokenException } from '../../exceptions/index.js';
+import { InvalidConfigException, InvalidCredentialsException, InvalidTokenException, InvalidPayloadException } from '../../exceptions/index.js';
 import logger from '../../logger.js';
 import { respond } from '../../middleware/respond.js';
 import { AuthenticationService } from '../../services/authentication.js';
@@ -18,6 +18,7 @@ import asyncHandler from '../../utils/async-handler.js';
 import { getConfigFromEnv } from '../../utils/get-config-from-env.js';
 import { getIPFromReq } from '../../utils/get-ip-from-req.js';
 import { Url } from '../../utils/url.js';
+import { isRedirectAllowedOnLogin } from '../../utils/is-redirect-allowed-on-login.js';
 import { BaseOAuthDriver, type UserPayload } from './baseoauth.js';
 
 export class OpenIDAuthDriver extends BaseOAuthDriver {
@@ -189,15 +190,17 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 			const provider = getAuthProvider(providerName) as OpenIDAuthDriver;
 			const codeVerifier = provider.generateCodeVerifier();
 			const prompt = !!req.query['prompt'];
+			const redirect = req.query['redirect'];
 
-			const token = jwt.sign(
-				{ verifier: codeVerifier, redirect: req.query['redirect'], prompt },
-				env['SECRET'] as string,
-				{
-					expiresIn: '5m',
-					issuer: 'directus',
-				}
-			);
+			if (isRedirectAllowedOnLogin(redirect, providerName) === false) {
+				throw new InvalidPayloadException(`URL "${redirect}" can't be used to redirect after login` );
+			}
+
+			const token = jwt.sign({ verifier: codeVerifier, redirect, prompt }, env['SECRET'] as string, {
+				expiresIn: '5m',
+				issuer: 'directus',
+			});
+
 
 			res.cookie(`openid.${providerName}`, token, {
 				httpOnly: true,
