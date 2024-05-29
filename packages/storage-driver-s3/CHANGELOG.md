@@ -1,5 +1,14 @@
 # @db-studio/storage-driver-s3
 
+## 9.26.8
+
+### Patch Changes
+
+- More naming, fix the create-extension package to work without specifying a binary
+- Updated dependencies
+  - @db-studio/storage@1.0.1
+  - @db-studio/utils@1.0.1
+
 ## 9.26.7
 
 ### Patch Changes

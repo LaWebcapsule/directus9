@@ -5,6 +5,22 @@
 ### Patch Changes
 
 - Fix an incorrect dependency version (storage-driver-s3)
+- More naming, fix the create-extension package to work without specifying a binary
+- Updated dependencies
+  - @db-studio/storage-driver-cloudinary@1.0.1
+  - @db-studio/storage-driver-azure@1.0.1
+  - @db-studio/storage-driver-local@1.0.1
+  - @db-studio/storage-driver-gcs@1.0.1
+  - @db-studio/storage-driver-s3@9.26.8
+  - @db-studio/extensions-sdk@1.0.1
+  - @db-studio/update-check@1.0.1
+  - @db-studio/exceptions@1.0.1
+  - @db-studio/constants@1.0.1
+  - @db-studio/storage@1.0.1
+  - @db-studio/schema@9.26.4
+  - @db-studio/specs@1.0.1
+  - @db-studio/utils@1.0.1
+  - @db-studio/app@1.0.1
 
 ## 10.3.0
 

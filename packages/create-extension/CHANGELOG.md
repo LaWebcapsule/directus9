@@ -1,5 +1,14 @@
 # @db-studio/create-extension
 
+## 1.0.1
+
+### Patch Changes
+
+- More naming, fix the create-extension package to work without specifying a binary
+- Updated dependencies
+  - @db-studio/extensions-sdk@1.0.1
+  - @db-studio/constants@1.0.1
+
 ## 9.26.5
 
 ### Patch Changes

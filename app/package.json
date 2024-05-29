@@ -1,6 +1,6 @@
 {
 	"name": "@db-studio/app",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "App dashboard for DB Studio (formerly Directus v9)",
 	"homepage": "https://github.com/pxslip/db-studio",
 	"type": "module",

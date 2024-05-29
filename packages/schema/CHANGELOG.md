@@ -1,5 +1,11 @@
 # @db-studio/schema
 
+## 9.26.4
+
+### Patch Changes
+
+- More naming, fix the create-extension package to work without specifying a binary
+
 ## 9.26.3
 
 ### Patch Changes

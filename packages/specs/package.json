@@ -1,6 +1,6 @@
 {
 	"name": "@db-studio/specs",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "OpenAPI Specification of the DB Studio (formerly Directus v9) API",
 	"homepage": "https://github.com/pxslip/db-studio",
 	"type": "module",

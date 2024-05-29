@@ -1,5 +1,13 @@
 # @db-studio/app
 
+## 1.0.1
+
+### Patch Changes
+
+- More naming, fix the create-extension package to work without specifying a binary
+- Updated dependencies
+  - @db-studio/composables@1.0.1
+
 ## 9.29.0
 
 ### Minor Changes

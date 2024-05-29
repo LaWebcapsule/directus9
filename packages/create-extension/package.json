@@ -1,6 +1,6 @@
 {
 	"name": "@db-studio/create-extension",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A small util that will scaffold a DB Studio (forrmerly Directus v9) extension",
 	"keywords": [
 		"extensions"
