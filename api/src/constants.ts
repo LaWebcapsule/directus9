@@ -59,7 +59,7 @@ export const GENERATE_SPECIAL = ['uuid', 'date-created', 'role-created', 'user-c
 
 export const UUID_REGEX = '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}';
 
-export const COOKIE_OPTIONS: CookieOptions = {
+export const REFRESH_COOKIE_OPTIONS: CookieOptions = {
 	httpOnly: true,
 	domain: env['REFRESH_TOKEN_COOKIE_DOMAIN'],
 	maxAge: getMilliseconds(env['REFRESH_TOKEN_TTL']),
@@ -79,6 +79,14 @@ export const GET_SET_HEADER = (cookieValue: string) => {
 	}; Path=/auth;${domainHeader}${partitionedHeader}`;
 
 	return cookieHeaderValue;
+};
+
+export const ACCESS_COOKIE_OPTIONS: CookieOptions = {
+	httpOnly: true,
+	domain: env['ACCESS_TOKEN_COOKIE_DOMAIN'],
+	maxAge: getMilliseconds(env['ACCESS_TOKEN_TTL']),
+	secure: env['ACCESS_TOKEN_COOKIE_SECURE'] ?? false,
+	sameSite: (env['ACCESS_TOKEN_COOKIE_SAME_SITE'] as 'lax' | 'strict' | 'none') || 'strict',
 };
 
 export const OAS_REQUIRED_SCHEMAS = ['Diff', 'Schema', 'Query', 'x-metadata'];
