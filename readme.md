@@ -26,12 +26,14 @@ npm install --save @db-studio/sdk
 All classic Directus version 9 extensions should work without changes on DB Studio.
 
 When developing a new extension for DB Studio (Formerly Directus v9), you should use the latest version of
-`@db-studio/directus-extension`:
+`@db-studio/create-extension` to scaffold:
 
 ```bash
-pnpm init @db-studio/directus-extension@latest
+npm init @db-studio/directus-extension@latest
 # or
-pnpm init @db-studio/directus-extension@latest
+pnpm create @db-studio/directus-extension@latest
+# or
+yarn create @db-studio/directus-extension@latest
 ```
 
 ## License
