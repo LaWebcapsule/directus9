@@ -1,4 +1,4 @@
-# @wbce-d9/api
+# @db-studio/api
 
 ## 1.0.1
 
@@ -16,7 +16,7 @@
 
 ### Minor Changes
 
-- bce4637: Make patitionned optional
+- bce4637: Make partitionned optional
 
 ## 10.1.0
 

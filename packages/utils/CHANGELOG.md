@@ -1,4 +1,4 @@
-# @wbce-d9/utils
+# @db-studio/utils
 
 ## 9.28.0
 

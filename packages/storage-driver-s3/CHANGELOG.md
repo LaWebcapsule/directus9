@@ -1,4 +1,4 @@
-# @wbce-d9/storage-driver-s3
+# @db-studio/storage-driver-s3
 
 ## 9.26.7
 

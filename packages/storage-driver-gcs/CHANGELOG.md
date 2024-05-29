@@ -1,4 +1,4 @@
-# @wbce-d9/storage-driver-gcs
+# @db-studio/storage-driver-gcs
 
 ## 9.26.5
 

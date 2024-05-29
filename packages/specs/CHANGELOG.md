@@ -1,4 +1,4 @@
-# @wbce-d9/specs
+# @db-studio/specs
 
 ## 9.26.3
 

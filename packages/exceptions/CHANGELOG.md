@@ -1,4 +1,4 @@
-# @wbce-d9/exceptions
+# @db-studio/exceptions
 
 ## 9.26.3
 

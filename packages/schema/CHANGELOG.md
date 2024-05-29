@@ -1,4 +1,4 @@
-# @wbce-d9/schema
+# @db-studio/schema
 
 ## 9.26.3
 

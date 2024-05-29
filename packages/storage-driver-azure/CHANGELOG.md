@@ -1,4 +1,4 @@
-# @wbce-d9/storage-driver-azure
+# @db-studio/storage-driver-azure
 
 ## 9.26.5
 

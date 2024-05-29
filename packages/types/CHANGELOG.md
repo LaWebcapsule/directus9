@@ -1,4 +1,4 @@
-# @wbce-d9/types
+# @db-studio/types
 
 ## 9.26.3
 

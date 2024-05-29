@@ -1,4 +1,4 @@
-# @wbce-d9/app
+# @db-studio/app
 
 ## 9.29.0
 

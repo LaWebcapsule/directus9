@@ -1,4 +1,4 @@
-# @wbce-d9/composables
+# @db-studio/composables
 
 ## 9.27.0
 

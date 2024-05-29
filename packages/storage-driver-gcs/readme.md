@@ -1,3 +1,3 @@
-# `@wbce-d9/storage-driver-gcs`
+# `@db-studio/storage-driver-gcs`
 
-GCS file storage driver for `@wbce-d9/storage`
+GCS file storage driver for `@db-studio/storage`

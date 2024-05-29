@@ -1,3 +1,3 @@
-# `@wbce-d9/storage-driver-azure`
+# `@db-studio/storage-driver-azure`
 
-Azure file storage driver for `@wbce-d9/storage`
+Azure file storage driver for `@db-studio/storage`

@@ -1,4 +1,4 @@
-# @wbce-d9/update-check
+# @db-studio/update-check
 
 ## 9.26.3
 

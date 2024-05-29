@@ -1,4 +1,4 @@
-# @wbce-d9/storage-driver-cloudinary
+# @db-studio/storage-driver-cloudinary
 
 ## 9.26.5
 

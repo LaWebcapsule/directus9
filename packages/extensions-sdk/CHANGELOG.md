@@ -1,4 +1,4 @@
-# @wbce-d9/extensions-sdk
+# @db-studio/extensions-sdk
 
 ## 9.26.5
 

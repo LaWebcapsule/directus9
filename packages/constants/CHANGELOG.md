@@ -1,4 +1,4 @@
-# @wbce-d9/constants
+# @db-studio/constants
 
 ## 9.26.3
 

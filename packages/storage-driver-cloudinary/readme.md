@@ -1,3 +1,3 @@
-# `@wbce-d9/storage-driver-cloudinary`
+# `@db-studio/storage-driver-cloudinary`
 
-Cloudinary file storage driver for `@wbce-d9/storage`
+Cloudinary file storage driver for `@db-studio/storage`

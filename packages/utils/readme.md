@@ -1,3 +1,3 @@
-# `@wbce-d9/utils`
+# `@db-studio/utils`
 
 Utilities shared between the Directus packages

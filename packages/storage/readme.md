@@ -1,3 +1,3 @@
-# `@wbce-d9/storage`
+# `@db-studio/storage`
 
 Storage abstraction for Directus
