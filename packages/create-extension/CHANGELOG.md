@@ -1,4 +1,4 @@
-# @wbce-d9/create-directus-extension
+# @db-studio/create-extension
 
 ## 9.26.5
 

@@ -1,5 +1,5 @@
 {
-	"name": "@db-studio/create-directus-extension",
+	"name": "@db-studio/create-extension",
 	"version": "1.0.0",
 	"description": "A small util that will scaffold a DB Studio (forrmerly Directus v9) extension",
 	"keywords": [
@@ -21,7 +21,7 @@
 	"main": "lib/index.js",
 	"bin": {
 		"cdbse": "./lib/index.js",
-		"create-db-studio-extension": "./lib/index.js"
+		"create-extension": "./lib/index.js"
 	},
 	"files": [
 		"lib/index.js"
