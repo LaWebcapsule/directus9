@@ -1,5 +1,11 @@
 # @wbce-d9/api
 
+## 1.0.1
+
+### Patch Changes
+
+- Fix an incorrect dependency version (storage-driver-s3)
+
 ## 10.3.0
 
 ### Minor Changes

@@ -1,6 +1,6 @@
 {
 	"name": "@db-studio/storage-driver-s3",
-	"version": "9.26.7",
+	"version": "1.0.0",
 	"type": "module",
 	"scripts": {
 		"build": "tsc --build",
