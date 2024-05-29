@@ -1,8 +1,10 @@
+name: Linear
 on:
-  issues:
-    types:
-      - closed
-      - reopened
+  workflow_dispatch:
+  # issues:
+  #   types:
+  #     - closed
+  #     - reopened
 
 jobs:
   linear:

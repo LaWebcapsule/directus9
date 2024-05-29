@@ -1,7 +1,10 @@
+name: Linear Dispatch
+
 on:
-  repository_dispatch:
-    types:
-      - linear-command
+  workflow_dispatch:
+  # repository_dispatch:
+  #   types:
+  #     - linear-command
 
 jobs:
   create_issue:
