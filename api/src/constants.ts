@@ -65,6 +65,7 @@ export const COOKIE_OPTIONS: CookieOptions = {
 	maxAge: getMilliseconds(env['REFRESH_TOKEN_TTL']),
 	secure: env['REFRESH_TOKEN_COOKIE_SECURE'] ?? false,
 	sameSite: (env['REFRESH_TOKEN_COOKIE_SAME_SITE'] as 'lax' | 'strict' | 'none') || 'strict',
+	path: '/auth'
 };
 
 export const GET_SET_HEADER = (cookieValue: string) => {
@@ -75,7 +76,7 @@ export const GET_SET_HEADER = (cookieValue: string) => {
 		env['REFRESH_TOKEN_TTL']
 	)}; Secure=${env['REFRESH_TOKEN_COOKIE_SECURE'] ?? false}; SameSite=${
 		(env['REFRESH_TOKEN_COOKIE_SAME_SITE'] as 'lax' | 'strict' | 'none') || 'strict'
-	}; Path=/;${domainHeader}${partitionedHeader}`;
+	}; Path=/auth;${domainHeader}${partitionedHeader}`;
 
 	return cookieHeaderValue;
 };
