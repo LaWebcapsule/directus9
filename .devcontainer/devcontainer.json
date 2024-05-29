@@ -12,6 +12,19 @@
 	"postCreateCommand": "pnpm install",
 	"features": {
 		"ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"Vue.volar",
+				"mutantdino.resourcemonitor",
+				"esbenp.prettier-vscode",
+				"github.vscode-github-actions",
+				"GitHub.vscode-pull-request-github",
+				"dbaeumer.vscode-eslint",
+				"ms-azuretools.vscode-docker"
+			]
+		}
 	}
 	// Configure tool-specific properties.
 	// "customizations": {},
