@@ -19,7 +19,7 @@
 		<v-list-item href="https://github.com/pxslip/db-studio/releases" class="version">
 			<v-list-item-icon><v-icon name="directus" /></v-list-item-icon>
 			<v-list-item-content>
-				<v-text-overflow class="version" :text="`Directus ${version}`" />
+				<v-text-overflow class="version" :text="`Version ${version}`" />
 			</v-list-item-content>
 		</v-list-item>
 	</v-list>
