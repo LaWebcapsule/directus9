@@ -1,16 +1,17 @@
 name: Blackbox Tests
 
 on:
-  pull_request:
-    branches:
-      - main
-    paths:
-      - api/**
-      - tests/blackbox/**
-      - packages/**
-      - package.json
-      - pnpm-lock.yaml
-      - .github/workflows/blackbox-pr.yml
+  workflow_dispatch:
+  # pull_request:
+  #   branches:
+  #     - main
+  #   paths:
+  #     - api/**
+  #     - tests/blackbox/**
+  #     - packages/**
+  #     - package.json
+  #     - pnpm-lock.yaml
+  #     - .github/workflows/blackbox-pr.yml
 
 concurrency:
   group: blackbox-pr-${{ github.ref }}

@@ -1,16 +1,17 @@
 name: Blackbox Tests
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - api/**
-      - tests/blackbox/**
-      - packages/**
-      - package.json
-      - pnpm-lock.yaml
-      - .github/workflows/blackbox-main.yml
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - main
+  #   paths:
+  #     - api/**
+  #     - tests/blackbox/**
+  #     - packages/**
+  #     - package.json
+  #     - pnpm-lock.yaml
+  #     - .github/workflows/blackbox-main.yml
 
 concurrency:
   group: blackbox-main

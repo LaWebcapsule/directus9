@@ -906,7 +906,7 @@ importers:
         specifier: 5.0.4
         version: 5.0.4
 
-  packages/create-directus-extension:
+  packages/create-extension:
     dependencies:
       '@db-studio/constants':
         specifier: workspace:*
