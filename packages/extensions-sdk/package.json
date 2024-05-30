@@ -20,7 +20,10 @@
 	},
 	"main": "dist/index.js",
 	"bin": {
-		"dbs-extension": "cli.js"
+		"extensions-sdk": "cli.js",
+		"db-studio-extension": "cli.js",
+		"dbs-extension": "cli.js",
+		"dbse": "cli.js"
 	},
 	"files": [
 		"dist",

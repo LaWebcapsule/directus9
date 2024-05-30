@@ -85,7 +85,7 @@ async function createPackageExtension({
 	targetDir: string;
 	targetPath: string;
 }) {
-	const spinner = ora(chalk.bold('Scaffolding Directus extension...')).start();
+	const spinner = ora(chalk.bold('Scaffolding extension...')).start();
 
 	await fse.ensureDir(targetPath);
 	await copyTemplate(type, targetPath);
@@ -129,7 +129,7 @@ async function createLocalExtension({
 		process.exit(1);
 	}
 
-	const spinner = ora(chalk.bold('Scaffolding Directus extension...')).start();
+	const spinner = ora(chalk.bold('Scaffolding extension...')).start();
 
 	await fse.ensureDir(targetPath);
 	await copyTemplate(type, targetPath, 'src', language);
@@ -165,22 +165,22 @@ async function createLocalExtension({
 
 function getPackageManifest(name: string, options: ExtensionOptions, deps: Record<string, string>) {
 	const packageManifest: Record<string, any> = {
-		name: EXTENSION_NAME_REGEX.test(name) ? name : `directus-extension-${name}`,
+		name: EXTENSION_NAME_REGEX.test(name) ? name : `db-studio-extension-${name}`,
 		description: 'Please enter a description for your extension',
 		icon: 'extension',
 		version: '1.0.0',
-		keywords: ['directus', 'directus-extension', `directus-custom-${options.type}`],
+		keywords: ['db-studio', 'db-studio-extension', `db-studio-custom-${options.type}`],
 		[EXTENSION_PKG_KEY]: options,
 		scripts: {
-			build: 'directus-extension build',
-			dev: 'directus-extension build -w --no-minify',
-			link: 'directus-extension link',
+			build: 'db-studio-extension build',
+			dev: 'db-studio-extension build -w --no-minify',
+			link: 'db-studio-extension link',
 		},
 		devDependencies: deps,
 	};
 
 	if (options.type === 'bundle') {
-		packageManifest['scripts']['add'] = 'directus-extension add';
+		packageManifest['scripts']['add'] = 'db-studio-extension add';
 	}
 
 	return packageManifest;

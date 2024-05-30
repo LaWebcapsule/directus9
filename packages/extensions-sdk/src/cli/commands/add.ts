@@ -45,7 +45,7 @@ export default async function add(): Promise<void> {
 		extensionManifest = ExtensionManifest.passthrough().parse(JSON.parse(extensionManifestFile));
 		indent = detectJsonIndent(extensionManifestFile);
 	} catch (e) {
-		log(`Current directory is not a valid Directus extension.`, 'error');
+		log(`Current directory is not a valid extension.`, 'error');
 		process.exit(1);
 	}
 
@@ -86,7 +86,7 @@ export default async function add(): Promise<void> {
 			},
 		]);
 
-		const spinner = ora(chalk.bold('Modifying Directus extension...')).start();
+		const spinner = ora(chalk.bold('Modifying extension...')).start();
 
 		const source = alternativeSource ?? 'src';
 
@@ -195,7 +195,7 @@ export default async function add(): Promise<void> {
 			},
 		]);
 
-		const spinner = ora(chalk.bold('Modifying Directus extension...')).start();
+		const spinner = ora(chalk.bold('Modifying extension...')).start();
 
 		const source = alternativeSource ?? 'src';
 
@@ -255,8 +255,8 @@ export default async function add(): Promise<void> {
 
 		const newExtensionManifest = {
 			...extensionManifest,
-			name: EXTENSION_NAME_REGEX.test(extensionName) ? extensionName : `directus-extension-${extensionName}`,
-			keywords: ['directus', 'directus-extension', `directus-custom-bundle`],
+			name: EXTENSION_NAME_REGEX.test(extensionName) ? extensionName : `db-studio-extension-${extensionName}`,
+			keywords: ['db-studio', 'db-studio-extension', `db-studio-custom-bundle`],
 			[EXTENSION_PKG_KEY]: newExtensionOptions,
 			devDependencies: await getExtensionDevDeps(
 				entries.map((entry) => entry.type),

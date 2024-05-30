@@ -25,7 +25,7 @@ export default async function link(extensionsPath: string): Promise<void> {
 	try {
 		manifestFile = await fs.readJSON(packagePath);
 	} catch (err) {
-		log(`Current directory is not a valid Directus extension.`, 'error');
+		log(`Current directory is not a valid extension.`, 'error');
 		return;
 	}
 
@@ -37,6 +37,7 @@ export default async function link(extensionsPath: string): Promise<void> {
 		log(`Extension name not found in package.json`, 'error');
 		return;
 	}
+	//TODO: breaking change, convert this from directus:extension to db-studio:extension
 
 	const type = extensionManifest['directus:extension']?.type;
 
