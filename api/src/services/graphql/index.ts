@@ -45,7 +45,12 @@ import { GraphQLJSON, InputTypeComposer, ObjectTypeComposer, SchemaComposer, toI
 import type { Knex } from 'knex';
 import { flatten, get, mapKeys, merge, omit, pick, set, transform, uniq } from 'lodash-es';
 import { clearSystemCache, getCache } from '../../cache.js';
-import { ACCESS_COOKIE_OPTIONS, DEFAULT_AUTH_PROVIDER, GENERATE_SPECIAL, REFRESH_COOKIE_OPTIONS } from '../../constants.js';
+import {
+	ACCESS_COOKIE_OPTIONS,
+	DEFAULT_AUTH_PROVIDER,
+	GENERATE_SPECIAL,
+	REFRESH_COOKIE_OPTIONS,
+} from '../../constants.js';
 import getDatabase from '../../database/index.js';
 import env from '../../env.js';
 import { ForbiddenException, GraphQLValidationException, InvalidPayloadException } from '../../exceptions/index.js';
@@ -2164,6 +2169,7 @@ export class GraphQLService {
 					if (req?.cookies[env['REFRESH_TOKEN_COOKIE_NAME'] as string]) {
 						res?.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'] as string, REFRESH_COOKIE_OPTIONS);
 					}
+
 					return true;
 				},
 			},

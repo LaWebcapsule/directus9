@@ -65,7 +65,7 @@ export const REFRESH_COOKIE_OPTIONS: CookieOptions = {
 	maxAge: getMilliseconds(env['REFRESH_TOKEN_TTL']),
 	secure: env['REFRESH_TOKEN_COOKIE_SECURE'] ?? false,
 	sameSite: (env['REFRESH_TOKEN_COOKIE_SAME_SITE'] as 'lax' | 'strict' | 'none') || 'strict',
-	path: '/auth'
+	path: '/auth',
 };
 
 export const GET_SET_HEADER = (cookieValue: string) => {
@@ -87,7 +87,7 @@ export const ACCESS_COOKIE_OPTIONS: CookieOptions = {
 	maxAge: getMilliseconds(env['ACCESS_TOKEN_TTL']),
 	secure: env['ACCESS_TOKEN_COOKIE_SECURE'] ?? false,
 	sameSite: (env['ACCESS_TOKEN_COOKIE_SAME_SITE'] as 'lax' | 'strict' | 'none') || 'strict',
-	path: '/'
+	path: '/',
 };
 
 export const OAS_REQUIRED_SCHEMAS = ['Diff', 'Schema', 'Query', 'x-metadata'];
