@@ -4,9 +4,9 @@ import express, { Router } from 'express';
 import flatten from 'flat';
 import jwt from 'jsonwebtoken';
 import type { BaseClient, Client, TokenSet } from 'openid-client';
-import { generators, Issuer } from 'openid-client';
+import { Issuer, generators } from 'openid-client';
 import { getAuthProvider } from '../../auth.js';
-import { GET_SET_HEADER } from '../../constants.js';
+import { ACCESS_COOKIE_OPTIONS, REFRESH_COOKIE_OPTIONS } from '../../constants.js';
 import env from '../../env.js';
 import { InvalidConfigException, InvalidCredentialsException, InvalidTokenException } from '../../exceptions/index.js';
 import logger from '../../logger.js';
@@ -258,7 +258,8 @@ export function createOAuth2AuthRouter(providerName: string): Router {
 			const { accessToken, refreshToken, expires } = authResponse;
 
 			if (redirect) {
-				res.setHeader('Set-Cookie', GET_SET_HEADER(refreshToken));
+				res?.cookie(env['ACCESS_TOKEN_COOKIE_NAME'], accessToken, ACCESS_COOKIE_OPTIONS);
+				res?.cookie(env['REFRESH_TOKEN_COOKIE_NAME'], refreshToken, REFRESH_COOKIE_OPTIONS);
 				return res.redirect(redirect);
 			}
 

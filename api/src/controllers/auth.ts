@@ -7,7 +7,7 @@ import {
 	createOpenIDAuthRouter,
 	createSAMLAuthRouter,
 } from '../auth/drivers/index.js';
-import { ACCESS_COOKIE_OPTIONS, DEFAULT_AUTH_PROVIDER, GET_SET_HEADER, REFRESH_COOKIE_OPTIONS } from '../constants.js';
+import { ACCESS_COOKIE_OPTIONS, DEFAULT_AUTH_PROVIDER, REFRESH_COOKIE_OPTIONS } from '../constants.js';
 import env from '../env.js';
 import { InvalidPayloadException } from '../exceptions/index.js';
 import logger from '../logger.js';
@@ -98,7 +98,7 @@ router.post(
 
 		if (mode === 'cookie') {
 			res?.cookie(env['ACCESS_TOKEN_COOKIE_NAME'], accessToken, ACCESS_COOKIE_OPTIONS);
-			res.setHeader('Set-Cookie', GET_SET_HEADER(refreshToken));
+			res?.cookie(env['REFRESH_TOKEN_COOKIE_NAME'], refreshToken, REFRESH_COOKIE_OPTIONS);
 		}
 
 		res.locals['payload'] = payload;
