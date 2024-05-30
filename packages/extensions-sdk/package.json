@@ -21,6 +21,7 @@
 	"main": "dist/index.js",
 	"bin": {
 		"extensions-sdk": "cli.js",
+		"directus-extension": "cli.js",
 		"db-studio-extension": "cli.js",
 		"dbs-extension": "cli.js",
 		"dbse": "cli.js"
