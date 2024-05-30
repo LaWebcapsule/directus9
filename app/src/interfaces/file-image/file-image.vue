@@ -85,7 +85,7 @@
 </template>
 
 <script setup lang="ts">
-import api, { addTokenToURL } from '@/api';
+import api from '@/api';
 import { useRelationM2O } from '@/composables/use-relation-m2o';
 import { useRelationPermissionsM2O } from '@/composables/use-relation-permissions';
 import { RelationQuerySingle, useRelationSingle } from '@/composables/use-relation-single';
@@ -149,7 +149,7 @@ const src = computed(() => {
 	if (image.value.type.includes('image')) {
 		const fit = props.crop ? 'cover' : 'contain';
 		const url = `/assets/${image.value.id}?key=system-large-${fit}&cache-buster=${image.value.modified_on}`;
-		return addTokenToURL(url);
+		return url;
 	}
 
 	return null;
