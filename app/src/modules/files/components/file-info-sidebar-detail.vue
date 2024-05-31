@@ -131,7 +131,7 @@ import { defineComponent, computed, ref, watch } from 'vue';
 import { readableMimeType } from '@/utils/readable-mime-type';
 import { formatFilesize } from '@/utils/format-filesize';
 import { localizedFormat } from '@/utils/localized-format';
-import api, { addTokenToURL } from '@/api';
+import api from '@/api';
 import { getRootPath } from '@/utils/get-root-path';
 import { userName } from '@/utils/user-name';
 
@@ -162,7 +162,7 @@ export default defineComponent({
 		const { folder, folderLink } = useFolder();
 
 		const fileLink = computed(() => {
-			return addTokenToURL(`${getRootPath()}assets/${props.file.id}`);
+			return `${getRootPath()}assets/${props.file.id}`;
 		});
 
 		return {
