@@ -1,0 +1,51 @@
+name: New Feature Request
+description: 'Request for a new feature or enhancement'
+title: '[FEAT]: '
+labels: ['enhancement']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to create an issue! This is how you can help us improve.
+
+        Please provide as much detail as possible so we can better understand and address your request.
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type of Feature Request
+      options: ['New UI/UX', 'New Functionality', 'Improvement']
+    validations:
+      required: true
+
+  - type: input
+    id: feature_name
+    attributes:
+      label: Feature Name
+      description: The name of the new feature you would like to see in the product.
+      placeholder: e.g., Ability to import data from Excel
+    validations:
+      required: true
+
+  - type: input
+    id: use_case
+    attributes:
+      label: Use Case
+      description: Briefly describe a specific usage case where this feature would be beneficial.
+      placeholder:
+        e.g., As a data scientist, I often have to deal with large volumes of raw data and find it difficult to analyze
+        without using Excel for that.
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_context
+    attributes:
+      label: Additional context
+      description:
+        Any other information or resources related to this feature request? For example, links to related issues,
+        screenshots, mockups, etc.
+      placeholder:
+        e.g., I have researched similar requests and they were closed due to lack of detail in the issue creation form.
+    validations:
+      required: false

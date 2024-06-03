@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Hi, thank you for taking the time to create an issue! If you're asking for _new_ docs, or have a suggestion on how to enhance existing docs, please open [a docs suggestion](https://github.com/pxslip/db-studio/discussions/new?category=docs-suggestions) instead!
+        Hi, thank you for taking the time to request updates to or new documentation. We love community contributions, so consider opening a PR and updating the documentation directly!
   - type: input
     attributes:
       label: Page
@@ -15,6 +15,6 @@ body:
   - type: textarea
     attributes:
       label: Describe the Inaccuracy
-      description: A clear and concise description of what the problem is
+      description: A clear and concise description of what the problem is or what new information you would like
     validations:
       required: true
