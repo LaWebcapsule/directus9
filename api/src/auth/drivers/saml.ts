@@ -8,7 +8,11 @@ import getDatabase from '../../database/index.js';
 import emitter from '../../emitter.js';
 import env from '../../env.js';
 import { RecordNotUniqueException } from '../../exceptions/database/record-not-unique.js';
-import { InvalidCredentialsException, InvalidProviderException, InvalidPayloadException } from '../../exceptions/index.js';
+import {
+	InvalidCredentialsException,
+	InvalidProviderException,
+	InvalidPayloadException,
+} from '../../exceptions/index.js';
 import logger from '../../logger.js';
 import { respond } from '../../middleware/respond.js';
 import { AuthenticationService } from '../../services/authentication.js';
@@ -124,7 +128,7 @@ export function createSAMLAuthRouter(providerName: string) {
 				const redirect = req.query['redirect'] as string;
 
 				if (isRedirectAllowedOnLogin(redirect, providerName) === false) {
-					throw new InvalidPayloadException(`URL "${redirect}" can't be used to redirect after login` );
+					throw new InvalidPayloadException(`URL "${redirect}" can't be used to redirect after login`);
 				}
 
 				parsedUrl.searchParams.append('RelayState', redirect);

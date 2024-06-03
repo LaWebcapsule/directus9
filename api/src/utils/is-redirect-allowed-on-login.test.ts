@@ -4,7 +4,8 @@ import { isRedirectAllowedOnLogin } from './is-redirect-allowed-on-login.js';
 vi.mock('../env', () => {
 	const MOCK_ENV = {
 		PUBLIC_URL: 'http://public.example.com',
-		AUTH_LOCALS_REDIRECT_ALLOW_LIST: 'http://external.example.com,https://external.example.com,http://external.example.com:8055/test',
+		AUTH_LOCALS_REDIRECT_ALLOW_LIST:
+			'http://external.example.com,https://external.example.com,http://external.example.com:8055/test',
 		AUTH_LOCAL_REDIRECT_ALLOW_LIST: 'http://external.example.com',
 	};
 

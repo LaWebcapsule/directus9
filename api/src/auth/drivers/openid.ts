@@ -8,7 +8,12 @@ import { generators, Issuer } from 'openid-client';
 import { getAuthProvider } from '../../auth.js';
 import { GET_SET_HEADER } from '../../constants.js';
 import env from '../../env.js';
-import { InvalidConfigException, InvalidCredentialsException, InvalidTokenException, InvalidPayloadException } from '../../exceptions/index.js';
+import {
+	InvalidConfigException,
+	InvalidCredentialsException,
+	InvalidTokenException,
+	InvalidPayloadException,
+} from '../../exceptions/index.js';
 import logger from '../../logger.js';
 import { respond } from '../../middleware/respond.js';
 import { AuthenticationService } from '../../services/authentication.js';
@@ -193,14 +198,13 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 			const redirect = req.query['redirect'];
 
 			if (isRedirectAllowedOnLogin(redirect, providerName) === false) {
-				throw new InvalidPayloadException(`URL "${redirect}" can't be used to redirect after login` );
+				throw new InvalidPayloadException(`URL "${redirect}" can't be used to redirect after login`);
 			}
 
 			const token = jwt.sign({ verifier: codeVerifier, redirect, prompt }, env['SECRET'] as string, {
 				expiresIn: '5m',
 				issuer: 'directus',
 			});
-
 
 			res.cookie(`openid.${providerName}`, token, {
 				httpOnly: true,

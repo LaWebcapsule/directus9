@@ -1,15 +1,15 @@
-import env from '../env.js';
 import { toArray } from '@wbce-d9/utils';
+import env from '../env.js';
 import isUrlAllowed from './is-url-allowed.js';
 
 function isUrlValid(string: unknown) {
 	try {
-	  new URL(string as string);
-	  return true;
+		new URL(string as string);
+		return true;
 	} catch (err) {
-	  return false;
+		return false;
 	}
-  }
+}
 
 /**
  * Checks if the defined redirect after successful SSO login is in the allow list
@@ -35,14 +35,7 @@ export function isRedirectAllowedOnLogin(redirect: unknown, provider: string): b
 	const envKey = `AUTH_${provider.toUpperCase()}_REDIRECT_ALLOW_LIST`;
 
 	if (envKey in env) {
-		try {
-			if (isUrlAllowed(redirect, [...toArray(env[envKey] as string), publicUrl])) return true;
-		} catch(error) {
-			console.error(error);
-			return true;
-		}
-
-		
+		if (isUrlAllowed(redirect, [...toArray(env[envKey] as string), publicUrl])) return true;
 	}
 
 	if (isUrlValid(publicUrl) === false) {
