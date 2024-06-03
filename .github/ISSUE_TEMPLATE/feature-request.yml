@@ -18,23 +18,14 @@ body:
     validations:
       required: true
 
-  - type: input
-    id: feature_name
+  - type: textarea
+    id: feature_description
     attributes:
-      label: Feature Name
-      description: The name of the new feature you would like to see in the product.
+      label: Feature Description
+      description:
+        Describe the new feature or enhancement you would like. Consider writing your request in the form of a user
+        story i.e. "As a [type of user], I want [some feature] so that [some reason]"
       placeholder: e.g., Ability to import data from Excel
-    validations:
-      required: true
-
-  - type: input
-    id: use_case
-    attributes:
-      label: Use Case
-      description: Briefly describe a specific usage case where this feature would be beneficial.
-      placeholder:
-        e.g., As a data scientist, I often have to deal with large volumes of raw data and find it difficult to analyze
-        without using Excel for that.
     validations:
       required: true
 
