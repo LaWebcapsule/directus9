@@ -29,7 +29,7 @@ const extractToken: RequestHandler = (req, _res, next) => {
 	 * Check if there is an access token stored in the cookies
 	 */
 
-	if (req.cookies && req.cookies[env['ACCESS_TOKEN_COOKIE_NAME'] as string]) {
+	if (req?.cookies?.[env['ACCESS_TOKEN_COOKIE_NAME'] as string]) {
 		token = req.cookies[env['ACCESS_TOKEN_COOKIE_NAME'] as string];
 	}
 
