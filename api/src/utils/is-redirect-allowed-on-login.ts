@@ -20,8 +20,8 @@ export function isRedirectAllowedOnLogin(redirect: unknown, provider: string): b
 
 	const publicUrl = env['PUBLIC_URL'] as string;
 
-	if (isUrlValid(redirect) === false) {
-		if (redirect.startsWith('//') === false) {
+	if (!isUrlValid(redirect)) {
+		if (!redirect.startsWith('//')) {
 			// should be a relative path like `/admin/test`
 			return true;
 		}
@@ -38,7 +38,7 @@ export function isRedirectAllowedOnLogin(redirect: unknown, provider: string): b
 		if (isUrlAllowed(redirect, [...toArray(env[envKey] as string), publicUrl])) return true;
 	}
 
-	if (isUrlValid(publicUrl) === false) {
+	if (!isUrlValid(publicUrl)) {
 		return false;
 	}
 
