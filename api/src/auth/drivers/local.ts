@@ -3,7 +3,7 @@ import argon2 from 'argon2';
 import { Router } from 'express';
 import Joi from 'joi';
 import { performance } from 'perf_hooks';
-import { GET_SET_HEADER } from '../../constants.js';
+import { ACCESS_COOKIE_OPTIONS, REFRESH_COOKIE_OPTIONS } from '../../constants.js';
 import env from '../../env.js';
 import { InvalidCredentialsException, InvalidPayloadException } from '../../exceptions/index.js';
 import { respond } from '../../middleware/respond.js';
@@ -100,7 +100,8 @@ export function createLocalAuthRouter(provider: string): Router {
 			}
 
 			if (mode === 'cookie') {
-				res.setHeader('Set-Cookie', GET_SET_HEADER(refreshToken));
+				res?.cookie(env['ACCESS_TOKEN_COOKIE_NAME'], accessToken, ACCESS_COOKIE_OPTIONS);
+				res?.cookie(env['REFRESH_TOKEN_COOKIE_NAME'], refreshToken, REFRESH_COOKIE_OPTIONS);
 			}
 
 			res.locals['payload'] = payload;

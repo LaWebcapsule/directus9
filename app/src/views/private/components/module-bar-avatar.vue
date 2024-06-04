@@ -51,7 +51,6 @@
 </template>
 
 <script lang="ts">
-import { addTokenToURL } from '@/api';
 import { useAppStore } from '@/stores/app';
 import { useNotificationsStore } from '@/stores/notifications';
 import { useUserStore } from '@/stores/user';
@@ -76,7 +75,7 @@ export default defineComponent({
 
 		const avatarURL = computed<string | null>(() => {
 			if (!userStore.currentUser || !('avatar' in userStore.currentUser) || !userStore.currentUser?.avatar) return null;
-			return addTokenToURL(`${getRootPath()}assets/${userStore.currentUser.avatar.id}?key=system-medium-cover`);
+			return `${getRootPath()}assets/${userStore.currentUser.avatar.id}?key=system-medium-cover`;
 		});
 
 		const avatarError: Ref<null | Event> = ref(null);

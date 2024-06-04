@@ -7,7 +7,7 @@ import {
 	createOpenIDAuthRouter,
 	createSAMLAuthRouter,
 } from '../auth/drivers/index.js';
-import { DEFAULT_AUTH_PROVIDER, GET_SET_HEADER } from '../constants.js';
+import { ACCESS_COOKIE_OPTIONS, DEFAULT_AUTH_PROVIDER, REFRESH_COOKIE_OPTIONS } from '../constants.js';
 import env from '../env.js';
 import { InvalidPayloadException } from '../exceptions/index.js';
 import logger from '../logger.js';
@@ -97,7 +97,8 @@ router.post(
 		}
 
 		if (mode === 'cookie') {
-			res.setHeader('Set-Cookie', GET_SET_HEADER(refreshToken));
+			res?.cookie(env['ACCESS_TOKEN_COOKIE_NAME'], accessToken, ACCESS_COOKIE_OPTIONS);
+			res?.cookie(env['REFRESH_TOKEN_COOKIE_NAME'], refreshToken, REFRESH_COOKIE_OPTIONS);
 		}
 
 		res.locals['payload'] = payload;
@@ -133,13 +134,12 @@ router.post(
 
 		await authenticationService.logout(currentRefreshToken);
 
+		if (req.cookies[env['ACCESS_TOKEN_COOKIE_NAME']]) {
+			res.clearCookie(env['ACCESS_TOKEN_COOKIE_NAME'], ACCESS_COOKIE_OPTIONS);
+		}
+
 		if (req.cookies[env['REFRESH_TOKEN_COOKIE_NAME']]) {
-			res.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'], {
-				httpOnly: true,
-				domain: env['REFRESH_TOKEN_COOKIE_DOMAIN'],
-				secure: env['REFRESH_TOKEN_COOKIE_SECURE'] ?? false,
-				sameSite: (env['REFRESH_TOKEN_COOKIE_SAME_SITE'] as 'lax' | 'strict' | 'none') || 'strict',
-			});
+			res.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'], REFRESH_COOKIE_OPTIONS);
 		}
 
 		return next();

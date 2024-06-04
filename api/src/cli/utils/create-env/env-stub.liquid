@@ -199,6 +199,18 @@ STORAGE_LOCAL_ROOT="./uploads"
 # The duration that the access token is valid ["15m"]
 ACCESS_TOKEN_TTL="15m"
 
+# Whether or not to set the secure attribute for the access token cookie [false]
+ACCESS_TOKEN_COOKIE_SECURE=false
+
+# Value of sameSite for the access token cookie ["lax"]
+ACCESS_TOKEN_COOKIE_SAME_SITE="lax"
+
+# Name of the access token cookie ["directus_refresh_token"]
+ACCESS_TOKEN_COOKIE_NAME="directus_session_token"
+
+# Which domain to use for the access token cookie. Useful for development mode.
+# ACCESS_TOKEN_COOKIE_DOMAIN
+
 # The duration that the refresh token is valid, and also how long users stay logged-in to the App ["7d"]
 REFRESH_TOKEN_TTL="7d"
 

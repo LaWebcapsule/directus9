@@ -1,4 +1,3 @@
-import { getToken } from '@/api';
 import { i18n } from '@/lang';
 import { addQueryToPath } from '@/utils/add-query-to-path';
 import { getPublicURL } from '@/utils/get-root-path';
@@ -87,7 +86,7 @@ export default function useImage(
 					width: selectedPreset.value ? selectedPreset.value.width ?? undefined : width,
 					height: selectedPreset.value ? selectedPreset.value.height ?? undefined : height,
 					transformationKey,
-					previewUrl: replaceUrlAccessToken(imageUrl, imageToken.value ?? getToken()),
+					previewUrl: replaceUrlAccessToken(imageUrl, imageToken.value),
 				};
 			} else {
 				imageSelection.value = null;
@@ -121,7 +120,7 @@ export default function useImage(
 			alt: image.title,
 			width: image.width,
 			height: image.height,
-			previewUrl: replaceUrlAccessToken(assetUrl, imageToken.value ?? getToken()),
+			previewUrl: replaceUrlAccessToken(assetUrl, imageToken.value),
 		};
 	}
 
