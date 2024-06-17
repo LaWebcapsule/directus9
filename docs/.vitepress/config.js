@@ -1,7 +1,9 @@
 import { defineConfig } from 'vitepress';
 
+const isGH = process.env.GITHUB_ACTIONS === 'true';
+
 export default defineConfig({
-	base: '/',
+	base: isGH ? '/db-studio' : '/',
 	lang: 'en-US',
 	title: 'DB Studio (Formerly Directus v9) Docs',
 	description: 'DB Studio (Formerly Directus v9). An Instant App & API for your SQL Database.',
