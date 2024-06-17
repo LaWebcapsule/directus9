@@ -42,6 +42,9 @@ jobs:
       - name: Lint
         run: pnpm --filter docs spellcheck
 
+      - name: Build
+        run: pnpm --filter docs build
+
       - name: Upload
         uses: actions/upload-pages-artifact@v3
         with:
