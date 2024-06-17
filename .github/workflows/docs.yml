@@ -14,13 +14,21 @@ on:
       - docs/**
       - .github/workflows/docs.yml
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 concurrency:
   group: docs-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  spellcheck:
+  deploy:
     name: Check Spelling
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -33,3 +41,12 @@ jobs:
 
       - name: Lint
         run: pnpm --filter docs spellcheck
+
+      - name: Upload
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./docs/.vuepress/dist
+
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4
