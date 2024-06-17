@@ -292,6 +292,7 @@ pub/sub
 px
 px.
 reactively
+readme
 readonly
 readTime
 rebase
@@ -342,6 +343,9 @@ TFA
 TileJSON
 TLS
 toc
+TODO
+Todo
+todo
 TrustRadius
 truthy
 TTL
