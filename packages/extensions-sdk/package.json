@@ -12,7 +12,6 @@
 		"url": "https://github.com/pxslip/db-studio.git",
 		"directory": "packages/extensions-sdk"
 	},
-	"funding": "https://github.com/pxslip/db-studio?sponsor=1",
 	"exports": {
 		".": "./dist/index.js",
 		"./cli": "./dist/cli/index.js",
