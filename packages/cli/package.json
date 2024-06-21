@@ -106,6 +106,5 @@
 	},
 	"lint-staged": {
 		"*.{js,ts}": "eslint --fix"
-	},
-	"packageManager": "^pnpm@7.5.0"
+	}
 }
