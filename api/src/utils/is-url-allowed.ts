@@ -3,7 +3,7 @@ import logger from '../logger.js';
 import { URL } from 'url';
 
 /**
- * Check if url matches allow list either exactly or by domain+path
+ * Check if url matches allow list either exactly or by origin+pathname
  */
 export default function isUrlAllowed(url: string, allowList: string | string[]): boolean {
 	const urlAllowList = toArray(allowList);
@@ -13,8 +13,8 @@ export default function isUrlAllowed(url: string, allowList: string | string[]):
 	const parsedWhitelist = urlAllowList
 		.map((allowedURL) => {
 			try {
-				const { hostname, pathname } = new URL(allowedURL);
-				return hostname + pathname;
+				const { origin, pathname } = new URL(allowedURL);
+				return origin + pathname;
 			} catch {
 				logger.warn(`Invalid URL used "${url}"`);
 			}
@@ -24,8 +24,8 @@ export default function isUrlAllowed(url: string, allowList: string | string[]):
 		.filter((f) => f) as string[];
 
 	try {
-		const { hostname, pathname } = new URL(url);
-		return parsedWhitelist.includes(hostname + pathname);
+		const { origin, pathname } = new URL(url);
+		return parsedWhitelist.includes(origin + pathname);
 	} catch {
 		return false;
 	}

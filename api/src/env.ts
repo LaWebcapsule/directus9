@@ -151,6 +151,7 @@ const allowedEnvironmentVars = [
 	'AUTH_.+_GROUP_SCOPE',
 	'AUTH_.+_IDP.+',
 	'AUTH_.+_SP.+',
+	'AUTH_.+_REDIRECT_ALLOW_LIST',
 	// extensions
 	'PACKAGE_FILE_LOCATION',
 	'EXTENSIONS_PATH',

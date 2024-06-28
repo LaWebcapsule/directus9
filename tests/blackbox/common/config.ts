@@ -302,6 +302,7 @@ const isWindows = ['win32', 'win64'].includes(process.platform);
 
 for (const vendor of allVendors) {
 	config.envs[vendor]!.TZ = isWindows ? '0' : 'UTC';
+	config.envs[vendor]['PUBLIC_URL'] = getUrl(vendor);
 }
 
 export function getUrl(vendor: (typeof allVendors)[number], overrideEnv?: Env) {
