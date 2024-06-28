@@ -45,7 +45,12 @@ import { GraphQLJSON, InputTypeComposer, ObjectTypeComposer, SchemaComposer, toI
 import type { Knex } from 'knex';
 import { flatten, get, mapKeys, merge, omit, pick, set, transform, uniq } from 'lodash-es';
 import { clearSystemCache, getCache } from '../../cache.js';
-import { DEFAULT_AUTH_PROVIDER, GENERATE_SPECIAL } from '../../constants.js';
+import {
+	ACCESS_COOKIE_OPTIONS,
+	DEFAULT_AUTH_PROVIDER,
+	GENERATE_SPECIAL,
+	REFRESH_COOKIE_OPTIONS,
+} from '../../constants.js';
 import getDatabase from '../../database/index.js';
 import env from '../../env.js';
 import { ForbiddenException, GraphQLValidationException, InvalidPayloadException } from '../../exceptions/index.js';
@@ -53,7 +58,6 @@ import { getExtensionManager } from '../../extensions.js';
 import type { AbstractServiceOptions, GraphQLParams, Item } from '../../types/index.js';
 import { generateHash } from '../../utils/generate-hash.js';
 import { getGraphQLType } from '../../utils/get-graphql-type.js';
-import { getMilliseconds } from '../../utils/get-milliseconds.js';
 import { reduceSchema } from '../../utils/reduce-schema.js';
 import { sanitizeQuery } from '../../utils/sanitize-query.js';
 import { validateQuery } from '../../utils/validate-query.js';
@@ -2076,13 +2080,8 @@ export class GraphQLService {
 					const result = await authenticationService.login(DEFAULT_AUTH_PROVIDER, args, args?.otp);
 
 					if (args['mode'] === 'cookie') {
-						res?.cookie(env['REFRESH_TOKEN_COOKIE_NAME'], result['refreshToken'], {
-							httpOnly: true,
-							domain: env['REFRESH_TOKEN_COOKIE_DOMAIN'],
-							maxAge: getMilliseconds(env['REFRESH_TOKEN_TTL']),
-							secure: env['REFRESH_TOKEN_COOKIE_SECURE'] ?? false,
-							sameSite: (env['REFRESH_TOKEN_COOKIE_SAME_SITE'] as 'lax' | 'strict' | 'none') || 'strict',
-						});
+						res?.cookie(env['ACCESS_TOKEN_COOKIE_NAME'], result['accessToken'], ACCESS_COOKIE_OPTIONS);
+						res?.cookie(env['REFRESH_TOKEN_COOKIE_NAME'], result['refreshToken'], REFRESH_COOKIE_OPTIONS);
 					}
 
 					return {
@@ -2123,13 +2122,8 @@ export class GraphQLService {
 					const result = await authenticationService.refresh(currentRefreshToken);
 
 					if (args['mode'] === 'cookie') {
-						res?.cookie(env['REFRESH_TOKEN_COOKIE_NAME'], result['refreshToken'], {
-							httpOnly: true,
-							domain: env['REFRESH_TOKEN_COOKIE_DOMAIN'],
-							maxAge: getMilliseconds(env['REFRESH_TOKEN_TTL']),
-							secure: env['REFRESH_TOKEN_COOKIE_SECURE'] ?? false,
-							sameSite: (env['REFRESH_TOKEN_COOKIE_SAME_SITE'] as 'lax' | 'strict' | 'none') || 'strict',
-						});
+						res?.cookie(env['ACCESS_TOKEN_COOKIE_NAME'], result['accessToken'], ACCESS_COOKIE_OPTIONS);
+						res?.cookie(env['REFRESH_TOKEN_COOKIE_NAME'], result['refreshToken'], REFRESH_COOKIE_OPTIONS);
 					}
 
 					return {
@@ -2144,7 +2138,7 @@ export class GraphQLService {
 				args: {
 					refresh_token: GraphQLString,
 				},
-				resolve: async (_, args, { req }) => {
+				resolve: async (_, args, { req, res }) => {
 					const accountability: Accountability = { role: null };
 
 					if (req?.ip) accountability.ip = req.ip;
@@ -2167,6 +2161,15 @@ export class GraphQLService {
 					}
 
 					await authenticationService.logout(currentRefreshToken);
+
+					if (req?.cookies?.[env['ACCESS_TOKEN_COOKIE_NAME'] as string]) {
+						res?.clearCookie(env['ACCESS_TOKEN_COOKIE_NAME'] as string, ACCESS_COOKIE_OPTIONS);
+					}
+
+					if (req?.cookies?.[env['REFRESH_TOKEN_COOKIE_NAME'] as string]) {
+						res?.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'] as string, REFRESH_COOKIE_OPTIONS);
+					}
+
 					return true;
 				},
 			},

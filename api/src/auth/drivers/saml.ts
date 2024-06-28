@@ -3,7 +3,7 @@ import { BaseException } from '@wbce-d9/exceptions';
 import express, { Router } from 'express';
 import * as samlify from 'samlify';
 import { getAuthProvider } from '../../auth.js';
-import { COOKIE_OPTIONS, GET_SET_HEADER } from '../../constants.js';
+import { ACCESS_COOKIE_OPTIONS, REFRESH_COOKIE_OPTIONS } from '../../constants.js';
 import getDatabase from '../../database/index.js';
 import emitter from '../../emitter.js';
 import env from '../../env.js';
@@ -135,12 +135,16 @@ export function createSAMLAuthRouter(providerName: string) {
 
 			const authService = new AuthenticationService({ accountability: req.accountability, schema: req.schema });
 
+			if (req.cookies[env['ACCESS_TOKEN_COOKIE_NAME']]) {
+				res.clearCookie(env['ACCESS_TOKEN_COOKIE_NAME'], ACCESS_COOKIE_OPTIONS);
+			}
+
 			if (req.cookies[env['REFRESH_TOKEN_COOKIE_NAME']]) {
 				const currentRefreshToken = req.cookies[env['REFRESH_TOKEN_COOKIE_NAME']];
 
 				if (currentRefreshToken) {
 					await authService.logout(currentRefreshToken);
-					res.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'], COOKIE_OPTIONS);
+					res.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'], REFRESH_COOKIE_OPTIONS);
 				}
 			}
 
@@ -170,7 +174,8 @@ export function createSAMLAuthRouter(providerName: string) {
 				};
 
 				if (relayState) {
-					res.setHeader('Set-Cookie', GET_SET_HEADER(refreshToken));
+					res?.cookie(env['ACCESS_TOKEN_COOKIE_NAME'], accessToken, ACCESS_COOKIE_OPTIONS);
+					res?.cookie(env['REFRESH_TOKEN_COOKIE_NAME'], refreshToken, REFRESH_COOKIE_OPTIONS);
 					return res.redirect(relayState);
 				}
 

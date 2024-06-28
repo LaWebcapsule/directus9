@@ -124,7 +124,7 @@
 </template>
 
 <script lang="ts">
-import api, { addTokenToURL } from '@/api';
+import api from '@/api';
 import { computed, defineComponent, nextTick, reactive, ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
 
@@ -204,7 +204,7 @@ export default defineComponent({
 		const randomId = ref<string>(nanoid());
 
 		const imageURL = computed(() => {
-			return addTokenToURL(`${getRootPath()}assets/${props.id}?${randomId.value}`);
+			return `${getRootPath()}assets/${props.id}?${randomId.value}`;
 		});
 
 		const dimensionsString = computed(() => {

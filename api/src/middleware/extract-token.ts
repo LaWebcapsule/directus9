@@ -3,11 +3,13 @@
  *
  * Authorization: Bearer
  * access_token query parameter
+ * Access token cookie
  *
  * and store in req.token
  */
 
 import type { RequestHandler } from 'express';
+import env from '../env.js';
 
 const extractToken: RequestHandler = (req, _res, next) => {
 	let token: string | null = null;
@@ -22,6 +24,13 @@ const extractToken: RequestHandler = (req, _res, next) => {
 		if (parts.length === 2 && parts[0]!.toLowerCase() === 'bearer') {
 			token = parts[1]!;
 		}
+	}
+	/**
+	 * Check if there is an access token stored in the cookies
+	 */
+
+	if (req?.cookies?.[env['ACCESS_TOKEN_COOKIE_NAME'] as string]) {
+		token = req.cookies[env['ACCESS_TOKEN_COOKIE_NAME'] as string];
 	}
 
 	/**
