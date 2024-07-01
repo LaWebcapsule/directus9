@@ -1,5 +1,26 @@
 # @wbce-d9/api
 
+## 10.3.1
+
+### Patch Changes
+
+- b59e970: npm security updates
+- Updated dependencies [b59e970]
+  - @wbce-d9/app@9.29.1
+  - @wbce-d9/constants@9.26.4
+  - @wbce-d9/exceptions@9.26.4
+  - @wbce-d9/extensions-sdk@9.26.6
+  - @wbce-d9/schema@9.26.4
+  - @wbce-d9/specs@9.26.4
+  - @wbce-d9/storage@9.26.4
+  - @wbce-d9/storage-driver-azure@9.26.6
+  - @wbce-d9/storage-driver-cloudinary@9.26.6
+  - @wbce-d9/storage-driver-gcs@9.26.6
+  - @wbce-d9/storage-driver-local@9.26.6
+  - @wbce-d9/storage-driver-s3@9.26.8
+  - @wbce-d9/update-check@9.26.4
+  - @wbce-d9/utils@9.28.1
+
 ## 10.3.0
 
 ### Minor Changes

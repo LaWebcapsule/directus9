@@ -1,5 +1,14 @@
 # @wbce-d9/utils
 
+## 9.28.1
+
+### Patch Changes
+
+- b59e970: npm security updates
+- Updated dependencies [b59e970]
+  - @wbce-d9/constants@9.26.4
+  - @wbce-d9/storage@9.26.4
+
 ## 9.28.0
 
 ### Minor Changes
