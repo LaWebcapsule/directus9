@@ -8,7 +8,12 @@ import { Issuer, generators } from 'openid-client';
 import { getAuthProvider } from '../../auth.js';
 import { ACCESS_COOKIE_OPTIONS, REFRESH_COOKIE_OPTIONS } from '../../constants.js';
 import env from '../../env.js';
-import { InvalidConfigException, InvalidCredentialsException, InvalidTokenException } from '../../exceptions/index.js';
+import {
+	InvalidConfigException,
+	InvalidCredentialsException,
+	InvalidTokenException,
+	InvalidPayloadException,
+} from '../../exceptions/index.js';
 import logger from '../../logger.js';
 import { respond } from '../../middleware/respond.js';
 import { AuthenticationService } from '../../services/authentication.js';
@@ -19,6 +24,7 @@ import { getConfigFromEnv } from '../../utils/get-config-from-env.js';
 import { getIPFromReq } from '../../utils/get-ip-from-req.js';
 import { Url } from '../../utils/url.js';
 import { BaseOAuthDriver, type UserPayload } from './baseoauth.js';
+import { isRedirectAllowedOnLogin } from '../../utils/is-redirect-allowed-on-login.js';
 
 export class OAuth2AuthDriver extends BaseOAuthDriver {
 	client: Client;
@@ -158,15 +164,16 @@ export function createOAuth2AuthRouter(providerName: string): Router {
 			const provider = getAuthProvider(providerName) as OAuth2AuthDriver;
 			const codeVerifier = provider.generateCodeVerifier();
 			const prompt = !!req.query['prompt'];
+			const redirect = req.query['redirect'];
 
-			const token = jwt.sign(
-				{ verifier: codeVerifier, redirect: req.query['redirect'], prompt },
-				env['SECRET'] as string,
-				{
-					expiresIn: '5m',
-					issuer: 'directus',
-				}
-			);
+			if (isRedirectAllowedOnLogin(redirect, providerName) === false) {
+				throw new InvalidPayloadException(`URL "${redirect}" can't be used to redirect after login`);
+			}
+
+			const token = jwt.sign({ verifier: codeVerifier, redirect, prompt }, env['SECRET'] as string, {
+				expiresIn: '5m',
+				issuer: 'directus',
+			});
 
 			res.cookie(`oauth2.${providerName}`, token, {
 				httpOnly: true,

@@ -10,3 +10,4 @@ notes. In order to receive credit, security researchers must follow responsible 
 
 - They do not publish the vulnerability prior to the Directus team releasing a fix for it
 - They do not divulge exact details of the issue, for example, through exploits or proof-of-concepts
+

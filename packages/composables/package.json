@@ -29,12 +29,12 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@wbce-d9/tsconfig": "0.0.7",
-		"@wbce-d9/types": "workspace:*",
 		"@types/lodash-es": "4.17.7",
 		"@vitest/coverage-c8": "0.30.1",
 		"@vue/test-utils": "2.3.2",
-		"axios": "1.3.6",
+		"@wbce-d9/tsconfig": "0.0.7",
+		"@wbce-d9/types": "workspace:*",
+		"axios": "^1.7.2",
 		"typescript": "5.0.4",
 		"vitest": "0.30.1"
 	},
