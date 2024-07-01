@@ -1,5 +1,11 @@
 # @wbce-d9/schema
 
+## 9.26.4
+
+### Patch Changes
+
+- b59e970: npm security updates
+
 ## 9.26.3
 
 ### Patch Changes

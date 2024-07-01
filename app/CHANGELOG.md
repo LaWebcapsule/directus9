@@ -1,5 +1,13 @@
 # @wbce-d9/app
 
+## 9.29.1
+
+### Patch Changes
+
+- b59e970: npm security updates
+- Updated dependencies [b59e970]
+  - @wbce-d9/composables@9.27.1
+
 ## 9.29.0
 
 ### Minor Changes

@@ -1,5 +1,14 @@
 # @wbce-d9/create-directus-extension
 
+## 9.26.6
+
+### Patch Changes
+
+- b59e970: npm security updates
+- Updated dependencies [b59e970]
+  - @wbce-d9/constants@9.26.4
+  - @wbce-d9/extensions-sdk@9.26.6
+
 ## 9.26.5
 
 ### Patch Changes

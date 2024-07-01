@@ -1,5 +1,13 @@
 # directus9
 
+## 10.1.2
+
+### Patch Changes
+
+- b59e970: npm security updates
+- Updated dependencies [b59e970]
+  - @wbce-d9/api@10.3.1
+
 ## 10.1.1
 
 ### Patch Changes

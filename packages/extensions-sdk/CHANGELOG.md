@@ -1,5 +1,16 @@
 # @wbce-d9/extensions-sdk
 
+## 9.26.6
+
+### Patch Changes
+
+- b59e970: npm security updates
+- Updated dependencies [b59e970]
+  - @wbce-d9/composables@9.27.1
+  - @wbce-d9/constants@9.26.4
+  - @wbce-d9/types@9.26.4
+  - @wbce-d9/utils@9.28.1
+
 ## 9.26.5
 
 ### Patch Changes
