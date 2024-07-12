@@ -58,6 +58,7 @@ const allowedEnvironmentVars = [
 	'HSTS_.+',
 	// hashing
 	'HASH_.+',
+	'X_POWERED_BY_ENABLED',
 	// cors
 	'CORS_ENABLED',
 	'CORS_ORIGIN',
@@ -240,6 +241,8 @@ const defaults: Record<string, any> = {
 	SERVER_SHUTDOWN_TIMEOUT: 1000,
 
 	ROOT_REDIRECT: './admin',
+
+	X_POWERED_BY_ENABLED: true,
 
 	CORS_ENABLED: false,
 	CORS_ORIGIN: false,
