@@ -1,6 +1,6 @@
 {
 	"name": "@db-studio/api",
-	"version": "1.0.2",
+	"version": "1.0.1",
 	"description": "DB Studio (formerly Directus v9) is a real-time API and App dashboard for managing SQL database content",
 	"type": "module",
 	"keywords": [
@@ -69,6 +69,7 @@
 		"@db-studio/storage-driver-cloudinary": "workspace:*",
 		"@db-studio/storage-driver-gcs": "workspace:*",
 		"@db-studio/storage-driver-local": "workspace:*",
+		"@db-studio/storage-driver-s3": "workspace:*",
 		"@db-studio/update-check": "workspace:*",
 		"@db-studio/utils": "workspace:*",
 		"argon2": "0.30.3",
