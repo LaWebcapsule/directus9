@@ -8,7 +8,7 @@ import dts from 'rollup-plugin-dts';
 
 import pkg from './package.json';
 
-const globalName = 'DirectusSdk';
+const globalName = 'DBStudioSdk';
 
 const configs = {
 	global: {
