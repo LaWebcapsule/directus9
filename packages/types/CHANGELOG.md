@@ -1,5 +1,11 @@
 # @db-studio/types
 
+## 1.0.2
+
+### Patch Changes
+
+- Add packages, some shenanigans to fix versions
+
 ## 1.0.1
 
 ### Patch Changes

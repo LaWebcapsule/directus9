@@ -1,8 +1,8 @@
 {
-	"name": "@directus/cli",
-	"version": "9.14.3",
-	"description": "The official Directus CLI",
-	"repository": "directus/cli",
+	"name": "@db-studio/cli",
+	"version": "1.0.1",
+	"description": "The official DB Studio CLI",
+	"repository": "pxslip/cli",
 	"main": "./dist/index.js",
 	"exports": {
 		".": "./dist/index.js",
@@ -10,8 +10,8 @@
 	},
 	"types": "./dist/index.d.ts",
 	"bin": {
-		"studioctl": "./bin/directus.js",
-		"studio-ctl": "./bin/directus.js"
+		"studioctl": "./bin/studio.js",
+		"studio-ctl": "./bin/studio.js"
 	},
 	"files": [
 		"bin",
@@ -31,13 +31,13 @@
 		"api",
 		"client",
 		"cms",
-		"directus",
+		"db-studio",
 		"headless",
 		"javascript",
 		"node",
 		"cli"
 	],
-	"author": "João Biondo <wolfulus@gmail.com>",
+	"author": "Px Slip (Will K)<db-studio@pxslip.com>",
 	"license": "MIT",
 	"dependencies": {
 		"@db-studio/format-title": "workspace:*",

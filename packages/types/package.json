@@ -1,6 +1,6 @@
 {
 	"name": "@db-studio/types",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"type": "module",
 	"scripts": {
 		"build": "tsc --build",

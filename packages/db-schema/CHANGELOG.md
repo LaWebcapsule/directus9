@@ -1,5 +1,11 @@
 # @db-studio/schema
 
+## 1.0.1
+
+### Patch Changes
+
+- Add packages, some shenanigans to fix versions
+
 ## 9.26.4
 
 ### Patch Changes
