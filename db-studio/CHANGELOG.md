@@ -1,5 +1,13 @@
 # directus9
 
+## 1.0.3
+
+### Patch Changes
+
+- see if we can reset the storage driver version
+- Updated dependencies
+  - @db-studio/api@1.0.2
+
 ## 1.0.2
 
 ### Patch Changes

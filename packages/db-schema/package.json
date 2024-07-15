@@ -1,6 +1,6 @@
 {
 	"name": "@db-studio/db-schema",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Utility for extracting information about existing DB schema",
 	"type": "module",
 	"keywords": [

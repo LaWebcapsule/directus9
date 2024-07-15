@@ -1,6 +1,6 @@
 {
 	"name": "@db-studio/sdk",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "The official DB Studio SDK for use in JavaScript!",
 	"repository": "pxslip/db-studio",
 	"main": "dist/sdk.cjs.js",

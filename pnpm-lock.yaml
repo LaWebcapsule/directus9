@@ -90,6 +90,9 @@ importers:
       '@db-studio/storage-driver-local':
         specifier: workspace:*
         version: link:../packages/storage-driver-local
+      '@db-studio/storage-driver-s3':
+        specifier: workspace:*
+        version: link:../packages/storage-driver-s3
       '@db-studio/update-check':
         specifier: workspace:*
         version: link:../packages/update-check

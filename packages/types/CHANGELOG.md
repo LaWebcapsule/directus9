@@ -1,5 +1,11 @@
 # @db-studio/types
 
+## 1.0.3
+
+### Patch Changes
+
+- see if we can reset the storage driver version
+
 ## 1.0.2
 
 ### Patch Changes

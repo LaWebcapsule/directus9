@@ -1,5 +1,13 @@
 # @db-studio/create-extension
 
+## 1.0.3
+
+### Patch Changes
+
+- see if we can reset the storage driver version
+- Updated dependencies
+  - @db-studio/extensions-sdk@1.0.3
+
 ## 1.0.2
 
 ### Patch Changes

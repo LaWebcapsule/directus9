@@ -1,5 +1,12 @@
 # @db-studio/storage-driver-s3
 
+## 1.0.1
+
+### Patch Changes
+
+- see if we can reset the storage driver version
+  - @db-studio/utils@1.0.1
+
 ## 9.26.8
 
 ### Patch Changes

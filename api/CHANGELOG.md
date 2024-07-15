@@ -4,6 +4,19 @@
 
 ### Patch Changes
 
+- see if we can reset the storage driver version
+- Updated dependencies
+  - @db-studio/extensions-sdk@1.0.3
+  - @db-studio/db-schema@1.0.2
+  - @db-studio/storage-driver-s3@1.0.1
+  - @db-studio/app@1.0.1
+  - @db-studio/exceptions@1.0.1
+  - @db-studio/utils@1.0.1
+
+## 1.0.2
+
+### Patch Changes
+
 - Add packages, some shenanigans to fix versions
 - Updated dependencies
   - @db-studio/db-schema@1.0.1
