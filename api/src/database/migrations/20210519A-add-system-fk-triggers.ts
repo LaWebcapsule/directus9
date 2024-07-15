@@ -1,5 +1,5 @@
 import type { Knex } from 'knex';
-import { createInspector } from '@db-studio/schema';
+import { createInspector } from '@db-studio/db-schema';
 import logger from '../../logger.js';
 
 /**
