@@ -22,9 +22,7 @@ describe('fields', function () {
 	});
 
 	test(`check ManyItems return type for readAll`, async (url, nock) => {
-		nock()
-			.get('/fields')
-			.reply(200, { data: [] });
+		nock().get('/fields').reply(200, { data: [] });
 
 		const sdk = new Directus(url);
 		const response = await sdk.fields.readAll();
@@ -33,13 +31,10 @@ describe('fields', function () {
 	});
 
 	test(`check ManyItems return type for readMany`, async (url, nock) => {
-		nock()
-			.get('/fields/posts')
-			.reply(200, { data: [] });
+		nock().get('/fields/posts').reply(200, { data: [] });
 
 		const sdk = new Directus(url);
 		const response = await sdk.fields.readMany('posts');
-		console.log(response);
 
 		expect(Array.isArray(response.data)).toBe(true);
 	});
