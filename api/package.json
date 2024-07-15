@@ -69,7 +69,6 @@
 		"@db-studio/storage-driver-cloudinary": "workspace:*",
 		"@db-studio/storage-driver-gcs": "workspace:*",
 		"@db-studio/storage-driver-local": "workspace:*",
-		"@db-studio/storage-driver-s3": "workspace:*",
 		"@db-studio/update-check": "workspace:*",
 		"@db-studio/utils": "workspace:*",
 		"argon2": "0.30.3",
