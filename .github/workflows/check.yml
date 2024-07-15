@@ -44,6 +44,9 @@ jobs:
       - name: Run Tests
         run: pnpm test
 
-  analyze:
-    name: CodeQL Analysis
-    uses: ./.github/workflows/codeql-analysis.yml
+  # analyze:
+  #   name: CodeQL Analysis
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Analysis
+  #       uses: ./.github/actions/codeql

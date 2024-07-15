@@ -2,3 +2,8 @@ paths-ignore:
   - '**/*.test.ts'
   - '**/*.test.js'
   - '**/node_modules'
+paths:
+  - api
+  - app
+  - db-studio
+  - packages/*
