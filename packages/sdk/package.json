@@ -2,7 +2,11 @@
 	"name": "@db-studio/sdk",
 	"version": "1.0.2",
 	"description": "The official DB Studio SDK for use in JavaScript!",
-	"repository": "pxslip/db-studio",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pxslip/db-studio.git",
+		"directory": "packages/sdk"
+	},
 	"main": "dist/sdk.cjs.js",
 	"exports": {
 		".": {
@@ -79,7 +83,7 @@
 		"tslib": "^2.4.0",
 		"typescript": "4.7.4"
 	},
-	"gitHead": "24621f3934dc77eb23441331040ed13c676ceffd",
+	"gitHfead": "24621f3934dc77eb23441331040ed13c676ceffd",
 	"simple-git-hooks": {
 		"pre-commit": "npx lint-staged"
 	},
