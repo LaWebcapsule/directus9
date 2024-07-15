@@ -1,4 +1,4 @@
-import type { Column } from '@db-studio/schema';
+import type { Column } from '@db-studio/db-schema';
 import type { FUNCTIONS, GEOMETRY_FORMATS, GEOMETRY_TYPES, LOCAL_TYPES, TYPES } from '@db-studio/constants';
 import type { Filter, FilterOperator } from './filter.js';
 import type { DeepPartial } from './misc.js';

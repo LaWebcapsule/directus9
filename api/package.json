@@ -62,7 +62,7 @@
 		"@db-studio/exceptions": "workspace:*",
 		"@db-studio/extensions-sdk": "workspace:*",
 		"@db-studio/format-title": "workspace:*",
-		"@db-studio/schema": "workspace:*",
+		"@db-studio/db-schema": "workspace:*",
 		"@db-studio/specs": "workspace:*",
 		"@db-studio/storage": "workspace:*",
 		"@db-studio/storage-driver-azure": "workspace:*",

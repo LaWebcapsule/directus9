@@ -27,7 +27,7 @@
 	},
 	"devDependencies": {
 		"@db-studio/constants": "workspace:*",
-		"@db-studio/schema": "workspace:*",
+		"@db-studio/db-schema": "workspace:*",
 		"@db-studio/config": "workspace:*",
 		"@types/express": "4.17.17",
 		"@types/geojson": "7946.0.10",

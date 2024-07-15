@@ -1,4 +1,4 @@
-import type { Column } from '@db-studio/schema';
+import type { Column } from '@db-studio/db-schema';
 import type { Field, Relation } from '@db-studio/types';
 import { pick } from 'lodash-es';
 import type { Collection } from '../types/index.js';

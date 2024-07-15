@@ -1,5 +1,5 @@
-import type { ForeignKey, SchemaInspector } from '@db-studio/schema';
-import { createInspector } from '@db-studio/schema';
+import type { ForeignKey, SchemaInspector } from '@db-studio/db-schema';
+import { createInspector } from '@db-studio/db-schema';
 import type { Accountability, Query, Relation, RelationMeta, SchemaOverview } from '@db-studio/types';
 import { toArray } from '@db-studio/utils';
 import type Keyv from 'keyv';

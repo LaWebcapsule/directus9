@@ -1,5 +1,5 @@
-import type { SchemaInspector, Table } from '@db-studio/schema';
-import { createInspector } from '@db-studio/schema';
+import type { SchemaInspector, Table } from '@db-studio/db-schema';
+import { createInspector } from '@db-studio/db-schema';
 import type { Accountability, FieldMeta, RawField, SchemaOverview } from '@db-studio/types';
 import { addFieldFlag } from '@db-studio/utils';
 import type Keyv from 'keyv';

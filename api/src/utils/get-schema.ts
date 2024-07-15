@@ -1,5 +1,5 @@
-import type { SchemaInspector } from '@db-studio/schema';
-import { createInspector } from '@db-studio/schema';
+import type { SchemaInspector } from '@db-studio/db-schema';
+import { createInspector } from '@db-studio/db-schema';
 import type { Filter, SchemaOverview } from '@db-studio/types';
 import { parseJSON, toArray } from '@db-studio/utils';
 import type { Knex } from 'knex';

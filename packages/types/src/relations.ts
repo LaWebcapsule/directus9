@@ -1,4 +1,4 @@
-import type { ForeignKey } from '@db-studio/schema';
+import type { ForeignKey } from '@db-studio/db-schema';
 
 export type RelationMeta = {
 	id: number;

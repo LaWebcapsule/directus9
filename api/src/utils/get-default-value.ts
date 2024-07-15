@@ -1,6 +1,6 @@
-import type { SchemaOverview } from '@db-studio/schema/types/overview';
+import type { SchemaOverview } from '@db-studio/db-schema/types/overview';
 import { parseJSON } from '@db-studio/utils';
-import type { Column } from '@db-studio/schema';
+import type { Column } from '@db-studio/db-schema';
 import env from '../env.js';
 import logger from '../logger.js';
 import getLocalType from './get-local-type.js';

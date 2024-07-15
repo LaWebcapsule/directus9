@@ -1,6 +1,6 @@
 import { KNEX_TYPES, REGEX_BETWEEN_PARENS } from '@db-studio/constants';
-import type { Column, SchemaInspector } from '@db-studio/schema';
-import { createInspector } from '@db-studio/schema';
+import type { Column, SchemaInspector } from '@db-studio/db-schema';
+import { createInspector } from '@db-studio/db-schema';
 import type { Accountability, Field, FieldMeta, RawField, SchemaOverview, Type } from '@db-studio/types';
 import { addFieldFlag, toArray } from '@db-studio/utils';
 import type Keyv from 'keyv';

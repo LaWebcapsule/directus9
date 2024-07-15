@@ -1,5 +1,5 @@
 import type { Field } from '@db-studio/types';
-import type { Table } from '@db-studio/schema';
+import type { Table } from '@db-studio/db-schema';
 
 export type CollectionMeta = {
 	collection: string;

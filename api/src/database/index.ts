@@ -1,5 +1,5 @@
-import { createInspector } from '@db-studio/schema';
-import type { SchemaInspector } from '@db-studio/schema';
+import { createInspector } from '@db-studio/db-schema';
+import type { SchemaInspector } from '@db-studio/db-schema';
 import fse from 'fs-extra';
 import type { Knex } from 'knex';
 import knex from 'knex';

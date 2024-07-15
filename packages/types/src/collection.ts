@@ -1,4 +1,4 @@
-import type { Table } from '@db-studio/schema';
+import type { Table } from '@db-studio/db-schema';
 
 type Translations = {
 	language: string;
