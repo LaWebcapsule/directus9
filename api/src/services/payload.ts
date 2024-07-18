@@ -148,9 +148,12 @@ export class PayloadService {
 
 	processValues(action: Action, payloads: Partial<Item>[]): Promise<Partial<Item>[]>;
 	processValues(action: Action, payload: Partial<Item>): Promise<Partial<Item>>;
+	processValues(action: Action, payloads: Partial<Item>[], aliasMap: Record<string, string>): Promise<Partial<Item>[]>;
+	processValues(action: Action, payload: Partial<Item>, aliasMap: Record<string, string>): Promise<Partial<Item>>;
 	async processValues(
 		action: Action,
-		payload: Partial<Item> | Partial<Item>[]
+		payload: Partial<Item> | Partial<Item>[],
+		aliasMap: Record<string, string> = {}
 	): Promise<Partial<Item> | Partial<Item>[]> {
 		const processedPayload = toArray(payload);
 
@@ -161,6 +164,16 @@ export class PayloadService {
 		let specialFieldsInCollection = Object.entries(this.schema.collections[this.collection]!.fields).filter(
 			([_name, field]) => field.special && field.special.length > 0
 		);
+
+		const aliasEntries = Object.entries(aliasMap);
+
+		for (const [name, field] of specialFieldsInCollection) {
+			for (const [aliasName, fieldName] of aliasEntries) {
+				if (fieldName === name) {
+					specialFieldsInCollection.push([aliasName, { ...field, field: aliasName }]);
+				}
+			}
+		}
 
 		if (action === 'read') {
 			specialFieldsInCollection = specialFieldsInCollection.filter(([name]) => {
