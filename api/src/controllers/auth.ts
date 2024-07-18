@@ -78,6 +78,10 @@ router.post(
 			schema: req.schema,
 		});
 
+		if (req.cookies[env['ACCESS_TOKEN_COOKIE_NAME']]) {
+			res.clearCookie(env['ACCESS_TOKEN_COOKIE_NAME']);
+		}
+
 		const currentRefreshToken = req.body.refresh_token || req.cookies[env['REFRESH_TOKEN_COOKIE_NAME']];
 
 		if (!currentRefreshToken) {
@@ -135,11 +139,11 @@ router.post(
 		await authenticationService.logout(currentRefreshToken);
 
 		if (req.cookies[env['ACCESS_TOKEN_COOKIE_NAME']]) {
-			res.clearCookie(env['ACCESS_TOKEN_COOKIE_NAME'], ACCESS_COOKIE_OPTIONS);
+			res.clearCookie(env['ACCESS_TOKEN_COOKIE_NAME']);
 		}
 
 		if (req.cookies[env['REFRESH_TOKEN_COOKIE_NAME']]) {
-			res.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'], REFRESH_COOKIE_OPTIONS);
+			res.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'], { path: '/auth' });
 		}
 
 		return next();

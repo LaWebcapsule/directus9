@@ -2163,11 +2163,11 @@ export class GraphQLService {
 					await authenticationService.logout(currentRefreshToken);
 
 					if (req?.cookies?.[env['ACCESS_TOKEN_COOKIE_NAME'] as string]) {
-						res?.clearCookie(env['ACCESS_TOKEN_COOKIE_NAME'] as string, ACCESS_COOKIE_OPTIONS);
+						res?.clearCookie(env['ACCESS_TOKEN_COOKIE_NAME'] as string);
 					}
 
 					if (req?.cookies?.[env['REFRESH_TOKEN_COOKIE_NAME'] as string]) {
-						res?.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'] as string, REFRESH_COOKIE_OPTIONS);
+						res?.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'] as string);
 					}
 
 					return true;
