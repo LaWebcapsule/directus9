@@ -1,5 +1,11 @@
 # @db-studio/types
 
+## 1.1.0
+
+### Minor Changes
+
+- Incorporating the CLI package
+
 ## 1.0.3
 
 ### Patch Changes

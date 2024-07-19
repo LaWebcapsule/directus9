@@ -1,6 +1,6 @@
 {
 	"name": "@db-studio/update-check",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"type": "module",
 	"scripts": {
 		"build": "tsc --build",
@@ -28,7 +28,7 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"semver": "7.5.0",
+		"semver": "^7.6.3",
 		"undici": "5.22.0"
 	},
 	"devDependencies": {

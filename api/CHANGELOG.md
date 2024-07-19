@@ -1,5 +1,16 @@
 # @db-studio/api
 
+## 1.0.3
+
+### Patch Changes
+
+- Updated dependencies
+  - @db-studio/update-check@1.1.0
+  - @db-studio/app@1.1.0
+  - @db-studio/exceptions@1.0.1
+  - @db-studio/extensions-sdk@1.0.4
+  - @db-studio/utils@1.0.1
+
 ## 1.0.2
 
 ### Patch Changes

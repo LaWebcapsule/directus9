@@ -1,5 +1,15 @@
 # @db-studio/app
 
+## 1.1.0
+
+### Minor Changes
+
+- Incorporating the CLI package
+
+### Patch Changes
+
+- @db-studio/composables@1.0.1
+
 ## 1.0.1
 
 ### Patch Changes

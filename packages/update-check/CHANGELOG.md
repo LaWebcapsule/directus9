@@ -1,5 +1,11 @@
 # @db-studio/update-check
 
+## 1.1.0
+
+### Minor Changes
+
+- Incorporating the CLI package
+
 ## 1.0.1
 
 ### Patch Changes

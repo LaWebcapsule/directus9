@@ -1,5 +1,11 @@
 # @db-studio/sdk
 
+## 1.1.0
+
+### Minor Changes
+
+- Incorporating the CLI package
+
 ## 1.0.2
 
 ### Patch Changes
