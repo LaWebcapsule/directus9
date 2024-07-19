@@ -1,6 +1,6 @@
-# Directus CLI
+# DB Studio CLI
 
-The official Directus CLI tool. Allows you to connect to, and manage, any given Directus instance through the command
+The official DB Studio CLI tool. Allows you to connect to, and manage, any given DB Studio instance through the command
 line interface.
 
 ## Installation
@@ -12,9 +12,9 @@ npm install -g @directus/cli
 ## Usage
 
 ```sh
-$ directusctl --help
+$ studioctl --help
 ```
 
 ## Docs
 
-See [the docs](https://docs.directus.io/reference/cli/)
+See [the docs](https://pxslip.github.io/db-studio/reference/cli/)

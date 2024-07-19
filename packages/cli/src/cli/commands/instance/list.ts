@@ -1,5 +1,5 @@
-import { command } from '../../../core/command';
-import { FullTerminalWidth } from '../../../core/output/ui';
+import { command } from '../../../core/command.js';
+import { FullTerminalWidth } from '../../../core/output/ui.js';
 
 export default command(
 	{

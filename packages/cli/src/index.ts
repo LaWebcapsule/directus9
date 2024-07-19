@@ -8,26 +8,26 @@ amp.addPath(`${process.cwd()}/node_modules`);
 amp.addPath(process.cwd());
 
 import { build } from 'gluegun';
-import { command } from './core/command';
-import { Toolbox } from './toolbox';
-import { CommandResult } from './command';
-import { CLIRuntimeError } from './core/exceptions';
+import { command } from './core/command.js';
+import type { Toolbox } from './toolbox.js';
+import type { CommandResult } from './command.js';
+import { CLIRuntimeError } from './core/exceptions.js';
 
-export { command } from './core/command';
-export type { Toolbox } from './toolbox';
+export { command } from './core/command.js';
+export type { Toolbox } from './toolbox.js';
 
-import * as config from './core/extensions/config';
-import { Output } from './core/output';
-import { Options } from './core/options';
-import { Events } from './core/events';
+import * as config from './core/extensions/config.js';
+import { Output } from './core/output.js';
+import { Options } from './core/options.js';
+import { Events } from './core/events.js';
 
-export * from './command';
-export * from './config';
-export * from './events';
-export * from './help';
-export * from './options';
-export * from './output';
-export * from './toolbox';
+export * from './command.js';
+export * from './config.js';
+export * from './events.js';
+export * from './help.js';
+export * from './options.js';
+export * from './output.js';
+export * from './toolbox.js';
 
 function hasTsNode(): boolean {
 	try {
@@ -63,7 +63,7 @@ export default async function <T>(argv: string[]): Promise<CommandResult<T>> {
 	const options = new Options(events, process.argv);
 	const output = new Output(options);
 
-	let extensionsPath = process.env.EXTENSIONS_PATH ?? './extensions';
+	let extensionsPath = process.env['EXTENSIONS_PATH'] ?? './extensions';
 
 	if (config.project.data.experimental?.cli?.typescript?.enabled) {
 		const project = config.project.data.experimental?.cli?.typescript.tsconfig || './tsconfig.json';
@@ -100,7 +100,6 @@ export default async function <T>(argv: string[]): Promise<CommandResult<T>> {
 	};
 
 	// Workaround stupid bug in gluegun
-	// @ts-ignore
 	const list = require('fs-jetpack/lib/list');
 	const shimmer = require('shimmer');
 	shimmer.wrap(list, 'sync', (original: (...args: any[]) => any) => {

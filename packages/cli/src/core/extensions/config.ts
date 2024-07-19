@@ -1,9 +1,9 @@
 import * as os from 'os';
 import * as path from 'path';
 
-import { Toolbox } from '../../toolbox';
-import { ProjectConfiguration, SystemConfiguration } from '../../config';
-import { YamlConfiguration, StaticConfiguration } from '../config';
+import type { Toolbox } from '../../toolbox.js';
+import type { ProjectConfiguration, SystemConfiguration } from '../../config.js';
+import { YamlConfiguration, StaticConfiguration } from '../config.js';
 
 export const system = new YamlConfiguration<SystemConfiguration>({
 	name: 'directus',
@@ -37,7 +37,7 @@ export const project = new StaticConfiguration<ProjectConfiguration>({
 		instance: 'default' in system.data.instances ? 'default' : undefined,
 		experimental: {
 			cli: {
-				community_extensions: !!process.env.EXPERIMENTAL_CLI_COMMUNITY_EXTENSIONS,
+				community_extensions: !!process.env['EXPERIMENTAL_CLI_COMMUNITY_EXTENSIONS'],
 				typescript: {
 					enabled: false,
 					tsconfig: './tsconfig.json',

@@ -1,10 +1,10 @@
-import { IDirectus, QueryMany, QueryOne, TypeMap } from '@directus/sdk';
-import { Command } from './command';
-import { IOptions } from './options';
-import { IEvents } from './events';
-import { IOutput } from './output';
-import { IHelp } from './help';
-import { IConfiguration, IStaticConfiguration, SystemConfiguration, ProjectConfiguration } from './config';
+import type { IDirectus, QueryMany, QueryOne, TypeMap } from '@db-studio/sdk';
+import type { Command } from './command.js';
+import type { IOptions } from './options.js';
+import type { IEvents } from './events.js';
+import type { IOutput } from './output.js';
+import type { IHelp } from './help.js';
+import type { IConfiguration, IStaticConfiguration, SystemConfiguration, ProjectConfiguration } from './config.js';
 
 export type Toolbox<T extends TypeMap = TypeMap> = {
 	command: Command;

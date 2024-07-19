@@ -1,9 +1,9 @@
 import stripAnsi from 'strip-ansi';
 
-import { Argv } from 'yargs';
-import { FormatData, IOutputFormat } from '../../../output';
-import { FullTerminalWidth, UIBuilder } from '../ui';
-import { CLIError } from '../../exceptions';
+import type { Argv } from 'yargs';
+import type { FormatData, IOutputFormat } from '../../../output.js';
+import { FullTerminalWidth, UIBuilder } from '../ui.js';
+import type { CLIError } from '../../exceptions.js';
 
 export type TableOutputFormatOptions = {
 	ansi: boolean;
@@ -21,7 +21,7 @@ export class TableOutputFormat implements IOutputFormat<TableOutputFormatOptions
 			})
 			.option('stacktrace', {
 				type: 'boolean',
-				default: process.env.DEBUG ? true : false,
+				default: process.env['DEBUG'] ? true : false,
 				description: 'Display extended information on error',
 			})
 			.option('table', {

@@ -5,9 +5,9 @@
 
 import redent from 'redent';
 import { Readable } from 'stream';
-import { Toolbox } from '../../toolbox';
-import { CLIRuntimeError } from '../exceptions';
-import { parseJson, parseYaml } from '../parsers';
+import type { Toolbox } from '../../toolbox.js';
+import { CLIRuntimeError } from '../exceptions.js';
+import { parseJson, parseYaml } from '../parsers.js';
 
 export const SupportedFormats = ['binary', 'json', 'stream', 'text', 'yaml'] as const;
 

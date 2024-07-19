@@ -18,23 +18,23 @@ export type Avatar = {
 // only care about the thumbnails in this context
 
 export type User = {
-	id: string;
-	status: string;
-	first_name: string;
-	last_name: string;
-	email: string;
-	token: string;
-	last_login: string;
-	last_page: string;
-	external_id: string;
-	tfa_secret: string;
-	theme: 'auto' | 'dark' | 'light';
-	role: Role;
-	password_reset_token: string | null;
-	timezone: string;
-	language: string;
 	avatar: null | Avatar;
 	company: string | null;
-	title: string | null;
 	email_notifications: boolean;
+	email: string;
+	external_id: string;
+	first_name: string;
+	id: string;
+	language: string;
+	last_login: string;
+	last_name: string;
+	last_page: string;
+	password_reset_token: string | null;
+	role: Role;
+	status: string;
+	tfa_secret: string;
+	theme: 'auto' | 'dark' | 'light';
+	timezone: string;
+	title: string | null;
+	token: string;
 };

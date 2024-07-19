@@ -1,4 +1,4 @@
-import { Toolbox } from '../../toolbox';
+import type { Toolbox } from '../../toolbox.js';
 import JSON5 from 'json5';
 
 export default (toolbox: Toolbox): void => {

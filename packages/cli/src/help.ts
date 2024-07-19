@@ -1,10 +1,10 @@
-import { Command } from './command';
+import type { Command } from './command.js';
 
 export type OptionHelp = {
 	name: string;
 	type: string;
-	choices?: string[];
-	group?: string;
+	choices?: string[] | undefined;
+	group?: string | undefined;
 	description: string;
 	required: boolean;
 	default: any;

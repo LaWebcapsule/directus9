@@ -1,5 +1,5 @@
-import { IStorage } from '@directus/sdk';
-import { IConfiguration, SystemConfiguration } from '../../config';
+import { IStorage } from '@db-studio/sdk';
+import type { IConfiguration, SystemConfiguration } from '../../config.js';
 
 export class InstanceStorage implements IStorage {
 	private prefix: string;

@@ -1,7 +1,7 @@
-import { Toolbox } from '../toolbox';
-import { Command, CommandResult, Handler, Settings } from '../command';
-import { defaults } from './utils';
-import { CLIError, CLIRuntimeError } from './exceptions';
+import type { Toolbox } from '../toolbox.js';
+import type { Command, CommandResult, Handler, Settings } from '../command.js';
+import { defaults } from './utils.js';
+import { type CLIError, CLIRuntimeError } from './exceptions.js';
 
 export function command<T extends Toolbox = Toolbox, P = any, R = void>(
 	settings: Settings<P>,

@@ -1,5 +1,5 @@
-import { Argv } from 'yargs';
-import { Command } from './command';
+import type { Argv } from 'yargs';
+import type { Command } from './command.js';
 
 export type Registrator = (builder: Argv, command: Command, unparsed: any) => void;
 

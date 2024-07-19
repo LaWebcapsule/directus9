@@ -1,9 +1,9 @@
-import { Argv } from 'yargs';
-import { CLIError } from './core/exceptions';
-import { StdinFeatures } from './core/extensions/stdin';
-import { CommandHelp, GeneralHelp } from './help';
-import { IOutput } from './output';
-import { Toolbox } from './toolbox';
+import type { Argv } from 'yargs';
+import type { CLIError } from './core/exceptions.js';
+import type { StdinFeatures } from './core/extensions/stdin.js';
+import type { CommandHelp, GeneralHelp } from './help.js';
+import type { IOutput } from './output.js';
+import type { Toolbox } from './toolbox.js';
 
 export type Features = {
 	sdk?: boolean;
@@ -32,7 +32,7 @@ export type Handler<T extends Toolbox = Toolbox, P = unknown, R = void> = (toolb
 
 export type CommandResult<T> = {
 	result?: T;
-	help?: GeneralHelp | CommandHelp;
+	help?: GeneralHelp | CommandHelp | undefined;
 	error?: CLIError;
 	output?: IOutput;
 };

@@ -1,17 +1,17 @@
 //import * as util from 'util';
-import { GluegunCommand } from 'gluegun';
-import yargs, { Argv } from 'yargs';
-import yargsParser from 'yargs-parser';
+import type { GluegunCommand } from 'gluegun';
+import yargs, { type Argv } from 'yargs';
 
-import { Command } from '../command';
-import { IEvents } from '../events';
-import { IOptions, Option } from '../options';
-import { CLIRuntimeError } from './exceptions';
+import type { Command } from '../command.js';
+import type { IEvents } from '../events.js';
+import type { IOptions, Option } from '../options.js';
+import { CLIRuntimeError } from './exceptions.js';
+import yargsParser, { type Arguments } from 'yargs-parser';
 
 export type Registrator = (builder: Argv, command: Command, raw: any) => void;
 
 export class Options implements IOptions {
-	private _raw: any;
+	private _raw: Arguments;
 	private _parser: Argv;
 	private _parsed?: any;
 	private _error?: Error;
@@ -45,7 +45,7 @@ export class Options implements IOptions {
 				},
 				(values) => {
 					this._parsed = values;
-				}
+				},
 			);
 
 			this._parser.argv;

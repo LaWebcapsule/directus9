@@ -1,14 +1,14 @@
 import chalk from 'chalk';
-import { Directus } from '@directus/sdk';
-import { InstanceConfiguration } from '../../../config';
-import { command } from '../../../core/command';
-import { CLIRuntimeError } from '../../../core/exceptions';
+import { Directus } from '@db-studio/sdk';
+import { type InstanceConfiguration } from '../../../config.js';
+import { command } from '../../../core/command.js';
+import { CLIRuntimeError } from '../../../core/exceptions.js';
 
 export default command(
 	{
 		group: 'instance',
 		parameters: '<url>',
-		description: 'Connects to a Directus instance',
+		description: 'Connects to a DB Studio instance',
 		usage: `
 			**Public authentication**
 
@@ -125,7 +125,7 @@ export default command(
 			instance.auth = 'public';
 		} else if (params.token) {
 			instance.auth = 'token';
-			instance.data!.auth_token = params.token;
+			instance.data!['auth_token'] = params.token;
 			await sdk.auth.static(params.token);
 		} else if (params.email && password) {
 			instance.auth = 'credentials';

@@ -1,6 +1,6 @@
-import { command } from '../../../../core/command';
-import { parseJson } from '../../../../core/parsers';
-import { CLIRuntimeError } from '../../../../core/exceptions';
+import { command } from '../../../../core/command.js';
+import { parseJson } from '../../../../core/parsers.js';
+import { CLIRuntimeError } from '../../../../core/exceptions.js';
 
 export default command(
 	{

@@ -1,24 +1,27 @@
 import chalk from 'chalk';
-import yargs from 'yargs';
 import { marked } from 'marked';
 import TerminalRenderer from 'marked-terminal';
 import stripAnsi from 'strip-ansi';
-import title from '@directus/format-title';
+import title from '@db-studio/format-title';
 
-// @ts-ignore
-import cliui from 'cliui';
+import * as cliuiModule from 'cliui';
 
-import Table from 'cli-table3';
+//TODO: WTF????
+const cliui = cliuiModule.default.default;
+
+import Table, { type TableConstructorOptions } from 'cli-table3';
 import figlet from 'figlet';
 import redent from 'redent';
 import { DEFAULT_THEME, highlight } from 'cli-highlight';
 
-import { IUIComposer, OutputColumn, Style, TableOptions, TableStyle, TextLayoutOptions } from '../../output';
+import type { IUIComposer, OutputColumn, Style, TableOptions, TableStyle, TextLayoutOptions } from '../../output.js';
 
 export const DefaultIndentSize = 2;
-
-export const FullTerminalWidth = yargs.terminalWidth() - 2;
-export const DefaultTerminalWidth = Math.min(70, yargs.terminalWidth() - 2);
+// instead of passing this off to yargs, just go directly
+// TODO: figure out if yargs() is a singleton and would break, or if we can instantiate a new instance
+const columns = process.stdout.columns ?? 80;
+export const FullTerminalWidth = columns - 2;
+export const DefaultTerminalWidth = Math.min(70, columns - 2);
 
 export const palette = {
 	header: chalk.bgWhite.black.bold,
@@ -76,7 +79,7 @@ export class UIBuilder implements IUIComposer {
 		});
 	}
 
-	configure(opts: { indent?: number; width?: number }): void {
+	configure(opts: { indent?: number | undefined; width?: number | undefined }): void {
 		this.indentSize = opts.indent ?? DefaultIndentSize;
 		this.terminalWidth = opts.width ?? DefaultTerminalWidth;
 		this.markdownRenderer = new TerminalRenderer({
@@ -90,7 +93,7 @@ export class UIBuilder implements IUIComposer {
 					stripAnsi(text)
 						.split('\n')
 						.map((l) => `\xA0${l.trim()}`)
-						.join('\n')
+						.join('\n'),
 				),
 		});
 
@@ -158,7 +161,7 @@ export class UIBuilder implements IUIComposer {
 						padding: opts.padding,
 						text: opts.style(opts.removeIndent ? redent(col.text) : col.text),
 					};
-				})
+				}),
 			);
 		});
 
@@ -183,37 +186,33 @@ export class UIBuilder implements IUIComposer {
 		}
 
 		let table: Table.Table | undefined;
-
+		const tableOptions: Omit<TableConstructorOptions, 'chars'> = {
+			head: opts.head ?? [],
+			colAligns: opts.alignments,
+			colWidths: opts.widths,
+			wordWrap: opts.wrap,
+		};
+		if (opts.truncate) {
+			tableOptions.truncate = '…';
+		}
 		switch (opts.style) {
 			case 'compact':
 				table = new Table({
-					head: opts.head,
-					colAligns: opts.alignments,
-					colWidths: opts.widths,
 					chars: TableCompactBorders,
-					wordWrap: opts.wrap,
-					truncate: opts.truncate ? '…' : undefined,
+					...tableOptions,
 				});
 				break;
 			case 'markdown':
 				table = new Table({
-					head: opts.head,
-					colAligns: opts.alignments,
-					colWidths: opts.widths,
 					chars: TableMarkdownBorders,
-					wordWrap: opts.wrap,
-					truncate: opts.truncate ? '…' : undefined,
+					...tableOptions,
 				});
 				break;
 			case 'minimal':
 			default:
 				table = new Table({
-					head: opts.head,
-					colAligns: opts.alignments,
-					colWidths: opts.widths,
 					chars: TableMinimalBorders,
-					wordWrap: opts.wrap,
-					truncate: opts.truncate ? '…' : undefined,
+					...tableOptions,
 				});
 				break;
 		}
@@ -269,7 +268,7 @@ export class UIBuilder implements IUIComposer {
 		options?: {
 			title?: string;
 			stacktrace?: boolean;
-		}
+		},
 	): Promise<void> {
 		options = options || {};
 		options.stacktrace = options.stacktrace ?? false;
@@ -292,7 +291,7 @@ export class UIBuilder implements IUIComposer {
 		}
 	}
 
-	async json<T>(value: T, style: TableStyle = 'compact'): Promise<void> {
+	async json(value: any[] | Record<string, any>, style: TableStyle = 'compact'): Promise<void> {
 		if (Array.isArray(value)) {
 			this.lines.push(await this.jsonArray(value, style));
 			return;
@@ -313,7 +312,7 @@ export class UIBuilder implements IUIComposer {
 									pretty: true,
 								}),
 							];
-						})
+						}),
 					),
 					{
 						wrap: true,
@@ -321,8 +320,8 @@ export class UIBuilder implements IUIComposer {
 						alignments: ['right', 'left'],
 						headFormat: (v) => chalk.reset.bold(title(v)),
 						style,
-					}
-				)
+					},
+				),
 		);
 
 		this.lines.push(await ui.get());
@@ -335,7 +334,7 @@ export class UIBuilder implements IUIComposer {
 			await ui.wrap((ui) =>
 				ui.table([], {
 					style,
-				})
+				}),
 			);
 		} else {
 			const fields = Object.keys(values[0]!).sort();
@@ -349,18 +348,18 @@ export class UIBuilder implements IUIComposer {
 										this.jsonHighlight((row as any)[field], {
 											highlight: true,
 											pretty: true,
-										})
-									)
-								)
-							)
+										}),
+									),
+								),
+							),
 						),
 						{
 							wrap: true,
 							head: fields,
 							headFormat: (v) => chalk.reset.bold(title(v)),
 							style,
-						}
-					)
+						},
+					),
 			);
 		}
 
@@ -372,7 +371,7 @@ export class UIBuilder implements IUIComposer {
 		options?: {
 			pretty: boolean;
 			highlight: boolean;
-		}
+		},
 	): Promise<string> {
 		let formatted = JSON.stringify(value, null, options?.pretty || options?.highlight ? 2 : 0) ?? 'undefined';
 		if (options?.highlight) {

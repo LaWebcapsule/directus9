@@ -5,11 +5,12 @@ export type CLIError = Error & {
 	request?: any;
 	response?: any;
 	parent?: CLIError;
-	code?: string;
+	code?: string | undefined;
+	stack?: string | undefined;
 };
 
 export class CLIRuntimeError extends Error {
-	public readonly code?: string;
+	public readonly code?: string | undefined;
 	constructor(message: string, code?: string) {
 		super(redent(message).trim());
 		this.code = code;

@@ -1,5 +1,5 @@
 import { EventEmitter2 } from 'eventemitter2';
-import { IEvents, Listener } from '../events';
+import type { IEvents, Listener } from '../events.js';
 
 export class Events implements IEvents {
 	private events: EventEmitter2;

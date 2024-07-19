@@ -1,6 +1,6 @@
 import open from 'open';
-import { tty } from '../../core/utils';
-import { command } from '../../core/command';
+import { tty } from '../../core/utils.js';
+import { command } from '../../core/command.js';
 
 export default command(
 	{

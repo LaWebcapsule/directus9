@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import { command } from '../../../core/command';
+import { command } from '../../../core/command.js';
 
 import prettyMs from 'pretty-ms';
 

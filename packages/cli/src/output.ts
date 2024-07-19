@@ -1,7 +1,7 @@
 import { WriteStream } from 'fs';
-import { Argv } from 'yargs';
-import { CLIError } from './core/exceptions';
-import { CommandHelp, GeneralHelp } from './help';
+import type { Argv } from 'yargs';
+import type { CLIError } from './core/exceptions.js';
+import type { CommandHelp, GeneralHelp } from './help.js';
 
 export type Options = {
 	format: string;
@@ -54,7 +54,7 @@ export interface IUIComposer {
 }
 
 export type FormatData = {
-	help?: GeneralHelp | CommandHelp;
+	help?: GeneralHelp | CommandHelp | undefined;
 	text: string[];
 	errors: Error[];
 	value?: any;

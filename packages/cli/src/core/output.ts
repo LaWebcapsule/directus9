@@ -1,11 +1,11 @@
-import { defaults } from './utils';
-import { Argv } from 'yargs';
-import { IOptions } from '../options';
-import { IOutput, IUIComposer, IOutputFormat } from '../output';
-import { TableOutputFormat } from './output/formats/table';
-import { UIBuilder } from './output/ui';
-import { CLIError, CLIRuntimeError } from './exceptions';
-import { CommandHelp, GeneralHelp } from '../help';
+import { defaults } from './utils.js';
+import type { Argv } from 'yargs';
+import type { IOptions } from '../options.js';
+import type { IOutput, IUIComposer, IOutputFormat } from '../output.js';
+import { TableOutputFormat } from './output/formats/table.js';
+import { UIBuilder } from './output/ui.js';
+import { type CLIError, CLIRuntimeError } from './exceptions.js';
+import type { CommandHelp, GeneralHelp } from '../help.js';
 import { WriteStream } from 'fs';
 
 export type OutputOptions = {
@@ -19,7 +19,7 @@ export class Output implements IOutput {
 		[name: string]: IOutputFormat;
 	};
 	private _text: string[];
-	private _help?: GeneralHelp | CommandHelp;
+	private _help?: GeneralHelp | CommandHelp | undefined;
 	private _value?: any;
 	private _errors: CLIError[];
 

@@ -1,20 +1,20 @@
 import chalk from 'chalk';
 import redent from 'redent';
 
-import { header } from './utils';
+import { header } from './utils.js';
 
 //import { command } from './core/command';
-import { GluegunCommand } from 'gluegun';
+import type { GluegunCommand } from 'gluegun';
 
-import { Runtime } from 'gluegun/build/types/runtime/runtime';
-import { IOutput, OutputColumn } from '../output';
+import { Runtime } from 'gluegun/build/types/runtime/runtime.js';
+import type { IOutput, OutputColumn } from '../output.js';
 
-import { Command } from '../command';
-import { CommandHelp, GeneralHelp, IHelp, OptionHelp } from '../help';
-import { IOptions, Option } from '../options';
+import type { Command } from '../command.js';
+import type { CommandHelp, GeneralHelp, IHelp, OptionHelp } from '../help.js';
+import type { IOptions, Option } from '../options.js';
 
-import highlight from 'cli-highlight';
-import { DefaultTheme } from './output/formats/json';
+import { highlight } from 'cli-highlight';
+import { DefaultTheme } from './output/formats/json.js';
 
 type Suggestion = {
 	name: string;

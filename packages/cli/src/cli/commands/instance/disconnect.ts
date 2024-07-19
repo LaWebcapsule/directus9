@@ -1,8 +1,8 @@
 import chalk from 'chalk';
-import { Directus } from '@directus/sdk';
-import { command } from '../../../core/command';
-import { CLIRuntimeError } from '../../../core/exceptions';
-import { InstanceStorage } from '../../../core/sdk/storage';
+import { Directus } from '@db-studio/sdk';
+import { command } from '../../../core/command.js';
+import { CLIRuntimeError } from '../../../core/exceptions.js';
+import { InstanceStorage } from '../../../core/sdk/storage.js';
 
 export default command(
 	{

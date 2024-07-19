@@ -1,24 +1,26 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+import { existsSync } from 'fs';
+import { resolve } from 'path';
 
-require('dotenv').config();
+import { config } from 'dotenv';
+
+config();
 
 const startupOptions = {
-	devMode: !!process.env.DIRECTUS_CLI_DEV && fs.existsSync(`${__dirname}/../src`),
+	devMode: !!process.env.DIRECTUS_CLI_DEV && existsSync(`${__dirname}/../src`),
 	useGlobal: !!process.env.DIRECTUS_CLI_DEV && !!process.env.DIRECTUS_CLI_DEV_USE_GLOBAL,
 	useCompiled: !!process.env.DIRECTUS_CLI_DEV && !!process.env.DIRECTUS_CLI_DEV_USE_COMPILED,
 };
 
-const entrypoint = path.resolve('./node_modules/@directus/cli/bin/directus.js');
-if (__filename !== entrypoint && fs.existsSync(entrypoint) && !startupOptions.useGlobal) {
+const entrypoint = resolve('./node_modules/@db-studio/cli/bin/studio.js');
+if (__filename !== entrypoint && existsSync(entrypoint) && !startupOptions.useGlobal) {
 	require(entrypoint);
 	return;
 }
 
 async function main(run) {
-	const debug = require('debug')('directus-cli');
+	const debug = require('debug')('db-studio');
 	try {
 		const { error, output } = await run(process.argv);
 		if (error) {
@@ -43,7 +45,7 @@ let run = () => {};
 if (!startupOptions.devMode || startupOptions.useCompiled) {
 	run = require(`${__dirname}/../dist/index`).default;
 } else {
-	process.env.DEBUG = `${process.env.DEBUG ?? ''}directus-cli`;
+	process.env.DEBUG = `${process.env.DEBUG ?? ''}db-studio-cli`;
 	require('ts-node').register({ project: `${__dirname}/../tsconfig.json` });
 	run = require(`${__dirname}/../src/index`).default;
 }

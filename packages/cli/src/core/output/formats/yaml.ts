@@ -1,10 +1,10 @@
 import chalk from 'chalk';
 import yaml from 'js-yaml';
-import { tty } from '../../utils';
+import { tty } from '../../utils.js';
 
-import highlight, { Theme, DEFAULT_THEME } from 'cli-highlight';
-import { Argv } from 'yargs';
-import { FormatData, IOutputFormat } from '../../../output';
+import { type Theme, DEFAULT_THEME, highlight } from 'cli-highlight';
+import { type Argv } from 'yargs';
+import type { FormatData, IOutputFormat } from '../../../output.js';
 
 export type YamlOutputFormatOptions = {
 	pretty: boolean;

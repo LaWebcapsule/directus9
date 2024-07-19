@@ -1,5 +1,5 @@
-import { Command } from './command';
-import { IOutput } from './output';
+import type { Command } from './command.js';
+import type { IOutput } from './output.js';
 
 export type Listener<T = any, P = any, R = any> =
 	| ((...args: P[]) => Promise<R>)

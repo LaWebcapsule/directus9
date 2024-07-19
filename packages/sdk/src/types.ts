@@ -323,13 +323,13 @@ export type SettingType = SystemType<{
 }>;
 
 export type UserType = SystemType<{
-	// TODO: review
+	// TODO: augment the type from @db-studio/types
 	// TODO: determine possible properties
 	auth_data: DefaultType;
 	avatar: string;
 	description: string | null;
-	email: string | null;
 	email_notifications: boolean;
+	email: string | null;
 	external_identifier: string;
 	first_name: string | null;
 	id: string;
@@ -340,11 +340,11 @@ export type UserType = SystemType<{
 	location: string | null;
 	password: string | null; // will just be *s
 	provider: string;
-	role: string;
+	role: RoleType;
 	status: string;
 	tags: string[];
-	theme: string;
 	tfa_secret: string | null;
+	theme: string;
 	title: string | null;
 	token: string | null;
 }>;

@@ -1,7 +1,7 @@
-import { Output } from '../output';
-import { Toolbox } from '../../toolbox';
-import { JsonOutputFormat } from '../output/formats/json';
-import { YamlOutputFormat } from '../output/formats/yaml';
+import { Output } from '../output.js';
+import type { Toolbox } from '../../toolbox.js';
+import { JsonOutputFormat } from '../output/formats/json.js';
+import { YamlOutputFormat } from '../output/formats/yaml.js';
 
 export default (toolbox: Toolbox): void => {
 	toolbox.output = new Output(toolbox.options);

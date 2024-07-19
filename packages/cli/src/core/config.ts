@@ -4,7 +4,7 @@ import fse from 'fs-extra';
 import JSON5 from 'json5';
 import { Liquid } from 'liquidjs';
 
-import { IConfiguration, IBaseConfiguration, IStaticConfiguration } from '../config';
+import type { IConfiguration, IBaseConfiguration, IStaticConfiguration } from '../config.js';
 import { cosmiconfigSync, defaultLoaders } from 'cosmiconfig';
 
 export type BaseConfigurationOptions<T> = {

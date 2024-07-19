@@ -1,7 +1,7 @@
-import { Directus } from '@directus/sdk';
-import { Toolbox } from '../../toolbox';
-import { CLIRuntimeError } from '../exceptions';
-import { InstanceStorage } from '../sdk/storage';
+import { Directus } from '@db-studio/sdk';
+import type { Toolbox } from '../../toolbox.js';
+import { CLIRuntimeError } from '../exceptions.js';
+import { InstanceStorage } from '../sdk/storage.js';
 
 export default (toolbox: Toolbox): void => {
 	toolbox.sdk = new Directus('http://localhost:8055');
@@ -29,7 +29,7 @@ export default (toolbox: Toolbox): void => {
 		});
 
 		if (instance?.auth === 'token') {
-			await sdk.auth.static(instance.data?.auth_token);
+			await sdk.auth.static(instance.data?.['auth_token']);
 		} else if (instance?.auth === 'credentials') {
 			await sdk.auth.refresh();
 			toolbox.config.system.save();
