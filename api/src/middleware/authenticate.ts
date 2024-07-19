@@ -4,7 +4,7 @@ import { isEqual } from 'lodash-es';
 import getDatabase from '../database/index.js';
 import emitter from '../emitter.js';
 import env from '../env.js';
-import { InvalidCredentialsException } from '../exceptions/index.js';
+import { InvalidCredentialsException, TokenExpiredException } from '../exceptions/index.js';
 import asyncHandler from '../utils/async-handler.js';
 import { getIPFromReq } from '../utils/get-ip-from-req.js';
 import isDirectusJWT from '../utils/is-directus-jwt.js';
