@@ -147,7 +147,8 @@ export function createSAMLAuthRouter(providerName: string) {
 			const authService = new AuthenticationService({ accountability: req.accountability, schema: req.schema });
 
 			if (req.cookies[env['ACCESS_TOKEN_COOKIE_NAME']]) {
-				res.clearCookie(env['ACCESS_TOKEN_COOKIE_NAME']);
+				const { maxAge, ...options } = ACCESS_COOKIE_OPTIONS;
+				res.clearCookie(env['ACCESS_TOKEN_COOKIE_NAME'], options);
 			}
 
 			if (req.cookies[env['REFRESH_TOKEN_COOKIE_NAME']]) {
@@ -155,7 +156,8 @@ export function createSAMLAuthRouter(providerName: string) {
 
 				if (currentRefreshToken) {
 					await authService.logout(currentRefreshToken);
-					res.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'], { path: '/auth' });
+					const { maxAge, ...options } = REFRESH_COOKIE_OPTIONS;
+					res.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'], options);
 				}
 			}
 

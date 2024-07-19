@@ -79,7 +79,8 @@ router.post(
 		});
 
 		if (req.cookies[env['ACCESS_TOKEN_COOKIE_NAME']]) {
-			res.clearCookie(env['ACCESS_TOKEN_COOKIE_NAME']);
+			const { maxAge, ...options } = ACCESS_COOKIE_OPTIONS;
+			res.clearCookie(env['ACCESS_TOKEN_COOKIE_NAME'], options);
 		}
 
 		const currentRefreshToken = req.body.refresh_token || req.cookies[env['REFRESH_TOKEN_COOKIE_NAME']];
@@ -139,11 +140,13 @@ router.post(
 		await authenticationService.logout(currentRefreshToken);
 
 		if (req.cookies[env['ACCESS_TOKEN_COOKIE_NAME']]) {
-			res.clearCookie(env['ACCESS_TOKEN_COOKIE_NAME']);
+			const { maxAge, ...options } = ACCESS_COOKIE_OPTIONS;
+			res.clearCookie(env['ACCESS_TOKEN_COOKIE_NAME'], options);
 		}
 
 		if (req.cookies[env['REFRESH_TOKEN_COOKIE_NAME']]) {
-			res.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'], { path: '/auth' });
+			const { maxAge, ...options } = REFRESH_COOKIE_OPTIONS;
+			res.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'], options);
 		}
 
 		return next();
