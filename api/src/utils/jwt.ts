@@ -25,7 +25,7 @@ export function verifyJWT(token: string, secret: string): Record<string, any> {
 export function verifyAccessJWT(token: string, secret: string): DirectusTokenPayload {
 	const { id, role, app_access, admin_access, share, share_scope, refresh_token } = verifyJWT(token, secret);
 
-	if (role === undefined || app_access === undefined || admin_access === undefined) {
+	if (role === undefined || app_access === undefined || admin_access === undefined || refresh_token === undefined) {
 		throw new InvalidTokenException('Invalid token payload.');
 	}
 

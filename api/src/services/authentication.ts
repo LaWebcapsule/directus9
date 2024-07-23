@@ -198,7 +198,7 @@ export class AuthenticationService {
 			role: user.role,
 			app_access: user.app_access,
 			admin_access: user.admin_access,
-			refresh_token: refreshToken
+			refresh_token: refreshToken,
 		};
 
 		const customClaims = await emitter.emitFilter(
@@ -221,7 +221,6 @@ export class AuthenticationService {
 			expiresIn: env['ACCESS_TOKEN_TTL'],
 			issuer: 'directus',
 		});
-
 
 		await this.knex('directus_sessions').delete().where('expires', '<', new Date());
 
@@ -354,7 +353,7 @@ export class AuthenticationService {
 			role: record.role_id,
 			app_access: record.role_app_access,
 			admin_access: record.role_admin_access,
-			refresh_token: newRefreshToken
+			refresh_token: newRefreshToken,
 		};
 
 		if (record.share_id) {

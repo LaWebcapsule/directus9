@@ -56,15 +56,15 @@ export const handler = async (req: Request, _res: Response, next: NextFunction) 
 
 			// Try finding the user with a valid refresh token stored in the access token
 			const user = await database
-			.select({
-				session_expires: 's.expires',
-				user_id: 'u.id',
-			})
-			.from('directus_sessions AS s')
-			.leftJoin('directus_users AS u', 's.user', 'u.id')
-			.where('s.token', payload.refresh_token)
-			.andWhere('s.expires', '>=', new Date())
-			.first();
+				.select({
+					session_expires: 's.expires',
+					user_id: 'u.id',
+				})
+				.from('directus_sessions AS s')
+				.leftJoin('directus_users AS u', 's.user', 'u.id')
+				.where('s.token', payload.refresh_token)
+				.andWhere('s.expires', '>=', new Date())
+				.first();
 
 			if (!user) {
 				throw new TokenExpiredException();
