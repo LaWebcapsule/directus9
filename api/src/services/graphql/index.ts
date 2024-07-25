@@ -46,9 +46,11 @@ import type { Knex } from 'knex';
 import { flatten, get, mapKeys, merge, omit, pick, set, transform, uniq } from 'lodash-es';
 import { clearSystemCache, getCache } from '../../cache.js';
 import {
+	ACCESS_COOKIE_CLEAR_OPTIONS,
 	ACCESS_COOKIE_OPTIONS,
 	DEFAULT_AUTH_PROVIDER,
 	GENERATE_SPECIAL,
+	REFRESH_COOKIE_CLEAR_OPTIONS,
 	REFRESH_COOKIE_OPTIONS,
 } from '../../constants.js';
 import getDatabase from '../../database/index.js';
@@ -2163,13 +2165,11 @@ export class GraphQLService {
 					await authenticationService.logout(currentRefreshToken);
 
 					if (req?.cookies?.[env['ACCESS_TOKEN_COOKIE_NAME'] as string]) {
-						const { maxAge, ...options } = ACCESS_COOKIE_OPTIONS;
-						res?.clearCookie(env['ACCESS_TOKEN_COOKIE_NAME'] as string, options);
+						res?.clearCookie(env['ACCESS_TOKEN_COOKIE_NAME'] as string, ACCESS_COOKIE_CLEAR_OPTIONS);
 					}
 
 					if (req?.cookies?.[env['REFRESH_TOKEN_COOKIE_NAME'] as string]) {
-						const { maxAge, ...options } = REFRESH_COOKIE_OPTIONS;
-						res?.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'] as string, options);
+						res?.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'] as string, REFRESH_COOKIE_CLEAR_OPTIONS);
 					}
 
 					return true;

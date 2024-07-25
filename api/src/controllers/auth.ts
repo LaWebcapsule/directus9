@@ -7,7 +7,13 @@ import {
 	createOpenIDAuthRouter,
 	createSAMLAuthRouter,
 } from '../auth/drivers/index.js';
-import { ACCESS_COOKIE_OPTIONS, DEFAULT_AUTH_PROVIDER, REFRESH_COOKIE_OPTIONS } from '../constants.js';
+import {
+	ACCESS_COOKIE_CLEAR_OPTIONS,
+	ACCESS_COOKIE_OPTIONS,
+	DEFAULT_AUTH_PROVIDER,
+	REFRESH_COOKIE_CLEAR_OPTIONS,
+	REFRESH_COOKIE_OPTIONS,
+} from '../constants.js';
 import env from '../env.js';
 import { InvalidPayloadException } from '../exceptions/index.js';
 import logger from '../logger.js';
@@ -79,8 +85,7 @@ router.post(
 		});
 
 		if (req.cookies[env['ACCESS_TOKEN_COOKIE_NAME']]) {
-			const { maxAge, ...options } = ACCESS_COOKIE_OPTIONS;
-			res.clearCookie(env['ACCESS_TOKEN_COOKIE_NAME'], options);
+			res.clearCookie(env['ACCESS_TOKEN_COOKIE_NAME'], ACCESS_COOKIE_CLEAR_OPTIONS);
 		}
 
 		const currentRefreshToken = req.body.refresh_token || req.cookies[env['REFRESH_TOKEN_COOKIE_NAME']];
@@ -140,13 +145,11 @@ router.post(
 		await authenticationService.logout(currentRefreshToken);
 
 		if (req.cookies[env['ACCESS_TOKEN_COOKIE_NAME']]) {
-			const { maxAge, ...options } = ACCESS_COOKIE_OPTIONS;
-			res.clearCookie(env['ACCESS_TOKEN_COOKIE_NAME'], options);
+			res.clearCookie(env['ACCESS_TOKEN_COOKIE_NAME'], ACCESS_COOKIE_CLEAR_OPTIONS);
 		}
 
 		if (req.cookies[env['REFRESH_TOKEN_COOKIE_NAME']]) {
-			const { maxAge, ...options } = REFRESH_COOKIE_OPTIONS;
-			res.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'], options);
+			res.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'], REFRESH_COOKIE_CLEAR_OPTIONS);
 		}
 
 		return next();
