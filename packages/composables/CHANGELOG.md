@@ -1,5 +1,13 @@
 # @wbce-d9/composables
 
+## 9.27.2
+
+### Patch Changes
+
+- Updated dependencies [91ab5d6]
+  - @wbce-d9/constants@9.27.0
+  - @wbce-d9/utils@9.29.0
+
 ## 9.27.1
 
 ### Patch Changes
