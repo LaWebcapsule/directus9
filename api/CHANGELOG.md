@@ -1,5 +1,25 @@
 # @wbce-d9/api
 
+## 10.4.0
+
+### Minor Changes
+
+- 91ab5d6: fix security vulnerabilies and authentification issues
+
+### Patch Changes
+
+- Updated dependencies [91ab5d6]
+  - @wbce-d9/app@9.30.0
+  - @wbce-d9/constants@9.27.0
+  - @wbce-d9/utils@9.29.0
+  - @wbce-d9/extensions-sdk@9.26.7
+  - @wbce-d9/exceptions@9.26.4
+  - @wbce-d9/storage-driver-azure@9.26.7
+  - @wbce-d9/storage-driver-cloudinary@9.26.7
+  - @wbce-d9/storage-driver-gcs@9.26.7
+  - @wbce-d9/storage-driver-local@9.26.7
+  - @wbce-d9/storage-driver-s3@9.26.9
+
 ## 10.3.1
 
 ### Patch Changes

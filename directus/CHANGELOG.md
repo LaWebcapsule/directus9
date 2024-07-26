@@ -1,5 +1,16 @@
 # directus9
 
+## 10.2.0
+
+### Minor Changes
+
+- 91ab5d6: fix security vulnerabilies and authentification issues
+
+### Patch Changes
+
+- Updated dependencies [91ab5d6]
+  - @wbce-d9/api@10.4.0
+
 ## 10.1.2
 
 ### Patch Changes

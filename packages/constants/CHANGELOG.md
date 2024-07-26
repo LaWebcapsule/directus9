@@ -1,5 +1,11 @@
 # @wbce-d9/constants
 
+## 9.27.0
+
+### Minor Changes
+
+- 91ab5d6: fix security vulnerabilies and authentification issues
+
 ## 9.26.4
 
 ### Patch Changes

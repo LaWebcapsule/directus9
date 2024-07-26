@@ -1,5 +1,16 @@
 # @wbce-d9/utils
 
+## 9.29.0
+
+### Minor Changes
+
+- 91ab5d6: fix security vulnerabilies and authentification issues
+
+### Patch Changes
+
+- Updated dependencies [91ab5d6]
+  - @wbce-d9/constants@9.27.0
+
 ## 9.28.1
 
 ### Patch Changes

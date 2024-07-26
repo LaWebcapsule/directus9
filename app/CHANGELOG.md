@@ -1,5 +1,15 @@
 # @wbce-d9/app
 
+## 9.30.0
+
+### Minor Changes
+
+- 91ab5d6: fix security vulnerabilies and authentification issues
+
+### Patch Changes
+
+- @wbce-d9/composables@9.27.2
+
 ## 9.29.1
 
 ### Patch Changes
