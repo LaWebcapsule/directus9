@@ -68,6 +68,14 @@ export const REFRESH_COOKIE_OPTIONS: CookieOptions = {
 	path: '/auth',
 };
 
+const {
+	maxAge: refreshCookieMaxAge,
+	expires: refreshCookieExpires,
+	...refresh_cookie_clear_options
+} = REFRESH_COOKIE_OPTIONS;
+
+export const REFRESH_COOKIE_CLEAR_OPTIONS: CookieOptions = refresh_cookie_clear_options;
+
 export const GET_SET_HEADER = (cookieValue: string) => {
 	const domainHeader = env['REFRESH_TOKEN_COOKIE_DOMAIN'] ? ` Domain=${env['REFRESH_TOKEN_COOKIE_DOMAIN']};` : '';
 	const partitionedHeader = env['REFRESH_TOKEN_COOKIE_PARTITIONED'] == true ? ' Partitioned;' : '';
@@ -89,6 +97,14 @@ export const ACCESS_COOKIE_OPTIONS: CookieOptions = {
 	sameSite: (env['ACCESS_TOKEN_COOKIE_SAME_SITE'] as 'lax' | 'strict' | 'none') || 'strict',
 	path: '/',
 };
+
+const {
+	maxAge: accessCookieMaxAge,
+	expires: accessCookieExpires,
+	...access_cookie_clear_options
+} = ACCESS_COOKIE_OPTIONS;
+
+export const ACCESS_COOKIE_CLEAR_OPTIONS: CookieOptions = access_cookie_clear_options;
 
 export const OAS_REQUIRED_SCHEMAS = ['Diff', 'Schema', 'Query', 'x-metadata'];
 
