@@ -33,8 +33,8 @@ import { useI18n } from 'vue-i18n';
 export default defineComponent({
 	setup() {
 		const { t } = useI18n();
-		const { directus } = useServerStore();
-		const version = directus.version;
+		const { info } = useServerStore();
+		const version = info.directus.version;
 
 		const navItems = [
 			{
