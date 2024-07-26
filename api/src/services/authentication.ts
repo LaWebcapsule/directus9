@@ -181,11 +181,24 @@ export class AuthenticationService {
 			}
 		}
 
+		const refreshToken = nanoid(64);
+		const refreshTokenExpiration = new Date(Date.now() + getMilliseconds(env['REFRESH_TOKEN_TTL'], 0));
+
+		await this.knex('directus_sessions').insert({
+			token: refreshToken,
+			user: user.id,
+			expires: refreshTokenExpiration,
+			ip: this.accountability?.ip,
+			user_agent: this.accountability?.userAgent,
+			origin: this.accountability?.origin,
+		});
+
 		const tokenPayload = {
 			id: user.id,
 			role: user.role,
 			app_access: user.app_access,
 			admin_access: user.admin_access,
+			refresh_token: refreshToken,
 		};
 
 		const customClaims = await emitter.emitFilter(
@@ -207,18 +220,6 @@ export class AuthenticationService {
 		const accessToken = jwt.sign(customClaims, env['SECRET'] as string, {
 			expiresIn: env['ACCESS_TOKEN_TTL'],
 			issuer: 'directus',
-		});
-
-		const refreshToken = nanoid(64);
-		const refreshTokenExpiration = new Date(Date.now() + getMilliseconds(env['REFRESH_TOKEN_TTL'], 0));
-
-		await this.knex('directus_sessions').insert({
-			token: refreshToken,
-			user: user.id,
-			expires: refreshTokenExpiration,
-			ip: this.accountability?.ip,
-			user_agent: this.accountability?.userAgent,
-			origin: this.accountability?.origin,
 		});
 
 		await this.knex('directus_sessions').delete().where('expires', '<', new Date());
@@ -337,11 +338,22 @@ export class AuthenticationService {
 			});
 		}
 
+		const newRefreshToken = nanoid(64);
+		const refreshTokenExpiration = new Date(Date.now() + getMilliseconds(env['REFRESH_TOKEN_TTL'], 0));
+
+		await this.knex('directus_sessions')
+			.update({
+				token: newRefreshToken,
+				expires: refreshTokenExpiration,
+			})
+			.where({ token: refreshToken });
+
 		const tokenPayload: DirectusTokenPayload = {
 			id: record.user_id,
 			role: record.role_id,
 			app_access: record.role_app_access,
 			admin_access: record.role_admin_access,
+			refresh_token: newRefreshToken,
 		};
 
 		if (record.share_id) {
@@ -379,16 +391,6 @@ export class AuthenticationService {
 			expiresIn: env['ACCESS_TOKEN_TTL'],
 			issuer: 'directus',
 		});
-
-		const newRefreshToken = nanoid(64);
-		const refreshTokenExpiration = new Date(Date.now() + getMilliseconds(env['REFRESH_TOKEN_TTL'], 0));
-
-		await this.knex('directus_sessions')
-			.update({
-				token: newRefreshToken,
-				expires: refreshTokenExpiration,
-			})
-			.where({ token: refreshToken });
 
 		if (record.user_id) {
 			await this.knex('directus_users').update({ last_access: new Date() }).where({ id: record.user_id });

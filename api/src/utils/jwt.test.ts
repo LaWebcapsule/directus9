@@ -8,7 +8,7 @@ import {
 import type { DirectusTokenPayload } from '../../src/types/index.js';
 import { verifyAccessJWT, verifyJWT } from '../../src/utils/jwt.js';
 
-const payload: DirectusTokenPayload = { role: null, app_access: false, admin_access: false };
+const payload: DirectusTokenPayload = { role: null, app_access: false, admin_access: false, refresh_token: 'test' };
 const secret = 'test-secret';
 const options = { issuer: 'directus' };
 
@@ -50,7 +50,7 @@ test(`Throws ServiceUnavailableException for unexpected error from jsonwebtoken`
 	mock.mockRestore();
 });
 
-const RequiredEntries: Array<keyof DirectusTokenPayload> = ['role', 'app_access', 'admin_access'];
+const RequiredEntries: Array<keyof DirectusTokenPayload> = ['role', 'app_access', 'admin_access', 'refresh_token'];
 
 RequiredEntries.forEach((entry) => {
 	test(`Throws InvalidTokenException if ${entry} not defined`, () => {
@@ -61,7 +61,7 @@ RequiredEntries.forEach((entry) => {
 });
 
 test('Returns the payload of an access token', () => {
-	const payload = { id: 1, role: 1, app_access: true, admin_access: true };
+	const payload = { id: 1, role: 1, app_access: true, admin_access: true, refresh_token: 'test' };
 	const token = jwt.sign(payload, secret, options);
 	const result = verifyAccessJWT(token, secret);
 
@@ -72,5 +72,6 @@ test('Returns the payload of an access token', () => {
 		admin_access: true,
 		share: undefined,
 		share_scope: undefined,
+		refresh_token: 'test',
 	});
 });

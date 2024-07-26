@@ -4,7 +4,7 @@ import { isEqual } from 'lodash-es';
 import getDatabase from '../database/index.js';
 import emitter from '../emitter.js';
 import env from '../env.js';
-import { InvalidCredentialsException } from '../exceptions/index.js';
+import { InvalidCredentialsException, TokenExpiredException } from '../exceptions/index.js';
 import asyncHandler from '../utils/async-handler.js';
 import { getIPFromReq } from '../utils/get-ip-from-req.js';
 import isDirectusJWT from '../utils/is-directus-jwt.js';
@@ -53,6 +53,22 @@ export const handler = async (req: Request, _res: Response, next: NextFunction) 
 	if (req.token) {
 		if (isDirectusJWT(req.token)) {
 			const payload = verifyAccessJWT(req.token, env['SECRET']);
+
+			// Try finding the user with a valid refresh token stored in the access token
+			const user = await database
+				.select({
+					session_expires: 's.expires',
+					user_id: 'u.id',
+				})
+				.from('directus_sessions AS s')
+				.leftJoin('directus_users AS u', 's.user', 'u.id')
+				.where('s.token', payload.refresh_token)
+				.andWhere('s.expires', '>=', new Date())
+				.first();
+
+			if (!user) {
+				throw new TokenExpiredException();
+			}
 
 			req.accountability.role = payload.role;
 			req.accountability.admin = payload.admin_access === true || payload.admin_access == 1;
