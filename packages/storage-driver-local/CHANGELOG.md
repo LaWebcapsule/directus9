@@ -1,5 +1,12 @@
 # @db-studio/storage-driver-local
 
+## 1.0.2
+
+### Patch Changes
+
+- Updated dependencies [8409dca]
+  - @db-studio/utils@1.1.0
+
 ## 1.0.1
 
 ### Patch Changes

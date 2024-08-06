@@ -1,5 +1,11 @@
 # @db-studio/utils
 
+## 1.1.0
+
+### Minor Changes
+
+- 8409dca: Fixing the issue with nested relational data in the table display
+
 ## 1.0.1
 
 ### Patch Changes

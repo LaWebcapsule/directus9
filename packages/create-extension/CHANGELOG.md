@@ -1,5 +1,11 @@
 # @db-studio/create-extension
 
+## 1.0.5
+
+### Patch Changes
+
+- @db-studio/extensions-sdk@1.0.5
+
 ## 1.0.4
 
 ### Patch Changes

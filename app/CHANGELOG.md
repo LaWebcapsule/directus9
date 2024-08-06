@@ -1,5 +1,15 @@
 # @db-studio/app
 
+## 1.2.0
+
+### Minor Changes
+
+- 8409dca: Fixing the issue with nested relational data in the table display
+
+### Patch Changes
+
+- @db-studio/composables@1.0.2
+
 ## 1.1.0
 
 ### Minor Changes
