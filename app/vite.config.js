@@ -28,7 +28,7 @@ export default defineConfig({
 		__DIRECTUS_VERSION__: JSON.stringify(version),
 	},
 	plugins: [
-		directusExtensions(),
+		extensions(),
 		vue(),
 		yaml({
 			transform(data) {
@@ -74,14 +74,14 @@ function getExtensionsRealPaths() {
 		: [];
 }
 
-function directusExtensions() {
-	const virtualExtensionsId = '@directus-extensions';
+function extensions() {
+	const virtualExtensionsId = '@extensions';
 
 	let extensionsEntrypoint = null;
 
 	return [
 		{
-			name: 'directus-extensions-serve',
+			name: 'extensions-serve',
 			apply: 'serve',
 			config: () => ({
 				optimizeDeps: {
@@ -103,7 +103,7 @@ function directusExtensions() {
 			},
 		},
 		{
-			name: 'directus-extensions-build',
+			name: 'extensions-build',
 			apply: 'build',
 			config: () => ({
 				build: {
