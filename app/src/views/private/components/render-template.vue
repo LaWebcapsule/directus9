@@ -29,9 +29,10 @@
 import { useExtension } from '@/composables/use-extension';
 import { useFieldsStore } from '@/stores/fields';
 import { getDefaultDisplayForType } from '@/utils/get-default-display-for-type';
+import { getLocalTypeForField } from '@/utils/get-local-type';
 import { translate } from '@/utils/translate-literal';
 import { Field } from '@db-studio/types';
-import { get } from 'lodash';
+import { getFlat } from '@db-studio/utils';
 import { computed, ref } from 'vue';
 
 interface Props {
@@ -67,19 +68,25 @@ const parts = computed(() =>
 			let fieldKeyAfter = fieldKey.split('.').slice(-1)[0];
 
 			// Try getting the value from the item, return some question marks if it doesn't exist
-			let value = get(props.item, fieldKeyBefore);
+			let value = getFlat(props.item, fieldKeyBefore.length > 0 ? fieldKeyBefore : fieldKey);
 
-			return Array.isArray(value) ? handleArray(fieldKeyBefore, fieldKeyAfter) : handleObject(fieldKey);
+			return Array.isArray(value)
+				? handleArray(value, { fieldKey, fieldKeyBefore, fieldKeyAfter })
+				: handleObject(value, { fieldKey, fieldKeyBefore, fieldKeyAfter });
 		})
-		.map((p) => p ?? null)
+		.map((p) => p ?? null),
 );
 
-function handleArray(fieldKeyBefore: string, fieldKeyAfter: string) {
-	const value = get(props.item, fieldKeyBefore);
+interface HandlerOptions {
+	fieldKey: string;
+	fieldKeyBefore: string;
+	fieldKeyAfter: string;
+}
 
-	const field =
-		fieldsStore.getField(props.collection, fieldKeyBefore) ||
-		props.fields?.find((field) => field.field === fieldKeyBefore);
+function handleArray(value: any, { fieldKey, fieldKeyBefore, fieldKeyAfter }: HandlerOptions) {
+	const field = props.collection
+		? fieldsStore.getField(props.collection, fieldKey)
+		: (props.fields?.find((field) => field.field === fieldKey) ?? null);
 
 	if (value === undefined) return null;
 
@@ -87,13 +94,21 @@ function handleArray(fieldKeyBefore: string, fieldKeyAfter: string) {
 
 	const displayInfo = useExtension(
 		'display',
-		computed(() => field.meta?.display ?? null)
+		computed(() => field.meta?.display ?? null),
 	);
 
 	let component = field.meta?.display;
 	let options = field.meta?.display_options;
 
 	if (!displayInfo.value) {
+		const localType = getLocalTypeForField(field.collection, field.field);
+		if (localType === 'standard') {
+			// we've gotten an array of distinct values, just render them
+			return value
+				.map((item: Record<string, unknown>) => item?.[field.field])
+				.filter((item: unknown) => !!item)
+				.join(', ');
+		}
 		component = 'related-values';
 		options = { template: `{{${fieldKeyAfter}}}` };
 	}
@@ -110,9 +125,18 @@ function handleArray(fieldKeyBefore: string, fieldKeyAfter: string) {
 	};
 }
 
-function handleObject(fieldKey: string) {
-	const field =
-		fieldsStore.getField(props.collection, fieldKey) || props.fields?.find((field) => field.field === fieldKey);
+function handleObject(
+	value: Record<string, unknown> | unknown[],
+	{ fieldKey, fieldKeyBefore, fieldKeyAfter }: HandlerOptions,
+) {
+	value = getFlat(value, fieldKeyAfter);
+	if (Array.isArray(value)) {
+		return handleArray(value, { fieldKeyBefore, fieldKeyAfter, fieldKey });
+	}
+	const field = props.collection
+		? fieldsStore.getField(props.collection, [fieldKeyBefore, fieldKeyAfter].filter((p) => p).join('.')) ||
+			props.fields?.find((field) => field.field === fieldKeyAfter)
+		: null;
 
 	/**
 	 * This is for cases where you are rendering a display template directly on
@@ -129,8 +153,6 @@ function handleObject(fieldKey: string) {
 			.join('.');
 	}
 
-	const value = get(props.item, fieldKey);
-
 	if (value === undefined) return null;
 
 	if (!field) return value;
@@ -142,7 +164,7 @@ function handleObject(fieldKey: string) {
 
 	const displayInfo = useExtension(
 		'display',
-		computed(() => field.meta?.display ?? null)
+		computed(() => field.meta?.display ?? null),
 	);
 
 	// If used display doesn't exist in the current project, return raw value

@@ -22,3 +22,15 @@ export function get(object: Record<string, any> | any[], path: string, defaultVa
 
 	return result ?? defaultValue;
 }
+
+export function getFlat(
+	object: Record<string, unknown> | unknown[],
+	path: string,
+	defaultValue?: unknown,
+): Record<string, unknown> | unknown[] {
+	const result = get(object, path, defaultValue);
+	if (Array.isArray(result)) {
+		return result.flat(10); // set a hard coded max depth to nasty recursion issues
+	}
+	return result;
+}

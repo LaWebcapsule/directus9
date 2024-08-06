@@ -1,7 +1,8 @@
 <template>
-	<value-null v-if="!relatedCollection" />
 	<v-menu
-		v-else-if="['o2m', 'm2m', 'm2a', 'translations', 'files'].includes(localType.toLowerCase())"
+		v-if="
+			relatedCollection && localType && ['o2m', 'm2m', 'm2a', 'translations', 'files'].includes(localType.toLowerCase())
+		"
 		show-arrow
 		:disabled="value.length === 0"
 	>
@@ -15,7 +16,7 @@
 			</span>
 		</template>
 
-		<v-list class="links">
+		<v-list class="links" v-if="!!primaryKeyFieldPath">
 			<v-list-item v-for="item in value" :key="item[primaryKeyFieldPath]">
 				<v-list-item-content>
 					<render-template
@@ -30,7 +31,8 @@
 			</v-list-item>
 		</v-list>
 	</v-menu>
-	<render-template v-else :template="internalTemplate" :item="value" :collection="relatedCollection" />
+	<render-template v-else-if="!!value" :template="internalTemplate" :item="value" :collection="relatedCollection" />
+	<value-null v-else />
 </template>
 
 <script lang="ts">
@@ -64,15 +66,16 @@ export default defineComponent({
 		const { t, te } = useI18n();
 
 		const relatedCollectionData = computed(() => {
-			return getRelatedCollection(props.collection, props.field);
+			const data = getRelatedCollection(props.collection, props.field);
+			return data;
 		});
 
 		const relatedCollection = computed(() => {
-			return relatedCollectionData.value.relatedCollection;
+			return relatedCollectionData.value?.relatedCollection ?? null;
 		});
 
 		const junctionCollection = computed(() => {
-			return relatedCollectionData.value.junctionCollection;
+			return relatedCollectionData.value?.junctionCollection ?? null;
 		});
 
 		const localType = computed(() => {
@@ -82,7 +85,7 @@ export default defineComponent({
 		const { primaryKeyField } = useCollection(relatedCollection);
 
 		const primaryKeyFieldPath = computed(() => {
-			return relatedCollectionData.value.path
+			return relatedCollectionData.value?.path
 				? [...relatedCollectionData.value.path, primaryKeyField.value?.field].join('.')
 				: primaryKeyField.value?.field;
 		});
