@@ -33,4 +33,4 @@ declare module 'frappe-charts/src/js/charts/AxisChart' {
 	}
 }
 
-declare module '@directus-extensions' {}
+declare module '@extensions' {}
