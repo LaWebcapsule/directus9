@@ -974,6 +974,9 @@ importers:
       '@types/node':
         specifier: ^18.19.41
         version: 18.19.41
+      '@types/yargs':
+        specifier: ^17.0.32
+        version: 17.0.32
       '@types/yargs-parser':
         specifier: ^21.0.3
         version: 21.0.3

@@ -4,6 +4,7 @@
 	"type": "module",
 	"scripts": {
 		"build": "pnpm --recursive --filter '!docs' run build",
+		"start": "pnpx tsx ./db-studio/cli.js start",
 		"format": "prettier --write \"**/*.{md,y?(a)ml,json}\"",
 		"lint": "eslint .",
 		"test": "pnpm --recursive --filter '!tests-blackbox' test",
