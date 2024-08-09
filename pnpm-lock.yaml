@@ -504,6 +504,9 @@ importers:
         specifier: workspace:*
         version: link:../packages/composables
     devDependencies:
+      '@apollo/sandbox':
+        specifier: ^2.6.0
+        version: 2.6.0(graphql@16.6.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@babel/core':
         specifier: 7.21.4
         version: 7.21.4
@@ -608,7 +611,7 @@ importers:
         version: 7.0.6(vue@3.4.29(typescript@5.0.4))
       '@storybook/vue3-vite':
         specifier: 7.0.6
-        version: 7.0.6(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.0.4)(vite@5.3.4(@types/node@20.14.11)(sass@1.62.0)(terser@5.31.3))(vue@3.4.29(typescript@5.0.4))
+        version: 7.0.6(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.0.4)(vite@5.3.4(@types/node@18.15.13)(sass@1.62.0)(terser@5.31.3))(vue@3.4.29(typescript@5.0.4))
       '@tinymce/tinymce-vue':
         specifier: 5.1.0
         version: 5.1.0(vue@3.4.29(typescript@5.0.4))
@@ -665,7 +668,7 @@ importers:
         version: 0.5.4
       '@vitejs/plugin-vue':
         specifier: 4.1.0
-        version: 4.1.0(vite@5.3.4(@types/node@20.14.11)(sass@1.62.0)(terser@5.31.3))(vue@3.4.29(typescript@5.0.4))
+        version: 4.1.0(vite@5.3.4(@types/node@18.15.13)(sass@1.62.0)(terser@5.31.3))(vue@3.4.29(typescript@5.0.4))
       '@vue/compiler-sfc':
         specifier: 3.2.47
         version: 3.2.47
@@ -797,7 +800,7 @@ importers:
         version: 5.0.4
       vite:
         specifier: ^5.3.4
-        version: 5.3.4(@types/node@20.14.11)(sass@1.62.0)(terser@5.31.3)
+        version: 5.3.4(@types/node@18.15.13)(sass@1.62.0)(terser@5.31.3)
       vitest:
         specifier: 0.30.1
         version: 0.30.1(happy-dom@9.8.4)(jsdom@19.0.0)(sass@1.62.0)(terser@5.31.3)
@@ -1804,6 +1807,17 @@ packages:
     resolution: {integrity: sha512-9Kt7EuS/7WbMAUv2gSziqjvxwDbFSg3Xeyfuj5laUODX8o/k/CpsAKiQ8W7/R88eXFTMbJYg6+7uAmOWNKmwnw==}
     peerDependencies:
       openapi-types: '>=7'
+
+  '@apollo/sandbox@2.6.0':
+    resolution: {integrity: sha512-VPaVWt75Pi/G5W/QjxXB5PzgV/k7XTRIo/sb5aaEzTZQAekHzI2nbqh0bCe6YqTqof0SnOj+I1QD+g7ruL+/WQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-dom:
+        optional: true
 
   '@assemblyscript/loader@0.19.23':
     resolution: {integrity: sha512-ulkCYfFbYj01ie1MDOyxv2F6SpRN1TOj7fQxbP07D6HmeR+gr2JLSmINKjga2emB+b1L2KGrFKBTc+e00p54nw==}
@@ -5304,6 +5318,9 @@ packages:
   '@types/wellknown@0.5.4':
     resolution: {integrity: sha512-zcsf4oHeEcvpvWhDOB1+qNK04oFJtsmv7Otb1Vy8w8GAqQkgRrVkI/C76PdwtpiT216aM1SbhkKgKWzGLhHKng==}
 
+  '@types/whatwg-mimetype@3.0.2':
+    resolution: {integrity: sha512-c2AKvDT8ToxLIOUlN51gTiHXflsfIFisS4pO7pDPoKouJCESkhZnEy623gwP9laCy5lnLDAw1vAzu2vM2YLOrA==}
+
   '@types/yargs-parser@21.0.3':
     resolution: {integrity: sha512-I4q9QU9MQv4oEOz4tAHJtNz1cwuLxn2F3xcc2iV5WdqLPpUnj30aUuxt1mAxYTG+oe8CZMV/+6rU4S4gRDzqtQ==}
 
@@ -5312,6 +5329,9 @@ packages:
 
   '@types/yargs@17.0.32':
     resolution: {integrity: sha512-xQ67Yc/laOG5uMfX/093MRlGGCIBzZMarVa+gfNKJxWAIgykYpVGkBdbqEzGDDfCrVUj6Hiff4mTZ5BA6TmAog==}
+
+  '@types/zen-observable@0.8.3':
+    resolution: {integrity: sha512-fbF6oTd4sGGy0xjHPKAt+eS2CrxJ3+6gQ3FGcBoIJR2TLAyCkCyI8JqZNy+FeON0AhVgNJoUumVoZQjBFUqHkw==}
 
   '@typescript-eslint/eslint-plugin@5.59.0':
     resolution: {integrity: sha512-p0QgrEyrxAWBecR56gyn3wkG15TJdI//eetInP3zYRewDh0XS+DhB3VUAd3QqvziFsfaQIoIuZMxZRB7vXYaYw==}
@@ -6055,6 +6075,9 @@ packages:
   babel-walk@3.0.0-canary-5:
     resolution: {integrity: sha512-GAwkz0AihzY5bkwIY5QDR+LvsRQgB/B+1foMPvi0FZPMl5fjD7ICiznUiBdLYMH1QYe6vqu4gWYytZOccLouFw==}
     engines: {node: '>= 10.0.0'}
+
+  backo2@1.0.2:
+    resolution: {integrity: sha512-zj6Z6M7Eq+PBZ7PQxl5NT665MvJdAkzp0f60nAJ+sLaSCBPMwVak5ZegFbgVCzFcCJTKFoMizvM5Ld7+JrRJHA==}
 
   backoff@2.5.0:
     resolution: {integrity: sha512-wC5ihrnUXmR2douXmXLCe5O3zg3GKIyvRi/hi58a/XyRxVI+3/yM0PYueQOZXPXQ9pxBislYkw+sF9b7C/RuMA==}
@@ -7591,6 +7614,9 @@ packages:
   eventemitter2@6.4.9:
     resolution: {integrity: sha512-JEPTiaOt9f04oa6NOkc4aH+nVp5I3wEjpHbIPqfgCdD5v5bUzy7xQqwcVO2aDQgOWhI28da57HksMrzK9HlRxg==}
 
+  eventemitter3@3.1.0:
+    resolution: {integrity: sha512-ivIvhpq/Y0uSjcHDcOIccjmYjGLcP09MFGE7ysAwkAvkXfpZlC985pH2/ui64DKazbTW/4kN3yqozUxlXzI6cA==}
+
   eventemitter3@3.1.2:
     resolution: {integrity: sha512-tvtQIeLVHjDkJYnzf2dgVMxfuSGJeM/7UCG17TT4EumTfNtF+0nebF/4zWOIkCreAbtNqhGEboB6BWrwqNaw4Q==}
 
@@ -8136,6 +8162,12 @@ packages:
     resolution: {integrity: sha512-J+vjof74oMlCWXSvt0DOf2APEdZOCdubEvGDUAlqH//VBYcOYsGgRW7Xzorr44LvkjiuvecWc8fChxuZZbChtg==}
     peerDependencies:
       graphql: '>=0.8.0'
+
+  graphql-ws@5.16.0:
+    resolution: {integrity: sha512-Ju2RCU2dQMgSKtArPbEtsK5gNLnsQyTNIo/T7cZNp96niC1x0KdJNZV0TIoilceBPQwfb5itrGl8pkFeOUMl4A==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      graphql: '>=0.11 <=16'
 
   graphql@16.6.0:
     resolution: {integrity: sha512-KPIBPDlW7NxrbT/eh4qPXz5FiFdL5UbaA0XUNz2Rp3Z3hqBSkbj0GVjwFDztsWVauZUWsbKHgMg++sk8UX0bkw==}
@@ -8685,6 +8717,9 @@ packages:
   istanbul-reports@3.1.7:
     resolution: {integrity: sha512-BewmUXImeuRk2YY0PVbxgKAysvhRPUQE0h5QRM++nVWyubKGV0l8qQ5op8+B2DOmwSe63Jivj0BjkPQVf8fP5g==}
     engines: {node: '>=8'}
+
+  iterall@1.3.0:
+    resolution: {integrity: sha512-QZ9qOMdF+QLHxy1QIpUHUU1D5pS2CG2P69LF6L6CPjPYA/XMOmKV3PZpawHoAjHNyB0swdVTRxdYT4tbBbxqwg==}
 
   jackpot@0.0.6:
     resolution: {integrity: sha512-rbWXX+A9ooq03/dfavLg9OXQ8YB57Wa7PY5c4LfU3CgFpwEhhl3WyXTQVurkaT7zBM5I9SSOaiLyJ4I0DQmC0g==}
@@ -12086,6 +12121,12 @@ packages:
   subarg@1.0.0:
     resolution: {integrity: sha512-RIrIdRY0X1xojthNcVtgT9sjpOGagEUKpZdgBUi054OEPFo282yg+zE+t1Rj3+RqKq2xStL7uUHhY+AjbC4BXg==}
 
+  subscriptions-transport-ws@0.11.0:
+    resolution: {integrity: sha512-8D4C6DIH5tGiAIpp5I0wD/xRlNiZAPGHygzCe7VzyzUoxHtawzjNAY9SUTXU05/EY2NMY9/9GF0ycizkXr1CWQ==}
+    deprecated: The `subscriptions-transport-ws` package is no longer maintained. We recommend you use `graphql-ws` instead. For help migrating Apollo software to `graphql-ws`, see https://www.apollographql.com/docs/apollo-server/data/subscriptions/#switching-from-subscriptions-transport-ws    For general help using `graphql-ws`, see https://github.com/enisdenjo/graphql-ws/blob/master/README.md
+    peerDependencies:
+      graphql: ^15.7.2 || ^16.0.0
+
   subtag@0.5.0:
     resolution: {integrity: sha512-CaIBcTSb/nyk4xiiSOtZYz1B+F12ZxW8NEp54CdT+84vmh/h4sUnHGC6+KQXUfED8u22PQjCYWfZny8d2ELXwg==}
 
@@ -12185,6 +12226,10 @@ packages:
   swagger-ui-watcher@2.1.13:
     resolution: {integrity: sha512-xj/orx1DnuoVn6kJ9Rq+My10YIYEiSEKNV7+kQyO3gd7SI69r14tv8y+sCp7zTK2XYEmkT68V+hVhtv7UA5/Nw==}
     hasBin: true
+
+  symbol-observable@1.2.0:
+    resolution: {integrity: sha512-e900nM8RRtGhlV36KGEU9k65K3mPb1WV70OdjfxlG2EAuM1noi/E/BaW/uMhL7bPEssK8QV57vN3esixjUvcXQ==}
+    engines: {node: '>=0.10.0'}
 
   symbol-tree@3.2.4:
     resolution: {integrity: sha512-9QNk5KwDF+Bvz+PyObkmSYjI5ksVUYtjW7AU22r2NKcfLJcXp96hkDWU3+XndOsUb+AQ9QhfzfCT2O+CNWT5Tw==}
@@ -13435,6 +13480,12 @@ packages:
     resolution: {integrity: sha512-b4JR1PFR10y1mKjhHY9LaGo6tmrgjit7hxVIeAmyMw3jegXR4dhYqLaQF5zMXZxY7tLpMyJeLjr1C4rLmkVe8g==}
     engines: {node: '>=12.20'}
 
+  zen-observable-ts@1.1.0:
+    resolution: {integrity: sha512-1h4zlLSqI2cRLPJUHJFL8bCWHhkpuXkF+dbGkRaWjgDIG26DmzyshUMrdV/rL3UnR+mhaX4fRq8LPouq0MYYIA==}
+
+  zen-observable@0.8.15:
+    resolution: {integrity: sha512-PQ2PC7R9rslx84ndNBZB/Dkv8V8fZEpk83RLgXtYd0fwUgEjseMn1Dgajh2x6S8QbZAFa9p2qVCEuYZNgve0dQ==}
+
   zhead@2.2.4:
     resolution: {integrity: sha512-8F0OI5dpWIA5IGG5NHUg9staDwz/ZPxZtvGVf01j7vHqSyZ0raHY+78atOVxRqb73AotX22uV1pXt3gYSstGag==}
 
@@ -13584,6 +13635,22 @@ snapshots:
       ajv-draft-04: 1.0.0(ajv@8.17.1)
       call-me-maybe: 1.0.2
       openapi-types: 12.1.0
+
+  '@apollo/sandbox@2.6.0(graphql@16.6.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@types/whatwg-mimetype': 3.0.2
+      eventemitter3: 3.1.0
+      graphql-ws: 5.16.0(graphql@16.6.0)
+      subscriptions-transport-ws: 0.11.0(graphql@16.6.0)
+      whatwg-mimetype: 3.0.0
+      zen-observable-ts: 1.1.0
+    optionalDependencies:
+      react: 18.3.1
+      react-dom: 18.3.1(react@18.3.1)
+    transitivePeerDependencies:
+      - bufferutil
+      - graphql
+      - utf-8-validate
 
   '@assemblyscript/loader@0.19.23': {}
 
@@ -17536,7 +17603,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@storybook/builder-vite@7.0.6(typescript@5.0.4)(vite@5.3.4(@types/node@20.14.11)(sass@1.62.0)(terser@5.31.3))':
+  '@storybook/builder-vite@7.0.6(typescript@5.0.4)(vite@5.3.4(@types/node@18.15.13)(sass@1.62.0)(terser@5.31.3))':
     dependencies:
       '@storybook/channel-postmessage': 7.0.6
       '@storybook/channel-websocket': 7.0.6
@@ -17558,7 +17625,7 @@ snapshots:
       remark-external-links: 8.0.0
       remark-slug: 6.1.0
       rollup: 3.29.4
-      vite: 5.3.4(@types/node@20.14.11)(sass@1.62.0)(terser@5.31.3)
+      vite: 5.3.4(@types/node@18.15.13)(sass@1.62.0)(terser@5.31.3)
     optionalDependencies:
       typescript: 5.0.4
     transitivePeerDependencies:
@@ -17887,16 +17954,16 @@ snapshots:
       '@types/express': 4.17.21
       file-system-cache: 2.4.7
 
-  '@storybook/vue3-vite@7.0.6(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.0.4)(vite@5.3.4(@types/node@20.14.11)(sass@1.62.0)(terser@5.31.3))(vue@3.4.29(typescript@5.0.4))':
+  '@storybook/vue3-vite@7.0.6(encoding@0.1.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.0.4)(vite@5.3.4(@types/node@18.15.13)(sass@1.62.0)(terser@5.31.3))(vue@3.4.29(typescript@5.0.4))':
     dependencies:
-      '@storybook/builder-vite': 7.0.6(typescript@5.0.4)(vite@5.3.4(@types/node@20.14.11)(sass@1.62.0)(terser@5.31.3))
+      '@storybook/builder-vite': 7.0.6(typescript@5.0.4)(vite@5.3.4(@types/node@18.15.13)(sass@1.62.0)(terser@5.31.3))
       '@storybook/core-server': 7.0.6(encoding@0.1.13)
       '@storybook/vue3': 7.0.6(vue@3.4.29(typescript@5.0.4))
-      '@vitejs/plugin-vue': 4.1.0(vite@5.3.4(@types/node@20.14.11)(sass@1.62.0)(terser@5.31.3))(vue@3.4.29(typescript@5.0.4))
+      '@vitejs/plugin-vue': 4.1.0(vite@5.3.4(@types/node@18.15.13)(sass@1.62.0)(terser@5.31.3))(vue@3.4.29(typescript@5.0.4))
       magic-string: 0.27.0
       react: 18.3.1
       react-dom: 18.3.1(react@18.3.1)
-      vite: 5.3.4(@types/node@20.14.11)(sass@1.62.0)(terser@5.31.3)
+      vite: 5.3.4(@types/node@18.15.13)(sass@1.62.0)(terser@5.31.3)
       vue-docgen-api: 4.79.1(vue@3.4.29(typescript@5.0.4))
     transitivePeerDependencies:
       - '@preact/preset-vite'
@@ -18425,6 +18492,8 @@ snapshots:
 
   '@types/wellknown@0.5.4': {}
 
+  '@types/whatwg-mimetype@3.0.2': {}
+
   '@types/yargs-parser@21.0.3': {}
 
   '@types/yargs@16.0.9':
@@ -18434,6 +18503,8 @@ snapshots:
   '@types/yargs@17.0.32':
     dependencies:
       '@types/yargs-parser': 21.0.3
+
+  '@types/zen-observable@0.8.3': {}
 
   '@typescript-eslint/eslint-plugin@5.59.0(@typescript-eslint/parser@5.59.0(eslint@8.38.0)(typescript@5.5.3))(eslint@8.38.0)(typescript@5.5.3)':
     dependencies:
@@ -18714,9 +18785,9 @@ snapshots:
       unhead: 1.1.26
       vue: 3.2.47
 
-  '@vitejs/plugin-vue@4.1.0(vite@5.3.4(@types/node@20.14.11)(sass@1.62.0)(terser@5.31.3))(vue@3.4.29(typescript@5.0.4))':
+  '@vitejs/plugin-vue@4.1.0(vite@5.3.4(@types/node@18.15.13)(sass@1.62.0)(terser@5.31.3))(vue@3.4.29(typescript@5.0.4))':
     dependencies:
-      vite: 5.3.4(@types/node@20.14.11)(sass@1.62.0)(terser@5.31.3)
+      vite: 5.3.4(@types/node@18.15.13)(sass@1.62.0)(terser@5.31.3)
       vue: 3.4.29(typescript@5.0.4)
 
   '@vitejs/plugin-vue@4.6.2(vite@5.3.4(@types/node@20.14.11)(sass@1.62.0)(terser@5.31.3))(vue@3.2.47)':
@@ -19528,6 +19599,8 @@ snapshots:
   babel-walk@3.0.0-canary-5:
     dependencies:
       '@babel/types': 7.24.9
+
+  backo2@1.0.2: {}
 
   backoff@2.5.0:
     dependencies:
@@ -21229,6 +21302,8 @@ snapshots:
 
   eventemitter2@6.4.9: {}
 
+  eventemitter3@3.1.0: {}
+
   eventemitter3@3.1.2: {}
 
   eventemitter3@4.0.7: {}
@@ -21982,6 +22057,10 @@ snapshots:
     dependencies:
       graphql: 16.6.0
 
+  graphql-ws@5.16.0(graphql@16.6.0):
+    dependencies:
+      graphql: 16.6.0
+
   graphql@16.6.0: {}
 
   grid-index@1.1.0: {}
@@ -22532,6 +22611,8 @@ snapshots:
     dependencies:
       html-escaper: 2.0.2
       istanbul-lib-report: 3.0.1
+
+  iterall@1.3.0: {}
 
   jackpot@0.0.6:
     dependencies:
@@ -27297,6 +27378,18 @@ snapshots:
     dependencies:
       minimist: 1.2.8
 
+  subscriptions-transport-ws@0.11.0(graphql@16.6.0):
+    dependencies:
+      backo2: 1.0.2
+      eventemitter3: 3.1.2
+      graphql: 16.6.0
+      iterall: 1.3.0
+      symbol-observable: 1.2.0
+      ws: 7.5.10
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+
   subtag@0.5.0: {}
 
   sucrase@3.35.0:
@@ -27443,6 +27536,8 @@ snapshots:
       - bufferutil
       - supports-color
       - utf-8-validate
+
+  symbol-observable@1.2.0: {}
 
   symbol-tree@3.2.4: {}
 
@@ -28838,6 +28933,13 @@ snapshots:
   yocto-queue@0.1.0: {}
 
   yocto-queue@1.1.1: {}
+
+  zen-observable-ts@1.1.0:
+    dependencies:
+      '@types/zen-observable': 0.8.3
+      zen-observable: 0.8.15
+
+  zen-observable@0.8.15: {}
 
   zhead@2.2.4: {}
 
