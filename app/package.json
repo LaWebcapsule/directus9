@@ -27,6 +27,7 @@
 		"test": "vitest --watch=false"
 	},
 	"devDependencies": {
+		"@apollo/sandbox": "^2.6.0",
 		"@babel/core": "7.21.4",
 		"@babel/preset-env": "7.21.4",
 		"@db-studio/constants": "workspace:*",
