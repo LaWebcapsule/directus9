@@ -1,5 +1,12 @@
 # @db-studio/api
 
+## 1.0.5
+
+### Patch Changes
+
+- Updated dependencies [58754f3]
+  - @db-studio/app@1.3.0
+
 ## 1.0.4
 
 ### Patch Changes

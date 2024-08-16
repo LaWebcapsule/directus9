@@ -1,6 +1,6 @@
 {
 	"name": "@db-studio/api",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "DB Studio (formerly Directus v9) is a real-time API and App dashboard for managing SQL database content",
 	"type": "module",
 	"keywords": [

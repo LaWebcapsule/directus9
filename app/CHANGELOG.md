@@ -1,5 +1,11 @@
 # @db-studio/app
 
+## 1.3.0
+
+### Minor Changes
+
+- 58754f3: Added a simple bar chart panel
+
 ## 1.2.0
 
 ### Minor Changes
