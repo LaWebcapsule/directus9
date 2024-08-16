@@ -111,8 +111,8 @@ export default definePanel({
 					.map<DropdownOption | null>((field) => {
 						if (field !== null && field !== undefined) {
 							const type = getLocalTypeForField(field.collection, field.field);
-							if (type !== null && !['alias', 'group', 'presentation', 'm2o', 'm2a'].includes(type)) {
-								return { value: field.field, text: field.name, type: field.type };
+							if (type !== null && !['alias', 'group', 'presentation', 'm2o', 'm2a', 'm2m'].includes(type)) {
+								return { value: field.field, text: `${field.name} - ${field.type}`, type: field.type };
 							}
 						}
 						return null;
