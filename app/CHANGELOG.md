@@ -1,5 +1,11 @@
 # @db-studio/app
 
+## 1.3.1
+
+### Patch Changes
+
+- Actually build the packages...
+
 ## 1.3.0
 
 ### Minor Changes

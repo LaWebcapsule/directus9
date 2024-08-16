@@ -1,5 +1,13 @@
 # directus9
 
+## 1.0.7
+
+### Patch Changes
+
+- Actually build the packages...
+- Updated dependencies
+  - @db-studio/api@1.0.6
+
 ## 1.0.6
 
 ### Patch Changes
