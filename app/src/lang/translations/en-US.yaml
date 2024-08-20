@@ -1793,6 +1793,13 @@ interfaces:
   system-raw-editor:
     system-raw-editor: Raw Editor
     description: Allow entering of raw or mustache templating values
+  raw-date:
+    raw-date: Raw Date
+    description: Allow entering of raw dates, with RegEx based validation
+    message: Message for failed validation
+    regex: Validation RegEx
+    defaultMessage: This value does not match the required format
+
 displays:
   translations:
     translations: Translations
