@@ -1,5 +1,11 @@
 # @db-studio/app
 
+## 1.4.0
+
+### Minor Changes
+
+- ee2b56c: Adds the raw-date interface as a system interface
+
 ## 1.3.1
 
 ### Patch Changes
