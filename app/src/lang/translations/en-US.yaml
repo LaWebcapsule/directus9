@@ -1798,6 +1798,7 @@ interfaces:
     description: Allow entering of raw dates, with RegEx based validation
     message: Message for failed validation
     regex: Validation RegEx
+    input-type: Input Type
     defaultMessage: This value does not match the required format
 
 displays:

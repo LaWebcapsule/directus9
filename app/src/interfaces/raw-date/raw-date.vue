@@ -1,5 +1,5 @@
 <template>
-	<v-input :model-value="value" @update:model-value="validate" :class="{ invalid: !valid }" />
+	<v-input :type="inputType" :model-value="value" @update:model-value="validate" :class="{ invalid: !valid }" />
 	<span v-if="!valid">{{ message }}</span>
 </template>
 
@@ -14,10 +14,12 @@ interface Props {
 	value: string;
 	validationMessage: string;
 	validationRegex: string;
+	inputType: 'date' | 'datetime-local' | 'week' | 'month' | 'time' | 'number' | 'text';
 }
 
 const props = withDefaults(defineProps<Props>(), {
 	validationRegex: '\\d{4}-\\d{2}-\\d{2}',
+	inputType: 'date',
 });
 
 const valid = ref(true);
