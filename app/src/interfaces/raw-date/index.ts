@@ -36,36 +36,39 @@ export default defineInterface({
 				meta: {
 					width: 'full',
 					interface: 'select-dropdown',
-					choices: [
-						{
-							text: 'Date',
-							value: 'date',
-						},
-						{
-							text: 'Date and Time',
-							value: 'datetime-local',
-						},
-						{
-							text: 'Month and Year',
-							value: 'month',
-						},
-						{
-							text: 'Timestamp',
-							value: 'number',
-						},
-						{
-							text: 'Time',
-							value: 'time',
-						},
-						{
-							text: 'Week and Year',
-							value: 'week',
-						},
-						{
-							text: 'Raw Text',
-							value: 'text',
-						},
-					],
+					options: {
+						placeholder: '$t:interfaces.raw-date.input-type-placeholder',
+						choices: [
+							{
+								text: 'Date',
+								value: 'date',
+							},
+							{
+								text: 'Date and Time',
+								value: 'datetime-local',
+							},
+							{
+								text: 'Month and Year',
+								value: 'month',
+							},
+							{
+								text: 'Timestamp',
+								value: 'number',
+							},
+							{
+								text: 'Time',
+								value: 'time',
+							},
+							{
+								text: 'Week and Year',
+								value: 'week',
+							},
+							{
+								text: 'Raw Text',
+								value: 'text',
+							},
+						],
+					},
 				},
 			},
 		];

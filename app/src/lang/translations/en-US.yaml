@@ -1800,6 +1800,7 @@ interfaces:
     regex: Validation RegEx
     input-type: Input Type
     defaultMessage: This value does not match the required format
+    input-type-placeholder: Select the type of input (Date is the default)
 
 displays:
   translations:

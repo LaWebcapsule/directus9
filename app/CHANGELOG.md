@@ -1,5 +1,11 @@
 # @db-studio/app
 
+## 1.4.1
+
+### Patch Changes
+
+- Switch to input type date and add options for input types
+
 ## 1.4.0
 
 ### Minor Changes
