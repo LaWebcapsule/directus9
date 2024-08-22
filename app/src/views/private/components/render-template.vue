@@ -27,9 +27,11 @@
 
 <script setup lang="ts">
 import { useExtension } from '@/composables/use-extension';
+import { useCollectionsStore } from '@/stores/collections';
 import { useFieldsStore } from '@/stores/fields';
 import { getDefaultDisplayForType } from '@/utils/get-default-display-for-type';
 import { getLocalTypeForField } from '@/utils/get-local-type';
+import { getRelatedCollection } from '@/utils/get-related-collection';
 import { translate } from '@/utils/translate-literal';
 import { Field } from '@db-studio/types';
 import { getFlat } from '@db-studio/utils';
@@ -51,6 +53,7 @@ const props = withDefaults(defineProps<Props>(), {
 });
 
 const fieldsStore = useFieldsStore();
+const collectionStore = useCollectionsStore();
 
 const templateEl = ref<HTMLElement>();
 
@@ -70,9 +73,13 @@ const parts = computed(() =>
 			// Try getting the value from the item, return some question marks if it doesn't exist
 			let value = getFlat(props.item, fieldKeyBefore.length > 0 ? fieldKeyBefore : fieldKey);
 
-			return Array.isArray(value)
-				? handleArray(value, { fieldKey, fieldKeyBefore, fieldKeyAfter })
-				: handleObject(value, { fieldKey, fieldKeyBefore, fieldKeyAfter });
+			if (value && typeof value === 'object') {
+				return Array.isArray(value)
+					? handleArray(value, { fieldKey, fieldKeyBefore, fieldKeyAfter })
+					: handleObject(value as Record<string, unknown>, { fieldKey, fieldKeyBefore, fieldKeyAfter });
+			}
+
+			return value;
 		})
 		.map((p) => p ?? null),
 );
@@ -83,7 +90,7 @@ interface HandlerOptions {
 	fieldKeyAfter: string;
 }
 
-function handleArray(value: any, { fieldKey, fieldKeyBefore, fieldKeyAfter }: HandlerOptions) {
+function handleArray(value: any, { fieldKey, fieldKeyAfter }: HandlerOptions) {
 	const field = props.collection
 		? fieldsStore.getField(props.collection, fieldKey)
 		: (props.fields?.find((field) => field.field === fieldKey) ?? null);
@@ -96,9 +103,16 @@ function handleArray(value: any, { fieldKey, fieldKeyBefore, fieldKeyAfter }: Ha
 		'display',
 		computed(() => field.meta?.display ?? null),
 	);
-
-	let component = field.meta?.display;
-	let options = field.meta?.display_options;
+	const renderOptions = {
+		component: field.meta?.display,
+		options: field.meta?.display_options,
+		value: value,
+		interface: field.meta?.interface,
+		interfaceOptions: field.meta?.options,
+		type: field.type,
+		collection: field.collection,
+		field: field.field,
+	};
 
 	if (!displayInfo.value) {
 		const localType = getLocalTypeForField(field.collection, field.field);
@@ -109,27 +123,38 @@ function handleArray(value: any, { fieldKey, fieldKeyBefore, fieldKeyAfter }: Ha
 				.filter((item: unknown) => !!item)
 				.join(', ');
 		}
-		component = 'related-values';
-		options = { template: `{{${fieldKeyAfter}}}` };
+		// handle the related collection templating
+		const relatedCollection = getRelatedCollection(field.collection, field.field);
+		// get the default template if available
+		if (relatedCollection) {
+			const collection = relatedCollection.junctionCollection ?? relatedCollection.relatedCollection;
+			const template = collectionStore.getCollection(collection)?.meta?.display_template;
+			if (template) {
+				renderOptions.options = { template };
+				renderOptions.value = (value as Record<string, any>[]).map((val) => val?.[fieldKeyAfter]);
+			} else {
+				// use the related collections primary key field
+				const pk = fieldsStore
+					.getFieldsForCollection(field.collection)
+					.find((field) => field.schema?.is_primary_key)?.field;
+				if (pk) {
+					renderOptions.options = { template: `{{${pk}}}` };
+				}
+			}
+		}
+
+		renderOptions.options = { template: `{{${fieldKey}}}`, ...renderOptions.options };
+		renderOptions.component = 'related-values';
 	}
 
-	return {
-		component,
-		options,
-		value: value,
-		interface: field.meta?.interface,
-		interfaceOptions: field.meta?.options,
-		type: field.type,
-		collection: field.collection,
-		field: field.field,
-	};
+	return renderOptions;
 }
 
 function handleObject(
-	value: Record<string, unknown> | unknown[],
+	container: Record<string, unknown> | unknown[],
 	{ fieldKey, fieldKeyBefore, fieldKeyAfter }: HandlerOptions,
 ) {
-	value = getFlat(value, fieldKeyAfter);
+	const value = getFlat(container, fieldKeyAfter);
 	if (Array.isArray(value)) {
 		return handleArray(value, { fieldKeyBefore, fieldKeyAfter, fieldKey });
 	}

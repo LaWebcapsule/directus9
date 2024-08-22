@@ -1,7 +1,9 @@
 <template>
 	<v-menu
 		v-if="
-			relatedCollection && localType && ['o2m', 'm2m', 'm2a', 'translations', 'files'].includes(localType.toLowerCase())
+			relatedCollection &&
+			localType &&
+			(['o2m', 'm2m', 'm2a', 'translations', 'files'].includes(localType.toLowerCase()) || Array.isArray(value))
 		"
 		show-arrow
 		:disabled="value.length === 0"
@@ -125,7 +127,9 @@ export default defineComponent({
 		};
 
 		function getLinkForItem(item: any) {
-			if (!relatedCollectionData.value || !primaryKeyFieldPath.value) return null;
+			if (!relatedCollectionData.value || !primaryKeyFieldPath.value) {
+				return ''; //TODO: consider the ramifications of this, will the link send the user to the homepage?
+			}
 			const primaryKey = get(item, primaryKeyFieldPath.value);
 
 			return `/content/${relatedCollection.value}/${encodeURIComponent(primaryKey)}`;
