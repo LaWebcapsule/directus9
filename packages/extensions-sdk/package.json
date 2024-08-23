@@ -1,6 +1,6 @@
 {
 	"name": "@db-studio/extensions-sdk",
-	"version": "1.0.5",
+	"version": "1.0.6",
 	"description": "A toolkit to develop extensions to extend DB Studio (formerly Directus v9)",
 	"homepage": "https://github.com/pxslip/db-studio",
 	"type": "module",

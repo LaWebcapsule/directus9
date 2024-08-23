@@ -1,5 +1,12 @@
 # @db-studio/app
 
+## 1.4.2
+
+### Patch Changes
+
+- Fixes an issue with the template rendering logic
+  - @db-studio/composables@1.0.3
+
 ## 1.4.1
 
 ### Patch Changes

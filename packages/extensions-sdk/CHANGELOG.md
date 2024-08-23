@@ -1,5 +1,13 @@
 # @db-studio/extensions-sdk
 
+## 1.0.6
+
+### Patch Changes
+
+- Updated dependencies
+  - @db-studio/utils@1.1.1
+  - @db-studio/composables@1.0.3
+
 ## 1.0.5
 
 ### Patch Changes

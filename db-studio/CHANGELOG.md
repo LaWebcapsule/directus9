@@ -1,5 +1,11 @@
 # directus9
 
+## 1.0.10
+
+### Patch Changes
+
+- @db-studio/api@1.0.9
+
 ## 1.0.9
 
 ### Patch Changes

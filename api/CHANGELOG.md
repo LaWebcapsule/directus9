@@ -1,5 +1,19 @@
 # @db-studio/api
 
+## 1.0.9
+
+### Patch Changes
+
+- Updated dependencies
+  - @db-studio/utils@1.1.1
+  - @db-studio/app@1.4.2
+  - @db-studio/extensions-sdk@1.0.6
+  - @db-studio/storage-driver-azure@1.0.3
+  - @db-studio/storage-driver-cloudinary@1.0.3
+  - @db-studio/storage-driver-gcs@1.0.3
+  - @db-studio/storage-driver-local@1.0.3
+  - @db-studio/storage-driver-s3@1.0.3
+
 ## 1.0.8
 
 ### Patch Changes
