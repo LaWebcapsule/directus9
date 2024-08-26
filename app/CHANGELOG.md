@@ -1,5 +1,11 @@
 # @db-studio/app
 
+## 1.4.3
+
+### Patch Changes
+
+- Fixes nested related values and the raw display
+
 ## 1.4.2
 
 ### Patch Changes
