@@ -145,6 +145,15 @@ function handleArray(value: any, { fieldKey, fieldKeyAfter }: HandlerOptions) {
 
 		renderOptions.options = { template: `{{${fieldKey}}}`, ...renderOptions.options };
 		renderOptions.component = 'related-values';
+	} else {
+		if (renderOptions.component === 'raw') {
+			if (typeof value[0] === 'object' && value[0]?.[field.field]) {
+				renderOptions.value =
+					value.length > 1
+						? value.map((item: Record<string, unknown>) => item?.[field.field]).filter((item: unknown) => !!item)
+						: value[0]?.[field.field];
+			}
+		}
 	}
 
 	return renderOptions;
