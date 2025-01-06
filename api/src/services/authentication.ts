@@ -12,7 +12,6 @@ import env from '../env.js';
 import {
 	InvalidCredentialsException,
 	InvalidOTPException,
-	InvalidProviderException,
 	UserSuspendedException,
 } from '../exceptions/index.js';
 import { createRateLimiter } from '../rate-limiter.js';
@@ -118,19 +117,11 @@ export class AuthenticationService {
 			);
 		};
 
-		if (user?.status !== 'active') {
+		if (user?.status !== 'active' || user.provider.toLowerCase() !== providerName.toLowerCase()) {
 			emitStatus('fail');
 
-			if (user?.status === 'suspended') {
-				await stall(STALL_TIME, timeStart);
-				throw new UserSuspendedException();
-			} else {
-				await stall(STALL_TIME, timeStart);
-				throw new InvalidCredentialsException();
-			}
-		} else if (user.provider.toLowerCase() !== providerName.toLowerCase()) {
 			await stall(STALL_TIME, timeStart);
-			throw new InvalidProviderException();
+			throw new InvalidCredentialsException();
 		}
 
 		const settingsService = new SettingsService({
