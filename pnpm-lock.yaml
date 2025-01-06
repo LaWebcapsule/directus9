@@ -733,8 +733,8 @@ importers:
         specifier: 5.1.0
         version: 5.1.0
       dompurify:
-        specifier: 3.0.2
-        version: 3.0.2
+        specifier: 3.1.7
+        version: 3.1.7
       escape-string-regexp:
         specifier: 5.0.0
         version: 5.0.0
@@ -11446,8 +11446,8 @@ packages:
     dependencies:
       domelementtype: 2.3.0
 
-  /dompurify@3.0.2:
-    resolution: {integrity: sha512-B8c6JdiEpxAKnd8Dm++QQxJL4lfuc757scZtcapj6qjTjrQzyq5iAyznLKVvK+77eYNiFblHBlt7MM0fOeqoKw==}
+  /dompurify@3.1.7:
+    resolution: {integrity: sha512-VaTstWtsneJY8xzy7DekmYWEOZcmzIe3Qb3zPd4STve1OBTa+e+WmS1ITQec1fZYXI3HCsOZZiSMpG6oxoWMWQ==}
     dev: true
 
   /domutils@2.8.0:
