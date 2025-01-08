@@ -32,12 +32,12 @@
 		"@wbce-d9/storage": "workspace:*",
 		"@wbce-d9/utils": "workspace:*",
 		"p-queue": "7.3.4",
-		"undici": "5.22.0"
+		"undici": "^5.28.4"
 	},
 	"devDependencies": {
-		"@wbce-d9/tsconfig": "0.0.7",
 		"@ngneat/falso": "6.4.0",
 		"@vitest/coverage-c8": "0.30.1",
+		"@wbce-d9/tsconfig": "0.0.7",
 		"typescript": "5.0.4",
 		"vitest": "0.30.1"
 	}
