@@ -80,3 +80,43 @@ test(`Throws error if IP address matches resolved localhost IP`, async () => {
 		expect(err.message).toBe(`Requested URL "${sample.url}" resolves to a denied IP address`);
 	}
 });
+
+
+test(`Throws error if IP matches resolved to local loopback devices`, async () => {
+	vi.mocked(getEnv).mockReturnValue({ IMPORT_IP_DENY_LIST: ['0.0.0.0'] });
+
+	vi.mocked(os.networkInterfaces).mockReturnValue({
+		fa0: undefined,
+		lo0: [
+			{
+				address: '127.0.0.1',
+				netmask: '255.0.0.0',
+				family: 'IPv4',
+				mac: '00:00:00:00:00:00',
+				internal: true,
+				cidr: '127.0.0.1/8',
+			},
+		],
+	});
+
+	try {
+		await validateIP('127.0.0.1', sample.url);
+	} catch (err: any) {
+		expect(err).toBeInstanceOf(Error);
+		expect(err.message).toBe(`Requested URL "${sample.url}" resolves to a denied IP address`);
+	}
+
+	try {
+		await validateIP('127.8.16.32', sample.url);
+	} catch (err: any) {
+		expect(err).toBeInstanceOf(Error);
+		expect(err.message).toBe(`Requested URL "${sample.url}" resolves to a denied IP address`);
+	}
+
+	try {
+		await validateIP('127.127.127.127', sample.url);
+	} catch (err: any) {
+		expect(err).toBeInstanceOf(Error);
+		expect(err.message).toBe(`Requested URL "${sample.url}" resolves to a denied IP address`);
+	}
+});
