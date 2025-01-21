@@ -19,7 +19,7 @@
 		"jest-environment-node": "29.5.0",
 		"js-yaml": "4.1.0",
 		"json-to-graphql-query": "2.2.5",
-		"knex": "2.4.2",
+		"knex": "3.1.0",
 		"listr2": "6.3.1",
 		"lodash": "4.17.21",
 		"seedrandom": "3.0.5",
