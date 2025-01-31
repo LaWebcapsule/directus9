@@ -22,6 +22,7 @@
 		"knex": "2.4.2",
 		"listr2": "6.3.1",
 		"lodash": "4.17.21",
+		"portfinder": "^1.0.32",
 		"seedrandom": "3.0.5",
 		"supertest": "6.3.3",
 		"ts-jest": "29.1.0",
