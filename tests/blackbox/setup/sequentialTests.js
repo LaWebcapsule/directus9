@@ -6,6 +6,7 @@ exports.list = {
 		{ testFilePath: '/routes/schema/schema.test.ts' },
 		{ testFilePath: '/routes/collections/crud.test.ts' },
 		{ testFilePath: '/routes/fields/change-fields.test.ts' },
+		{ testFilePath: '/routes/fields/crud.test.ts' },
 	],
 	after: [
 		{ testFilePath: '/schema/timezone/timezone.test.ts' },
