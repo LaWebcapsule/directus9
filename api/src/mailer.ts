@@ -67,16 +67,18 @@ export default function getMailer(): Transporter {
 		);
 	} else if (transportName === 'sendgrid') {
 		let auth: boolean | { user?: string; pass?: string } = false;
+
 		if (env['EMAIL_SENDGRID_API_KEY'] || env['EMAIL_SMTP_PASSWORD']) {
 			auth = {
 				user: 'apikey',
 				pass: env['EMAIL_SENDGRID_API_KEY'],
 			};
 		}
+
 		transporter = nodemailer.createTransport({
 			host: 'smtp.sendgrid.net',
 			port: 587,
-			auth
+			auth,
 		} as Record<string, unknown>);
 	} else {
 		logger.warn('Illegal transport given for email. Check the EMAIL_TRANSPORT env var.');

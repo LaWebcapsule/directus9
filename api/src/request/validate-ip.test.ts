@@ -81,7 +81,6 @@ test(`Throws error if IP address matches resolved localhost IP`, async () => {
 	}
 });
 
-
 test(`Throws error if IP matches resolved to local loopback devices`, async () => {
 	vi.mocked(getEnv).mockReturnValue({ IMPORT_IP_DENY_LIST: ['0.0.0.0'] });
 
