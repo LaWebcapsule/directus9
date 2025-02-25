@@ -122,7 +122,7 @@
 		"react-dom": "^18.2.0",
 		"sass": "1.62.0",
 		"storybook": "7.0.6",
-		"tinymce": "6.4.1",
+		"tinymce": "7.2.0",
 		"typescript": "5.0.4",
 		"vite": "4.3.1",
 		"vitest": "0.30.1",
