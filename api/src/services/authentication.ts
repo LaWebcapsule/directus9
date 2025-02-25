@@ -9,12 +9,7 @@ import { DEFAULT_AUTH_PROVIDER } from '../constants.js';
 import getDatabase from '../database/index.js';
 import emitter from '../emitter.js';
 import env from '../env.js';
-import {
-	InvalidCredentialsException,
-	InvalidOTPException,
-	InvalidProviderException,
-	UserSuspendedException,
-} from '../exceptions/index.js';
+import { InvalidCredentialsException, InvalidOTPException, UserSuspendedException } from '../exceptions/index.js';
 import { createRateLimiter } from '../rate-limiter.js';
 import type { AbstractServiceOptions, DirectusTokenPayload, LoginResult, Session, User } from '../types/index.js';
 import { getMilliseconds } from '../utils/get-milliseconds.js';
@@ -118,19 +113,11 @@ export class AuthenticationService {
 			);
 		};
 
-		if (user?.status !== 'active') {
+		if (user?.status !== 'active' || user.provider.toLowerCase() !== providerName.toLowerCase()) {
 			emitStatus('fail');
 
-			if (user?.status === 'suspended') {
-				await stall(STALL_TIME, timeStart);
-				throw new UserSuspendedException();
-			} else {
-				await stall(STALL_TIME, timeStart);
-				throw new InvalidCredentialsException();
-			}
-		} else if (user.provider.toLowerCase() !== providerName.toLowerCase()) {
 			await stall(STALL_TIME, timeStart);
-			throw new InvalidProviderException();
+			throw new InvalidCredentialsException();
 		}
 
 		const settingsService = new SettingsService({

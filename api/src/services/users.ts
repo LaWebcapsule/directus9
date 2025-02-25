@@ -138,9 +138,11 @@ export class UsersService extends ItemsService {
 	/**
 	 * Get basic information of user identified by email
 	 */
-	private async getUserByEmail(email: string): Promise<{ id: string; role: string; status: string; password: string }> {
+	private async getUserByEmail(
+		email: string
+	): Promise<{ id: string; role: string; status: string; password: string; email: string }> {
 		return await this.knex
-			.select('id', 'role', 'status', 'password')
+			.select('id', 'role', 'status', 'password', 'email')
 			.from('directus_users')
 			.whereRaw(`LOWER(??) = ?`, ['email', email.toLowerCase()])
 			.first();
@@ -369,13 +371,13 @@ export class UsersService extends ItemsService {
 				const subjectLine = subject ?? "You've been invited";
 
 				await mailService.send({
-					to: email,
+					to: user.email,
 					subject: subjectLine,
 					template: {
 						name: 'user-invitation',
 						data: {
 							url: this.inviteUrl(email, url),
-							email,
+							email: user.email,
 						},
 					},
 				});
@@ -427,7 +429,7 @@ export class UsersService extends ItemsService {
 			accountability: this.accountability,
 		});
 
-		const payload = { email, scope: 'password-reset', hash: getSimpleHash('' + user.password) };
+		const payload = { email: user.email, scope: 'password-reset', hash: getSimpleHash('' + user.password) };
 		const token = jwt.sign(payload, env['SECRET'] as string, { expiresIn: '1d', issuer: 'directus' });
 
 		const acceptURL = url
@@ -437,13 +439,13 @@ export class UsersService extends ItemsService {
 		const subjectLine = subject ? subject : 'Password Reset Request';
 
 		await mailService.send({
-			to: email,
+			to: user.email,
 			subject: subjectLine,
 			template: {
 				name: 'password-reset',
 				data: {
 					url: acceptURL,
-					email,
+					email: user.email,
 				},
 			},
 		});

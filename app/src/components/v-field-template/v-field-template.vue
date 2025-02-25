@@ -35,6 +35,7 @@ import { FieldTree } from './types';
 import { Field, Relation } from '@wbce-d9/types';
 import { useFieldTree } from '@/composables/use-field-tree';
 import { flattenFieldGroups } from '@/utils/flatten-field-groups';
+import dompurify from 'dompurify';
 
 interface Props {
 	disabled?: boolean;
@@ -289,7 +290,10 @@ function setContent() {
 			})
 			.join('');
 
-		contentEl.value.innerHTML = newInnerHTML;
+		contentEl.value.innerHTML = dompurify.sanitize(newInnerHTML, {
+			ALLOWED_TAGS: ['span', 'button'],
+			ALLOWED_ATTR: ['contenteditable', 'data-field', 'disabled', 'class'],
+		});
 	}
 }
 </script>

@@ -28,7 +28,8 @@ export const respond: RequestHandler = asyncHandler(async (req, res) => {
 		cache &&
 		!req.sanitizedQuery.export &&
 		res.locals['cache'] !== false &&
-		exceedsMaxSize === false
+		exceedsMaxSize === false &&
+		req.originalUrl?.startsWith('/auth')
 	) {
 		const key = getCacheKey(req);
 

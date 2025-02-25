@@ -66,13 +66,20 @@ export default function getMailer(): Transporter {
 			}) as any
 		);
 	} else if (transportName === 'sendgrid') {
-		const sg = require('nodemailer-sendgrid');
+		let auth: boolean | { user?: string; pass?: string } = false;
 
-		transporter = nodemailer.createTransport(
-			sg({
-				apiKey: env['EMAIL_SENDGRID_API_KEY'],
-			}) as any
-		);
+		if (env['EMAIL_SENDGRID_API_KEY'] || env['EMAIL_SMTP_PASSWORD']) {
+			auth = {
+				user: 'apikey',
+				pass: env['EMAIL_SENDGRID_API_KEY'],
+			};
+		}
+
+		transporter = nodemailer.createTransport({
+			host: 'smtp.sendgrid.net',
+			port: 587,
+			auth,
+		} as Record<string, unknown>);
 	} else {
 		logger.warn('Illegal transport given for email. Check the EMAIL_TRANSPORT env var.');
 	}
