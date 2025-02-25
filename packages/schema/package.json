@@ -42,7 +42,7 @@
 		"dev": "tsc --watch"
 	},
 	"dependencies": {
-		"knex": "2.4.2"
+		"knex": "3.1.0"
 	},
 	"devDependencies": {
 		"@wbce-d9/tsconfig": "0.0.7",

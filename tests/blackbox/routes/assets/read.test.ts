@@ -1,7 +1,8 @@
 import { getUrl } from '@common/config';
 import request from 'supertest';
 import vendors from '@common/get-dbs-to-test';
-import { createReadStream, readFileSync } from 'fs';
+import { createReadStream } from 'fs';
+import { readFile } from 'fs/promises';
 import path from 'path';
 import * as common from '@common/index';
 
@@ -36,7 +37,7 @@ describe('/assets', () => {
 				expect(response.statusCode).toBe(200);
 				expect(response.headers['content-type']).toBe(imageFile.type);
 				expect(response.headers['content-length']).toBe(imageFile.filesize);
-				expect(Buffer.compare(response.body, await readFileSync(imageFilePath))).toBe(0);
+				expect(Buffer.compare(response.body, await readFile(imageFilePath))).toBe(0);
 			});
 		});
 	});

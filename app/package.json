@@ -76,7 +76,7 @@
 		"@types/wellknown": "0.5.4",
 		"@vitejs/plugin-vue": "4.1.0",
 		"@vue/compiler-sfc": "3.2.47",
-		"@vue/test-utils": "2.3.2",
+		"@vue/test-utils": "2.4.6",
 		"@wbce-d9/constants": "workspace:*",
 		"@wbce-d9/exceptions": "workspace:*",
 		"@wbce-d9/extensions-sdk": "workspace:*",

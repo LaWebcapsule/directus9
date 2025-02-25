@@ -100,7 +100,7 @@
 		"chokidar": "3.5.3",
 		"commander": "10.0.1",
 		"content-disposition": "0.5.4",
-		"cookie-parser": "1.4.6",
+		"cookie-parser": "1.4.7",
 		"cors": "2.8.5",
 		"csv-parser": "3.0.0",
 		"date-fns": "2.29.3",
@@ -127,7 +127,7 @@
 		"json2csv": "5.0.7",
 		"jsonwebtoken": "9.0.0",
 		"keyv": "4.5.2",
-		"knex": "2.4.2",
+		"knex": "3.1.0",
 		"ldapjs": "2.3.3",
 		"liquidjs": "10.7.0",
 		"lodash-es": "4.17.21",
@@ -207,7 +207,7 @@
 		"@wbce-d9/types": "workspace:*",
 		"copyfiles": "2.4.1",
 		"form-data": "4.0.0",
-		"knex-mock-client": "2.0.0",
+		"knex-mock-client": "3.0.2",
 		"supertest": "6.3.3",
 		"typescript": "5.0.4",
 		"vitest": "0.30.1"
@@ -220,7 +220,7 @@
 		"nodemailer-mailgun-transport": "2.1.5",
 		"pg": "8.10.0",
 		"sqlite3": "5.1.6",
-		"tedious": "16.0.0"
+		"tedious": "18.6.1"
 	},
 	"engines": {
 		"node": ">=18.0.0"

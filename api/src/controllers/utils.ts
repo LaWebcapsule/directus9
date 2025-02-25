@@ -20,15 +20,20 @@ import { sanitizeQuery } from '../utils/sanitize-query.js';
 
 const router = Router();
 
+const randomStringSchemaDesc = Joi.object<{ length: number }>({
+	length: Joi.number().integer().min(1).max(500).default(32),
+});
+
 router.get(
 	'/random/string',
 	asyncHandler(async (req, res) => {
 		const { nanoid } = await import('nanoid');
 
-		if (req.query && req.query['length'] && Number(req.query['length']) > 500)
-			throw new InvalidQueryException(`"length" can't be more than 500 characters`);
+		const { error, value } = randomStringSchemaDesc.validate(req.query, { allowUnknown: true });
 
-		const string = nanoid(req.query?.['length'] ? Number(req.query['length']) : 32);
+		if (error) throw new InvalidQueryException(error.message);
+
+		const string = nanoid(value.length);
 
 		return res.json({ data: string });
 	})
