@@ -9,6 +9,7 @@ import type { Knex } from 'knex';
 import knex from 'knex';
 import { cloneDeep } from 'lodash';
 import request from 'supertest';
+import * as portfinder from 'portfinder';
 
 describe('Logger Redact Tests', () => {
 	const databases = new Map<string, Knex>();
@@ -16,17 +17,17 @@ describe('Logger Redact Tests', () => {
 	const env = cloneDeep(config.envs);
 	const authModes = ['json', 'cookie'];
 
-	for (const vendor of vendors) {
-		env[vendor].LOG_STYLE = 'raw';
-		env[vendor].LOG_LEVEL = 'info';
-		env[vendor].PORT = String(Number(env[vendor]!.PORT) + 500);
-	}
-
 	beforeAll(async () => {
 		const promises = [];
 
 		for (const vendor of vendors) {
 			databases.set(vendor, knex(config.knexConfig[vendor]!));
+
+			const newServerPort = await portfinder.getPortPromise();
+
+			env[vendor].LOG_STYLE = 'raw';
+			env[vendor].LOG_LEVEL = 'info';
+			env[vendor].PORT = String(newServerPort);
 
 			const server = spawn('node', [paths.cli, 'start'], { cwd: paths.cwd, env: env[vendor] });
 			directusInstances[vendor] = server;

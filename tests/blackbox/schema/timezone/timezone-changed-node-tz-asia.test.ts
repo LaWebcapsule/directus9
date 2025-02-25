@@ -9,6 +9,7 @@ import type { Knex } from 'knex';
 import knex from 'knex';
 import { cloneDeep } from 'lodash';
 import request from 'supertest';
+import * as portfinder from 'portfinder';
 
 const collectionName = 'schema_timezone_tests';
 
@@ -66,7 +67,7 @@ describe('schema', () => {
 		const promises = [];
 
 		for (const vendor of vendors) {
-			const newServerPort = Number(config.envs[vendor]!.PORT) + 100;
+			const newServerPort = await portfinder.getPortPromise();
 			databases.set(vendor, knex(config.knexConfig[vendor]!));
 
 			config.envs[vendor]!.TZ = newTz;
@@ -93,7 +94,7 @@ describe('schema', () => {
 		for (const [vendor, connection] of databases) {
 			tzDirectus[vendor]!.kill();
 
-			config.envs[vendor]!.PORT = String(Number(config.envs[vendor]!.PORT) - 100);
+			config.envs[vendor]!.PORT = String(await portfinder.getPortPromise());
 			delete config.envs[vendor]!.TZ;
 
 			await connection.destroy();
