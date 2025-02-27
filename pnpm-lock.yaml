@@ -912,7 +912,7 @@ importers:
   packages/constants:
     dependencies:
       zod:
-        specifier: '>=3.22.3'
+        specifier: 3.22.3
         version: 3.22.3
     devDependencies:
       '@wbce-d9/tsconfig':
