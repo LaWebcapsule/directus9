@@ -31,7 +31,9 @@ describe('useLocalStorage', () => {
 
 		describe('when there is an error while parsing', () => {
 			it('returns default value', () => {
-				vi.spyOn(console, 'warn').mockImplementationOnce(() => {});
+				vi.spyOn(console, 'warn').mockImplementationOnce(() => {
+					return;
+				});
 
 				localStorage.setItem(keyWithPrefix, 'wrong value');
 				const { data } = useLocalStorage(key);
@@ -54,8 +56,10 @@ describe('useLocalStorage', () => {
 
 			describe('when there is an error while stringifying', () => {
 				it('does not set new value', () => {
-					vi.spyOn(console, 'warn').mockImplementationOnce(() => {});
-					
+					vi.spyOn(console, 'warn').mockImplementationOnce(() => {
+						return;
+					});
+
 					const currentValue = 'Hello!';
 					const stringifiedValue = JSON.stringify(currentValue);
 					localStorage.setItem(keyWithPrefix, stringifiedValue);
