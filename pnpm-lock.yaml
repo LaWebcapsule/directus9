@@ -514,7 +514,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@9.8.4)(sass@1.62.0)
+        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
 
   app:
     dependencies:
@@ -742,8 +742,8 @@ importers:
         specifier: 0.5.0
         version: 0.5.0
       happy-dom:
-        specifier: 9.8.4
-        version: 9.8.4
+        specifier: 15.10.2
+        version: 15.10.2
       html-entities:
         specifier: 2.3.3
         version: 2.3.3
@@ -818,7 +818,7 @@ importers:
         version: 4.5.6(@types/node@18.15.13)(sass@1.62.0)
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@9.8.4)(sass@1.62.0)
+        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
       vue:
         specifier: 3.2.47
         version: 3.2.47
@@ -907,7 +907,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@9.8.4)(sass@1.62.0)
+        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
 
   packages/constants:
     dependencies:
@@ -956,7 +956,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@9.8.4)(sass@1.62.0)
+        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
 
   packages/extensions-sdk:
     dependencies:
@@ -1044,7 +1044,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@9.8.4)(sass@1.62.0)
+        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
 
   packages/schema:
     dependencies:
@@ -1091,7 +1091,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@9.8.4)(sass@1.62.0)
+        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
 
   packages/storage-driver-azure:
     dependencies:
@@ -1119,7 +1119,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@9.8.4)(sass@1.62.0)
+        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
 
   packages/storage-driver-cloudinary:
     dependencies:
@@ -1150,7 +1150,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@9.8.4)(sass@1.62.0)
+        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
 
   packages/storage-driver-gcs:
     dependencies:
@@ -1178,7 +1178,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@9.8.4)(sass@1.62.0)
+        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
 
   packages/storage-driver-local:
     dependencies:
@@ -1203,7 +1203,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@9.8.4)(sass@1.62.0)
+        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
 
   packages/storage-driver-s3:
     dependencies:
@@ -1237,7 +1237,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@9.8.4)(sass@1.62.0)
+        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
 
   packages/types:
     devDependencies:
@@ -1307,7 +1307,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@9.8.4)(sass@1.62.0)
+        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
 
   packages/utils:
     dependencies:
@@ -1371,7 +1371,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@9.8.4)(sass@1.62.0)
+        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
 
   tests/blackbox:
     devDependencies:
@@ -7899,7 +7899,7 @@ packages:
       c8: 7.13.0
       picocolors: 1.1.1
       std-env: 3.8.0
-      vitest: 0.30.1(happy-dom@9.8.4)(sass@1.62.0)
+      vitest: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
     dev: true
 
   /@vitest/expect@0.30.1:
@@ -10037,10 +10037,6 @@ packages:
     engines: {node: '>= 6'}
     dev: false
 
-  /css.escape@1.5.1:
-    resolution: {integrity: sha512-YUifsXXuknHlUsmlgyY0PKzgPOr7/FjCePfHNt0jxm83wHZi44VDMQ7/fGNkjY3/jV1MC+1CmZbaHzugyeRtpg==}
-    dev: true
-
   /csscolorparser@1.0.3:
     resolution: {integrity: sha512-umPSgYwZkdFoUrH5hIq5kf0wPSXiro51nPw0j2K/c83KflkPSTBGMz6NJvMB+07VlL0y7VPo6QJcDjcgKTTm3w==}
     dev: true
@@ -12128,14 +12124,12 @@ packages:
       uglify-js: 3.19.3
     dev: true
 
-  /happy-dom@9.8.4:
-    resolution: {integrity: sha512-IB2glIailsAloOmTfRRQfpA3aW/bbhpdw9wX1CKvDrmj8tMVtdabjM+579YLdHpBXVyOku+p07+aea7TdnGnyw==}
+  /happy-dom@15.10.2:
+    resolution: {integrity: sha512-NbA5XrSovenJIIcfixCREX3ZnV7yHP4phhbfuxxf4CPn+LZpz/jIM9EqJ2DrPwgVDSMoAKH3pZwQvkbsSiCrUw==}
+    engines: {node: '>=18.0.0'}
     dependencies:
-      css.escape: 1.5.1
-      he: 1.2.0
-      iconv-lite: 0.6.3
+      entities: 4.5.0
       webidl-conversions: 7.0.0
-      whatwg-encoding: 2.0.0
       whatwg-mimetype: 3.0.0
     dev: true
 
@@ -12220,11 +12214,6 @@ packages:
 
   /hdr-histogram-percentiles-obj@3.0.0:
     resolution: {integrity: sha512-7kIufnBqdsBGcSZLPJwqHT3yhk1QTsSlFsVD3kx5ixH/AlgBs9yM1q6DPhXZ8f8gtdqgh7N7/5btRLpQsS2gHw==}
-    dev: true
-
-  /he@1.2.0:
-    resolution: {integrity: sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==}
-    hasBin: true
     dev: true
 
   /helmet@6.1.5:
@@ -19940,7 +19929,7 @@ packages:
       - terser
     dev: true
 
-  /vitest@0.30.1(happy-dom@9.8.4)(sass@1.62.0):
+  /vitest@0.30.1(happy-dom@15.10.2)(sass@1.62.0):
     resolution: {integrity: sha512-y35WTrSTlTxfMLttgQk4rHcaDkbHQwDP++SNwPb+7H8yb13Q3cu2EixrtHzF27iZ8v0XCciSsLg00RkPAzB/aA==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -19985,7 +19974,7 @@ packages:
       chai: 4.5.0
       concordance: 5.0.4
       debug: 4.4.0
-      happy-dom: 9.8.4
+      happy-dom: 15.10.2
       local-pkg: 0.4.3
       magic-string: 0.30.17
       pathe: 1.1.2
@@ -20239,13 +20228,6 @@ packages:
 
   /wgs84@0.0.0:
     resolution: {integrity: sha512-ANHlY4Rb5kHw40D0NJ6moaVfOCMrp9Gpd1R/AIQYg2ko4/jzcJ+TVXYYF6kXJqQwITvEZP4yEthjM7U6rYlljQ==}
-    dev: true
-
-  /whatwg-encoding@2.0.0:
-    resolution: {integrity: sha512-p41ogyeMUrw3jWclHWTQg1k05DSVXPLcVxRTYsXUk+ZooOCZLcoYgPZ/HL/D/N+uQPOtcp1me1WhBEaX02mhWg==}
-    engines: {node: '>=12'}
-    dependencies:
-      iconv-lite: 0.6.3
     dev: true
 
   /whatwg-mimetype@3.0.0:

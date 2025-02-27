@@ -1,20 +1,12 @@
-<template>
-	<div class="time-series">
-		<div ref="chartEl" />
-	</div>
-</template>
-
 <script setup lang="ts">
 import { useFieldsStore } from '@/stores/fields';
-import { Filter } from '@wbce-d9/types';
+import type { Filter } from '@wbce-d9/types';
 import { abbreviateNumber, adjustDate } from '@wbce-d9/utils';
-import { cssVar } from '@wbce-d9/utils/browser';
 import ApexCharts from 'apexcharts';
 import { addWeeks } from 'date-fns';
-import { isNil, snakeCase } from 'lodash';
+import { isNil, orderBy, snakeCase } from 'lodash';
 import { computed, onMounted, onUnmounted, ref, watch } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { orderBy } from 'lodash';
 
 const props = withDefaults(
 	defineProps<{
@@ -43,7 +35,7 @@ const props = withDefaults(
 		showHeader: false,
 		data: () => [],
 		precision: 'hour',
-		color: cssVar('--primary'),
+		color: 'var(--primary)',
 		range: '1 week',
 		fillType: 'gradient',
 		curveType: 'smooth',
@@ -132,7 +124,7 @@ function setupChart() {
 	);
 
 	chart.value = new ApexCharts(chartEl.value, {
-		colors: [props.color ? props.color : cssVar('--primary')],
+		colors: [props.color ? props.color : 'var(--primary)'],
 		chart: {
 			type: props.fillType === 'disabled' ? 'line' : 'area',
 			height: '100%',
@@ -175,12 +167,12 @@ function setupChart() {
 					[
 						{
 							offset: 0,
-							color: props.color ? props.color : cssVar('--primary'),
+							color: props.color ? props.color : 'var(--primary)',
 							opacity: 0.25,
 						},
 						{
 							offset: 100,
-							color: props.color ? props.color : cssVar('--primary'),
+							color: props.color ? props.color : 'var(--primary)',
 							opacity: 0,
 						},
 					],
@@ -323,6 +315,12 @@ function setupChart() {
 	}
 }
 </script>
+
+<template>
+	<div class="time-series">
+		<div ref="chartEl" />
+	</div>
+</template>
 
 <style scoped>
 .time-series {
