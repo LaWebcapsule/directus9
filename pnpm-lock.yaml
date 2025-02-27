@@ -319,7 +319,7 @@ importers:
         specifier: 2.8.10
         version: 2.8.10
       sanitize-html:
-        specifier: '>=2.12.1'
+        specifier: 2.12.1
         version: 2.12.1
       sharp:
         specifier: 0.32.6
@@ -16767,7 +16767,6 @@ packages:
       nanoid: 3.3.8
       picocolors: 1.1.1
       source-map-js: 1.2.1
-    dev: true
 
   /postgres-array@2.0.0:
     resolution: {integrity: sha512-VpZrUqU5A69eQyW2c5CA1jtLecCsN2U/bD6VilrFDWq5+5UIEVO7nazS3TEcHf1zuPYO/sqGvUvW62g86RXZuA==}
@@ -17989,7 +17988,7 @@ packages:
       htmlparser2: 8.0.2
       is-plain-object: 5.0.0
       parse-srcset: 1.0.2
-      postcss: 8.5.1
+      postcss: 8.5.3
     dev: false
 
   /sass@1.62.0:
