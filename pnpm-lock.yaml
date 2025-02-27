@@ -322,7 +322,7 @@ importers:
         specifier: '>=2.12.1'
         version: 2.12.1
       sharp:
-        specifier: '>=0.32.6'
+        specifier: 0.32.6
         version: 0.32.6
       snappy:
         specifier: 7.2.2
