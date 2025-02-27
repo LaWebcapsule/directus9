@@ -138,7 +138,7 @@
 		"nanoid": "5.0.9",
 		"node-cron": "3.0.2",
 		"node-machine-id": "1.1.12",
-		"nodemailer": "6.9.1",
+		"nodemailer": "6.9.9",
 		"object-hash": "3.0.0",
 		"openapi3-ts": "3.2.0",
 		"openid-client": "5.4.0",
