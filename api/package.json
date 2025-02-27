@@ -150,7 +150,7 @@
 		"pino-pretty": "10.0.0",
 		"qs": "6.11.1",
 		"rate-limiter-flexible": "2.4.1",
-		"rollup": "3.20.7",
+		"rollup": "3.29.5",
 		"samlify": "2.8.10",
 		"sanitize-html": "2.10.0",
 		"sharp": "0.32.0",
