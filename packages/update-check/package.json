@@ -29,7 +29,7 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"semver": "7.5.0",
+		"semver": "7.5.2",
 		"undici": "^5.28.4"
 	},
 	"devDependencies": {

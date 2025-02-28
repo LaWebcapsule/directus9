@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it } from 'vitest';
+import { beforeEach, describe, expect, it, vi } from 'vitest';
 import { useLocalStorage } from '@/composables/use-local-storage';
 
 describe('useLocalStorage', () => {
@@ -31,6 +31,10 @@ describe('useLocalStorage', () => {
 
 		describe('when there is an error while parsing', () => {
 			it('returns default value', () => {
+				vi.spyOn(console, 'warn').mockImplementationOnce(() => {
+					return;
+				});
+
 				localStorage.setItem(keyWithPrefix, 'wrong value');
 				const { data } = useLocalStorage(key);
 
@@ -52,6 +56,10 @@ describe('useLocalStorage', () => {
 
 			describe('when there is an error while stringifying', () => {
 				it('does not set new value', () => {
+					vi.spyOn(console, 'warn').mockImplementationOnce(() => {
+						return;
+					});
+
 					const currentValue = 'Hello!';
 					const stringifiedValue = JSON.stringify(currentValue);
 					localStorage.setItem(keyWithPrefix, stringifiedValue);
