@@ -1,5 +1,11 @@
 # @wbce-d9/update-check
 
+## 9.27.0
+
+### Minor Changes
+
+- af89302: Update dependencies to fix vulnerabilities
+
 ## 9.26.4
 
 ### Patch Changes

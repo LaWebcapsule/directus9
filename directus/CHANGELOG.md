@@ -1,5 +1,12 @@
 # directus9
 
+## 10.2.1
+
+### Patch Changes
+
+- Updated dependencies [af89302]
+  - @wbce-d9/api@10.5.0
+
 ## 10.2.0
 
 ### Minor Changes
