@@ -589,8 +589,8 @@ importers:
         specifier: 7.0.6
         version: 7.0.6(react-dom@18.2.0)(react@18.2.0)(typescript@5.0.4)(vite@4.5.6)(vue@3.2.47)
       '@tinymce/tinymce-vue':
-        specifier: 5.1.0
-        version: 5.1.0(vue@3.2.47)
+        specifier: 6.0.1
+        version: 6.0.1(vue@3.2.47)
       '@turf/meta':
         specifier: 6.5.0
         version: 6.5.0
@@ -7229,12 +7229,12 @@ packages:
       qs: 6.11.1
     dev: true
 
-  /@tinymce/tinymce-vue@5.1.0(vue@3.2.47):
-    resolution: {integrity: sha512-Z4R8zaOKrAXBhHWsq+qUlwHY+rvze2RgxHDrZ5+qTYkGvRofW5880HLG9gvv6TRPVsNSQBNMdsaOjJ/eueccgA==}
+  /@tinymce/tinymce-vue@6.0.1(vue@3.2.47):
+    resolution: {integrity: sha512-VzjI8AKlNrrsosIk3WuBez6kubqPsPMeaButkRLuts77uo4e2EwPRFX+VyB6fHbMGHwUPK22zNjOUGMvJFZFCw==}
     peerDependencies:
       vue: ^3.0.0
     dependencies:
-      tinymce: 6.8.5
+      tinymce: 7.2.0
       vue: 3.2.47
     dev: true
 
@@ -19293,10 +19293,6 @@ packages:
 
   /tinyexec@0.3.2:
     resolution: {integrity: sha512-KQQR9yN7R5+OSwaK0XQoj22pwHoTlgYqmUscPYoknOoWCWfj/5/ABTMRi69FrKU5ffPVh5QcFikpWJI/P1ocHA==}
-    dev: true
-
-  /tinymce@6.8.5:
-    resolution: {integrity: sha512-qAL/FxL7cwZHj4BfaF818zeJJizK9jU5IQzTcSLL4Rj5MaJdiVblEj7aDr80VCV1w9h4Lak9hlnALhq/kVtN1g==}
     dev: true
 
   /tinymce@7.2.0:

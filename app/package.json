@@ -56,7 +56,7 @@
 		"@storybook/client-logger": "7.0.6",
 		"@storybook/vue3": "7.0.6",
 		"@storybook/vue3-vite": "7.0.6",
-		"@tinymce/tinymce-vue": "5.1.0",
+		"@tinymce/tinymce-vue": "6.0.1",
 		"@turf/meta": "6.5.0",
 		"@types/base-64": "1.0.0",
 		"@types/codemirror": "5.60.7",
