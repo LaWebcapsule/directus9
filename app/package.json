@@ -130,7 +130,7 @@
 		"vue-i18n": "9.2.2",
 		"vue-router": "4.1.6",
 		"vuedraggable": "4.1.0",
-		"webpack": "5.80.0",
+		"webpack": "5.94.0",
 		"wellknown": "0.5.0"
 	},
 	"publishConfig": {
