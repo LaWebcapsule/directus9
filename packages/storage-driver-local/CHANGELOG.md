@@ -1,5 +1,11 @@
 # @wbce-d9/storage-driver-local
 
+## 9.26.8
+
+### Patch Changes
+
+- @wbce-d9/utils@9.29.1
+
 ## 9.26.7
 
 ### Patch Changes
