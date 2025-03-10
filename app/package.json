@@ -84,7 +84,7 @@
 		"@wbce-d9/types": "workspace:*",
 		"@wbce-d9/utils": "workspace:*",
 		"apexcharts": "3.39.0",
-		"axios": "^1.7.9",
+		"axios": "^1.8.2",
 		"babel-loader": "^9.1.2",
 		"base-64": "1.0.0",
 		"c8": "7.13.0",
