@@ -30,7 +30,7 @@
 	},
 	"dependencies": {
 		"semver": "7.5.2",
-		"undici": "^5.28.4"
+		"undici": "5.28.5"
 	},
 	"devDependencies": {
 		"@ngneat/falso": "6.4.0",
