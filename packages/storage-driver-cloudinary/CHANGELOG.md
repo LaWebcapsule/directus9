@@ -1,5 +1,15 @@
 # @wbce-d9/storage-driver-cloudinary
 
+## 9.27.0
+
+### Minor Changes
+
+- af89302: Update dependencies to fix vulnerabilities
+
+### Patch Changes
+
+- @wbce-d9/utils@9.29.1
+
 ## 9.26.7
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @wbce-d9/constants
 
+## 9.28.0
+
+### Minor Changes
+
+- af89302: Update dependencies to fix vulnerabilities
+
 ## 9.27.0
 
 ### Minor Changes
