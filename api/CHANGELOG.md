@@ -4,7 +4,7 @@
 
 ### Minor Changes
 
-- af89302: Update dependencies to fix vulnerabilities
+- af89302: npm security updates
 
 ### Patch Changes
 
