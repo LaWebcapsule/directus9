@@ -1,5 +1,16 @@
 # @wbce-d9/app
 
+## 9.31.0
+
+### Minor Changes
+
+- af89302: npm security updates
+
+### Patch Changes
+
+- Updated dependencies [af89302]
+  - @wbce-d9/composables@9.28.0
+
 ## 9.30.0
 
 ### Minor Changes

@@ -1,5 +1,19 @@
 # @wbce-d9/extensions-sdk
 
+## 9.27.0
+
+### Minor Changes
+
+- af89302: npm security update
+
+### Patch Changes
+
+- Updated dependencies [af89302]
+  - @wbce-d9/composables@9.28.0
+  - @wbce-d9/constants@9.28.0
+  - @wbce-d9/types@9.27.0
+  - @wbce-d9/utils@9.29.1
+
 ## 9.26.7
 
 ### Patch Changes
