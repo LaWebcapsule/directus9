@@ -1,5 +1,12 @@
 # @wbce-d9/utils
 
+## 9.29.1
+
+### Patch Changes
+
+- Updated dependencies [af89302]
+  - @wbce-d9/constants@9.28.0
+
 ## 9.29.0
 
 ### Minor Changes
