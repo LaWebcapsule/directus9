@@ -30,11 +30,11 @@
 	},
 	"dependencies": {
 		"semver": "7.5.2",
-		"undici": "^5.28.4"
+		"undici": "5.28.5"
 	},
 	"devDependencies": {
 		"@ngneat/falso": "6.4.0",
-		"@types/semver": "7.3.13",
+		"@types/semver": "7.5.8",
 		"@vitest/coverage-c8": "0.30.1",
 		"@wbce-d9/tsconfig": "0.0.7",
 		"typescript": "5.0.4",
