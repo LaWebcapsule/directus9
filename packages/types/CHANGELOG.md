@@ -1,5 +1,11 @@
 # @wbce-d9/types
 
+## 9.28.0
+
+### Minor Changes
+
+- 40644e2: Dependencies update to fix vulnerabilities
+
 ## 9.27.0
 
 ### Minor Changes

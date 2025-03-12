@@ -1,5 +1,16 @@
 # @wbce-d9/app
 
+## 9.32.0
+
+### Minor Changes
+
+- 40644e2: Dependencies update to fix vulnerabilities
+
+### Patch Changes
+
+- Updated dependencies [40644e2]
+  - @wbce-d9/composables@9.29.0
+
 ## 9.31.0
 
 ### Minor Changes
