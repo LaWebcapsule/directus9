@@ -1,5 +1,20 @@
 # @wbce-d9/api
 
+## 10.6.0
+
+### Minor Changes
+
+- 40644e2: npm security updates
+
+### Patch Changes
+
+- Updated dependencies [40644e2]
+  - @wbce-d9/update-check@9.28.0
+  - @wbce-d9/app@9.32.0
+  - @wbce-d9/extensions-sdk@9.27.1
+  - @wbce-d9/exceptions@9.26.4
+  - @wbce-d9/utils@9.29.1
+
 ## 10.5.0
 
 ### Minor Changes
