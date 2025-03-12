@@ -4,7 +4,7 @@
 
 ### Minor Changes
 
-- 40644e2: Dependencies update to fix vulnerabilities
+- 40644e2: npm security updates
 
 ## 9.27.0
 
