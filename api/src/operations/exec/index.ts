@@ -10,7 +10,7 @@ type ExecutionOptions = {
 
 export default defineOperationApi<ExecutionOptions>({
 	id: 'execute_script',
-	handler: async ({ code }, { data, env }) => {
+	handler: async ({ code }, { data, env, logger }) => {
 		// Fetching execution limits and environment variables
 		const memoryLimit = env['FLOWS_SCRIPT_MAX_MEMORY'];
 		const executionTimeout = env['FLOWS_SCRIPT_EXEC_TIMEOUT'];
@@ -23,12 +23,25 @@ export default defineOperationApi<ExecutionOptions>({
 
 		jail.setSync('global', jail.derefInto());
 
-		jail.setSync('log', function(...args: any[]) {
-			console.log(...args);
-		});
-
 		jail.setSync('process', { env: environmentVariables }, { copy: true });
 		jail.setSync('module', { exports: null }, { copy: true });
+
+		// Adding a secure logger for the isolate
+		const createLoggerCallback = (logFn: (msg: any) => void) =>
+			new ivm.Callback((...args: any[]) => logFn(args.length === 1 ? args[0] : args), { sync: true });
+
+		jail.setSync(
+			'console',
+			{
+				log: createLoggerCallback(() => logger.info),
+				info: createLoggerCallback(() => logger.info),
+				warn: createLoggerCallback(() => logger.warn),
+				error: createLoggerCallback(() => logger.error),
+				debug: createLoggerCallback(() => logger.debug),
+				trace: createLoggerCallback(() => logger.trace),
+			},
+			{ copy: true }
+		);
 
 		// Executing the code within the isolate
 		await context.eval(code, { timeout: executionTimeout });
