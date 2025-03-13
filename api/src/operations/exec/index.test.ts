@@ -69,7 +69,7 @@ test('Rejects when returned function throws errors', async () => {
 	).rejects.toThrow('test');
 });
 
-test('Executes function when valid', () => {
+test('Executes synchronous function when valid', () => {
 	const testCode = `
 		module.exports = function (data) {
 			return { result: data.input + ' test' };
@@ -77,6 +77,26 @@ test('Executes function when valid', () => {
 	`;
 
 	expect(
+		config.handler({ code: testCode }, {
+			data: {
+				input: 'start',
+			},
+			env: {
+				FLOWS_SCRIPT_MAX_MEMORY: 8,
+				FLOWS_SCRIPT_EXEC_TIMEOUT: 10000,
+			},
+		} as any)
+	).resolves.toEqual({ result: 'start test' });
+});
+
+test('Executes asynchronous function when valid', async () => {
+	const testCode = `
+		module.exports = async function (data) {
+			return { result: data.input + ' test' };
+		};
+	`;
+
+	await expect(
 		config.handler({ code: testCode }, {
 			data: {
 				input: 'start',
