@@ -196,3 +196,39 @@ test('Rejects when memory usage exceeds the allowed limit in the isolate', async
 		} as any)
 	).rejects.toThrow('Array buffer allocation failed');
 });
+
+test('Rejects when an invalid unit is passed to max memory configuration', async () => {
+	const testCode = `
+		module.exports = async function (data) {
+			return 1+1;
+		};
+	`;
+
+	await expect(
+		config.handler({ code: testCode }, {
+			data: {},
+			env: {
+				FLOWS_SCRIPT_MAX_MEMORY: 'not a number',
+				FLOWS_SCRIPT_EXEC_TIMEOUT: 10000,
+			},
+		} as any)
+	).rejects.toThrow('`memoryLimit` must be a number');
+});
+
+test('Rejects when an invalid unit is passed to timeout configuration', async () => {
+	const testCode = `
+		module.exports = async function (data) {
+			return 1+1;
+		};
+	`;
+
+	await expect(
+		config.handler({ code: testCode }, {
+			data: {},
+			env: {
+				FLOWS_SCRIPT_MAX_MEMORY: 8,
+				FLOWS_SCRIPT_EXEC_TIMEOUT: 'not a 32-bit number',
+			},
+		} as any)
+	).rejects.toThrow('`timeout` must be a 32-bit number');
+});
