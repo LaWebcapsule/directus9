@@ -69,10 +69,6 @@ export class ServerService {
 			} else {
 				info['rateLimitGlobal'] = false;
 			}
-
-			info['flows'] = {
-				execAllowedModules: env['FLOWS_EXEC_ALLOWED_MODULES'] ? toArray(env['FLOWS_EXEC_ALLOWED_MODULES']) : [],
-			};
 		}
 
 		if (this.accountability?.admin === true) {
