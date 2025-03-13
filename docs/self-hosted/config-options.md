@@ -885,6 +885,8 @@ AUTH_FACEBOOK_LABEL="Facebook"
 | ---------------------------- | ------------------------------------------------ | ------------- |
 | `FLOWS_ENV_ALLOW_LIST`       | A comma-separated list of environment variables. | `false`       |
 | `FLOWS_EXEC_ALLOWED_MODULES` | A comma-separated list of node modules.          | `false`       |
+| `FLOWS_SCRIPT_MAX_MEMORY` | The maximum memory (in MB) that the 'Run Script' operation can allocate. Must be at least 8MB. | `32`          |
+| `FLOWS_SCRIPT_EXEC_TIMEOUT`    | The maximum execution time (in milliseconds) allowed for the 'Run Script' operation before termination.                                     | `10000`       |
 
 ::: tip Usage in Flows Run Script Operation
 

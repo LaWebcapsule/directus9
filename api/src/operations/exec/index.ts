@@ -1,49 +1,53 @@
-import { defineOperationApi, toArray } from '@wbce-d9/utils';
-import { isBuiltin } from 'node:module';
-import type { NodeVMOptions } from 'vm2';
-import { NodeVM, VMScript } from 'vm2';
+import { defineOperationApi } from '@wbce-d9/utils';
+import { createRequire } from 'node:module';
 
-type Options = {
+const require = createRequire(import.meta.url);
+const ivm = require('isolated-vm');
+
+type ExecutionOptions = {
 	code: string;
 };
 
-export default defineOperationApi<Options>({
-	id: 'exec',
+export default defineOperationApi<ExecutionOptions>({
+	id: 'execute_script',
 	handler: async ({ code }, { data, env }) => {
-		const allowedModules = env['FLOWS_EXEC_ALLOWED_MODULES'] ? toArray(env['FLOWS_EXEC_ALLOWED_MODULES']) : [];
-		const allowedModulesBuiltIn: string[] = [];
-		const allowedModulesExternal: string[] = [];
-		const allowedEnv = data['$env'] ?? {};
+		// Fetching execution limits and environment variables
+		const memoryLimit = env['FLOWS_SCRIPT_MAX_MEMORY'];
+		const executionTimeout = env['FLOWS_SCRIPT_EXEC_TIMEOUT'];
+		const environmentVariables = data['$env'] ?? {};
 
-		const opts: NodeVMOptions = {
-			eval: false,
-			wasm: false,
-			env: allowedEnv,
-		};
+		// Creating an isolate with the specified memory limit
+		const isolate = new ivm.Isolate({ memoryLimit });
+		const context = isolate.createContextSync();
+		const jail = context.global;
 
-		for (const module of allowedModules) {
-			if (isBuiltin(module)) {
-				allowedModulesBuiltIn.push(module);
-			} else {
-				allowedModulesExternal.push(module);
-			}
-		}
+		jail.setSync('global', jail.derefInto());
 
-		if (allowedModules.length > 0) {
-			opts.require = {
-				builtin: allowedModulesBuiltIn,
-				external: {
-					modules: allowedModulesExternal,
-					transitive: false,
-				},
-			};
-		}
+		jail.setSync('log', function(...args: any[]) {
+			console.log(...args);
+		});
 
-		const vm = new NodeVM(opts);
+		jail.setSync('process', { env: environmentVariables }, { copy: true });
+		jail.setSync('module', { exports: null }, { copy: true });
 
-		const script = new VMScript(code).compile();
-		const fn = await vm.run(script);
+		// Executing the code within the isolate
+		await context.eval(code, { timeout: executionTimeout });
 
-		return await fn(data);
+		const dataCopy = new ivm.ExternalCopy({ data });
+
+		const resultReference = await context.evalClosure(`return module.exports($0.data)`, [dataCopy.copyInto()], {
+			result: { reference: true, promise: true },
+			timeout: executionTimeout,
+		});
+
+		const finalResult = await resultReference.copy();
+
+		// Cleanup memory
+		resultReference.release();
+		dataCopy.release();
+		context.release();
+		isolate.dispose();
+
+		return finalResult;
 	},
 });

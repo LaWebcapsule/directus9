@@ -197,6 +197,8 @@ const allowedEnvironmentVars = [
 	// flows
 	'FLOWS_EXEC_ALLOWED_MODULES',
 	'FLOWS_ENV_ALLOW_LIST',
+	'FLOWS_SCRIPT_MAX_MEMORY',
+	'FLOWS_SCRIPT_EXEC_TIMEOUT',
 ].map((name) => new RegExp(`^${name}$`));
 
 const acceptedEnvTypes = ['string', 'number', 'regex', 'array', 'json'];
@@ -302,6 +304,8 @@ const defaults: Record<string, any> = {
 
 	FLOWS_EXEC_ALLOWED_MODULES: false,
 	FLOWS_ENV_ALLOW_LIST: false,
+	FLOWS_SCRIPT_MAX_MEMORY: 32,
+	FLOWS_SCRIPT_EXEC_TIMEOUT: 10000,
 };
 
 // Allows us to force certain environment variable into a type, instead of relying
