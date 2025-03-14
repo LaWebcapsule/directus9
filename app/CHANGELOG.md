@@ -1,5 +1,11 @@
 # @wbce-d9/app
 
+## 9.33.0
+
+### Minor Changes
+
+- 03314e1: Switched from vm2 to isolated-vm to sandbox the "Run Script" functionality in Flows
+
 ## 9.32.0
 
 ### Minor Changes
