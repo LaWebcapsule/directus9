@@ -121,8 +121,9 @@ will cancel the original event transaction to the database.
 
 :::tip Node Modules
 
-For security reasons, module usage is disabled by default. You can configure what Node Modules are available through
-[the `FLOWS_EXEC_ALLOWED_MODULES` environment variable](/self-hosted/config-options#security).
+To enhance security and prevent unauthorized access to the underlying server, using Node.js modules in the **Run
+Script** operation is no longer supported. If your script requires a third-party library, consider creating a custom
+[operation extension](/extensions/operations) instead.
 
 :::
 

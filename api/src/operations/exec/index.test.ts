@@ -1,22 +1,5 @@
-import { VMError } from 'vm2';
 import { test, expect } from 'vitest';
-
 import config from './index.js';
-
-test('Rejects when modules are used without modules being allowed', async () => {
-	const testCode = `
-		const test = require('test');
-	`;
-
-	await expect(
-		config.handler({ code: testCode }, {
-			data: {},
-			env: {
-				FLOWS_EXEC_ALLOWED_MODULES: '',
-			},
-		} as any)
-	).rejects.toEqual(new VMError("Cannot find module 'test'"));
-});
 
 test('Rejects when code contains syntax errors', async () => {
 	const testCode = `
@@ -27,13 +10,14 @@ test('Rejects when code contains syntax errors', async () => {
 		config.handler({ code: testCode }, {
 			data: {},
 			env: {
-				FLOWS_EXEC_ALLOWED_MODULES: '',
+				FLOWS_SCRIPT_MAX_MEMORY: 8,
+				FLOWS_SCRIPT_EXEC_TIMEOUT: 10000,
 			},
 		} as any)
-	).rejects.toEqual(new SyntaxError('Unexpected end of input'));
+	).rejects.toThrow('Unexpected end of input [<isolated-vm>:3:2]');
 });
 
-test('Rejects when returned function does something illegal', async () => {
+test('Rejects when code does something illegal', async () => {
 	const testCode = `
 		module.exports = function() {
 			return a + b;
@@ -44,10 +28,11 @@ test('Rejects when returned function does something illegal', async () => {
 		config.handler({ code: testCode }, {
 			data: {},
 			env: {
-				FLOWS_EXEC_ALLOWED_MODULES: '',
+				FLOWS_SCRIPT_MAX_MEMORY: 8,
+				FLOWS_SCRIPT_EXEC_TIMEOUT: 10000,
 			},
 		} as any)
-	).rejects.toEqual(new ReferenceError('a is not defined'));
+	).rejects.toThrow('a is not defined');
 });
 
 test("Rejects when code doesn't return valid function", async () => {
@@ -59,13 +44,14 @@ test("Rejects when code doesn't return valid function", async () => {
 		config.handler({ code: testCode }, {
 			data: {},
 			env: {
-				FLOWS_EXEC_ALLOWED_MODULES: '',
+				FLOWS_SCRIPT_MAX_MEMORY: 8,
+				FLOWS_SCRIPT_EXEC_TIMEOUT: 10000,
 			},
 		} as any)
-	).rejects.toEqual(new TypeError('fn is not a function'));
+	).rejects.toThrow('module.exports is not a function');
 });
 
-test('Rejects returned function throws errors', async () => {
+test('Rejects when returned function throws errors', async () => {
 	const testCode = `
 		module.exports = function () {
 			throw new Error('test');
@@ -76,13 +62,14 @@ test('Rejects returned function throws errors', async () => {
 		config.handler({ code: testCode }, {
 			data: {},
 			env: {
-				FLOWS_EXEC_ALLOWED_MODULES: '',
+				FLOWS_SCRIPT_MAX_MEMORY: 8,
+				FLOWS_SCRIPT_EXEC_TIMEOUT: 10000,
 			},
 		} as any)
-	).rejects.toEqual(new Error('test'));
+	).rejects.toThrow('test');
 });
 
-test('Executes function when valid', () => {
+test('Executes synchronous function when valid', () => {
 	const testCode = `
 		module.exports = function (data) {
 			return { result: data.input + ' test' };
@@ -95,48 +82,153 @@ test('Executes function when valid', () => {
 				input: 'start',
 			},
 			env: {
-				FLOWS_EXEC_ALLOWED_MODULES: '',
+				FLOWS_SCRIPT_MAX_MEMORY: 8,
+				FLOWS_SCRIPT_EXEC_TIMEOUT: 10000,
 			},
 		} as any)
 	).resolves.toEqual({ result: 'start test' });
 });
 
-test('Allows built-in modules that are whitelisted', () => {
+test('Executes asynchronous function when valid', async () => {
 	const testCode = `
-		const crypto = require('crypto');
-
 		module.exports = async function (data) {
-			return {
-				result: crypto.createHash('sha256').update('directus').digest('hex'),
-			};
+			return { result: data.input + ' test' };
 		};
 	`;
 
-	expect(
+	await expect(
 		config.handler({ code: testCode }, {
-			data: {},
+			data: {
+				input: 'start',
+			},
 			env: {
-				FLOWS_EXEC_ALLOWED_MODULES: 'crypto',
+				FLOWS_SCRIPT_MAX_MEMORY: 8,
+				FLOWS_SCRIPT_EXEC_TIMEOUT: 10000,
 			},
 		} as any)
-	).resolves.toEqual({ result: '943e891bf6042f2db8926493c0f94e45b72cb58a21145fdfa3c23b5c057e4b2d' });
+	).resolves.toEqual({ result: 'start test' });
 });
 
-test('Allows external modules that are whitelisted', () => {
+test('Rejects when CommonJS modules are attempted to be used', async () => {
 	const testCode = `
-		const bytes = require('bytes');
-
-		module.exports = function (data) {
-			return { result: bytes(1000) };
-		};
+		const path = require('node:path');
 	`;
 
-	expect(
+	await expect(
 		config.handler({ code: testCode }, {
 			data: {},
 			env: {
-				FLOWS_EXEC_ALLOWED_MODULES: 'bytes',
+				FLOWS_SCRIPT_MAX_MEMORY: 8,
+				FLOWS_SCRIPT_EXEC_TIMEOUT: 10000,
 			},
 		} as any)
-	).resolves.toEqual({ result: '1000B' });
+	).rejects.toThrow('require is not defined');
+});
+
+test('Rejects when ESM modules are used within the isolate', async () => {
+	const testCode = `
+		import { URL } from 'node:url';
+	`;
+
+	await expect(
+		config.handler({ code: testCode }, {
+			data: {},
+			env: {
+				FLOWS_SCRIPT_MAX_MEMORY: 8,
+				FLOWS_SCRIPT_EXEC_TIMEOUT: 10000,
+			},
+		} as any)
+	).rejects.toThrow('Cannot use import statement outside a module [<isolated-vm>:2:3]');
+});
+
+test('Rejects when the operation exceeds the allowed execution time', async () => {
+	const infiniteLoop = `
+		while (true) {}
+	`;
+
+	const asyncInfiniteLoop = `
+		module.exports = async function (data) {
+			while (true) {}
+		}
+	`;
+
+	await expect(
+		config.handler({ code: infiniteLoop }, {
+			data: {},
+			env: {
+				FLOWS_SCRIPT_MAX_MEMORY: 8,
+				FLOWS_SCRIPT_EXEC_TIMEOUT: 250, // 250ms timeout
+			},
+		} as any)
+	).rejects.toThrow('Script execution timed out.');
+
+	await expect(
+		config.handler({ code: asyncInfiniteLoop }, {
+			data: {},
+			env: {
+				FLOWS_SCRIPT_MAX_MEMORY: 8,
+				FLOWS_SCRIPT_EXEC_TIMEOUT: 250,
+			},
+		} as any)
+	).rejects.toThrow('Script execution timed out.');
+});
+
+test('Rejects when memory usage exceeds the allowed limit in the isolate', async () => {
+	const testCode = `
+		const largeArray = [];
+		const chunkSize = 1024 * 1024 * 2;
+		while (true) {
+			const buffer = new Uint8Array(chunkSize);
+			for (let i = 0; i < chunkSize; i += 4096) {
+				buffer[i] = 1; // Filling array to force memory usage
+			}
+			largeArray.push(buffer);
+		}
+	`;
+
+	await expect(
+		config.handler({ code: testCode }, {
+			data: {},
+			env: {
+				FLOWS_SCRIPT_MAX_MEMORY: 8,
+				FLOWS_SCRIPT_EXEC_TIMEOUT: 10000,
+			},
+		} as any)
+	).rejects.toThrow('Array buffer allocation failed');
+});
+
+test('Rejects when an invalid unit is passed to max memory configuration', async () => {
+	const testCode = `
+		module.exports = async function (data) {
+			return 1+1;
+		};
+	`;
+
+	await expect(
+		config.handler({ code: testCode }, {
+			data: {},
+			env: {
+				FLOWS_SCRIPT_MAX_MEMORY: 'not a number',
+				FLOWS_SCRIPT_EXEC_TIMEOUT: 10000,
+			},
+		} as any)
+	).rejects.toThrow('`memoryLimit` must be a number');
+});
+
+test('Rejects when an invalid unit is passed to timeout configuration', async () => {
+	const testCode = `
+		module.exports = async function (data) {
+			return 1+1;
+		};
+	`;
+
+	await expect(
+		config.handler({ code: testCode }, {
+			data: {},
+			env: {
+				FLOWS_SCRIPT_MAX_MEMORY: 8,
+				FLOWS_SCRIPT_EXEC_TIMEOUT: 'not a 32-bit number',
+			},
+		} as any)
+	).rejects.toThrow('`timeout` must be a 32-bit number');
 });

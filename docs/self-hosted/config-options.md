@@ -206,7 +206,7 @@ prefixing the value with `{type}:`. The following types are available:
 | `MAX_BATCH_MUTATION`       | The maximum number of items for batch mutations when creating, updating and deleting.                      | `Infinity`                   |
 | `MAX_RELATIONAL_DEPTH`     | The maximum depth when filtering / querying relational fields, with a minimum value of `2`.                | `10`                         |
 | `ROBOTS_TXT`               | What the `/robots.txt` endpoint should return                                                              | `User-agent: *\nDisallow: /` |
-| `X_POWERED_BY_ENABLED`               | Whether the response should return the X-Powered-By Directus Header                                                              | `true` |
+| `X_POWERED_BY_ENABLED`     | Whether the response should return the X-Powered-By Directus Header                                        | `true`                       |
 
 <sup>[1]</sup> The PUBLIC_URL value is used for things like OAuth redirects, forgot-password emails, and logos that
 needs to be publicly available on the internet.
@@ -282,10 +282,10 @@ All the `DB_POOL__` prefixed options are passed to [`tarn.js`](https://github.co
 | `KEY`                            | Unique identifier for the project.                                                                                                                                                                   | --                        |
 | `SECRET`                         | Secret string for the project.                                                                                                                                                                       | --                        |
 | `ACCESS_TOKEN_TTL`               | The duration that the access token is valid.                                                                                                                                                         | `15m`                     |
-| `ACCESS_TOKEN_COOKIE_DOMAIN`    | Which domain to use for the access cookie. Useful for development mode.                                                                                                                             | --                        |
-| `ACCESS_TOKEN_COOKIE_SECURE`    | Whether or not to use a secure cookie for the access token in cookie mode.                                                                                                                          | `false`                   |
-| `ACCESS_TOKEN_COOKIE_SAME_SITE` | Value for `sameSite` in the access token cookie when in cookie mode.                                                                                                                                | `lax`                     |
-| `ACCESS_TOKEN_COOKIE_NAME`      | Name of access token cookie .                                                                                                                                                                       | `directus_access_token`  |
+| `ACCESS_TOKEN_COOKIE_DOMAIN`     | Which domain to use for the access cookie. Useful for development mode.                                                                                                                              | --                        |
+| `ACCESS_TOKEN_COOKIE_SECURE`     | Whether or not to use a secure cookie for the access token in cookie mode.                                                                                                                           | `false`                   |
+| `ACCESS_TOKEN_COOKIE_SAME_SITE`  | Value for `sameSite` in the access token cookie when in cookie mode.                                                                                                                                 | `lax`                     |
+| `ACCESS_TOKEN_COOKIE_NAME`       | Name of access token cookie .                                                                                                                                                                        | `directus_access_token`   |
 | `REFRESH_TOKEN_TTL`              | The duration that the refresh token is valid, and also how long users stay logged-in to the App.                                                                                                     | `7d`                      |
 | `REFRESH_TOKEN_COOKIE_DOMAIN`    | Which domain to use for the refresh cookie. Useful for development mode.                                                                                                                             | --                        |
 | `REFRESH_TOKEN_COOKIE_SECURE`    | Whether or not to use a secure cookie for the refresh token in cookie mode.                                                                                                                          | `false`                   |
@@ -301,7 +301,6 @@ All the `DB_POOL__` prefixed options are passed to [`tarn.js`](https://github.co
 | `CONTENT_SECURITY_POLICY_*`      | Custom overrides for the Content-Security-Policy header. See [helmet's documentation on `helmet.contentSecurityPolicy()`](https://helmetjs.github.io) for more information.                          | --                        |
 | `HSTS_ENABLED`                   | Enable the Strict-Transport-Security policy header.                                                                                                                                                  | `false`                   |
 | `HSTS_*`                         | Custom overrides for the Strict-Transport-Security header. See [helmet's documentation](https://helmetjs.github.io) for more information.                                                            | --                        |
-| `FLOWS_EXEC_ALLOWED_MODULES`     | CSV allowlist of node modules that are allowed to be used in the _run script_ operation in flows                                                                                                     | --                        |
 
 ::: tip Cookie Strictness
 
@@ -881,18 +880,13 @@ AUTH_FACEBOOK_LABEL="Facebook"
 
 ## Flows
 
-| Variable                     | Description                                      | Default Value |
-| ---------------------------- | ------------------------------------------------ | ------------- |
-| `FLOWS_ENV_ALLOW_LIST`       | A comma-separated list of environment variables. | `false`       |
-| `FLOWS_EXEC_ALLOWED_MODULES` | A comma-separated list of node modules.          | `false`       |
+| Variable                    | Description                                                                                             | Default Value |
+| --------------------------- | ------------------------------------------------------------------------------------------------------- | ------------- |
+| `FLOWS_ENV_ALLOW_LIST`      | A comma-separated list of environment variables.                                                        | `false`       |
+| `FLOWS_SCRIPT_MAX_MEMORY`   | The maximum memory (in MB) that the 'Run Script' operation can allocate. Must be at least 8MB.          | `32`          |
+| `FLOWS_SCRIPT_EXEC_TIMEOUT` | The maximum execution time (in milliseconds) allowed for the 'Run Script' operation before termination. | `10000`       |
 
 ::: tip Usage in Flows Run Script Operation
-
-Allowed modules can be accessed using `require()`.
-
-```js
-const axios = require('axios');
-```
 
 Allowed environment variables can be accessed through the `$env` within the passed `data` or through `process.env`.
 
@@ -987,11 +981,11 @@ Based on the `EMAIL_TRANSPORT` used, you must also provide the following configu
 
 ### AWS SES (`ses`)
 
-| Variable                                   | Description                  | Default Value |
-| ------------------------------------------ | ---------------------------- | ------------- |
+| Variable                                   | Description                 | Default Value |
+| ------------------------------------------ | --------------------------- | ------------- |
 | `EMAIL_SES_CREDENTIALS__ACCESS_KEY_ID`     | Your AWS SES access key ID. | --            |
-| `EMAIL_SES_CREDENTIALS__SECRET_ACCESS_KEY` | Your AWS SES secret key.     | --            |
-| `EMAIL_SES_REGION`                         | Your AWS SES region.         | --            |
+| `EMAIL_SES_CREDENTIALS__SECRET_ACCESS_KEY` | Your AWS SES secret key.    | --            |
+| `EMAIL_SES_REGION`                         | Your AWS SES region.        | --            |
 
 ## Admin Account
 
