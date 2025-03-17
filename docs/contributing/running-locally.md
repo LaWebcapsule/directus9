@@ -22,8 +22,9 @@ You will also need to have the package manager [pnpm](https://pnpm.io) installed
 
 ## 1. Fork the Directus repository
 
-Go to the [repository](https://github.com/LaWebcapsule/directus9) and fork it to your GitHub account. A fork is your copy of
-the Directus repository which allows you to freely experiment with changes without affecting the original project.
+Go to the [repository](https://github.com/LaWebcapsule/directus9) and fork it to your GitHub account. A fork is your
+copy of the Directus repository which allows you to freely experiment with changes without affecting the original
+project.
 
 ## 2. Clone from your repository
 
@@ -55,8 +56,8 @@ The `KEY`& `SECRET` config options from [Security](https://docs.directus.io/self
 are mandatory.
 
 Also the [Database Configuration](https://docs.directus.io/self-hosted/config-options.html#database) must be specified.
-You might want to use the [docker-compose.yml](https://github.com/LaWebcapsule/directus9/blob/main/docker-compose.yml) file
-to spin up a test database.
+You might want to use the [docker-compose.yml](https://github.com/LaWebcapsule/directus9/blob/main/docker-compose.yml)
+file to spin up a test database.
 
 :::
 
