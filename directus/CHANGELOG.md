@@ -1,5 +1,11 @@
 # directus9
 
+## 10.3.0
+
+### Minor Changes
+
+- 1388e5e: Switched from 'vm2 'to 'isolated-vm' to sandbox the "Run Script" functionality in Flows
+
 ## 10.2.3
 
 ### Patch Changes
