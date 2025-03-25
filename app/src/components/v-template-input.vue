@@ -13,6 +13,7 @@
 <script setup lang="ts">
 import { ref, watch, onMounted, onUnmounted } from 'vue';
 import { position } from 'caret-pos';
+import dompurify from 'dompurify';
 
 interface Props {
 	captureGroup: string;
@@ -218,6 +219,13 @@ function processText(event: Event) {
 function parseHTML(innerText?: string, isDirectInput = false) {
 	if (!input.value) return;
 
+	const sanitizeConfig = {
+		ALLOWED_TAGS: ['mark'],
+		ALLOWED_ATTR: ['class', 'data-preview', 'contenteditable'],
+		FORBID_TAGS: ['script', 'style'],
+		FORBID_ATTR: ['on*', 'data-*'],
+	};
+
 	if (input.value.innerText === '\n') {
 		input.value.innerText = '';
 	}
@@ -227,7 +235,7 @@ function parseHTML(innerText?: string, isDirectInput = false) {
 		hasTriggered = false;
 	}
 
-	let newHTML = input.value.innerText;
+	let newHTML = dompurify.sanitize(input.value.innerText, { ...sanitizeConfig, RETURN_DOM_FRAGMENT: false });
 
 	const caretPos = isDirectInput ? previousCaretPos : window.getSelection()?.rangeCount ? position(input.value).pos : 0;
 
@@ -262,9 +270,12 @@ function parseHTML(innerText?: string, isDirectInput = false) {
 
 			let searchString = replaceSpaceBefore + match + replaceSpaceAfter;
 
-			let replacementString = `${addSpaceBefore}<mark class="preview" data-preview="${
-				props.items[match.substring(props.triggerCharacter.length)]
-			}" contenteditable="false">${match}</mark>${addSpaceAfter}`;
+			let replacementString = dompurify.sanitize(
+				`${addSpaceBefore}<mark class="preview" data-preview="${
+					props.items[match.substring(props.triggerCharacter.length)]
+				}" contenteditable="false">${match}</mark>${addSpaceAfter}`,
+				sanitizeConfig
+			);
 
 			newHTML = newHTML.replace(new RegExp(`(${searchString})(?!</mark>)`), replacementString);
 			lastMatchIndex = htmlMatchIndex + replacementString.length - searchString.length;
@@ -272,7 +283,7 @@ function parseHTML(innerText?: string, isDirectInput = false) {
 	}
 
 	if (input.value.innerHTML !== newHTML.replaceAll(String.fromCharCode(160), '&nbsp;')) {
-		input.value.innerHTML = newHTML;
+		input.value.innerHTML = dompurify.sanitize(newHTML, sanitizeConfig);
 
 		const delta = input.value.innerText.length - previousInnerTextLength;
 		const newPosition = caretPos + delta;
