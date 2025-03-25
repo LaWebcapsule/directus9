@@ -162,7 +162,8 @@
 		"tsx": "3.12.6",
 		"uuid": "9.0.0",
 		"uuid-validate": "0.0.3",
-		"wellknown": "0.5.0"
+		"wellknown": "0.5.0",
+		"lusca": "^1.7.0"
 	},
 	"devDependencies": {
 		"@ngneat/falso": "6.4.0",

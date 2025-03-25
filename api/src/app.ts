@@ -1,4 +1,5 @@
 import cookieParser from 'cookie-parser';
+import lusca from 'lusca';
 import type { Request, RequestHandler, Response } from 'express';
 import express from 'express';
 import type { ServerResponse } from 'http';
@@ -169,6 +170,7 @@ export default async function createApp(): Promise<express.Application> {
 	});
 
 	app.use(cookieParser());
+	app.use(lusca.csrf());
 
 	app.use(extractToken);
 
