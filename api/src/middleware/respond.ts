@@ -1,4 +1,5 @@
 import { parse as parseBytesConfiguration } from 'bytes';
+import escape from 'escape-html';
 import type { RequestHandler } from 'express';
 import { getCache, setCacheValue } from '../cache.js';
 import env from '../env.js';
@@ -68,9 +69,10 @@ export const respond: RequestHandler = asyncHandler(async (req, res) => {
 		}
 
 		if (req.sanitizedQuery.export === 'xml') {
+			const sanitizedData = escape(res.locals['payload']?.data);
 			res.attachment(`${filename}.xml`);
 			res.set('Content-Type', 'text/xml');
-			return res.status(200).send(exportService.transform(res.locals['payload']?.data, 'xml'));
+			return res.status(200).send(exportService.transform(sanitizedData, 'xml'));
 		}
 
 		if (req.sanitizedQuery.export === 'csv') {
