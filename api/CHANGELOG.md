@@ -1,5 +1,11 @@
 # @wbce-d9/api
 
+## 11.0.1
+
+### Patch Changes
+
+- da7afa2: Bump xml-crypto
+
 ## 11.0.0
 
 ### Major Changes
