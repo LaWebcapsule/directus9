@@ -2,7 +2,9 @@
 
 <br />
 
-**This repository is a fork of the Directus 9. Directus 9 was under GPLv3 license and so is this repository. As Directus 10 is now <i>a premium open-source software</i>, this repository aims to maintain a standard openSource version of Directus 9. This repository is not bound to the directus core team.**
+**This repository is a fork of the Directus 9. Directus 9 was under GPLv3 license and so is this repository. As Directus
+10 is now <i>a premium open-source software</i>, this repository aims to maintain a standard openSource version of
+Directus 9. This repository is not bound to the directus core team.**
 
 ## 🐰 Introduction
 
@@ -24,13 +26,16 @@ Directus is a real-time API and App dashboard for managing SQL database content.
 ## Migrating from directus@9.0.0^ to @wbce-d9@9.0.0^
 
 You need to change your dependencies :
+
 1. In package.json
+
 ```
 "directus":9.0.0^ --> "@wbce-d9/directus9": 10.0.0^
 "@directus/some-package" --> "@wbce-d9/some-package"
 ```
 
 2. Update your dependencies :
+
 ```
 npm update
 ```
@@ -41,6 +46,7 @@ npm update
 import {...} from "directus"
 import {...} from "@directus/some-package"
 ```
+
 should become :
 
 ```ts
@@ -48,16 +54,19 @@ import {...} from "@wbce-d9/directus9"
 import {...} from "@wbce-d9/some-package"
 ```
 
-4. You don't have to do any changes to your databases.
-Directus9 use the same schema as directus@9.0.0^. As a consequence, you don't need other changes than the three steps below.
+4. You don't have to do any changes to your databases. Directus9 use the same schema as directus@9.0.0^. As a
+   consequence, you don't need other changes than the three steps below.
 
 ## Migrating from version @wbce-d9@9.0.0^ to @wbce-d9@10.0.0^
 
-We've recognized and rectified an issue within Directus 9 related to Single Sign-On (SSO) management, ensuring standardization. While exceptionally uncommon, this could occasionally cause a discrepancy between your SSO user and Directus. Should this occur, we advise synchronizing Directus' external_id with your SSO. Please note that IDs are now case-sensitive.
+We've recognized and rectified an issue within Directus 9 related to Single Sign-On (SSO) management, ensuring
+standardization. While exceptionally uncommon, this could occasionally cause a discrepancy between your SSO user and
+Directus. Should this occur, we advise synchronizing Directus' external_id with your SSO. Please note that IDs are now
+case-sensitive.
 
 ### JS SDK
 
-A JS sdk is also realeased under *@wbce-d9*, you can install it via:
+A JS sdk is also realeased under _@wbce-d9_, you can install it via:
 
 ```bash
 npm install --save @wbce-d9/sdk
@@ -75,6 +84,9 @@ npm init @wbce-d9/directus-extension@latest
 
 ## License
 
-Directus is released under the [GPLv3 license](./license). Monospace Inc owns all Directus trademarks, logos, and intellectual property on behalf of our project's community. Copyright © 2004-2020, Monospace Inc.
+Directus is released under the [GPLv3 license](./license). Monospace Inc owns all Directus trademarks, logos, and
+intellectual property on behalf of our project's community. Copyright © 2004-2020, Monospace Inc.
 
-**This repository is a fork of the Directus 9. Directus 9 was under GPLv3 license and so is this repository. As Directus 10 is now <i>a premium open-source software</i>, this repository aims to maintain a standard openSource version of Directus 9. This repository is not bound to the directus core team.**
+**This repository is a fork of the Directus 9. Directus 9 was under GPLv3 license and so is this repository. As Directus
+10 is now <i>a premium open-source software</i>, this repository aims to maintain a standard openSource version of
+Directus 9. This repository is not bound to the directus core team.**
