@@ -1,5 +1,13 @@
 # directus9
 
+## 10.3.1
+
+### Patch Changes
+
+- da7afa2: Bump xml-crypto
+- Updated dependencies [da7afa2]
+  - @wbce-d9/api@11.0.1
+
 ## 10.3.0
 
 ### Minor Changes
