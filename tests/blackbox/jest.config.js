@@ -11,5 +11,5 @@ module.exports = {
 	testEnvironment: './setup/customEnvironment.ts',
 	moduleNameMapper: pathsToModuleNameMapper(compilerOptions.paths, { prefix: '<rootDir>/' }),
 	testTimeout: 15000,
-	maxWorkers: 6,
+	maxWorkers: 1,
 };
