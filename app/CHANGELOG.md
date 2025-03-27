@@ -1,5 +1,11 @@
 # @wbce-d9/app
 
+## 9.33.1
+
+### Patch Changes
+
+- 0a073d4: Bump vite from 4.5.6 to 4.5.10
+
 ## 9.33.0
 
 ### Minor Changes
