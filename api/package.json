@@ -218,6 +218,7 @@
 		"memcached": "2.2.2",
 		"mysql": "2.18.1",
 		"nodemailer-mailgun-transport": "2.1.5",
+		"oracledb": "^6.8.0",
 		"pg": "8.10.0",
 		"sqlite3": "5.1.6",
 		"tedious": "18.6.1"
