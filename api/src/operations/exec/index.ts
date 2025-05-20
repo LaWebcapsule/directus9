@@ -9,7 +9,7 @@ type ExecutionOptions = {
 };
 
 export default defineOperationApi<ExecutionOptions>({
-	id: 'execute_script',
+	id: 'exec',
 	handler: async ({ code }, { data, env, logger }) => {
 		// Fetching execution limits and environment variables
 		const memoryLimit = env['FLOWS_SCRIPT_MAX_MEMORY'];
