@@ -1,5 +1,13 @@
 # directus9
 
+## 10.3.2
+
+### Patch Changes
+
+- 4b4b098: Fix: Run Script Operation Not Executing in Directus Flows
+- Updated dependencies [4b4b098]
+  - @wbce-d9/api@11.0.2
+
 ## 10.3.1
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @wbce-d9/api
 
+## 11.0.2
+
+### Patch Changes
+
+- 4b4b098: Fix: Run Script Operation Not Executing in Directus Flows
+
 ## 11.0.1
 
 ### Patch Changes
