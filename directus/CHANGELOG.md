@@ -1,12 +1,20 @@
 # directus9
 
+## 10.3.3
+
+### Patch Changes
+
+- c71b9d5: Bump samlify from 2.8.10 to 2.10.0
+- Updated dependencies [c71b9d5]
+  - @wbce-d9/api@11.0.3
+
 ## 10.3.2
 
 ### Patch Changes
 
 - 4b4b098: Fix: Run Script Operation Not Executing in Directus Flows
 - Updated dependencies [4b4b098]
-  - @wbce-d9/api@11.0.2
+ - @wbce-d9/api@11.0.2
 
 ## 10.3.1
 
