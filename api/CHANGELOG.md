@@ -1,5 +1,11 @@
 # @wbce-d9/api
 
+## 11.0.3
+
+### Patch Changes
+
+- c71b9d5: Bump samlify from 2.8.10 to 2.10.0
+
 ## 11.0.2
 
 ### Patch Changes
