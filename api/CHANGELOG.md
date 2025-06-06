@@ -1,5 +1,11 @@
 # @wbce-d9/api
 
+## 11.0.4
+
+### Patch Changes
+
+- 3786de8: fix url to be bypassed by catch
+
 ## 11.0.3
 
 ### Patch Changes
