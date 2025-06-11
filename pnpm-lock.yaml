@@ -1269,8 +1269,8 @@ importers:
         specifier: 7.5.2
         version: 7.5.2
       undici:
-        specifier: 5.28.5
-        version: 5.28.5
+        specifier: 5.29.0
+        version: 5.29.0
     devDependencies:
       '@ngneat/falso':
         specifier: 6.4.0
@@ -19172,6 +19172,13 @@ packages:
 
   /undici@5.28.5:
     resolution: {integrity: sha512-zICwjrDrcrUE0pyyJc1I2QzBkLM8FINsgOrt6WjA+BgajVq9Nxu2PbFFXUrAggLfDXlZGZBVZYw7WNV5KiBiBA==}
+    engines: {node: '>=14.0'}
+    dependencies:
+      '@fastify/busboy': 2.1.1
+    dev: false
+
+  /undici@5.29.0:
+    resolution: {integrity: sha512-raqeBD6NQK4SkWhQzeYKd1KmIG6dllBOTt55Rmkt4HtI9mwdWtJljnrXjAFUBLTSN67HWrOIZ3EPF4kjUw80Bg==}
     engines: {node: '>=14.0'}
     dependencies:
       '@fastify/busboy': 2.1.1
