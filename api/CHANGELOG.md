@@ -1,5 +1,23 @@
 # @wbce-d9/api
 
+## 11.0.4
+
+### Patch Changes
+
+- 3786de8: fix url to be bypassed by catch
+
+## 11.0.3
+
+### Patch Changes
+
+- c71b9d5: Bump samlify from 2.8.10 to 2.10.0
+
+## 11.0.2
+
+### Patch Changes
+
+- 4b4b098: Fix: Run Script Operation Not Executing in Directus Flows
+
 ## 11.0.1
 
 ### Patch Changes

@@ -32,7 +32,7 @@
 		"@wbce-d9/storage": "workspace:*",
 		"@wbce-d9/utils": "workspace:*",
 		"p-queue": "7.3.4",
-		"undici": "5.28.5"
+		"undici": "5.29.0"
 	},
 	"devDependencies": {
 		"@ngneat/falso": "6.4.0",
