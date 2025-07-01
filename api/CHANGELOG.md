@@ -1,5 +1,14 @@
 # @wbce-d9/api
 
+## 11.0.5
+
+### Patch Changes
+
+- 645ef51: Bump dependencies to fix security alerts
+- Updated dependencies [645ef51]
+  - @wbce-d9/specs@9.26.5
+  - @wbce-d9/storage-driver-cloudinary@9.27.1
+
 ## 11.0.4
 
 ### Patch Changes
