@@ -1,5 +1,11 @@
 # @wbce-d9/storage-driver-cloudinary
 
+## 9.27.1
+
+### Patch Changes
+
+- 645ef51: Bump dependencies to fix security alerts
+
 ## 9.27.0
 
 ### Minor Changes
