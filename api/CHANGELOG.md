@@ -1,5 +1,85 @@
 # @wbce-d9/api
 
+## 11.0.4
+
+### Patch Changes
+
+- 3786de8: fix url to be bypassed by catch
+
+## 11.0.3
+
+### Patch Changes
+
+- c71b9d5: Bump samlify from 2.8.10 to 2.10.0
+
+## 11.0.2
+
+### Patch Changes
+
+- 4b4b098: Fix: Run Script Operation Not Executing in Directus Flows
+
+## 11.0.1
+
+### Patch Changes
+
+- da7afa2: Bump xml-crypto
+
+## 11.0.0
+
+### Major Changes
+
+- 03314e1: Switched from 'vm2 'to 'isolated-vm' to sandbox the "Run Script" functionality in Flows
+
+  ## Breaking change
+
+  ### Removed Support for Custom NPM Modules in the "Run Script" Operation in Flows
+
+  Previously, Directus used vm2 to execute code in Run Script operations within Flows. However, vm2 is now unmaintained
+  and has critical security vulnerabilities that could allow sandbox escapes, potentially compromising the host machine.
+  To ensure a secure execution environment, we have migrated to isolated-vm.
+
+  If your script requires a third-party library, you will need to create a custom operation extension.
+
+### Patch Changes
+
+- Updated dependencies [03314e1]
+  - @wbce-d9/app@9.33.0
+
+## 10.6.0
+
+### Minor Changes
+
+- 40644e2: npm security updates
+
+### Patch Changes
+
+- Updated dependencies [40644e2]
+  - @wbce-d9/update-check@9.28.0
+  - @wbce-d9/app@9.32.0
+  - @wbce-d9/extensions-sdk@9.27.1
+  - @wbce-d9/exceptions@9.26.4
+  - @wbce-d9/utils@9.29.1
+
+## 10.5.0
+
+### Minor Changes
+
+- af89302: npm security updates
+
+### Patch Changes
+
+- Updated dependencies [af89302]
+  - @wbce-d9/storage-driver-cloudinary@9.27.0
+  - @wbce-d9/extensions-sdk@9.27.0
+  - @wbce-d9/update-check@9.27.0
+  - @wbce-d9/constants@9.28.0
+  - @wbce-d9/app@9.31.0
+  - @wbce-d9/utils@9.29.1
+  - @wbce-d9/storage-driver-azure@9.26.8
+  - @wbce-d9/storage-driver-gcs@9.26.8
+  - @wbce-d9/storage-driver-local@9.26.8
+  - @wbce-d9/storage-driver-s3@9.26.10
+
 ## 10.4.0
 
 ### Minor Changes

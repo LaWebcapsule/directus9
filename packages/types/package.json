@@ -1,6 +1,6 @@
 {
 	"name": "@wbce-d9/types",
-	"version": "9.27.0",
+	"version": "9.28.0",
 	"type": "module",
 	"scripts": {
 		"build": "tsc --build",
@@ -32,13 +32,13 @@
 		"@wbce-d9/constants": "workspace:*",
 		"@wbce-d9/schema": "workspace:*",
 		"@wbce-d9/tsconfig": "0.0.7",
-		"express": "^4.20.0",
+		"express": "^4.21.2",
 		"geojson": "0.5.0",
 		"knex": "3.1.0",
 		"pino": "8.11.0",
 		"typescript": "5.0.4",
 		"vue": "3.2.47",
 		"vue-router": "4.1.6",
-		"zod": "3.21.4"
+		"zod": "3.22.3"
 	}
 }

@@ -352,7 +352,6 @@ The Pie and Donut Charts allow you to create segmented charts based on your data
 - **Show Legend** - Selects if and where the legend is shown - none, right, or bottom.
 - **Filter** – Allows filtering of Items considered for analysis based on logical conditions.
 - **Value Decimals** – Changes the number of decimals displayed in the chart segments.
-- **Color** – Sets the default base color of your first segment. Other segments will be variations of this
-  default.
+- **Color** – Sets the default base color of your first segment. Other segments will be variations of this default.
 - **Conditional Styles** – Changes color of segment if its value is `>`, `>=`, `<`, `<=`, `==`, or `!=` to some defined
   value.

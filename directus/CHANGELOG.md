@@ -1,5 +1,63 @@
 # directus9
 
+## 10.3.4
+
+### Patch Changes
+
+- Updated dependencies [3786de8]
+  - @wbce-d9/api@11.0.4
+
+## 10.3.3
+
+### Patch Changes
+
+- c71b9d5: Bump samlify from 2.8.10 to 2.10.0
+- Updated dependencies [c71b9d5]
+  - @wbce-d9/api@11.0.3
+
+## 10.3.2
+
+### Patch Changes
+
+- 4b4b098: Fix: Run Script Operation Not Executing in Directus Flows
+- Updated dependencies [4b4b098]
+- @wbce-d9/api@11.0.2
+
+## 10.3.1
+
+### Patch Changes
+
+- da7afa2: Bump xml-crypto
+- Updated dependencies [da7afa2]
+  - @wbce-d9/api@11.0.1
+
+## 10.3.0
+
+### Minor Changes
+
+- 1388e5e: Switched from 'vm2 'to 'isolated-vm' to sandbox the "Run Script" functionality in Flows
+
+## 10.2.3
+
+### Patch Changes
+
+- Updated dependencies [03314e1]
+  - @wbce-d9/api@11.0.0
+
+## 10.2.2
+
+### Patch Changes
+
+- Updated dependencies [40644e2]
+  - @wbce-d9/api@10.6.0
+
+## 10.2.1
+
+### Patch Changes
+
+- Updated dependencies [af89302]
+  - @wbce-d9/api@10.5.0
+
 ## 10.2.0
 
 ### Minor Changes

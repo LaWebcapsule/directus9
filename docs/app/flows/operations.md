@@ -54,8 +54,9 @@ flow ends with a condition that executes with a `reject` path, it will cancel yo
 </video>
 -->
 
-This operation lets you add a custom script using vanilla JavaScript or TypeScript.
-The script will be executed securely in an isolated sandbox. No interactions take place between the sandbox and the host except for sharing input and output values. This means, for example, no access to the file system and no ability to do network requests.
+This operation lets you add a custom script using vanilla JavaScript or TypeScript. The script will be executed securely
+in an isolated sandbox. No interactions take place between the sandbox and the host except for sharing input and output
+values. This means, for example, no access to the file system and no ability to do network requests.
 
 **Options**
 
@@ -121,8 +122,9 @@ will cancel the original event transaction to the database.
 
 :::tip Node Modules
 
-For security reasons, module usage is disabled by default. You can configure what Node Modules are available through
-[the `FLOWS_EXEC_ALLOWED_MODULES` environment variable](/self-hosted/config-options#security).
+To enhance security and prevent unauthorized access to the underlying server, using Node.js modules in the **Run
+Script** operation is no longer supported. If your script requires a third-party library, consider creating a custom
+[operation extension](/extensions/operations) instead.
 
 :::
 

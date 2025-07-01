@@ -1,6 +1,6 @@
 {
 	"name": "@wbce-d9/constants",
-	"version": "9.27.0",
+	"version": "9.28.0",
 	"type": "module",
 	"scripts": {
 		"build": "tsc --build",
@@ -31,6 +31,6 @@
 		"typescript": "5.0.4"
 	},
 	"dependencies": {
-		"zod": "3.21.4"
+		"zod": "3.22.3"
 	}
 }

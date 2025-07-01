@@ -1,5 +1,17 @@
 # @wbce-d9/update-check
 
+## 9.28.0
+
+### Minor Changes
+
+- 40644e2: npm security updates
+
+## 9.27.0
+
+### Minor Changes
+
+- af89302: npm security update
+
 ## 9.26.4
 
 ### Patch Changes

@@ -1,5 +1,39 @@
 # @wbce-d9/app
 
+## 9.33.1
+
+### Patch Changes
+
+- 0a073d4: Bump vite from 4.5.6 to 4.5.10
+
+## 9.33.0
+
+### Minor Changes
+
+- 03314e1: Switched from vm2 to isolated-vm to sandbox the "Run Script" functionality in Flows
+
+## 9.32.0
+
+### Minor Changes
+
+- 40644e2: npm security updates
+
+### Patch Changes
+
+- Updated dependencies [40644e2]
+  - @wbce-d9/composables@9.29.0
+
+## 9.31.0
+
+### Minor Changes
+
+- af89302: npm security updates
+
+### Patch Changes
+
+- Updated dependencies [af89302]
+  - @wbce-d9/composables@9.28.0
+
 ## 9.30.0
 
 ### Minor Changes
