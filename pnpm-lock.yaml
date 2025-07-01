@@ -352,6 +352,9 @@ importers:
       nodemailer-mailgun-transport:
         specifier: 2.1.5
         version: 2.1.5
+      oracledb:
+        specifier: ^6.8.0
+        version: 6.8.0
       pg:
         specifier: 8.10.0
         version: 8.10.0
@@ -15294,6 +15297,13 @@ packages:
       strip-ansi: 7.1.0
       wcwidth: 1.0.1
     dev: false
+
+  /oracledb@6.8.0:
+    resolution: {integrity: sha512-A4ds4n4xtjPTzk1gwrHWuMeWsEcrScF0GFgVebGrhNpHSAzn6eDwMKcSbakZODKfFcI099iqhmqWsgko8D+7Ww==}
+    engines: {node: '>=14.6'}
+    requiresBuild: true
+    dev: false
+    optional: true
 
   /os-tmpdir@1.0.2:
     resolution: {integrity: sha512-D2FR03Vir7FIu45XBY20mTb+/ZSWB00sjU9jdQXt83gDrI4Ztz5Fs7/yy74g2N5SVQY4xY1qDr4rNddwYRVX0g==}
