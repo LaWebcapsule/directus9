@@ -1,5 +1,11 @@
 # @wbce-d9/specs
 
+## 9.26.5
+
+### Patch Changes
+
+- 645ef51: Bump dependencies to fix security alerts
+
 ## 9.26.4
 
 ### Patch Changes

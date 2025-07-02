@@ -1,5 +1,13 @@
 # directus9
 
+## 10.3.5
+
+### Patch Changes
+
+- 645ef51: Bump dependencies to fix security alerts
+- Updated dependencies [645ef51]
+  - @wbce-d9/api@11.0.5
+
 ## 10.3.4
 
 ### Patch Changes

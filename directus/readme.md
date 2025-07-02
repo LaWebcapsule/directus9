@@ -4,20 +4,23 @@
 
 <p>&nbsp;</p>
 
-**This repository is a fork of the Directus 9. Directus 9 was under GPLv3 license and so is this repository. As Directus 10 is now <i>a premium open-source software</i>, this repository aims to maintain a standard openSource version of Directus 9. This repository is not bound to the directus core team.**
+**This repository is a fork of the Directus 9. Directus 9 was under GPLv3 license and so is this repository. As Directus
+10 is now <i>a premium open-source software</i>, this repository aims to maintain a standard openSource version of
+Directus 9. This repository is not bound to the directus core team.**
 
 ## Scope of the fork
 
-Our main goal with this repository is to release security updates and some fixes of the directus 9 version. All contributions are welcome.
+Our main goal with this repository is to release security updates and some fixes of the directus 9 version. All
+contributions are welcome.
 
-:exclamation: :construction_worker: The documentation is provided in the state it was for the directus 9 version and has link toward the directus platform. However the directus platform is now in v10 and the informations you can find there may not be reliable for the v9. 
-
+:exclamation: :construction_worker: The documentation is provided in the state it was for the directus 9 version and has
+link toward the directus platform. However the directus platform is now in v10 and the informations you can find there
+may not be reliable for the v9.
 
 ## Introduction
 
-
-**Directus 9 is a free and open-source data platform for headless content management**. It can be installed on top of any
-new or existing SQL database, instantly providing a dynamic API (REST+GraphQL) and accompanying App for managing
+**Directus 9 is a free and open-source data platform for headless content management**. It can be installed on top of
+any new or existing SQL database, instantly providing a dynamic API (REST+GraphQL) and accompanying App for managing
 content. Built entirely in TypeScript (in Node and Vue), Directus is completely modular and end-to-end extensible...
 with absolutely no paywalls or artificial limitations.
 
@@ -31,23 +34,23 @@ Aurora/Redshift or Google Cloud Platform SQL.
 
 Learn more at...
 
-
 - [GitHub](https://github.com/LaWebcapsule/directus9)
 
-**All the following links are for Directus v10 ; contribution are welcome to make specific documentation for the Directus 9**
+**All the following links are for Directus v10 ; contribution are welcome to make specific documentation for the
+Directus 9**
 
 - [Website](https://directus.io/)
 - [Documentation](https://docs.directus.io/)
 - [Community](https://directus.chat/)
 - [Twitter](https://twitter.com/directus)
-- [Cloud](https://directus.cloud/) 
+- [Cloud](https://directus.cloud/)
 - [Marketplace](https://directus.market/)
 
 <p>&nbsp;</p>
 
 ## Installing
 
-Directus requires NodeJS 10+. 
+Directus requires NodeJS 10+.
 
 Install Directus9 :
 
@@ -66,6 +69,7 @@ Create a new project with our simple CLI tool:
 ```
 npx directus init
 ```
+
 The above command will create a directory with your project name, then walk you through the database configuration and
 creation of your first admin user.
 
@@ -84,13 +88,16 @@ npm update
 ## Migrating from directus@9.0.0^ to @wbce-d9@9.0.0^
 
 You need to change your dependencies :
+
 1. In package.json
+
 ```
 "directus":9.0.0^ --> "@wbce-d9/directus9": 9.0.0^
 "@directus/some-package" --> "@wbce-d9/some-package"
 ```
 
 2. Update your dependencies :
+
 ```
 npm update
 ```
@@ -101,6 +108,7 @@ npm update
 import {...} from "directus"
 import {...} from "@directus/some-package"
 ```
+
 should become :
 
 ```ts
@@ -108,10 +116,8 @@ import {...} from "@wbce-d9/directus9"
 import {...} from "@wbce-d9/some-package"
 ```
 
-4. You don't have to do any changes to your databases.
-Directus9 use the same schema as directus@9.0.0^. As a consequence, you don't need other changes than the three steps below.
-
-
+4. You don't have to do any changes to your databases. Directus9 use the same schema as directus@9.0.0^. As a
+   consequence, you don't need other changes than the three steps below.
 
 ## Contributing
 
@@ -132,7 +138,9 @@ This is a fork of directus9. We welcome contribution and no support is asked.
 
 ## License
 
-Directus is released under the [GPLv3 license](./license). Monospace Inc owns all Directus trademarks, logos, and intellectual property on behalf of our project's community. Copyright © 2004-2020, Monospace Inc.
+Directus is released under the [GPLv3 license](./license). Monospace Inc owns all Directus trademarks, logos, and
+intellectual property on behalf of our project's community. Copyright © 2004-2020, Monospace Inc.
 
-
-**This repository is a fork of the Directus 9. Directus 9 was under GPLv3 license and so is this repository. As Directus 10 is now <i>a premium open-source software</i>, this repository aims to maintain a standard openSource version of Directus 9. This repository is not bound to the directus core team.**
+**This repository is a fork of the Directus 9. Directus 9 was under GPLv3 license and so is this repository. As Directus
+10 is now <i>a premium open-source software</i>, this repository aims to maintain a standard openSource version of
+Directus 9. This repository is not bound to the directus core team.**
