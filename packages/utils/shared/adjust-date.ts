@@ -97,7 +97,7 @@ export function adjustDate(date: Date, adjustment: string): Date | undefined {
  * @returns Object with amount and type, or null if parsing fails
  */
 function parseAdjustmentString(adjustment: string): { amount: number; type: string } | null {
-	// Clean the input string
+	// Clean the input string - remove all leading/trailing whitespace
 	adjustment = adjustment.trim().toLowerCase();
 
 	if (!adjustment) return null;
@@ -163,21 +163,23 @@ function parseAdjustmentString(adjustment: string): { amount: number; type: stri
 	}
 
 	const numberPart = adjustment.substring(0, numEndIndex);
-	// Pour le unitPart, on prend tout après le nombre et on trim pour enlever les espaces
+
+	// For unitPart, take everything after the number and trim to remove ALL whitespace
+	// This handles cases like "5    days" or "5\t\t\tdays" etc.
 	const unitPart = adjustment.substring(numEndIndex).trim();
 
 	// Parse the numeric value - must be valid
 	const amount = parseFloat(numberPart);
 	if (isNaN(amount) || !isFinite(amount)) return null;
 
-	// Si pas d'unité, on utilise 'days' comme unité par défaut
+	// If no unit is provided, use 'days' as default unit
 	if (!unitPart) {
 		return { amount, type: 'days' };
 	}
 
-	// Vérifie que l'unité est valide
+	// Check that the unit is valid
 	if (!validUnits.includes(unitPart)) {
-		return null; // Retourne null si l'unité n'est pas reconnue (comme la regex)
+		return null;
 	}
 
 	return { amount, type: unitPart };
