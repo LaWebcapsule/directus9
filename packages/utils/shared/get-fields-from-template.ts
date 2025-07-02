@@ -16,9 +16,7 @@ export function getFieldsFromTemplate(template: string | null): string[] {
 		// Extract content between {{ and }}
 		const content = template.substring(startIndex + 2, endIndex).trim();
 
-		if (content) {
-			fields.push(content);
-		}
+		fields.push(content);
 
 		// Continue after the end of this template
 		i = endIndex + 2;

@@ -102,24 +102,57 @@ function parseAdjustmentString(adjustment: string): { amount: number; type: stri
 
 	if (!adjustment) return null;
 
-	// First, try to find where the number ends
+	// List of valid units (like in the original regex)
+	const validUnits = [
+		'milliseconds',
+		'millisecond',
+		'msecs',
+		'msec',
+		'ms',
+		'seconds',
+		'second',
+		'secs',
+		'sec',
+		's',
+		'minutes',
+		'minute',
+		'mins',
+		'min',
+		'm',
+		'hours',
+		'hour',
+		'hrs',
+		'hr',
+		'h',
+		'days',
+		'day',
+		'd',
+		'weeks',
+		'week',
+		'w',
+		'months',
+		'month',
+		'mth',
+		'mo',
+		'years',
+		'year',
+		'yrs',
+		'yr',
+		'y',
+	];
+
+	// Find the end of the number part
 	let numEndIndex = 0;
 	let hasNumber = false;
 
-	// Parse the number part from the beginning
 	for (let i = 0; i < adjustment.length; i++) {
 		const char = adjustment[i]!;
 
 		if ((char >= '0' && char <= '9') || char === '.' || (i === 0 && char === '-')) {
 			numEndIndex = i + 1;
 			hasNumber = true;
-		} else if (char === ' ') {
-			// Skip spaces after number
-			if (hasNumber) {
-				break;
-			}
 		} else {
-			// Hit a non-numeric character
+			// Hit a non-numeric character (space or letter)
 			break;
 		}
 	}
@@ -130,18 +163,22 @@ function parseAdjustmentString(adjustment: string): { amount: number; type: stri
 	}
 
 	const numberPart = adjustment.substring(0, numEndIndex);
+	// Pour le unitPart, on prend tout après le nombre et on trim pour enlever les espaces
 	const unitPart = adjustment.substring(numEndIndex).trim();
 
 	// Parse the numeric value - must be valid
 	const amount = parseFloat(numberPart);
 	if (isNaN(amount) || !isFinite(amount)) return null;
 
-	// Validate unit part - must contain only valid characters for time units
-	const type = unitPart || 'days';
-
-	if (unitPart && !/^[a-z]+$/i.test(unitPart)) {
-		return null; // Invalid unit format (e.g., "ms1" contains numbers)
+	// Si pas d'unité, on utilise 'days' comme unité par défaut
+	if (!unitPart) {
+		return { amount, type: 'days' };
 	}
 
-	return { amount, type };
+	// Vérifie que l'unité est valide
+	if (!validUnits.includes(unitPart)) {
+		return null; // Retourne null si l'unité n'est pas reconnue (comme la regex)
+	}
+
+	return { amount, type: unitPart };
 }
