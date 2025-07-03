@@ -1,4 +1,3 @@
-import { REGEX_BETWEEN_PARENS } from '@wbce-d9/constants';
 import type { Accountability, Filter, Role, User } from '@wbce-d9/types';
 import { isObjectLike } from 'lodash-es';
 import { adjustDate } from './adjust-date.js';
@@ -122,9 +121,15 @@ function parseFilterValue(value: any, accountability: Accountability | null, con
 function parseDynamicVariable(value: any, accountability: Accountability | null, context: ParseFilterContext) {
 	if (value.startsWith('$NOW')) {
 		if (value.includes('(') && value.includes(')')) {
-			const adjustment = value.match(REGEX_BETWEEN_PARENS)?.[1];
-			if (!adjustment) return new Date();
-			return adjustDate(new Date(), adjustment);
+			// Secure approach: replace the use of regex by direct extraction
+			const startIndex = value.indexOf('(');
+			const endIndex = value.lastIndexOf(')');
+
+			if (startIndex !== -1 && endIndex !== -1 && endIndex > startIndex) {
+				const adjustment = value.substring(startIndex + 1, endIndex);
+				if (!adjustment.trim()) return new Date();
+				return adjustDate(new Date(), adjustment);
+			}
 		}
 
 		return new Date();

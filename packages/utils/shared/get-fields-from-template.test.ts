@@ -9,4 +9,8 @@ describe('getFieldsFromTemplate', () => {
 	it('returns fields as an array of strings', () => {
 		expect(getFieldsFromTemplate('{{ field }}')).toStrictEqual(['field']);
 	});
+
+	it('returns fields as an array of strings including empty ones', () => {
+		expect(getFieldsFromTemplate('{{}} {{field}}')).toStrictEqual(['', 'field']);
+	});
 });
