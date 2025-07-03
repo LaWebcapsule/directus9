@@ -19,10 +19,8 @@ import {
 import { clone } from 'lodash-es';
 
 /**
- * Adjust a given date by a given change in duration. The adjustment value uses the exact same syntax
+ * Adjust a given date by a given change in duration. This adjustment value uses the same syntax
  * and logic as Vercel's `ms`.
- *
- * The conversion is lifted straight from `ms`.
  */
 export function adjustDate(date: Date, adjustment: string): Date | undefined {
 	date = clone(date);
@@ -33,17 +31,13 @@ export function adjustDate(date: Date, adjustment: string): Date | undefined {
 		adjustment = adjustment.substring(1);
 	}
 
-	const match =
-		/^(-?(?:\d+)?\.?\d+) *(milliseconds?|msecs?|ms|seconds?|secs?|s|minutes?|mins?|m|hours?|hrs?|h|days?|d|weeks?|w|months?|mth|mo|years?|yrs?|y)?$/i.exec(
-			adjustment
-		);
+	const parseResult = parseAdjustmentString(adjustment);
 
-	if (!match || !match[1]) {
+	if (!parseResult) {
 		return;
 	}
 
-	const amount = parseFloat(match[1]);
-	const type = (match[2] ?? 'days').toLowerCase();
+	const { amount, type } = parseResult;
 
 	switch (type) {
 		case 'years':
@@ -92,4 +86,101 @@ export function adjustDate(date: Date, adjustment: string): Date | undefined {
 		default:
 			return undefined;
 	}
+}
+
+/**
+ * Parse adjustment string compatible with Vercel's `ms` package syntax.
+ * Supports formats like "1d", "2 hours", "1.5 weeks", etc.
+ * The parsing logic is lifted from `ms` but implemented without vulnerable regex patterns.
+ *
+ * @param adjustment - The adjustment string to parse (e.g., "1d", "2 hours")
+ * @returns Object with amount and type, or null if parsing fails
+ */
+function parseAdjustmentString(adjustment: string): { amount: number; type: string } | null {
+	// Clean the input string - remove all leading/trailing whitespace
+	adjustment = adjustment.trim().toLowerCase();
+
+	if (!adjustment) return null;
+
+	// List of valid units (like in the original regex)
+	const validUnits = [
+		'milliseconds',
+		'millisecond',
+		'msecs',
+		'msec',
+		'ms',
+		'seconds',
+		'second',
+		'secs',
+		'sec',
+		's',
+		'minutes',
+		'minute',
+		'mins',
+		'min',
+		'm',
+		'hours',
+		'hour',
+		'hrs',
+		'hr',
+		'h',
+		'days',
+		'day',
+		'd',
+		'weeks',
+		'week',
+		'w',
+		'months',
+		'month',
+		'mth',
+		'mo',
+		'years',
+		'year',
+		'yrs',
+		'yr',
+		'y',
+	];
+
+	// Find the end of the number part
+	let numEndIndex = 0;
+	let hasNumber = false;
+
+	for (let i = 0; i < adjustment.length; i++) {
+		const char = adjustment[i]!;
+
+		if ((char >= '0' && char <= '9') || char === '.' || (i === 0 && char === '-')) {
+			numEndIndex = i + 1;
+			hasNumber = true;
+		} else {
+			// Hit a non-numeric character (space or letter)
+			break;
+		}
+	}
+
+	// Must have a valid number at the start
+	if (!hasNumber || numEndIndex === 0) {
+		return null;
+	}
+
+	const numberPart = adjustment.substring(0, numEndIndex);
+
+	// For unitPart, take everything after the number and trim to remove ALL whitespace
+	// This handles cases like "5    days" or "5\t\t\tdays" etc.
+	const unitPart = adjustment.substring(numEndIndex).trim();
+
+	// Parse the numeric value - must be valid
+	const amount = parseFloat(numberPart);
+	if (isNaN(amount) || !isFinite(amount)) return null;
+
+	// If no unit is provided, use 'days' as default unit
+	if (!unitPart) {
+		return { amount, type: 'days' };
+	}
+
+	// Check that the unit is valid
+	if (!validUnits.includes(unitPart)) {
+		return null;
+	}
+
+	return { amount, type: unitPart };
 }
