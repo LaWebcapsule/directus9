@@ -1,5 +1,12 @@
 # @wbce-d9/storage-driver-cloudinary
 
+## 9.27.2
+
+### Patch Changes
+
+- Updated dependencies [f907b36]
+  - @wbce-d9/utils@9.29.2
+
 ## 9.27.1
 
 ### Patch Changes

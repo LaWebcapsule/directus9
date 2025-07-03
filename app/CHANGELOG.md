@@ -1,5 +1,11 @@
 # @wbce-d9/app
 
+## 9.33.2
+
+### Patch Changes
+
+- @wbce-d9/composables@9.29.1
+
 ## 9.33.1
 
 ### Patch Changes
