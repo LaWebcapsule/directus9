@@ -17,8 +17,8 @@ star, pull-request, bug report, and feature request.
 
 ## Code of Conduct
 
-**The Directus [Code of Conduct](https://github.com/LaWebcapsule/directus9/blob/main/code_of_conduct.md) is one of the ways
-we put our values into practice. We expect all of our staff, contractors and contributors to know and follow this
+**The Directus [Code of Conduct](https://github.com/LaWebcapsule/directus9/blob/main/code_of_conduct.md) is one of the
+ways we put our values into practice. We expect all of our staff, contractors and contributors to know and follow this
 code.**
 
 **Our contributors and maintainers work extremely hard to build Directus as premium open-source software. Please be
@@ -91,9 +91,9 @@ New feature ideas reported directly to issues might be converted into a Discussi
 [the core team](https://github.com/orgs/directus/people)'s discretion first. This is often due to a lack of detail, or
 lack of proven interest.
 
-Each Pull Request that comes in is required to resolve [an open Issue](https://github.com/LaWebcapsule/directus9/issues) that
-is labeled "Bug", "Improvement", or "New Feature". This ensures that any code change made implements a known actionable
-item, be it a feature or otherwise.
+Each Pull Request that comes in is required to resolve [an open Issue](https://github.com/LaWebcapsule/directus9/issues)
+that is labeled "Bug", "Improvement", or "New Feature". This ensures that any code change made implements a known
+actionable item, be it a feature or otherwise.
 
 ### Reporting Security Vulnerabilities
 
