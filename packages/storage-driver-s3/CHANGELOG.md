@@ -1,5 +1,12 @@
 # @wbce-d9/storage-driver-s3
 
+## 9.26.11
+
+### Patch Changes
+
+- Updated dependencies [f907b36]
+  - @wbce-d9/utils@9.29.2
+
 ## 9.26.10
 
 ### Patch Changes

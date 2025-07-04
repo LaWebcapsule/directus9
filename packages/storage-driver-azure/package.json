@@ -1,6 +1,6 @@
 {
 	"name": "@wbce-d9/storage-driver-azure",
-	"version": "9.26.8",
+	"version": "9.26.9",
 	"type": "module",
 	"scripts": {
 		"build": "tsc --build",
