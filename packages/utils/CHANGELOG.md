@@ -1,5 +1,11 @@
 # @wbce-d9/utils
 
+## 9.29.2
+
+### Patch Changes
+
+- f907b36: Fix code scanning alerts
+
 ## 9.29.1
 
 ### Patch Changes

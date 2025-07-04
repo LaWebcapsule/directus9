@@ -1,5 +1,19 @@
 # @wbce-d9/api
 
+## 11.0.6
+
+### Patch Changes
+
+- Updated dependencies [f907b36]
+  - @wbce-d9/utils@9.29.2
+  - @wbce-d9/app@9.33.2
+  - @wbce-d9/extensions-sdk@9.27.2
+  - @wbce-d9/storage-driver-azure@9.26.9
+  - @wbce-d9/storage-driver-cloudinary@9.27.2
+  - @wbce-d9/storage-driver-gcs@9.26.9
+  - @wbce-d9/storage-driver-local@9.26.9
+  - @wbce-d9/storage-driver-s3@9.26.11
+
 ## 11.0.5
 
 ### Patch Changes
