@@ -1,5 +1,11 @@
 # @wbce-d9/api
 
+## 11.0.7
+
+### Patch Changes
+
+- d4be10c: Fix SSRF Loopback IP filter bypass
+
 ## 11.0.6
 
 ### Patch Changes
