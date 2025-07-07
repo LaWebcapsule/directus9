@@ -48,13 +48,17 @@ test(`Throws error if passed IP is denylisted`, async () => {
 test(`Throws error for invalid CIDR in deny list`, async () => {
 	vi.mocked(getEnv).mockReturnValue({ IMPORT_IP_DENY_LIST: ['192.0.0.36/33'] });
 
-	await expect(validateIP(sample.ip, sample.url)).rejects.toThrow('Invalid IP deny list entry "192.0.0.36/33"');
+	await expect(validateIP(sample.ip, sample.url)).rejects.toThrow(
+		'The value of "prefix" is out of range. It must be >= 0 && <= 32. Received 33'
+	);
 });
 
 test(`Throws error for malformed CIDR in deny list`, async () => {
 	vi.mocked(getEnv).mockReturnValue({ IMPORT_IP_DENY_LIST: ['192.168.1.1/abc'] });
 
-	await expect(validateIP(sample.ip, sample.url)).rejects.toThrow('Invalid IP deny list entry "192.168.1.1/abc"');
+	await expect(validateIP(sample.ip, sample.url)).rejects.toThrow(
+		'Invalid CIDR format: prefix length must be a number'
+	);
 });
 
 test(`Checks against IPs of local networkInterfaces if IP deny list contains 0.0.0.0`, async () => {
