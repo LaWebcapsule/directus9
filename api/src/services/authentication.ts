@@ -253,6 +253,7 @@ export class AuthenticationService {
 		const record = await this.knex
 			.select({
 				session_expires: 's.expires',
+				session_fallback_token: 's.fallback_token',
 				user_id: 'u.id',
 				user_first_name: 'u.first_name',
 				user_last_name: 'u.last_name',
@@ -325,15 +326,55 @@ export class AuthenticationService {
 			});
 		}
 
-		const newRefreshToken = nanoid(64);
+		// Clean up expired sessions for this user first
+		await this.knex('directus_sessions')
+			.delete()
+			.where('user', '=', record.user_id)
+			.andWhere('expires', '<', new Date());
+
+		let newRefreshToken = record.session_fallback_token ?? nanoid(64);
 		const refreshTokenExpiration = new Date(Date.now() + getMilliseconds(env['REFRESH_TOKEN_TTL'], 0));
 
-		await this.knex('directus_sessions')
-			.update({
-				token: newRefreshToken,
-				expires: refreshTokenExpiration,
-			})
-			.where({ token: refreshToken });
+		// If a fallback session already exists, just update its expiration
+		if (record.session_fallback_token) {
+			await this.knex('directus_sessions')
+				.update({
+					expires: refreshTokenExpiration,
+				})
+				.where({ token: newRefreshToken });
+		} else {
+			// Otherwise, create the race condition protection mechanism
+			const overlapDuration = getMilliseconds(env['REFRESH_TOKEN_OVERLAP_DURATION'], 10000);
+
+			// Atomic protection: only the first request can create the fallback_token
+			const sessionUpdated = await this.knex('directus_sessions')
+				.update({
+					fallback_token: newRefreshToken,
+					expires: new Date(Date.now() + overlapDuration), // Current session expires after the overlapDuration
+				})
+				.where({ token: refreshToken, fallback_token: null }); // Atomic condition to prevent race conditions
+
+			if (sessionUpdated === 0) {
+				// Another request already created the fallback_token, retrieve it
+				const existingFallback = await this.knex('directus_sessions')
+					.select('fallback_token')
+					.where({ token: refreshToken })
+					.first();
+
+				newRefreshToken = existingFallback.fallback_token;
+			} else {
+				// We successfully created the fallback_token, create the new session
+				await this.knex('directus_sessions').insert({
+					token: newRefreshToken,
+					user: record.user_id,
+					share: record.share_id,
+					expires: refreshTokenExpiration,
+					ip: this.accountability?.ip,
+					user_agent: this.accountability?.userAgent,
+					origin: this.accountability?.origin,
+				});
+			}
+		}
 
 		const tokenPayload: DirectusTokenPayload = {
 			id: record.user_id,
@@ -416,7 +457,12 @@ export class AuthenticationService {
 			const provider = getAuthProvider(user.provider);
 			await provider.logout(clone(user));
 
-			await this.knex.delete().from('directus_sessions').where('token', refreshToken);
+			// Remove all related sessions (main and fallback)
+			await this.knex
+				.delete()
+				.from('directus_sessions')
+				.where('token', refreshToken)
+				.orWhere('fallback_token', refreshToken);
 		}
 	}
 
