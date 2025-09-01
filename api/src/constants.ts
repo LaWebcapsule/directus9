@@ -68,13 +68,12 @@ export const REFRESH_COOKIE_OPTIONS: CookieOptions = {
 	path: '/auth',
 };
 
-const {
-	maxAge: refreshCookieMaxAge,
-	expires: refreshCookieExpires,
-	...refresh_cookie_clear_options
-} = REFRESH_COOKIE_OPTIONS;
-
-export const REFRESH_COOKIE_CLEAR_OPTIONS: CookieOptions = refresh_cookie_clear_options;
+export const REFRESH_COOKIE_CLEAR_OPTIONS: CookieOptions = (() => {
+	const { ...rest } = REFRESH_COOKIE_OPTIONS;
+	delete rest.maxAge;
+	delete rest.expires;
+	return rest;
+})();
 
 export const GET_SET_HEADER = (cookieValue: string) => {
 	const domainHeader = env['REFRESH_TOKEN_COOKIE_DOMAIN'] ? ` Domain=${env['REFRESH_TOKEN_COOKIE_DOMAIN']};` : '';
@@ -98,13 +97,12 @@ export const ACCESS_COOKIE_OPTIONS: CookieOptions = {
 	path: '/assets',
 };
 
-const {
-	maxAge: accessCookieMaxAge,
-	expires: accessCookieExpires,
-	...access_cookie_clear_options
-} = ACCESS_COOKIE_OPTIONS;
-
-export const ACCESS_COOKIE_CLEAR_OPTIONS: CookieOptions = access_cookie_clear_options;
+export const ACCESS_COOKIE_CLEAR_OPTIONS: CookieOptions = (() => {
+	const { ...rest } = ACCESS_COOKIE_OPTIONS;
+	delete rest.maxAge;
+	delete rest.expires;
+	return rest;
+})();
 
 export const OAS_REQUIRED_SCHEMAS = ['Diff', 'Schema', 'Query', 'x-metadata'];
 
