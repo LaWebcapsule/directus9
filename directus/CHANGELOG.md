@@ -1,5 +1,12 @@
 # directus9
 
+## 10.3.9
+
+### Patch Changes
+
+- Updated dependencies [da7e17f]
+  - @wbce-d9/api@11.1.0
+
 ## 10.3.8
 
 ### Patch Changes

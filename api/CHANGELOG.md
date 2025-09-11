@@ -1,5 +1,11 @@
 # @wbce-d9/api
 
+## 11.1.0
+
+### Minor Changes
+
+- da7e17f: Limit access token to GET assets in cookies
+
 ## 11.0.8
 
 ### Patch Changes
