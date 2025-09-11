@@ -9,7 +9,11 @@ import asyncHandler from '../utils/async-handler.js';
 import { getIPFromReq } from '../utils/get-ip-from-req.js';
 import isDirectusJWT from '../utils/is-directus-jwt.js';
 import { verifyAccessJWT } from '../utils/jwt.js';
-import { ACCESS_COOKIE_CLEAR_OPTIONS, REFRESH_COOKIE_CLEAR_OPTIONS } from '../constants.js';
+import {
+	ACCESS_COOKIE_CLEAR_OPTIONS,
+	REFRESH_COOKIE_CLEAR_OPTIONS,
+	SESSION_COOKIE_CLEAR_OPTIONS,
+} from '../constants.js';
 
 /**
  * Verify the passed JWT and assign the user ID and role to `req`
@@ -28,6 +32,10 @@ export const handler = async (req: Request, _res: Response, next: NextFunction) 
 
 	const origin = req.get('origin');
 	if (origin) defaultAccountability.origin = origin;
+
+	const sessionId = req?.cookies?.[env['SESSION_ID_COOKIE_NAME']] || null;
+
+	if (sessionId) defaultAccountability.session_id = sessionId;
 
 	const database = getDatabase();
 
@@ -114,6 +122,10 @@ export const handler = async (req: Request, _res: Response, next: NextFunction) 
 
 			if (req?.cookies[env['REFRESH_TOKEN_COOKIE_NAME']]) {
 				_res?.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'], REFRESH_COOKIE_CLEAR_OPTIONS);
+			}
+
+			if (req?.cookies[env['SESSION_ID_COOKIE_NAME']]) {
+				_res?.clearCookie(env['SESSION_ID_COOKIE_NAME'], SESSION_COOKIE_CLEAR_OPTIONS);
 			}
 		}
 

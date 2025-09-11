@@ -13,6 +13,8 @@ import {
 	DEFAULT_AUTH_PROVIDER,
 	REFRESH_COOKIE_CLEAR_OPTIONS,
 	REFRESH_COOKIE_OPTIONS,
+	SESSION_COOKIE_CLEAR_OPTIONS,
+	SESSION_COOKIE_OPTIONS,
 } from '../constants.js';
 import env from '../env.js';
 import { InvalidPayloadException } from '../exceptions/index.js';
@@ -96,7 +98,12 @@ router.post(
 
 		const mode: 'json' | 'cookie' = req.body.mode || (req.body.refresh_token ? 'json' : 'cookie');
 
-		const { accessToken, refreshToken, expires } = await authenticationService.refresh(currentRefreshToken);
+		const currentSessionIdToken = req.cookies?.[env['SESSION_ID_COOKIE_NAME']] || null;
+
+		const { accessToken, refreshToken, expires, sessionIdToken } = await authenticationService.refresh(
+			currentRefreshToken,
+			currentSessionIdToken
+		);
 
 		const payload = {
 			data: { access_token: accessToken, expires },
@@ -109,6 +116,7 @@ router.post(
 		if (mode === 'cookie') {
 			res?.cookie(env['ACCESS_TOKEN_COOKIE_NAME'], accessToken, ACCESS_COOKIE_OPTIONS);
 			res?.cookie(env['REFRESH_TOKEN_COOKIE_NAME'], refreshToken, REFRESH_COOKIE_OPTIONS);
+			res?.cookie(env['SESSION_ID_COOKIE_NAME'], sessionIdToken, SESSION_COOKIE_OPTIONS);
 		}
 
 		res.locals['payload'] = payload;
@@ -150,6 +158,10 @@ router.post(
 
 		if (req.cookies[env['REFRESH_TOKEN_COOKIE_NAME']]) {
 			res.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'], REFRESH_COOKIE_CLEAR_OPTIONS);
+		}
+
+		if (req.cookies[env['SESSION_ID_COOKIE_NAME']]) {
+			res.clearCookie(env['SESSION_ID_COOKIE_NAME'], SESSION_COOKIE_CLEAR_OPTIONS);
 		}
 
 		return next();

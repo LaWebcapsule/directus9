@@ -59,4 +59,5 @@ export type LoginResult = {
 	refreshToken: any;
 	expires: any;
 	id?: any;
+	sessionIdToken: any;
 };

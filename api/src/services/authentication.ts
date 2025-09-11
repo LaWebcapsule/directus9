@@ -209,6 +209,8 @@ export class AuthenticationService {
 			issuer: 'directus',
 		});
 
+		const sessionIdToken = nanoid(64);
+
 		await this.knex('directus_sessions').delete().where('expires', '<', new Date());
 
 		if (this.accountability) {
@@ -220,6 +222,7 @@ export class AuthenticationService {
 				origin: this.accountability.origin,
 				collection: 'directus_users',
 				item: user.id,
+				session_id: sessionIdToken,
 			});
 		}
 
@@ -238,10 +241,11 @@ export class AuthenticationService {
 			refreshToken,
 			expires: getMilliseconds(env['ACCESS_TOKEN_TTL']),
 			id: user.id,
+			sessionIdToken,
 		};
 	}
 
-	async refresh(refreshToken: string): Promise<Record<string, any>> {
+	async refresh(refreshToken: string, sessionIdToken?: string): Promise<Record<string, any>> {
 		const { nanoid } = await import('nanoid');
 		const STALL_TIME = env['LOGIN_STALL_TIME'];
 		const timeStart = performance.now();
@@ -424,11 +428,14 @@ export class AuthenticationService {
 			await this.knex('directus_users').update({ last_access: new Date() }).where({ id: record.user_id });
 		}
 
+		sessionIdToken ??= nanoid(64);
+
 		return {
 			accessToken,
 			refreshToken: newRefreshToken,
 			expires: getMilliseconds(env['ACCESS_TOKEN_TTL']),
 			id: record.user_id,
+			sessionIdToken,
 		};
 	}
 

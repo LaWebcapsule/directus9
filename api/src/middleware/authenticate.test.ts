@@ -20,6 +20,8 @@ vi.mock('../../src/env', () => {
 		ACCESS_TOKEN_COOKIE_DOMAIN: '',
 		ACCESS_TOKEN_COOKIE_TTL: 0,
 		ACCESS_TOKEN_COOKIE_SECURE: false,
+		SESSION_ID_COOKIE_TTL: 0,
+		SESSION_ID_COOKIE_SECURE: false,
 	};
 
 	return {
