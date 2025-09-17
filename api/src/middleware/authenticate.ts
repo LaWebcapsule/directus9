@@ -4,7 +4,7 @@ import { isEqual } from 'lodash-es';
 import getDatabase from '../database/index.js';
 import emitter from '../emitter.js';
 import env from '../env.js';
-import { InvalidCredentialsException } from '../exceptions/index.js';
+import { InvalidCredentialsException, InvalidTokenException } from '../exceptions/index.js';
 import asyncHandler from '../utils/async-handler.js';
 import { getIPFromReq } from '../utils/get-ip-from-req.js';
 import isDirectusJWT from '../utils/is-directus-jwt.js';
@@ -107,7 +107,7 @@ export const handler = async (req: Request, _res: Response, next: NextFunction) 
 			}
 		}
 	} catch (error) {
-		if (error instanceof InvalidCredentialsException) {
+		if (error instanceof InvalidCredentialsException || error instanceof InvalidTokenException) {
 			if (req?.cookies[env['ACCESS_TOKEN_COOKIE_NAME']]) {
 				_res?.clearCookie(env['ACCESS_TOKEN_COOKIE_NAME'], ACCESS_COOKIE_CLEAR_OPTIONS);
 			}
