@@ -90,7 +90,7 @@ export const onError = async (error: RequestError): Promise<RequestError> => {
 				},
 			});
 		}
-	} 
+	}
 
 	// Logout if token is invalid
 	if (status === 401 && code === 'INVALID_TOKEN') {
