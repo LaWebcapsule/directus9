@@ -1,5 +1,11 @@
 # @wbce-d9/api
 
+## 11.1.1
+
+### Patch Changes
+
+- 0d32bf9: Fix Token Expired Exception
+
 ## 11.1.0
 
 ### Minor Changes
