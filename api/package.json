@@ -92,7 +92,7 @@
 		"@wbce-d9/utils": "workspace:*",
 		"argon2": "0.30.3",
 		"async": "3.2.4",
-		"axios": "^1.8.2",
+		"axios": "^1.12.0",
 		"busboy": "1.6.0",
 		"bytes": "3.1.2",
 		"camelcase": "7.0.1",
