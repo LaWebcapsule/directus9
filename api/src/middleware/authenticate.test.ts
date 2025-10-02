@@ -14,6 +14,12 @@ vi.mock('../../src/database');
 vi.mock('../../src/env', () => {
 	const MOCK_ENV = {
 		SECRET: 'test',
+		REFRESH_TOKEN_COOKIE_DOMAIN: '',
+		REFRESH_TOKEN_TTL: 0,
+		REFRESH_TOKEN_COOKIE_SECURE: false,
+		ACCESS_TOKEN_COOKIE_DOMAIN: '',
+		ACCESS_TOKEN_COOKIE_TTL: 0,
+		ACCESS_TOKEN_COOKIE_SECURE: false,
 	};
 
 	return {
@@ -187,16 +193,19 @@ test('Sets accountability to payload contents if valid token is passed', async (
 });
 
 test('Throws InvalidCredentialsException when static token is used, but user does not exist', async () => {
-	vi.mocked(getDatabase).mockReturnValue({
+	const mockDb = {
 		select: vi.fn().mockReturnThis(),
 		from: vi.fn().mockReturnThis(),
 		leftJoin: vi.fn().mockReturnThis(),
 		where: vi.fn().mockReturnThis(),
 		first: vi.fn().mockResolvedValue(undefined),
-	} as unknown as Knex);
+	} as unknown as Knex;
+
+	vi.mocked(getDatabase).mockReturnValue(mockDb);
 
 	const req = {
 		ip: '127.0.0.1',
+		cookies: {},
 		get: vi.fn((string) => {
 			switch (string) {
 				case 'user-agent':
