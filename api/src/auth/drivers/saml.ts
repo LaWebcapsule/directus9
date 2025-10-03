@@ -8,6 +8,7 @@ import {
 	ACCESS_COOKIE_OPTIONS,
 	REFRESH_COOKIE_CLEAR_OPTIONS,
 	REFRESH_COOKIE_OPTIONS,
+	SESSION_COOKIE_CLEAR_OPTIONS,
 } from '../../constants.js';
 import getDatabase from '../../database/index.js';
 import emitter from '../../emitter.js';
@@ -162,6 +163,10 @@ export function createSAMLAuthRouter(providerName: string) {
 					await authService.logout(currentRefreshToken);
 					res.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'], REFRESH_COOKIE_CLEAR_OPTIONS);
 				}
+			}
+
+			if (req.cookies[env['SESSION_ID_COOKIE_NAME']]) {
+				res.clearCookie(env['SESSION_ID_COOKIE_NAME'], SESSION_COOKIE_CLEAR_OPTIONS);
 			}
 
 			return res.redirect(context);

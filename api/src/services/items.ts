@@ -230,6 +230,7 @@ export class ItemsService<Item extends AnyItem = AnyItem> implements AbstractSer
 					user_agent: this.accountability!.userAgent,
 					origin: this.accountability!.origin,
 					item: primaryKey,
+					session_id: this.accountability!.session_id,
 				});
 
 				// If revisions are tracked, create revisions record
@@ -667,6 +668,7 @@ export class ItemsService<Item extends AnyItem = AnyItem> implements AbstractSer
 						user_agent: this.accountability!.userAgent,
 						origin: this.accountability!.origin,
 						item: key,
+						session_id: this.accountability?.session_id,
 					})),
 					{ bypassLimits: true }
 				);
@@ -901,6 +903,7 @@ export class ItemsService<Item extends AnyItem = AnyItem> implements AbstractSer
 						user_agent: this.accountability!.userAgent,
 						origin: this.accountability!.origin,
 						item: key,
+						session_id: this.accountability!.session_id,
 					})),
 					{ bypassLimits: true }
 				);

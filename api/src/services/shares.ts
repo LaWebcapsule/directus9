@@ -109,10 +109,13 @@ export class SharesService extends ItemsService {
 			issuer: 'directus',
 		});
 
+		const sessionIdToken = nanoid(64);
+
 		return {
 			accessToken,
 			refreshToken,
 			expires: getMilliseconds(env['ACCESS_TOKEN_TTL']),
+			sessionIdToken,
 		};
 	}
 
