@@ -28,6 +28,7 @@ export type Info = {
 	};
 	directus?: {
 		version: string;
+		wbceVersion: string;
 	};
 	node?: {
 		version: string;
