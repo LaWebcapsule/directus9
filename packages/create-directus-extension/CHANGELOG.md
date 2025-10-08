@@ -1,5 +1,11 @@
 # @wbce-d9/create-directus-extension
 
+## 9.26.11
+
+### Patch Changes
+
+- @wbce-d9/extensions-sdk@9.27.3
+
 ## 9.26.10
 
 ### Patch Changes

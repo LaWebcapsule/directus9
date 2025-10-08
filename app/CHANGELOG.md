@@ -1,5 +1,12 @@
 # @wbce-d9/app
 
+## 9.33.3
+
+### Patch Changes
+
+- 3e74c9e: Add transversal session_id for activity audit
+  - @wbce-d9/composables@9.29.1
+
 ## 9.33.2
 
 ### Patch Changes
