@@ -1,5 +1,13 @@
 # @wbce-d9/api
 
+## 11.1.3
+
+### Patch Changes
+
+- 49466be: Display directus version instead of api version
+- Updated dependencies [49466be]
+  - @wbce-d9/app@9.33.4
+
 ## 11.1.2
 
 ### Patch Changes
