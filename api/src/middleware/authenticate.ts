@@ -61,6 +61,7 @@ export const handler = async (req: Request, _res: Response, next: NextFunction) 
 					.select({
 						session_expires: 's.expires',
 						user_id: 'u.id',
+						session_id: 's.session_id',
 					})
 					.from('directus_sessions AS s')
 					.leftJoin('directus_users AS u', 's.user', 'u.id')
@@ -75,6 +76,7 @@ export const handler = async (req: Request, _res: Response, next: NextFunction) 
 				req.accountability.role = payload.role;
 				req.accountability.admin = payload.admin_access === true || payload.admin_access == 1;
 				req.accountability.app = payload.app_access === true || payload.app_access == 1;
+				req.accountability.session_id = user.session_id;
 
 				if (payload.share) req.accountability.share = payload.share;
 				if (payload.share_scope) req.accountability.share_scope = payload.share_scope;

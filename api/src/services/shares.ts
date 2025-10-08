@@ -81,6 +81,8 @@ export class SharesService extends ItemsService {
 		const refreshToken = nanoid(64);
 		const refreshTokenExpiration = new Date(Date.now() + getMilliseconds(env['REFRESH_TOKEN_TTL'], 0));
 
+		const sessionId = nanoid(64);
+
 		await this.knex('directus_sessions').insert({
 			token: refreshToken,
 			expires: refreshTokenExpiration,
@@ -88,6 +90,7 @@ export class SharesService extends ItemsService {
 			user_agent: this.accountability?.userAgent,
 			origin: this.accountability?.origin,
 			share: record.share_id,
+			session_id: sessionId,
 		});
 
 		await this.knex('directus_sessions').delete().where('expires', '<', new Date());

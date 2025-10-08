@@ -30,9 +30,9 @@ If you're still experiencing a problem after completing the above steps, you can
 
 ### Community Support
 
-[GitHub Discussions](https://github.com/LaWebcapsule/directus9/discussions) is a great first place to reach out for help. Our
-community and core developers often check this platform and answer posts. It has the added benefit of being an archival
-resource for others developers with similar questions.
+[GitHub Discussions](https://github.com/LaWebcapsule/directus9/discussions) is a great first place to reach out for
+help. Our community and core developers often check this platform and answer posts. It has the added benefit of being an
+archival resource for others developers with similar questions.
 
 Our [Discord Community](https://directus.chat) is another great way to get assistance. Please keep all questions in the
 help channels, be considerate, and remember that you are getting free help from the community.

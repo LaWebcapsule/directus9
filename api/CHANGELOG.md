@@ -1,5 +1,16 @@
 # @wbce-d9/api
 
+## 11.1.2
+
+### Patch Changes
+
+- 3e74c9e: Add transversal session_id for activity audit
+- Updated dependencies [3e74c9e]
+  - @wbce-d9/app@9.33.3
+  - @wbce-d9/exceptions@9.26.4
+  - @wbce-d9/extensions-sdk@9.27.3
+  - @wbce-d9/utils@9.29.2
+
 ## 11.1.1
 
 ### Patch Changes
