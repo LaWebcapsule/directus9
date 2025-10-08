@@ -1,5 +1,11 @@
 # @wbce-d9/types
 
+## 9.28.1
+
+### Patch Changes
+
+- 3e74c9e: Add transversal session_id for activity audit
+
 ## 9.28.0
 
 ### Minor Changes

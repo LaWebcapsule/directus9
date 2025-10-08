@@ -28,6 +28,7 @@ export type Info = {
 	};
 	directus?: {
 		version: string;
+		mainVersion: string;
 	};
 	node?: {
 		version: string;

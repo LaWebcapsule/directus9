@@ -17,4 +17,6 @@ export type Accountability = {
 	ip?: string;
 	userAgent?: string;
 	origin?: string;
+
+	session_id?: string | null;
 };

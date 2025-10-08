@@ -35,6 +35,9 @@
 
 			<p class="type-label">{{ t('item') }}:</p>
 			<p>{{ item.item }}</p>
+
+			<p class="type-label">{{ t('session_id') }}:</p>
+			<p>{{ item.session_id }}</p>
 		</div>
 
 		<template #actions>
@@ -68,6 +71,7 @@ type ActivityRecord = {
 	origin: string;
 	collection: string;
 	item: string;
+	session_id: string;
 };
 
 export default defineComponent({
@@ -116,6 +120,7 @@ export default defineComponent({
 							'origin',
 							'collection',
 							'item',
+							'session_id',
 						],
 					},
 				});
