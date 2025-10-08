@@ -171,6 +171,8 @@ export class AuthenticationService {
 		const refreshToken = nanoid(64);
 		const refreshTokenExpiration = new Date(Date.now() + getMilliseconds(env['REFRESH_TOKEN_TTL'], 0));
 
+		const sessionId = nanoid(64);
+
 		await this.knex('directus_sessions').insert({
 			token: refreshToken,
 			user: user.id,
@@ -178,6 +180,7 @@ export class AuthenticationService {
 			ip: this.accountability?.ip,
 			user_agent: this.accountability?.userAgent,
 			origin: this.accountability?.origin,
+			session_id: sessionId,
 		});
 
 		const tokenPayload = {
@@ -220,6 +223,7 @@ export class AuthenticationService {
 				origin: this.accountability.origin,
 				collection: 'directus_users',
 				item: user.id,
+				session_id: sessionId,
 			});
 		}
 
@@ -254,6 +258,7 @@ export class AuthenticationService {
 			.select({
 				session_expires: 's.expires',
 				session_fallback_token: 's.fallback_token',
+				session_id: 's.session_id',
 				user_id: 'u.id',
 				user_first_name: 'u.first_name',
 				user_last_name: 'u.last_name',
@@ -335,6 +340,8 @@ export class AuthenticationService {
 		let newRefreshToken = record.session_fallback_token ?? nanoid(64);
 		const refreshTokenExpiration = new Date(Date.now() + getMilliseconds(env['REFRESH_TOKEN_TTL'], 0));
 
+		const sessionId = record.session_id ?? nanoid(64);
+
 		// If a fallback session already exists, just update its expiration
 		if (record.session_fallback_token) {
 			await this.knex('directus_sessions')
@@ -372,6 +379,7 @@ export class AuthenticationService {
 					ip: this.accountability?.ip,
 					user_agent: this.accountability?.userAgent,
 					origin: this.accountability?.origin,
+					session_id: sessionId,
 				});
 			}
 		}

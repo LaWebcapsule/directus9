@@ -16,7 +16,7 @@ import { SERVER_ONLINE } from '../server.js';
 import { getStorage } from '../storage/index.js';
 import type { AbstractServiceOptions } from '../types/index.js';
 import { getOSInfo } from '../utils/get-os-info.js';
-import { version } from '../utils/package.js';
+import { version, mainVersion } from '../utils/package.js';
 import { SettingsService } from './settings.js';
 
 export class ServerService {
@@ -76,6 +76,7 @@ export class ServerService {
 
 			info['directus'] = {
 				version,
+				mainVersion,
 			};
 
 			info['node'] = {
