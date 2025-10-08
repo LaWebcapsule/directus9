@@ -6,7 +6,7 @@ import jwt from 'jsonwebtoken';
 import type { BaseClient, Client, TokenSet } from 'openid-client';
 import { Issuer, generators } from 'openid-client';
 import { getAuthProvider } from '../../auth.js';
-import { ACCESS_COOKIE_OPTIONS, REFRESH_COOKIE_OPTIONS, SESSION_COOKIE_OPTIONS } from '../../constants.js';
+import { ACCESS_COOKIE_OPTIONS, REFRESH_COOKIE_OPTIONS } from '../../constants.js';
 import env from '../../env.js';
 import {
 	InvalidConfigException,
@@ -262,12 +262,11 @@ export function createOAuth2AuthRouter(providerName: string): Router {
 				throw error;
 			}
 
-			const { accessToken, refreshToken, expires, sessionIdToken } = authResponse;
+			const { accessToken, refreshToken, expires } = authResponse;
 
 			if (redirect) {
 				res?.cookie(env['ACCESS_TOKEN_COOKIE_NAME'], accessToken, ACCESS_COOKIE_OPTIONS);
 				res?.cookie(env['REFRESH_TOKEN_COOKIE_NAME'], refreshToken, REFRESH_COOKIE_OPTIONS);
-				res?.cookie(env['SESSION_ID_COOKIE_NAME'], sessionIdToken, SESSION_COOKIE_OPTIONS);
 				return res.redirect(redirect);
 			}
 

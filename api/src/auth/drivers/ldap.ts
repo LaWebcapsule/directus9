@@ -3,7 +3,7 @@ import { Router } from 'express';
 import Joi from 'joi';
 import type { Client, Error, LDAPResult, SearchCallbackResponse, SearchEntry } from 'ldapjs';
 import ldap from 'ldapjs';
-import { ACCESS_COOKIE_OPTIONS, REFRESH_COOKIE_OPTIONS, SESSION_COOKIE_OPTIONS } from '../../constants.js';
+import { ACCESS_COOKIE_OPTIONS, REFRESH_COOKIE_OPTIONS } from '../../constants.js';
 import getDatabase from '../../database/index.js';
 import emitter from '../../emitter.js';
 import env from '../../env.js';
@@ -428,7 +428,7 @@ export function createLDAPAuthRouter(provider: string): Router {
 
 			const mode = req.body.mode || 'json';
 
-			const { accessToken, refreshToken, expires, sessionIdToken } = await authenticationService.login(
+			const { accessToken, refreshToken, expires } = await authenticationService.login(
 				provider,
 				req.body,
 				req.body?.otp
@@ -445,7 +445,6 @@ export function createLDAPAuthRouter(provider: string): Router {
 			if (mode === 'cookie') {
 				res?.cookie(env['ACCESS_TOKEN_COOKIE_NAME'], accessToken, ACCESS_COOKIE_OPTIONS);
 				res?.cookie(env['REFRESH_TOKEN_COOKIE_NAME'], refreshToken, REFRESH_COOKIE_OPTIONS);
-				res?.cookie(env['SESSION_ID_COOKIE_NAME'], sessionIdToken, SESSION_COOKIE_OPTIONS);
 			}
 
 			res.locals['payload'] = payload;

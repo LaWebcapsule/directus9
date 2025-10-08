@@ -104,20 +104,6 @@ export const ACCESS_COOKIE_CLEAR_OPTIONS: CookieOptions = (() => {
 	return rest;
 })();
 
-export const SESSION_COOKIE_OPTIONS: CookieOptions = {
-	httpOnly: true,
-	maxAge: getMilliseconds(env['SESSION_ID_TTL']),
-	secure: env['SESSION_ID_COOKIE_SECURE'] ?? false,
-	sameSite: (env['SESSION_ID_COOKIE_SAME_SITE'] as 'lax' | 'strict' | 'none') || 'strict',
-};
-
-export const SESSION_COOKIE_CLEAR_OPTIONS: CookieOptions = (() => {
-	const { ...rest } = SESSION_COOKIE_OPTIONS;
-	delete rest.maxAge;
-	delete rest.expires;
-	return rest;
-})();
-
 export const OAS_REQUIRED_SCHEMAS = ['Diff', 'Schema', 'Query', 'x-metadata'];
 
 /** Formats from which transformation is supported */

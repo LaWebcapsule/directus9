@@ -52,8 +52,6 @@ import {
 	GENERATE_SPECIAL,
 	REFRESH_COOKIE_CLEAR_OPTIONS,
 	REFRESH_COOKIE_OPTIONS,
-	SESSION_COOKIE_CLEAR_OPTIONS,
-	SESSION_COOKIE_OPTIONS,
 } from '../../constants.js';
 import getDatabase from '../../database/index.js';
 import env from '../../env.js';
@@ -2113,14 +2111,11 @@ export class GraphQLService {
 						throw new InvalidPayloadException(`"refresh_token" is required in either the JSON payload or Cookie`);
 					}
 
-					const currentSessionIdToken = req?.cookies?.[env['SESSION_ID_COOKIE_NAME']] || null;
-
-					const result = await authenticationService.refresh(currentRefreshToken, currentSessionIdToken);
+					const result = await authenticationService.refresh(currentRefreshToken);
 
 					if (args['mode'] === 'cookie') {
 						res?.cookie(env['ACCESS_TOKEN_COOKIE_NAME'], result['accessToken'], ACCESS_COOKIE_OPTIONS);
 						res?.cookie(env['REFRESH_TOKEN_COOKIE_NAME'], result['refreshToken'], REFRESH_COOKIE_OPTIONS);
-						res?.cookie(env['SESSION_ID_COOKIE_NAME'], result['sessionIdToken'], SESSION_COOKIE_OPTIONS);
 					}
 
 					return {
@@ -2165,10 +2160,6 @@ export class GraphQLService {
 
 					if (req?.cookies?.[env['REFRESH_TOKEN_COOKIE_NAME'] as string]) {
 						res?.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'] as string, REFRESH_COOKIE_CLEAR_OPTIONS);
-					}
-
-					if (req?.cookies?.[env['SESSION_ID_COOKIE_NAME'] as string]) {
-						res?.clearCookie(env['SESSION_ID_COOKIE_NAME'] as string, SESSION_COOKIE_CLEAR_OPTIONS);
 					}
 
 					return true;

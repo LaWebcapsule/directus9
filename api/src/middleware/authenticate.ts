@@ -9,11 +9,7 @@ import asyncHandler from '../utils/async-handler.js';
 import { getIPFromReq } from '../utils/get-ip-from-req.js';
 import isDirectusJWT from '../utils/is-directus-jwt.js';
 import { verifyAccessJWT } from '../utils/jwt.js';
-import {
-	ACCESS_COOKIE_CLEAR_OPTIONS,
-	REFRESH_COOKIE_CLEAR_OPTIONS,
-	SESSION_COOKIE_CLEAR_OPTIONS,
-} from '../constants.js';
+import { ACCESS_COOKIE_CLEAR_OPTIONS, REFRESH_COOKIE_CLEAR_OPTIONS } from '../constants.js';
 
 /**
  * Verify the passed JWT and assign the user ID and role to `req`
@@ -32,10 +28,6 @@ export const handler = async (req: Request, _res: Response, next: NextFunction) 
 
 	const origin = req.get('origin');
 	if (origin) defaultAccountability.origin = origin;
-
-	const sessionId = req?.cookies?.[env['SESSION_ID_COOKIE_NAME']] || null;
-
-	if (sessionId) defaultAccountability.session_id = sessionId;
 
 	const database = getDatabase();
 
@@ -69,6 +61,7 @@ export const handler = async (req: Request, _res: Response, next: NextFunction) 
 					.select({
 						session_expires: 's.expires',
 						user_id: 'u.id',
+						session_id: 's.session_id',
 					})
 					.from('directus_sessions AS s')
 					.leftJoin('directus_users AS u', 's.user', 'u.id')
@@ -83,6 +76,7 @@ export const handler = async (req: Request, _res: Response, next: NextFunction) 
 				req.accountability.role = payload.role;
 				req.accountability.admin = payload.admin_access === true || payload.admin_access == 1;
 				req.accountability.app = payload.app_access === true || payload.app_access == 1;
+				req.accountability.session_id = user.session_id;
 
 				if (payload.share) req.accountability.share = payload.share;
 				if (payload.share_scope) req.accountability.share_scope = payload.share_scope;
@@ -122,10 +116,6 @@ export const handler = async (req: Request, _res: Response, next: NextFunction) 
 
 			if (req?.cookies[env['REFRESH_TOKEN_COOKIE_NAME']]) {
 				_res?.clearCookie(env['REFRESH_TOKEN_COOKIE_NAME'], REFRESH_COOKIE_CLEAR_OPTIONS);
-			}
-
-			if (req?.cookies[env['SESSION_ID_COOKIE_NAME']]) {
-				_res?.clearCookie(env['SESSION_ID_COOKIE_NAME'], SESSION_COOKIE_CLEAR_OPTIONS);
 			}
 		}
 
