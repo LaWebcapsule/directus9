@@ -34,7 +34,7 @@ export default defineComponent({
 	setup() {
 		const { t } = useI18n();
 		const { info } = useServerStore();
-		const version = info?.directus?.wbceVersion;
+		const version = info?.directus?.mainVersion;
 
 		const navItems = [
 			{

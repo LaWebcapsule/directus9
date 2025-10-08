@@ -28,7 +28,7 @@ export type Info = {
 	};
 	directus?: {
 		version: string;
-		wbceVersion: string;
+		mainVersion: string;
 	};
 	node?: {
 		version: string;
