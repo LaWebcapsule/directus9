@@ -184,7 +184,7 @@ importers:
         specifier: ^4.21.2
         version: 4.21.2
       fast-redact:
-        specifier: 3.5.0
+        specifier: ^3.5.0
         version: 3.5.0
       flat:
         specifier: 5.0.2
