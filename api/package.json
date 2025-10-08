@@ -112,7 +112,7 @@
 		"execa": "7.1.1",
 		"exif-reader": "1.2.0",
 		"express": "^4.21.2",
-		"fast-redact": "3.1.2",
+		"fast-redact": "^3.5.0",
 		"flat": "5.0.2",
 		"fs-extra": "11.1.1",
 		"graphql": "16.8.1",
