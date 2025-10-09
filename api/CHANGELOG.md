@@ -1,5 +1,13 @@
 # @wbce-d9/api
 
+## 11.1.4
+
+### Patch Changes
+
+- 0cc629f: Bump dependencies
+- Updated dependencies [0cc629f]
+  - @wbce-d9/app@9.33.5
+
 ## 11.1.3
 
 ### Patch Changes
