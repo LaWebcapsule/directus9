@@ -1,5 +1,11 @@
 # @wbce-d9/app
 
+## 9.33.5
+
+### Patch Changes
+
+- 0cc629f: Bump dependencies
+
 ## 9.33.4
 
 ### Patch Changes
