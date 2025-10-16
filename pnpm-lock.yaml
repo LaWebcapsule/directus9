@@ -213,8 +213,8 @@ importers:
         specifier: 5.3.2
         version: 5.3.2
       isolated-vm:
-        specifier: ^5.0.3
-        version: 5.0.3
+        specifier: ^6.0.1
+        version: 6.0.1
       joi:
         specifier: 17.9.1
         version: 17.9.1
@@ -13064,9 +13064,9 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
-  /isolated-vm@5.0.3:
-    resolution: {integrity: sha512-GNqX0j7dkwdaNQfFogLLb/tSuPZbXtKlk5ldaJ084ngjaW9/bn34x9FQFL856p20KSZoubIIummmiJf+2hzhCw==}
-    engines: {node: '>=18.0.0'}
+  /isolated-vm@6.0.1:
+    resolution: {integrity: sha512-rcnfMOYIbRdChFnQbMYsSx/cSfmLJRiw+MlPyz6WdwhaPDB/mfib0pSK+D2COW+KNZKGOGeW6a+qVksL6+X/Bg==}
+    engines: {node: '>=22.0.0'}
     requiresBuild: true
     dependencies:
       prebuild-install: 7.1.3
