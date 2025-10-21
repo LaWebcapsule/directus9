@@ -1,5 +1,14 @@
 # @wbce-d9/extensions-sdk
 
+## 9.27.4
+
+### Patch Changes
+
+- bdcd952: Security update change, manual and dependabot updates
+- Updated dependencies [bdcd952]
+  - @wbce-d9/composables@9.29.2
+  - @wbce-d9/utils@9.29.3
+
 ## 9.27.3
 
 ### Patch Changes

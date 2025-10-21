@@ -1,6 +1,6 @@
 {
 	"name": "@wbce-d9/app",
-	"version": "9.33.5",
+	"version": "9.33.6",
 	"description": "App dashboard for Directus",
 	"homepage": "https://directus.io",
 	"type": "module",

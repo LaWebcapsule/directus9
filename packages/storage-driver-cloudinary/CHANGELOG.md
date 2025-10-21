@@ -1,5 +1,13 @@
 # @wbce-d9/storage-driver-cloudinary
 
+## 9.27.3
+
+### Patch Changes
+
+- bdcd952: Security update change, manual and dependabot updates
+- Updated dependencies [bdcd952]
+  - @wbce-d9/utils@9.29.3
+
 ## 9.27.2
 
 ### Patch Changes

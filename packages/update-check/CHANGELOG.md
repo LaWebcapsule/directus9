@@ -1,5 +1,11 @@
 # @wbce-d9/update-check
 
+## 9.28.1
+
+### Patch Changes
+
+- bdcd952: Security update change, manual and dependabot updates
+
 ## 9.28.0
 
 ### Minor Changes

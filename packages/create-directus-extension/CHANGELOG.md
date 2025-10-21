@@ -1,5 +1,13 @@
 # @wbce-d9/create-directus-extension
 
+## 9.26.12
+
+### Patch Changes
+
+- bdcd952: Security update change, manual and dependabot updates
+- Updated dependencies [bdcd952]
+  - @wbce-d9/extensions-sdk@9.27.4
+
 ## 9.26.11
 
 ### Patch Changes
