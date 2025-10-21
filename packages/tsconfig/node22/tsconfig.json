@@ -1,0 +1,12 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"display": "Node.js 22",
+	"extends": "../base/tsconfig.json",
+	"compilerOptions": {
+		"target": "ES2022",
+		"lib": ["ES2023"],
+		"module": "Node16",
+		"moduleResolution": "Node16",
+		"verbatimModuleSyntax": true
+	}
+}
