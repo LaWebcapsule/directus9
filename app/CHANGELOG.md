@@ -1,5 +1,13 @@
 # @wbce-d9/app
 
+## 9.33.6
+
+### Patch Changes
+
+- bdcd952: Security update change, manual and dependabot updates
+- Updated dependencies [bdcd952]
+  - @wbce-d9/composables@9.29.2
+
 ## 9.33.5
 
 ### Patch Changes

@@ -1,5 +1,21 @@
 # @wbce-d9/api
 
+## 11.1.5
+
+### Patch Changes
+
+- bdcd952: Security update change, manual and dependabot updates
+- Updated dependencies [bdcd952]
+  - @wbce-d9/app@9.33.6
+  - @wbce-d9/extensions-sdk@9.27.4
+  - @wbce-d9/storage-driver-azure@9.26.10
+  - @wbce-d9/storage-driver-cloudinary@9.27.3
+  - @wbce-d9/storage-driver-gcs@9.26.10
+  - @wbce-d9/storage-driver-local@9.26.10
+  - @wbce-d9/storage-driver-s3@9.26.12
+  - @wbce-d9/update-check@9.28.1
+  - @wbce-d9/utils@9.29.3
+
 ## 11.1.4
 
 ### Patch Changes
