@@ -18,6 +18,9 @@ env:
   NODE_OPTIONS: --max_old_space_size=6144
   EMAIL_SES_REGION: eu-west-3
 
+
+permissions:
+  id-token: write
 jobs:
   lint:
     name: Lint
