@@ -21,6 +21,7 @@ env:
 
 permissions:
   id-token: write
+  
 jobs:
   lint:
     name: Lint
