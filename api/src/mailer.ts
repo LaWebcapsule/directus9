@@ -81,7 +81,6 @@ export default function getMailer(): Transporter {
 			auth,
 		} as Record<string, unknown>);
 	} else {
-
 		logger.warn('Illegal transport given for email. Check the EMAIL_TRANSPORT env var.');
 	}
 

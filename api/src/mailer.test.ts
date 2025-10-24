@@ -1,21 +1,18 @@
-import env from "./env.js"
-import { describe, test, expect} from 'vitest';
+import env from './env.js';
+import { describe, test, expect } from 'vitest';
 
-const transports = [
-    'ses',
-]
+const transports = ['ses'];
 
-describe.only("emails", ()=>{
-    for(const transport of transports){
-        test(`should work with ${transport} transport`, async ()=>{
-            env['EMAIL_TRANSPORT'] = transport;
+describe.only('emails', () => {
+	for (const transport of transports) {
+		test(`should work with ${transport} transport`, async () => {
+			env['EMAIL_TRANSPORT'] = transport;
 
-            const mailerModule = await import("./mailer.js?"+transport); //reload the module as it maintains a cache
+			const mailerModule = await import('./mailer.js?' + transport); //reload the module as it maintains a cache
 
-            
-            const mailer = mailerModule.default(); //point to "getMailer()" function
+			const mailer = mailerModule.default(); //point to "getMailer()" function
 
-            await expect(Promise.resolve(mailer.verify())).resolves.toBeTruthy();//Server.health only check this to be defined 
-        })
-    }
-})
+			await expect(Promise.resolve(mailer.verify())).resolves.toBeTruthy(); //Server.health only check this to be defined
+		});
+	}
+});
