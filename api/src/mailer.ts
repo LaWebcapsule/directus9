@@ -22,15 +22,15 @@ export default function getMailer(): Transporter {
 			path: env['EMAIL_SENDMAIL_PATH'] || '/usr/sbin/sendmail',
 		});
 	} else if (transportName === 'ses') {
-		const aws = require('@aws-sdk/client-ses');
+		const aws = require('@aws-sdk/client-sesv2');
 
 		const sesOptions: Record<string, unknown> = getConfigFromEnv('EMAIL_SES_');
 
-		const ses = new aws.SES(sesOptions);
+		const ses = new aws.SESv2Client(sesOptions);
 
 		transporter = nodemailer.createTransport({
-			SES: { ses, aws },
-		} as Record<string, unknown>);
+			SES: { sesClient: ses, SendEmailCommand: aws.SendEmailCommand },
+		});
 	} else if (transportName === 'smtp') {
 		let auth: boolean | { user?: string; pass?: string } = false;
 
@@ -81,6 +81,7 @@ export default function getMailer(): Transporter {
 			auth,
 		} as Record<string, unknown>);
 	} else {
+
 		logger.warn('Illegal transport given for email. Check the EMAIL_TRANSPORT env var.');
 	}
 
