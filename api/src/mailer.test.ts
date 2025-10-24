@@ -3,7 +3,7 @@ import { describe, test, expect } from 'vitest';
 
 const transports = ['ses'];
 
-describe.only('emails', () => {
+describe('emails', () => {
 	for (const transport of transports) {
 		test(`should work with ${transport} transport`, async () => {
 			env['EMAIL_TRANSPORT'] = transport;
