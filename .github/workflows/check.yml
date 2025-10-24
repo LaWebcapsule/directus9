@@ -42,6 +42,12 @@ jobs:
       - name: Prepare
         uses: ./.github/actions/prepare
 
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v5.1.0
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN_TO_ASSUME_FOR_SES }}
+          role-session-name: GHActionSession
+
       - name: Run Tests
         run: pnpm test
 
