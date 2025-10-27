@@ -1,5 +1,11 @@
 # @wbce-d9/api
 
+## 11.1.6
+
+### Patch Changes
+
+- b1a0105: fix mailjet and ses compatibility 
+
 ## 11.1.5
 
 ### Patch Changes
