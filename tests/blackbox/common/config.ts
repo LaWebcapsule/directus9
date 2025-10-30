@@ -1,6 +1,9 @@
-import { Knex } from 'knex';
-import path from 'node:path';
-import { allVendors } from './get-dbs-to-test';
+import type { Knex } from 'knex';
+import path, { dirname } from 'node:path';
+import { allVendors } from './get-dbs-to-test.ts';
+import { fileURLToPath } from 'node:url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 type Vendor = (typeof allVendors)[number];
 

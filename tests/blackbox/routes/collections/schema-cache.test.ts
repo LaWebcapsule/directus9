@@ -1,11 +1,12 @@
-import config, { getUrl, paths, type Env } from '@common/config';
-import vendors from '@common/get-dbs-to-test';
-import * as common from '@common/index';
-import { awaitDirectusConnection } from '@utils/await-connection';
+import config, { getUrl, paths, type Env } from '@common/config.ts';
+import { CreateCollection } from '@common/functions.ts';
+import vendors from '@common/get-dbs-to-test.ts';
+import { USER } from '@common/variables.ts';
+import { awaitDirectusConnection } from '@utils/await-connection.ts';
 import { ChildProcess, spawn } from 'child_process';
 import type { Knex } from 'knex';
 import knex from 'knex';
-import { cloneDeep } from 'lodash';
+import { cloneDeep } from 'lodash-es';
 import request from 'supertest';
 
 const newCollectionName = 'schema-caching-test';
@@ -70,40 +71,40 @@ describe('Schema Caching Tests', () => {
 				const env1 = envs[vendor][0];
 				const env2 = envs[vendor][1];
 
-				await common.CreateCollection(vendor, { collection: newCollectionName, env: env1 });
+				await CreateCollection(vendor, { collection: newCollectionName, env: env1 });
 
 				await request(getUrl(vendor, env1))
 					.post(`/utils/cache/clear`)
-					.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-				await request(getUrl(vendor, env1)).get(`/fields`).set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+				await request(getUrl(vendor, env1)).get(`/fields`).set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 				await request(getUrl(vendor, env2))
 					.post(`/utils/cache/clear`)
-					.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-				await request(getUrl(vendor, env2)).get(`/fields`).set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+				await request(getUrl(vendor, env2)).get(`/fields`).set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 				// Action
 				const responseBefore = await request(getUrl(vendor, env1))
 					.get(`/collections/${newCollectionName}`)
-					.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 				const responseBefore2 = await request(getUrl(vendor, env2))
 					.get(`/collections/${newCollectionName}`)
-					.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 				await request(getUrl(vendor, env1))
 					.delete(`/collections/${newCollectionName}`)
-					.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 				const responseAfter = await request(getUrl(vendor, env1))
 					.get(`/collections/${newCollectionName}`)
-					.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 				const responseAfter2 = await request(getUrl(vendor, env2))
 					.get(`/collections/${newCollectionName}`)
-					.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 				// Assert
 				expect(responseBefore.statusCode).toBe(200);
@@ -175,36 +176,36 @@ describe('Schema Caching Tests', () => {
 
 		// 		await request(getUrl(vendor, env3))
 		// 			.post(`/utils/cache/clear`)
-		// 			.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+		// 			.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-		// 		await request(getUrl(vendor, env3)).get(`/fields`).set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+		// 		await request(getUrl(vendor, env3)).get(`/fields`).set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 		// 		await request(getUrl(vendor, env4))
 		// 			.post(`/utils/cache/clear`)
-		// 			.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+		// 			.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-		// 		await request(getUrl(vendor, env4)).get(`/fields`).set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+		// 		await request(getUrl(vendor, env4)).get(`/fields`).set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 		// 		// Action
 		// 		const responseBefore = await request(getUrl(vendor, env3))
 		// 			.get(`/collections/${newCollectionName}`)
-		// 			.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+		// 			.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 		// 		const responseBefore2 = await request(getUrl(vendor, env4))
 		// 			.get(`/collections/${newCollectionName}`)
-		// 			.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+		// 			.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 		// 		await request(getUrl(vendor, env3))
 		// 			.delete(`/collections/${newCollectionName}`)
-		// 			.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+		// 			.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 		// 		const responseAfter = await request(getUrl(vendor, env3))
 		// 			.get(`/collections/${newCollectionName}`)
-		// 			.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+		// 			.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 		// 		const responseAfter2 = await request(getUrl(vendor, env4))
 		// 			.get(`/collections/${newCollectionName}`)
-		// 			.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+		// 			.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 		// 		// Assert
 		// 		expect(responseBefore.statusCode).toBe(200);

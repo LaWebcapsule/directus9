@@ -1,15 +1,16 @@
-import config, { getUrl, paths } from '@common/config';
-import vendors from '@common/get-dbs-to-test';
-import * as common from '@common/index';
-import { TestLogger } from '@common/test-logger';
-import { awaitDirectusConnection } from '@utils/await-connection';
+import config, { getUrl, paths } from '@common/config.ts';
+import vendors from '@common/get-dbs-to-test.ts';
+import { TestLogger } from '@common/test-logger.ts';
+import { awaitDirectusConnection } from '@utils/await-connection.ts';
 import { ChildProcess, spawn } from 'child_process';
 import { EnumType } from 'json-to-graphql-query';
 import type { Knex } from 'knex';
 import knex from 'knex';
-import { cloneDeep } from 'lodash';
+import { cloneDeep } from 'lodash-es';
 import request from 'supertest';
 import * as portfinder from 'portfinder';
+import { requestGraphQL } from '@common/transport.ts';
+import { TEST_USERS, USER } from '@common/variables.ts';
 
 describe('Logger Redact Tests', () => {
 	const databases = new Map<string, Knex>();
@@ -41,7 +42,7 @@ describe('Logger Redact Tests', () => {
 
 	afterAll(async () => {
 		for (const [vendor, connection] of databases) {
-			directusInstances[vendor]!.kill();
+			directusInstances[vendor]?.kill();
 
 			await connection.destroy();
 		}
@@ -50,24 +51,24 @@ describe('Logger Redact Tests', () => {
 	describe('POST /refresh', () => {
 		describe('refreshes with refresh_token in the body', () => {
 			describe.each(authModes)('for %s mode', (mode) => {
-				common.TEST_USERS.forEach((userKey) => {
-					describe(common.USER[userKey].NAME, () => {
+				TEST_USERS.forEach((userKey) => {
+					describe(USER[userKey].NAME, () => {
 						it.each(vendors)('%s', async (vendor) => {
 							// Setup
 							const refreshToken = (
 								await request(getUrl(vendor, env))
 									.post(`/auth/login`)
-									.send({ email: common.USER[userKey].EMAIL, password: common.USER[userKey].PASSWORD })
+									.send({ email: USER[userKey].EMAIL, password: USER[userKey].PASSWORD })
 									.expect('Content-Type', /application\/json/)
 							).body.data.refresh_token;
 
 							const refreshToken2 = (
-								await common.requestGraphQL(getUrl(vendor, env), true, null, {
+								await requestGraphQL(getUrl(vendor, env), true, null, {
 									mutation: {
 										auth_login: {
 											__args: {
-												email: common.USER[userKey].EMAIL,
-												password: common.USER[userKey].PASSWORD,
+												email: USER[userKey].EMAIL,
+												password: USER[userKey].PASSWORD,
 											},
 											refresh_token: true,
 										},
@@ -89,7 +90,7 @@ describe('Logger Redact Tests', () => {
 
 							const mutationKey = 'auth_refresh';
 
-							const gqlResponse = await common.requestGraphQL(getUrl(vendor, env), true, null, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor, env), true, null, {
 								mutation: {
 									[mutationKey]: {
 										__args: {
@@ -154,8 +155,8 @@ describe('Logger Redact Tests', () => {
 
 		describe('refreshes with refresh_token in the cookie', () => {
 			describe.each(authModes)('for %s mode', (mode) => {
-				common.TEST_USERS.forEach((userKey) => {
-					describe(common.USER[userKey].NAME, () => {
+				TEST_USERS.forEach((userKey) => {
+					describe(USER[userKey].NAME, () => {
 						it.each(vendors)('%s', async (vendor) => {
 							// Setup
 							const cookieName = 'directus_refresh_token';
@@ -163,17 +164,17 @@ describe('Logger Redact Tests', () => {
 							const refreshToken = (
 								await request(getUrl(vendor, env))
 									.post(`/auth/login`)
-									.send({ email: common.USER[userKey].EMAIL, password: common.USER[userKey].PASSWORD })
+									.send({ email: USER[userKey].EMAIL, password: USER[userKey].PASSWORD })
 									.expect('Content-Type', /application\/json/)
 							).body.data.refresh_token;
 
 							const refreshToken2 = (
-								await common.requestGraphQL(getUrl(vendor, env), true, null, {
+								await requestGraphQL(getUrl(vendor, env), true, null, {
 									mutation: {
 										auth_login: {
 											__args: {
-												email: common.USER[userKey].EMAIL,
-												password: common.USER[userKey].PASSWORD,
+												email: USER[userKey].EMAIL,
+												password: USER[userKey].PASSWORD,
 											},
 											refresh_token: true,
 										},
@@ -196,7 +197,7 @@ describe('Logger Redact Tests', () => {
 
 							const mutationKey = 'auth_refresh';
 
-							const gqlResponse = await common.requestGraphQL(
+							const gqlResponse = await requestGraphQL(
 								getUrl(vendor, env),
 								true,
 								null,

@@ -1,6 +1,9 @@
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
 const generateHash = require('../setup-utils');
 
-exports.seed = async function (knex) {
+export async function seed(knex) {
 	await knex('tests_flow_data').del();
 	await knex('tests_flow_completed').del();
 
@@ -27,4 +30,4 @@ exports.seed = async function (knex) {
 			token: 'TestsFlowToken',
 		},
 	]);
-};
+}

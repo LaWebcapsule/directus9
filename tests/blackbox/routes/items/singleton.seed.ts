@@ -1,14 +1,14 @@
-import vendors from '@common/get-dbs-to-test';
 import {
 	CreateCollection,
 	CreateField,
 	CreateFieldO2M,
 	CreateItem,
 	DeleteCollection,
-	PRIMARY_KEY_TYPES,
-	SeedFunctions,
 	UpdateItem,
-} from '@common/index';
+} from '../../common/functions.ts';
+import vendors from '../../common/get-dbs-to-test.ts';
+import { SeedFunctions } from '../../common/seed-functions.ts';
+import { PRIMARY_KEY_TYPES } from '../../common/variables.ts';
 
 export const collectionSingleton = 'test_items_singleton';
 export const collectionSingletonO2M = 'test_items_singleton_o2m';

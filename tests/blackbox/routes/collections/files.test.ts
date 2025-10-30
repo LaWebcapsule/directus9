@@ -1,6 +1,6 @@
-import { getUrl } from '@common/config';
-import vendors from '@common/get-dbs-to-test';
-import * as common from '@common/index';
+import { getUrl } from '@common/config.ts';
+import vendors from '@common/get-dbs-to-test.ts';
+import { USER } from '@common/variables.ts';
 import request from 'supertest';
 
 describe('/files', () => {
@@ -20,7 +20,7 @@ describe('/files', () => {
 					const response = await request(getUrl(vendor))
 						.post(`/files`)
 						.send(payload)
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					// Assert
 					expect(response.statusCode).toBe(200);
@@ -44,7 +44,7 @@ describe('/files', () => {
 					const response = await request(getUrl(vendor))
 						.post(`/files`)
 						.send(payload)
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					// Assert
 					expect(response.statusCode).toBe(400);

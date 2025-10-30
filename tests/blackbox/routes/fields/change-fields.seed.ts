@@ -1,16 +1,10 @@
-import vendors from '@common/get-dbs-to-test';
-import {
-	CreateCollection,
-	CreateField,
-	CreateFieldO2M,
-	CreateItem,
-	DeleteCollection,
-	SeedFunctions,
-	PrimaryKeyType,
-	PRIMARY_KEY_TYPES,
-} from '@common/index';
-import { CachedTestsSchema, TestsSchema, TestsSchemaVendorValues } from '@query/filter';
-import { set } from 'lodash';
+import { CreateCollection, CreateField, CreateFieldO2M, CreateItem, DeleteCollection } from '../../common/functions.ts';
+import vendors from '../../common/get-dbs-to-test.ts';
+import { SeedFunctions } from '../../common/seed-functions.ts';
+import type { PrimaryKeyType } from '../../common/types.ts';
+import { PRIMARY_KEY_TYPES } from '../../common/variables.ts';
+import type { CachedTestsSchema, TestsSchema, TestsSchemaVendorValues } from '../../query/filter/index.ts';
+import { set } from 'lodash-es';
 
 export const collectionCountries = 'test_fields_change_field_countries';
 export const collectionStates = 'test_fields_change_field_states';

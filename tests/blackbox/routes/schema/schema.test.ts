@@ -1,7 +1,6 @@
 import request from 'supertest';
-import { getUrl } from '@common/config';
-import vendors from '@common/get-dbs-to-test';
-import * as common from '@common/index';
+import { getUrl } from '@common/config.ts';
+import vendors from '@common/get-dbs-to-test.ts';
 import {
 	collectionAll,
 	collectionM2A,
@@ -20,12 +19,16 @@ import {
 	junctionM2M2,
 	junctionSelfM2M,
 	tempTestCollection,
-} from './schema.seed';
-import { cloneDeep } from 'lodash';
-import { PrimaryKeyType, PRIMARY_KEY_TYPES } from '@common/index';
+} from './schema.seed.ts';
+import { cloneDeep } from 'lodash-es';
+import type { PrimaryKeyType } from '@common/types.ts';
+import { PRIMARY_KEY_TYPES, USER } from '@common/variables.ts';
 import { load as loadYaml } from 'js-yaml';
-import { version as currentDirectusVersion } from '../../../../api/package.json';
+//import { version as currentDirectusVersion } from '../../../../api/src/utils/package';
 import { v4 as uuid } from 'uuid';
+import { ClearCaches, CreateFieldM2O, CreateItem, DisableTestCachingSetup } from '@common/functions.ts';
+
+const currentDirectusVersion = '11.1.4';
 
 describe('Schema Snapshots', () => {
 	const snapshotsCacheOriginal: {
@@ -41,22 +44,22 @@ describe('Schema Snapshots', () => {
 	} = {};
 
 	describe('GET /schema/snapshot', () => {
-		common.DisableTestCachingSetup();
+		DisableTestCachingSetup();
 
 		describe('denies non-admin users', () => {
 			it.each(vendors)('%s', async (vendor) => {
 				// Action
 				const response = await request(getUrl(vendor))
 					.get('/schema/snapshot')
-					.set('Authorization', `Bearer ${common.USER.APP_ACCESS.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.APP_ACCESS.TOKEN}`);
 
 				const response2 = await request(getUrl(vendor))
 					.get('/schema/snapshot')
-					.set('Authorization', `Bearer ${common.USER.API_ONLY.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.API_ONLY.TOKEN}`);
 
 				const response3 = await request(getUrl(vendor))
 					.get('/schema/snapshot')
-					.set('Authorization', `Bearer ${common.USER.NO_ROLE.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.NO_ROLE.TOKEN}`);
 
 				// Assert
 				expect(response.statusCode).toEqual(403);
@@ -72,7 +75,7 @@ describe('Schema Snapshots', () => {
 					// Action
 					const response = await request(getUrl(vendor))
 						.get('/schema/snapshot')
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					// Assert
 					expect(response.statusCode).toEqual(200);
@@ -91,7 +94,7 @@ describe('Schema Snapshots', () => {
 					const response = await request(getUrl(vendor))
 						.get('/schema/snapshot')
 						.query({ export: 'yaml' })
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					// Assert
 					expect(response.statusCode).toEqual(200);
@@ -103,7 +106,7 @@ describe('Schema Snapshots', () => {
 		});
 
 		describe('remove tables', () => {
-			describe.each(common.PRIMARY_KEY_TYPES)('%s primary keys', (pkType) => {
+			describe.each(PRIMARY_KEY_TYPES)('%s primary keys', (pkType) => {
 				it.each(vendors)(
 					'%s',
 					async (vendor) => {
@@ -120,7 +123,7 @@ describe('Schema Snapshots', () => {
 		});
 	});
 
-	common.ClearCaches();
+	ClearCaches();
 
 	describe('retrieves empty snapshot', () => {
 		it.each(vendors)(
@@ -129,7 +132,7 @@ describe('Schema Snapshots', () => {
 				// Action
 				const response = await request(getUrl(vendor))
 					.get('/schema/snapshot')
-					.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 				// Assert
 				expect(response.statusCode).toEqual(200);
@@ -158,7 +161,7 @@ describe('Schema Snapshots', () => {
 						relations: [],
 					})
 					.set('Content-type', 'application/json')
-					.set('Authorization', `Bearer ${common.USER.APP_ACCESS.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.APP_ACCESS.TOKEN}`);
 
 				const response2 = await request(getUrl(vendor))
 					.post('/schema/diff')
@@ -171,7 +174,7 @@ describe('Schema Snapshots', () => {
 						relations: [],
 					})
 					.set('Content-type', 'application/json')
-					.set('Authorization', `Bearer ${common.USER.API_ONLY.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.API_ONLY.TOKEN}`);
 
 				const response3 = await request(getUrl(vendor))
 					.post('/schema/diff')
@@ -184,7 +187,7 @@ describe('Schema Snapshots', () => {
 						relations: [],
 					})
 					.set('Content-type', 'application/json')
-					.set('Authorization', `Bearer ${common.USER.NO_ROLE.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.NO_ROLE.TOKEN}`);
 
 				// Assert
 				expect(response.statusCode).toEqual(403);
@@ -202,7 +205,7 @@ describe('Schema Snapshots', () => {
 						.post('/schema/diff')
 						.send(snapshotsCacheEmpty[vendor])
 						.set('Content-type', 'application/json')
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					expect(response.statusCode).toEqual(204);
 				},
@@ -228,7 +231,7 @@ describe('Schema Snapshots', () => {
 						.post('/schema/diff')
 						.send(snapshotsCacheOriginal[vendor])
 						.set('Content-type', 'application/json')
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					// Assert
 					expect(response.statusCode).toEqual(200);
@@ -249,19 +252,19 @@ describe('Schema Snapshots', () => {
 					.post('/schema/apply')
 					.send({ data: true })
 					.set('Content-type', 'application/json')
-					.set('Authorization', `Bearer ${common.USER.APP_ACCESS.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.APP_ACCESS.TOKEN}`);
 
 				const response2 = await request(getUrl(vendor))
 					.post('/schema/apply')
 					.send({ data: true })
 					.set('Content-type', 'application/json')
-					.set('Authorization', `Bearer ${common.USER.API_ONLY.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.API_ONLY.TOKEN}`);
 
 				const response3 = await request(getUrl(vendor))
 					.post('/schema/apply')
 					.send({ data: true })
 					.set('Content-type', 'application/json')
-					.set('Authorization', `Bearer ${common.USER.NO_ROLE.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.NO_ROLE.TOKEN}`);
 
 				// Assert
 				expect(response.statusCode).toEqual(403);
@@ -281,13 +284,13 @@ describe('Schema Snapshots', () => {
 						.post('/schema/diff')
 						.send(snapshotsCacheOriginal[vendor])
 						.set('Content-type', 'application/json')
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					const response = await request(getUrl(vendor))
 						.post('/schema/apply')
 						.send(responseDiff.body.data)
 						.set('Content-type', 'application/json')
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					// Assert
 					expect(response.statusCode).toEqual(204);
@@ -305,7 +308,7 @@ describe('Schema Snapshots', () => {
 					// Action
 					const response = await request(getUrl(vendor))
 						.get('/schema/snapshot')
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					const curSnapshot = cloneDeep(response.body.data);
 					const oldSnapshot = cloneDeep(snapshotsCacheOriginal[vendor]);
@@ -332,13 +335,13 @@ describe('Schema Snapshots', () => {
 						.post('/schema/diff')
 						.send(snapshotsCacheEmpty[vendor])
 						.set('Content-type', 'application/json')
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					const response = await request(getUrl(vendor))
 						.post('/schema/apply')
 						.send(responseDiff.body.data)
 						.set('Content-type', 'application/json')
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					// Assert
 					expect(response.statusCode).toEqual(204);
@@ -348,7 +351,7 @@ describe('Schema Snapshots', () => {
 		});
 
 		describe('ensure that tables are removed', () => {
-			describe.each(common.PRIMARY_KEY_TYPES)('%s primary keys', (pkType) => {
+			describe.each(PRIMARY_KEY_TYPES)('%s primary keys', (pkType) => {
 				it.each(vendors)(
 					'%s',
 					async (vendor) => {
@@ -369,13 +372,13 @@ describe('Schema Snapshots', () => {
 					const responseDiff = await request(getUrl(vendor))
 						.post('/schema/diff')
 						.attach('file', Buffer.from(snapshotsCacheOriginalYaml[vendor]))
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					const response = await request(getUrl(vendor))
 						.post('/schema/apply')
 						.send(responseDiff.body.data)
 						.set('Content-type', 'application/json')
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					// Assert
 					expect(response.statusCode).toEqual(204);
@@ -394,7 +397,7 @@ describe('Schema Snapshots', () => {
 					const response = await request(getUrl(vendor))
 						.get('/schema/snapshot')
 						.query({ export: 'yaml' })
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					const curSnapshot = await loadYaml(response.text);
 					const oldSnapshot = cloneDeep(snapshotsCacheOriginal[vendor]);
@@ -422,7 +425,7 @@ describe('Schema Snapshots', () => {
 							.patch(`/collections/${collectionAll}_${pkType}`)
 							.send({ meta: { icon: 'abc', color: '#E35169' } })
 							.set('Content-type', 'application/json')
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 					}
 
 					// Action
@@ -430,13 +433,13 @@ describe('Schema Snapshots', () => {
 						.post('/schema/diff')
 						.send(snapshotsCacheOriginal[vendor])
 						.set('Content-type', 'application/json')
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					const response = await request(getUrl(vendor))
 						.post('/schema/apply')
 						.send(responseDiff.body.data)
 						.set('Content-type', 'application/json')
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					// Assert
 					expect(response.statusCode).toEqual(204);
@@ -454,7 +457,7 @@ describe('Schema Snapshots', () => {
 						const nameField = (
 							await request(getUrl(vendor))
 								.get(`/fields/${collectionAll}_${pkType}/name`)
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 						).body.data;
 
 						nameField.meta.translations = [
@@ -466,20 +469,18 @@ describe('Schema Snapshots', () => {
 							.patch(`/fields/${collectionAll}_${pkType}/name`)
 							.send(nameField)
 							.set('Content-type', 'application/json')
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 					}
 
 					const newSnapshot = (
-						await request(getUrl(vendor))
-							.get('/schema/snapshot')
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+						await request(getUrl(vendor)).get('/schema/snapshot').set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 					).body.data;
 
 					for (const pkType of PRIMARY_KEY_TYPES) {
 						const nameField = (
 							await request(getUrl(vendor))
 								.get(`/fields/${collectionAll}_${pkType}/name`)
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 						).body.data;
 
 						nameField.meta.translations = [
@@ -492,7 +493,7 @@ describe('Schema Snapshots', () => {
 							.patch(`/fields/${collectionAll}_${pkType}/name`)
 							.send(nameField)
 							.set('Content-type', 'application/json')
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 					}
 
 					// Action
@@ -500,13 +501,13 @@ describe('Schema Snapshots', () => {
 						.post('/schema/diff')
 						.send(newSnapshot)
 						.set('Content-type', 'application/json')
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					const response = await request(getUrl(vendor))
 						.post('/schema/apply')
 						.send(responseDiff.body.data)
 						.set('Content-type', 'application/json')
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					// Assert
 					expect(response.statusCode).toEqual(204);
@@ -524,7 +525,7 @@ describe('Schema Snapshots', () => {
 						const fields = (
 							await request(getUrl(vendor))
 								.get(`/fields/${collectionAll}_${pkType}`)
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 						).body.data.map((field: any) => {
 							return field.field;
 						});
@@ -539,20 +540,18 @@ describe('Schema Snapshots', () => {
 							.patch(`/fields/${collectionAll}_${pkType}`)
 							.send(payload)
 							.set('Content-type', 'application/json')
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 					}
 
 					const newSnapshot = (
-						await request(getUrl(vendor))
-							.get('/schema/snapshot')
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+						await request(getUrl(vendor)).get('/schema/snapshot').set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 					).body.data;
 
 					for (const pkType of PRIMARY_KEY_TYPES) {
 						const fields = (
 							await request(getUrl(vendor))
 								.get(`/fields/${collectionAll}_${pkType}`)
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 						).body.data.map((field: any) => {
 							return field.field;
 						});
@@ -567,7 +566,7 @@ describe('Schema Snapshots', () => {
 							.patch(`/fields/${collectionAll}_${pkType}`)
 							.send(payload)
 							.set('Content-type', 'application/json')
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 					}
 
 					// Action
@@ -575,13 +574,13 @@ describe('Schema Snapshots', () => {
 						.post('/schema/diff')
 						.send(newSnapshot)
 						.set('Content-type', 'application/json')
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					const response = await request(getUrl(vendor))
 						.post('/schema/apply')
 						.send(responseDiff.body.data)
 						.set('Content-type', 'application/json')
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					// Assert
 					expect(response.statusCode).toEqual(204);
@@ -607,7 +606,7 @@ describe('Schema Snapshots', () => {
 					const tempRelationalField = 'temp_relational';
 
 					for (const pkType of PRIMARY_KEY_TYPES) {
-						const item = await common.CreateItem(vendor, {
+						const item = await CreateItem(vendor, {
 							collection: `${collectionAll}_${pkType}`,
 							item: {
 								id: pkType === 'string' ? uuid() : undefined,
@@ -618,7 +617,7 @@ describe('Schema Snapshots', () => {
 
 						childrenIDs[pkType] = { id: item.id, m2o_id: item.all_id, o2m_id: item.o2m[0] };
 
-						await common.CreateFieldM2O(vendor, {
+						await CreateFieldM2O(vendor, {
 							collection: `${collectionAll}_${pkType}`,
 							field: tempRelationalField,
 							otherCollection: collectionSelf,
@@ -630,13 +629,13 @@ describe('Schema Snapshots', () => {
 						.post('/schema/diff')
 						.send(snapshotsCacheOriginal[vendor])
 						.set('Content-type', 'application/json')
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					const response = await request(getUrl(vendor))
 						.post('/schema/apply')
 						.send(responseDiff.body.data)
 						.set('Content-type', 'application/json')
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					// Assert
 					expect(response.statusCode).toEqual(204);
@@ -645,7 +644,7 @@ describe('Schema Snapshots', () => {
 						const item = (
 							await request(getUrl(vendor))
 								.get(`/items/${collectionAll}_${pkType}/${childrenIDs[pkType].id}`)
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 						).body.data;
 
 						expect(item.all_id).toBe(childrenIDs[pkType].m2o_id);
@@ -658,7 +657,7 @@ describe('Schema Snapshots', () => {
 		});
 	});
 
-	common.ClearCaches();
+	ClearCaches();
 
 	describe('Hash Tests', () => {
 		describe('with deleted fields', () => {
@@ -672,19 +671,19 @@ describe('Schema Snapshots', () => {
 						.post('/schema/diff')
 						.send(snapshotsCacheEmpty[vendor])
 						.set('Content-type', 'application/json')
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					for (const pkType of PRIMARY_KEY_TYPES) {
 						await request(getUrl(vendor))
 							.delete(`/fields/${collectionSelf}_${pkType}/self_id`)
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 					}
 
 					const response = await request(getUrl(vendor))
 						.post('/schema/apply')
 						.send(responseDiff.body.data)
 						.set('Content-type', 'application/json')
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					// Assert
 					expect(response.statusCode).toEqual(400);
@@ -705,7 +704,7 @@ describe('Schema Snapshots', () => {
 						.post('/schema/diff')
 						.send(snapshotsCacheEmpty[vendor])
 						.set('Content-type', 'application/json')
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					await request(getUrl(vendor))
 						.post(`/collections`)
@@ -722,13 +721,13 @@ describe('Schema Snapshots', () => {
 							schema: {},
 							meta: { singleton: false },
 						})
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					const response = await request(getUrl(vendor))
 						.post('/schema/apply')
 						.send(responseDiff.body.data)
 						.set('Content-type', 'application/json')
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					// Assert
 					expect(response.statusCode).toEqual(400);
@@ -785,91 +784,91 @@ async function assertCollectionsDeleted(vendor: string, pkType: PrimaryKeyType) 
 		responses.push(
 			await request(getUrl(vendor))
 				.get(`/items/${localJunctionSelfM2M}`)
-				.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+				.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 		);
 
 		responses.push(
 			await request(getUrl(vendor))
 				.get(`/items/${localCollectionSelf}`)
-				.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+				.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 		);
 
 		responses.push(
 			await request(getUrl(vendor))
 				.get(`/items/${localCollectionO2M2}`)
-				.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+				.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 		);
 
 		responses.push(
 			await request(getUrl(vendor))
 				.get(`/items/${localCollectionO2M}`)
-				.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+				.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 		);
 
 		responses.push(
 			await request(getUrl(vendor))
 				.get(`/items/${localJunctionM2AM2A2}`)
-				.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+				.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 		);
 
 		responses.push(
 			await request(getUrl(vendor))
 				.get(`/items/${localJunctionAllM2A}`)
-				.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+				.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 		);
 
 		responses.push(
 			await request(getUrl(vendor))
 				.get(`/items/${localCollectionM2A2}`)
-				.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+				.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 		);
 
 		responses.push(
 			await request(getUrl(vendor))
 				.get(`/items/${localCollectionM2A}`)
-				.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+				.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 		);
 
 		responses.push(
 			await request(getUrl(vendor))
 				.get(`/items/${localJunctionM2MM2M2}`)
-				.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+				.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 		);
 
 		responses.push(
 			await request(getUrl(vendor))
 				.get(`/items/${localJunctionAllM2M}`)
-				.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+				.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 		);
 
 		responses.push(
 			await request(getUrl(vendor))
 				.get(`/items/${localCollectionM2M2}`)
-				.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+				.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 		);
 
 		responses.push(
 			await request(getUrl(vendor))
 				.get(`/items/${localCollectionM2M}`)
-				.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+				.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 		);
 
 		responses.push(
 			await request(getUrl(vendor))
 				.get(`/items/${localCollectionAll}`)
-				.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+				.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 		);
 
 		responses.push(
 			await request(getUrl(vendor))
 				.get(`/items/${localCollectionM2O}`)
-				.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+				.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 		);
 
 		responses.push(
 			await request(getUrl(vendor))
 				.get(`/items/${localCollectionM2O2}`)
-				.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+				.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 		);
 
 		// Assert

@@ -1,4 +1,4 @@
-import { getUrl } from '@common/config';
+import { getUrl } from '@common/config.ts';
 import request from 'supertest';
 
 export type AllowedRequestMethods = 'get' | 'post' | 'put' | 'patch' | 'delete' | 'search';

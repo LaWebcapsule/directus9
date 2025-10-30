@@ -1,12 +1,6 @@
-import vendors from '@common/get-dbs-to-test';
-import {
-	CreateCollection,
-	CreateField,
-	CreateFieldO2M,
-	CreateItem,
-	DeleteCollection,
-	PRIMARY_KEY_TYPES,
-} from '@common/index';
+import { CreateCollection, CreateField, CreateFieldO2M, CreateItem, DeleteCollection } from '../../common/functions.ts';
+import vendors from '../../common/get-dbs-to-test.ts';
+import { PRIMARY_KEY_TYPES } from '../../common/variables.ts';
 import { v4 as uuid } from 'uuid';
 
 export const collectionFirst = 'test_items_hash_filter_first';
