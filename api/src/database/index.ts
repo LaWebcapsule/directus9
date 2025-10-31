@@ -1,5 +1,5 @@
-import { createInspector } from '@wbce-d9/schema';
 import type { SchemaInspector } from '@wbce-d9/schema';
+import { createInspector } from '@wbce-d9/schema';
 import fse from 'fs-extra';
 import type { Knex } from 'knex';
 import knex from 'knex';
@@ -119,14 +119,19 @@ export default function getDatabase(): Knex {
 	}
 
 	if (client === 'mysql') {
-		poolConfig.afterCreate = async (conn: any, callback: any) => {
-			logger.trace('Retrieving database version');
+	    poolConfig.afterCreate = (conn: any, callback: any) => {
+	        logger.trace('Retrieving database version');
 
-			const version = await conn.run('SELECT @@version;');
-			databaseVersion = version[0]['@@version'];
+	        conn.query('SELECT @@version AS version;', (error: any, results: any) => {
+	            if (error) {
+	                callback(error, null);
+	                return;
+	            }
 
-			callback(null, conn);
-		};
+	            databaseVersion = results[0]?.version || results[0]?.['@@version'];
+	            callback(null, conn);
+	        });
+	    };
 	}
 
 	if (client === 'mssql') {
