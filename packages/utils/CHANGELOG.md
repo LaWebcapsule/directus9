@@ -1,5 +1,11 @@
 # @wbce-d9/utils
 
+## 9.29.3
+
+### Patch Changes
+
+- bdcd952: Security update change, manual and dependabot updates
+
 ## 9.29.2
 
 ### Patch Changes
