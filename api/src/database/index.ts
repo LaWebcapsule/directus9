@@ -119,19 +119,19 @@ export default function getDatabase(): Knex {
 	}
 
 	if (client === 'mysql') {
-	    poolConfig.afterCreate = (conn: any, callback: any) => {
-	        logger.trace('Retrieving database version');
+		poolConfig.afterCreate = (conn: any, callback: any) => {
+			logger.trace('Retrieving database version');
 
-	        conn.query('SELECT @@version AS version;', (error: any, results: any) => {
-	            if (error) {
-	                callback(error, null);
-	                return;
-	            }
+			conn.query('SELECT @@version AS version;', (error: any, results: any) => {
+				if (error) {
+					callback(error, null);
+					return;
+				}
 
-	            databaseVersion = results[0]?.version || results[0]?.['@@version'];
-	            callback(null, conn);
-	        });
-	    };
+				databaseVersion = results[0]?.version || results[0]?.['@@version'];
+				callback(null, conn);
+			});
+		};
 	}
 
 	if (client === 'mssql') {
