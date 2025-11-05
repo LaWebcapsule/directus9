@@ -1,15 +1,16 @@
-import config, { getUrl } from '@common/config';
-import * as common from '@common/index';
+import config, { getUrl } from '@common/config.ts';
 import request from 'supertest';
-import vendors from '@common/get-dbs-to-test';
+import vendors from '@common/get-dbs-to-test.ts';
 import knex from 'knex';
 import type { Knex } from 'knex';
 import type { Collection } from '@wbce-d9/types';
-import { findIndex } from 'lodash';
-import { requestGraphQL } from '@common/index';
+import { findIndex } from 'lodash-es';
+import { requestGraphQL } from '@common/transport.ts';
+import { DEFAULT_DB_TABLES, PRIMARY_KEY_TYPES, TEST_USERS, USER } from '@common/variables.ts';
+import { ClearCaches, DisableTestCachingSetup } from '@common/functions.ts';
 
-describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
-	common.DisableTestCachingSetup();
+describe.each(PRIMARY_KEY_TYPES)('/collections', (pkType) => {
+	DisableTestCachingSetup();
 
 	const databases = new Map<string, Knex>();
 	const TEST_COLLECTION_NAME = `test_collections_crud_creation_${pkType}`;
@@ -30,15 +31,15 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 
 		describe('GET /', () => {
 			describe('Returns the correct tables', () => {
-				common.TEST_USERS.forEach((userKey) => {
-					describe(common.USER[userKey].NAME, () => {
+				TEST_USERS.forEach((userKey) => {
+					describe(USER[userKey].NAME, () => {
 						it.each(vendors)('%s', async (vendor) => {
 							// Action
 							const response = await request(getUrl(vendor))
 								.get('/collections')
-								.set('Authorization', `Bearer ${common.USER[userKey].TOKEN}`);
+								.set('Authorization', `Bearer ${USER[userKey].TOKEN}`);
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), true, common.USER[userKey].TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), true, USER[userKey].TOKEN, {
 								query: {
 									collections: {
 										collection: true,
@@ -47,7 +48,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 							});
 
 							// Assert
-							if (userKey === common.USER.ADMIN.KEY) {
+							if (userKey === USER.ADMIN.KEY) {
 								const responseData = JSON.parse(response.text);
 								const tableNames = responseData.data.map((collection: Collection) => collection.collection).sort();
 
@@ -56,26 +57,24 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 									.sort();
 
 								expect(response.statusCode).toBe(200);
-								expect(responseData.data.length).toBeGreaterThanOrEqual(common.DEFAULT_DB_TABLES.length);
+								expect(responseData.data.length).toBeGreaterThanOrEqual(DEFAULT_DB_TABLES.length);
 
 								expect(
-									common.DEFAULT_DB_TABLES.every((name: string) => {
+									DEFAULT_DB_TABLES.every((name: string) => {
 										return tableNames.indexOf(name) !== -1;
 									})
 								).toEqual(true);
 
 								expect(gqlResponse.statusCode).toBe(200);
 
-								expect(gqlResponse.body.data['collections'].length).toBeGreaterThanOrEqual(
-									common.DEFAULT_DB_TABLES.length
-								);
+								expect(gqlResponse.body.data['collections'].length).toBeGreaterThanOrEqual(DEFAULT_DB_TABLES.length);
 
 								expect(
-									common.DEFAULT_DB_TABLES.every((name: string) => {
+									DEFAULT_DB_TABLES.every((name: string) => {
 										return tableNames2.indexOf(name) !== -1;
 									})
 								).toEqual(true);
-							} else if (userKey === common.USER.APP_ACCESS.KEY) {
+							} else if (userKey === USER.APP_ACCESS.KEY) {
 								const responseData = JSON.parse(response.text);
 								const tableNames = responseData.data.map((collection: Collection) => collection.collection).sort();
 
@@ -133,8 +132,8 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 			});
 
 			describe('Creates a new regular collection', () => {
-				common.TEST_USERS.forEach((userKey) => {
-					describe(common.USER[userKey].NAME, () => {
+				TEST_USERS.forEach((userKey) => {
+					describe(USER[userKey].NAME, () => {
 						it.each(vendors)('%s', async (vendor) => {
 							// Setup
 							const db = databases.get(vendor)!;
@@ -175,10 +174,10 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 							const response = await request(getUrl(vendor))
 								.post('/collections')
 								.send({ collection: TEST_COLLECTION_NAME, meta: {}, schema: {}, fields })
-								.set('Authorization', `Bearer ${common.USER[userKey].TOKEN}`);
+								.set('Authorization', `Bearer ${USER[userKey].TOKEN}`);
 
 							// Assert
-							if (userKey === common.USER.ADMIN.KEY) {
+							if (userKey === USER.ADMIN.KEY) {
 								expect(response.statusCode).toBe(200);
 
 								expect(response.body.data).toEqual({
@@ -201,8 +200,8 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 			});
 
 			describe('Creates a new folder', () => {
-				common.TEST_USERS.forEach((userKey) => {
-					describe(common.USER[userKey].NAME, () => {
+				TEST_USERS.forEach((userKey) => {
+					describe(USER[userKey].NAME, () => {
 						it.each(vendors)('%s', async (vendor) => {
 							// Setup
 							const db = databases.get(vendor)!;
@@ -212,10 +211,10 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 							const response = await request(getUrl(vendor))
 								.post('/collections')
 								.send({ collection: TEST_FOLDER_NAME, meta: {}, schema: null })
-								.set('Authorization', `Bearer ${common.USER[userKey].TOKEN}`);
+								.set('Authorization', `Bearer ${USER[userKey].TOKEN}`);
 
 							// Assert
-							if (userKey === common.USER.ADMIN.KEY) {
+							if (userKey === USER.ADMIN.KEY) {
 								expect(response.statusCode).toBe(200);
 
 								expect(response.body.data).toEqual({
@@ -257,8 +256,8 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 			});
 
 			describe('Does batch update used for collection sorting', () => {
-				common.TEST_USERS.forEach((userKey) => {
-					describe(common.USER[userKey].NAME, () => {
+				TEST_USERS.forEach((userKey) => {
+					describe(USER[userKey].NAME, () => {
 						it.each(vendors)('%s', async (vendor) => {
 							// Setup
 							const db = databases.get(vendor)!;
@@ -272,7 +271,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 										return { collection, meta: {}, schema: {} };
 									})
 								)
-								.set('Authorization', `Bearer ${common.USER[userKey].TOKEN}`);
+								.set('Authorization', `Bearer ${USER[userKey].TOKEN}`);
 
 							let index = 0;
 
@@ -284,10 +283,10 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 										return { collection, meta: { sort, note: String(sort) } };
 									})
 								)
-								.set('Authorization', `Bearer ${common.USER[userKey].TOKEN}`);
+								.set('Authorization', `Bearer ${USER[userKey].TOKEN}`);
 
 							// Assert
-							if (userKey === common.USER.ADMIN.KEY) {
+							if (userKey === USER.ADMIN.KEY) {
 								expect(response.statusCode).toBe(200);
 
 								for (let i = 0; i < collectionNames.length; i++) {
@@ -326,8 +325,8 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 			});
 
 			describe('Deletes a regular collection', () => {
-				common.TEST_USERS.forEach((userKey: string) => {
-					describe(common.USER[userKey].NAME, () => {
+				TEST_USERS.forEach((userKey: string) => {
+					describe(USER[userKey].NAME, () => {
 						it.each(vendors)('%s', async (vendor) => {
 							// Setup
 							const db = databases.get(vendor)!;
@@ -336,19 +335,19 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 							await request(getUrl(vendor))
 								.post('/collections')
 								.send({ collection: TEST_COLLECTION_NAME, meta: {}, schema: {} })
-								.set('Authorization', `Bearer ${common.USER[userKey].TOKEN}`);
+								.set('Authorization', `Bearer ${USER[userKey].TOKEN}`);
 
-							if (userKey === common.USER.ADMIN.KEY) {
+							if (userKey === USER.ADMIN.KEY) {
 								expect(await db.schema.hasTable(TEST_COLLECTION_NAME)).toBe(true);
 							}
 
 							// Action
 							const response = await request(getUrl(vendor))
 								.delete('/collections/' + TEST_COLLECTION_NAME)
-								.set('Authorization', `Bearer ${common.USER[userKey].TOKEN}`);
+								.set('Authorization', `Bearer ${USER[userKey].TOKEN}`);
 
 							// Assert
-							if (userKey === common.USER.ADMIN.KEY) {
+							if (userKey === USER.ADMIN.KEY) {
 								expect(response.statusCode).toBe(204);
 								expect(response.body).toEqual({});
 								expect(await db.schema.hasTable(TEST_COLLECTION_NAME)).toBe(false);
@@ -361,8 +360,8 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 			});
 
 			describe('Deletes a folder', () => {
-				common.TEST_USERS.forEach((userKey: string) => {
-					describe(common.USER[userKey].NAME, () => {
+				TEST_USERS.forEach((userKey: string) => {
+					describe(USER[userKey].NAME, () => {
 						it.each(vendors)('%s', async (vendor) => {
 							// Setup
 							const db = databases.get(vendor)!;
@@ -371,9 +370,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 							await request(getUrl(vendor))
 								.post('/collections')
 								.send({ collection: TEST_FOLDER_NAME, meta: {}, schema: null })
-								.set('Authorization', `Bearer ${common.USER[userKey].TOKEN}`);
+								.set('Authorization', `Bearer ${USER[userKey].TOKEN}`);
 
-							if (userKey === common.USER.ADMIN.KEY) {
+							if (userKey === USER.ADMIN.KEY) {
 								expect(await db('directus_collections').select().where({ collection: TEST_FOLDER_NAME })).toHaveLength(
 									1
 								);
@@ -382,10 +381,10 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 							// Action
 							const response = await request(getUrl(vendor))
 								.delete('/collections/' + TEST_FOLDER_NAME)
-								.set('Authorization', `Bearer ${common.USER[userKey].TOKEN}`);
+								.set('Authorization', `Bearer ${USER[userKey].TOKEN}`);
 
 							// Assert
-							if (userKey === common.USER.ADMIN.KEY) {
+							if (userKey === USER.ADMIN.KEY) {
 								expect(response.statusCode).toBe(204);
 								expect(response.body).toEqual({});
 
@@ -422,7 +421,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 							],
 						}),
 					})
-					.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 				// Assert
 				expect(response.statusCode).toBe(200);
@@ -436,4 +435,4 @@ describe.each(common.PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 	});
 });
 
-common.ClearCaches();
+ClearCaches();

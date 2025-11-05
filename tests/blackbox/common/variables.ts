@@ -1,4 +1,4 @@
-import { PrimaryKeyType } from './types';
+import type { PrimaryKeyType } from './types.ts';
 
 export const DEFAULT_DB_TABLES: string[] = [
 	'tests_flow_data',

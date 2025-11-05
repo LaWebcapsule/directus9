@@ -1,8 +1,8 @@
-import NodeEnvironment from 'jest-environment-node';
+import { TestEnvironment } from 'jest-environment-node';
 import axios from 'axios';
 import * as SequentialTests from './sequentialTests.js';
-import { sleep } from '../utils/sleep';
-import * as common from '../common';
+import { sleep } from '../utils/sleep.ts';
+import { USER } from '../common/variables.ts';
 
 /* eslint-disable no-var */
 declare global {
@@ -11,7 +11,7 @@ declare global {
 	var testFilePath: string;
 }
 
-class CustomEnvironment extends NodeEnvironment {
+class CustomEnvironment extends (TestEnvironment as any) {
 	constructor(config: any, context: any) {
 		super(config, context);
 		this.global.testFilePath = String(context.testPath).split('blackbox')[1]!;
@@ -37,7 +37,7 @@ class CustomEnvironment extends NodeEnvironment {
 						'aggregate[count]': 'id',
 					},
 					headers: {
-						Authorization: `Bearer ${common.USER.TESTS_FLOW.TOKEN}`,
+						Authorization: `Bearer ${USER.TESTS_FLOW.TOKEN}`,
 					},
 				});
 
@@ -65,7 +65,7 @@ class CustomEnvironment extends NodeEnvironment {
 
 		await axios.post(`${this.global.directusFlowDataServerUrl}/items/tests_flow_completed`, body, {
 			headers: {
-				Authorization: `Bearer ${common.USER.TESTS_FLOW.TOKEN}`,
+				Authorization: `Bearer ${USER.TESTS_FLOW.TOKEN}`,
 				'Content-Type': 'application/json',
 			},
 		});

@@ -1,5 +1,5 @@
 {
-	"extends": "@wbce-d9/tsconfig/node18-esm.json",
+	"extends": "@wbce-d9/tsconfig/node22",
 	"compilerOptions": {
 		"outDir": "dist",
 		"lib": ["es2022", "DOM"]

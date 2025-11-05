@@ -1,5 +1,11 @@
 # @wbce-d9/storage
 
+## 10.0.0
+
+### Major Changes
+
+- a561d87: Migrate to Node.js 22 runtime
+
 ## 9.26.4
 
 ### Patch Changes

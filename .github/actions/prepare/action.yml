@@ -15,14 +15,11 @@ runs:
     - name: Install Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: 20
+        node-version: 22
         registry-url: ${{ inputs.registry }}
 
-    - uses: pnpm/action-setup@v2
+    - uses: pnpm/action-setup@v4
       name: Install pnpm
-      id: pnpm-install
-      with:
-        run_install: false
 
     - name: Get pnpm store directory
       id: pnpm-cache
@@ -30,7 +27,7 @@ runs:
       run: |
         echo "pnpm_cache_dir=$(pnpm store path)" >> $GITHUB_OUTPUT
 
-    - uses: actions/cache@v3
+    - uses: actions/cache@v4
       name: Setup pnpm cache
       with:
         path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}

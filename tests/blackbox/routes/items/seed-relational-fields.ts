@@ -1,8 +1,10 @@
 import request from 'supertest';
-import { getUrl } from '@common/config';
-import { CreateItem, SeedFunctions, PrimaryKeyType } from '@common/index';
-import { TestsFieldSchema } from '@query/filter';
-import * as common from '@common/index';
+import { getUrl } from '@common/config.ts';
+import { CreateItem } from '@common/functions.ts';
+import type { TestsFieldSchema } from '@query/filter/index.ts';
+import { SeedFunctions } from '@common/seed-functions.ts';
+import type { PrimaryKeyType } from '@common/types.ts';
+import { USER } from '@common/variables.ts';
 
 export const seedRelationalFields = async (
 	vendor: string,
@@ -25,7 +27,7 @@ export const seedRelationalFields = async (
 			if (testsSchema[key].children) {
 				const response = await request(getUrl(vendor))
 					.get(`/items/${testsSchema[key].relatedCollection}`)
-					.set('Authorization', `Bearer ${common.USER.TESTS_FLOW.TOKEN}`)
+					.set('Authorization', `Bearer ${USER.TESTS_FLOW.TOKEN}`)
 					.query({ fields: 'id', limit: -1 });
 
 				const primaryKeys = response.body.data.map((item: any) => item.id);

@@ -1,5 +1,17 @@
 # @wbce-d9/utils
 
+## 10.0.0
+
+### Major Changes
+
+- a561d87: Migrate to Node.js 22 runtime
+
+### Patch Changes
+
+- Updated dependencies [a561d87]
+  - @wbce-d9/constants@10.0.0
+  - @wbce-d9/storage@10.0.0
+
 ## 9.29.3
 
 ### Patch Changes

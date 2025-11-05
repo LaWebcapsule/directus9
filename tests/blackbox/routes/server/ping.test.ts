@@ -1,7 +1,7 @@
-import { getUrl } from '@common/config';
+import { getUrl } from '@common/config.ts';
 import request from 'supertest';
-import vendors from '@common/get-dbs-to-test';
-import { requestGraphQL } from '@common/transport';
+import vendors from '@common/get-dbs-to-test.ts';
+import { requestGraphQL } from '@common/transport.ts';
 
 describe('/server', () => {
 	describe('GET /ping', () => {

@@ -1,9 +1,9 @@
-import { PrepareRequest, RequestOptions } from '@utils/prepare-request';
-import vendors from '@common/get-dbs-to-test';
-import * as testsSchema from '@schema/index';
+import { PrepareRequest, type RequestOptions } from '@utils/prepare-request.ts';
+import vendors from '@common/get-dbs-to-test.ts';
+import * as testsSchema from '@schema/index.ts';
 import type { ClientFilterOperator } from '@wbce-d9/types';
-import { get, set } from 'lodash';
-import { PrimaryKeyType } from '@common/types';
+import { get, set } from 'lodash-es';
+import type { PrimaryKeyType } from '@common/types.ts';
 
 export type FilterValidator = (inputValue: any, possibleValues: any) => boolean;
 export type FilterEmptyValidator = (inputValue: any, possibleValues: any) => boolean;

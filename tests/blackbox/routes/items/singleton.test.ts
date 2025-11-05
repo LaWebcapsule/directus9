@@ -1,9 +1,10 @@
+import { getUrl } from '@common/config.ts';
+import vendors from '@common/get-dbs-to-test.ts';
+import { SeedFunctions } from '@common/seed-functions.ts';
+import { requestGraphQL } from '@common/transport.ts';
+import { PRIMARY_KEY_TYPES, USER } from '@common/variables.ts';
 import request from 'supertest';
-import { getUrl } from '@common/config';
-import vendors from '@common/get-dbs-to-test';
-import * as common from '@common/index';
-import { collectionSingleton, collectionSingletonO2M, seedDBValues } from './singleton.seed';
-import { requestGraphQL, SeedFunctions } from '@common/index';
+import { collectionSingleton, collectionSingletonO2M, seedDBValues } from './singleton.seed.ts';
 
 let isSeeded = false;
 
@@ -15,7 +16,7 @@ test('Seed Database Values', () => {
 	expect(isSeeded).toStrictEqual(true);
 });
 
-describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
+describe.each(PRIMARY_KEY_TYPES)('/items', (pkType) => {
 	const localCollectionSingleton = `${collectionSingleton}_${pkType}`;
 	const localCollectionSingletonO2M = `${collectionSingletonO2M}_${pkType}`;
 
@@ -26,9 +27,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 					// Action
 					const response = await request(getUrl(vendor))
 						.get(`/items/${localCollectionSingleton}`)
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-					const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						query: {
 							[localCollectionSingleton]: {
 								name: true,
@@ -57,9 +58,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 						// Action
 						const response = await request(getUrl(vendor))
 							.get(`/items/${localCollectionSingleton}/invalid_id`)
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-						const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							query: {
 								[localCollectionSingleton]: {
 									__args: {
@@ -96,11 +97,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 					const response = await request(getUrl(vendor))
 						.patch(`/items/${localCollectionSingleton}`)
 						.send({ name: newName })
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					const mutationKey = `update_${localCollectionSingleton}`;
 
-					const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						mutation: {
 							[mutationKey]: {
 								__args: {
@@ -134,7 +135,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 					const existingItem = (
 						await request(getUrl(vendor))
 							.get(`/items/${localCollectionSingleton}`)
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 					).body.data;
 
 					const o2mNameNew = 'child_o2m_new';
@@ -170,9 +171,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 					const response = await request(getUrl(vendor))
 						.patch(`/items/${localCollectionSingleton}?fields=*.*`)
 						.send(body)
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-					const gqlResponsePre = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponsePre = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						query: {
 							[localCollectionSingleton]: {
 								o2m: {
@@ -198,7 +199,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 
 					const mutationKey = `update_${localCollectionSingleton}`;
 
-					const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						mutation: {
 							[mutationKey]: {
 								__args: {

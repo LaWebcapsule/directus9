@@ -49,7 +49,7 @@ module.exports = {
 	},
 	// Basic configuration for js files
 	plugins: ['@typescript-eslint', 'prettier'],
-	extends: ['eslint:recommended', 'prettier'],
+	extends: ['eslint:recommended', 'plugin:prettier/recommended'],
 	rules: defaultRules,
 	parserOptions: {
 		ecmaVersion: 2022,
@@ -73,10 +73,10 @@ module.exports = {
 				parser: '@typescript-eslint/parser',
 			},
 			extends: [
-				'plugin:vue/vue3-recommended',
+				'plugin:vue/recommended',
 				'eslint:recommended',
 				'plugin:@typescript-eslint/recommended',
-				'prettier',
+				'plugin:prettier/recommended',
 			],
 			rules: {
 				...defaultRules,

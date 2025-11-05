@@ -1,14 +1,10 @@
 /* eslint-disable no-console */
 
 import { Listr } from 'listr2';
-import vendors from '../common/get-dbs-to-test';
-import config from '../common/config';
-import { JestConfigWithTsJest } from 'ts-jest/dist/types';
-import global from './global';
-
-if (require.main === module) {
-	teardown(undefined, true);
-}
+import vendors from '../common/get-dbs-to-test.ts';
+import config from '../common/config.ts';
+import { JestConfigWithTsJest } from 'ts-jest/dist/types.ts';
+import global from './global.ts';
 
 export default async function teardown(jestConfig?: JestConfigWithTsJest, _isAfterWatch = false): Promise<void> {
 	if (jestConfig?.watch || jestConfig?.watchAll) return;
@@ -24,10 +20,10 @@ export default async function teardown(jestConfig?: JestConfigWithTsJest, _isAft
 								title: config.names[vendor]!,
 								task: async () => {
 									const directus = global.directus[vendor];
-									directus!.kill();
+									directus?.kill();
 
 									const directusNoCache = global.directusNoCache[vendor];
-									directusNoCache!.kill();
+									directusNoCache?.kill();
 								},
 							};
 						}),

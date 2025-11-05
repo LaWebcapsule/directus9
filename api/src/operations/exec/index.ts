@@ -28,7 +28,11 @@ export default defineOperationApi<ExecutionOptions>({
 
 		// Adding a secure logger for the isolate
 		const createLoggerCallback = (logFn: (msg: any) => void) =>
-			new ivm.Callback((...args: any[]) => logFn(args.length === 1 ? args[0] : args), { sync: true });
+			new ivm.Callback(
+				(...args: any[]) => logFn(args.length === 1 ? args[0] : args),
+				() => {},
+				{ sync: true }
+			);
 
 		jail.setSync(
 			'console',
@@ -44,14 +48,19 @@ export default defineOperationApi<ExecutionOptions>({
 		);
 
 		// Executing the code within the isolate
-		await context.eval(code, { timeout: executionTimeout });
+		await context.eval(code, { timeout: executionTimeout }, () => {});
 
 		const dataCopy = new ivm.ExternalCopy({ data });
 
-		const resultReference = await context.evalClosure(`return module.exports($0.data)`, [dataCopy.copyInto()], {
-			result: { reference: true, promise: true },
-			timeout: executionTimeout,
-		});
+		const resultReference = await context.evalClosure(
+			`return module.exports($0.data)`,
+			[dataCopy.copyInto()],
+			{
+				result: { reference: true, promise: true },
+				timeout: executionTimeout,
+			},
+			() => {}
+		);
 
 		const finalResult = await resultReference.copy();
 

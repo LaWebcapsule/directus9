@@ -1,11 +1,11 @@
-import { getUrl } from '@common/config';
+import { getUrl, paths } from '@common/config.ts';
 import request from 'supertest';
-import vendors from '@common/get-dbs-to-test';
+import vendors from '@common/get-dbs-to-test.ts';
 import { createReadStream } from 'fs';
 import path from 'path';
-import * as common from '@common/index';
+import { USER } from '@common/variables.ts';
 
-const assetsDirectory = [__dirname, '..', '..', 'assets'];
+const assetsDirectory = [paths.cwd, 'assets'];
 const storages = ['local', 'minio'];
 
 const imageFile = {
@@ -25,7 +25,7 @@ describe('/files', () => {
 				// Action
 				const response = await request(getUrl(vendor))
 					.post('/files')
-					.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+					.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 					.field('storage', storage)
 					.field('title', imageFile.title)
 					.field('description', imageFile.description)
@@ -59,14 +59,14 @@ describe('/files', () => {
 				// Setup
 				const insertResponse = await request(getUrl(vendor))
 					.post('/files')
-					.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+					.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 					.field('storage', storage)
 					.attach('file', createReadStream(imageFilePath));
 
 				// Action
 				const response = await request(getUrl(vendor))
 					.delete(`/files/${insertResponse.body.data.id}`)
-					.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 				// Assert
 				expect(response.statusCode).toEqual(204);

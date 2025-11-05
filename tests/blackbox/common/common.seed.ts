@@ -1,5 +1,5 @@
-import vendors from '@common/get-dbs-to-test';
-import { DeleteCollection } from '@common/functions';
+import { DeleteCollection } from './functions.ts';
+import vendors from './get-dbs-to-test.ts';
 
 export const collectionName = 'common_test_collection';
 export const collectionNameM2O = 'common_test_collection_m2o';
