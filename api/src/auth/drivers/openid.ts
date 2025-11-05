@@ -251,6 +251,7 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 		'/callback',
 		asyncHandler(async (req, res, next) => {
 			const redirectUrl = req.query['redirect'] as string;
+			const validRedirectUrl = isRedirectAllowedOnLogin(redirectUrl, providerName) ? redirectUrl : null;
 			const state = req.query['state'] as string;
 
 			const cookieName = state ? `openid.${providerName}.${state}` : `openid.${providerName}`;
@@ -273,7 +274,7 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 				const loginPath = '/admin/login';
 				const url = new URL(loginPath, baseUrl);
 
-				const redirectTo = redirectUrl || url.toString();
+				const redirectTo = validRedirectUrl || url.toString();
 				return res.redirect(`${redirectTo}?reason=INVALID_CREDENTIALS`);
 			}
 
