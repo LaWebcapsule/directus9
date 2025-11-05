@@ -165,13 +165,13 @@ const _icontains = (inputValue: any, possibleValues: any): boolean => {
 	return false;
 };
 
-const _nicontains = (inputValue: any, possibleValues: any): boolean => {
-	if (!inputValue.toLowerCase().includes(possibleValues.toLowerCase())) {
-		return true;
-	}
+// const _nicontains = (inputValue: any, possibleValues: any): boolean => {
+// 	if (!inputValue.toLowerCase().includes(possibleValues.toLowerCase())) {
+// 		return true;
+// 	}
 
-	return false;
-};
+// 	return false;
+// };
 
 const _starts_with = (inputValue: any, possibleValues: any): boolean => {
 	if (inputValue.startsWith(possibleValues)) {
