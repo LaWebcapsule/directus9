@@ -1,5 +1,11 @@
 # docs
 
+## 10.0.0
+
+### Major Changes
+
+- a561d87: Migrate to Node.js 22 runtime
+
 ## 9.27.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @wbce-d9/types
 
+## 10.0.0
+
+### Major Changes
+
+- a561d87: Migrate to Node.js 22 runtime
+
 ## 9.28.1
 
 ### Patch Changes

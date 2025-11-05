@@ -1,5 +1,16 @@
 # directus9
 
+## 11.0.0
+
+### Major Changes
+
+- a561d87: Migrate to Node.js 22 runtime
+
+### Patch Changes
+
+- Updated dependencies [a561d87]
+  - @wbce-d9/api@12.0.0
+
 ## 10.3.15
 
 ### Patch Changes

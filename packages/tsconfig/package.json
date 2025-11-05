@@ -1,6 +1,6 @@
 {
 	"name": "@wbce-d9/tsconfig",
-	"version": "1.0.0",
+	"version": "2.0.0",
 	"description": "TSConfig files used in Directus9 projects",
 	"homepage": "https://directus.io",
 	"repository": {
