@@ -24,11 +24,9 @@ import { cloneDeep } from 'lodash-es';
 import type { PrimaryKeyType } from '@common/types.ts';
 import { PRIMARY_KEY_TYPES, USER } from '@common/variables.ts';
 import { load as loadYaml } from 'js-yaml';
-//import { version as currentDirectusVersion } from '../../../../api/src/utils/package';
+import { version as currentDirectusVersion } from '../../../../api/src/utils/package.ts';
 import { v4 as uuid } from 'uuid';
 import { ClearCaches, CreateFieldM2O, CreateItem, DisableTestCachingSetup } from '@common/functions.ts';
-
-const currentDirectusVersion = '11.1.4';
 
 describe('Schema Snapshots', () => {
 	const snapshotsCacheOriginal: {

@@ -8,9 +8,6 @@
 		"url": "https://github.com/LaWebcapsule/directus9.git",
 		"directory": "packages/tsconfig"
 	},
-	"dependencies": {
-		"directus9-monorepo": "link:/Users/sofia/Desktop/webcapsule/directus9"
-	},
 	"funding": "https://github.com/LaWebcapsule/directus9?sponsor=1",
 	"license": "MIT",
 	"author": "Rijk van Zanten <rijkvanzanten@me.com>",

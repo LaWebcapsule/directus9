@@ -1229,11 +1229,7 @@ importers:
         specifier: 0.30.1
         version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
 
-  packages/tsconfig:
-    dependencies:
-      directus9-monorepo:
-        specifier: link:/Users/sofia/Desktop/webcapsule/directus9
-        version: link:../..
+  packages/tsconfig: {}
 
   packages/types:
     devDependencies:
