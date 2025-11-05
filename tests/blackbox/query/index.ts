@@ -1,1 +1,1 @@
-export * as filter from './filter';
+export * as filter from './filter/index.ts';

@@ -1,8 +1,8 @@
 /** @TODO replace with import from @wbce-d9/utils */
-import { getFilterOperatorsForType } from '../../utils/get-filter-operators-for-type';
+import { getFilterOperatorsForType } from '../../utils/get-filter-operators-for-type.ts';
 import type { ClientFilterOperator } from '@wbce-d9/types';
-import { FilterValidator, FilterEmptyValidator } from '@query/filter';
-import { GeneratedFilter } from '..';
+import type { FilterValidator, FilterEmptyValidator } from '@query/filter/index.ts';
+import type { GeneratedFilter } from '../index.ts';
 
 export const type = 'string';
 export const filterOperatorList = getFilterOperatorsForType(type);
@@ -165,13 +165,13 @@ const _icontains = (inputValue: any, possibleValues: any): boolean => {
 	return false;
 };
 
-const _nicontains = (inputValue: any, possibleValues: any): boolean => {
-	if (!inputValue.toLowerCase().includes(possibleValues.toLowerCase())) {
-		return true;
-	}
+// const _nicontains = (inputValue: any, possibleValues: any): boolean => {
+// 	if (!inputValue.toLowerCase().includes(possibleValues.toLowerCase())) {
+// 		return true;
+// 	}
 
-	return false;
-};
+// 	return false;
+// };
 
 const _starts_with = (inputValue: any, possibleValues: any): boolean => {
 	if (inputValue.startsWith(possibleValues)) {

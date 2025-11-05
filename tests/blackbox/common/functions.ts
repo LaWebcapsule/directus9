@@ -1,9 +1,10 @@
 import request from 'supertest';
-import { Env, getUrl } from './config';
-import * as common from './index';
-import vendors from './get-dbs-to-test';
+import { Env, getUrl } from './config.ts';
+import vendors from './get-dbs-to-test.ts';
 import type { Query } from '@wbce-d9/types';
-import { omit } from 'lodash';
+import { omit } from 'lodash-es';
+import { USER } from './variables.ts';
+import type { PrimaryKeyType } from './types.ts';
 
 export function DisableTestCachingSetup() {
 	beforeEach(async () => {
@@ -21,16 +22,16 @@ export function ClearCaches() {
 			'%s',
 			async (vendor) => {
 				// Setup
-				common.EnableTestCaching();
+				EnableTestCaching();
 
 				// Assert
 				const response = await request(getUrl(vendor))
 					.post(`/utils/cache/clear`)
-					.set('Authorization', `Bearer ${common.USER.TESTS_FLOW.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.TESTS_FLOW.TOKEN}`);
 
 				const response2 = await request(getUrl(vendor))
 					.get(`/fields`)
-					.set('Authorization', `Bearer ${common.USER.TESTS_FLOW.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.TESTS_FLOW.TOKEN}`);
 
 				expect(response.statusCode).toBe(200);
 				expect(response2.statusCode).toBe(200);
@@ -57,7 +58,7 @@ export async function CreateRole(vendor: string, options: OptionsCreateRole) {
 		.query({
 			filter: { name: { _eq: options.name } },
 		})
-		.set('Authorization', `Bearer ${common.USER.TESTS_FLOW.TOKEN}`);
+		.set('Authorization', `Bearer ${USER.TESTS_FLOW.TOKEN}`);
 
 	if (roleResponse.body.data.length > 0) {
 		return roleResponse.body.data[0];
@@ -65,7 +66,7 @@ export async function CreateRole(vendor: string, options: OptionsCreateRole) {
 
 	const response = await request(getUrl(vendor))
 		.post(`/roles`)
-		.set('Authorization', `Bearer ${common.USER.TESTS_FLOW.TOKEN}`)
+		.set('Authorization', `Bearer ${USER.TESTS_FLOW.TOKEN}`)
 		.send({ name: options.name, app_access: options.appAccessEnabled, admin_access: options.adminAccessEnabled });
 
 	return response.body.data;
@@ -98,7 +99,7 @@ export async function CreateUser(vendor: string, options: Partial<OptionsCreateU
 				filter: { name: { _eq: options.roleName } },
 				fields: ['id', 'name'],
 			})
-			.set('Authorization', `Bearer ${common.USER.TESTS_FLOW.TOKEN}`);
+			.set('Authorization', `Bearer ${USER.TESTS_FLOW.TOKEN}`);
 
 		if (roleResponse.body.data.length === 0) {
 			throw new Error(`Role ${options.roleName} does not exist`);
@@ -111,7 +112,7 @@ export async function CreateUser(vendor: string, options: Partial<OptionsCreateU
 	// Action
 	const response = await request(getUrl(vendor))
 		.post(`/users`)
-		.set('Authorization', `Bearer ${common.USER.TESTS_FLOW.TOKEN}`)
+		.set('Authorization', `Bearer ${USER.TESTS_FLOW.TOKEN}`)
 		.send(options);
 
 	return response.body.data;
@@ -124,7 +125,7 @@ export type OptionsCreateCollection = {
 	fields?: any;
 	env?: Env;
 	// Automatically removed params
-	primaryKeyType?: common.PrimaryKeyType;
+	primaryKeyType?: PrimaryKeyType;
 };
 
 export async function CreateCollection(vendor: string, options: Partial<OptionsCreateCollection>) {
@@ -181,7 +182,7 @@ export async function CreateCollection(vendor: string, options: Partial<OptionsC
 	// Action
 	const collectionResponse = await request(getUrl(vendor, options.env))
 		.get(`/collections/${options.collection}`)
-		.set('Authorization', `Bearer ${common.USER.TESTS_FLOW.TOKEN}`);
+		.set('Authorization', `Bearer ${USER.TESTS_FLOW.TOKEN}`);
 
 	if (collectionResponse.body.data) {
 		return collectionResponse.body.data;
@@ -189,7 +190,7 @@ export async function CreateCollection(vendor: string, options: Partial<OptionsC
 
 	const response = await request(getUrl(vendor, options.env))
 		.post(`/collections`)
-		.set('Authorization', `Bearer ${common.USER.TESTS_FLOW.TOKEN}`)
+		.set('Authorization', `Bearer ${USER.TESTS_FLOW.TOKEN}`)
 		.send(options);
 
 	return response.body.data;
@@ -203,7 +204,7 @@ export async function DeleteCollection(vendor: string, options: OptionsDeleteCol
 	// Action
 	const response = await request(getUrl(vendor))
 		.delete(`/collections/${options.collection}`)
-		.set('Authorization', `Bearer ${common.USER.TESTS_FLOW.TOKEN}`);
+		.set('Authorization', `Bearer ${USER.TESTS_FLOW.TOKEN}`);
 
 	return response.body;
 }
@@ -217,7 +218,7 @@ export async function DeleteField(vendor: string, options: OptionsDeleteField) {
 	// Action
 	const response = await request(getUrl(vendor))
 		.delete(`/fields/${options.collection}/${options.field}`)
-		.set('Authorization', `Bearer ${common.USER.TESTS_FLOW.TOKEN}`);
+		.set('Authorization', `Bearer ${USER.TESTS_FLOW.TOKEN}`);
 
 	return response.body;
 }
@@ -242,7 +243,7 @@ export async function CreateField(vendor: string, options: OptionsCreateField) {
 	// Action
 	const response = await request(getUrl(vendor))
 		.post(`/fields/${options.collection}`)
-		.set('Authorization', `Bearer ${common.USER.TESTS_FLOW.TOKEN}`)
+		.set('Authorization', `Bearer ${USER.TESTS_FLOW.TOKEN}`)
 		.send(options);
 
 	return response.body.data;
@@ -268,7 +269,7 @@ export async function CreateRelation(vendor: string, options: OptionsCreateRelat
 	// Action
 	const relationResponse = await request(getUrl(vendor))
 		.get(`/relations/${options.collection}/${options.field}`)
-		.set('Authorization', `Bearer ${common.USER.TESTS_FLOW.TOKEN}`);
+		.set('Authorization', `Bearer ${USER.TESTS_FLOW.TOKEN}`);
 
 	if (relationResponse.statusCode === 200) {
 		return relationResponse.body.data;
@@ -276,7 +277,7 @@ export async function CreateRelation(vendor: string, options: OptionsCreateRelat
 
 	const response = await request(getUrl(vendor))
 		.post(`/relations`)
-		.set('Authorization', `Bearer ${common.USER.TESTS_FLOW.TOKEN}`)
+		.set('Authorization', `Bearer ${USER.TESTS_FLOW.TOKEN}`)
 		.send(options);
 
 	return response.body.data;
@@ -287,7 +288,7 @@ export type OptionsCreateFieldM2O = {
 	field: string;
 	fieldMeta?: any;
 	fieldSchema?: any;
-	primaryKeyType?: common.PrimaryKeyType;
+	primaryKeyType?: PrimaryKeyType;
 	otherCollection: string;
 	relationMeta?: any;
 	relationSchema?: any;
@@ -663,7 +664,7 @@ export async function CreateItem(vendor: string, options: OptionsCreateItem) {
 	// Action
 	const response = await request(getUrl(vendor))
 		.post(`/items/${options.collection}`)
-		.set('Authorization', `Bearer ${common.USER.TESTS_FLOW.TOKEN}`)
+		.set('Authorization', `Bearer ${USER.TESTS_FLOW.TOKEN}`)
 		.send(options.item);
 
 	return response.body.data;
@@ -685,7 +686,7 @@ export async function ReadItem(vendor: string, options: OptionsReadItem) {
 	// Action
 	const response = await request(getUrl(vendor))
 		.get(`/items/${options.collection}`)
-		.set('Authorization', `Bearer ${common.USER.TESTS_FLOW.TOKEN}`)
+		.set('Authorization', `Bearer ${USER.TESTS_FLOW.TOKEN}`)
 		.query(omit(options, 'collection'));
 
 	return response.body.data;
@@ -701,7 +702,7 @@ export async function UpdateItem(vendor: string, options: OptionsUpdateItem) {
 	// Action
 	const response = await request(getUrl(vendor))
 		.patch(`/items/${options.collection}/${options.id === undefined ? '' : options.id}`)
-		.set('Authorization', `Bearer ${common.USER.TESTS_FLOW.TOKEN}`)
+		.set('Authorization', `Bearer ${USER.TESTS_FLOW.TOKEN}`)
 		.send(options.item);
 
 	return response.body.data;

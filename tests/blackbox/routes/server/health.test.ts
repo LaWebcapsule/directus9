@@ -1,20 +1,20 @@
-import { getUrl } from '@common/config';
-import * as common from '@common/index';
+import { getUrl } from '@common/config.ts';
 import request from 'supertest';
-import vendors from '@common/get-dbs-to-test';
-import { requestGraphQL } from '@common/transport';
+import vendors from '@common/get-dbs-to-test.ts';
+import { requestGraphQL } from '@common/transport.ts';
+import { TEST_USERS, USER } from '@common/variables.ts';
 
 describe('/server', () => {
 	describe('GET /health', () => {
-		common.TEST_USERS.forEach((userKey) => {
-			describe(common.USER[userKey].NAME, () => {
+		TEST_USERS.forEach((userKey) => {
+			describe(USER[userKey].NAME, () => {
 				it.each(vendors)('%s', async (vendor) => {
 					// Action
 					const response = await request(getUrl(vendor))
 						.get('/server/health')
-						.set('Authorization', `Bearer ${common.USER[userKey].TOKEN}`);
+						.set('Authorization', `Bearer ${USER[userKey].TOKEN}`);
 
-					const gqlResponse = await requestGraphQL(getUrl(vendor), true, common.USER[userKey].TOKEN, {
+					const gqlResponse = await requestGraphQL(getUrl(vendor), true, USER[userKey].TOKEN, {
 						query: {
 							server_health: true,
 						},
@@ -24,7 +24,7 @@ describe('/server', () => {
 					expect(response.statusCode).toBe(200);
 					expect(gqlResponse.statusCode).toBe(200);
 
-					if (userKey === common.USER.ADMIN.KEY) {
+					if (userKey === USER.ADMIN.KEY) {
 						const adminResult = {
 							status: 'ok',
 							releaseId: expect.any(String),

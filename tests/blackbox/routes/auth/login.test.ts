@@ -1,20 +1,20 @@
-import { getUrl } from '@common/config';
-import * as common from '@common/index';
+import { getUrl } from '@common/config.ts';
 import request from 'supertest';
-import vendors from '@common/get-dbs-to-test';
-import { requestGraphQL } from '@common/index';
+import vendors from '@common/get-dbs-to-test.ts';
+import { requestGraphQL } from '@common/transport.ts';
+import { TEST_USERS, USER } from '@common/variables.ts';
 
 describe('/auth', () => {
 	describe('POST /login', () => {
 		describe('when correct credentials are provided', () => {
 			describe('returns an access_token, expires and a refresh_token', () => {
-				common.TEST_USERS.forEach((userKey) => {
-					describe(common.USER[userKey].NAME, () => {
+				TEST_USERS.forEach((userKey) => {
+					describe(USER[userKey].NAME, () => {
 						it.each(vendors)('%s', async (vendor) => {
 							// Action
 							const response = await request(getUrl(vendor))
 								.post(`/auth/login`)
-								.send({ email: common.USER[userKey].EMAIL, password: common.USER[userKey].PASSWORD })
+								.send({ email: USER[userKey].EMAIL, password: USER[userKey].PASSWORD })
 								.expect('Content-Type', /application\/json/);
 
 							const mutationKey = 'auth_login';
@@ -23,8 +23,8 @@ describe('/auth', () => {
 								mutation: {
 									[mutationKey]: {
 										__args: {
-											email: common.USER[userKey].EMAIL,
-											password: common.USER[userKey].PASSWORD,
+											email: USER[userKey].EMAIL,
+											password: USER[userKey].PASSWORD,
 										},
 										access_token: true,
 										expires: true,
@@ -63,15 +63,15 @@ describe('/auth', () => {
 
 		describe('when incorrect credentials are provided', () => {
 			describe('returns code: UNAUTHORIZED for incorrect password', () => {
-				common.TEST_USERS.forEach((userKey) => {
-					describe(common.USER[userKey].NAME, () => {
+				TEST_USERS.forEach((userKey) => {
+					describe(USER[userKey].NAME, () => {
 						it.each(vendors)('%s', async (vendor) => {
 							// Action
 							const response = await request(getUrl(vendor))
 								.post(`/auth/login`)
 								.send({
-									email: common.USER[userKey].EMAIL,
-									password: common.USER[userKey].PASSWORD + 'typo',
+									email: USER[userKey].EMAIL,
+									password: USER[userKey].PASSWORD + 'typo',
 								})
 								.expect('Content-Type', /application\/json/)
 								.expect(401);
@@ -82,8 +82,8 @@ describe('/auth', () => {
 								mutation: {
 									[mutationKey]: {
 										__args: {
-											email: common.USER[userKey].EMAIL,
-											password: common.USER[userKey].PASSWORD + 'typo',
+											email: USER[userKey].EMAIL,
+											password: USER[userKey].PASSWORD + 'typo',
 										},
 										access_token: true,
 										expires: true,
@@ -120,15 +120,15 @@ describe('/auth', () => {
 			});
 
 			describe('returns code: UNAUTHORIZED for unregistered email', () => {
-				common.TEST_USERS.forEach((userKey) => {
-					describe(common.USER[userKey].NAME, () => {
+				TEST_USERS.forEach((userKey) => {
+					describe(USER[userKey].NAME, () => {
 						it.each(vendors)('%s', async (vendor) => {
 							// Action
 							const response = await request(getUrl(vendor))
 								.post(`/auth/login`)
 								.send({
 									email: 'test@fake.com',
-									password: common.USER[userKey].PASSWORD,
+									password: USER[userKey].PASSWORD,
 								})
 								.expect('Content-Type', /application\/json/)
 								.expect(401);
@@ -140,7 +140,7 @@ describe('/auth', () => {
 									[mutationKey]: {
 										__args: {
 											email: 'test@fake.com',
-											password: common.USER[userKey].PASSWORD,
+											password: USER[userKey].PASSWORD,
 										},
 										access_token: true,
 										expires: true,
@@ -177,15 +177,15 @@ describe('/auth', () => {
 			});
 
 			describe('returns code: INVALID_CREDENTIALS for invalid email', () => {
-				common.TEST_USERS.forEach((userKey) => {
-					describe(common.USER[userKey].NAME, () => {
+				TEST_USERS.forEach((userKey) => {
+					describe(USER[userKey].NAME, () => {
 						it.each(vendors)('%s', async (vendor) => {
 							// Action
 							const response = await request(getUrl(vendor))
 								.post(`/auth/login`)
 								.send({
 									email: 'invalidEmail',
-									password: common.USER[userKey].PASSWORD,
+									password: USER[userKey].PASSWORD,
 								})
 								.expect('Content-Type', /application\/json/)
 								.expect(400);
@@ -197,7 +197,7 @@ describe('/auth', () => {
 									[mutationKey]: {
 										__args: {
 											email: 'invalidEmail',
-											password: common.USER[userKey].PASSWORD,
+											password: USER[userKey].PASSWORD,
 										},
 										access_token: true,
 										expires: true,
@@ -234,14 +234,14 @@ describe('/auth', () => {
 			});
 
 			describe('returns message: "password is required" when no password is provided', () => {
-				common.TEST_USERS.forEach((userKey) => {
-					describe(common.USER[userKey].NAME, () => {
+				TEST_USERS.forEach((userKey) => {
+					describe(USER[userKey].NAME, () => {
 						it.each(vendors)('%s', async (vendor) => {
 							// Action
 							const response = await request(getUrl(vendor))
 								.post(`/auth/login`)
 								.send({
-									email: common.USER[userKey].EMAIL,
+									email: USER[userKey].EMAIL,
 								})
 								.expect('Content-Type', /application\/json/)
 								.expect(400);

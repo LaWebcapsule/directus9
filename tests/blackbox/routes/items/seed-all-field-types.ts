@@ -1,5 +1,7 @@
-import { CreateField, CreateItem, SeedFunctions, PrimaryKeyType, ReadItem } from '@common/index';
-import { TestsFieldSchema } from '@query/filter';
+import { CreateField, CreateItem, ReadItem } from '@common/functions.ts';
+import { SeedFunctions } from '@common/seed-functions.ts';
+import type { PrimaryKeyType } from '@common/types.ts';
+import type { TestsFieldSchema } from '@query/filter/index.ts';
 
 const valuesQuantity = 2;
 

@@ -1,1 +1,1 @@
-export * from '../string';
+export * from '../string/index.ts';

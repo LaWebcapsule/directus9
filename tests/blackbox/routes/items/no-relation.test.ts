@@ -1,11 +1,12 @@
+import config, { getUrl } from '@common/config.ts';
+import { CreateItem } from '@common/functions.ts';
+import vendors from '@common/get-dbs-to-test.ts';
+import { requestGraphQL } from '@common/transport.ts';
+import type { PrimaryKeyType } from '@common/types.ts';
+import { PRIMARY_KEY_TYPES, USER } from '@common/variables.ts';
 import request from 'supertest';
-import config, { getUrl } from '@common/config';
-import vendors from '@common/get-dbs-to-test';
 import { v4 as uuid } from 'uuid';
-import { CreateItem } from '@common/functions';
-import * as common from '@common/index';
-import { collectionArtists } from './no-relation.seed';
-import { requestGraphQL } from '@common/index';
+import { collectionArtists } from './no-relation.seed.ts';
 
 type Artist = {
 	id?: number | string;
@@ -13,7 +14,7 @@ type Artist = {
 	company?: string;
 };
 
-function createArtist(pkType: common.PrimaryKeyType): Artist {
+function createArtist(pkType: PrimaryKeyType): Artist {
 	const item: Artist = {
 		name: 'artist-' + uuid(),
 	};
@@ -25,7 +26,7 @@ function createArtist(pkType: common.PrimaryKeyType): Artist {
 	return item;
 }
 
-describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
+describe.each(PRIMARY_KEY_TYPES)('/items', (pkType) => {
 	const localCollectionArtists = `${collectionArtists}_${pkType}`;
 
 	describe(`pkType: ${pkType}`, () => {
@@ -39,9 +40,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 					// Action
 					const response = await request(getUrl(vendor))
 						.get(`/items/${localCollectionArtists}/${insertedArtist.id}`)
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-					const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						query: {
 							[localCollectionArtists]: {
 								__args: {
@@ -71,9 +72,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 						// Action
 						const response = await request(getUrl(vendor))
 							.get(`/items/${localCollectionArtists}/invalid_id`)
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-						const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							query: {
 								[localCollectionArtists]: {
 									__args: {
@@ -125,9 +126,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 						// Action
 						const response = await request(getUrl(vendor))
 							.get(`/items/invalid_table/1`)
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-						const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							query: {
 								invalid_table: {
 									__args: {
@@ -167,11 +168,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 					const response = await request(getUrl(vendor))
 						.patch(`/items/${localCollectionArtists}/${insertedArtist.id}`)
 						.send(body)
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					const mutationKey = `update_${localCollectionArtists}_item`;
 
-					const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						mutation: {
 							[mutationKey]: {
 								__args: {
@@ -221,11 +222,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 					// Action
 					const response = await request(getUrl(vendor))
 						.delete(`/items/${localCollectionArtists}/${insertedArtist.id}`)
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					const mutationKey = `delete_${localCollectionArtists}_item`;
 
-					await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						mutation: {
 							[mutationKey]: {
 								__args: {
@@ -236,7 +237,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 						},
 					});
 
-					const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						query: {
 							[localCollectionArtists]: {
 								__args: {
@@ -277,9 +278,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 					// Action
 					const response = await request(getUrl(vendor))
 						.get(`/items/${localCollectionArtists}`)
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-					const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						query: {
 							[localCollectionArtists]: {
 								id: true,
@@ -302,9 +303,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 						// Action
 						const response = await request(getUrl(vendor))
 							.get(`/items/invalid_table`)
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-						const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							query: {
 								invalid_table: {
 									id: true,
@@ -336,11 +337,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 						const response = await request(getUrl(vendor))
 							.post(`/items/${localCollectionArtists}`)
 							.send(artist)
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 						const mutationKey = `create_${localCollectionArtists}_item`;
 
-						const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							mutation: {
 								[mutationKey]: {
 									__args: {
@@ -383,11 +384,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 						const response = await request(getUrl(vendor))
 							.post(`/items/${localCollectionArtists}`)
 							.send(artists)
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 						const mutationKey = `create_${localCollectionArtists}_items`;
 
-						const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							mutation: {
 								[mutationKey]: {
 									__args: {
@@ -419,11 +420,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 						const response = await request(getUrl(vendor))
 							.post(`/items/invalid_table`)
 							.send(artist)
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 						const mutationKey = `create_invalid_table_item`;
 
-						const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							mutation: {
 								[mutationKey]: {
 									__args: {
@@ -467,11 +468,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 					const response = await request(getUrl(vendor))
 						.patch(`/items/${localCollectionArtists}?fields=name`)
 						.send(body)
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					const mutationKey = `update_${localCollectionArtists}_items`;
 
-					const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						mutation: {
 							[mutationKey]: {
 								__args: {
@@ -532,11 +533,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 					const response = await request(getUrl(vendor))
 						.delete(`/items/${localCollectionArtists}`)
 						.send(keys)
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					const mutationKey = `delete_${localCollectionArtists}_items`;
 
-					await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						mutation: {
 							[mutationKey]: {
 								__args: {
@@ -547,7 +548,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 						},
 					});
 
-					const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						query: {
 							[localCollectionArtists]: {
 								__args: {
@@ -584,7 +585,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							},
 						}),
 					})
-					.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 				// Assert
 				expect(response.statusCode).toBe(200);
@@ -608,7 +609,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							},
 						}),
 					})
-					.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+					.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 				// Assert
 				expect(response.statusCode).toBe(200);
@@ -646,9 +647,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								_and: [{ name: { _eq: artistName } }, { company: { _eq: artistCompany } }],
 							}),
 						})
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-					const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						query: {
 							[localCollectionArtists]: {
 								__args: {
@@ -703,9 +704,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								_or: [{ name: { _eq: artistName } }, { company: { _eq: artistCompany } }],
 							}),
 						})
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-					const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						query: {
 							[localCollectionArtists]: {
 								__args: {
@@ -755,11 +756,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								name: { _eq: artistName },
 							},
 						})
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					const queryKey = `${localCollectionArtists}_aggregated`;
 
-					const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						query: {
 							[queryKey]: {
 								__args: {
@@ -810,9 +811,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							}),
 							offset,
 						})
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-					const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						query: {
 							[localCollectionArtists]: {
 								__args: {
@@ -869,9 +870,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							limit,
 							sort,
 						})
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-					const gqlResponseAsc = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponseAsc = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						query: {
 							[localCollectionArtists]: {
 								__args: {
@@ -898,9 +899,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							limit,
 							sort: `-${sort}`,
 						})
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-					const gqlResponseDesc = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponseDesc = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						query: {
 							[localCollectionArtists]: {
 								__args: {
@@ -974,11 +975,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							limit,
 							groupBy,
 						})
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					const queryKey = `${localCollectionArtists}_aggregated`;
 
-					const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						query: {
 							[queryKey]: {
 								__args: {
@@ -1010,9 +1011,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							limit,
 							groupBy,
 						})
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-					const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						query: {
 							[queryKey]: {
 								__args: {
@@ -1096,11 +1097,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							sort,
 							groupBy,
 						})
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					const queryKey = `${localCollectionArtists}_aggregated`;
 
-					const gqlResponseAsc = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponseAsc = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						query: {
 							[queryKey]: {
 								__args: {
@@ -1134,9 +1135,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							sort: `-${sort}`,
 							groupBy,
 						})
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-					const gqlResponseDesc = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponseDesc = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						query: {
 							[queryKey]: {
 								__args: {
@@ -1202,11 +1203,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							const response = await request(getUrl(vendor))
 								.post(`/items/${localCollectionArtists}`)
 								.send(artists)
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const mutationKey = `create_${localCollectionArtists}_items`;
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								mutation: {
 									[mutationKey]: {
 										__args: {
@@ -1246,11 +1247,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							const response = await request(getUrl(vendor))
 								.post(`/items/${localCollectionArtists}`)
 								.send(artists)
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const mutationKey = `create_${localCollectionArtists}_items`;
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								mutation: {
 									[mutationKey]: {
 										__args: {
@@ -1305,11 +1306,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							const response = await request(getUrl(vendor))
 								.patch(`/items/${localCollectionArtists}`)
 								.send(artists)
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const mutationKey = `update_${localCollectionArtists}_batch`;
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								mutation: {
 									[mutationKey]: {
 										__args: {
@@ -1354,11 +1355,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							const response = await request(getUrl(vendor))
 								.patch(`/items/${localCollectionArtists}`)
 								.send(artists)
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const mutationKey = `update_${localCollectionArtists}_batch`;
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								mutation: {
 									[mutationKey]: {
 										__args: {
@@ -1413,11 +1414,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							const response = await request(getUrl(vendor))
 								.patch(`/items/${localCollectionArtists}`)
 								.send({ keys: artistIDs, data: { name: 'updated' } })
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const mutationKey = `update_${localCollectionArtists}_items`;
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								mutation: {
 									[mutationKey]: {
 										__args: {
@@ -1463,11 +1464,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							const response = await request(getUrl(vendor))
 								.patch(`/items/${localCollectionArtists}`)
 								.send({ keys: artistIDs, data: { name: 'updated' } })
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const mutationKey = `update_${localCollectionArtists}_items`;
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								mutation: {
 									[mutationKey]: {
 										__args: {
@@ -1524,7 +1525,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									},
 									data: { name: 'updated' },
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							// Assert
 							expect(response.statusCode).toBe(200);
@@ -1558,7 +1559,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									},
 									data: { name: 'updated' },
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							// Assert
 							expect(response.statusCode).toBe(400);
@@ -1607,16 +1608,16 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							const response = await request(getUrl(vendor))
 								.delete(`/items/${localCollectionArtists}`)
 								.send({ keys: artistIDs })
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const response2 = await request(getUrl(vendor))
 								.delete(`/items/${localCollectionArtists}`)
 								.send({ keys: artistIDs2 })
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const mutationKey = `delete_${localCollectionArtists}_items`;
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								mutation: {
 									[mutationKey]: {
 										__args: {
@@ -1627,7 +1628,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								},
 							});
 
-							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								mutation: {
 									[mutationKey]: {
 										__args: {
@@ -1686,16 +1687,16 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							const response = await request(getUrl(vendor))
 								.delete(`/items/${localCollectionArtists}`)
 								.send({ keys: artistIDs })
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const response2 = await request(getUrl(vendor))
 								.delete(`/items/${localCollectionArtists}`)
 								.send({ keys: artistIDs2 })
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const mutationKey = `delete_${localCollectionArtists}_items`;
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								mutation: {
 									[mutationKey]: {
 										__args: {
@@ -1706,7 +1707,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								},
 							});
 
-							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								mutation: {
 									[mutationKey]: {
 										__args: {
@@ -1775,7 +1776,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 										limit: -1,
 									},
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							// Assert
 							expect(response.statusCode).toBe(204);
@@ -1807,7 +1808,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 										limit: -1,
 									},
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							// Assert
 							expect(response.statusCode).toBe(400);

@@ -31,7 +31,7 @@
 		"@types/geojson": "7946.0.10",
 		"@wbce-d9/constants": "workspace:*",
 		"@wbce-d9/schema": "workspace:*",
-		"@wbce-d9/tsconfig": "0.0.7",
+		"@wbce-d9/tsconfig": "1.0.0",
 		"express": "^4.21.2",
 		"geojson": "0.5.0",
 		"knex": "3.1.0",

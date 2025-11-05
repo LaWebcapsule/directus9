@@ -51,7 +51,7 @@
 		"vue": "3.2.47"
 	},
 	"devDependencies": {
-		"@wbce-d9/tsconfig": "0.0.7",
+		"@wbce-d9/tsconfig": "1.0.0",
 		"@wbce-d9/types": "workspace:*",
 		"@ngneat/falso": "6.4.0",
 		"@types/fs-extra": "11.0.1",

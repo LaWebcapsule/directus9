@@ -1,5 +1,8 @@
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
 const Sequencer = require('@jest/test-sequencer').default;
-const findIndex = require('lodash').findIndex;
+const findIndex = require('lodash-es').findIndex;
 const sequentialTestsList = require('./sequentialTests.js').list;
 
 class CustomSequencer extends Sequencer {
@@ -51,4 +54,4 @@ class CustomSequencer extends Sequencer {
 	}
 }
 
-module.exports = CustomSequencer;
+export default CustomSequencer;

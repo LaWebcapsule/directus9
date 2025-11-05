@@ -1,5 +1,5 @@
-import { createInspector } from '@wbce-d9/schema';
 import type { SchemaInspector } from '@wbce-d9/schema';
+import { createInspector } from '@wbce-d9/schema';
 import fse from 'fs-extra';
 import type { Knex } from 'knex';
 import knex from 'knex';
@@ -8,7 +8,6 @@ import { dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import path from 'path';
 import { performance } from 'perf_hooks';
-import { promisify } from 'util';
 import env from '../env.js';
 import logger from '../logger.js';
 import type { DatabaseClient } from '../types/index.js';
@@ -99,37 +98,39 @@ export default function getDatabase(): Knex {
 	if (client === 'sqlite3') {
 		knexConfig.useNullAsDefault = true;
 
-		poolConfig.afterCreate = async (conn: any, callback: any) => {
+		poolConfig.afterCreate = (conn: any, callback: any) => {
 			logger.trace('Enabling SQLite Foreign Keys support...');
 
-			const run = promisify(conn.run.bind(conn));
-			await run('PRAGMA foreign_keys = ON');
+			conn.run('PRAGMA foreign_keys = ON');
 
 			callback(null, conn);
 		};
 	}
 
 	if (client === 'cockroachdb') {
-		poolConfig.afterCreate = async (conn: any, callback: any) => {
+		poolConfig.afterCreate = (conn: any, callback: any) => {
 			logger.trace('Setting CRDB serial_normalization and default_int_size');
-			const run = promisify(conn.query.bind(conn));
 
-			await run('SET serial_normalization = "sql_sequence"');
-			await run('SET default_int_size = 4');
+			conn.query('SET serial_normalization = "sql_sequence"');
+			conn.query('SET default_int_size = 4');
 
 			callback(null, conn);
 		};
 	}
 
 	if (client === 'mysql') {
-		poolConfig.afterCreate = async (conn: any, callback: any) => {
+		poolConfig.afterCreate = (conn: any, callback: any) => {
 			logger.trace('Retrieving database version');
-			const run = promisify(conn.query.bind(conn));
 
-			const version = await run('SELECT @@version;');
-			databaseVersion = version[0]['@@version'];
+			conn.query('SELECT @@version AS version;', (error: any, results: any) => {
+				if (error) {
+					callback(error, null);
+					return;
+				}
 
-			callback(null, conn);
+				databaseVersion = results[0]?.version || results[0]?.['@@version'];
+				callback(null, conn);
+			});
 		};
 	}
 

@@ -1,25 +1,26 @@
+import config, { getUrl } from '@common/config.ts';
+import { CreateItem, ReadItem } from '@common/functions.ts';
+import vendors from '@common/get-dbs-to-test.ts';
+import { SeedFunctions } from '@common/seed-functions.ts';
+import { requestGraphQL } from '@common/transport.ts';
+import type { PrimaryKeyType } from '@common/types.ts';
+import { PRIMARY_KEY_TYPES, USER } from '@common/variables.ts';
+import { type CachedTestsSchema, CheckQueryFilters, type TestsSchemaVendorValues } from '@query/filter/index.ts';
+import { findIndex } from 'lodash-es';
 import request from 'supertest';
-import config, { getUrl } from '@common/config';
-import vendors from '@common/get-dbs-to-test';
 import { v4 as uuid } from 'uuid';
-import { CreateItem, ReadItem } from '@common/functions';
-import { CachedTestsSchema, TestsSchemaVendorValues } from '@query/filter';
-import * as common from '@common/index';
 import {
-	collectionShapes,
+	type Circle,
 	collectionCircles,
+	collectionShapes,
 	collectionSquares,
-	Shape,
-	Circle,
-	Square,
 	getTestsSchema,
 	seedDBValues,
-} from './m2a.seed';
-import { CheckQueryFilters } from '@query/filter';
-import { findIndex } from 'lodash';
-import { requestGraphQL } from '@common/index';
+	type Shape,
+	type Square,
+} from './m2a.seed.ts';
 
-function createShape(pkType: common.PrimaryKeyType) {
+function createShape(pkType: PrimaryKeyType) {
 	const item: Shape = {
 		name: 'shape-' + uuid(),
 	};
@@ -31,10 +32,10 @@ function createShape(pkType: common.PrimaryKeyType) {
 	return item;
 }
 
-function createCircle(pkType: common.PrimaryKeyType) {
+function createCircle(pkType: PrimaryKeyType) {
 	const item: Circle = {
 		name: 'circle-' + uuid(),
-		radius: common.SeedFunctions.generateValues.float({ quantity: 1 })[0],
+		radius: SeedFunctions.generateValues.float({ quantity: 1 })[0],
 	};
 
 	if (pkType === 'string') {
@@ -44,10 +45,10 @@ function createCircle(pkType: common.PrimaryKeyType) {
 	return item;
 }
 
-function createSquare(pkType: common.PrimaryKeyType) {
+function createSquare(pkType: PrimaryKeyType) {
 	const item: Square = {
 		name: 'square-' + uuid(),
-		width: common.SeedFunctions.generateValues.float({ quantity: 1 })[0],
+		width: SeedFunctions.generateValues.float({ quantity: 1 })[0],
 	};
 
 	if (pkType === 'string') {
@@ -57,7 +58,7 @@ function createSquare(pkType: common.PrimaryKeyType) {
 	return item;
 }
 
-const cachedSchema = common.PRIMARY_KEY_TYPES.reduce((acc, pkType) => {
+const cachedSchema = PRIMARY_KEY_TYPES.reduce((acc, pkType) => {
 	acc[pkType] = getTestsSchema(pkType);
 	return acc;
 }, {} as CachedTestsSchema);
@@ -75,7 +76,7 @@ describe('Seed Database Values', () => {
 	});
 });
 
-describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
+describe.each(PRIMARY_KEY_TYPES)('/items', (pkType) => {
 	const localCollectionShapes = `${collectionShapes}_${pkType}`;
 	const localCollectionCircles = `${collectionCircles}_${pkType}`;
 	const localCollectionSquares = `${collectionSquares}_${pkType}`;
@@ -102,9 +103,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 					// Action
 					const response = await request(getUrl(vendor))
 						.get(`/items/${localCollectionShapes}/${insertedShape.id}`)
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-					const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						query: {
 							[localCollectionShapes]: {
 								__args: {
@@ -168,9 +169,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 						.query({
 							fields: `children.item:${localCollectionCircles}.radius`,
 						})
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-					const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						query: {
 							[localCollectionShapes]: {
 								__args: {
@@ -259,9 +260,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 						.query({
 							fields: `children.item:${localCollectionCircles}.*`,
 						})
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-					const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						query: {
 							[localCollectionShapes]: {
 								__args: {
@@ -348,16 +349,16 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							.query({
 								filter: { id: { _eq: insertedShape.id } },
 							})
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 						const response2 = await request(getUrl(vendor))
 							.get(`/items/${localCollectionShapes}`)
 							.query({
 								filter: { name: { _eq: insertedShape.name } },
 							})
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-						const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							query: {
 								[localCollectionShapes]: {
 									__args: {
@@ -372,7 +373,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							},
 						});
 
-						const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							query: {
 								[localCollectionShapes]: {
 									__args: {
@@ -444,7 +445,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									},
 								}),
 							})
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 						const response2 = await request(getUrl(vendor))
 							.get(`/items/${localCollectionShapes}`)
@@ -458,9 +459,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									},
 								}),
 							})
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-						const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							query: {
 								[localCollectionShapes]: {
 									__args: {
@@ -478,7 +479,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							},
 						});
 
-						const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							query: {
 								[localCollectionShapes]: {
 									__args: {
@@ -565,7 +566,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									_and: [{ name: { _starts_with: 'shape-m2a-top-fn-' } }, { 'count(children)': { _eq: 1 } }],
 								}),
 							})
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 						const response2 = await request(getUrl(vendor))
 							.get(`/items/${localCollectionShapes}`)
@@ -574,9 +575,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									_and: [{ name: { _starts_with: 'shape-m2a-top-fn-' } }, { 'count(children)': { _eq: 2 } }],
 								}),
 							})
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-						const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							query: {
 								[localCollectionShapes]: {
 									__args: {
@@ -597,7 +598,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							},
 						});
 
-						const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							query: {
 								[localCollectionShapes]: {
 									__args: {
@@ -700,7 +701,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									],
 								}),
 							})
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 						const response2 = await request(getUrl(vendor))
 							.get(`/items/${localCollectionShapes}`)
@@ -720,9 +721,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									],
 								}),
 							})
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-						const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							query: {
 								[localCollectionShapes]: {
 									__args: {
@@ -748,7 +749,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							},
 						});
 
-						const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							query: {
 								[localCollectionShapes]: {
 									__args: {
@@ -829,7 +830,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									sort: 'name',
 									filter: { name: { _starts_with: 'shape-m2a-top-sort-' } },
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const response2 = await request(getUrl(vendor))
 								.get(`/items/${localCollectionShapes}`)
@@ -837,9 +838,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									sort: '-name',
 									filter: { name: { _starts_with: 'shape-m2a-top-sort-' } },
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionShapes]: {
 										__args: {
@@ -851,7 +852,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								},
 							});
 
-							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionShapes]: {
 										__args: {
@@ -895,7 +896,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									limit,
 									fields: 'name',
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const response2 = await request(getUrl(vendor))
 								.get(`/items/${localCollectionShapes}`)
@@ -905,9 +906,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									limit,
 									fields: 'name',
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionShapes]: {
 										__args: {
@@ -921,7 +922,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								},
 							});
 
-							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionShapes]: {
 										__args: {
@@ -1017,7 +1018,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									filter: { name: { _starts_with: 'shape-m2a-sort-' } },
 									fields: '*.*.*',
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const response2 = await request(getUrl(vendor))
 								.get(`/items/${localCollectionShapes}`)
@@ -1026,9 +1027,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									filter: { name: { _starts_with: 'shape-m2a-sort-' } },
 									fields: '*.*.*',
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionShapes]: {
 										__args: {
@@ -1040,7 +1041,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								},
 							});
 
-							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionShapes]: {
 										__args: {
@@ -1117,7 +1118,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									limit,
 									fields: '*.*.*',
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const response2 = await request(getUrl(vendor))
 								.get(`/items/${localCollectionShapes}`)
@@ -1127,9 +1128,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									limit,
 									fields: '*.*.*',
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionShapes]: {
 										__args: {
@@ -1151,7 +1152,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								},
 							});
 
-							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionShapes]: {
 										__args: {
@@ -1295,7 +1296,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									sort: 'year(test_datetime)',
 									filter: { name: { _starts_with: 'shape-m2a-top-sort-fn-' } },
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const response2 = await request(getUrl(vendor))
 								.get(`/items/${localCollectionShapes}`)
@@ -1303,9 +1304,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									sort: '-year(test_datetime)',
 									filter: { name: { _starts_with: 'shape-m2a-top-sort-fn-' } },
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionShapes]: {
 										__args: {
@@ -1317,7 +1318,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								},
 							});
 
-							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionShapes]: {
 										__args: {
@@ -1361,7 +1362,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									limit,
 									fields: 'year(test_datetime)',
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const response2 = await request(getUrl(vendor))
 								.get(`/items/${localCollectionShapes}`)
@@ -1371,9 +1372,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									limit,
 									fields: 'year(test_datetime)',
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionShapes]: {
 										__args: {
@@ -1389,7 +1390,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								},
 							});
 
-							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionShapes]: {
 										__args: {
@@ -1487,7 +1488,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									sort: `children.item:${localCollectionCircles}.year(test_datetime)`,
 									filter: { name: { _starts_with: 'shape-m2a-sort-fn-' } },
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const response2 = await request(getUrl(vendor))
 								.get(`/items/${localCollectionShapes}`)
@@ -1495,9 +1496,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									sort: `-children.item:${localCollectionCircles}.year(test_datetime)`,
 									filter: { name: { _starts_with: 'shape-m2a-sort-fn-' } },
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionShapes]: {
 										__args: {
@@ -1509,7 +1510,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								},
 							});
 
-							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionShapes]: {
 										__args: {
@@ -1586,7 +1587,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									limit,
 									fields: `children.item:${localCollectionCircles}.year(test_datetime)`,
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const response2 = await request(getUrl(vendor))
 								.get(`/items/${localCollectionShapes}`)
@@ -1596,9 +1597,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									limit,
 									fields: `children.item:${localCollectionCircles}.year(test_datetime)`,
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionShapes]: {
 										__args: {
@@ -1622,7 +1623,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								},
 							});
 
-							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionShapes]: {
 										__args: {
@@ -1767,7 +1768,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								const response = await request(getUrl(vendor))
 									.post(`/items/${localCollectionShapes}`)
 									.send(shape)
-									.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+									.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 								// Assert
 								expect(response.statusCode).toBe(200);
@@ -1805,7 +1806,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								const response = await request(getUrl(vendor))
 									.post(`/items/${localCollectionShapes}`)
 									.send(shape)
-									.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+									.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 								// Assert
 								expect(response.statusCode).toBe(400);
@@ -1848,7 +1849,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								const response = await request(getUrl(vendor))
 									.post(`/items/${localCollectionShapes}`)
 									.send(shapes)
-									.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+									.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 								// Assert
 								expect(response.statusCode).toBe(200);
@@ -1891,7 +1892,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								const response = await request(getUrl(vendor))
 									.post(`/items/${localCollectionShapes}`)
 									.send(shapes)
-									.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+									.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 								// Assert
 								expect(response.statusCode).toBe(400);
@@ -1962,7 +1963,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								const response = await request(getUrl(vendor))
 									.patch(`/items/${localCollectionShapes}`)
 									.send(shapes)
-									.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+									.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 								// Assert
 								expect(response.statusCode).toBe(200);
@@ -2033,7 +2034,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								const response = await request(getUrl(vendor))
 									.patch(`/items/${localCollectionShapes}`)
 									.send(shapes)
-									.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+									.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 								// Assert
 								expect(response.statusCode).toBe(400);
@@ -2053,7 +2054,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 				{
 					method: 'get',
 					path: `/items/${localCollectionShapes}`,
-					token: common.USER.ADMIN.TOKEN,
+					token: USER.ADMIN.TOKEN,
 				},
 				localCollectionShapes,
 				cachedSchema[pkType][localCollectionShapes],
@@ -2064,7 +2065,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 				{
 					method: 'get',
 					path: `/items/${localCollectionCircles}`,
-					token: common.USER.ADMIN.TOKEN,
+					token: USER.ADMIN.TOKEN,
 				},
 				localCollectionCircles,
 				cachedSchema[pkType][localCollectionCircles],
@@ -2075,7 +2076,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 				{
 					method: 'get',
 					path: `/items/${localCollectionSquares}`,
-					token: common.USER.ADMIN.TOKEN,
+					token: USER.ADMIN.TOKEN,
 				},
 				localCollectionSquares,
 				cachedSchema[pkType][localCollectionSquares],

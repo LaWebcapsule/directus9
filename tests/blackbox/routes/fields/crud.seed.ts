@@ -1,5 +1,6 @@
-import vendors from '@common/get-dbs-to-test';
-import { CreateCollection, DeleteCollection, PRIMARY_KEY_TYPES } from '@common/index';
+import { CreateCollection, DeleteCollection } from '../../common/functions.ts';
+import vendors from '../../common/get-dbs-to-test.ts';
+import { PRIMARY_KEY_TYPES } from '../../common/variables.ts';
 
 export const collection = 'test_fields_crud';
 

@@ -1,5 +1,5 @@
 // Tests will run sequentially according to this list
-exports.list = {
+export const list = {
 	before: [
 		{ testFilePath: '/common/seed-database.test.ts' },
 		{ testFilePath: '/common/common.test.ts' },
@@ -22,7 +22,7 @@ exports.list = {
 	],
 };
 
-exports.getReversedTestIndex = function (testFilePath) {
+export function getReversedTestIndex(testFilePath) {
 	if (this.list.only.length > 0) {
 		for (let index = 0; index < this.list.only.length; index++) {
 			if (testFilePath.includes(this.list.only[index].testFilePath)) {
@@ -44,4 +44,4 @@ exports.getReversedTestIndex = function (testFilePath) {
 	}
 
 	return this.list.before.length;
-};
+}

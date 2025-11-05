@@ -1,8 +1,8 @@
 /** @TODO replace with import from @wbce-d9/utils */
-import { getFilterOperatorsForType } from '../../utils/get-filter-operators-for-type';
+import { getFilterOperatorsForType } from '../../utils/get-filter-operators-for-type.ts';
 import type { ClientFilterOperator } from '@wbce-d9/types';
-import { FilterValidator, FilterEmptyValidator } from '@query/filter';
-import { GeneratedFilter } from '..';
+import type { FilterValidator, FilterEmptyValidator } from '@query/filter/index.ts';
+import type { GeneratedFilter } from '../index.ts';
 
 export const type = 'geometry';
 export const filterOperatorList = getFilterOperatorsForType(type);

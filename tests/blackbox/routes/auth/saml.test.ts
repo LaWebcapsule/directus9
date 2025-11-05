@@ -1,6 +1,6 @@
-import { getUrl } from '@common/config';
+import { getUrl } from '@common/config.ts';
 import request from 'supertest';
-import vendors from '@common/get-dbs-to-test';
+import vendors from '@common/get-dbs-to-test.ts';
 
 describe('/auth/login/saml', () => {
 	const authCookies: Record<string, string> = {};
