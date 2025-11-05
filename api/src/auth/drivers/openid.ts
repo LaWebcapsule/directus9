@@ -113,6 +113,17 @@ export class OpenIDAuthDriver extends BaseOAuthDriver {
 			const codeChallenge = generators.codeChallenge(codeVerifier);
 			const paramsConfig = typeof this.config['params'] === 'object' ? this.config['params'] : {};
 
+			const redirectAfterLogin = additionalParams?.['redirect'];
+			delete additionalParams?.['redirect'];
+
+			let finalRedirectUri = this.redirectUrl;
+
+			if (redirectAfterLogin) {
+				const redirectUriWithParams = new URL(this.redirectUrl);
+				redirectUriWithParams.searchParams.set('redirect', redirectAfterLogin as string);
+				finalRedirectUri = redirectUriWithParams.toString();
+			}
+
 			return client.authorizationUrl({
 				scope: this.config['scope'] ?? 'openid profile email',
 				access_type: 'offline',
@@ -123,6 +134,7 @@ export class OpenIDAuthDriver extends BaseOAuthDriver {
 				// Some providers require state even with PKCE
 				state: codeChallenge,
 				nonce: codeChallenge,
+				redirect_uri: finalRedirectUri,
 				...additionalParams,
 			});
 		} catch (e) {
@@ -213,7 +225,6 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 
 			const additionalParams = { ...req.query };
 			delete additionalParams['prompt'];
-			delete additionalParams['redirect'];
 
 			return res.redirect(await provider.generateAuthUrl(codeVerifier, prompt, additionalParams));
 		}),
@@ -232,6 +243,8 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 	router.get(
 		'/callback',
 		asyncHandler(async (req, res, next) => {
+			const redirectUrl = req.query['redirect'] as string;
+
 			let tokenData;
 
 			try {
@@ -244,7 +257,13 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 				};
 			} catch (e: any) {
 				logger.warn(e, `[OpenID] Couldn't verify OpenID cookie`);
-				throw new InvalidCredentialsException();
+
+				const baseUrl = env['PUBLIC_URL'];
+				const loginPath = '/admin/login';
+				const url = new URL(loginPath, baseUrl);
+
+				const redirectTo = redirectUrl || url.toString();
+				return res.redirect(`${redirectTo}?reason=INVALID_CREDENTIALS`);
 			}
 
 			const { verifier, redirect, prompt } = tokenData;
