@@ -1,15 +1,15 @@
-import config, { getUrl, paths } from '@common/config';
-import vendors from '@common/get-dbs-to-test';
-import * as common from '@common/index';
-import { awaitDirectusConnection } from '@utils/await-connection';
-import { sleep } from '@utils/sleep';
-import { validateDateDifference } from '@utils/validate-date-difference';
+import config, { getUrl, paths } from '@common/config.ts';
+import vendors from '@common/get-dbs-to-test.ts';
+import { awaitDirectusConnection } from '@utils/await-connection.ts';
+import { sleep } from '@utils/sleep.ts';
+import { validateDateDifference } from '@utils/validate-date-difference.ts';
 import { ChildProcess, spawn } from 'child_process';
 import type { Knex } from 'knex';
 import knex from 'knex';
-import { cloneDeep } from 'lodash';
+import { cloneDeep } from 'lodash-es';
 import request from 'supertest';
 import * as portfinder from 'portfinder';
+import { USER } from '@common/variables.ts';
 
 const collectionName = 'schema_timezone_tests';
 
@@ -108,7 +108,7 @@ describe('schema', () => {
 
 				const response = await request(getUrl(vendor))
 					.get(`/items/${collectionName}?fields=*&limit=${sampleDates.length}`)
-					.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+					.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 					.expect('Content-Type', /application\/json/)
 					.expect(200);
 
@@ -178,7 +178,7 @@ describe('schema', () => {
 
 				const response2 = await request(getUrl(vendor))
 					.get(`/items/${collectionName}?fields=*&offset=${sampleDates.length}`)
-					.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+					.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 					.expect('Content-Type', /application\/json/)
 					.expect(200);
 
@@ -264,7 +264,7 @@ describe('schema', () => {
 					await request(getUrl(vendor))
 						.post(`/items/${collectionName}`)
 						.send(dates)
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 						.expect('Content-Type', /application\/json/)
 						.expect(200);
 
@@ -272,7 +272,7 @@ describe('schema', () => {
 
 					const response = await request(getUrl(vendor))
 						.get(`/items/${collectionName}?fields=*&offset=${sampleDates.length * 2}`)
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 						.expect('Content-Type', /application\/json/)
 						.expect(200);
 
@@ -338,7 +338,7 @@ describe('schema', () => {
 
 				const existingDataResponse = await request(getUrl(vendor))
 					.get(`/items/${collectionName}?fields=*&limit=1&offset=${sampleDates.length * 2}`)
-					.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+					.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 					.expect('Content-Type', /application\/json/)
 					.expect(200);
 
@@ -347,7 +347,7 @@ describe('schema', () => {
 				await request(getUrl(vendor))
 					.patch(`/items/${collectionName}/${existingDataResponse.body.data[0].id}`)
 					.send(payload)
-					.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+					.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 					.expect('Content-Type', /application\/json/)
 					.expect(200);
 
@@ -355,7 +355,7 @@ describe('schema', () => {
 
 				const response = await request(getUrl(vendor))
 					.get(`/items/${collectionName}/${existingDataResponse.body.data[0].id}?fields=*`)
-					.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+					.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 					.expect('Content-Type', /application\/json/)
 					.expect(200);
 

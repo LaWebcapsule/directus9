@@ -1,6 +1,6 @@
 {
 	"name": "@wbce-d9/app",
-	"version": "9.33.5",
+	"version": "9.33.7",
 	"description": "App dashboard for Directus",
 	"homepage": "https://directus.io",
 	"type": "module",
@@ -124,7 +124,7 @@
 		"storybook": "7.0.6",
 		"tinymce": "7.2.0",
 		"typescript": "5.0.4",
-		"vite": "5.4.20",
+		"vite": "5.4.21",
 		"vitest": "0.30.1",
 		"vue": "3.2.47",
 		"vue-i18n": "9.14.5",

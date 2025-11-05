@@ -1,5 +1,17 @@
 # @wbce-d9/update-check
 
+## 10.0.0
+
+### Major Changes
+
+- a561d87: Migrate to Node.js 22 runtime
+
+## 9.28.1
+
+### Patch Changes
+
+- bdcd952: Security update change, manual and dependabot updates
+
 ## 9.28.0
 
 ### Minor Changes

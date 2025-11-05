@@ -1,11 +1,11 @@
-import config, { getUrl } from '@common/config';
+import config, { getUrl, paths } from '@common/config.ts';
 import request from 'supertest';
-import vendors from '@common/get-dbs-to-test';
+import vendors from '@common/get-dbs-to-test.ts';
 import { createReadStream } from 'fs';
 import path from 'path';
-import * as common from '@common/index';
+import { USER } from '@common/variables.ts';
 
-const assetsDirectory = [__dirname, '..', '..', 'assets'];
+const assetsDirectory = [paths.cwd, 'assets'];
 const storages = ['local', 'minio'];
 
 const imageFile = {
@@ -30,7 +30,7 @@ describe('/assets', () => {
 							const uploadedFileID = (
 								await request(getUrl(vendor))
 									.post('/files')
-									.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+									.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 									.field('storage', storage)
 									.attach('file', createReadStream(imageFilePath))
 							).body.data.id;
@@ -42,7 +42,7 @@ describe('/assets', () => {
 									.map((_, index) =>
 										request(getUrl(vendor))
 											.get(`/assets/${uploadedFileID}?width=${4000 + index}&height=${4000 + index}`)
-											.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+											.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 									)
 							);
 
@@ -67,7 +67,7 @@ describe('/assets', () => {
 							const uploadedFileID = (
 								await request(getUrl(vendor))
 									.post('/files')
-									.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+									.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 									.field('storage', storage)
 									.attach('file', createReadStream(imageFilePath))
 							).body.data.id;
@@ -79,7 +79,7 @@ describe('/assets', () => {
 									.map((_, index) =>
 										request(getUrl(vendor))
 											.get(`/assets/${uploadedFileID}?width=${4000 + index}&height=${4000 + index}`)
-											.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+											.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 									)
 							);
 

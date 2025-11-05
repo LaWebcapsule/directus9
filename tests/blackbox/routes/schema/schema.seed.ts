@@ -1,17 +1,17 @@
-import vendors from '@common/get-dbs-to-test';
 import {
 	CreateCollection,
 	CreateField,
-	DeleteCollection,
-	PRIMARY_KEY_TYPES,
-	CreateFieldM2M,
 	CreateFieldM2A,
+	CreateFieldM2M,
 	CreateFieldM2O,
 	CreateFieldO2M,
+	DeleteCollection,
 	DeleteField,
-	PrimaryKeyType,
-} from '@common/index';
-import { seedAllFieldTypesStructure } from '../items/seed-all-field-types';
+} from '../../common/functions.ts';
+import vendors from '../../common/get-dbs-to-test.ts';
+import type { PrimaryKeyType } from '../../common/types.ts';
+import { PRIMARY_KEY_TYPES } from '../../common/variables.ts';
+import { seedAllFieldTypesStructure } from '../items/seed-all-field-types.ts';
 
 export const collectionAll = 'test_schema_all';
 export const collectionM2O = 'test_schema_m2o';

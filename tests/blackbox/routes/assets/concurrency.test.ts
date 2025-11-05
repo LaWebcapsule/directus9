@@ -1,13 +1,13 @@
-import { getUrl } from '@common/config';
+import { getUrl, paths } from '@common/config.ts';
 import request from 'supertest';
-import vendors from '@common/get-dbs-to-test';
+import vendors from '@common/get-dbs-to-test.ts';
 import { createReadStream } from 'fs';
 import path from 'path';
-import * as common from '@common/index';
-import { sleep } from '@utils/sleep';
+import { USER } from '@common/variables.ts';
+import { sleep } from '@utils/sleep.ts';
 import { spawn } from 'child_process';
 
-const assetsDirectory = [__dirname, '..', '..', 'assets'];
+const assetsDirectory = [paths.cwd, 'assets'];
 const storages = ['local', 'minio'];
 const imageFilePath = path.join(...assetsDirectory, 'layers.png');
 
@@ -26,7 +26,7 @@ describe('/assets', () => {
 
 						const insertResponse = await request(getUrl(vendor))
 							.post('/files')
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`)
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`)
 							.field('storage', storage)
 							.attach('file', createReadStream(imageFilePath));
 
@@ -34,9 +34,7 @@ describe('/assets', () => {
 						spawnAutoCannon();
 
 						function spawnAutoCannon() {
-							const url = `${getUrl(vendor)}/assets/${insertResponse.body.data.id}?access_token=${
-								common.USER.ADMIN.TOKEN
-							}`;
+							const url = `${getUrl(vendor)}/assets/${insertResponse.body.data.id}?access_token=${USER.ADMIN.TOKEN}`;
 
 							const options = ['exec', 'autocannon', '-c', '100', url];
 							const child = spawn('pnpm', options);

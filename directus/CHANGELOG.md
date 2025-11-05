@@ -1,5 +1,32 @@
 # directus9
 
+## 11.0.0
+
+### Major Changes
+
+- a561d87: Migrate to Node.js 22 runtime
+
+### Patch Changes
+
+- Updated dependencies [a561d87]
+  - @wbce-d9/api@12.0.0
+
+## 10.3.15
+
+### Patch Changes
+
+- b1a0105: fix mailjet and ses compatibility
+- Updated dependencies [b1a0105]
+  - @wbce-d9/api@11.1.6
+
+## 10.3.14
+
+### Patch Changes
+
+- bdcd952: Security update change, manual and dependabot updates
+- Updated dependencies [bdcd952]
+  - @wbce-d9/api@11.1.5
+
 ## 10.3.13
 
 ### Patch Changes

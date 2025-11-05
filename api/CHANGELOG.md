@@ -1,5 +1,50 @@
 # @wbce-d9/api
 
+## 12.0.0
+
+### Major Changes
+
+- a561d87: Migrate to Node.js 22 runtime
+
+### Patch Changes
+
+- Updated dependencies [a561d87]
+  - @wbce-d9/storage-driver-cloudinary@10.0.0
+  - @wbce-d9/storage-driver-azure@10.0.0
+  - @wbce-d9/storage-driver-local@10.0.0
+  - @wbce-d9/storage-driver-gcs@10.0.0
+  - @wbce-d9/storage-driver-s3@10.0.0
+  - @wbce-d9/extensions-sdk@10.0.0
+  - @wbce-d9/update-check@10.0.0
+  - @wbce-d9/exceptions@10.0.0
+  - @wbce-d9/constants@10.0.0
+  - @wbce-d9/storage@10.0.0
+  - @wbce-d9/schema@10.0.0
+  - @wbce-d9/utils@10.0.0
+  - @wbce-d9/app@9.33.7
+
+## 11.1.6
+
+### Patch Changes
+
+- b1a0105: fix mailjet and ses compatibility
+
+## 11.1.5
+
+### Patch Changes
+
+- bdcd952: Security update change, manual and dependabot updates
+- Updated dependencies [bdcd952]
+  - @wbce-d9/app@9.33.6
+  - @wbce-d9/extensions-sdk@9.27.4
+  - @wbce-d9/storage-driver-azure@9.26.10
+  - @wbce-d9/storage-driver-cloudinary@9.27.3
+  - @wbce-d9/storage-driver-gcs@9.26.10
+  - @wbce-d9/storage-driver-local@9.26.10
+  - @wbce-d9/storage-driver-s3@9.26.12
+  - @wbce-d9/update-check@9.28.1
+  - @wbce-d9/utils@9.29.3
+
 ## 11.1.4
 
 ### Patch Changes

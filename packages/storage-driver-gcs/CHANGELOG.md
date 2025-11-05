@@ -1,5 +1,25 @@
 # @wbce-d9/storage-driver-gcs
 
+## 10.0.0
+
+### Major Changes
+
+- a561d87: Migrate to Node.js 22 runtime
+
+### Patch Changes
+
+- Updated dependencies [a561d87]
+  - @wbce-d9/storage@10.0.0
+  - @wbce-d9/utils@10.0.0
+
+## 9.26.10
+
+### Patch Changes
+
+- bdcd952: Security update change, manual and dependabot updates
+- Updated dependencies [bdcd952]
+  - @wbce-d9/utils@9.29.3
+
 ## 9.26.9
 
 ### Patch Changes

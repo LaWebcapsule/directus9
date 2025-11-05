@@ -1,23 +1,24 @@
+import config, { getUrl } from '@common/config.ts';
+import { CreateItem, ReadItem } from '@common/functions.ts';
+import vendors from '@common/get-dbs-to-test.ts';
+import { requestGraphQL } from '@common/transport.ts';
+import type { PrimaryKeyType } from '@common/types.ts';
+import { PRIMARY_KEY_TYPES, USER } from '@common/variables.ts';
+import type { CachedTestsSchema, TestsSchemaVendorValues } from '@query/filter/index.ts';
+import { CheckQueryFilters } from '@query/filter/index.ts';
 import request from 'supertest';
-import config, { getUrl } from '@common/config';
-import vendors from '@common/get-dbs-to-test';
 import { v4 as uuid } from 'uuid';
-import { CreateItem, ReadItem } from '@common/functions';
-import { CachedTestsSchema, TestsSchemaVendorValues } from '@query/filter';
-import * as common from '@common/index';
 import {
+	collectionCities,
 	collectionCountries,
 	collectionStates,
-	collectionCities,
-	Country,
-	State,
+	type Country,
 	getTestsSchema,
 	seedDBValues,
-} from './m2o.seed';
-import { CheckQueryFilters } from '@query/filter';
-import { requestGraphQL } from '@common/index';
+	type State,
+} from './m2o.seed.ts';
 
-function createCountry(pkType: common.PrimaryKeyType) {
+function createCountry(pkType: PrimaryKeyType) {
 	const item: Country = {
 		name: 'country-' + uuid(),
 	};
@@ -29,7 +30,7 @@ function createCountry(pkType: common.PrimaryKeyType) {
 	return item;
 }
 
-function createState(pkType: common.PrimaryKeyType) {
+function createState(pkType: PrimaryKeyType) {
 	const item: State = {
 		name: 'state-' + uuid(),
 	};
@@ -41,7 +42,7 @@ function createState(pkType: common.PrimaryKeyType) {
 	return item;
 }
 
-const cachedSchema = common.PRIMARY_KEY_TYPES.reduce((acc, pkType) => {
+const cachedSchema = PRIMARY_KEY_TYPES.reduce((acc, pkType) => {
 	acc[pkType] = getTestsSchema(pkType);
 	return acc;
 }, {} as CachedTestsSchema);
@@ -59,7 +60,7 @@ describe('Seed Database Values', () => {
 	});
 });
 
-describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
+describe.each(PRIMARY_KEY_TYPES)('/items', (pkType) => {
 	const localCollectionCountries = `${collectionCountries}_${pkType}`;
 	const localCollectionStates = `${collectionStates}_${pkType}`;
 	const localCollectionCities = `${collectionCities}_${pkType}`;
@@ -81,9 +82,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 					// Action
 					const response = await request(getUrl(vendor))
 						.get(`/items/${localCollectionStates}/${insertedState.id}`)
-						.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-					const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+					const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 						query: {
 							[localCollectionStates]: {
 								__args: {
@@ -132,16 +133,16 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							.query({
 								filter: { id: { _eq: insertedState.id } },
 							})
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 						const response2 = await request(getUrl(vendor))
 							.get(`/items/${localCollectionStates}`)
 							.query({
 								filter: { name: { _eq: insertedState.name } },
 							})
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-						const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							query: {
 								[localCollectionStates]: {
 									__args: {
@@ -156,7 +157,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							},
 						});
 
-						const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							query: {
 								[localCollectionStates]: {
 									__args: {
@@ -212,16 +213,16 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							.query({
 								filter: JSON.stringify({ country_id: { id: { _eq: insertedCountry.id } } }),
 							})
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 						const response2 = await request(getUrl(vendor))
 							.get(`/items/${localCollectionStates}`)
 							.query({
 								filter: JSON.stringify({ country_id: { name: { _eq: insertedCountry.name } } }),
 							})
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-						const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							query: {
 								[localCollectionStates]: {
 									__args: {
@@ -234,7 +235,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							},
 						});
 
-						const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							query: {
 								[localCollectionStates]: {
 									__args: {
@@ -292,16 +293,16 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							.query({
 								filter: { 'year(test_datetime)': { _eq: years[0] } },
 							})
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 						const response2 = await request(getUrl(vendor))
 							.get(`/items/${localCollectionStates}`)
 							.query({
 								filter: { 'year(test_datetime)': { _eq: years[1] } },
 							})
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-						const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							query: {
 								[localCollectionStates]: {
 									__args: {
@@ -314,7 +315,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							},
 						});
 
-						const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							query: {
 								[localCollectionStates]: {
 									__args: {
@@ -380,16 +381,16 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							.query({
 								filter: JSON.stringify({ country_id: { 'year(test_datetime)': { _eq: years[0] } } }),
 							})
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 						const response2 = await request(getUrl(vendor))
 							.get(`/items/${localCollectionStates}`)
 							.query({
 								filter: JSON.stringify({ country_id: { 'year(test_datetime)': { _eq: years[1] } } }),
 							})
-							.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+							.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-						const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							query: {
 								[localCollectionStates]: {
 									__args: {
@@ -408,7 +409,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 							},
 						});
 
-						const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+						const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 							query: {
 								[localCollectionStates]: {
 									__args: {
@@ -482,7 +483,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									sort: 'name',
 									filter: { name: { _starts_with: 'state-m2o-top-sort-' } },
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const response2 = await request(getUrl(vendor))
 								.get(`/items/${localCollectionStates}`)
@@ -490,9 +491,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									sort: '-name',
 									filter: { name: { _starts_with: 'state-m2o-top-sort-' } },
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionStates]: {
 										__args: {
@@ -504,7 +505,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								},
 							});
 
-							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionStates]: {
 										__args: {
@@ -548,7 +549,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									limit,
 									fields: 'name',
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const response2 = await request(getUrl(vendor))
 								.get(`/items/${localCollectionStates}`)
@@ -558,9 +559,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									limit,
 									fields: 'name',
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionStates]: {
 										__args: {
@@ -574,7 +575,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								},
 							});
 
-							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionStates]: {
 										__args: {
@@ -661,7 +662,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									sort: 'country_id.name',
 									filter: { name: { _starts_with: 'state-m2o-sort-' } },
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const response2 = await request(getUrl(vendor))
 								.get(`/items/${localCollectionStates}`)
@@ -669,9 +670,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									sort: '-country_id.name',
 									filter: { name: { _starts_with: 'state-m2o-sort-' } },
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionStates]: {
 										__args: {
@@ -683,7 +684,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								},
 							});
 
-							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionStates]: {
 										__args: {
@@ -727,7 +728,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									limit,
 									fields: 'country_id.name',
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const response2 = await request(getUrl(vendor))
 								.get(`/items/${localCollectionStates}`)
@@ -737,9 +738,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									limit,
 									fields: 'country_id.name',
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionStates]: {
 										__args: {
@@ -755,7 +756,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								},
 							});
 
-							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionStates]: {
 										__args: {
@@ -848,7 +849,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									sort: 'year(test_datetime)',
 									filter: { name: { _starts_with: 'state-m2o-top-sort-fn-' } },
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const response2 = await request(getUrl(vendor))
 								.get(`/items/${localCollectionStates}`)
@@ -856,9 +857,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									sort: '-year(test_datetime)',
 									filter: { name: { _starts_with: 'state-m2o-top-sort-fn-' } },
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionStates]: {
 										__args: {
@@ -870,7 +871,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								},
 							});
 
-							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionStates]: {
 										__args: {
@@ -914,7 +915,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									limit,
 									fields: 'year(test_datetime)',
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const response2 = await request(getUrl(vendor))
 								.get(`/items/${localCollectionStates}`)
@@ -924,9 +925,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									limit,
 									fields: 'year(test_datetime)',
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionStates]: {
 										__args: {
@@ -942,7 +943,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								},
 							});
 
-							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionStates]: {
 										__args: {
@@ -1035,7 +1036,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									sort: 'country_id.year(test_datetime)',
 									filter: { name: { _starts_with: 'state-m2o-sort-fn-' } },
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const response2 = await request(getUrl(vendor))
 								.get(`/items/${localCollectionStates}`)
@@ -1043,9 +1044,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									sort: '-country_id.year(test_datetime)',
 									filter: { name: { _starts_with: 'state-m2o-sort-fn-' } },
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionStates]: {
 										__args: {
@@ -1057,7 +1058,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								},
 							});
 
-							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionStates]: {
 										__args: {
@@ -1101,7 +1102,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									limit,
 									fields: 'country_id.year(test_datetime)',
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 							const response2 = await request(getUrl(vendor))
 								.get(`/items/${localCollectionStates}`)
@@ -1111,9 +1112,9 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 									limit,
 									fields: 'country_id.year(test_datetime)',
 								})
-								.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+								.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-							const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionStates]: {
 										__args: {
@@ -1131,7 +1132,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								},
 							});
 
-							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+							const gqlResponse2 = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 								query: {
 									[localCollectionStates]: {
 										__args: {
@@ -1214,11 +1215,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								const response = await request(getUrl(vendor))
 									.post(`/items/${localCollectionStates}`)
 									.send(states)
-									.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+									.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 								const mutationKey = `create_${localCollectionStates}_items`;
 
-								const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+								const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 									mutation: {
 										[mutationKey]: {
 											__args: {
@@ -1260,11 +1261,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								const response = await request(getUrl(vendor))
 									.post(`/items/${localCollectionStates}`)
 									.send(states)
-									.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+									.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 								const mutationKey = `create_${localCollectionStates}_items`;
 
-								const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+								const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 									mutation: {
 										[mutationKey]: {
 											__args: {
@@ -1360,11 +1361,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								const response = await request(getUrl(vendor))
 									.patch(`/items/${localCollectionStates}`)
 									.send(states)
-									.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+									.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 								const mutationKey = `update_${localCollectionStates}_batch`;
 
-								const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+								const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 									mutation: {
 										[mutationKey]: {
 											__args: {
@@ -1450,11 +1451,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								const response = await request(getUrl(vendor))
 									.patch(`/items/${localCollectionStates}`)
 									.send(states)
-									.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+									.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 								const mutationKey = `update_${localCollectionStates}_batch`;
 
-								const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+								const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 									mutation: {
 										[mutationKey]: {
 											__args: {
@@ -1510,11 +1511,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								const response = await request(getUrl(vendor))
 									.patch(`/items/${localCollectionStates}`)
 									.send({ keys: stateIDs, data: { country_id: newCountry } })
-									.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+									.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 								const mutationKey = `update_${localCollectionStates}_items`;
 
-								const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+								const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 									mutation: {
 										[mutationKey]: {
 											__args: {
@@ -1561,11 +1562,11 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 								const response = await request(getUrl(vendor))
 									.patch(`/items/${localCollectionStates}`)
 									.send({ keys: stateIDs, data: { country_id: newCountry } })
-									.set('Authorization', `Bearer ${common.USER.ADMIN.TOKEN}`);
+									.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 								const mutationKey = `update_${localCollectionStates}_items`;
 
-								const gqlResponse = await requestGraphQL(getUrl(vendor), false, common.USER.ADMIN.TOKEN, {
+								const gqlResponse = await requestGraphQL(getUrl(vendor), false, USER.ADMIN.TOKEN, {
 									mutation: {
 										[mutationKey]: {
 											__args: {
@@ -1602,7 +1603,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 				{
 					method: 'get',
 					path: `/items/${localCollectionCountries}`,
-					token: common.USER.ADMIN.TOKEN,
+					token: USER.ADMIN.TOKEN,
 				},
 				localCollectionCountries,
 				getTestsSchema(pkType)[localCollectionCountries],
@@ -1613,7 +1614,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 				{
 					method: 'get',
 					path: `/items/${localCollectionStates}`,
-					token: common.USER.ADMIN.TOKEN,
+					token: USER.ADMIN.TOKEN,
 				},
 				localCollectionStates,
 				getTestsSchema(pkType)[localCollectionStates],
@@ -1624,7 +1625,7 @@ describe.each(common.PRIMARY_KEY_TYPES)('/items', (pkType) => {
 				{
 					method: 'get',
 					path: `/items/${localCollectionCities}`,
-					token: common.USER.ADMIN.TOKEN,
+					token: USER.ADMIN.TOKEN,
 				},
 				localCollectionCities,
 				getTestsSchema(pkType)[localCollectionCities],

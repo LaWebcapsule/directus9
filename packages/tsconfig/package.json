@@ -1,0 +1,19 @@
+{
+	"name": "@wbce-d9/tsconfig",
+	"version": "2.0.0",
+	"description": "TSConfig files used in Directus9 projects",
+	"homepage": "https://directus.io",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/LaWebcapsule/directus9.git",
+		"directory": "packages/tsconfig"
+	},
+	"funding": "https://github.com/LaWebcapsule/directus9?sponsor=1",
+	"license": "MIT",
+	"author": "Rijk van Zanten <rijkvanzanten@me.com>",
+	"exports": {
+		"./base": "./base/tsconfig.json",
+		"./node22": "./node22/tsconfig.json",
+		"./vue3": "./vue3/tsconfig.json"
+	}
+}

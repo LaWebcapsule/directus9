@@ -1,22 +1,16 @@
-import vendors from '@common/get-dbs-to-test';
+import { CreateCollection, CreateField, CreateFieldM2M, CreateItem, DeleteCollection } from '../../common/functions.ts';
+import vendors from '../../common/get-dbs-to-test.ts';
+import { SeedFunctions } from '../../common/seed-functions.ts';
+import type { PrimaryKeyType } from '../../common/types.ts';
+import { PRIMARY_KEY_TYPES } from '../../common/variables.ts';
+import type { CachedTestsSchema, TestsSchema, TestsSchemaVendorValues } from '../../query/filter/index.ts';
+import { set } from 'lodash-es';
 import {
-	CreateCollection,
-	CreateField,
-	CreateItem,
-	DeleteCollection,
-	SeedFunctions,
-	PrimaryKeyType,
-	PRIMARY_KEY_TYPES,
-	CreateFieldM2M,
-} from '@common/index';
-import { CachedTestsSchema, TestsSchema, TestsSchemaVendorValues } from '@query/filter';
-import {
+	getTestsAllTypesSchema,
 	seedAllFieldTypesStructure,
 	seedAllFieldTypesValues,
-	getTestsAllTypesSchema,
 	seedM2MAliasAllFieldTypesValues,
-} from './seed-all-field-types';
-import { set } from 'lodash';
+} from './seed-all-field-types.ts';
 
 export const collectionFoods = 'test_items_m2m_foods';
 export const collectionIngredients = 'test_items_m2m_ingredients';

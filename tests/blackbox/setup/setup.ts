@@ -2,16 +2,16 @@
 
 import axios from 'axios';
 import { spawn, spawnSync } from 'child_process';
-import { writeFileSync } from 'fs';
 import knex from 'knex';
 import { Listr } from 'listr2';
-import { clone } from 'lodash';
+import { clone } from 'lodash-es';
+import fs from 'node:fs/promises';
 import path from 'node:path';
-import * as common from '../common';
-import config, { getUrl, paths } from '../common/config';
-import vendors from '../common/get-dbs-to-test';
-import { awaitDatabaseConnection, awaitDirectusConnection } from '../utils/await-connection';
-import global from './global';
+import config, { getUrl, paths } from '../common/config.ts';
+import vendors from '../common/get-dbs-to-test.ts';
+import { USER } from '../common/variables.ts';
+import { awaitDatabaseConnection, awaitDirectusConnection } from '../utils/await-connection.ts';
+import global from './global.ts';
 
 let started = false;
 
@@ -30,13 +30,13 @@ export default async (): Promise<void> => {
 				return new Listr(
 					vendors.map((vendor) => {
 						return {
-							title: config.names[vendor]!,
+							title: config.names[vendor],
 							task: async () => {
-								const database = knex(config.knexConfig[vendor]!);
-								await awaitDatabaseConnection(database, config.knexConfig[vendor]!.waitTestSQL);
+								const database = knex(config.knexConfig[vendor]);
+								await awaitDatabaseConnection(database, config.knexConfig[vendor].waitTestSQL);
 
 								if (vendor === 'sqlite3') {
-									writeFileSync(path.join(paths.cwd, 'test.db'), '');
+									await fs.writeFile(path.join(paths.cwd, 'test.db'), '');
 								}
 
 								const bootstrap = spawnSync('node', [paths.cli, 'bootstrap'], {
@@ -66,22 +66,25 @@ export default async (): Promise<void> => {
 										serverOutput += data.toString();
 									});
 
-									server.on('exit', (code) => {
+									server.stderr.on('data', (data) => {
+										console.log(data.toString());
+									});
+
+									server.on('exit', async (code) => {
 										if (process.env.TEST_SAVE_LOGS) {
-											writeFileSync(path.join(paths.cwd, `server-log-${vendor}.txt`), serverOutput);
+											await fs.writeFile(path.join(paths.cwd, `server-log-${vendor}.txt`), serverOutput);
 										}
 
 										if (code !== null) throw new Error(`Directus-${vendor} server failed: \n ${serverOutput}`);
 									});
 
 									// Give the server some time to start
-									await awaitDirectusConnection(Number(config.envs[vendor]!.PORT!));
-									server.on('exit', () => undefined);
+									await awaitDirectusConnection(Number(config.envs[vendor].PORT));
 
 									// Set up separate directus instance without system cache
-									const noCacheEnv = clone(config.envs[vendor]!);
+									const noCacheEnv = clone(config.envs[vendor]);
 									noCacheEnv.CACHE_SCHEMA = 'false';
-									noCacheEnv.PORT = String(parseInt(noCacheEnv.PORT!) + 50);
+									noCacheEnv.PORT = String(parseInt(noCacheEnv.PORT) + 50);
 									const serverNoCache = spawn('node', [paths.cli, 'start'], { cwd: paths.cwd, env: noCacheEnv });
 									global.directusNoCache[vendor] = serverNoCache;
 									let serverNoCacheOutput = '';
@@ -91,9 +94,9 @@ export default async (): Promise<void> => {
 										serverNoCacheOutput += data.toString();
 									});
 
-									serverNoCache.on('exit', (code) => {
+									serverNoCache.on('exit', async (code) => {
 										if (process.env.TEST_SAVE_LOGS) {
-											writeFileSync(__dirname + `/../server-log-${vendor}-no-cache.txt`, serverNoCacheOutput);
+											await fs.writeFile(__dirname + `/../server-log-${vendor}-no-cache.txt`, serverNoCacheOutput);
 										}
 
 										if (code !== null)
@@ -101,8 +104,7 @@ export default async (): Promise<void> => {
 									});
 
 									// Give the server some time to start
-									await awaitDirectusConnection(Number(noCacheEnv.PORT!));
-									serverNoCache.on('exit', () => undefined);
+									await awaitDirectusConnection(Number(noCacheEnv.PORT));
 								}
 							},
 						};
@@ -129,7 +131,7 @@ export default async (): Promise<void> => {
 									const serverUrl = getUrl(vendor);
 
 									let response = await axios.get(
-										`${serverUrl}/items/tests_flow_data?access_token=${common.USER.TESTS_FLOW.TOKEN}`
+										`${serverUrl}/items/tests_flow_data?access_token=${USER.TESTS_FLOW.TOKEN}`
 									);
 
 									if (response.status !== 200) {
@@ -142,7 +144,7 @@ export default async (): Promise<void> => {
 
 									response = await axios.post(`${serverUrl}/items/tests_flow_data`, body, {
 										headers: {
-											Authorization: 'Bearer ' + common.USER.TESTS_FLOW.TOKEN,
+											Authorization: 'Bearer ' + USER.TESTS_FLOW.TOKEN,
 											'Content-Type': 'application/json',
 										},
 									});
