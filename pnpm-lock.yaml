@@ -504,7 +504,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
+        version: 0.30.1(happy-dom@20.0.2)(sass@1.62.0)
 
   app:
     dependencies:
@@ -732,8 +732,8 @@ importers:
         specifier: 0.5.0
         version: 0.5.0
       happy-dom:
-        specifier: 15.10.2
-        version: 15.10.2
+        specifier: 20.0.2
+        version: 20.0.2
       html-entities:
         specifier: 2.3.3
         version: 2.3.3
@@ -808,7 +808,7 @@ importers:
         version: 5.4.21(sass@1.62.0)
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
+        version: 0.30.1(happy-dom@20.0.2)(sass@1.62.0)
       vue:
         specifier: 3.2.47
         version: 3.2.47
@@ -897,7 +897,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
+        version: 0.30.1(happy-dom@20.0.2)(sass@1.62.0)
 
   packages/constants:
     dependencies:
@@ -946,7 +946,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
+        version: 0.30.1(happy-dom@20.0.2)(sass@1.62.0)
 
   packages/extensions-sdk:
     dependencies:
@@ -1034,7 +1034,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
+        version: 0.30.1(happy-dom@20.0.2)(sass@1.62.0)
 
   packages/schema:
     dependencies:
@@ -1081,7 +1081,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
+        version: 0.30.1(happy-dom@20.0.2)(sass@1.62.0)
 
   packages/storage-driver-azure:
     dependencies:
@@ -1109,7 +1109,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
+        version: 0.30.1(happy-dom@20.0.2)(sass@1.62.0)
 
   packages/storage-driver-cloudinary:
     dependencies:
@@ -1140,7 +1140,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
+        version: 0.30.1(happy-dom@20.0.2)(sass@1.62.0)
 
   packages/storage-driver-gcs:
     dependencies:
@@ -1168,7 +1168,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
+        version: 0.30.1(happy-dom@20.0.2)(sass@1.62.0)
 
   packages/storage-driver-local:
     dependencies:
@@ -1193,7 +1193,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
+        version: 0.30.1(happy-dom@20.0.2)(sass@1.62.0)
 
   packages/storage-driver-s3:
     dependencies:
@@ -1227,7 +1227,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
+        version: 0.30.1(happy-dom@20.0.2)(sass@1.62.0)
 
   packages/tsconfig: {}
 
@@ -1299,7 +1299,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
+        version: 0.30.1(happy-dom@20.0.2)(sass@1.62.0)
 
   packages/utils:
     dependencies:
@@ -1363,7 +1363,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 0.30.1
-        version: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
+        version: 0.30.1(happy-dom@20.0.2)(sass@1.62.0)
 
   tests/blackbox:
     devDependencies:
@@ -8367,6 +8367,12 @@ packages:
   /@types/node@18.15.13:
     resolution: {integrity: sha512-N+0kuo9KgrUQ1Sn/ifDXsvg0TTleP7rIy4zOBGECxAljqvqfqpTfzx0Q1NUedOixRMBfe2Whhb056a42cWs26Q==}
 
+  /@types/node@20.19.24:
+    resolution: {integrity: sha512-FE5u0ezmi6y9OZEzlJfg37mqqf6ZDSF2V/NLjUyGrR9uTZ7Sb9F7bLNZ03S4XVUNRWGA7Ck4c1kK+YnuWjl+DA==}
+    dependencies:
+      undici-types: 6.21.0
+    dev: true
+
   /@types/nodemailer@6.4.7:
     resolution: {integrity: sha512-f5qCBGAn/f0qtRcd4SEn88c8Fp3Swct1731X4ryPKqS61/A3LmmzN8zaEz7hneJvpjFbUUgY7lru/B/7ODTazg==}
     dependencies:
@@ -8541,6 +8547,10 @@ packages:
 
   /@types/wellknown@0.5.4:
     resolution: {integrity: sha512-zcsf4oHeEcvpvWhDOB1+qNK04oFJtsmv7Otb1Vy8w8GAqQkgRrVkI/C76PdwtpiT216aM1SbhkKgKWzGLhHKng==}
+    dev: true
+
+  /@types/whatwg-mimetype@3.0.2:
+    resolution: {integrity: sha512-c2AKvDT8ToxLIOUlN51gTiHXflsfIFisS4pO7pDPoKouJCESkhZnEy623gwP9laCy5lnLDAw1vAzu2vM2YLOrA==}
     dev: true
 
   /@types/yargs-parser@21.0.3:
@@ -8839,7 +8849,7 @@ packages:
       c8: 7.13.0
       picocolors: 1.1.1
       std-env: 3.10.0
-      vitest: 0.30.1(happy-dom@15.10.2)(sass@1.62.0)
+      vitest: 0.30.1(happy-dom@20.0.2)(sass@1.62.0)
     dev: true
 
   /@vitest/expect@0.30.1:
@@ -13050,12 +13060,12 @@ packages:
       uglify-js: 3.19.3
     dev: true
 
-  /happy-dom@15.10.2:
-    resolution: {integrity: sha512-NbA5XrSovenJIIcfixCREX3ZnV7yHP4phhbfuxxf4CPn+LZpz/jIM9EqJ2DrPwgVDSMoAKH3pZwQvkbsSiCrUw==}
-    engines: {node: '>=18.0.0'}
+  /happy-dom@20.0.2:
+    resolution: {integrity: sha512-pYOyu624+6HDbY+qkjILpQGnpvZOusItCk+rvF5/V+6NkcgTKnbOldpIy22tBnxoaLtlM9nXgoqAcW29/B7CIw==}
+    engines: {node: '>=20.0.0'}
     dependencies:
-      entities: 4.5.0
-      webidl-conversions: 7.0.0
+      '@types/node': 20.19.24
+      '@types/whatwg-mimetype': 3.0.2
       whatwg-mimetype: 3.0.0
     dev: true
 
@@ -20327,6 +20337,10 @@ packages:
     resolution: {integrity: sha512-GMXzWtsc57XAtguZgaQViUOzs0KTkk8ojr3/xAxXLITqf/3EMwxC0inyETfDFjH/Krbhuep0HNbbjI9i/q3F3g==}
     dev: true
 
+  /undici-types@6.21.0:
+    resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
+    dev: true
+
   /undici@5.29.0:
     resolution: {integrity: sha512-raqeBD6NQK4SkWhQzeYKd1KmIG6dllBOTt55Rmkt4HtI9mwdWtJljnrXjAFUBLTSN67HWrOIZ3EPF4kjUw80Bg==}
     engines: {node: '>=14.0'}
@@ -20849,7 +20863,7 @@ packages:
       - terser
     dev: true
 
-  /vitest@0.30.1(happy-dom@15.10.2)(sass@1.62.0):
+  /vitest@0.30.1(happy-dom@20.0.2)(sass@1.62.0):
     resolution: {integrity: sha512-y35WTrSTlTxfMLttgQk4rHcaDkbHQwDP++SNwPb+7H8yb13Q3cu2EixrtHzF27iZ8v0XCciSsLg00RkPAzB/aA==}
     engines: {node: '>=v14.18.0'}
     hasBin: true
@@ -20894,7 +20908,7 @@ packages:
       chai: 4.5.0
       concordance: 5.0.4
       debug: 4.4.3
-      happy-dom: 15.10.2
+      happy-dom: 20.0.2
       local-pkg: 0.4.3
       magic-string: 0.30.19
       pathe: 1.1.2
@@ -21067,11 +21081,6 @@ packages:
 
   /webidl-conversions@3.0.1:
     resolution: {integrity: sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==}
-
-  /webidl-conversions@7.0.0:
-    resolution: {integrity: sha512-VwddBukDzu71offAQR975unBIGqfKZpM+8ZX6ySk8nYhVoo5CYaZyzt3YBvYtRtO+aoGlqxPg/B87NGVZ/fu6g==}
-    engines: {node: '>=12'}
-    dev: true
 
   /webpack-sources@3.3.3:
     resolution: {integrity: sha512-yd1RBzSGanHkitROoPFd6qsrxt+oFhg/129YzheDGqeustzX0vTZJZsSsQjVQC4yzBQ56K55XU8gaNCtIzOnTg==}

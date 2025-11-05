@@ -100,7 +100,7 @@
 		"file-saver": "2.0.5",
 		"flatpickr": "4.6.13",
 		"geojson": "0.5.0",
-		"happy-dom": "15.10.2",
+		"happy-dom": "20.0.2",
 		"html-entities": "2.3.3",
 		"json-to-graphql-query": "2.2.5",
 		"json2csv": "5.0.7",
