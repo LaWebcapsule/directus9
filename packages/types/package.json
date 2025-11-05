@@ -1,6 +1,6 @@
 {
 	"name": "@wbce-d9/types",
-	"version": "9.28.1",
+	"version": "10.0.0",
 	"type": "module",
 	"scripts": {
 		"build": "tsc --build",
@@ -31,7 +31,7 @@
 		"@types/geojson": "7946.0.10",
 		"@wbce-d9/constants": "workspace:*",
 		"@wbce-d9/schema": "workspace:*",
-		"@wbce-d9/tsconfig": "1.0.0",
+		"@wbce-d9/tsconfig": "2.0.0",
 		"express": "^4.21.2",
 		"geojson": "0.5.0",
 		"knex": "3.1.0",

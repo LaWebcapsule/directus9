@@ -1,6 +1,6 @@
 {
 	"name": "@wbce-d9/schema",
-	"version": "9.26.4",
+	"version": "10.0.0",
 	"description": "Utility for extracting information about existing DB schema",
 	"type": "module",
 	"keywords": [
@@ -45,7 +45,7 @@
 		"knex": "3.1.0"
 	},
 	"devDependencies": {
-		"@wbce-d9/tsconfig": "1.0.0",
+		"@wbce-d9/tsconfig": "2.0.0",
 		"typescript": "5.0.4"
 	},
 	"publishConfig": {

@@ -1,6 +1,6 @@
 {
 	"name": "@wbce-d9/api",
-	"version": "11.1.6",
+	"version": "12.0.0",
 	"description": "Directus is a real-time API and App dashboard for managing SQL database content",
 	"type": "module",
 	"keywords": [
@@ -203,7 +203,7 @@
 		"@types/uuid-validate": "0.0.1",
 		"@types/wellknown": "0.5.4",
 		"@vitest/coverage-c8": "0.30.1",
-		"@wbce-d9/tsconfig": "1.0.0",
+		"@wbce-d9/tsconfig": "2.0.0",
 		"@wbce-d9/types": "workspace:*",
 		"copyfiles": "2.4.1",
 		"form-data": "4.0.4",

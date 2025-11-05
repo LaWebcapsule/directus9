@@ -1,5 +1,12 @@
 # @wbce-d9/app
 
+## 9.33.7
+
+### Patch Changes
+
+- Updated dependencies [a561d87]
+  - @wbce-d9/composables@10.0.0
+
 ## 9.33.6
 
 ### Patch Changes
