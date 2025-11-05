@@ -218,15 +218,22 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 				issuer: 'directus',
 			});
 
-			res.cookie(`openid.${providerName}`, token, {
+			const additionalParams = { ...req.query };
+			delete additionalParams['prompt'];
+
+			const authUrl = await provider.generateAuthUrl(codeVerifier, prompt, additionalParams);
+
+			const urlParams = new URL(authUrl);
+			const state = urlParams.searchParams.get('state');
+
+			const cookieName = state ? `openid.${providerName}.${state}` : `openid.${providerName}`;
+
+			res.cookie(cookieName, token, {
 				httpOnly: true,
 				sameSite: 'lax',
 			});
 
-			const additionalParams = { ...req.query };
-			delete additionalParams['prompt'];
-
-			return res.redirect(await provider.generateAuthUrl(codeVerifier, prompt, additionalParams));
+			return res.redirect(authUrl);
 		}),
 		respond
 	);
@@ -244,11 +251,15 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 		'/callback',
 		asyncHandler(async (req, res, next) => {
 			const redirectUrl = req.query['redirect'] as string;
+			const state = req.query['state'] as string;
+
+			const cookieName = state ? `openid.${providerName}.${state}` : `openid.${providerName}`;
+			const cookieValue = req.cookies[cookieName];
 
 			let tokenData;
 
 			try {
-				tokenData = jwt.verify(req.cookies[`openid.${providerName}`], env['SECRET'] as string, {
+				tokenData = jwt.verify(cookieValue, env['SECRET'] as string, {
 					issuer: 'directus',
 				}) as {
 					verifier: string;
@@ -256,7 +267,7 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 					prompt: boolean;
 				};
 			} catch (e: any) {
-				logger.warn(e, `[OpenID] Couldn't verify OpenID cookie`);
+				logger.warn(e, `[OpenID] Couldn't verify OpenID cookie ${state ? `for state ${state}` : ''}`);
 
 				const baseUrl = env['PUBLIC_URL'];
 				const loginPath = '/admin/login';
@@ -287,7 +298,7 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 			let authResponse;
 
 			try {
-				res.clearCookie(`openid.${providerName}`);
+				res.clearCookie(cookieName);
 
 				authResponse = await authenticationService.login(providerName, {
 					code: req.query['code'],
