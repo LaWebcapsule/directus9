@@ -1,4 +1,3 @@
----
 ## Be aware:
 #Due to the way this is imported, JavaScript reserved words, including "delete", "private",
 #"void", etc are stripped out. See
@@ -19,335 +18,398 @@
 #'Int32Array', 'Uint32Array', 'Float32Array', 'Float64Array', 'Map', 'Set', 'WeakMap', 'WeakSet',
 #'SIMD', 'ArrayBuffer', 'DataView', 'JSON', 'Promise', 'Generator', 'GeneratorFunction', 'Reflect',
 #'Proxy', 'Intl'
-identifier: ตัวบ่งชี้
-avatar: ภาพประจำตัว
-application: แอพลิเคชัน
-default_provider: ค่าเริ่มต้น
-method: เมธอด
-published: เผยแพร่แล้ว
-draft: ฉบับร่าง
-archived: เก็บถาวร
-modules: โมดูล
-module_bar: โมดูลบาร์
-logs: บันทึกย้อนหลัง
-reset_width: รีเซ็ตความกว้าง
-tile_size: ขนาดกรอบ
-edit_field: แก้ไขฟิลด์
-conditions: เงื่อนไข
-location: ตำแหน่งที่ตั้ง
-condition_rules: ลักษณะเงื่อนไข
+identifier: Identifier
+avatar: Avatar
+application: Application
+default_provider: Default
+method: Method
+published: Published
+draft: Draft
+archived: Archived
+modules: Modules
+module_bar: Module Bar
+logs: Logs
+reset_width: Reset Width
+tile_size: Tile Size
+edit_field: Edit Field
+conditions: Conditions
+location: Location
+condition_rules: Condition Rules
 input: Input
-maps: แผนที่
-switch_user: สลับผู้ใช้งาน
-item_creation: สร้างรายการ
-item_revision: ประวัติรายการ
-enter_a_name: กรอกชื่อ...
-duplicate_field: สำเนาฟิลด์
-half_width: กว้างครึ่งหนึ่ง
-full_width: กว้างเต็มหน้า
-group: กลุ่ม
-export_items: นำออกรายการ
-and: และ
-or: หรือ
-init: ริเริ่ม
-dataset_too_large_currently_showing_n_items: ฐานข้อมูลใหญ่เกินไป. สามารถแสดงได้เพียง {n} รายการ.
-modifier: แก้ไขโดย
-custom: กำหนดเอง
-hook: ฮุก
-fill_width: กว้างเติมเต็ม
-field_name_translations: คำแปลชื่อฟิลด์
-enter_password_to_enable_tfa: กรอกรหัสของคุณเพื่อเปิดการยืนยันรหัส 2 ขั้นตอน
-add_field: เพิ่มฟิลด์
-role_name: ชื่อบทบาท
-branch: สาขา
-leaf: ใบ
-indeterminate: คลุมเครือ
-edit_collection: แก้ไขคอลเลกชัน
-exclusive: เฉพาะ
-children: ลูก
-db_only_click_to_configure: 'ฐานข้อมูลเท่านั้น: คลิกเพื่อกำหนดค่า'
-show_active_items: แสดงรายการแอกทีฟ
-show_archived_items: แสดงรายการเก็บถาวร
-show_all_items: แสดงรายการทั้งหมด
-edited: ค่าที่ถูกแก้ไข
-required: จำเป็นต้องระบุ
-required_for_app_access: จำเป็นต้องระบุเพื่อเข้าถึงแอป
-requires_value: ต้องการข้อมูล
-create_preset: สร้างที่ตั้งไว้ล่วงหน้า
-create_panel: สร้างแผงควบคุม
-create_role: สร้างบทบาท
-create_user: สร้างผู้ใช้งาน
-message: ข้อความ
-create_webhook: สร้างเว็บฮุก
-create_translation_string: สร้างสตริงการแปล
-no_translation_string: ไม่มีสตริงการแปล
-invite_users: เชิญชวนผู้ใช้งาน
-invite: เชิญชวน
-email_already_invited: อีเมล "{email}" ได้รับเชิญแล้ว
-inbox: กล่องขาเข้า
-emails: อีเมล
-connection_excellent: สัญญาณดีมาก
-connection_good: สัญญาณดี
-connection_fair: สัญญาณพอใช้ได้
-connection_poor: สัญญาณอ่อน
-primary: หลัก
-rename_folder: เปลี่ยนชื่อโฟลเดอร์
-delete_folder: ลบโฟลเดอร์
-prefix: คำนำหน้า
-suffix: คำต่อท้าย
-reset_bookmark: รีเซ็ตบุ๊คมาร์ค
-update_bookmark: ปรับปรุงบุ๊คมาร์ค
-delete_bookmark: ลบ​บุ๊ค​มา​ร์ค
+maps: Maps
+switch_user: Switch User
+item_creation: Item Creation
+item_revision: Item Revision
+enter_a_name: Enter a Name...
+duplicate_field: Duplicate Field
+half_width: Half Width
+full_width: Full Width
+group: Group
+export_items: Export Items
+and: And
+or: Or
+init: Init
+dataset_too_large_currently_showing_n_items: Dataset is too large. Currently showing the first {n} items.
+modifier: Modifier
+custom: Custom
+hook: Hook
+fill_width: Fill Width
+field_name_translations: Field Name Translations
+enter_password_to_enable_tfa: Enter your password to enable Two-Factor Authentication
+add_field: Add Field
+role_name: Role Name
+branch: Branch
+leaf: Leaf
+indeterminate: Indeterminate
+edit_collection: Edit Collection
+exclusive: Exclusive
+children: Children
+db_only_click_to_configure: 'Database Only: Click to Configure'
+show_active_items: Show Active Items
+show_archived_items: Show Archived Items
+show_all_items: Show All Items
+edited: Value Edited
+required: Required
+required_for_app_access: Required for App Access
+requires_value: Requires value
+create_preset: Create Preset
+create_panel: Create Panel
+create_role: Create Role
+create_user: Create User
+message: Message
+delete_panel: Delete Panel
+create_webhook: Create Webhook
+create_translation_string: Create Translation String
+no_translation_string: No Translation Strings
+no_translation_string_copy: There are no translation strings yet.
+translation_string_key_placeholder: Translation string key...
+translation_string_translations_placeholder: Add a new translation
+edit_translation_string: Edit Translation String
+delete_translation_string_copy: >-
+  Are you sure you want to delete the translation string "{key}"? This action can not be undone.
+invite_users: Invite Users
+invite: Invite
+email_already_invited: Email "{email}" has already been invited
+subject: Subject
+inbox: Inbox
+emails: Emails
+connection_excellent: Excellent Connection
+connection_good: Good Connection
+connection_fair: Fair Connection
+connection_poor: Poor Connection
+primary: Primary
+rename_folder: Rename Folder
+delete_folder: Delete Folder
+prefix: Prefix
+suffix: Suffix
+reset_bookmark: Reset Bookmark
+update_bookmark: Update Bookmark
+delete_bookmark: Delete Bookmark
 delete_bookmark_copy: >-
-  คุณแน่ใจต้องการลบบุ๊ค​มา​ร์ค "{bookmark}"? การกระทำดังกล่าวไม่สามารถกู้คืนกลับมาได้
+  Are you sure you want to delete the "{bookmark}" bookmark? This action cannot be undone.
+delete_personal_bookmark: Delete Personal Bookmark
+delete_role_bookmark: Delete Role Bookmark
+delete_global_bookmark: Delete Global Bookmark
 logoutReason:
-  SIGN_OUT: ออกจากระบบ
-  SESSION_EXPIRED: เซสชั่นหมดอายุแล้ว
-public_label: สาธารณะ
-public_description: สามารถเข้าถึง API เหล่านี้ได้โดยไม่ต้องยืนยันตัวตน
-not_allowed: ไม่อนุญาต
-directus_version: เวอร์ชั่น Directus
-node_version: เวอร์ชั่น Node
-node_uptime: เวลาออนไลน์ Node
-os_type: ประเภท OS
-os_version: เวอร์ชั่น OS
-os_uptime: เวลาออนไลน์ OS
-os_totalmem: หน่วยความจำ OS
-archive: เก็บถาวร
-archive_confirm: คุณแน่ใจว่าจะเก็บถาวรรายการนี้?
+  SIGN_OUT: Signed out
+  SESSION_EXPIRED: Session expired
+public_label: Public
+public_description: Controls what API data is available without authenticating.
+admin_description: Initial administrative role with unrestricted App/API access.
+not_allowed: Not Allowed
+directus_version: Directus Version
+node_version: Node Version
+node_uptime: Node Uptime
+os_type: OS Type
+os_version: OS Version
+os_uptime: OS Uptime
+os_totalmem: OS Memory
+archive: Archive
+archive_confirm: Are you sure you want to archive this item?
 archive_confirm_count: >-
-  ไม่มีไอเท็มที่ถูกเลือก | คุณแน่ใจว่าต้องการจัดเก็บไอเท็มเหล่านี้? | คุณแน่ใจว่าต้องการจัดเก็บไอเท็มจำนวน {count} ไอเท็ม?
-reset_system_permissions_to: 'รีเซ็ตสิทธิ์ระบบเพื่อ:'
-reset_system_permissions_copy: สิทธิ์การเข้าถึงคอลเลกชั่นที่เคยกำหนดไว้แล้วจะถูกบันทึกทับ ยังแน่ใจที่จะทำอยู่หรือไม่?
-app_access_minimum: เข้าถึงแอปได้ขั้นต่ำ
-recommended_defaults: ค่าตั้งต้นที่แนะนำ
-unarchive: ยกเลิกการเก็บ
-unarchive_confirm: คุณแน่ใจที่จะเลิกจัดเก็บไอเท็มนี้?
-nested_files_folders_will_be_moved: ไฟล์และโฟลเดอร์ที่อยู่ข้างในจะถูกเอาออกมาข้างนอกอีกขั้น
+  No Items Selected | Are you sure you want to archive this item? | Are you sure you want to archive these {count} items?
+reset_system_permissions_to: 'Reset System Permissions to:'
+reset_system_permissions_copy:
+  - This action will overwrite any custom permissions you may have applied to the system collections. Are you sure?
+the_following_are_minimum_permissions:
+  - The following minimum permissions are automatically applied when "App Access" is enabled. You can grant additional permissions if needed, but you cannot reduce permissions below this level.
+app_access_minimum: App Access Minimum
+recommended_defaults: Recommended Defaults
+unarchive: Unarchive
+unarchive_confirm: Are you sure you want to unarchive this item?
+nested_files_folders_will_be_moved: Nested files and folders will be moved one level up.
+validation_errors_notice: 'The following fields have invalid values:'
 validationError:
-  eq: ค่าต้องเท่ากับ {valid}
-  neq: ค่าต้องไม่เท่ากับ {invalid}
-  in: ต้องเป็นค่าที่อยู่ใน {valid}
-  nin: ต้องเป็นค่าที่ไม่อยู่ใน {invalid}
-  contains: ค่าต้องมี {substring} อยู่ในนั้น
-  ncontains: ค่าต้องไม่มี {substring} อยู่ในนั้น
-  gt: ค่าต้องมากกว่า {valid}
-  gte: ค่าต้องมากกว่าหรือเท่ากับ {valid}
-  lt: ค่าต้องน้อยกว่า {valid}
-  lte: ค่าต้องน้อยกว่าหรือเท่ากับ {valid}
-  empty: ต้องเป็นค่าว่าง
-  nempty: ต้องไม่เป็นค่าว่าง
-  null: ต้องเป็นค่า null
-  nnull: ต้องไม่เป็นค่า null
-  required: ต้องระบุค่า
-  unique: ค่าต้องไม่ซ้ำ
-  regex: รูปแบบข้อมูลไม่ถูกต้อง
-all_access: เข้าถึงได้ทั้งหมด
-no_access: ไม่ให้เข้าถึงได้ทั้งหมด
-use_custom: ใช้ค่ากำหนดเอง
-nullable: สามารถเป็นค่าว่างได้
-allow_null_value: อนุญาตเป็นค่าว่างได้
-allow_multiple: ยอมให้มีหลากหลาย
-allow_multiple_to_be_open: ยอมให้เปิดได้หลากหลาย
-enter_value_to_replace_nulls: โปรดป้อนค่าใหม่ที่ไม่ใช่ค่าว่างในฟิลด์นี้
-field_standard: มาตรฐาน
-field_presentation: การแสดงผลและนาวแผง
-field_file: ไฟล์เดียว
-field_files: หลายไฟล์
-field_m2o: ความสัมพันธ์แบบ M2O
-field_m2a: ความสัมพันธ์แบบ M2A
-field_o2m: ความสัมพันธ์แบบ O2M
-field_m2m: ความสัมพันธ์แบบ M2M
-field_translations: การแปลภาษา
-field_group: กลุ่มของฟิลด์
-item_permissions: สิทธิ์การเข้าถึงไอเท็ม
-field_permissions: สิทธิ์การเข้าถึงฟิลด์
-field_validation: การตรวจสอบฟิลด์
-field_presets: ฟิลด์ที่กำหนดไว้ล่วงหน้า
-permissions_for_role: 'ไอเท็มที่บทบาท {role} สามารถ {action}'
-fields_for_role: 'ฟิลด์ที่บทบาท {role} สามารถ {action}'
-validation_for_role: 'ฟิลด์ {action} ถูกกำหนดสิทธิ์ให้บทบาท {role}'
-presets_for_role: 'ค่าตั้งต้นของฟิลด์สำหรับบทบาท {role}'
-presentation_and_aliases: การแสดงผลและนาวแผง
-revision_post_update: สิ่งที่ไอเท็มจะเป็นหลังจากอัพเดทแล้ว
-changes_made: การดปลี่ยนแปลงที่เกิดขึ้นในการแก้ไขนี้
-no_relational_data: จำไว้ว่าข้อมูลสัมพันธ์ไม่ถูกรวมอยู่ในนี้
-hide_field_on_detail: ซ่อนฟิลด์เมื่อแสดงรายละเอียด
-show_field_on_detail: แสดงฟิลด์เมื่อแสดงรายละเอียด
-delete_field: ลบฟิลด์
-fields_and_layout: ฟิลด์และเลย์เอ้าต์
-field_create_success: 'ฟิลด์ "{field}" ถูกสร้างแล้ว'
-field_update_success: 'ฟิลด์ "{field}" ถูกแก้ไขแล้ว'
-duplicate_where_to: ต้องการคัดลอกฟิลด์นี้ไปที่ไหน?
-language: ภาษา
-global: โดยรวม
-admins_have_all_permissions: ผู้ดูแลระบบมีสิทธิ์ทุกสิทธิ์
-camera: กล้อง
-min: ค่าต่ำสุด
-max: ค่าสูงสุด
-exposure: การรับแสง
-shutter: ชัตเตอร์
+  eq: Value has to be {valid}
+  neq: Value can't be {invalid}
+  in: Value has to be one of {valid}
+  nin: Value can't be one of {invalid}
+  contains: Value has to contain {substring}
+  ncontains: Value can't contain {substring}
+  gt: Value has to be greater than {valid}
+  gte: Value has to be greater than or equal to {valid}
+  lt: Value has to be less than {valid}
+  lte: Value has to be less than or equal to {valid}
+  empty: Value has to be empty
+  nempty: Value can't be empty
+  null: Value has to be null
+  nnull: Value can't be null
+  required: Value is required
+  unique: Value has to be unique
+  regex: Value doesn't have the correct format
+all_access: All Access
+no_access: No Access
+use_custom: Use Custom
+nullable: Nullable
+allow_null_value: Allow NULL value
+allow_multiple: Allow Multiple
+allow_multiple_to_be_open: Allow Multiple to be Opened
+enter_value_to_replace_nulls: Please enter a new value to replace any NULLs currently within this field.
+field_standard: Standard
+field_presentation: Presentation & Aliases
+field_file: Single File
+field_files: Multiple Files
+field_m2o: M2O Relationship
+field_m2a: M2A Relationship
+field_o2m: O2M Relationship
+field_m2m: M2M Relationship
+field_translations: Translations
+field_group: Field Group
+item_permissions: Item Permissions
+field_permissions: Field Permissions
+field_validation: Field Validation
+field_presets: Field Presets
+permissions_for_role: 'Items the {role} Role can {action}.'
+fields_for_role: 'Fields the {role} Role can {action}.'
+validation_for_role: 'Field {action} rules the {role} Role must obey.'
+presets_for_role: 'Field value defaults for the {role} Role.'
+presentation_and_aliases: Presentation & Aliases
+revision_post_create: Here is what this item looked like when it was created.
+revision_post_update: Here is what this item looked like after the update.
+changes_made: Below are the specific changes made in this revision.
+no_relational_data: Keep in mind that relational data is not included here.
+junction_field_location: Junction Fields Location
+top: Top
+bottom: Bottom
+hide_field: Hide Field
+hide_field_on_detail: Hide Field on Detail
+show_field_on_detail: Show Field on Detail
+delete_field: Delete Field
+fields_and_layout: Fields & Layout
+field_create_success: 'Created Field: "{field}"'
+field_update_success: 'Updated Field: "{field}"'
+duplicate_where_to: Where would you like to duplicate this field to?
+language: Language
+language_placeholder: Select a language...
+aggregate_function: Aggregate Function
+aggregate_precision: Aggregate Precision
+group_aggregation: Group Aggregation
+group_precision: Group Precision
+global: Global
+admins_have_all_permissions: Admins have all permissions
+camera: Camera
+show_zero: Show Zero
+create_in_advanced_field_creation_mode: Create Field in Advanced Mode
+continue_in_advanced_field_creation_mode: Continue in Advanced Field Creation Mode
+validation: Validation
+sum: Sum
+sum_distinct: Sum Distinct
+avg: Average
+avg_distinct: Average Distinct
+count: Count
+count_distinct: Count Distinct
+min: Min
+max: Max
+exposure: Exposure
+shutter: Shutter
 iso: ISO
-focal_length: ระยะโฟกัส
-schema_setup_key: ฟิลด์นี้คือชื่อคอลัมภ์ของฐานข้อมูลและ API Key
-create_field: สร้างฟิลด์
-creating_new_field: 'สร้างฟิลด์ใหม่ ({collection})'
+focal_length: Focal Length
+schema_setup_key: This field's database column name and API key
+create_field: Create Field
+creating_new_field: 'New Field ({collection})'
 field_in_collection: '{field} ({collection})'
-reset_page_preferences: รีเซ็ตการตั้งค่าเพจ
-hidden_field: ซ่อนฟิลด์
-hidden_on_detail: ซ่อนเมื่อแสดงรายละเอียด
-disabled_editing_value: ปิดไม่ให้แก้ไขค่า
-key: คีย์
-alias: นามแฝง
+reset_page_preferences: Reset Page Preferences
+hidden_field: Hidden Field
+hidden_on_detail: Hidden on Detail
+disabled_editing_value: Disable editing value
+key: Key
+alias: Alias
 bigInteger: Big Integer
-boolean: ค่าบูลีน
-date: วันที่
-date_range: ช่วงของวันที่
-datetime: วันที่และเวลา
-dateTime: วันที่และเวลา
-precision: ความแม่นยำ
-decimal: เลขฐานสิบ
-float: เลขทศนิยม
-integer: จำนวนเต็ม
+boolean: Boolean
+date: Date
+date_range: Date Range
+datetime: DateTime
+dateTime: DateTime
+precision: Precision
+decimal: Decimal
+float: Float
+integer: Integer
 json: JSON
 xml: XML
-string: ข้อความแบบสั้น
-text: ข้อความแบบยาว
-time: เวลา
+yaml: YAML
+string: String
+text: Text
+time: Time
 timestamp: Timestamp
 uuid: UUID
-hash: ค่าแฮช
-geometry.Point: จุด
-geometry.LineString: เส้น
-geometry.Polygon: โพลิกอน
-geometry.MultiPoint: หลายจุด
-geometry.MultiLineString: หลายเส้น
-geometry.MultiPolygon: หลายโพลิกอน
-not_available_for_type: ไม่มีสำหรับชนิดนี้
-create_translations: สร้างการแปลใหม่
-auto_refresh: รีเฟรซอัตโนมัติ
-refresh_interval: ช่วงรีเฟรซ
-no_refresh: อย่ารีเฟรซ
-refresh_interval_seconds: รีเฟรชทันที หรือทุกวินาที หรือทุกๆ {seconds} วินาที
-refresh_interval_minutes: ทุกนาที หรือทุก {minutes} นาที
-auto_generate: สร้างอัตโนมัติ
-this_will_auto_setup_fields_relations: นี่จะตั้งค่าทุกฟิลด์ และความสัมพันธ์ที่จำเป็นโดยอัตโนมัติ
-click_here: คลิกที่นี่
-to_manually_setup_translations: ตั้งค่าการแปลภาษาเอง
+hash: Hash
+geometry: Geometry (All)
+geometry.Point: Point
+geometry.LineString: LineString
+geometry.Polygon: Polygon
+geometry.MultiPoint: MultiPoint
+geometry.MultiLineString: MultiLineString
+geometry.MultiPolygon: MultiPolygon
+not_available_for_type: Not Available for this Type
+create_translations: Create Translations
+auto_refresh: Auto Refresh
+refresh_interval: Refresh Interval
+no_refresh: Do not refresh
+refresh_interval_seconds: Refresh Instantly | Every Second | Every {seconds} Seconds
+refresh_interval_minutes: Every Minute | Every {minutes} Minutes
+auto_generate: Auto-Generate
+this_will_auto_setup_fields_relations: This will automatically setup all required fields and relations.
+click_here: Click here
+to_manually_setup_translations: to manually setup translations.
 click_to_manage_translated_fields: >-
-  ยังไม่มีฟิลด์ที่ถูกแปล คลิ๊กตรงนี้เพื่อเริ่มแปล | มี 1 ฟิลด์ที่ถูกแปลแล้ว คลิ๊กตรงนี้เพื่อจัดการ | มี {count} ฟิลด์ที่ถูกแปลแล้ว คลิ๊กตรงนี้เพื่อจัดการ
-fields_group: กลุ่มของฟิลด์
-no_collections_found: ไม่พบตาราง
-new_data_alert: 'สิ่งเหล่านี้จะถูกสร้างใน Data Model ของคุณ'
-search_collection: ค้นหาตาราง...
-search_field: ค้นหาฟิลด์...
-new_field: 'สร้างฟิลด์ใหม่'
-new_collection: 'คอลเลกชันใหม่'
-choose_a_type: เลือกชนิด...
-determined_by_relationship: กำหนดโดยความสัมพันธ์
-add_note: เพิ่มโน้ตเพื่อแนะนำผู้ใช้
-default_value: ค่าเริ่มต้น
-standard_field: ฟิลด์หลัก
-single_file: ไฟล์เดียว
-multiple_files: หลายไฟล์
-m2o_relationship: ความสัมพันธ์แบบ Many to One
-o2m_relationship: ความสัมพันธ์แบบ One to Many
-m2m_relationship: ความสัมพันธ์แบบ Many to Many
-m2a_relationship: ความสัมพันธ์แบบ Many to Any
-invalid_item: ไอเท็มไม่ถูกต้อง
-modal: กล่อง
-next: ถัดไป
-field_name: ชื่อฟิลด์
-translations: การแปลภาษา
-left_to_right: ซ้ายไปขวา
-right_to_left: ขวาไปซ้าย
-note: หมายเหตุ
-enter_a_value: กรุณาใส่ค่า
-enter_a_placeholder: กรุณาใส่คำแนะนำในช่องสำหรับกรอก
-length: ความยาว
-precision_scale: ความแม่นยำ และมาตราส่วน
-readonly: อ่านเท่านั้น
-unique: ไม่ซ้ำ
-updated_on: แก้ไขเมื่อ
-updated_by: แก้ไขโดย
-primary_key: คีย์หลัก
-foreign_key: คีย์นอก
-finish_setup: ตั้งค่าเสร็จ
-dismiss: ปิด
-raw_value: ข้อมูลดิบ
-view_raw_value: ดูค่าของข้อมูล
-edit_raw_value: แก้ไขข้อมูลดิบ
-enter_raw_value: กรุณาใส่ข้อมูลดิบ
-clear_value: ล้างค่า
-clear_changes: ล้างการเปลี่ยนแปลง
-clear_items: ล้างรายการ
-reset_to_default: รีเซ็ตเป็นค่าเริ่มต้น
-undo_changes: ยกเลิกการเปลี่ยนแปลง
-notifications: การแจ้งเตือน
-show_all_activity: แสดงทุกกิจกรรม
-page_not_found: ไม่พบหน้านี้
-page_not_found_body: ไม่มีหน้าที่คุณกำลังมองหา
-confirm_revert: ยืนยันการย้อนกลับ
-confirm_revert_body: นี่จะเป็นการย้อนกลับไอเท็มไปยังสถานะที่เลือก
-display: การแสดงผล
-settings_update_success: ปรับปรุงการตั้งค่าเรียบร้อยแล้ว
-title: ตำแหน่ง
-revision_delta_created: สร้างแล้ว
-revision_delta_created_externally: ถูกสร้างจากภายนอก
-revision_delta_updated: 'อัพเดทแล้ว 1 ฟิลด์ | อัพเดทแล้ว {count} ฟิลด์'
-revision_delta_deleted: ลบแล้ว
-revision_delta_reverted: แปลงกลับแล้ว
-revision_delta_other: ประวัติการปรับปรุง
-revision_delta_by: '{date} โดย {user}'
-download_page_as_csv: 'ดาวน์โหลดหน้าเป็น CSV'
-private_user: ผู้ใช้งานแบบส่วนตัว
-revision_preview: ตัวอย่างประวัติการแก้ไข
-updates_made: อัพเดทแล้ว
-leave_comment: แสดงความคิดเห็น
-post_comment_success: ความคิดเห็นถูกโพสต์แล้ว
-item_create_success: ไอเท็มถูกสร้างแล้ว|ไอเท็มถูกสร้างแล้ว
-item_update_success: ไอเท็มถูกแก้ไขแล้ว|ไอเท็มถูกแก้ไขแล้ว
-item_delete_success: ไอเท็มถูกลบแล้ว|ไอเท็มถูกลบแล้ว
-this_collection: คอลเลกชันนี้
-related_collection: คอลเลกชันที่เกี่ยวข้อง
-related_collections: คอลเลกชันที่เกี่ยวข้อง
-translations_collection: การแปลตาราง
-languages_collection: คอลเลกชันภาษา
-import_data_input_placeholder: CSV หรือ JSON
-import_data_button: เริ่มการนำเข้า
-import_data_indeterminate: กำลังนำเข้าข้อมูล...
-import_data_success: นำเข้าข้อมูลจากไฟล์ {filename} สำเร็จ
-import_data_error: โครงสร้างของไฟล์ไม่ตรงกับ collection
-label_import: นำ​เข้า
-label_export: นำออก
-import_export: นำเข้า/นำออก
-format: รูปแบบ
-last_page: หน้าสุดท้าย
-last_access: การเข้าถึงล่าสุด
-fill_template: กรอกด้วยค่าจากแม่แบบ
-a_unique_table_name: ชื่อตารางที่ต้องไม่ซ้ำกับที่มีอยู่
-a_unique_column_name: ชื่อคอลัมน์ที่ต้องไม่ซ้ำกับที่มีอยู่
-enable_custom_values: เปิดการกำหนดค่าได้เอง
-submit: ส่งข้อมูล
-move_to_folder: ย้ายไปยังโฟลเดอร์
-move: ย้าย
-system: ระบบ
-add_field_related: เพิ่มฟิลด์ไปยังคอลเลกชันที่เกี่ยวข้อง
-interface_label: อินเทอร์เฟซ
-today: วันนี้
-yesterday: เมื่อวาน
-delete_comment: ลบความคิดเห็น
-delete_share: ลบการแชร์
+  There are no translated fields yet. Click here to create them. | There is one translated field. Click here to manage it. | There are {count} translated fields. Click here to manage them.
+fields_group: Fields Group
+no_collections_found: No collections found.
+new_data_alert: 'The following will be created within your Data Model:'
+search_collection: Search Collection...
+search_field: Search Field...
+new_field: 'New Field'
+new_collection: 'New Collection'
+add_m2o_to_collection: 'Add M2O to "{collection}"'
+add_o2m_to_collection: 'Add O2M to "{collection}"'
+add_m2m_to_collection: 'Add M2M to "{collection}"'
+choose_a_type: Choose a Type...
+determined_by_relationship: Determined by Relationship
+add_note: Add a helpful note for users...
+add_link: Add Link
+custom_link: Custom Link
+default_value: Default Value
+standard_field: Standard Field
+single_file: Single File
+multiple_files: Multiple Files
+m2o_relationship: Many to One Relationship
+o2m_relationship: One to Many Relationship
+m2m_relationship: Many to Many Relationship
+m2a_relationship: Many to Any Relationship
+invalid_item: Invalid Item
+require_confirmation: Require Confirmation
+dialog: Dialog
+modal: Modal
+confirmation_dialog: Confirmation Dialog
+confirmation_description: Confirmation Description
+confirmation_input_fields: Confirmation Input Fields
+next: Next
+field_name: Field Name
+translations: Translations
+no_translations: No Translations
+left_to_right: Left to Right
+right_to_left: Right to Left
+note: Note
+enter_a_value: Enter a value...
+enter_a_placeholder: Enter a placeholder...
+length: Length
+soft_length: Soft Limit
+precision_scale: Precision & Scale
+readonly: Readonly
+unique: Unique
+updated_on: Updated On
+updated_by: Updated By
+primary_key: Primary Key
+foreign_key: Foreign Key
+field_key: Field Key
+finish_setup: Finish Setup
+dismiss: Dismiss
+toggle_raw_editor: Toggle Raw Editor
+raw_editor_placeholder: "{'{'}{'{'}$trigger.payload.example{'}'}{'}'}"
+raw_value: Raw value
+copy_raw_value: Copy Raw Value
+copy_raw_value_success: Copied
+copy_raw_value_fail: Copy Failed
+paste_raw_value: Paste Raw Value
+paste_raw_value_success: Pasted
+paste_raw_value_fail: Paste Failed
+view_raw_value: View Raw Value
+edit_raw_value: Edit Raw Value
+enter_raw_value: Enter raw value...
+clear_value: Clear Value
+clear_changes: Clear Changes
+clear_items: Clear Items
+reset_to_default: Reset to Default
+undo_changes: Undo Changes
+notifications: Notifications
+show_all_activity: Show All Activity
+page_not_found: Page Not Found
+page_not_found_body: The page you are looking for doesn't seem to exist.
+confirm_revert: Confirm Revert
+confirm_revert_body: This will revert the item to the selected state.
+display: Display
+settings_update_success: Settings updated
+title: Title
+revision_delta_created: Created
+revision_delta_created_externally: Created Externally
+revision_delta_updated: 'Updated 1 Field | Updated {count} Fields'
+revision_delta_deleted: Deleted
+revision_delta_reverted: Reverted
+revision_delta_update_message: This field has been updated but its value is being concealed for security reasons.
+revision_delta_other: Revision
+revision_delta_by: '{date} by {user}'
+presentation_text_values_cannot_be_reimported: "Uses presentation text, values can not be re-imported."
+download_page_as_csv: 'Download Page as CSV'
+private_user: Private User
+creation_preview: Creation Preview
+revision_preview: Revision Preview
+updates_made: Updates Made
+leave_comment: Leave a comment...
+post_comment_success: Comment posted
+post_comment_updated: Comment updated
+item_create_success: Item Created | Items Created
+item_update_success: Item Updated | Items Updated
+item_delete_success: Item Deleted | Items Deleted
+this_collection: This Collection
+related_collection: Related Collection
+related_collections: Related Collections
+translations_collection: Translation Collection
+languages_collection: Languages Collection
+import_data_input_placeholder: CSV or JSON...
+import_data_button: Start Import
+import_data_indeterminate: Importing Data...
+import_data_success: Data successfully imported from {filename}
+import_data_error: This file's data structure doesn't match the collection.
+label_import: Import
+label_export: Export
+import_export: Import / Export
+format: Format
+last_page: Last Page
+last_access: Last Access
+fill_template: Fill with Template Value
+a_unique_table_name: A unique table name...
+a_unique_column_name: A unique column name...
+enable_custom_values: Enable custom values
+submit: Submit
+move_to_folder: Move to Folder
+move: Move
+system: System
+add_field_related: Add Field to Related Collection
+interface_label: Interface
+today: Today
+yesterday: Yesterday
+delete_comment: Delete Comment
+delete_share: Delete Share
 functions:
-  year: ปี
-  month: เดือน
-  week: สัปดาห์
-  day: วัน
-  weekday: ลำดับวัน
-  hour: ชั่วโมง
-  minute: นาที
-  second: วินาที
-  count: นับจำนวน
+  year: Year
+  month: Month
+  week: Week
+  day: Day
+  weekday: Weekday
+  hour: Hour
+  minute: Minute
+  second: Second
+  count: Count
 date-fns_date: PPP
 date-fns_time: 'h:mm:ss a'
 date-fns_time_no_seconds: 'h:mm a'
@@ -356,1134 +418,1745 @@ date-fns_time_no_seconds_24hour: 'HH:mm'
 date-fns_date_short: 'MMM d, u'
 date-fns_time_short: 'h:mma'
 date-fns_date_short_no_year: MMM d
-minutes: นาที
-hours: ชั่วโมง
-month: เดือน
-year: ปี
-select_all: เลือกทั้งหมด
+minutes: Minutes
+hours: Hours
+month: Month
+year: Year
+select_all: Select All
 months:
-  january: มกราคม
-  february: กุมภาพันธ์
-  march: มีนาคม
-  april: เมษายน
-  may: พฤษภาคม
-  june: มิถุนายน
-  july: กรกฎาคม
-  august: สิงหาคม
-  september: กันยายน
-  october: ตุลาคม
-  november: พฤศจิกายน
-  december: ธันวาคม
-drag_mode: โหลดคลิ๊กแล้วลาก
-cancel_crop: ยกเลิกการครอบตัด
-original: ต้นฉบับ
+  january: January
+  february: February
+  march: March
+  april: April
+  may: May
+  june: June
+  july: July
+  august: August
+  september: September
+  october: October
+  november: November
+  december: December
+drag_mode: Drag Mode
+cancel_crop: Cancel Crop
+original: Original
 url: URL
-import_label: นำ​เข้า
-file_details: รายละเอียดไฟล์
-dimensions: ขนาด
-size: ขนาด
-created: สร้างแล้ว
-modified: ถูกแก้ไข
+import_label: Import
+file_details: File Details
+dimensions: Dimensions
+size: Size
+created: Created
+modified: Modified
 checksum: Checksum
-owner: เจ้าของ
-edited_by: แก้ไขโดย
-folder: โฟลเดอร์
-zoom: ซูม
-download: ดาวน์โหลด
-open: เปิด
-open_in_new_window: เปิดในหน้าต่างใหม่
-open_folder: เปิดโฟลเดอร์ {folder}
-foreground_color: สีพื้นด้านหน้า
-background_color: สีพื้นหลัง
-upload_from_device: อัพโหลดจากอุปกรณ์
-choose_from_library: เลือกจากไลบรารี
-import_from_url: นำเข้าไฟล์จาก URL
-replace_from_device: แทนที่ไฟล์จากอุปกรณ์
-replace_from_library: แทนที่ไฟล์จากไลบรารี
-replace_from_url: แทนที่ไฟล์จาก URL
-no_file_selected: ไม่มีไฟล์ที่เลือก
-download_file: ดาวน์โหลดไฟล์
-collection_key: คีย์ของคอลเลกชัน
-name: ชื่อ
-primary_key_field: ฟิล์ของคีย์หลัก
-type: ชนิด
-creating_new_collection: สร้างคอลเลกชันใหม่
-created_by: สร้างโดย
-created_on: สร้างเมื่อ
-creating_collection_info: ตั้งชื่อคอลเลกชันและกำหนด คีย์ ที่ต้องไม่ซ้ำกัน
-creating_collection_system: เปิดใช้งานและแก้ไขชื่อให้ฟิลด์ที่ไม่จำเป็น
-auto_increment_integer: ตัวเลขที่เพิ่มขึ้นอัตโนมัติ
-generated_uuid: UUID ที่ถูกสร้างโดยอัตโนมัติ
-manual_string: กรอกข้อความด้วยตนเอง
-save_and_create_new: บันทึกและสร้างใหม่อีก
-save_and_stay: บันทึกและอยู่หน้าเดิม
-save_as_copy: บันทึกเป็นสำเนา
-add_existing: เพิ่มจากที่มีอยู่
-creating_items: สร้างรายการ
-enable_create_button: เปิดใช้งานปุ่มสร้าง
-selecting_items: เลือกรายการ
-enable_select_button: เปิดใช้งานปุ่มเลือก
-comments: ความคิดเห็น
-no_comments: ยังไม่มีความเห็น
-click_to_expand: คลิกเพื่อขยาย
-select_item: เลือกรายการ
-no_items: ไม่มีรายการ
-search_items: ค้นหารายการ
-disabled: ปิดใช้งาน
-information: ข้อมูล
-report_bug: รายงานข้อบกพร่อง
-request_feature: ขอฟีเจอร์ใหม่ๆ
-interface_not_found: 'ไม่พบอินเทอร์เฟส "{interface}"'
-reset_interface: ล้างการตั้งค่าอินเทอร์เฟส
-display_not_found: 'ไม่พบการแสดงผล "{display}"'
-reset_display: ล้างค่าการแสดงผล
-list-m2a: ตัวสร้าง (M2A)
-item_count: 'ไม่พบไอเท็ม|1 ไอเท็ม|{count} ไอเท็ม'
-no_items_copy: ไม่มีรายการในคอลเล็กชันนี้
-file_count: 'ไม่มีไฟล์ | 1 ไฟล์ | {count} ไฟล์'
-no_files_copy: ไม่มีไฟล์ที่นี่
-user_count: 'ไม่มีผู้ใช้ | ผู้ใช้ 1 คน | ผู้ใช้ {count} คน'
-no_users_copy: ยังไม่มีผู้ใช้ในบทบาท
-webhooks_count: 'ไม่มี webhook | มี 1 webhook | มี {count} webhook'
-no_webhooks_copy: ยังไม่มีการกำหนดค่าเว็บฮุค เริ่มต้นด้วยการสร้างด้านล่าง
-no_notifications: ไม่มีการแจ้งเตือน
-activity_log: รายงานกิจกรรม
-all_items: รายการทั้งหมด
-any: ใด ๆ
+owner: Owner
+edited_by: Edited by
+folder: Folder
+zoom: Zoom
+download: Download
+open: Open
+open_in_new_window: Open in New Window
+open_folder: Open "{folder}" folder
+foreground_color: Foreground Color
+background_color: Background Color
+upload_from_device: Upload File from Device
+choose_from_library: Choose File from Library
+import_from_url: Import File from URL
+replace_from_device: Replace File from Device
+replace_from_library: Replace File from Library
+replace_from_url: Replace File from URL
+no_file_selected: No File Selected
+download_file: Download File
+open_file_in_tab: Open file in new tab
+start_export: Start Export
+not_available_for_local_downloads: Not available for local downloads
+exporting_all_items_in_collection: Exporting all {total} items within {collection}.
+exporting_limited_items_in_collection: Exporting {limit} out of {total} items within {collection}.
+exporting_no_items_to_export: No items to export. Adjust the exporting configuration below.
+exporting_download_hint: Once completed, this {format} file will automatically be downloaded to your device.
+exporting_batch_hint:
+  - This export will be processed in batches, and once completed, the {format} file will be saved to the File Library.
+exporting_batch_hint_forced:
+  - Due to the large number of items, this export must be processed in batches, and once completed, the {format} file will
+  - be saved to the File Library.
+collection_key: Collection Key
+name: Name
+primary_key_field: Primary Key Field
+type: Type
+creating_new_collection: Creating New Collection
+created_by: Created By
+created_on: Created On
+creating_collection_info: Name the collection and setup its unique “key” field...
+creating_collection_system: Enable and rename any of these optional fields.
+auto_increment_integer: Auto-incremented integer
+auto_increment_big_integer: Auto-incremented big integer
+generated_uuid: Generated UUID
+manual_string: Manually entered string
+save_and_create_new: Save and Create New
+save_and_stay: Save and Stay
+save_as_copy: Save as Copy
+add_existing: Add Existing
+creating_items: Creating Items
+enable_create_button: Enable Create Button
+selecting_items: Selecting Items
+enable_select_button: Enable Select Button
+allow_duplicates: Allow Duplicates
+comments: Comments
+no_comments: No Comments Yet
+click_to_expand: Click to Expand
+select_item: Select Item
+no_items: No items
+search_items: Search items...
+disabled: Disabled
+information: Information
+report_bug: Report Bug
+request_feature: Request Feature
+request_body: Request Body
+interface_not_found: 'Interface "{interface}" not found.'
+operation_not_found: 'Operation "{operation}" not found.'
+reset_interface: Reset Interface
+display_not_found: 'Display "{display}" not found.'
+reset_display: Reset Display
+list-m2a: Builder (M2A)
+item_count: 'No Items | One Item | {count} Items'
+no_items_copy: There are no items in this collection yet.
+file_count: 'No Files | One File | {count} Files'
+no_files_copy: There are no files here.
+user_count: 'No Users | One User | {count} Users'
+no_users_copy: There are no users in this role yet.
+webhooks_count: 'No Webhooks | One Webhook | {count} Webhooks'
+no_webhooks_copy: No webhooks have been configured yet. Get started by creating one below.
+no_notifications: No Notifications
+no_notifications_copy: You're all caught up!
+activity_log: Activity Log
+all_items: All Items
+any: Any
 csv: CSV
-no_collections: ไม่มีคอลเลกชัน
-create_collection: สร้างคอลเลกชัน
-no_collections_copy_admin: ยังไม่มีคอลเลกชันใดๆ คลิ๊กที่ปุ่มด้านล่างเพื่อสร้าง
-no_collections_copy: ยังไม่มีคอลเลกชันใดๆ กรุณาติดต่อผู้ดูแลระบบ
-relationship_not_setup: ความสัมพันธ์ยังไม่ถูกตั้งค่าให้ถูกต้อง
-display_template_not_setup: การตั้งค่าของการแสดงผลไม่ถูกต้อง
-collection_field_not_setup: การตั้งค่าของฟิลด์ยังไม่ถูกต้อง
-select_a_collection: เลือกคอลเลกชัน
-select_a_field: เลือกฟิลด์
-active: เปิดใช้งาน
-move_to: ย้ายไปที่...
-copy: คัดลอก
-copy_to: คัดลอกไปที่
-inactive: ไม่ใช้งาน
-users: ผู้ใช้
-activity: กิจกรรม
-activity_item: ฟีดกิจกรรม
-action: ดำเนินการ
-ip_address: หมายเลขไอพี
-user_agent: ตัวแทนของผู้ใช้
+no_collections: No Collections
+create_collection: Create Collection
+no_collections_copy_admin: You don’t have any Collections yet. Click the button below to get started.
+no_collections_copy: You don’t have any Collections yet. Please contact your system administrator.
+relationship_not_setup: The relationship hasn't been configured correctly
+no_singleton_relations: Relationships to Singletons are not supported
+display_template_not_setup: The display template option is misconfigured
+collection_field_not_setup: The collection field option is misconfigured
+select_a_collection: Select a Collection
+select_a_field: Select a Field
+active: Active
+move_to: Move To...
+copy: Copy
+copy_to: Copy To...
+no_other_dashboards_copy: You don't have any other Dashboards yet.
+inactive: Inactive
+users: Users
+activity: Activity
+activity_item: Activity Item
+action: Action
+ip_address: IP Address
+user_agent: User Agent
+origin: Origin
 webhooks: Webhooks
-decimals: เลขฐานสิบ
-min_value: ค่าต่ำสุด
-max_value: ค่าสูงสุด
-automatic: อัตโนมัติ
-field_width: ความกว้างของฟิลด์
-add_filter: เพิ่มตัวกรอง
-upper_limit: ขีดจำกัดบน
-lower_limit: ขีดจำกัดล่าง
-user_directory: ไดเรกทอรีของผู้ใช้
-documentation: เอกสาร
-sidebar: แถบด้านข้าง
-duration: ระยะเวลา
-charset: 'ชุดอักขระ:'
-second: วินาที
-file_moved: ย้ายไฟล์เสร็จสิ้น
-collection_created: คอลเลกชันถูกสร้างแล้ว
-modified_on: ถูกแก้ไขเมื่อ
-card_size: ขนาดการ์ด
-sort_field: เรียงฟิลด์
-add_sort_field: เพิ่มฟิลด์สำหรับเรียง
-sort: เรียง
-status: สถานะ
-remove: เอาออก
-toggle_manual_sorting: สลับค่าการเรียงด้วยตนเอง
-bookmark_doesnt_exist: ไม่มีบุ๊กมาร์ก
-bookmark_doesnt_exist_copy: ไม่พบบุ๊กมาร์กที่พยายามเปิด
-bookmark_doesnt_exist_cta: กลับไปยังคอลเลกชัน
-select_an_item: เลือก 1 รายการ
-edit: แก้ไข
-enabled: เปิดใช้งาน
-disable_tfa: ปิดใช้งาน 2FA
-tfa_scan_code: สแกนโค้ดในแอป Autuehticator เพื่อตั้งค่า 2FA ให้เสร็จ
-enter_otp_to_disable_tfa: กรอก OTP เพื่อปิดการทำงาน 2FA
-create_account: สร้างบัญชี
-account_created_successfully: สร้างบัญชีสำเร็จ
-auto_fill: กรอกอัตโนมัติ
-corresponding_field: ฟิลด์ที่สอดคล้องกัน
+decimals: Decimals
+value_decimals: Value Decimals
+min_value: Min Value
+max_value: Max Value
+automatic: Automatic
+field_width: Field Width
+add_filter: Add Filter
+upper_limit: Upper limit...
+lower_limit: Lower limit...
+user_directory: User Directory
+documentation: Documentation
+sidebar: Sidebar
+duration: Duration
+charset: Charset
+second: second
+file_moved: File Moved
+collection_created: Collection Created
+modified_on: Modified On
+card_size: Card Size
+sort_field: Sort Field
+add_sort_field: Add Sort Field
+sort: Sort
+status: Status
+remove: Remove
+toggle_manual_sorting: Toggle Manual Sorting
+bookmark_doesnt_exist: Bookmark Doesn't Exist
+bookmark_doesnt_exist_copy: The bookmark you're trying to open couldn't be found.
+bookmark_doesnt_exist_cta: Return to collection
+select_an_item: Select an item...
+edit: Edit
+enabled: Enabled
+disable_tfa: Disable 2FA
+admin_disable_tfa_text: Are you sure you want to disable 2FA for this user?
+tfa_setup: Setup 2FA
+tfa_scan_code: Scan the code in your authenticator app to finish setting up 2FA
+enter_otp_to_disable_tfa: Enter the OTP to disable 2FA
+create_account: Create Account
+account_created_successfully: Account Created Successfully
+auto_fill: Auto Fill
+corresponding_field: Corresponding Field
 errors:
-  COLLECTION_NOT_FOUND: "ไม่พบคอลเลกชัน"
-  FIELD_NOT_FOUND: ไม่พบฟิลด์
-  FORBIDDEN: ไม่ได้รับอนุญาต
-  INVALID_CREDENTIALS: ชื่อผู้ใช้หรือรหัสผ่านผิด
-  INVALID_OTP: OTP ไม่ถูกต้อง
-  INVALID_PAYLOAD: payload ไม่ถูกต้อง
-  INVALID_QUERY: query ไม่ถูกต้อง
-  ITEM_LIMIT_REACHED: ไอเท็มถึงขีดจำกัด
-  ITEM_NOT_FOUND: ไม่พบไอเท็ม
-  ROUTE_NOT_FOUND: ไม่พบข้อมูลที่ต้องการ
-  RECORD_NOT_UNIQUE: พบค่าที่ซ้ำกัน
-  USER_SUSPENDED: ผู้ใช้ถูกระงับ
-  CONTAINS_NULL_VALUES: ฟิลด์มีค่าว่าง
-  UNPROCESSABLE_ENTITY: เอ็นติตี้ที่ประมวลผลไม่ได้
-  INTERNAL_SERVER_ERROR: พบข้อผิดพลาดบางอย่างที่ไม่คาดคิด
-  NOT_NULL_VIOLATION: ต้องไม่เป็นค่า null
-  ILLEGAL_ASSET_TRANSFORMATION: ขนาดของภาพเกินกำหนด
-  UNKNOWN: พบข้อผิดพลาดบางอย่างที่ไม่คาดคิด
-security: ความปลอดภัย
-value_hashed: ข้อมูลถูกเข้ารหัสไว้อย่างปลอดภัย
-bookmark_name: ชื่อบุ๊กมาร์ก...
-create_bookmark: สร้างบุ๊กมาร์ก
-edit_bookmark: แก้ไขบุ๊กมาร์ก
-bookmarks: บุ๊กมาร์ก
-presets: ที่ตั้งไว้ล่วงหน้า
-unexpected_error: พบข้อผิดพลาดบางอย่างที่ไม่คาดคิด
-unexpected_error_copy: เกิดข้อผิดพลาดที่ไม่คาดคิด กรุณาลองใหม่อีกครั้งในภายหลัง
-copy_details: คัดลอกรายละเอียด
-no_app_access: ไม่สามารถเข้าถึงแอป
-no_app_access_copy: ผู้ใช้นี้ไม่ได้รับอนุญาตให้เข้าถึงส่วนแอดมิน
-password_reset_successful: รหัสผ่านถูกรีเซ็ตแล้ว
-back: ย้อนกลับ
-filter: ตัวกรอง
-editing_image: แก้ไขรูปภาพ
-square: สี่เหลี่ยมจัตุรัส
-free: อิสระ
-flip_horizontal: พลิกตามแนวนอน
-flip_vertical: พลิกตามแนวตั้ง
-aspect_ratio: ตามอัตราส่วนภาพ
-rotate: หมุน
-all_users: ผู้ใช้ทั้งหมด
-delete_collection: ลบคอลเลกชัน
-update_collection_success: แก้ไขคอลเลกชัน
-delete_collection_success: คอลเลกชันถูกลบแล้ว
-make_collection_visible: แสดงคอลเลคชั่น
-make_collection_hidden: ซ่อนคอลเลคชั่น
-start_end_of_count_items: '{start}-{end} ของ {count} ไอเท็ม'
-start_end_of_count_filtered_items: '{start}-{end} ของ {count} ไอเท็มที่ถูกกรอง'
-one_item: '1 รายการ'
-one_filtered_item: 'มี 1 ไอเท็มที่ถูกกรอง'
-collections_shown: แสดงคอลเลกชัน
-visible_collections: คอลเลกชันที่มองเห็นได้
-hidden_collections: คอลเลกชันที่ซ่อนอยู่
-show_hidden_collections: แสดงคอลเลกชันที่ซ่อนอยู่
-hide_hidden_collections: ซ่อนคอลเลกชันที่ซ่อนอยู่
-show_header: แสดง หัวเรื่อง
-unmanaged_collections: คอลเลกชันที่ยังไม่ถูกตั้งค่า
-system_collections: คอลเลกชันของระบบ
-placeholder: ค่าที่ใช้ชั่วคราว
-icon_left: ไอคอนทางซ้าย
-icon_right: ไอคอนทางขวา
-count_other_revisions: 'ยังมีอีก {count} การแก้ไข'
-font: ฟอนท์
+  COLLECTION_NOT_FOUND: "Collection doesn't exist"
+  FIELD_NOT_FOUND: Field not found
+  FORBIDDEN: Forbidden
+  INVALID_CREDENTIALS: Wrong username or password
+  INVALID_OTP: Wrong one-time password
+  INVALID_PAYLOAD: Invalid payload
+  INVALID_PROVIDER: User belongs to a different auth provider
+  INVALID_QUERY: Invalid query
+  INVALID_CONFIG: Invalid config
+  INVALID_TOKEN: Invalid token
+  INVALID_IP: IP Address not allowed
+  INVALID_USER: Failed to authenticate user
+  ITEM_LIMIT_REACHED: Item limit reached
+  ITEM_NOT_FOUND: Item not found
+  ROUTE_NOT_FOUND: Not found
+  RECORD_NOT_UNIQUE: Duplicate value detected
+  USER_SUSPENDED: User Suspended
+  CONTAINS_NULL_VALUES: Field contains null values
+  UNPROCESSABLE_ENTITY: Unprocessable entity
+  INTERNAL_SERVER_ERROR: Unexpected Error
+  NOT_NULL_VIOLATION: Value can't be null
+  ILLEGAL_ASSET_TRANSFORMATION: Image source too large to preview
+  VALUE_TOO_LONG: Value is too long
+  VALUE_OUT_OF_RANGE: Value is out of range
+  INVALID_FOREIGN_KEY: Invalid foreign key
+  UNKNOWN: Unexpected Error
+  GRAPHQL_VALIDATION_EXCEPTION: GraphQL Validation Exception
+  SERVICE_UNAVAILABLE: Service Unavailable
+  UNSUPPORTED_MEDIA_TYPE: Unsupported media type
+  UNEXPECTED_RESPONSE: Unexpected response
+  TOKEN_EXPIRED: Token expired
+  RANGE_NOT_SATISFIABLE: Invalid range
+  METHOD_NOT_ALLOWED: Method not allowed
+  REQUESTS_EXCEEDED: Requests limit reached
+security: Security
+value_hashed: Value Securely Hashed
+bookmark_name: Bookmark name...
+create_bookmark: Create Bookmark
+edit_bookmark: Edit Bookmark
+edit_personal_bookmark: Edit Personal Bookmark
+edit_role_bookmark: Edit Role Bookmark
+edit_global_bookmark: Edit Global Bookmark
+cannot_edit_role_bookmarks: Can't Edit Role Bookmarks
+cannot_edit_global_bookmarks: Can't Edit Global Bookmarks
+bookmarks: Bookmarks
+presets: Presets
+unexpected_error: Unexpected Error
+unexpected_error_copy: An unexpected error has occurred. Please try again later.
+copy_details: Copy Details
+no_app_access: No App Access
+no_app_access_copy: This user isn't allowed to use the admin app.
+password_reset_sent: If you have an account, we've sent you a secure link to reset your password
+password_reset_successful: Password successfully reset
+back: Back
+filter: Filter
+edit_image: Edit Image
+editing_image: Editing Image
+square: Square
+free: Free
+flip_horizontal: Flip Horizontal
+flip_vertical: Flip Vertical
+aspect_ratio: Aspect Ratio
+rotate: Rotate
+all_users: All Users
+delete_collection: Delete Collection
+update_collection_success: Updated Collection
+delete_collection_success: Deleted Collection
+make_collection_visible: Make Collection Visible
+make_collection_hidden: Make Collection Hidden
+make_folder_visible: Make Folder Visible
+make_folder_hidden: Make Folder Hidden
+goto_collection_content: View Content
+start_end_of_count_items: '{start}-{end} of {count} items'
+start_end_of_count_filtered_items: '{start}-{end} of {count} filtered items'
+one_item: '1 item'
+one_filtered_item: '1 filtered item'
+delete_collection_are_you_sure: >-
+  Are you sure you want to delete the collection "{collection}"? This will delete the collection and all items in it. This action is permanent.
+delete_folder_are_you_sure: Are you sure you want to delete the folder "{folder}"? Nested folders and collections will be moved to the top most level.
+delete_collection_peer_dependencies: The following fields will be deleted as well, as they are related to the current collection.
+collections_shown: Collections Shown
+visible_collections: Visible Collections
+hidden_collections: Hidden Collections
+show_hidden_collections: Show Hidden Collections
+hide_hidden_collections: Hide Hidden Collections
+show_header: Show Header
+unmanaged_collections: Unconfigured Collections
+system_collections: System Collections
+placeholder: Placeholder
+icon_left: Icon Left
+icon_right: Icon Right
+count_other_revisions: '{count} Other Revisions'
+font: Font
 sans_serif: Sans Serif
 serif: Serif
 monospace: Monospace
-divider: ตัวแบ่ง
-color: สี
-circle: วงกลม
-empty_item: ไอเท็มเปล่า
-log_in_with: 'ลงชื่อเข้าใช้ด้วย {provider}'
-conditional_styles: ลักษณะเงื่อนไข
-advanced_settings: การตั้งค่าขั้นสูง
-advanced_filter: ตัวกรองขั้นสูง
-delete_advanced_filter: ลบตัวกรองนี้
-change_advanced_filter_operator: เปลี่ยนตัวดำเนินการ
+divider: Divider
+color: Color
+circle: Circle
+empty_item: Empty Item
+log_in_with: 'Log In with {provider}'
+conditional_styles: Conditional Styles
+advanced_settings: Advanced Settings
+advanced_filter: Advanced Filter
+delete_advanced_filter: Delete Filter
+change_advanced_filter_operator: Change Operator
+advanced: Advanced
 operators:
-  eq: เท่ากับ
-  neq: ไม่เท่ากับ
-  lt: น้อยกว่า
-  gt: มากกว่า
-  lte: น้อยกว่าหรือเท่ากับ
-  gte: มากกว่าหรือเท่ากับ
-  in: เป็น 1 ใน
-  nin: ไม่ใช่ 1 ใน
-  null: เป็นค่าว่าง
-  nnull: ไม่ใช่ค่าว่าง
-  contains: ประกอบด้วย
-  ncontains: ไม่ประกอบด้วย
-  starts_with: เริ่มต้นด้วย
-  nstarts_with: ไม่ได้เริ่มด้วย
-  ends_with: ลงท้ายด้วย
-  nends_with: ไม่ได้ลงท้ายด้วย
-  between: อยู่ระหว่าง
-  nbetween: ไม่อยู่ระหว่าง
-  empty: เป็นค่าว่างเปล่า
-  nempty: ไม่ว่างเปล่า
-  all: ประกอบด้วยคีย์เหล่านี้
-  has: ประกอบด้วยบางคีย์เหล่านี้
-  intersects: ทางแยก
-  nintersects: ไม่ตัดกัน
-  intersects_bbox: ตัดขอบกล่อง
-  nintersects_bbox: ไม่ตัดขอบกล่อง
-loading: กำลังโหลด...
-drop_to_upload: วางเพื่ออัพโหลด
-item: รายการ
-items: รายการ
-upload_file: อัพโหลดไฟล์
-upload_file_indeterminate: กำลังอัพโหลดไฟล์...
-upload_file_success: อัพโหลดไฟล์แล้ว
-upload_files_indeterminate: 'อัพโหลดไปแล้ว {done} ไฟล์ จาก {total} ไฟล์'
-upload_files_success: '{count} ไฟล์ถูกอัพโหลดแล้ว'
-upload_pending: รอการอัพโหลด
-drag_file_here: ลากและวางไฟล์ที่นี่
-click_to_browse: คลิ๊กเพื่อเรียกดู
-interface_options: ตัวเลือกอินเทอร์เฟส
-layout_options: ตัวเลือกเค้าโครง
-rows: แถว
-columns: คอลัมน์
-collection_setup: การตั้งค่าคอลเลกชัน
-optional_system_fields: ฟิลด์ระบบอื่นๆ ที่ไม่จำเป็น
-value_unique: ค่าต้องไม่ซ้ำ
-all_activity: กิจกรรมทั้งหมด
-create_item: สร้างไอเท็ม
-display_template: แม่แบบการแสดงผล
-language_display_template: แม่แบบการแสดงภาษา
-translations_display_template: แม่แบบการแปลภาษา
-n_items_selected: 'ไม่มีรายการที่เลือก | เลือกแล้ว 1 รายการ | เลือกแล้ว {n} รายการ'
-per_page: ต่อหน้า
-all_files: ทุกไฟล์
-my_files: ไฟล์ของฉัน
-recent_files: ไฟล์ล่าสุด
-create_folder: สร้างโฟลเดอร์
-edit_folder: แก้ไขแฟ้ม
-folder_name: ชื่อโฟลเดอร์...
-add_file: เพิ่มไฟล์
-replace_file: แทนที่ไฟล์
-no_results: ไม่มีผลลัพธ์
-no_results_copy: ปรับแต่งหรือล้างตัวกรองเพื่อดูผลลัพธ์
-clear_filters: ล้างตัวกรอง
-saves_automatically: บันทึกอัตโนมัติ
-role: บทบาท
-rule: กฎ
-user: ผู้ใช้
-no_presets: ไม่มีค่าที่ตั้งไว้ล่วงหน้า
-no_presets_copy: ยังไม่มีค่าที่ตั้งไว้ล่วงหน้าหรือบุ๊กมาร์กที่ถูกบันทึกไว้
-no_presets_cta: เพิ่มค่าที่ตั้งไว้ล่วงหน้าใหม่
-presets_only: ที่ตั้งไว้ล่วงหน้าเท่านั้น
-create: สร้าง
-on_create: เมื่อสร้าง
-on_update: เมื่อแก้ไข
-read: อ่าน
-update: แก้ไข
-delete: ลบ
-select_fields: เลือกฟิลด์
-format_text: รูปแบบข้อความ
-bold: ตัวหนา
-toggle: สลับ
-icon_on: แสดงไอคอน
-icon_off: ไม่แสดงไอคอน
-label: ป้าย
+  eq: Equals
+  neq: Doesn't equal
+  lt: Less than
+  gt: Greater than
+  lte: Less than or equal to
+  gte: Greater than or equal to
+  in: Is one of
+  nin: Is not one of
+  null: Is null
+  nnull: Isn't null
+  contains: Contains
+  ncontains: Doesn't contain
+  icontains: Contains (insensitive)
+  starts_with: Starts with
+  nstarts_with: Doesn't start with
+  ends_with: Ends with
+  nends_with: Doesn't end with
+  between: Is between
+  nbetween: Isn't between
+  empty: Is empty
+  nempty: Isn't empty
+  all: Contains these keys
+  has: Contains some of these keys
+  intersects: Intersects
+  nintersects: Doesn't intersect
+  intersects_bbox: Intersects bounding box
+  nintersects_bbox: Doesn't intersect bounding box
+  regex: Matches RegExp
+custom_validation_message: Custom Validation Message
+loading: Loading...
+drop_to_upload: Drop to Upload
+item: Item
+items: Items
+upload_file: Upload File
+upload_file_indeterminate: Uploading File...
+upload_file_success: File Uploaded
+upload_files_indeterminate: 'Uploading files {done}/{total}'
+upload_files_success: '{count} Files Uploaded'
+upload_pending: Upload Pending
+drag_file_here: Drag & Drop a File Here
+click_to_browse: Click to Browse
+interface_options: Interface Options
+layout_options: Layout Options
+rows: Rows
+columns: Columns
+collection_setup: Collection Setup
+optional_system_fields: Optional System Fields
+value_unique: Value has to be unique
+all_activity: All Activity
+create_item: Create Item
+display_template: Display Template
+language_display_template: Language Display Template
+translations_display_template: Translations Display Template
+n_items_selected: 'No Items Selected | 1 Item Selected | {n} Items Selected'
+per_page: Per Page
+all_files: All Files
+my_files: My Files
+recent_files: Recent Files
+create_folder: Create Folder
+edit_folder: Edit Folder
+folder_name: Folder Name...
+folder_key: Folder Key...
+add_file: Add File
+replace_file: Replace File
+no_results: No Results
+no_results_copy: Adjust or clear search filters to see results.
+no_visible_fields: Empty Form
+no_visible_fields_copy: This form has no visible fields.
+clear_filters: Clear Filters
+saves_automatically: Saves Automatically
+role: Role
+edit_role: Edit Role
+rule: Rule
+user: User
+no_presets: No Presets
+no_presets_copy: No presets or bookmarks have been saved yet.
+no_presets_cta: Add Preset
+presets_only: Presets Only
+create: Create
+on_create: On Create
+on_update: On Update
+read: Read
+update: Update
+delete: Delete
+select_fields: Select Fields
+format_text: Format Text
+format_value: Format Value
+abbreviate_value: Abbreviate Value
+operator: Operator
+bold: Bold
+toggle: Toggle
+icon_on: Icon On
+icon_off: Icon Off
+label: Label
+flows: Flows
+flow: Flow
+select_a_flow: Select a Flow
+run_flow_confirm: Are you sure you want to execute this flow?
+run_flow_on_current_collection: Run Flow on Current Collection
+run_flow_on_current: Run Flow on Current Item
+run_flow_on_current_edited_confirm: This item may be updated by this flow, are you sure you want to execute it?
+run_flow_on_selected: Select One or More Items First | Run Flow on 1 Selected Item | Run Flow on {n} Selected Items
+run_flow: Run Flow
+run_flow_success: Flow "{flow}" ran successfully
+field_name_placeholder: Enter field name...
+field_key_placeholder: Enter field key...
 trigger: Trigger
-flow_name: ชื่อ
-flow_tracking_activity: ติดตามกิจกรรมเท่านั้น
-flow_tracking_null: อย่าติดตามอะไรเลย
-code: โค้ด
-dashboard: แดชบอร์ด
-panel: แพแนล
-panel_options: ตัวเลือกแพแนล
-panel_header: หัวข้อแพแนล
-panel_name_placeholder: ตั้งชื่อแพแนล
-panel_note_placeholder: ถ้ามี รายละเอียดเกี่ยวกับแพแนล
-panel_delete_confirm: คุณแน่ใจหรือคุณต้องการลบแฟ้มนี้หรือไม่ การกระทำนี้ไม่สามารถเลิกทำ
-dashboard_delete_confirm: คุณแน่ใจหรือคุณต้องการลบแฟ้มนี้หรือไม่ การกระทำนี้ไม่สามารถเลิกทำ
-edit_dashboard: แก้ไขหน้าแดชบอร์ด
-delete_dashboard: ลบแดชบอร์ด
-visible: แสดง
-prefix_placeholder: ข้อความก่อน ค่า
-suffix_placeholder: ข้อความหลัง ค่า
-full_screen: เต็มจอ
-fit_to_screen: พอดีกับหน้าจอ
-image_url: URL ของรูปภาพ
-alt_text: ข้อความแสดงแทน
-media: สื่อ
-quality: คุณภาพ
-width: กว้าง
-height: สูง
-source: แหล่งที่มา
-url_placeholder: ป้อน URL
-display_text: ข้อความแสดง
-display_text_placeholder: ป้อนข้อความแสดง...
-interface_group_text_and_numbers: ข้อความ & ตัวเลข
-interface_group_selection: ตัวเลือก
-interface_group_relational: ความสัมพันธ์
-interface_group_presentation: การนำเสนอ
-interface_group_groups: กลุ่ม
-interface_group_other: อื่น ๆ
-tooltip: คำแนะนำ
-tooltip_placeholder: ใส่คำแนะนำ
-unlimited: ไม่จำกัด
-open_link_in: เปิดลิงก์
-new_tab: แท็บใหม่
-current_tab: แท็บปัจจุบัน
+trigger_options: Trigger Options
+view_trigger: View Trigger
+create_trigger: Create Trigger
+trigger_setup: Trigger Setup
+change_trigger: Change Trigger
+flow_delete_confirm: Are you sure you want to delete Flow "{flow}"? This action can not be undone.
+set_flow_active: Set Flow to Active
+set_flow_inactive: Set Flow to Inactive
+edit_flow: Edit Flow
+delete_flow: Delete Flow
+no_other_flows_copy: You don't have any other Flows yet.
+no_flows: No Flows
+no_flows_copy: You don't have any Flows yet.
+create_flow: Create Flow
+creating_new_flow: Creating New Flow
+updating_flow: Updating Flow
+flow_setup: Flow Setup
+flow_name: Name
+flow_tracking: Activity & Logs Tracking
+flow_tracking_all: Track Activity & Logs
+flow_tracking_activity: Only Track Activity
+flow_tracking_null: Do Not Track Anything
+start_flow: Start Flow
+stop_flow: Stop Flow
+create_operation: Create Operation
+edit_operation: Edit Operation
+code: Code
+operation_options: Operation Options
+operation_name: Name of operation...
+operation_key: Identifier for reference...
+operation_key_unique_error: Operation keys must be unique in a Flow
+operation_handle_resolve: 'Resolve: Click to Add or Drag to Reroute'
+operation_handle_reject: 'Reject: Click to Add or Drag to Reroute'
+insights: Insights
+dashboard: Dashboard
+panel: Panel
+panel_options: Panel Options
+panel_header: Panel Header
+panel_name_placeholder: Name this panel...
+panel_note_placeholder: Optional details about this panel...
+panel_delete_confirm: Are you sure you want to delete this panel? This action can not be undone.
+list_panel_allow_edit: Allow Inline Editing
+dashboard_delete_confirm: Are you sure you want to delete this dashboard? This action can not be undone.
+edit_dashboard: Edit Dashboard
+delete_dashboard: Delete Dashboard
+visible: Visible
+prefix_placeholder: Text before value...
+suffix_placeholder: Text after value...
+decimals_placeholder: Number of decimal places...
+no_dashboards: No Dashboards
+no_dashboards_copy: You don’t have any Dashboards yet.
+create_dashboard: Create Dashboard
+dashboard_name: Dashboard Name
+no_data: No Data
+no_data_in_flow: No data was produced or accessed within this Flow
+accountability: Accountability
+payload: Payload
+details: Details
+full_screen: Full Screen
+full_text_search: Full-Text Search
+edit_panels: Edit Panels
+center_align: Center Align
+left_align: Left Align
+right_align: Right Align
+fit_to_screen: Fit to Screen
+image_url: Image Url
+alt_text: Alternative Text
+media: Media
+quality: Quality
+width: Width
+height: Height
+transformation_preset_key: Transformation Preset Key
+source: Source
+url_placeholder: Enter an url...
+display_text: Display Text
+display_text_placeholder: Enter a display text...
+interface_group_text_and_numbers: Text & Numbers
+interface_group_selection: Selection
+interface_group_relational: Relational
+interface_group_presentation: Presentation
+interface_group_groups: Groups
+interface_group_other: Other
+tooltip: Tooltip
+tooltip_placeholder: Enter a tooltip...
+unlimited: Unlimited
+open_link_in: Open link in
+new_tab: New tab
+current_tab: Current tab
+save_image: Save Image
+save_media: Save Media
 wysiwyg_options:
-  aligncenter: จัดตำแหน่งกึ่งกลาง
-  alignjustify: จัดตำแหน่งชิดขอบซ้ายและขวา
-  alignleft: จัดตำแหน่งชิดซ้าย
-  alignnone: ไม่จัดตำแหน่ง
-  alignright: จัดตำแหน่งชิดขวา
-  forecolor: สีพื้นด้านหน้า
-  backcolor: สีพื้นหลัง
-  bold: ตัวหนา
-  italic: ตัวเอียง
-  underline: ขีดเส้นใต้
-  strikethrough: จีดฆ่าตรงกลาง
-  subscript: ตัวห้อย
-  superscript: ตัวยก
-  codeblock: โค้ด
-  blockquote: ข้อความอ้างอิง
-  bullist: รายการแบบไม่มีลําดับ
-  numlist: รายการแบบมีลำดับ
-  hr: เส้นคั่นแนวนอน
-  link: เพิ่ม/แก้ไข ลิงค์
-  unlink: ลบลิงค์
-  media: เพิ่ม/แก้ไข สื่อ
-  image: เพิ่ม/แก้ไขภาพ
-  copy: คัดลอก
-  cut: ตัด
-  paste: วาง
-  heading: หัวข้อ
-  h1: หัวข้อที่ 1
-  h2: หัวข้อที่ 2
-  h3: หัวข้อที่ 3
-  h4: หัวข้อที่ 4
-  h5: หัวข้อที่ 5
-  h6: หัวข้อที่ 6
-  fontselect: เลือกแบบอักษร
-  fontsizeselect: เลือกขนาดตัวอักษร
-  indent: เยื้องเข้า
-  outdent: เยื้องออก
-  undo: เรียกคืน
-  redo: ทำซ้ำ
-  remove: เอาออก
-  removeformat: เอารูปแบบออก
-  selectall: เลือกทั้งหมด
-  table: ตาราง
-  visualaid: แสดงเครื่องหมายที่มองไม่เห็น
-  source_code: แก้ไข Source Code
-  fullscreen: เต็มจอ
-  directionality: อย่างมีทิศทาง
-dropdown: ตัวเลือกแบบดรอปดาวน์
-choices: ตัวเลือกแบบช้อยส์
-choices_option_configured_incorrectly: ตั้งค่าตัวเลือกแบบช้อยส์ไม่ถูกต้อง
-deselect: ไม่เลือก
-deselect_all: ไม่เลือกทั้งหมด
-other: อื่นๆ
-adding_user: เพิ่มผู้ใช้
-unknown_user: ผู้ใช้ที่ไม่รู้จัก
-creating_in: 'กำลังสร้างไอเท็มใน {collection}'
-editing_in: 'กำลังแก้ไขไอเท็มใน {collection}'
-creating_unit: 'สร้าง {unit}'
-editing_unit: 'แก้ไข {unit}'
-editing_in_batch: 'กำลังแก้ไข {count} ไอเท็ม'
-no_options_available: ไม่มีตัวเลือกให้ใช้
-settings_data_model: รูปแบบข้อมูล
-settings_permissions: บทบาทและสิทธิ
-settings_project: การตั้งค่าโครงการ
+  aligncenter: Align Center
+  alignjustify: Align Justify
+  alignleft: Align Left
+  alignnone: Align None
+  alignright: Align Right
+  forecolor: Foreground Color
+  backcolor: Background Color
+  bold: Bold
+  italic: Italic
+  underline: Underline
+  strikethrough: Strikethrough
+  subscript: Subscript
+  superscript: Superscript
+  codeblock: Code
+  blockquote: Blockquote
+  bullist: Bullet List
+  numlist: Numbered List
+  hr: Horizontal Rule
+  link: Add/Edit Link
+  unlink: Remove Link
+  media: Add/Edit Media
+  image: Add/Edit Image
+  copy: Copy
+  cut: Cut
+  paste: Paste
+  heading: Heading
+  h1: Heading 1
+  h2: Heading 2
+  h3: Heading 3
+  h4: Heading 4
+  h5: Heading 5
+  h6: Heading 6
+  fontselect: Select Font
+  fontsizeselect: Select Font Size
+  indent: Indent
+  outdent: Outdent
+  undo: Undo
+  redo: Redo
+  remove: Remove
+  removeformat: Remove Format
+  selectall: Select All
+  table: Table
+  visualaid: View invisible elements
+  source_code: Edit Source Code
+  fullscreen: Full Screen
+  directionality: Directionality
+dropdown: Dropdown
+choices: Choices
+choices_option_configured_incorrectly: Choices configured incorrectly
+deselect: Deselect
+deselect_all: Deselect All
+other: Other...
+adding_user: Adding User
+unknown_user: Unknown User
+creating_in: 'Creating Item in {collection}'
+editing_in: 'Editing Item in {collection}'
+viewing_in: 'Viewing Item in {collection}'
+creating_unit: 'Creating {unit}'
+editing_unit: 'Editing {unit}'
+editing_in_batch: 'Batch Editing {count} Items'
+no_options_available: No options available
+settings_data_model: Data Model
+settings_permissions: Roles & Permissions
+settings_project: Project Settings
 settings_webhooks: Webhooks
-settings_presets: ค่าที่ตั้งไว้ล่วงหน้าและบุ๊คมาร์ก
-one_or_more_options_are_missing: ไม่พบตัวเลือกรายการ
-scope: ขอบเขต
-select: เลือก...
-layout: เค้าโครง
-tree_view: มุมมองแผนภูมิ
-changes_are_permanent: การเปลี่ยนแปลงนี้ถาวร
-preset_name_placeholder: ให้ค่าเริ่มต้นเมื่อค่าว่าง
-preset_search_placeholder: ค้นหาด้วย...
-editing_preset: แก้ไขค่าที่ตั้งไว้ล่วงหน้า
-layout_preview: ตัวอย่างเค้าโครง
-layout_setup: ตั้งค่าเค้าโครง
-data: ข้อมูล
-unsaved_changes: ไม่ได้บันทึกการเปลี่ยนแปลง
-unsaved_changes_copy: คุณแน่ใจว่าต้องการออกจากหน้านี้?
-discard_changes: ยกเลิกการเปลี่ยนแปลง
-discard_all_changes: ยกเลิกการเปลี่ยนแปลงทั้งหมด
-discard_changes_copy: แน่ใจไหมว่าต้องการละทิ้งการเปลี่ยนแปลงทั้งหมด?
-keep_editing: แก้ไขต่อไป
+settings_flows: Flows
+settings_presets: Presets & Bookmarks
+settings_translation_strings: Translation Strings
+one_or_more_options_are_missing: One or more options are missing
+scope: Scope
+actions: Actions
+select: Select...
+layout: Layout
+tree_view: Tree View
+changes_are_permanent: Changes are permanent
+preset_name_placeholder: Serves as default when empty...
+preset_search_placeholder: Search query...
+editing_preset: Editing Preset
+layout_preview: Layout Preview
+layout_setup: Layout Setup
+data: Data
+unsaved_changes: Unsaved Changes
+unsaved_changes_copy: Are you sure you want to leave this page?
+discard_changes: Discard Changes
+discard_all_changes: Discard All Changes
+discard_changes_copy: Are you sure you want to discard all the changes made?
+show_x_axis: Show X Axis
+show_y_axis: Show Y Axis
+keep_editing: Keep Editing
+page_help_collections_overview: '**Collections Overview** — List of all collections you have access to.'
 page_help_collections_collection: >-
-  **รายการที่เรียกดู** — รายการของ {collection} ที่คุณเรียกดู สามารถปรับแต่งเค้าโครง, การกรอง, และการเรียงเพื่อปรับแต่งมุมมองในแบบที่ต้องการ, และสามารถสร้างเป็นบุ๊คมาร์กเพื่อเข้าถึงการตั้งค่าเหล่านี้ได้อย่างรวดเร็ว
+  **Browse Items** — Lists all {collection} items you have access to. Customize layout, filters, and sorting to tailor your view, and even save bookmarks of these different configurations for quick access.
 page_help_collections_item: >-
-  **รายละเอียดรายการ** — คือรูปแบบของการมองเห็นและจัดการรายการนี้ พื้นที่ด้านข้างนี้จะแสดงทั้งประวัติการแก้ไขและความเห็นทั้งหมด
+  **Item Detail** — A form for viewing and managing this item. This sidebar also contains a full history of revisions, and embedded comments.
 page_help_activity_collection: >-
-  **เรียกดูกิจกรรม** — รายการกิจกรรมทั้งหมดของผู้ใช้และเนื้อหาต่างๆ ในระบบ
+  **Browse Activity** — A comprehensive listing of all your user's system and content activity.
 page_help_docs_global: >-
-  **ภาพรวมเอกสาร** — เอกสารที่ถูกสร้างขึ้นสำหรับเวอร์ชั่นและสคีมาของโครงการโดยเฉพาะ
+  **Documentation Overview** — Docs tailored specifically to this project's version and schema.
 page_help_files_collection: >-
-  **ไฟล์ไลบรารี** — แสดงทุกไฟล์ที่ถูกอัพโหลดมาที่โปรเจ็คนี้ สามารถแก้ไขเค้าโครง, การกรอง, และการเรียงลำดับให้สอดคล้องกับมุมมองที่ต้องการ และบันทึกเป็นบุ๊คมาร์กของการตั้งค่าแต่ละแบบเพื่อความรวดเร็วในการเข้าถึงได้
+  **File Library** — Lists all file assets uploaded to this project. Customize layout, filters, and sorting to tailor your view, and even save bookmarks of these different configurations for quick access.
 page_help_files_item: >-
-  **รายละเอียดไฟล์** — ฟอร์มสำหรับการจัดการ metadata ของไฟล์, แก้ไขไฟล์ต้นแบบ และปรับปรุงการตั้งค่าการเข้าถึง
-page_help_settings_project: "**การตั้งค่าโครงการ** — การตั้งค่าทั่วไปของโปรเจ็ค"
+  **File Detail** — A form for managing file metadata, editing the original asset, and updating access settings.
+page_help_settings_project: "**Project Settings** — Your project's global configuration options."
 page_help_settings_datamodel_collections: >-
-  **คอลเลกชัน** — แสดงทุกคอลเลกชัน รวมถึงคอลเลกชันที่ซ่อน คอลเลกชันของระบบ และตารางในฐานข้อมูลที่ถูกเพิ่มเข้ามาภายหลัง
+  **Data Model: Collections** — Lists all collections available. This includes visible, hidden, and system collections, as well as unmanaged database tables that can be added.
 page_help_settings_datamodel_fields: >-
-  **คอลเลกชัน** — ฟอร์มสำหรับการจัดการคอลเลกชันและฟิลด์ต่างๆ
-page_help_settings_roles_collection: '**เรียกดูบทบาท** — แสดงแอดมิน, บทบาทเมื่อเข้าถึงแบบสาธารณะ และบทบาทของผู้ใช้'
-page_help_settings_roles_item: "**รายละเอียดบทบาท** — จัดการบทบาทของสิทธิ์และการตั้งค่าต่างๆ"
+  **Data Model: Collection** — A form for managing this collection and its fields.
+page_help_settings_roles_collection: '**Browse Roles** — Lists the Admin, Public and custom User Roles.'
+page_help_settings_roles_item: "**Role Detail** — Manage a role's permissions and other settings."
 page_help_settings_presets_collection: >-
-  **เรียกดูการตั้งค่าล่วงหน้า** — แสดงการตั้งค่าล่วงหน้าทั้งหมดในโปรเจ็ค รวมถึงการตั้งค่าล่วงหน้าของผู้ใช้ บทบาท บุ๊คมาร์ก และรูปแบบการมองเห็น
+  **Browse Presets** — Lists all presets in the project, including: user, role, and global bookmarks, as well as default views.
 page_help_settings_presets_item: >-
-  **รายละเอียดการตั้งค่าล่วงหน้า** — ฟอร์มสำหรับการจัดการบุ๊๕มาร์ก และการตั้งค่าล่วงหน้าของคอลเลกชัน
-page_help_settings_webhooks_collection: '**เรียกดู Webhooks** — รายการของ webhook ในโปรเจ็ค'
-page_help_settings_webhooks_item: '**รายละเอียดของ webhook** — ฟอร์มสำหรับสร้างและจัดการ webhook'
-page_help_users_collection: '**ข้อมูลผู้ใช้** — แสดงผู้ใช้ในระบบทั้งหมดของโปรเจ็ค'
+  **Preset Detail** — A form for managing bookmarks and default collection presets.
+page_help_settings_webhooks_collection: '**Browse Webhooks** — Lists all webhooks within the project.'
+page_help_settings_webhooks_item: '**Webhook Detail** — A form for creating and managing project webhooks.'
+page_help_settings_flows_collection: '**Browse Flows** — Lists all Flows within the project.'
+page_help_settings_flows_item: '**Flow Detail** — Workspace for managing one or more operations.'
+page_help_settings_translation_strings_collection:
+  - '''**Browse Translation Strings** — Lists all translation strings within the project.'''
+page_help_users_collection: '**User Directory** — Lists all system users within this project.'
 page_help_users_item: >-
-  **รายละเอียดผู้ใช้** — จัดการข้อมูลของผู้ใช้ หรือดูรายละเอียดของผู้ใช้คนอื่น
-activity_feed: ฟีดกิจกรรม
-add_new: เพิ่มใหม่
-create_new: สร้างใหม่
-all: ทั้งหมด
-none: ไม่ระบุ
-no_layout_collection_selected_yet: ไม่มีมุมมอง หรือคอลเลกชันที่ถูกเลือก
+  **User Detail** — Manage your account information, or view the details of other users.
+page_help_insights_overview: '**Insights** — List of dashboards you have access to.'
+page_help_insights_dashboard: '**Dashboard** — Workspace for managing one or more panels'
+activity_feed: Activity Feed
+add_new: Add New
+create_new: Create New
+all: All
+none: None
+no_layout_collection_selected_yet: No layout/collection selected yet
 batch_delete_confirm: >-
-  ไม่มีไอเท็มไหนที่ถูกเลือก | คุณแน่ใจหรือว่าต้องการลบไอเท็มนี้? การกระทำนี้ไม่สามารถเรียกคืนได้ | คุณต้องการลบทั้ง {count} ไอเท็มนี้ใช่หรือไม่? การกระทำนี้ไม่สามารถเรียกคืนได้
-cancel: ยกเลิก
-collection: คอลเลกชัน
-collections: คอลเลกชัน
-content: เนื้อหา
+  No items have been selected | Are you sure you want to delete this item? This action can not be undone. | Are you sure you want to delete these {count} items? This action can not be undone.
+cancel: Cancel
+no_upscale: Don't upscale images
+collection: Collection
+collections: Collections
+content: Content
 singleton: Singleton
-singleton_label: ทำเสมือนว่ามีออปเจ็คเดียว
-system_fields_locked: ฟิลด์ระบบถูกล็อคและไม่สามารถแก้ไขได้
+singleton_label: Treat as single object
+system_fields_locked: System fields are locked and can't be edited
+directus_collection:
+  directus_activity: Accountability logs for all events
+  directus_collections: Additional collection configuration and metadata
+  directus_dashboards: Dashboards within the Insights module
+  directus_fields: Additional field configuration and metadata
+  directus_files: Metadata for all managed file assets
+  directus_flows: Automation flows
+  directus_folders: Provides virtual directories for files
+  directus_migrations: What version of the database you're using
+  directus_notifications: Notifications sent to users
+  directus_operations: Operations that run in Flows
+  directus_panels: Individual panels within Insights dashboards
+  directus_permissions: Access permissions for each role
+  directus_presets: Presets for collection defaults and bookmarks
+  directus_relations: Relationship configuration and metadata
+  directus_revisions: Data snapshots for all activity
+  directus_roles: Permission groups for system users
+  directus_sessions: User session information
+  directus_settings: Project configuration options
+  directus_shares: Tracks externally shared items
+  directus_users: System users for the platform
+  directus_webhooks: Configuration for event-based HTTP requests
 fields:
   directus_activity:
-    item: คีย์หลัก
-    action: ดำเนินการ
-    collection: คอลเลกชัน
-    timestamp: ดำเนินการกับ
-    user: ดำเนินการโดย
-    comment: ความคิดเห็น
-    user_agent: ตัวแทนของผู้ใช้
-    ip: หมายเลขไอพี
-    revisions: ประวัติการปรับปรุง
+    item: Item Primary Key
+    action: Action
+    collection: Collection
+    timestamp: Action On
+    user: Action By
+    comment: Comment
+    user_agent: User Agent
+    origin: Origin
+    ip: IP Address
+    revisions: Revisions
   directus_collections:
-    collection: คอลเลกชัน
-    icon: ไอคอน
-    note: หมายเหตุ
-    color: สี
-    display_template: แม่แบบการแสดงผล
-    hidden: ซ่อน
+    collection: Collection
+    icon: Icon
+    note: Note
+    color: Color
+    display_template: Display Template
+    hidden: Hidden
     singleton: Singleton
-    translations: ชุดการตั้งชื่อการแปล
-    archive_app_filter: เก็บตัวกรองแอป
-    archive_value: เก็บค่า
-    unarchive_value: ยกเลิกการเก็บค่า
-    sort_field: เรียงฟิลด์
-    accountability: การติดตามกิจกรรมและการแก้ไข
+    translations: Collection Naming Translations
+    archive_app_filter: Archive App Filter
+    archive_value: Archive Value
+    unarchive_value: Unarchive Value
+    sort_field: Sort Field
+    accountability: Activity & Revision Tracking
+    archive_field: Archive Field
+    item_duplication_fields: Item Duplication Fields
   directus_files:
-    $thumbnail: รูปขนาดย่อ
-    title: ตำแหน่ง
-    description: รายละเอียด
-    tags: แท็ก
-    location: ตำแหน่งที่ตั้ง
-    storage: ที่เก็บข้อมูล
-    filename_disk: ชื่อไฟล์ (ดิสก์)
-    filename_download: ชื่อไฟล์ (ดาวน์โหลด)
-    metadata: เมตาดาต้า
+    $thumbnail: Thumbnail
+    title: Title
+    description: Description
+    tags: Tags
+    location: Location
+    storage: Storage
+    filename_disk: Filename (Disk)
+    filename_download: Filename (Download)
+    metadata: Metadata
     type: Mime Type
-    filesize: ขนาดไฟล์
-    modified_by: ถูกแก้ไขโดย
-    modified_on: ถูกแก้ไขเมื่อ
-    created_on: สร้างเมื่อ
-    created_by: สร้างโดย
-    embed: ฝัง
-    uploaded_by: ถูกอัพโหลดโดย
-    folder: โฟลเดอร์
-    width: กว้าง
-    uploaded_on: ถูกอัพโหลดเมื่อ
-    height: สูง
-    charset: 'ชุดอักขระ:'
-    duration: ระยะเวลา
+    filesize: Filesize
+    modified_by: Modified By
+    modified_on: Modified On
+    created_on: Created On
+    created_by: Created By
+    embed: Embed
+    uploaded_by: Uploaded By
+    folder: Folder
+    width: Width
+    uploaded_on: Uploaded On
+    height: Height
+    charset: Charset
+    duration: Duration
   directus_users:
-    first_name: ชื่อ
-    last_name: นามสกุล
-    email: อีเมล
-    password: รหัสผ่าน
-    avatar: ภาพประจำตัว
-    location: ตำแหน่งที่ตั้ง
-    title: ตำแหน่ง
-    description: รายละเอียด
-    tags: แท็ก
-    language: ภาษา
-    theme: ธีม
-    tfa_secret: การยืนยันตัวตนแบบสองปัจจัย
-    status: สถานะ
-    status_draft: ฉบับร่าง
-    status_invited: เชิญแล้ว
-    status_active: เปิดใช้งาน
-    status_suspended: ระงับชั่วคราว
-    status_archived: เก็บถาวร
-    role: บทบาท
-    token: โทเค็น
-    provider: ผู้ให้บริการ
-    last_page: หน้าสุดท้าย
-    last_access: การเข้าถึงล่าสุด
+    first_name: First Name
+    last_name: Last Name
+    email: Email
+    password: Password
+    avatar: Avatar
+    location: Location
+    title: Title
+    description: Description
+    tags: Tags
+    user_preferences: User Preferences
+    language: Language
+    theme: Theme
+    theme_auto: Automatic (Based on System)
+    theme_light: Light Mode
+    theme_dark: Dark Mode
+    tfa_secret: Two-Factor Authentication
+    admin_options: Admin Options
+    status: Status
+    status_draft: Draft
+    status_invited: Invited
+    status_active: Active
+    status_suspended: Suspended
+    status_archived: Archived
+    role: Role
+    token: Token
+    provider: Provider
+    external_identifier: External Identifier
+    last_page: Last Page
+    last_access: Last Access
+    email_notifications: Email Notifications
   directus_settings:
     jpg: JPEG
     png: PNG
     webP: WebP
-    project_name: ชื่อโครงการ
-    project_url: URL ของโครงการ
-    project_color: สีของโปรเจ็ค
-    project_logo: โลโก้ของโปรเจ็ค
-    default_language: ภาษาเริ่มต้น
+    tiff: Tiff
+    avif: AVIF
+    mapping: Mapping
+    basemaps: Basemaps
+    basemaps_raster: Raster
+    basemaps_tile: Raster TileJSON
+    basemaps_style: Mapbox Style
+    mapbox_key: Mapbox Access Token
+    mapbox_placeholder: pk.eyJ1Ijo.....
+    attribution: Attribution
+    attribution_placeholder: '© OpenStreetMap contributors'
+    transforms_note:
+      - The Sharp method name and its arguments. See https://sharp.pixelplumbing.com/api-constructor for more information.
+    additional_transforms: Additional Transformations
+    project_name: Project Name
+    project_descriptor: Project Descriptor
+    project_url: Project URL
+    project_color: Project Color
+    project_logo: Project Logo
+    default_language: Default Language
+    branding: Branding & Style
     public_foreground: Public Foreground
     public_background: Public Background
     public_note: Public Note
-    auth_password_policy: นโยบายในการตั้งรหัสผ่าน
-    auth_login_attempts: ความพยายามในการเข้าสู่ระบบ
-    files_and_thumbnails: ไฟล์ และ ที่เก็บ
-    storage_default_folder: โฟลเดอร์เริ่มต้น
-    custom_css: CSS ที่กำหนดเอง
-    module_bar: โมดูลบาร์
+    auth_password_policy: Auth Password Policy
+    auth_login_attempts: Auth Login Attempts
+    files_and_thumbnails: Files & Storage
+    storage_default_folder: Default Folder
+    storage_asset_presets: Transformation Presets
+    storage_asset_transform: Allowed Transformations
+    overrides: App Overrides
+    custom_css: Custom CSS
+    module_bar: Module Bar
+    transformations_all: Allow all transformations
+    transformations_none: Disable transformations
+    transformations_presets: Limit transformations to presets below
+    image_editor: Image Editor
+    custom_aspect_ratios: Custom Aspect Ratios
   directus_shares:
-    name: ชื่อ
-    role: บทบาท
-    password: รหัสผ่าน
+    name: Name
+    role: Role
+    password: Password
+    date_start: Date Start
+    date_end: Date End
+    max_uses: Max Uses
+    times_used: Times Used
   directus_fields:
-    collection: ชื่อคอลเลกชัน
-    icon: ไอคอนของคอลเลกชัน
-    note: หมายเหตุ
-    hidden: ซ่อน
+    collection: Collection Name
+    icon: Collection Icon
+    note: Note
+    hidden: Hidden
     singleton: Singleton
-    translation: คำแปลชื่อฟิลด์
-    display_template: แม่แบบ
+    translation: Field Name Translations
+    display_template: Template
   directus_roles:
-    name: ชื่อบทบาท
-    icon: ไอคอนของบทบาท
-    description: รายละเอียด
-    app_access: การเข้าถึงแอป
-    admin_access: ผู้ดูแลเท่านั้น
-    ip_access: IP ที่เข้าถึง
-    enforce_tfa: ต้องการ 2FA
-    users: ผู้ใช้ในบทบาทนี้
-    module_list: รายการโมดูล
+    name: Role Name
+    icon: Role Icon
+    description: Description
+    app_access: App Access
+    admin_access: Admin Access
+    ip_access: IP Access
+    enforce_tfa: Require 2FA
+    users: Users in Role
+    module_list: Module Navigation
   directus_webhooks:
-    name: ชื่อ
-    method: เมธอด
-    status: สถานะ
-    data: ข้อมูล
-    header: เฮดเดอร์
-    value: ค่า
-    headers: รีเควส เฮดเดอร์
-    collections: คอลเลกชัน
+    name: Name
+    method: Method
+    status: Status
+    data: Data
+    header: Header
+    value: Value
+    headers: Request Headers
+    data_label: Send Event Data
+    triggers: Triggers
+    actions: Actions
+    collections: Collections
 field_options:
   directus_settings:
-    security_divider_title: ความปลอดภัย
+    project_name_placeholder: My project...
+    project_color_note: Login & Logo Background
+    project_logo_note: White 40x40 SVG/PNG
+    public_note_placeholder: A short, public message that supports markdown formatting...
+    security_divider_title: Security
+    auth_password_policy:
+      none_text: None – Not Recommended
+      weak_text: Weak – Minimum 8 Characters
+      strong_text: Strong – Upper / Lowercase / Numbers / Special
+    storage_asset_presets:
+      fit_label: Fit
+      upscaling: Upscaling
+      fit:
+        contain_text: Contain (preserve aspect ratio)
+        cover_text: Cover (forces exact size)
+        fit_text: Fit inside
+        outside_text: Fit outside
+    additional_transforms: Additional Transformations
+    transforms_note:
+      - The Sharp method name and its arguments. See https://sharp.pixelplumbing.com/api-constructor for more information.
+    mapbox_key: Mapbox Access Token
+    mapbox_placeholder: pk.eyJ1Ijo.....
+    basemaps: Basemaps
+    basemaps_name_placeholder: Enter the basemap name...
+    basemaps_raster: Raster
+    basemaps_tile: Raster TileJSON
+    basemaps_style: Mapbox Style
+    files_divider_title: Files & Thumbnails
+    overrides_divider_title: App Overrides
   directus_activity:
-    login: เข้าสู่ระบบ
-    create: สร้าง
-    update: แก้ไข
-    delete: ลบ
+    login: Login
+    create: Create
+    update: Update
+    delete: Delete
   directus_collections:
-    track_activity_revisions: ติดตามกิจกรรมและการแก้ไข
-    only_track_activity: ติดตามกิจกรรมเท่านั้น
-    do_not_track_anything: อย่าติดตามอะไรเลย
-    collection_setup: การตั้งค่าคอลเลกชัน
-    note_placeholder: คำอธิบายคอลเลคชั่น
-    singleton: ทำเสมือนว่ามีออปเจ็คเดียว
-    language: ภาษา
-    translation: แปลภาษา
-    collection_name: ชื่อคอลเลกชัน
-    archive_divider: เก็บถาวร
-    archive_field_placeholder: เลือกฟิลด์
-    sort_divider: เรียง
+    track_activity_revisions: Track Activity & Revisions
+    only_track_activity: Only Track Activity
+    do_not_track_anything: Do Not Track Anything
+    collection_setup: Collection Setup
+    note_placeholder: A description of this collection...
+    hidden_label: Hide within the App
+    singleton: Treat as single object
+    language: Language
+    translation: Translation
+    translation_placeholder: Enter a translation...
+    collection_name: Collection Name
+    singular_unit: Singular Unit
+    plural_unit: Plural Unit
+    archive_divider: Archive
+    archive_field_placeholder: Choose a field...
+    archive_app_filter: Enable App Archive Filter
+    archive_value: Value set when archiving...
+    unarchive_value: Value set when unarchiving...
+    sort_divider: Sort
+    sort_field: Choose a field...
+    accountability_divider: Accountability
+    duplication_divider: Duplication
+  directus_files:
+    title: A unique title...
+    description: An optional description...
+    location: An optional location...
+    storage_divider: File Naming
+    filename_disk: Name on disk storage...
+    filename_download: Name when downloading...
   directus_roles:
+    name: The unique name for this role...
+    description: A description of this role...
+    ip_access: Add allowed IP addresses, leave empty to allow all...
     fields:
-      icon_name: ไอคอน
-      name_name: ชื่อ
-      name_placeholder: ป้อนชื่อเรื่อง
-    collections_name: คอลเลกชัน
-    collections_addLabel: เพิ่มคอลเลกชัน
+      icon_name: Icon
+      name_name: Name
+      name_placeholder: Enter a title...
+      link_name: Link
+      link_placeholder: Relative or absolute URL...
+    collections_name: Collections
+    collections_addLabel: Add Collection...
   directus_users:
-    preferences_divider: การตั้งค่าผู้ใช้
-    status_dropdown_draft: ฉบับร่าง
-    status_dropdown_active: เปิดใช้งาน
-    status_dropdown_suspended: ระงับชั่วคราว
-    status_dropdown_archived: เก็บถาวร
-    token: ระบุโทเค็นความปลอดภัย
+    preferences_divider: User Preferences
+    dropdown_auto: Automatic (Based on System)
+    dropdown_light: Light Mode
+    dropdown_dark: Dark Mode
+    admin_divider: Admin Options
+    status_dropdown_draft: Draft
+    status_dropdown_invited: Invited
+    status_dropdown_active: Active
+    status_dropdown_suspended: Suspended
+    status_dropdown_archived: Archived
+    token: Enter a secure access token...
   directus_webhooks:
-    status_options_active: เปิดใช้งาน
-    status_options_inactive: ไม่ใช้งาน
-    actions_create: สร้าง
-    actions_update: แก้ไข
-    actions_delete: ลบ
-    actions_login: เข้าสู่ระบบ
+    status_options_active: Active
+    status_options_inactive: Inactive
+    data_label: Send Event Data
+    triggers_divider: Triggers
+    actions_create: Create
+    actions_update: Update
+    actions_delete: Delete
+    actions_login: Login
     headers:
-      header: เฮดเดอร์
-      value: ค่า
-no_fields_in_collection: 'ยังไม่มีฟิลด์ใน {collection}'
-no_value: ไม่มีค่า
-do_nothing: ไม่ต้องทำอะไร
-generate_and_save_uuid: สร้างและบันทึก UUID โดยอัตโนมัติ
-save_current_user_id: บันทึกID ของผู้ใช้ปัจจุบัน
-save_current_user_role: บันทึกบทบาทของผู้ใช้ปัจจุบัน
-save_current_datetime: บันทึกวันเวลาปัจจุบัน
-always_open: เปิดตลอดเวลา
-block: ปิดกั้น
-inline: แบบอินไลน์
-comment: ความคิดเห็น
-relational_triggers: ทริกเกอร์เชิงสัมพันธ์
-referential_action_field_label_m2o: เมื่อลบ {collection}...
-referential_action_field_label_o2m: เมื่อยกเลิกการเลือก {collection}...
-referential_action_no_action: ป้องกันการลบ
-referential_action_cascade: ลบ {collection} รายการ (เรียงซ้อน)
-referential_action_set_null: "ทำให้ฟิลด์ {field} เป็นโมฆะ\n"
-referential_action_set_default: ตั้งค่า {field} เป็นค่าเริ่มต้น
-choose_action: เลือกการกระทำ
-continue_label: ดำเนินการต่อ
+      header: Header
+      value: Value
+      add: Add Header
+no_fields_in_collection: 'There are no fields in "{collection}" yet'
+no_value: No value
+do_nothing: Do Nothing
+generate_and_save_uuid: Generate and Save UUID
+save_current_user_id: Save Current User ID
+save_current_user_role: Save Current User Role
+save_current_datetime: Save Current Date/Time
+always_open: Always Open
+start_open: Start Open
+start_collapsed: Start Collapsed
+block: Block
+inline: Inline
+comment: Comment
+shares: Shares
+unlimited_usage: Unlimited usage
+uses_left: No uses left | 1 use left | {n} uses left
+no_shares: No shares to show
+new_share: New Share
+expired: Expired
+upcoming: Upcoming
+share: Share
+share_item: Share Item
+shared_with_you: An item has been shared with you
+shared_enter_passcode: Enter your passcode to continue...
+shared_leave_blank_for_unlimited: Leave blank for unlimited
+shared_times_remaining: This link can only be used {n} times
+shared_last_remaining: This link can only be used once
+shared_uses_left:
+  - For added security, this shared page has been configured with a limited number of views. There are currently {n} views
+  - remaining, after which, the page will no longer be accessible.
+share_access_page: Access Shared Page
+share_access_not_found:
+  - This shared page either does not exist or has already exceeded the maximum number of allowed uses.
+share_access_not_found_desc: Please contact an authorized user of this project to request access.
+share_access_not_found_title: Unknown Share Page
+share_copy_link: Copy Link
+share_copy_link_success: Link Copied
+share_copy_link_error: Unable to Copy Link
+share_send_link: Send Link
+relational_triggers: Relational Triggers
+referential_action_field_label_m2o: On Delete of {collection}...
+referential_action_field_label_o2m: On Deselect of {collection}...
+referential_action_no_action: Prevent the deletion
+referential_action_cascade: Delete the {collection} item (cascade)
+referential_action_set_null: Nullify the {field} field
+referential_action_set_default: Set {field} to its default value
+choose_action: Choose Action
+continue_label: Continue
 continue_as: >-
-  บัญชี {name} ถูกยืนยันตัวตนแล้ว ถ้าเป็นบัญชีของคุณ คลิ๊กที่นี่เพื่อเข้าสู่ระบบ
-editing_role: 'บทบาท {role}'
-creating_webhook: สร้าง webhook
-default_label: ค่าเริ่มต้น
-delete_label: ลบ
+  {name} is currently authenticated. If you recognize this account, press continue.
+editing_role: '{role} Role'
+creating_webhook: Creating Webhook
+default_label: Default
+delete_label: Delete
 delete_are_you_sure: >-
-  การกระทำนี้ถาวร และไม่สามรถย้อนกลับได้ คุณยังต้องการจะทำต่อหรือไม่?
+  This action is permanent and can not be undone. Are you sure you would like to proceed?
 delete_field_are_you_sure: >-
-  คุณแน่ใจหรือว่าต้องการลบฟิลด์ "{field}"? การกระทำนี้ไม่สามารถย้อนกลับได้
-description: รายละเอียด
-done: เรียบร้อยแล้ว
-duplicate: ทำสำเนา
-limit: ขีดจำกัด
-email: อีเมล
-embed: ฝัง
-fallback_icon: Fallback ไอคอน
-field: ฟิลด์ | ฟิลด์
-file: ไฟล์
-file_library: ไลบรารีไฟล์
-forgot_password: ลืมรหัสผ่าน
-hidden: ซ่อน
-icon: ไอคอน
-info: ข้อมูล
-normal: ปกติ
-success: สำเร็จ
-warning: คำเตือน
-danger: อันตราย
+  Are you sure you want to delete the field "{field}"? This action can not be undone.
+description: Description
+done: Done
+duplicate: Duplicate
+limit: Limit
+email: Email
+embed: Embed
+fallback_icon: Fallback Icon
+field: Field | Fields
+file: File
+file_library: File Library
+forgot_password: Forgot Password
+hidden: Hidden
+hidden_in_group: Hidden in {group}
+icon: Icon
+info: Info
+normal: Normal
+success: Success
+warning: Warning
+danger: Danger
+colors:
+  purple: Purple
+  blue: Blue
+  green: Green
+  yellow: Yellow
+  orange: Orange
+  red: Red
+  black: Black
+  gray: Gray
+  white: White
 junction_collection: Junction Collection
-latency: ใช้เวลา
-login: ลงชื่อเข้าใช้
-my_activity: กิจกรรมของฉัน
-not_authenticated: ไม่ได้รับการรับรอง
-authenticated: ได้รับการรับรองแล้ว
-options: ตัวเลือก
-otp: รหัสผ่านแบบใช้ครั้งเดียว
-password: รหัสผ่าน
-permissions: การอนุญาต
-relationship: ความ​สัมพันธ์
-reset: ตั้งค่าใหม่
-reset_password: รีเซ็ตรหัสผ่าน
-revisions: ประวัติการปรับปรุง
-revert: แปลงกลับ
-save: บันทึก
-schema: เค้าโครง
-search: ค้นหา
-select_existing: เลือกที่มีอยู่
-select_field_type: เลือกชนิดฟิลด์
-select_interface: เลือกอินเทอร์เฟส
-settings: การตั้งค่า
-sign_in: เข้าสู่ระบบ
-sign_out: ออกจากระบบ
-sign_out_confirm: คุณแน่ใจหรือไม่ว่าต้องการลงชื่อออก
-something_went_wrong: มีบางอย่างผิดพลาด
-sort_direction: รูปแบบการเรียง
-sort_asc: เรียงจากน้อยไปมาก
-sort_desc: เรียงจากมากไปน้อย
-template: แม่แบบ
-translation: แปลภาษา
-value: ค่า
-view_project: ดูโครงการ
-report_error: แจ้งข้อผิดพลาด
-start: เริ่มต้น
-table: ตาราง
-list: รายการ
+latency: Latency
+login: Log in
+my_activity: My Activity
+not_authenticated: Not Authenticated
+authenticated: Authenticated
+options: Options
+otp: One-Time Password
+password: Password
+permissions: Permissions
+relationship: Relationship
+reset: Reset
+reset_password: Reset Password
+revisions: Revisions
+no_revisions: No Revisions Yet
+no_logs: No Logs Yet
+revert: Revert
+save: Save
+schema: Schema
+search: Search
+select_existing: Select Existing
+select_field_type: Select a field type
+select_interface: Select an interface
+settings: Settings
+sign_in: Sign In
+sign_out: Sign Out
+sign_out_confirm: Are you sure you want to sign out?
+something_went_wrong: Something went wrong.
+sort_direction: Sort Direction
+export_location: Export Location
+export_started: Export Started
+export_started_copy: Your export has started. You'll be notified when it's ready to download.
+sort_asc: Sort Ascending
+sort_desc: Sort Descending
+disable_sort: Disable Sorting
+template: Template
+require_value_to_be_set: Require value to be set on creation
+translation: Translation
+translation_placeholder: Enter a translation...
+value: Value
+view_project: View Project
+weeks: { }
+report_error: Report Error
+start: Start
+table: Table
+list: List
+search_filter: Search & Filter
+enable_search_filter: Enable searching & filtering
+item_link: Item link
+show_link_to_item: Show a link to the item
+navigate_to_item: Navigate to Item
+undo_removed_item: Undo Removed Item
+remove_item: Remove Item
+delete_item: Delete Item
 interfaces:
   filter:
-    name: ตัวกรอง
-    add_filter: เพิ่มตัวกรอง
-    all: ทั้งหมด
-    any: ใด ๆ
-    and: และ
+    name: Filter
+    description: Configure a filter object.
+    add_filter: Add Filter
+    add_group: And / Or group
+    add_value: Add Value
+    logic_type_and: AND
+    logic_type_or: OR
+    all: All
+    any: Any
+    and: and
+    of_the_following: of the following
+    no_rules: No configured rules
+    change_value: Click to change value
+    placeholder: Drag rules here
+    add_key_placeholder: Add a key and press enter...
+  fields:
+    name: Fields
   group-accordion:
-    start: เริ่มต้น
+    name: Accordion
+    description: Display fields or groups as accordion sections
+    start: Start
+    all_closed: All Closed
+    first_opened: First Opened
+    all_opened: All Opened
+    accordion_mode: Accordion Mode
+    max_one_section_open: Max 1 Section Open
   presentation-links:
-    presentation-links: ปุ่มลิงก์
-    links: ลิงค์
-    description: ปุ่มลิงค์ที่สามารถตั้งค่าได้เพื่อเปิด URLs
-    style: สไตล์
-    primary: หลัก
-    link: ลิงค์
-    button: ปุ่ม
-    error: ไม่สามารถดำเนินการได้
+    presentation-links: Button Links
+    links: Links
+    description: Configurable link buttons for launching dynamic URLs
+    style: Style
+    primary: Primary
+    link: Links
+    button: Buttons
+    error: Cannot perform action
   select-multiple-checkbox:
-    checkboxes: ตัวเลือกแบบกล่อง
-    description: เลือกได้มากกว่าครั้งละ 1 ตัวเลือก ด้วยตัวเลือกแบบกล่อง
-    allow_other: อนุญาตคนอื่น
-    show_more: 'แสดงเพิ่มอีก {count}'
-    items_shown: ไอเท็มที่ถูกแสดง
+    checkboxes: Checkboxes
+    description: Choose between multiple options via checkboxes
+    allow_other: Allow Other
+    show_more: 'Show {count} more'
+    items_shown: Items Shown
   select-multiple-checkbox-tree:
-    show_all: แสดงทั้งหมด
-    show_selected: แสดงที่เลือก
+    name: Checkboxes (Tree)
+    description: Choose between multiple options via nested checkboxes
+    value_combining: Value Combining
+    value_combining_note: Controls what value is stored when nested selections are made.
+    show_all: Show All
+    show_selected: Show Selected
   input-code:
-    code: โค้ด
-    description: เขียนหรือแชร์โค้ดสั้นๆ
-    line_number: หมายเลขบรรทัด
-    placeholder: กรอกโค้ดที่นี่
+    code: Code
+    description: Write or share code snippets
+    line_number: Line Number
+    line_wrapping: Line Wrapping
+    placeholder: Enter code here...
   system-collection:
-    collection: คอลเลกชัน
-    description: เลือคอลเลกชันที่มีอยู่แล้ว
-    include_system_collections: รวมถึงคอลเลกชันของระบบ
+    collection: Collection
+    description: Select between existing collections
+    include_system_collections: Include System Collections
   system-collections:
-    collections: คอลเลกชัน
-    description: เลือคอลเลกชันที่มีอยู่แล้ว
-    include_system_collections: รวมถึงคอลเลกชันของระบบ
+    collections: Collections
+    description: Select between existing collections
+    include_system_collections: Include System Collections
   select-color:
-    color: สี
-    description: กรอกหรือเลือกค่าของสี
-    placeholder: เลือกสี...
-    preset_colors: สีที่กำหนดไว้ล่วงหน้า
-    preset_colors_add_label: เพิ่มสีใหม่...
-    name_placeholder: กรอกชื่อสี
+    color: Color
+    description: Enter or select a color value
+    placeholder: Choose a color...
+    preset_colors: Preset Colors
+    opacity: Opacity
+    preset_colors_add_label: Add new color...
+    name_placeholder: Enter color name...
   datetime:
-    datetime: วันที่และเวลา
-    description: กรอกวันที่และเวลา
-    include_seconds: รวมวินาทีด้วย
-    set_to_now: ตั้งค่าเป็นตอนนี้
-    use_24: ใช้รูปแบบ 24 ชั่วโมง
+    datetime: Datetime
+    description: Enter dates and times
+    include_seconds: Include Seconds
+    set_to_now: Set to Now
+    use_24: Use 24-Hour Format
+    placeholder: Choose a datetime...
   system-fields:
-    select_a_collection: เลือกคอลเลกชัน
+    select_a_collection: Select a Collection
+    no_fields: No fields
   system-display-template:
-    display-template: แม่แบบการแสดงผล
-    description: ผสมระหว่างข้อความและค่าของฟิลด์
-    collection_field: ฟิลด์ตาราง
-    collection_field_not_setup: การตั้งค่าของฟิลด์ยังไม่ถูกต้อง
-    select_a_collection: เลือกคอลเลกชัน
+    display-template: Display Template
+    description: Mix static text and dynamic field values
+    collection_field: Collection field
+    collection_field_not_setup: The collection field option is misconfigured
+    select_a_collection: Select a Collection
   presentation-divider:
-    divider: ตัวแบ่ง
-    description: แบ่งฟิลด์ออกเป็นส่วนๆ
-    inline_title: ชื่อเรื่องแบบบรรทัดเดียวกัน
-    inline_title_label: แสดงชื่อในเส้นแบ่ง
-    margin_top: ระยะห่างด้านบน
-    margin_top_label: เพิ่มระยะห่างด้านบน
+    divider: Divider
+    description: Label and divide fields into sections
+    title_placeholder: Enter a title, or leave blank to only show a line...
+    inline_title: Inline Title
+    inline_title_label: Show title inside line
+    margin_top: Margin Top
+    margin_top_label: Increase Top Margin
   select-dropdown:
-    description: เลือกค่าจากตัวเลือก
-    choices_placeholder: เพิ่มตัวเลือกใหม่
-    allow_other: อนุญาตคนอื่น
-    allow_other_label: อนุญาตให้เพิ่มค่าอื่นได้
-    allow_none: ไม่อนุญาตเลย
-    allow_none_label: อนุญาตให้ไม่เลือกอะไรเลย
-    choices_name_placeholder: กรอกชื่อ...
-    choices_value_placeholder: กรุณาใส่ค่า
+    description: Select a value from a dropdown
+    choices_placeholder: Add a new choice
+    allow_other: Allow Other
+    allow_other_label: Allow Other Values
+    allow_none: Allow None
+    allow_none_label: Allow No Selection
+    choices_name_placeholder: Enter a name...
+    choices_value_placeholder: Enter a value...
+    preview_threshold: Preview Threshold
   select-multiple-dropdown:
-    select-multiple-dropdown: ตัวเลือก (เลือกได้มากกว่า 1 ค่า)
-    description: เลือกได้มากกว่า 1 ค่าจากตัวเลือก
+    select-multiple-dropdown: Dropdown (Multiple)
+    description: Select multiple values from a dropdown
   file:
-    file: ไฟล์
-    description: เลือกหรืออัพโหลดไฟล์
+    file: File
+    description: Select or upload a file
   files:
-    files: ไฟล์
-    description: เลือกหรืออัพโหลดทีละหลายไฟล์
+    files: Files
+    description: Select or upload multiple files
   input-hash:
-    hash: ค่าแฮช
-    description: กรอกค่าที่ต้องการเข้ารหัส
-    masked: กำหนดหน้ากาก
-    masked_label: ซ่อนค่าจริง
+    hash: Hash
+    description: Enter a value to be hashed
+    masked: Masked
+    masked_label: Hide the true values
   select-icon:
-    icon: ไอคอน
-    description: เลือกไอคอนจากตัวเลือก
-    search_for_icon: ค้นหาไอคอน...
+    icon: Icon
+    description: Select an icon from a dropdown
+    search_for_icon: Search for icon...
   file-image:
-    image: รูปภาพ
-    description: เลือกหรืออัพโหลดรูปภาพ
-    crop: ตัดภาพให้พอดี
-    crop_label: ตัดภาพถ้าจำเป็น
+    image: Image
+    description: Select or upload an image
+    crop: Crop to Fit
+    crop_label: Crop image as needed
   system-interface:
-    interface: อินเทอร์เฟซ
-    description: เลือกอินเทอเฟสที่มีอยู่แล้ว
-    placeholder: เลือกอินเทอร์เฟส...
+    interface: Interface
+    description: Select an existing interface
+    placeholder: Select an interface...
   system-interface-options:
-    interface-options: ตัวเลือกอินเทอร์เฟส
-    description: กล่องข้อความสำหรับเลือกตัวเลือกของอินเทอร์เฟส
+    interface-options: Interface Options
+    description: A modal for selecting options of an interface
   list-m2m:
     many-to-many: Many to Many
-    description: เลือกหลายไอเท็มที่เกี่ยวข้อง
+    description: Select multiple related junction items
+    columns_configure_notice: You can configure the columns after creating this field.
+    display_template_configure_notice: You can configure the display template after creating this field.
   select-dropdown-m2o:
     many-to-one: Many to One
-    description: เลือก 1 ไอเท็มที่เกี่ยวข้อง
-    display_template: แม่แบบการแสดงผล
+    description: Select a single related item
+    display_template: Display Template
+  collection-item-dropdown:
+    collection-item-dropdown: Collection Item Dropdown
+    description: Select an item from a collection in JSON format
   input-rich-text-md:
     markdown: Markdown
-    description: กรอกและดู Markdown ล่วงหน้าก่อน
-    edit: แก้ไข
-    preview: ดูตัวอย่าง
-    customSyntax: บล็อกที่ออกแบบเอง
-    customSyntax_label: เพิ่ม syntax ที่ออกแบบเอง
-    customSyntax_add: เพิ่ม syntax ที่ออกแบบเอง
-    box: กล่อง/บรรทัดเดียวกัน
+    description: Enter and preview markdown
+    edit: Edit
+    preview: Preview
+    editorFont: Editor Font
+    previewFont: Preview Font
+    customSyntax: Custom Blocks
+    customSyntax_label: Add custom syntax types
+    customSyntax_add: Add custom syntax
+    box: Block / Inline
+    imageToken: Static Access Token
+    imageToken_label: Static access token is appended to the assets' URL
   map:
-    map: แผนที่
-    description: กำหนดตำแหน่งบนแผนที่
-    zoom: ซูม
-    default_view: มุมมองเริ่มต้น
-    unexpected_geometry: คาดหวัง {expected} ที่ได้ {got}
+    map: Map
+    description: Select a location on a map
+    zoom: Zoom
+    geometry_type: Geometry Type
+    geometry_format: Geometry Format
+    default_view: Default View
+    invalid_options: Invalid options
+    invalid_format: Invalid format ({format})
+    unexpected_geometry: Expected {expected}, got {got}.
+    fit_bounds: Fit view to data
+    native: Native
+    geojson: GeoJSON
+    lnglat: Longitude, Latitude
+    wkt: WKT
+    wkb: WKB
+    click_to_select: Click to select {geometry}
   presentation-notice:
-    notice: แจ้งให้ทราบ
-    description: แสดงการแจ้งให้ทราบแบบย่อ
-    text: กรอกเนื้อหาการแจ้งให้ทราบที่นี่...
+    notice: Notice
+    description: Display a short notice
+    text: Enter notice content here...
   list-o2m:
     one-to-many: One to Many
-    description: เลือกหลายไอเท็มที่เกี่ยวข้อง
-    no_collection: ไม่พบตาราง
+    description: Select multiple related items
+    no_collection: The collection could not be found
   system-folder:
-    folder: โฟลเดอร์
-    description: เลือกแฟ้ม
+    folder: Folder
+    description: Select a folder
+    field_hint: Default folder for uploaded files without a folder specified. Does not affect existing files.
+    root_name: File Library Root
+    system_default: System Defaults
   select-radio:
-    radio-buttons: ปุ่มตัวเลือก
-    description: เลือกได้ 1 จากหลายตัวเลือก
+    radio-buttons: Radio Buttons
+    description: Select one of multiple choices
   list:
-    repeater: การทำซ้ำ
-    description: สร้างหลายรายการโดยใช้โครงสร้างเดียวกัน
-    edit_fields: แก้ไขฟิลด์
-    add_label: 'ป้ายกำกับ "สร้างใหม่"'
-    sort: เรียง
-    field_note_placeholder: กรอกโน้ตให้ฟิลด์
+    repeater: Repeater
+    description: Create multiple entries of the same structure
+    edit_fields: Edit Fields
+    add_label: '"Create New" Label'
+    sort: Sort
+    sort_placeholder: Manual
+    field_note_placeholder: Enter field note...
+    incompatible_data:
+      - The current data is not compatible with the repeater interface and will be overridden when adding items to the
+      - repeater
   slider:
-    slider: แถบเลื่อน
-    description: เลือกตัวเลขโดยใช้แถบเลื่อน
-    always_show_value: แสดงค่าเสมอ
+    slider: Slider
+    description: Select a number using a slider
+    always_show_value: Always show value
   tags:
-    tags: แท็ก
-    description: เลือกหรือเพิ่มแท็ก
-    whitespace: ช่องว่าง
-    hyphen: แทนด้วยขีดกลาง
-    underscore: แทนด้วยขีดเส้นใต้
-    remove: ลบช่องว่าง
-    capitalization: ตัวพิมพ์ใหญ่
-    uppercase: แปลงเป็นตัวพิมพ์ใหญ่
-    lowercase: แปลงเป็นตัวพิมพ์เล็ก
-    auto_formatter: ใช้การจัดรูปแบบชื่อเรื่องอัตโนมัติ
-    alphabetize: เรียงตามตัวอักษร
-    alphabetize_label: บังคับเรียงตามตัวอักษร
+    tags: Tags
+    description: Select or add tags
+    whitespace: Whitespace
+    hyphen: Replace with hyphen
+    underscore: Replace with underscore
+    remove: Remove whitespace
+    capitalization: Capitalization
+    uppercase: Convert Uppercase
+    lowercase: Convert Lowercase
+    auto_formatter: Use Title Auto-Formatter
+    alphabetize: Alphabetize
+    alphabetize_label: Force Alphabetical Order
+    add_tags: Add a tag and press Enter...
   input:
     input: Input
-    description: ป้อนค่าด้วยตนเอง
-    trim: ตัดขอบ
-    trim_label: ตัดช่องว่างหน้าหลัง
-    mask: กำหนดหน้ากาก
-    mask_label: ซ่อนค่าจริง
-    clear: ล้างค่า
-    clear_label: บันทึกเป็นค่าว่าง
-    minimum_value: ค่าน้อยสุด
-    maximum_value: ค่ามากสุด
-    step_interval: ขั้นในการเพิ่มลดค่า
+    description: Manually enter a value
+    trim: Trim
+    trim_label: Trim the start and end
+    mask: Masked
+    mask_label: Hide the real value
+    clear: Cleared Value
+    clear_label: Save as empty string
+    minimum_value: Minimum Value
+    maximum_value: Maximum Value
+    step_interval: Step Interval
     slug: Slugify
-    slug_label: ทำให้ URL ค่าที่ป้อนปลอดภัย
+    slug_label: Make entered value URL safe
   input-multiline:
-    textarea: กล่องข้อความ
-    description: กรอกข้อความได้แบบหลายบรรทัด
+    textarea: Textarea
+    description: Enter multiline plain-text
+  input-translated-string:
+    input-translated-string: Translated Strings
+    description: Select or add translation string
+    search_placeholder: Search...
+    new_translation_string: New Translation String
   boolean:
-    toggle: สลับ
-    description: สลับระหว่าง เปิด และ ปิด
-    color_on: แสดงสี
-    color_off: ไม่แสดงสี
-    label_placeholder: กรอกชื่อ...
-    label_default: เปิดใช้งาน
+    toggle: Toggle
+    description: Switch between on and off
+    color_on: Color On
+    color_off: Color Off
+    label_placeholder: Enter a label...
+    label_default: Enabled
   translations:
-    display_template: แม่แบบการแสดงผล
-    no_collection: ไม่มีคอลเลกชัน
-    user_language: ใช้ภาษาของบัญชีผู้ใช้
-    default_language: ภาษาเริ่มต้น
+    display_template: Display Template
+    no_collection: No Collection
+    toggle_split_view: Toggle Split View
+    enable: Enable
+    user_language: Use Current User Language
+    default_language: Default Language
+    language_field: Language Indicator Field
+    language_direction_field: Language Direction Field
   list-o2m-tree-view:
-    description: มุมมองแผนภูมิสำหรับรายการข้อมูลหนึ่งต่อหลายรายการแบบซ้ำซ้อน
-    recursive_only: อินเทอร์เฟซมุมมองแผนภูมิใช้งานได้กับความสัมพันธ์แบบซ้ำซ้อนเท่านั้น
+    description: Tree view for nested recursive one-to-many items
+    recursive_only: The tree view interface only works for recursive relationships.
   user:
-    user: ผู้ใช้
-    description: เลือกผู้ใช้ของ directus ที่มีอยู่แล้ว
-    select_mode: เลือกโหมด
+    user: User
+    description: Select an existing directus user
+    select_mode: Select Mode
     modes:
-      auto: อัตโนมัติ
-      dropdown: ตัวเลือกแบบดรอปดาวน์
-      modal: กล่อง
+      auto: Auto
+      dropdown: Dropdown
+      modal: Modal
   input-rich-text-html:
     wysiwyg: WYSIWYG
-    description: เขียนข้อความที่สามารถตกแต่งได้ด้วย HTML
-    toolbar: แถบเครื่องมือ
-    custom_formats: รูปแบบที่กำหนดเอง
-    options_override: ตัวเลือกแทนที่
+    description: A rich-text editor writing HTML content
+    toolbar: Toolbar
+    custom_formats: Custom Formats
+    options_override: Options Override
+    folder_note: Folder for uploaded files. Does not affect existing files.
+    imageToken: Static Access Token
+    imageToken_label: Static access token is appended to the assets' URL
   input-autocomplete-api:
-    input-autocomplete-api: ป้อนข้อมูลอัตโนมัติ (API)
-    description: การพิมพ์ล่วงหน้าสำหรับค่า API ภายนอก
-    results_path: ส่วนผลลัพธ์
-    value_path: ส่วนค่า
+    input-autocomplete-api: Autocomplete Input (API)
+    description: A search typeahead for external API values.
+    results_path: Results Path
+    value_path: Value Path
+    text_path: Text Path
     trigger: Trigger
-    rate: ' ให้คะแนน'
+    rate: Rate
+  group-raw:
+    name: Raw Group
+    description: Render the fields as-is
+  group-detail:
+    name: Detail Group
+    description: Render the fields as a collapsable section
+    show_header: Show Group Header
+    header_icon: Header Icon
+    header_color: Header Color
+    start_open: Start Open
+    start_closed: Start Closed
   system-token:
-    system-token: โทเค็น
+    system-token: Token
+    description: Manage static access token
+    placeholder: Click "Generate Token" to create a new static access token
+    value_securely_saved: Value Securely Saved
+    generate: Generate Token
+    regenerate: Regenerate Token
+    generate_success_copy: Make sure to backup and copy the token above. For security reasons, you will not be able to view the token again after saving and navigate off this page.
+    remove_token: Remove Token
+  system-raw-editor:
+    system-raw-editor: Raw Editor
+    description: Allow entering of raw or mustache templating values
 displays:
   translations:
-    translations: การแปลภาษา
-    description: แสดงตัวอย่างการแปล
-    user_language: ใช้ภาษาของบัญชีผู้ใช้
-    default_language: ภาษาเริ่มต้น
+    translations: Translations
+    description: Preview translations
+    enable: Enable
+    user_language: Use Current User Language
+    default_language: Default Language
+    language_field: Language Indicator Field
   boolean:
-    boolean: ค่าบูลีน
-    description: แสดงสถานะ เปิด และปิด
-    label_on: แสดงป้ายกำกับ
-    label_on_placeholder: กรอกป้ายกำกับที่แสดงว่า เปิด
-    label_off: ไม่แสดงป้ายกำกับ
-    label_off_placeholder: กรอกป้ายกำกับที่แสดงว่า ปิด
-    icon_on: แสดงไอคอน
-    icon_off: ไม่แสดงไอคอน
-    color_on: แสดงสี
-    color_off: ไม่แสดงสี
+    boolean: Boolean
+    description: Display on and off states
+    label_on: Label On
+    label_on_placeholder: Enter an on label...
+    label_off: Label Off
+    label_off_placeholder: Enter an off label...
+    icon_on: Icon On
+    icon_off: Icon Off
+    color_on: Color On
+    color_off: Color Off
   collection:
-    collection: คอลเลกชัน
-    description: แสดงคอลเลกชัน
-    icon_label: แสดงไอคอนของคอลเลกชัน
+    collection: Collection
+    description: Display a collection
+    icon_label: Show the collection's icon
   color:
-    color: สี
-    description: แสดงจุดที่เป็นสี
-    default_color: สีเริ่มต้น
+    color: Color
+    description: Display a colored dot
+    default_color: Default Color
   datetime:
-    datetime: วันที่และเวลา
-    description: แสดงค่าที่เกี่ยวกับเวลา
-    format: รูปแบบ
+    datetime: Datetime
+    description: Display values related to time
+    format: Format
     format_note: >-
-      ฟอร์แมตของวันเวลาต้องสอดคล้องกับ __[Date Field Symbol Table](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table)__
-    long: ยาว
-    short: สั้น
-    relative: อิงเวลา
-    relative_label: 'แสดงเป็นเวลาที่อิงกัน เช่น 5 นาทีที่แล้ว'
-    suffix: คำต่อท้าย
+      The custom format accepts the __[Date Field Symbol Table](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table)__
+    long: Long
+    short: Short
+    relative: Relative
+    relative_label: 'Show relative time, eg: 5 minutes ago'
+    suffix: Suffix
+    suffix_label: Show relative indicator
+    suffix_note: Uses words like 'in' and 'ago'
+    strict: Strict
+    strict_label: Use strict units
+    strict_note: Removes words like 'almost', 'over', 'less than'
+    round: Round
+    round_note: Choose a rounding function to use
+    down: Down
+    nearest: Nearest
+    up: Up
   file:
-    file: ไฟล์
-    description: แสดงไฟล์
+    file: File
+    description: Display files
   filesize:
-    filesize: ขนาดไฟล์
-    description: แสดงขนาดของไฟล์
+    filesize: File Size
+    description: Display the size of a file
   formatted-value:
-    formatted-value: ค่าที่ถูกกำหนดรูปแบบ
-    description: แสดงข้อความในเวอร์ชั่นที่ถูกกำหนดรูปแบบ
-    format: รูปแบบ
-    font: ฟอนท์
+    formatted-value: Formatted Value
+    description: Display a formatted version of the text
+    format: Format
+    format_label: Auto format
+    font: Font
+    font_sans_serif: Sans serif
     font_serif: Serif
     font_monospace: Monospace
-    bold: ตัวหนา
-    bold_label: ใช้ตัวหนา
-    italic: ตัวเอียง
-    prefix: คำนำหน้า
-    suffix: คำต่อท้าย
-    color: สี
-    icon: ไอคอน
-    text: ข้อความแบบยาว
+    bold: Bold
+    bold_label: Use bold style
+    italic: Italic
+    italic_label: Use italic style
+    prefix: Prefix
+    prefix_label: Prepend text
+    suffix: Suffix
+    suffix_label: Appended Text
+    color: Color
+    background: Background
+    icon: Icon
+    border: Border
+    border_label: Show border
+    text: Text
+    text_placeholder: Optional value override...
   formatted-json-value:
-    formatted-json-value: ค่า JSON ที่ถูกจัดรูปแบบแล้ว
-    description: แสดงค่าของ JSON ที่ถูกจัดรูปแบบแล้ว
+    formatted-json-value: Formatted JSON value
+    description: Display a formatted version of the object
   icon:
-    icon: ไอคอน
-    description: แสดงไอคอน
-    filled: เติมให้เต็ม
-    filled_label: เติมให้เต็มพื้นที่
+    icon: Icon
+    description: Display an icon
+    filled: Filled
+    filled_label: Use the filled variant
   image:
-    image: รูปภาพ
-    description: แสดงการพรีวิวรูปภาพแบบเล็ก
-    circle: วงกลม
-    circle_label: แสดงรูปเป็นวงกลม
+    image: Image
+    description: Display a tiny image preview
+    circle: Circle
+    circle_label: Display as a circle
   labels:
-    labels: ป้ายกำกับ
-    description: แสดงป้ายกำกับทั้งแบบเดี่ยวหรือเป็นรายการ
-    default_foreground: ค่าตั้งต้นพื้นหน้า
-    default_background: ค่าตั้งต้นพื้นหลัง
-    format_label: จัดรูปแบบแต่ละป้ายกำกับ
-    show_as_dot: แสดงเป็นจุด
-    choices_value_placeholder: กรุณาใส่ค่า
-    choices_text_placeholder: กรอกข้อความ...
+    labels: Labels
+    description: Display either a single or a list of labels
+    default_foreground: Default Foreground
+    default_background: Default Background
+    format_label: Format each label
+    show_as_dot: Show As Dot
+    choices_value_placeholder: Enter a value...
+    choices_text_placeholder: Enter a text...
   mime-type:
     mime-type: MIME Type
-    description: แสดง MIME-Type ของไฟล์
-    extension_only: นามสกุลเท่านั้น
-    extension_only_label: แสดงแค่นามสกุลไฟล์
+    description: Show the MIME-Type of a file
+    extension_only: Extension Only
+    extension_only_label: Only show the file extension
   rating:
-    rating: เรตติ้ง
-    description: แสดงค่าของตัวเลขเป็นจำนวนดาวที่อิงจากค่าสูงสุด
-    simple: เรียบง่าย
-    simple_label: แสดงรูปดาวในรูปแบบง่ายๆ
+    rating: Rating
+    description: Visualize a number as stars relative to the max-value
+    simple: Simple
+    simple_label: Show stars in a simple format
   raw:
-    raw: ข้อมูลดิบ
+    raw: Raw Value
   related-values:
-    related-values: ค่าที่เกี่ยวข้อง
-    description: แสดงค่าที่เกี่ยวข้อง
+    related-values: Related Values
+    description: Display relative values
+    display_template_configure_notice: You can configure the display template after creating this field.
   user:
-    user: ผู้ใช้
-    description: แสดงผู้ใช้ของ directus
-    avatar: ภาพประจำตัว
-    name: ชื่อ
-    both: ทั้งคู่
-    circle_label: แสดงผู้ใช้ในวงกลม
+    user: User
+    description: Display a directus user
+    avatar: Avatar
+    name: Name
+    both: Both
+    circle_label: Show user in a circle
 layouts:
   cards:
-    cards: การ์ด
-    image_source: ที่มารูปภาพ
-    image_fit: แสดงรูปเต็มพอดีพื้นที่
-    crop: ครอบตัด
-    contain: บรรจุให้เต็ม
-    title: ตำแหน่ง
-    subtitle: คำบรรยาย
+    cards: Cards
+    image_source: Image Source
+    image_fit: Image Fit
+    crop: Crop
+    contain: Contain
+    title: Title
+    subtitle: Subtitle
   tabular:
-    tabular: ตาราง
-    spacing: ระยะห่าง
-    comfortable: สบายตา
-    compact: กระชับ
-    cozy: สบาย
+    tabular: Table
+    spacing: Spacing
+    comfortable: Comfortable
+    compact: Compact
+    cozy: Cozy
   calendar:
-    calendar: ปฏิทิน
-    start_date_field: ฟิลด์วันที่เริ่มต้น
-    end_date_field: ฟิลด์วันที่สิ้นสุด
+    calendar: Calendar
+    start_date_field: Start Date Field
+    end_date_field: End Date Field
+    optional: Optional
+    first_day: First Day of the Week
   map:
-    map: แผนที่
-    basemap: แผนที่ฐาน
-    layers: เลเยอร์
-    cluster_options: ตัวเลือกการทำคลัสเตอร์
-    cluster: ทำคลัสเตอร์ข้อมูลใกล้เคียง
-    cluster_radius: รัศมีการทำคลัสเตอร์
-    cluster_minpoints: ขนาดเล็กที่สุดของคลัสเตอร์
-    cluster_maxzoom: การขยายสูงสุดของคลัสเตอร์
-    field: ฟิลด์ข้อมูลเชิงพื้นที่
-    invalid_geometry: รูปร่างไม่ถูกต้อง
-    find_location: ค้นหาสถานที่
-    no_compatible_fields: ไม่มีฟิลด์ที่ใช้ได้
+    map: Map
+    basemap: Basemap
+    layers: Layers
+    cluster_options: Clustering options
+    cluster: Cluster Nearby Data
+    cluster_radius: Cluster radius
+    cluster_minpoints: Cluster minimum size
+    cluster_maxzoom: Maximum zoom for clustering
+    field: Geospatial Field
+    invalid_geometry: Invalid geometry
+    find_location: Find location...
+    default_template: Using Collection Default...
+    no_compatible_fields: No compatible fields
   kanban:
-    crop: ครอบตัด
-    advanced: ขั้นสูง
-    edit_group: แก้ไขกลุ่ม
-    delete_group: ลบกลุ่ม
-    add_group: เพิ่มกลุ่ม
-horizontal: แนวนอน
-both: ทั้งคู่
+    name: Kanban
+    group_field: Group By
+    group_field_placeholder: Field to group by...
+    group_title: Group Title
+    group_title_placeholder: Field for group titles...
+    title: Card Title
+    title_placeholder: Optional title field...
+    text: Card Text
+    text_placeholder: Optional text field...
+    date: Card Date
+    date_placeholder: Optional date field...
+    tags: Card Tags
+    tags_placeholder: Optional tags field...
+    user: Card User
+    user_placeholder: Optional user field...
+    image: Card Image
+    image_placeholder: Optional image field...
+    image_fit: Card Image Fit
+    crop: Crop
+    advanced: Advanced
+    edit_group: Edit Group
+    delete_group: Delete Group
+    add_group: Add Group
+    add_group_placeholder: Enter a new group title...
+    show_ungrouped: Show Ungrouped
+    show: Show
+    no_group: No Group
+    not_all_loaded: Could only load the first 1000 items.
+horizontal: Horizontal
+vertical: Vertical
+x_axis: X-Axis
+y_axis: Y-Axis
+y_axis_function: Y-Axis Function
+show_x_only: Show X-Axis Only
+show_y_only: Show Y-Axis Only
+show_data_label: Show Data Label
+both: Both
+show_axis_labels: Show Axis Labels
+function: Function
+half_circle: Half Circle
+full_circle: Full Circle
+stroke_width: Stroke Width
+rounded_stroke: Rounded Stroke
+thin: Thin
+medium: Medium
+broad: Broad
+show_labels: Show Labels
+show_legend: Show Legend
+right: Right
+left: Left
+donut: Donut
 panels:
   metric:
-    field: ฟิลด์
+    name: Metric
+    description: Show a single value based on a query
+    field: Field
   time_series:
-    date_field: ฟิลด์วันที่
-    value_field: ค่าของฟิลด์
+    name: Time Series
+    description: Render a line chart based on values over time
+    date_field: Date Field
+    value_field: Value Field
+    fill_type: Fill Type
+    curve_type: Curve Type
   label:
-    name: ป้าย
+    name: Label
+    description: Show some text
   list:
-    name: รายการ
+    name: List
+    description: Filter and list fields from a collection
   barchart:
-    name: แผนภูมิแท่ง
-    horizontal: แนวนอน
+    name: Bar Chart
+    description: Bar or column charts for comparing groups of values
+    horizontal: Horizontal
+    select_collection: You must select a collection.
+  linechart:
+    name: Line Chart
+    description: Line chart for comparing change of a field
+    disabled_grouping: Disabled when grouping is selected.
+    disabled_no_grouping: Disabled when no grouping is selected.
+    show_marker: Show Tooltip Marker
+    curve_type: Curve Type
+    smooth: Smooth
+    straight: Straight
+    step_line: Step Line
+  meter:
+    name: Meter
+    description: Meter for tracking values
+  piechart:
+    name: Pie or Donut Chart
+    description: Circular chart showing the ratios of groups on a column
+  variable:
+    name: Global Variable
+    description: Set a global value for use in other Panels' filters
+    variable_key: Variable Key
+  relational-variable:
+    name: Global Relational Variable
+    description: Set a global relational value for use in other Panels' filters
+    variable_key: Variable Key
+    multiple: Multiple
+    multiple-label: Select multiple items
 triggers:
+  common:
+    response_body: Response Body
+    response_body_all: All Data
+    response_body_last: Data of Last Operation
+  event:
+    name: Event Hook
+    description: Triggers on platform or data events
+    action: 'Action (Non-Blocking)'
+    filter: 'Filter (Blocking)'
   webhook:
-    method: เมธอด
+    name: Webhook
+    description: Triggers on an incoming HTTP request
+    method: Method
+    async: Asynchronous
+  operation:
+    name: Another Flow
+    description: Triggered by another Flow, for chaining
+    preview: Triggered by an operation in a different Flow
+  schedule:
+    name: Schedule (CRON)
+    description: Triggers at regular points in time
+    cron: Interval
+  manual:
+    name: Manual
+    description: Triggers on manual run within selected collection(s)
+    collection_and_item: Collection & Item Pages
+    collection_only: Collection Page Only
+    item_only: Item Page Only
+    collection_page: Collection Page
+    require_selection: Requires Selection
+a_flow_uuid: Select a Flow to trigger...
+any_string_or_json: Any string or JSON...
+item_payload_placeholder: This is the JSON used to update the item's field values...
+operation_variables_note: You can access flow data with variables such as **{'{'}{'{'}$last{'}'}{'}'}**, **{'{'}{'{'}$trigger{'}'}{'}'}** and **{'{'}{'{'}$accountability{'}'}{'}'}**, or reference previous operations using **{'{'}{'{'}operation_key{'}'}{'}'}**.'
 operations:
+  condition:
+    name: Condition
+    description: Route a flow based on If / Else logic
+  exec:
+    name: Run Script
+    description: Execute arbitrary code to modify the payload
+    modules: 'The following **Node modules** can be used:'
+  item-create:
+    name: Create Data
+    description: Create items in the database
+    payload: Payload
+    emit_events: Emit Events
+  item-delete:
+    name: Delete Data
+    description: Delete items in the database
+    emit_events: Emit Events
+    key: IDs
+    query: Query
+  item-read:
+    name: Read Data
+    description: Read items from the database
+    key: IDs
+    query: Query
+    emit_events: Emit Events
+  item-update:
+    name: Update Data
+    description: Update items in the database
+    emit_events: Emit Events
+    key: IDs
+    payload: Payload
+    query: Query
   log:
-    message: ข้อความ
+    name: Log to Console
+    description: Output something to the console
+    message: Message
+    message_placeholder: Enter a message to show in the console...
   mail:
-    template: แม่แบบ
-    data: ข้อมูล
+    name: Send Email
+    description: Send an email to one or more people
+    to: To
+    to_placeholder: Add e-mail addresses and press enter...
+    body: Body
+    template: Template
+    data: Data
   notification:
-    recipient: ผู้ใช้
-    message: ข้อความ
+    name: Send Notification
+    description: Send an in-app notification to one or more users
+    recipient: User
+    recipient_placeholder: Enter a UUID...
+    recipient_note: Add user UUID and press enter...
+    message: Message
   request:
+    name: Webhook / Request URL
+    description: "Make a request to a URL"
     url: URL
-    method: เมธอด
-    data: ข้อมูล
-    header: เฮดเดอร์
+    url_placeholder: https://example.com/example
+    method: Method
+    data: Data
+    headers: Headers
+    header: Header
+    header_placeholder: Authorization...
+    value_placeholder: Bearer eyJhbGciOi...
+  sleep:
+    name: Sleep
+    description: Wait a given number of milliseconds
+    milliseconds: Milliseconds
+  transform:
+    name: Transform Payload
+    description: Alter the Flow's JSON payload
   trigger:
-    data: ข้อมูล
+    name: Trigger Flow
+    description: Pass this data to another flow
+    flows: Flows
+    flow: Flow
+    data: Data
+    iteration_mode: Iteration Mode
+    iteration_mode_note: Mode for iterating over arrays.
+    serial: Serial
+    parallel: Parallel
+    batch: Batch
+    batch_size: Batch Size
+Enable CORS: Enable CORS
