@@ -226,7 +226,7 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 			const urlParams = new URL(authUrl);
 			const state = urlParams.searchParams.get('state');
 
-			const cookieName = state ? `openid.${providerName}.${state}` : `openid.${providerName}`;
+			const cookieName = `openid.${providerName}.${state || ''}`;
 
 			res.cookie(cookieName, token, {
 				httpOnly: true,
@@ -254,7 +254,7 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 			const validRedirectUrl = isRedirectAllowedOnLogin(redirectUrl, providerName) ? redirectUrl : null;
 			const state = req.query['state'] as string;
 
-			const cookieName = state ? `openid.${providerName}.${state}` : `openid.${providerName}`;
+			const cookieName = `openid.${providerName}.${state || ''}`;
 			const cookieValue = req.cookies[cookieName];
 
 			let tokenData;
