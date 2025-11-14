@@ -1,5 +1,13 @@
 # @wbce-d9/api
 
+## 12.0.1
+
+### Patch Changes
+
+- 3e418cf: Add redirect on login or on redirect uri OpenID error
+- Updated dependencies [3e418cf]
+  - @wbce-d9/app@9.33.8
+
 ## 12.0.0
 
 ### Major Changes
