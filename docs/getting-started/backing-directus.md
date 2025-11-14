@@ -23,8 +23,8 @@ or contact us for bulk merch pricing. We'll get it shipped as soon as sizing and
 
 **GitHub Stars**\
 As an open-source project, stars are a primary metric by which we measure our success. It only takes a few seconds to head
-to the [Directus GitHub Repo](https://github.com/LaWebcapsule/directus9) and click the star. With enough activity in a short period
-of time, we get _even more exposure_ on GitHub's trending page!
+to the [Directus GitHub Repo](https://github.com/LaWebcapsule/directus9) and click the star. With enough activity in a short
+period of time, we get _even more exposure_ on GitHub's trending page!
 
 **Social Posts**\
 Engage with us on social media. Follow us! A quick post mentioning [@directus](https://twitter.com/directus) goes a long
