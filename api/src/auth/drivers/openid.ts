@@ -113,6 +113,17 @@ export class OpenIDAuthDriver extends BaseOAuthDriver {
 			const codeChallenge = generators.codeChallenge(codeVerifier);
 			const paramsConfig = typeof this.config['params'] === 'object' ? this.config['params'] : {};
 
+			const redirectAfterLogin = additionalParams?.['redirect'];
+			delete additionalParams?.['redirect'];
+
+			let finalRedirectUri = this.redirectUrl;
+
+			if (redirectAfterLogin) {
+				const redirectUriWithParams = new URL(this.redirectUrl);
+				redirectUriWithParams.searchParams.set('redirect', redirectAfterLogin as string);
+				finalRedirectUri = redirectUriWithParams.toString();
+			}
+
 			return client.authorizationUrl({
 				scope: this.config['scope'] ?? 'openid profile email',
 				access_type: 'offline',
@@ -123,6 +134,7 @@ export class OpenIDAuthDriver extends BaseOAuthDriver {
 				// Some providers require state even with PKCE
 				state: codeChallenge,
 				nonce: codeChallenge,
+				redirect_uri: finalRedirectUri,
 				...additionalParams,
 			});
 		} catch (e) {
@@ -206,16 +218,22 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 				issuer: 'directus',
 			});
 
-			res.cookie(`openid.${providerName}`, token, {
+			const additionalParams = { ...req.query };
+			delete additionalParams['prompt'];
+
+			const authUrl = await provider.generateAuthUrl(codeVerifier, prompt, additionalParams);
+
+			const urlParams = new URL(authUrl);
+			const state = urlParams.searchParams.get('state');
+
+			const cookieName = `openid.${providerName}.${state || ''}`;
+
+			res.cookie(cookieName, token, {
 				httpOnly: true,
 				sameSite: 'lax',
 			});
 
-			const additionalParams = { ...req.query };
-			delete additionalParams['prompt'];
-			delete additionalParams['redirect'];
-
-			return res.redirect(await provider.generateAuthUrl(codeVerifier, prompt, additionalParams));
+			return res.redirect(authUrl);
 		}),
 		respond
 	);
@@ -232,10 +250,17 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 	router.get(
 		'/callback',
 		asyncHandler(async (req, res, next) => {
+			const redirectUrl = req.query['redirect'] as string;
+			const validRedirectUrl = isRedirectAllowedOnLogin(redirectUrl, providerName) ? redirectUrl : null;
+			const state = req.query['state'] as string;
+
+			const cookieName = `openid.${providerName}.${state || ''}`;
+			const cookieValue = req.cookies[cookieName];
+
 			let tokenData;
 
 			try {
-				tokenData = jwt.verify(req.cookies[`openid.${providerName}`], env['SECRET'] as string, {
+				tokenData = jwt.verify(cookieValue, env['SECRET'] as string, {
 					issuer: 'directus',
 				}) as {
 					verifier: string;
@@ -243,8 +268,14 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 					prompt: boolean;
 				};
 			} catch (e: any) {
-				logger.warn(e, `[OpenID] Couldn't verify OpenID cookie`);
-				throw new InvalidCredentialsException();
+				logger.warn(e, `[OpenID] Couldn't verify OpenID cookie ${state ? `for state ${state}` : ''}`);
+
+				const baseUrl = env['PUBLIC_URL'];
+				const loginPath = '/admin/login';
+				const url = new URL(loginPath, baseUrl);
+
+				const redirectTo = validRedirectUrl || url.toString();
+				return res.redirect(`${redirectTo}?reason=INVALID_CREDENTIALS`);
 			}
 
 			const { verifier, redirect, prompt } = tokenData;
@@ -268,7 +299,7 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 			let authResponse;
 
 			try {
-				res.clearCookie(`openid.${providerName}`);
+				res.clearCookie(cookieName);
 
 				authResponse = await authenticationService.login(providerName, {
 					code: req.query['code'],
