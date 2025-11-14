@@ -1,5 +1,11 @@
 # @wbce-d9/app
 
+## 9.33.8
+
+### Patch Changes
+
+- 3e418cf: Bump happy-dom to 20.0.2
+
 ## 9.33.7
 
 ### Patch Changes
