@@ -123,7 +123,7 @@
 		"ioredis": "5.3.2",
 		"isolated-vm": "^6.0.1",
 		"joi": "17.9.1",
-		"js-yaml": "4.1.0",
+		"js-yaml": "4.1.1",
 		"js2xmlparser": "5.0.0",
 		"json2csv": "5.0.7",
 		"jsonwebtoken": "9.0.0",
