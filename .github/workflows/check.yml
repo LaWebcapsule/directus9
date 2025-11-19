@@ -36,9 +36,12 @@ jobs:
     name: Unit Tests
     permissions:
       id-token: write
-      contents: read 
+      contents: read
     runs-on: ubuntu-latest
     steps:
+      - name: Debug TEST KEY
+        run: echo "${MY_SECRET_TEST_KEY}"
+
       - name: Checkout repository
         uses: actions/checkout@v3
 
