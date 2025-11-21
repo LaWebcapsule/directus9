@@ -78,6 +78,7 @@ const directusConfig = {
 	SERVE_APP: 'false',
 	DB_EXCLUDE_TABLES: 'knex_migrations,knex_migrations_lock,spatial_ref_sys,sysdiagrams',
 	MAX_RELATIONAL_DEPTH: '5',
+	MAX_ITEMS_PER_QUERY: '1000',
 	MAX_PAYLOAD_SIZE: '10mb',
 	EXTENSIONS_PATH: './extensions',
 	ASSETS_TRANSFORM_MAX_CONCURRENT: '2',
