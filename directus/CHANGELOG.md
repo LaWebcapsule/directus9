@@ -1,5 +1,15 @@
 # directus9
 
+## 11.0.2
+
+### Patch Changes
+
+- 7a257b0: Explicitly specify the shell in the Dockerfile using /bin/sh for improved security and compatibility.
+- 7a257b0: Bump js-yaml to 4.1.1
+- Updated dependencies [7a257b0]
+- Updated dependencies [7a257b0]
+  - @wbce-d9/api@12.0.2
+
 ## 11.0.1
 
 ### Patch Changes
