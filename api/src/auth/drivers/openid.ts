@@ -152,8 +152,16 @@ export class OpenIDAuthDriver extends BaseOAuthDriver {
 			const client = await this.client;
 			const codeChallenge = generators.codeChallenge(payload['codeVerifier']);
 
+			let finalRedirectUri = this.redirectUrl;
+
+			if (payload['redirect']) {
+				const redirectUriWithParams = new URL(this.redirectUrl);
+				redirectUriWithParams.searchParams.set('redirect', payload['redirect'] as string);
+				finalRedirectUri = redirectUriWithParams.toString();
+			}
+
 			tokenSet = await client.callback(
-				this.redirectUrl,
+				finalRedirectUri,
 				{ code: payload['code'], state: payload['state'], iss: payload['iss'] },
 				{ code_verifier: payload['codeVerifier'], state: codeChallenge, nonce: codeChallenge }
 			);
@@ -306,6 +314,7 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 					codeVerifier: verifier,
 					state: req.query['state'],
 					iss: req.query['iss'],
+					redirect: validRedirectUrl,
 				});
 			} catch (error: any) {
 				// Prompt user for a new refresh_token if invalidated
