@@ -1,5 +1,11 @@
 # @wbce-d9/app
 
+## 9.34.0
+
+### Minor Changes
+
+- a020496: When creating new collection, default id is uuid
+
 ## 9.33.8
 
 ### Patch Changes
