@@ -336,6 +336,8 @@ const typeMap: Record<string, string> = {
 	MAX_BATCH_MUTATION: 'number',
 
 	SERVER_SHUTDOWN_TIMEOUT: 'number',
+
+	MAX_ITEMS_PER_QUERY: 'number',
 };
 
 let env: Record<string, any> = {

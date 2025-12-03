@@ -238,11 +238,9 @@ function validateRelationalDepth(query: Query) {
 }
 
 function validateLimit(limit: any) {
-	const maxItemsPerQuery = Number(env['MAX_ITEMS_PER_QUERY']) || 1000;
+	const maxItemsPerQuery = env['MAX_ITEMS_PER_QUERY'];
 
-	if (limit !== -1 && maxItemsPerQuery !== -1) {
-		if (limit > maxItemsPerQuery) {
-			throw new InvalidQueryException(`"Limit" can't exceed ${maxItemsPerQuery}`);
-		}
+	if (maxItemsPerQuery !== -1 && limit > maxItemsPerQuery) {
+		throw new InvalidQueryException(`"Limit" can't exceed ${maxItemsPerQuery}`);
 	}
 }

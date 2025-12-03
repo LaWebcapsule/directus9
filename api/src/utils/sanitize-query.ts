@@ -14,10 +14,8 @@ export function sanitizeQuery(rawQuery: Record<string, any>, accountability?: Ac
 		if (typeof limit === 'number') {
 			const maxItemsPerQuery = Number(env['MAX_ITEMS_PER_QUERY']);
 
-			if (maxItemsPerQuery !== -1) {
-				if (limit === -1) {
-					limit = maxItemsPerQuery;
-				}
+			if (maxItemsPerQuery !== -1 && limit === -1) {
+				limit = maxItemsPerQuery;
 			}
 
 			query.limit = limit;
