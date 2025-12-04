@@ -205,7 +205,7 @@ prefixing the value with `{type}:`. The following types are available:
 | `GRAPHQL_INTROSPECTION`    | Whether or not to enable GraphQL Introspection                                                             | `true`                       |
 | `MAX_BATCH_MUTATION`       | The maximum number of items for batch mutations when creating, updating and deleting.                      | `Infinity`                   |
 | `MAX_RELATIONAL_DEPTH`     | The maximum depth when filtering / querying relational fields, with a minimum value of `2`.                | `10`                         |
-| `MAX_ITEMS_PER_QUERY`     | The maximum items when allowed querying relational fields. Set it to `-1` to remove the limitation.                | `1000`                         |
+| `MAX_ITEMS_PER_QUERY`     | The maximum items when allowed querying relational fields. Set it to `-1` to remove the limitation.                | `-1`                         |
 | `ROBOTS_TXT`               | What the `/robots.txt` endpoint should return                                                              | `User-agent: *\nDisallow: /` |
 | `X_POWERED_BY_ENABLED`     | Whether the response should return the X-Powered-By Directus Header                                        | `true`                       |
 
