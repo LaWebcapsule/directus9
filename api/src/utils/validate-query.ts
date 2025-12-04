@@ -33,6 +33,10 @@ export function validateQuery(query: Query): Query {
 		validateAlias(query.alias);
 	}
 
+	if (query.limit) {
+		validateLimit(query.limit);
+	}
+
 	validateRelationalDepth(query);
 
 	if (error) {
@@ -230,5 +234,13 @@ function validateRelationalDepth(query: Query) {
 		if (deepRelationalDepth > maxRelationalDepth) {
 			throw new InvalidQueryException('Max relational depth exceeded.');
 		}
+	}
+}
+
+function validateLimit(limit: any) {
+	const maxItemsPerQuery = env['MAX_ITEMS_PER_QUERY'];
+
+	if (maxItemsPerQuery !== -1 && limit > maxItemsPerQuery) {
+		throw new InvalidQueryException(`"Limit" can't exceed ${maxItemsPerQuery}`);
 	}
 }

@@ -1,5 +1,6 @@
-import { describe, expect, test, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 
+import env from '../env.js';
 import { sanitizeQuery } from './sanitize-query.js';
 
 vi.mock('@wbce-d9/utils', async () => {
@@ -24,6 +25,29 @@ describe('limit', () => {
 		const sanitizedQuery = sanitizeQuery({ limit });
 
 		expect(sanitizedQuery.limit).toBe(1);
+	});
+});
+
+describe('limit with MAX_ITEMS_PER_QUERY env', () => {
+	const originalMaxItemsPerQuery = env['MAX_ITEMS_PER_QUERY'];
+
+	beforeEach(() => {
+		env['MAX_ITEMS_PER_QUERY'] = 100;
+	});
+
+	afterEach(() => {
+		env['MAX_ITEMS_PER_QUERY'] = originalMaxItemsPerQuery;
+	});
+
+	test.each([0, 10, 100])('should accept number %i with env', (limit) => {
+		const sanitizedQuery = sanitizeQuery({ limit });
+		expect(sanitizedQuery.limit).toBe(limit);
+	});
+
+	test('should set limit value to 100 with env', () => {
+		const limit = '-1';
+		const sanitizedQuery = sanitizeQuery({ limit });
+		expect(sanitizedQuery.limit).toBe(100);
 	});
 });
 
