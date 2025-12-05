@@ -372,7 +372,7 @@ describe.each(PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 				});
 
 				//For now, this works only for postgres db
-				it.each(vendors.filter((v)=>v=== 'postgres'))('Should add check_filter constraint to collection', async (vendor) => {
+				it.each(vendors)('Should add check_filter constraint to collection', async (vendor) => {
 					// Setup
 					currentVendor = vendor;
 
