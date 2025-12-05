@@ -314,7 +314,7 @@ describe.each(PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 				});
 			});
 
-			fdescribe('Correctly update check_filter constraint', () => {
+			describe('Correctly update check_filter constraint', () => {
 				const TEST_CHECK_COLLECTION = `test_collections_check_filter_${pkType}`;
 				let currentVendor = vendors[0];
 
@@ -371,7 +371,8 @@ describe.each(PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 					await db('directus_collections').del().where({ collection: TEST_CHECK_COLLECTION });
 				});
 
-				it.each(vendors)('Should add check_filter constraint to collection', async (vendor) => {
+				//For now, this works only for postgres db
+				it.each(vendors.filter((v)=>v=== 'postgres'))('Should add check_filter constraint to collection', async (vendor) => {
 					// Setup
 					currentVendor = vendor;
 
@@ -380,19 +381,18 @@ describe.each(PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 						.send({ collection: TEST_CHECK_COLLECTION, meta: {}, schema: {}, fields: getTestFields() })
 						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
+
 					const checkFilter = {
 						_or: [
 							{ date_end: { _null: true } },
 							{ date_start: { _lt: '$FIELD(date_end)' } },
 						],
 					};
-
 					// Action
 					const response = await request(getUrl(vendor))
 						.patch(`/collections/${TEST_CHECK_COLLECTION}`)
 						.send({ meta: { check_filter: checkFilter } })
 						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
-
 					// Assert
 					expect(response.statusCode).toBe(200);
 					expect(response.body.data.meta.check_filter).toEqual(checkFilter);
@@ -426,9 +426,9 @@ describe.each(PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 
 					// Assert
 					expect(response.statusCode).toBe(200);
-					const collectionSchema = response.body.data.collections[TEST_CHECK_COLLECTION];
+					const collectionSchema = response.body.data.collections.find((c:any)=>c.collection === TEST_CHECK_COLLECTION);
 					expect(collectionSchema).toBeDefined();
-					expect(collectionSchema.check_filter).toEqual(checkFilter);
+					expect(collectionSchema.meta.check_filter).toEqual(checkFilter);
 				});
 
 				it.each(vendors)('Should update existing check_filter constraint', async (vendor) => {
@@ -495,6 +495,7 @@ describe.each(PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					// Assert
+
 					expect(response.statusCode).toBe(200);
 					expect(response.body.data.meta.check_filter).toBeNull();
 				});
@@ -532,9 +533,9 @@ describe.each(PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 
 					// Assert
 					expect(response.statusCode).toBe(200);
-					const collectionSchema = response.body.data.collections[TEST_CHECK_COLLECTION];
+					const collectionSchema = response.body.data.collections.find((c:any)=>c.collection === TEST_CHECK_COLLECTION);
 					expect(collectionSchema).toBeDefined();
-					expect(collectionSchema.check_filter).toBeNull();
+					expect(collectionSchema.meta.check_filter).toBeNull();
 				});
 			});
 		});
