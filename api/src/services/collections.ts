@@ -24,6 +24,7 @@ import type {
 	MutationOptions,
 } from '../types/index.js';
 import { getSchema } from '../utils/get-schema.js';
+import { applyCollectionCheckConstraint } from '../utils/check-constraints.js';
 
 export type RawCollection = {
 	collection: string;
@@ -389,11 +390,21 @@ export class CollectionsService {
 				.first());
 
 			if (exists) {
-				await collectionItemsService.updateOne(collectionKey, payload.meta, {
-					...opts,
-					bypassEmitAction: (params) =>
-						opts?.bypassEmitAction ? opts.bypassEmitAction(params) : nestedActionEvents.push(params),
-				});
+					await collectionItemsService.knex.transaction(async (tsx)=>{
+
+						collectionItemsService.knex = tsx;
+
+						if(payload.meta?.check_filter !== undefined){
+							await applyCollectionCheckConstraint(tsx, collectionKey, payload.meta?.check_filter, this.schema)
+						}
+
+						await collectionItemsService.updateOne(collectionKey, payload.meta as CollectionMeta, {
+							...opts,
+							bypassEmitAction: (params) =>
+								opts?.bypassEmitAction ? opts.bypassEmitAction(params) : nestedActionEvents.push(params),
+						});
+
+					})
 			} else {
 				await collectionItemsService.createOne(
 					{ ...payload.meta, collection: collectionKey },

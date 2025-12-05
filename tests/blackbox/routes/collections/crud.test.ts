@@ -313,6 +313,230 @@ describe.each(PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 					});
 				});
 			});
+
+			fdescribe('Correctly update check_filter constraint', () => {
+				const TEST_CHECK_COLLECTION = `test_collections_check_filter_${pkType}`;
+				let currentVendor = vendors[0];
+
+				const getTestFields = () => {
+					const fields = [];
+
+					switch (pkType) {
+						case 'uuid':
+							fields.push({
+								field: 'id',
+								type: 'uuid',
+								meta: { hidden: true, readonly: true, interface: 'input', special: ['uuid'] },
+								schema: { is_primary_key: true, length: 36, has_auto_increment: false },
+							});
+							break;
+						case 'string':
+							fields.push({
+								field: 'id',
+								type: 'string',
+								meta: { hidden: false, readonly: false, interface: 'input' },
+								schema: { is_primary_key: true, length: 255, has_auto_increment: false },
+							});
+							break;
+						case 'integer':
+							fields.push({
+								field: 'id',
+								type: 'integer',
+								meta: { hidden: true, interface: 'input', readonly: true },
+								schema: { is_primary_key: true, has_auto_increment: true },
+							});
+							break;
+					}
+
+					fields.push({
+						field: 'date_start',
+						type: 'dateTime',
+						meta: { interface: 'datetime' },
+						schema: { is_nullable: false },
+					});
+
+					fields.push({
+						field: 'date_end',
+						type: 'dateTime',
+						meta: { interface: 'datetime' },
+						schema: { is_nullable: true },
+					});
+
+					return fields;
+				};
+
+				afterEach(async () => {
+					const db = databases.get(currentVendor)!;
+					await db.schema.dropTableIfExists(TEST_CHECK_COLLECTION);
+					await db('directus_collections').del().where({ collection: TEST_CHECK_COLLECTION });
+				});
+
+				it.each(vendors)('Should add check_filter constraint to collection', async (vendor) => {
+					// Setup
+					currentVendor = vendor;
+
+					await request(getUrl(vendor))
+						.post('/collections')
+						.send({ collection: TEST_CHECK_COLLECTION, meta: {}, schema: {}, fields: getTestFields() })
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
+
+					const checkFilter = {
+						_or: [
+							{ date_end: { _null: true } },
+							{ date_start: { _lt: '$FIELD(date_end)' } },
+						],
+					};
+
+					// Action
+					const response = await request(getUrl(vendor))
+						.patch(`/collections/${TEST_CHECK_COLLECTION}`)
+						.send({ meta: { check_filter: checkFilter } })
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
+
+					// Assert
+					expect(response.statusCode).toBe(200);
+					expect(response.body.data.meta.check_filter).toEqual(checkFilter);
+				});
+
+				it.each(vendors)('Should return check_filter in schema snapshot', async (vendor) => {
+					// Setup
+					currentVendor = vendor;
+
+					await request(getUrl(vendor))
+						.post('/collections')
+						.send({ collection: TEST_CHECK_COLLECTION, meta: {}, schema: {}, fields: getTestFields() })
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
+
+					const checkFilter = {
+						_or: [
+							{ date_end: { _null: true } },
+							{ date_start: { _lt: '$FIELD(date_end)' } },
+						],
+					};
+
+					await request(getUrl(vendor))
+						.patch(`/collections/${TEST_CHECK_COLLECTION}`)
+						.send({ meta: { check_filter: checkFilter } })
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
+
+					// Action
+					const response = await request(getUrl(vendor))
+						.get(`/schema/snapshot`)
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
+
+					// Assert
+					expect(response.statusCode).toBe(200);
+					const collectionSchema = response.body.data.collections[TEST_CHECK_COLLECTION];
+					expect(collectionSchema).toBeDefined();
+					expect(collectionSchema.check_filter).toEqual(checkFilter);
+				});
+
+				it.each(vendors)('Should update existing check_filter constraint', async (vendor) => {
+					// Setup
+					currentVendor = vendor;
+
+					await request(getUrl(vendor))
+						.post('/collections')
+						.send({ collection: TEST_CHECK_COLLECTION, meta: {}, schema: {}, fields: getTestFields() })
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
+
+					const initialCheckFilter = {
+						_or: [
+							{ date_end: { _null: true } },
+							{ date_start: { _lt: '$FIELD(date_end)' } },
+						],
+					};
+
+					await request(getUrl(vendor))
+						.patch(`/collections/${TEST_CHECK_COLLECTION}`)
+						.send({ meta: { check_filter: initialCheckFilter } })
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
+
+					const updatedCheckFilter = {
+						date_start: { _lt: '$FIELD(date_end)' },
+					};
+
+					// Action
+					const response = await request(getUrl(vendor))
+						.patch(`/collections/${TEST_CHECK_COLLECTION}`)
+						.send({ meta: { check_filter: updatedCheckFilter } })
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
+
+					// Assert
+					expect(response.statusCode).toBe(200);
+					expect(response.body.data.meta.check_filter).toEqual(updatedCheckFilter);
+				});
+
+				it.each(vendors)('Should remove check_filter constraint when set to null', async (vendor) => {
+					// Setup
+					currentVendor = vendor;
+
+					await request(getUrl(vendor))
+						.post('/collections')
+						.send({ collection: TEST_CHECK_COLLECTION, meta: {}, schema: {}, fields: getTestFields() })
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
+
+					const checkFilter = {
+						_or: [
+							{ date_end: { _null: true } },
+							{ date_start: { _lt: '$FIELD(date_end)' } },
+						],
+					};
+
+					await request(getUrl(vendor))
+						.patch(`/collections/${TEST_CHECK_COLLECTION}`)
+						.send({ meta: { check_filter: checkFilter } })
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
+
+					// Action
+					const response = await request(getUrl(vendor))
+						.patch(`/collections/${TEST_CHECK_COLLECTION}`)
+						.send({ meta: { check_filter: null } })
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
+
+					// Assert
+					expect(response.statusCode).toBe(200);
+					expect(response.body.data.meta.check_filter).toBeNull();
+				});
+
+				it.each(vendors)('Should return null check_filter in schema after removal', async (vendor) => {
+					// Setup
+					currentVendor = vendor;
+
+					await request(getUrl(vendor))
+						.post('/collections')
+						.send({ collection: TEST_CHECK_COLLECTION, meta: {}, schema: {}, fields: getTestFields() })
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
+
+					const checkFilter = {
+						_or: [
+							{ date_end: { _null: true } },
+							{ date_start: { _lt: '$FIELD(date_end)' } },
+						],
+					};
+
+					await request(getUrl(vendor))
+						.patch(`/collections/${TEST_CHECK_COLLECTION}`)
+						.send({ meta: { check_filter: checkFilter } })
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
+
+					await request(getUrl(vendor))
+						.patch(`/collections/${TEST_CHECK_COLLECTION}`)
+						.send({ meta: { check_filter: null } })
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
+
+					// Action
+					const response = await request(getUrl(vendor))
+						.get(`/schema/snapshot`)
+						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
+
+					// Assert
+					expect(response.statusCode).toBe(200);
+					const collectionSchema = response.body.data.collections[TEST_CHECK_COLLECTION];
+					expect(collectionSchema).toBeDefined();
+					expect(collectionSchema.check_filter).toBeNull();
+				});
+			});
 		});
 
 		describe('DELETE /', () => {
