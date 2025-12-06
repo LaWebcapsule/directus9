@@ -329,6 +329,7 @@ describe.each(PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 								meta: { hidden: true, readonly: true, interface: 'input', special: ['uuid'] },
 								schema: { is_primary_key: true, length: 36, has_auto_increment: false },
 							});
+
 							break;
 						case 'string':
 							fields.push({
@@ -337,6 +338,7 @@ describe.each(PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 								meta: { hidden: false, readonly: false, interface: 'input' },
 								schema: { is_primary_key: true, length: 255, has_auto_increment: false },
 							});
+
 							break;
 						case 'integer':
 							fields.push({
@@ -345,6 +347,7 @@ describe.each(PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 								meta: { hidden: true, interface: 'input', readonly: true },
 								schema: { is_primary_key: true, has_auto_increment: true },
 							});
+
 							break;
 					}
 
@@ -381,18 +384,16 @@ describe.each(PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 						.send({ collection: TEST_CHECK_COLLECTION, meta: {}, schema: {}, fields: getTestFields() })
 						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
-
 					const checkFilter = {
-						_or: [
-							{ date_end: { _null: true } },
-							{ date_start: { _lt: '$FIELD(date_end)' } },
-						],
+						_or: [{ date_end: { _null: true } }, { date_start: { _lt: '$FIELD(date_end)' } }],
 					};
+
 					// Action
 					const response = await request(getUrl(vendor))
 						.patch(`/collections/${TEST_CHECK_COLLECTION}`)
 						.send({ meta: { check_filter: checkFilter } })
 						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
+
 					// Assert
 					expect(response.statusCode).toBe(200);
 					expect(response.body.data.meta.check_filter).toEqual(checkFilter);
@@ -408,10 +409,7 @@ describe.each(PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					const checkFilter = {
-						_or: [
-							{ date_end: { _null: true } },
-							{ date_start: { _lt: '$FIELD(date_end)' } },
-						],
+						_or: [{ date_end: { _null: true } }, { date_start: { _lt: '$FIELD(date_end)' } }],
 					};
 
 					await request(getUrl(vendor))
@@ -426,7 +424,11 @@ describe.each(PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 
 					// Assert
 					expect(response.statusCode).toBe(200);
-					const collectionSchema = response.body.data.collections.find((c:any)=>c.collection === TEST_CHECK_COLLECTION);
+
+					const collectionSchema = response.body.data.collections.find(
+						(c: any) => c.collection === TEST_CHECK_COLLECTION
+					);
+
 					expect(collectionSchema).toBeDefined();
 					expect(collectionSchema.meta.check_filter).toEqual(checkFilter);
 				});
@@ -441,10 +443,7 @@ describe.each(PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					const initialCheckFilter = {
-						_or: [
-							{ date_end: { _null: true } },
-							{ date_start: { _lt: '$FIELD(date_end)' } },
-						],
+						_or: [{ date_end: { _null: true } }, { date_start: { _lt: '$FIELD(date_end)' } }],
 					};
 
 					await request(getUrl(vendor))
@@ -477,10 +476,7 @@ describe.each(PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					const checkFilter = {
-						_or: [
-							{ date_end: { _null: true } },
-							{ date_start: { _lt: '$FIELD(date_end)' } },
-						],
+						_or: [{ date_end: { _null: true } }, { date_start: { _lt: '$FIELD(date_end)' } }],
 					};
 
 					await request(getUrl(vendor))
@@ -510,10 +506,7 @@ describe.each(PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 						.set('Authorization', `Bearer ${USER.ADMIN.TOKEN}`);
 
 					const checkFilter = {
-						_or: [
-							{ date_end: { _null: true } },
-							{ date_start: { _lt: '$FIELD(date_end)' } },
-						],
+						_or: [{ date_end: { _null: true } }, { date_start: { _lt: '$FIELD(date_end)' } }],
 					};
 
 					await request(getUrl(vendor))
@@ -533,7 +526,11 @@ describe.each(PRIMARY_KEY_TYPES)('/collections', (pkType) => {
 
 					// Assert
 					expect(response.statusCode).toBe(200);
-					const collectionSchema = response.body.data.collections.find((c:any)=>c.collection === TEST_CHECK_COLLECTION);
+
+					const collectionSchema = response.body.data.collections.find(
+						(c: any) => c.collection === TEST_CHECK_COLLECTION
+					);
+
 					expect(collectionSchema).toBeDefined();
 					expect(collectionSchema.meta.check_filter).toBeNull();
 				});

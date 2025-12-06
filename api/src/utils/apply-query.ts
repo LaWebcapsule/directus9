@@ -388,8 +388,6 @@ export function applyFilter(
 			}
 		}
 	}
-
-	
 }
 
 export function addWhereClauses(
@@ -401,10 +399,8 @@ export function addWhereClauses(
 	aliasMap: AliasMap,
 	logical: 'and' | 'or' = 'and'
 ) {
-
 	const helpers = getHelpers(knex);
 	const relations: Relation[] = schema.relations;
-
 
 	for (const [key, value] of Object.entries(filter)) {
 		if (key === '_or' || key === '_and') {
@@ -476,9 +472,7 @@ export function addWhereClauses(
 
 			if (filterPath.includes('_none') || filterPath.includes('_some')) {
 				throw new InvalidQueryException(
-					`"${
-						filterPath.includes('_none') ? '_none' : '_some'
-					}" can only be used with top level relational alias field`
+					`"${filterPath.includes('_none') ? '_none' : '_some'}" can only be used with top level relational alias field`
 				);
 			}
 
@@ -532,9 +526,7 @@ export function addWhereClauses(
 		}
 
 		if (!getFilterOperatorsForType(type).includes(filterOperator as ClientFilterOperator)) {
-			throw new InvalidQueryException(
-				`"${type}" field type does not contain the "_${filterOperator}" filter operator`
-			);
+			throw new InvalidQueryException(`"${type}" field type does not contain the "_${filterOperator}" filter operator`);
 		}
 
 		if (

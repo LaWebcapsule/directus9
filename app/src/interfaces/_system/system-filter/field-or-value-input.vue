@@ -10,8 +10,8 @@
 			/>
 		</template>
 		<input-component
-			v-else
 			:is="inputComponent || 'interface-input'"
+			v-else
 			:type="type"
 			:value="currentValue"
 			:choices="choices"
@@ -95,7 +95,18 @@ const fieldOptions = computed(() => {
 
 			return (
 				fieldType === currentFieldType ||
-				['integer', 'bigInteger', 'float', 'decimal', 'date', 'dateTime', 'timestamp', 'time', 'string', 'text'].includes(fieldType)
+				[
+					'integer',
+					'bigInteger',
+					'float',
+					'decimal',
+					'date',
+					'dateTime',
+					'timestamp',
+					'time',
+					'string',
+					'text',
+				].includes(fieldType)
 			);
 		})
 		.map((field) => ({
@@ -113,6 +124,7 @@ function updateFieldRef(fieldKey: string | null) {
 		emit('update:value', null);
 		return;
 	}
+
 	emit('update:value', `$FIELD(${fieldKey})`);
 }
 

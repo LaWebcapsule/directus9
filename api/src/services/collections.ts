@@ -391,29 +391,25 @@ export class CollectionsService {
 				.first());
 
 			if (exists) {
-					await collectionItemsService.knex.transaction(async (tsx)=>{
+				await collectionItemsService.knex.transaction(async (tsx) => {
+					collectionItemsService.knex = tsx;
 
-						collectionItemsService.knex = tsx;
+					if (payload.meta?.check_filter !== undefined) {
+						const client = getDatabaseClient();
 
-						if(payload.meta?.check_filter !== undefined){
-
-							const client = getDatabaseClient();
-							if(client === 'postgres'){
-								await applyCollectionCheckConstraint(tsx, collectionKey, payload.meta?.check_filter, this.schema)
-							}
-							else{
-								logger.warn(`Check constraints are only enforced for postgres database.`)
-							}
-							
+						if (client === 'postgres') {
+							await applyCollectionCheckConstraint(tsx, collectionKey, payload.meta?.check_filter, this.schema);
+						} else {
+							logger.warn(`Check constraints are only enforced for postgres database.`);
 						}
+					}
 
-						await collectionItemsService.updateOne(collectionKey, payload.meta as CollectionMeta, {
-							...opts,
-							bypassEmitAction: (params) =>
-								opts?.bypassEmitAction ? opts.bypassEmitAction(params) : nestedActionEvents.push(params),
-						});
-
-					})
+					await collectionItemsService.updateOne(collectionKey, payload.meta as CollectionMeta, {
+						...opts,
+						bypassEmitAction: (params) =>
+							opts?.bypassEmitAction ? opts.bypassEmitAction(params) : nestedActionEvents.push(params),
+					});
+				});
 			} else {
 				await collectionItemsService.createOne(
 					{ ...payload.meta, collection: collectionKey },

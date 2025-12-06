@@ -33,7 +33,11 @@
 	</template>
 
 	<!-- IN / NOT IN lists -->
-	<div v-else-if="['_in', '_nin'].includes(comparator)" class="list" :class="{ moveComma: interfaceType === 'interface-input' }">
+	<div
+		v-else-if="['_in', '_nin'].includes(comparator)"
+		class="list"
+		:class="{ moveComma: interfaceType === 'interface-input' }"
+	>
 		<div v-for="(val, index) in value" :key="index" class="value">
 			<field-or-value-input
 				:value="val"
@@ -118,6 +122,7 @@ export default defineComponent({
 	emits: ['update:field'],
 	setup(props, { emit }) {
 		const singleValueOperators = ['_eq', '_neq', '_lt', '_gt', '_lte', '_gte'];
+
 		const patternOperators = [
 			'_contains',
 			'_ncontains',
