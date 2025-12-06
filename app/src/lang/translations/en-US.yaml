@@ -1295,6 +1295,7 @@ field_options:
     sort_field: Choose a field...
     accountability_divider: Accountability
     duplication_divider: Duplication
+    check_filter_divider: Check Constraints
   directus_files:
     title: A unique title...
     description: An optional description...
@@ -1497,6 +1498,9 @@ interfaces:
     change_value: Click to change value
     placeholder: Drag rules here
     add_key_placeholder: Add a key and press enter...
+    switch_to_field: Compare to another field
+    switch_to_value: Compare to a value
+    select_field: Select a field...
   fields:
     name: Fields
   group-accordion:
