@@ -1,5 +1,11 @@
 # @wbce-d9/api
 
+## 12.0.4
+
+### Patch Changes
+
+- fae5aba: Bump nodemailer from 7.0.7 to 7.0.11
+
 ## 12.0.3
 
 ### Patch Changes
