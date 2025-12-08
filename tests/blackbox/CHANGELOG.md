@@ -1,5 +1,11 @@
 # tests-blackbox
 
+## 10.0.1
+
+### Patch Changes
+
+- 7a257b0: Bump js-yaml to 4.1.1
+
 ## 10.0.0
 
 ### Major Changes

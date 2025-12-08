@@ -1,5 +1,19 @@
 # @wbce-d9/api
 
+## 12.0.3
+
+### Patch Changes
+
+- Updated dependencies [a020496]
+  - @wbce-d9/app@9.34.0
+
+## 12.0.2
+
+### Patch Changes
+
+- 7a257b0: Bump js-yaml to 4.1.1
+- 7a257b0: Fix OpenID login failure caused by mismatched redirect URI
+
 ## 12.0.1
 
 ### Patch Changes
