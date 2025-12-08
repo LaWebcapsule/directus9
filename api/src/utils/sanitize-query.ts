@@ -12,7 +12,7 @@ export function sanitizeQuery(rawQuery: Record<string, any>, accountability?: Ac
 		let limit = sanitizeLimit(rawQuery['limit']);
 
 		if (typeof limit === 'number') {
-			const maxItemsPerQuery = Number(env['MAX_ITEMS_PER_QUERY']);
+			const maxItemsPerQuery = env['MAX_ITEMS_PER_QUERY'];
 
 			if (maxItemsPerQuery !== -1 && limit === -1) {
 				limit = maxItemsPerQuery;
