@@ -1,5 +1,13 @@
 # directus9
 
+## 11.0.4
+
+### Patch Changes
+
+- fae5aba: Bump nodemailer from 7.0.7 to 7.0.11
+- Updated dependencies [fae5aba]
+  - @wbce-d9/api@12.0.4
+
 ## 11.0.3
 
 ### Patch Changes
