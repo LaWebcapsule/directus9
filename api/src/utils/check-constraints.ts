@@ -3,24 +3,6 @@ import type { Knex } from 'knex';
 import { addWhereClauses } from './apply-query.js';
 import { cloneDeep } from 'lodash-es';
 
-export function transformInterogationMark(value: string) {
-	return value.replaceAll('?', '!!transient_interrogation_mark!!');
-}
-
-export function reformInterogationMark(value: string) {
-	return value.replaceAll('!!transient_interrogation_mark!!', '\\?');
-}
-
-export function transformInterogationMarkInFilter(filter: Filter) {
-	for (const [key, value] of Object.entries(filter)) {
-		if (typeof value === 'string') {
-			(filter as any)[key] = transformInterogationMark(value);
-		} else if (value && typeof value === 'object') {
-			transformInterogationMarkInFilter(value);
-		}
-	}
-}
-
 export async function formulateCheckClause(knex: Knex, collection: string, filter: Filter, schema: SchemaOverview) {
 	/**
 	 * Strategy :
@@ -30,14 +12,11 @@ export async function formulateCheckClause(knex: Knex, collection: string, filte
 	 * With the comparaison syntax of check constraint, we want to be able to have right assignent of field
 	 * e.g. : filter = {date_end : {_gt : "$FIELD(date_start)" }} should transform into "?? > ??"
 	 * To ensure this :
-	 *      - we remove all interrogation mark in the filter value
 	 *      - we formulate the where clause
 	 *      - we change every simple ? to a double ?? when the "?" is for a binding of form $FIELD(...)
-	 *      - we restablish the interrogation mark we removed in the value
 	 */
 	const cloneFilter = cloneDeep(filter);
 	const queryBuilder = knex.queryBuilder();
-	transformInterogationMarkInFilter(cloneFilter);
 	addWhereClauses(knex, schema, queryBuilder, cloneFilter, collection, Object.create(null));
 	const sqlQuery = queryBuilder.toSQL();
 	let bindIndex = 0;
@@ -62,7 +41,7 @@ export async function formulateCheckClause(knex: Knex, collection: string, filte
 
 	const whereString = knex.raw(whereClause, checkBindings).toQuery();
 	let checkClause = whereString.match(/where\s+(.+)/i)![1]!;
-	checkClause = reformInterogationMark(checkClause);
+	checkClause = checkClause.replaceAll("?", "\\?")
 
 	await knex.schema.table(collection, (table) => {
 		table.check(checkClause, undefined, 'directus_constraint');
