@@ -1,5 +1,12 @@
 # @wbce-d9/api
 
+## 12.0.5
+
+### Patch Changes
+
+- 853cc61: Bump auth0/node-jws to 3.2.3
+- 853cc61: Bump node-forge to 1.3.2
+
 ## 12.0.4
 
 ### Patch Changes
