@@ -212,3 +212,25 @@ fields:
 
   - field: collapse
     hidden: true
+
+  - field: check_filter_divider
+    special:
+      - alias
+      - no-data
+    interface: presentation-divider
+    options:
+      icon: rule
+      title: $t:field_options.directus_collections.check_filter_divider
+    width: full
+
+  - field: check_filter
+    special:
+      - cast-json
+    interface: system-filter
+    options:
+      collectionField: collection
+      collectionRequired: true
+      allowFieldComparison: true
+      includeRelations: false
+      relationalFieldSelectable: false
+    width: full
