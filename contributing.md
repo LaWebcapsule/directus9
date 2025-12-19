@@ -34,7 +34,7 @@ Examples of behavior that contributes to creating a positive environment include
 - Focusing on what is best for the community
 - Showing empathy towards other community members
 
-**Before continuing, please take a moment to read our full
+**Before continuing, please take a moment to read  our full
 [Code of Conduct](https://github.com/LaWebcapsule/directus9/blob/main/code_of_conduct.md).**
 
 ## Ways to Contribute
