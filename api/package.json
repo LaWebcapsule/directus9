@@ -202,7 +202,7 @@
 		"@types/uuid": "9.0.1",
 		"@types/uuid-validate": "0.0.1",
 		"@types/wellknown": "0.5.4",
-		"@vitest/coverage-c8": "0.30.1",
+		"@vitest/coverage-v8": "4.0.16",
 		"@wbce-d9/tsconfig": "2.0.0",
 		"@wbce-d9/types": "workspace:*",
 		"copyfiles": "2.4.1",
@@ -210,7 +210,7 @@
 		"knex-mock-client": "3.0.2",
 		"supertest": "6.3.3",
 		"typescript": "5.0.4",
-		"vitest": "0.30.1"
+		"vitest": "4.0.16"
 	},
 	"optionalDependencies": {
 		"@keyv/redis": "2.5.7",
