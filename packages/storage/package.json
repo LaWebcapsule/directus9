@@ -29,8 +29,9 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@wbce-d9/tsconfig": "2.0.0",
+		"@types/node": "18.15.13",
 		"@vitest/coverage-v8": "4.0.16",
+		"@wbce-d9/tsconfig": "2.0.0",
 		"typescript": "5.0.4",
 		"vitest": "4.0.16"
 	}
