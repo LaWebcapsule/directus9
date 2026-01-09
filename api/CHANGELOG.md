@@ -1,5 +1,11 @@
 # @wbce-d9/api
 
+## 12.0.6
+
+### Patch Changes
+
+- cb6e010: fix regexp in getSharedDependency
+
 ## 12.0.5
 
 ### Patch Changes
