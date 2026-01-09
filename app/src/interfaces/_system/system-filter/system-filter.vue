@@ -19,8 +19,9 @@
 				:field="fieldName"
 				:depth="1"
 				:include-validation="includeValidation"
-				:include-relations="includeRelations"
-				:relational-field-selectable="relationalFieldSelectable"
+				:include-relations="includeRelationsComputed"
+				:relational-field-selectable="relationalFieldSelectableComputed"
+				:allow-field-comparison="allowFieldComparisonComputed"
 				@remove-node="removeNode($event)"
 				@change="emitValue"
 			/>
@@ -109,6 +110,8 @@ interface Props {
 	includeValidation?: boolean;
 	includeRelations?: boolean;
 	relationalFieldSelectable?: boolean;
+	allowFieldComparison?: boolean;
+	options?: Record<string, any>;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -122,6 +125,22 @@ const props = withDefaults(defineProps<Props>(), {
 	includeValidation: false,
 	includeRelations: true,
 	relationalFieldSelectable: true,
+	allowFieldComparison: false,
+	options: undefined,
+});
+
+const allowFieldComparisonComputed = computed(() => {
+	return props.allowFieldComparison || props.options?.allowFieldComparison === true;
+});
+
+const includeRelationsComputed = computed(() => {
+	return props.options?.includeRelations !== undefined ? props.options.includeRelations : props.includeRelations;
+});
+
+const relationalFieldSelectableComputed = computed(() => {
+	return props.options?.relationalFieldSelectable !== undefined
+		? props.options.relationalFieldSelectable
+		: props.relationalFieldSelectable;
 });
 
 const emit = defineEmits(['input']);

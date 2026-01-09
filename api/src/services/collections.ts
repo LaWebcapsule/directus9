@@ -9,7 +9,7 @@ import { clearSystemCache, getCache } from '../cache.js';
 import { ALIAS_TYPES } from '../constants.js';
 import type { Helpers } from '../database/helpers/index.js';
 import { getHelpers } from '../database/helpers/index.js';
-import getDatabase, { getSchemaInspector } from '../database/index.js';
+import getDatabase, { getDatabaseClient, getSchemaInspector } from '../database/index.js';
 import { systemCollectionRows } from '../database/system-data/collections/index.js';
 import emitter from '../emitter.js';
 import env from '../env.js';
@@ -24,6 +24,8 @@ import type {
 	MutationOptions,
 } from '../types/index.js';
 import { getSchema } from '../utils/get-schema.js';
+import { applyCollectionCheckConstraint } from '../utils/check-constraints.js';
+import logger from '../logger.js';
 
 export type RawCollection = {
 	collection: string;
@@ -389,10 +391,24 @@ export class CollectionsService {
 				.first());
 
 			if (exists) {
-				await collectionItemsService.updateOne(collectionKey, payload.meta, {
-					...opts,
-					bypassEmitAction: (params) =>
-						opts?.bypassEmitAction ? opts.bypassEmitAction(params) : nestedActionEvents.push(params),
+				await collectionItemsService.knex.transaction(async (tsx) => {
+					collectionItemsService.knex = tsx;
+
+					if (payload.meta?.check_filter !== undefined) {
+						const client = getDatabaseClient();
+
+						if (client === 'postgres') {
+							await applyCollectionCheckConstraint(tsx, collectionKey, payload.meta?.check_filter, this.schema);
+						} else {
+							logger.warn(`Check constraints are only enforced for postgres database.`);
+						}
+					}
+
+					await collectionItemsService.updateOne(collectionKey, payload.meta as CollectionMeta, {
+						...opts,
+						bypassEmitAction: (params) =>
+							opts?.bypassEmitAction ? opts.bypassEmitAction(params) : nestedActionEvents.push(params),
+					});
 				});
 			} else {
 				await collectionItemsService.createOne(

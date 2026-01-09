@@ -42,7 +42,12 @@
 							:items="getCompareOptions(filterInfo[index].field)"
 							@update:model-value="updateComparator(index, $event)"
 						/>
-						<input-group :field="element" :collection="collection" @update:field="replaceNode(index, $event)" />
+						<input-group
+							:field="element"
+							:collection="collection"
+							:allow-field-comparison="allowFieldComparison"
+							@update:field="replaceNode(index, $event)"
+						/>
 						<span class="delete">
 							<v-icon
 								v-tooltip="t('delete_label')"
@@ -89,6 +94,7 @@
 						:collection="collection"
 						:depth="depth + 1"
 						:inline="inline"
+						:allow-field-comparison="allowFieldComparison"
 						@change="$emit('change')"
 						@remove-node="$emit('remove-node', [`${index}.${filterInfo[index].name}`, ...$event])"
 						@update:filter="replaceNode(index, { [filterInfo[index].name]: $event })"
@@ -138,6 +144,7 @@ interface Props {
 	includeValidation?: boolean;
 	includeRelations?: boolean;
 	relationalFieldSelectable?: boolean;
+	allowFieldComparison?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -147,6 +154,7 @@ const props = withDefaults(defineProps<Props>(), {
 	includeValidation: false,
 	includeRelations: true,
 	relationalFieldSelectable: true,
+	allowFieldComparison: false,
 });
 
 const emit = defineEmits(['remove-node', 'update:filter', 'change']);
