@@ -1,5 +1,39 @@
 # directus9
 
+## 11.0.5
+
+### Patch Changes
+
+- 853cc61: Bump auth0/node-jws to 3.2.3
+- 853cc61: Bump node-forge to 1.3.2
+- Updated dependencies [853cc61]
+- Updated dependencies [853cc61]
+  - @wbce-d9/api@12.0.5
+
+## 11.0.4
+
+### Patch Changes
+
+- fae5aba: Bump nodemailer from 7.0.7 to 7.0.11
+- Updated dependencies [fae5aba]
+  - @wbce-d9/api@12.0.4
+
+## 11.0.3
+
+### Patch Changes
+
+- @wbce-d9/api@12.0.3
+
+## 11.0.2
+
+### Patch Changes
+
+- 7a257b0: Explicitly specify the shell in the Dockerfile using /bin/sh for improved security and compatibility.
+- 7a257b0: Bump js-yaml to 4.1.1
+- Updated dependencies [7a257b0]
+- Updated dependencies [7a257b0]
+  - @wbce-d9/api@12.0.2
+
 ## 11.0.1
 
 ### Patch Changes
