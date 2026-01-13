@@ -4,7 +4,7 @@
 
 ### Patch Changes
 
-- cb6e010: fix regexp in getSharedDependency
+- cb6e010: fix regexp in getSharedDependency.
 
 ## 12.0.5
 
