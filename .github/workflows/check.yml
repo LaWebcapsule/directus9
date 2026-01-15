@@ -36,7 +36,7 @@ jobs:
     name: Unit Tests
     permissions:
       id-token: write
-      contents: read 
+      contents: read
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
