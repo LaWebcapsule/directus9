@@ -9,7 +9,7 @@
 		"test:blackbox": "pnpm --filter directus9 deploy --prod dist && pnpm --filter tests-blackbox test"
 	},
 	"devDependencies": {
-		"@changesets/cli": "^2.27.1",
+		"@changesets/cli": "^2.29.8",
 		"@typescript-eslint/eslint-plugin": "7.18.0",
 		"@typescript-eslint/parser": "7.18.0",
 		"eslint": "8.57.0",
@@ -49,7 +49,7 @@
 			"node-forge": ">=1.3.2",
 			"jws": ">=3.2.3",
 			"google-auth-library>jws": ">4.0.0",
-  			"gtoken>jws": ">4.0.0"
+			"gtoken>jws": ">4.0.0"
 		},
 		"auditConfig": {
 			"ignoreGhsas": [
