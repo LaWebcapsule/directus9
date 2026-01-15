@@ -1,5 +1,31 @@
 # @wbce-d9/api
 
+## 12.0.6
+
+### Patch Changes
+
+- cb6e010: fix regexp in getSharedDependency.
+
+## 12.0.5
+
+### Patch Changes
+
+- 853cc61: Bump auth0/node-jws to 3.2.3
+- 853cc61: Bump node-forge to 1.3.2
+
+## 12.0.4
+
+### Patch Changes
+
+- fae5aba: Bump nodemailer from 7.0.7 to 7.0.11
+
+## 12.0.3
+
+### Patch Changes
+
+- Updated dependencies [a020496]
+  - @wbce-d9/app@9.34.0
+
 ## 12.0.2
 
 ### Patch Changes

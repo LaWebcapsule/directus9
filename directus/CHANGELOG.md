@@ -1,5 +1,36 @@
 # directus9
 
+## 11.0.6
+
+### Patch Changes
+
+- Updated dependencies [cb6e010]
+  - @wbce-d9/api@12.0.6
+
+## 11.0.5
+
+### Patch Changes
+
+- 853cc61: Bump auth0/node-jws to 3.2.3
+- 853cc61: Bump node-forge to 1.3.2
+- Updated dependencies [853cc61]
+- Updated dependencies [853cc61]
+  - @wbce-d9/api@12.0.5
+
+## 11.0.4
+
+### Patch Changes
+
+- fae5aba: Bump nodemailer from 7.0.7 to 7.0.11
+- Updated dependencies [fae5aba]
+  - @wbce-d9/api@12.0.4
+
+## 11.0.3
+
+### Patch Changes
+
+- @wbce-d9/api@12.0.3
+
 ## 11.0.2
 
 ### Patch Changes
