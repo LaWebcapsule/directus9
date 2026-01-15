@@ -30,6 +30,8 @@ const allowedEnvironmentVars = [
 	'MAX_BATCH_MUTATION',
 	'LOGGER_.+',
 	'ROBOTS_TXT',
+	'MAX_RELATIONAL_DEPTH',
+	'MAX_ITEMS_PER_QUERY',
 	// server
 	'SERVER_.+',
 	// database
@@ -211,6 +213,7 @@ const defaults: Record<string, any> = {
 	PUBLIC_URL: '/',
 	MAX_PAYLOAD_SIZE: '1mb',
 	MAX_RELATIONAL_DEPTH: 10,
+	MAX_ITEMS_PER_QUERY: -1,
 	MAX_BATCH_MUTATION: Infinity,
 	ROBOTS_TXT: 'User-agent: *\nDisallow: /',
 
@@ -333,6 +336,8 @@ const typeMap: Record<string, string> = {
 	MAX_BATCH_MUTATION: 'number',
 
 	SERVER_SHUTDOWN_TIMEOUT: 'number',
+
+	MAX_ITEMS_PER_QUERY: 'number',
 };
 
 let env: Record<string, any> = {
