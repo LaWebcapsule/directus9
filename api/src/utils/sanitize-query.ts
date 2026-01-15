@@ -1,6 +1,7 @@
 import type { Accountability, Aggregate, Filter, Query } from '@wbce-d9/types';
 import { parseFilter, parseJSON } from '@wbce-d9/utils';
 import { flatten, get, isPlainObject, merge, set } from 'lodash-es';
+import env from '../env.js';
 import logger from '../logger.js';
 import { Meta } from '../types/index.js';
 
@@ -8,9 +9,15 @@ export function sanitizeQuery(rawQuery: Record<string, any>, accountability?: Ac
 	const query: Query = {};
 
 	if (rawQuery['limit'] !== undefined) {
-		const limit = sanitizeLimit(rawQuery['limit']);
+		let limit = sanitizeLimit(rawQuery['limit']);
 
 		if (typeof limit === 'number') {
+			const maxItemsPerQuery = env['MAX_ITEMS_PER_QUERY'];
+
+			if (maxItemsPerQuery !== -1 && limit === -1) {
+				limit = maxItemsPerQuery;
+			}
+
 			query.limit = limit;
 		}
 	}
