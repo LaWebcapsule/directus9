@@ -41,7 +41,7 @@ export async function formulateCheckClause(knex: Knex, collection: string, filte
 
 	const whereString = knex.raw(whereClause, checkBindings).toQuery();
 	let checkClause = whereString.match(/where\s+(.+)/i)![1]!;
-	checkClause = checkClause.replaceAll("?", "\\?")
+	checkClause = checkClause.replaceAll('?', '\\?');
 
 	await knex.schema.table(collection, (table) => {
 		table.check(checkClause, undefined, 'directus_constraint');
