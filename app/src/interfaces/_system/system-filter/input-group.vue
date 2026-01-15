@@ -1,68 +1,94 @@
 <template>
-	<template v-if="['_eq', '_neq', '_lt', '_gt', '_lte', '_gte'].includes(comparator)">
-		<input-component
-			:is="interfaceType"
-			:choices="choices"
-			:type="fieldInfo?.type ?? 'unknown'"
-			:value="value"
-			@input="value = $event"
-		/>
+	<!-- Operators that don't need a value -->
+	<template v-if="['_null', '_nnull', '_empty', '_nempty'].includes(comparator)">
+		<!-- No input needed for these operators -->
 	</template>
-	<template
-		v-else-if="
-			[
-				'_contains',
-				'_ncontains',
-				'_icontains',
-				'_starts_with',
-				'_nstarts_with',
-				'_ends_with',
-				'_nends_with',
-				'_regex',
-			].includes(comparator)
-		"
-	>
-		<input-component
-			is="interface-input"
-			:choices="choices"
-			:type="fieldInfo?.type ?? 'unknown'"
+
+	<!-- Single value operators -->
+	<template v-else-if="singleValueOperators.includes(comparator)">
+		<field-or-value-input
 			:value="value"
-			@input="value = $event"
+			:type="fieldInfo?.type ?? 'unknown'"
+			:choices="choices"
+			:allow-field-comparison="allowFieldComparison"
+			:collection="collection"
+			:current-field="getField(field)"
+			:input-component="interfaceType"
+			@update:value="value = $event"
 		/>
 	</template>
 
+	<!-- String pattern operators -->
+	<template v-else-if="patternOperators.includes(comparator)">
+		<field-or-value-input
+			:value="value"
+			type="string"
+			:choices="choices"
+			:allow-field-comparison="allowFieldComparison"
+			:collection="collection"
+			:current-field="getField(field)"
+			input-component="interface-input"
+			@update:value="value = $event"
+		/>
+	</template>
+
+	<!-- IN / NOT IN lists -->
 	<div
 		v-else-if="['_in', '_nin'].includes(comparator)"
 		class="list"
 		:class="{ moveComma: interfaceType === 'interface-input' }"
 	>
 		<div v-for="(val, index) in value" :key="index" class="value">
-			<input-component
-				:is="interfaceType"
-				:type="fieldInfo?.type ?? 'unknown'"
+			<field-or-value-input
 				:value="val"
-				:focus="false"
+				:type="fieldInfo?.type ?? 'unknown'"
 				:choices="choices"
-				@input="setListValue(index, $event)"
+				:focus="false"
+				:allow-field-comparison="allowFieldComparison"
+				:collection="collection"
+				:current-field="getField(field)"
+				:input-component="interfaceType"
+				@update:value="setListValue(index, $event)"
 			/>
 		</div>
 	</div>
 
+	<!-- BETWEEN / NOT BETWEEN -->
 	<template v-else-if="['_between', '_nbetween'].includes(comparator)">
-		<input-component
-			:is="interfaceType"
-			:choices="choices"
-			:type="fieldInfo?.type ?? 'unknown'"
+		<field-or-value-input
 			:value="value[0]"
-			@input="setValueAt(0, $event)"
+			:type="fieldInfo?.type ?? 'unknown'"
+			:choices="choices"
+			:allow-field-comparison="allowFieldComparison"
+			:collection="collection"
+			:current-field="getField(field)"
+			:input-component="interfaceType"
+			@update:value="setValueAt(0, $event)"
 		/>
 		<div class="and">{{ t('interfaces.filter.and') }}</div>
-		<input-component
-			:is="interfaceType"
-			:choices="choices"
-			:type="fieldInfo?.type ?? 'unknown'"
+		<field-or-value-input
 			:value="value[1]"
-			@input="setValueAt(1, $event)"
+			:type="fieldInfo?.type ?? 'unknown'"
+			:choices="choices"
+			:allow-field-comparison="allowFieldComparison"
+			:collection="collection"
+			:current-field="getField(field)"
+			:input-component="interfaceType"
+			@update:value="setValueAt(1, $event)"
+		/>
+	</template>
+
+	<!-- Default: any other operator -->
+	<template v-else>
+		<field-or-value-input
+			:value="value"
+			:type="fieldInfo?.type ?? 'unknown'"
+			:choices="choices"
+			:allow-field-comparison="allowFieldComparison"
+			:collection="collection"
+			:current-field="getField(field)"
+			:input-component="interfaceType"
+			@update:value="value = $event"
 		/>
 	</template>
 </template>
@@ -72,13 +98,13 @@ import { computed, defineComponent, PropType } from 'vue';
 import { useFieldsStore } from '@/stores/fields';
 import { useI18n } from 'vue-i18n';
 import { clone, get } from 'lodash';
-import InputComponent from './input-component.vue';
 import { FieldFilter } from '@wbce-d9/types';
 import { fieldToFilter, getComparator, getField } from './utils';
 import { useRelationsStore } from '@/stores/relations';
+import FieldOrValueInput from './field-or-value-input.vue';
 
 export default defineComponent({
-	components: { InputComponent },
+	components: { FieldOrValueInput },
 	props: {
 		field: {
 			type: Object as PropType<FieldFilter>,
@@ -88,9 +114,26 @@ export default defineComponent({
 			type: String,
 			required: true,
 		},
+		allowFieldComparison: {
+			type: Boolean,
+			default: false,
+		},
 	},
 	emits: ['update:field'],
 	setup(props, { emit }) {
+		const singleValueOperators = ['_eq', '_neq', '_lt', '_gt', '_lte', '_gte'];
+
+		const patternOperators = [
+			'_contains',
+			'_ncontains',
+			'_icontains',
+			'_starts_with',
+			'_nstarts_with',
+			'_ends_with',
+			'_nends_with',
+			'_regex',
+		];
+
 		const fieldsStore = useFieldsStore();
 		const relationsStore = useRelationsStore();
 		const { t } = useI18n();
@@ -143,7 +186,6 @@ export default defineComponent({
 		const value = computed<any | any[]>({
 			get() {
 				const fieldPath = getField(props.field);
-
 				const value = get(props.field, `${fieldPath}.${comparator.value}`);
 
 				if (['_in', '_nin'].includes(comparator.value)) {
@@ -171,7 +213,19 @@ export default defineComponent({
 
 		const choices = computed(() => fieldInfo.value?.meta?.options?.choices ?? []);
 
-		return { t, choices, fieldInfo, interfaceType, value, comparator, setValueAt, getComparator, setListValue };
+		return {
+			t,
+			singleValueOperators,
+			patternOperators,
+			choices,
+			fieldInfo,
+			interfaceType,
+			value,
+			comparator,
+			setValueAt,
+			setListValue,
+			getField,
+		};
 
 		function setValueAt(index: number, newVal: any) {
 			let newArray = Array.isArray(value.value) ? clone(value.value) : new Array(index + 1);

@@ -25,6 +25,7 @@ export type CollectionsOverview = {
 		sortField: string | null;
 		note: string | null;
 		accountability: 'all' | 'activity' | null;
+		check_filter?: Filter | null;
 		fields: {
 			[name: string]: FieldOverview;
 		};

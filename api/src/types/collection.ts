@@ -11,6 +11,7 @@ export type CollectionMeta = {
 	item_duplication_fields: string[] | null;
 	accountability: 'all' | 'accountability' | null;
 	group: string | null;
+	check_filter?: Record<string, any> | null;
 };
 
 export type Collection = {
