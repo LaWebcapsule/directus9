@@ -50,8 +50,8 @@
 			"jws": ">=3.2.3",
 			"google-auth-library>jws": ">4.0.0",
 			"gtoken>jws": ">4.0.0",
-			"swagger-ui-watcher>js-yaml:": "3.14.2",
-			"spellchecker-cli>js-yaml:": "3.14.2"
+			"swagger-ui-watcher>js-yaml": "3.14.2",
+			"spellchecker-cli>js-yaml": "3.14.2"
 		},
 		"auditConfig": {
 			"ignoreGhsas": [
