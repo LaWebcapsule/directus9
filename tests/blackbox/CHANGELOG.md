@@ -1,5 +1,12 @@
 # tests-blackbox
 
+## 10.0.2
+
+### Patch Changes
+
+- 3eb24d9: Add MAX_ITEMS_PER_QUERY, maximum number of items allowed when querying relational field
+- 18cfe9c: Add a way to define check constraints through api and web app
+
 ## 10.0.1
 
 ### Patch Changes

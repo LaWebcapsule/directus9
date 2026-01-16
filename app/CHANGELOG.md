@@ -1,5 +1,16 @@
 # @wbce-d9/app
 
+## 9.35.0
+
+### Minor Changes
+
+- 18cfe9c: Add a way to define check constraints through api and web app
+
+### Patch Changes
+
+- 3eb24d9: Bump storybook from 7.0.6 to 7.6.21
+  - @wbce-d9/composables@10.0.0
+
 ## 9.34.0
 
 ### Minor Changes

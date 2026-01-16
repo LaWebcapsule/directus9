@@ -1,5 +1,24 @@
 # @wbce-d9/api
 
+## 12.1.0
+
+### Minor Changes
+
+- 3eb24d9: Add MAX_ITEMS_PER_QUERY, maximum number of items allowed when querying relational field
+- 18cfe9c: Add a way to define check constraints through api and web app
+
+### Patch Changes
+
+- 3eb24d9: Bump qs from 6.11.1 to 6.14.1
+- Updated dependencies [3eb24d9]
+- Updated dependencies [3eb24d9]
+- Updated dependencies [18cfe9c]
+  - @wbce-d9/app@9.35.0
+  - @wbce-d9/update-check@10.0.1
+  - @wbce-d9/exceptions@10.0.0
+  - @wbce-d9/extensions-sdk@10.0.1
+  - @wbce-d9/utils@10.0.0
+
 ## 12.0.6
 
 ### Patch Changes

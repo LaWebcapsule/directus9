@@ -1,5 +1,11 @@
 # @wbce-d9/types
 
+## 10.1.0
+
+### Minor Changes
+
+- 18cfe9c: Add a way to define check constraints through api and web app
+
 ## 10.0.0
 
 ### Major Changes
