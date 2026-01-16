@@ -1,5 +1,11 @@
 # docs
 
+## 10.0.1
+
+### Patch Changes
+
+- 3eb24d9: Add MAX_ITEMS_PER_QUERY, maximum number of items allowed when querying relational field
+
 ## 10.0.0
 
 ### Major Changes

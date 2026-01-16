@@ -1,5 +1,11 @@
 # @wbce-d9/update-check
 
+## 10.0.1
+
+### Patch Changes
+
+- 3eb24d9: Bump undici from 5.29.0 to 6.23.0
+
 ## 10.0.0
 
 ### Major Changes
