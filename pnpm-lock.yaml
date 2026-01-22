@@ -249,8 +249,8 @@ importers:
         specifier: 10.7.0
         version: 10.7.0
       lodash-es:
-        specifier: 4.17.21
-        version: 4.17.21
+        specifier: 4.17.23
+        version: 4.17.23
       marked:
         specifier: 4.3.0
         version: 4.3.0
@@ -871,8 +871,8 @@ importers:
         specifier: workspace:*
         version: link:../utils
       lodash-es:
-        specifier: 4.17.21
-        version: 4.17.21
+        specifier: 4.17.23
+        version: 4.17.23
       nanoid:
         specifier: 5.0.9
         version: 5.0.9
@@ -1325,8 +1325,8 @@ importers:
         specifier: 17.9.1
         version: 17.9.1
       lodash-es:
-        specifier: 4.17.21
-        version: 4.17.21
+        specifier: 4.17.23
+        version: 4.17.23
       micromustache:
         specifier: 8.0.3
         version: 8.0.3
