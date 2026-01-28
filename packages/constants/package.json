@@ -27,7 +27,7 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@wbce-d9/tsconfig": "2.0.0",
+		"@wbce-d9/tsconfig": "workspace:*",
 		"typescript": "5.0.4"
 	},
 	"dependencies": {

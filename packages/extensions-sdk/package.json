@@ -34,10 +34,6 @@
 		"test": "vitest --watch=false"
 	},
 	"dependencies": {
-		"@wbce-d9/composables": "workspace:*",
-		"@wbce-d9/constants": "workspace:*",
-		"@wbce-d9/types": "workspace:*",
-		"@wbce-d9/utils": "workspace:*",
 		"@rollup/plugin-commonjs": "24.1.0",
 		"@rollup/plugin-json": "6.0.0",
 		"@rollup/plugin-node-resolve": "15.0.2",
@@ -45,6 +41,10 @@
 		"@rollup/plugin-terser": "0.4.1",
 		"@rollup/plugin-virtual": "3.0.1",
 		"@vue/compiler-sfc": "3.2.47",
+		"@wbce-d9/composables": "workspace:*",
+		"@wbce-d9/constants": "workspace:*",
+		"@wbce-d9/types": "workspace:*",
+		"@wbce-d9/utils": "workspace:*",
 		"chalk": "5.2.0",
 		"commander": "10.0.1",
 		"esbuild": "0.25.0",
@@ -58,10 +58,10 @@
 		"rollup-plugin-vue": "6.0.0"
 	},
 	"devDependencies": {
-		"@wbce-d9/tsconfig": "2.0.0",
 		"@types/fs-extra": "11.0.1",
 		"@types/inquirer": "9.0.3",
 		"@vitest/coverage-c8": "0.30.1",
+		"@wbce-d9/tsconfig": "workspace:*",
 		"typescript": "5.0.4",
 		"vitest": "0.30.1"
 	},
