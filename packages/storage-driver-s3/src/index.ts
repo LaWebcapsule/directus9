@@ -2,8 +2,10 @@ import type {
 	CopyObjectCommandInput,
 	GetObjectCommandInput,
 	ListObjectsV2CommandInput,
+	ObjectCannedACL,
 	PutObjectCommandInput,
 	S3ClientConfig,
+	ServerSideEncryption,
 } from '@aws-sdk/client-s3';
 import {
 	CopyObjectCommand,
@@ -25,8 +27,8 @@ export type DriverS3Config = {
 	key?: string;
 	secret?: string;
 	bucket: string;
-	acl?: string;
-	serverSideEncryption?: string;
+	acl?: ObjectCannedACL;
+	serverSideEncryption?: ServerSideEncryption;
 	endpoint?: string;
 	region?: string;
 	forcePathStyle?: boolean;
