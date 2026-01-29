@@ -138,5 +138,8 @@
 	},
 	"dependencies": {
 		"@wbce-d9/composables": "workspace:*"
+	},
+	"overrides": {
+		"tar": "^7.5.7"
 	}
 }
