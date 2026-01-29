@@ -34,7 +34,6 @@
 	},
 	"devDependencies": {
 		"@ngneat/falso": "6.4.0",
-		"@types/node": "^22.19.7",
 		"@vitest/coverage-v8": "1.6.1",
 		"@wbce-d9/tsconfig": "workspace:*",
 		"typescript": "5.0.4",
