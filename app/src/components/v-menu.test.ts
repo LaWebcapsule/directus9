@@ -1,12 +1,14 @@
 import { mount } from '@vue/test-utils';
 import { GlobalMountOptions } from '@vue/test-utils/dist/types';
-import { beforeEach, expect, test, vi } from 'vitest';
+import { afterEach, beforeEach, expect, test, vi } from 'vitest';
 
 import { directive } from '@/directives/click-outside';
 import TransitionBounce from './transition/bounce.vue';
 import VMenu from './v-menu.vue';
 
 beforeEach(() => {
+	vi.useFakeTimers();
+
 	// create teleport target
 	const el = document.createElement('div');
 	el.id = 'menu-outlet';
@@ -15,6 +17,10 @@ beforeEach(() => {
 	// mocking this as it seems like there's observer undefined error in happy-dom
 	// but it is not crucial for the current test cases at the moment
 	vi.spyOn(MutationObserver.prototype, 'disconnect').mockResolvedValue();
+});
+
+afterEach(() => {
+	vi.useRealTimers();
 });
 
 const global: GlobalMountOptions = {
@@ -39,16 +45,16 @@ test('Mount component', () => {
 	expect(wrapper.html()).toMatchSnapshot();
 });
 
-test('should not have click event listener when trigger is not "click"', () => {
+test('should not open menu on click when trigger is not "click"', async () => {
 	const wrapper = mount(VMenu, {
 		global,
 	});
 
-	const vMenuListeners = (wrapper.find('.v-menu').element as any)._vei;
-	expect(vMenuListeners).toBeUndefined();
+	await wrapper.find('.v-menu-activator').trigger('click');
+	expect(wrapper.emitted('update:modelValue')).toBeUndefined();
 });
 
-test('should have click event listener when trigger is "click"', () => {
+test('should open menu on click when trigger is "click"', async () => {
 	const wrapper = mount(VMenu, {
 		props: {
 			trigger: 'click',
@@ -56,11 +62,11 @@ test('should have click event listener when trigger is "click"', () => {
 		global,
 	});
 
-	const vMenuListeners = (wrapper.find('.v-menu').element as any)._vei;
-	expect(vMenuListeners).toHaveProperty('onClick');
+	await wrapper.find('.v-menu-activator').trigger('click');
+	expect(wrapper.emitted('update:modelValue')?.[0]).toEqual([true]);
 });
 
-test('should not have click event listener when closeOnContentClick prop is false', () => {
+test('should not close menu on content click when closeOnContentClick is false', async () => {
 	const wrapper = mount(VMenu, {
 		props: {
 			modelValue: true, // make it open in the beginning to ensure '.v-menu-content' is in the dom
@@ -69,56 +75,71 @@ test('should not have click event listener when closeOnContentClick prop is fals
 		global,
 	});
 
-	const vMenuContentListeners = (wrapper.getComponent(TransitionBounce).find('.v-menu-content').element as any)._vei;
-	expect(vMenuContentListeners).toBeUndefined();
+	const content = wrapper.getComponent(TransitionBounce).find('.v-menu-content');
+	await content.trigger('click');
+	expect(wrapper.emitted('update:modelValue')).toBeUndefined();
 });
 
-test('should have click event listener when closeOnContentClick prop is true', () => {
+test('should close menu on content click when closeOnContentClick is true', async () => {
 	const wrapper = mount(VMenu, {
 		props: {
 			modelValue: true, // make it open in the beginning to ensure '.v-menu-content' is in the dom
 			closeOnContentClick: true,
 		},
-		global,
-	});
-
-	const vMenuContentListeners = (wrapper.getComponent(TransitionBounce).find('.v-menu-content').element as any)._vei;
-	expect(vMenuContentListeners).toHaveProperty('onClick');
-});
-
-test('should not have pointerenter and pointerleave event listener when trigger is not "hover"', () => {
-	const wrapper = mount(VMenu, {
-		props: {
-			modelValue: true, // make it open in the beginning to ensure '.v-menu-content' is in the dom
+		slots: {
+			default: '<div class="menu-item">Option 1</div>',
 		},
 		global,
 	});
 
-	const activatorListeners = (wrapper.find({ ref: 'activator' }).element as any)._vei;
-	expect(activatorListeners).toBeUndefined();
-	expect(activatorListeners).toBeUndefined();
-
-	// we need to use getComponent because it's teleported
-	const vMenuContentListeners = (wrapper.getComponent(TransitionBounce).find('.v-menu-content').element as any)._vei;
-	expect(vMenuContentListeners).not.toHaveProperty('onPointerenter');
-	expect(vMenuContentListeners).not.toHaveProperty('onPointerleave');
+	// Click on a child element (the component only closes if target !== currentTarget)
+	const menuItem = wrapper.getComponent(TransitionBounce).find('.menu-item');
+	await menuItem.trigger('click');
+	expect(wrapper.emitted('update:modelValue')?.[0]).toEqual([false]);
 });
 
-test('should have pointerenter and pointerleave event listener when trigger is "hover"', () => {
+test('should not open menu on pointerenter when trigger is not "hover"', async () => {
 	const wrapper = mount(VMenu, {
 		props: {
-			modelValue: true, // make it open in the beginning to ensure '.v-menu-content' is in the dom
+			modelValue: false,
+		},
+		global,
+	});
+
+	await wrapper.find('.v-menu-activator').trigger('pointerenter');
+	expect(wrapper.emitted('update:modelValue')).toBeUndefined();
+});
+
+test('should open menu on pointerenter when trigger is "hover"', async () => {
+	const wrapper = mount(VMenu, {
+		props: {
+			modelValue: false,
 			trigger: 'hover',
 		},
 		global,
 	});
 
-	const activatorListeners = (wrapper.find({ ref: 'activator' }).element as any)._vei;
-	expect(activatorListeners).toHaveProperty('onPointerenter');
-	expect(activatorListeners).toHaveProperty('onPointerleave');
+	await wrapper.find('.v-menu-activator').trigger('pointerenter');
+	// The component uses debounce, so we need to advance timers
+	await vi.runAllTimersAsync();
+	expect(wrapper.emitted('update:modelValue')?.[0]).toEqual([true]);
+});
 
-	// we need to use getComponent because it's teleported
-	const vMenuContentListeners = (wrapper.getComponent(TransitionBounce).find('.v-menu-content').element as any)._vei;
-	expect(vMenuContentListeners).toHaveProperty('onPointerenter');
-	expect(vMenuContentListeners).toHaveProperty('onPointerleave');
+test('should close menu on pointerleave when trigger is "hover"', async () => {
+	const wrapper = mount(VMenu, {
+		props: {
+			trigger: 'hover',
+		},
+		global,
+	});
+
+	// First open the menu via hover
+	await wrapper.find('.v-menu-activator').trigger('pointerenter');
+	await vi.runAllTimersAsync();
+	expect(wrapper.emitted('update:modelValue')?.[0]).toEqual([true]);
+
+	// Then close it via pointerleave
+	await wrapper.find('.v-menu-activator').trigger('pointerleave');
+	await vi.runAllTimersAsync();
+	expect(wrapper.emitted('update:modelValue')?.[1]).toEqual([false]);
 });

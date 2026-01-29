@@ -710,7 +710,7 @@ describe('Integration Tests', () => {
 				await expect(promise).resolves.not.toThrow();
 
 				expect(superUpdateManySpy.mock.lastCall![0]).toEqual([1]);
-				expect(superUpdateManySpy.mock.lastCall![1]).toContain({ role: 'invite-role' });
+				expect(superUpdateManySpy.mock.lastCall![1]).toMatchObject({ role: 'invite-role' });
 			});
 		});
 	});

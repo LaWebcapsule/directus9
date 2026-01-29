@@ -2,7 +2,7 @@ import api, * as apiFunctions from '@/api';
 import * as setLanguageDefault from '@/lang/set-language';
 import { createTestingPinia } from '@pinia/testing';
 import { setActivePinia } from 'pinia';
-import { afterEach, beforeAll, beforeEach, describe, expect, SpyInstance, test, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, SpyInstance, test, vi } from 'vitest';
 
 beforeEach(() => {
 	setActivePinia(
@@ -58,7 +58,7 @@ let apiGetSpy: SpyInstance;
 let replaceQueueSpy: SpyInstance;
 let setLanguageSpy: SpyInstance;
 
-beforeAll(() => {
+beforeEach(() => {
 	apiGetSpy = vi.spyOn(api, 'get');
 	replaceQueueSpy = vi.spyOn(apiFunctions, 'replaceQueue').mockResolvedValue();
 	setLanguageSpy = vi.spyOn(setLanguageDefault, 'setLanguage').mockResolvedValue(true);

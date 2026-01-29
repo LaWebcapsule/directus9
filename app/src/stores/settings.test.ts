@@ -5,7 +5,7 @@ import * as notifyUtil from '@/utils/notify';
 import * as unexpectedErrorUtil from '@/utils/unexpected-error';
 import { AxiosRequestConfig } from 'axios';
 import { setActivePinia } from 'pinia';
-import { afterEach, beforeAll, beforeEach, describe, expect, SpyInstance, test, vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, SpyInstance, test, vi } from 'vitest';
 
 beforeEach(() => {
 	setActivePinia(
@@ -98,7 +98,7 @@ vi.mock('@/api', () => {
 
 let apiGetSpy: SpyInstance;
 
-beforeAll(() => {
+beforeEach(() => {
 	apiGetSpy = vi.spyOn(api, 'get');
 });
 
