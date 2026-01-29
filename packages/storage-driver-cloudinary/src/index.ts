@@ -4,6 +4,7 @@ import { Blob, Buffer } from 'node:buffer';
 import { createHash } from 'node:crypto';
 import { extname, join, parse } from 'node:path';
 import { Readable } from 'node:stream';
+import type { ReadableStream as NodeReadableStream } from 'node:stream/web';
 import PQueue from 'p-queue';
 import type { RequestInit } from 'undici';
 import { fetch, FormData } from 'undici';
@@ -129,7 +130,7 @@ export class DriverCloudinary implements Driver {
 			throw new Error(`No stream returned for file "${filepath}"`);
 		}
 
-		return Readable.fromWeb(response.body);
+		return Readable.fromWeb(response.body as NodeReadableStream);
 	}
 
 	async stat(filepath: string) {
