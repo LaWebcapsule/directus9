@@ -21,7 +21,7 @@
 		"skipLibCheck": true,
 		"esModuleInterop": true,
 		"resolveJsonModule": true,
-		"isolatedModules": false,
+		"isolatedModules": true,
 		"allowImportingTsExtensions": true,
 		"noEmit": true,
 		"paths": {

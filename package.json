@@ -6,7 +6,7 @@
 		"format": "prettier --write \"**/*.{md,y?(a)ml,json}\"",
 		"lint": "eslint .",
 		"test": "pnpm --recursive --filter '!tests-blackbox' test",
-		"test:blackbox": "pnpm --filter directus9 deploy --prod dist && pnpm --filter tests-blackbox test"
+		"test:blackbox": "pnpm --filter directus9 deploy --legacy --prod dist && pnpm --filter tests-blackbox test"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.29.8",
@@ -19,67 +19,56 @@
 		"eslint-plugin-vue": "10.0.0",
 		"prettier": "2.8.7"
 	},
-	"packageManager": "pnpm@8.3.1",
+	"packageManager": "pnpm@10.28.2",
 	"engines": {
 		"node": ">=22",
 		"pnpm": ">=8.1.0"
 	},
 	"pnpm": {
 		"overrides": {
-			"fast-xml-parser@<4.2.4": ">=4.2.4",
-			"tough-cookie@<4.1.3": ">=4.1.3",
-			"word-wrap@<1.2.4": ">=1.2.4",
-			"postcss@<8.4.31": ">=8.4.31",
-			"get-func-name@<2.0.1": ">=2.0.1",
-			"ip@=2.0.0": ">=2.0.1",
-			"jose@>=3.0.0 <=4.15.4": ">=4.15.5",
-			"follow-redirects@<=1.15.5": ">=1.15.6",
-			"@babel/traverse@<7.23.2": ">=7.23.2",
-			"tar@<6.2.1": ">=6.2.1",
-			"ejs@<3.1.10": ">=3.1.10",
-			"esbuild@<=0.24.2": ">=0.25.0",
-			"semver@<7.5.2": ">=7.5.2",
-			"cross-spawn@<6.6.0": ">=6.6.0",
-			"xml-crypto@<3.2.1": "3.2.1",
-			"tar-fs": "^2.1.4",
-			"brace-expansion": "^2.0.2",
-			"formidable": "^2.1.3",
-			"on-headers@<1.1.0": ">=1.1.0",
-			"tmp@<=0.2.3": ">=0.2.4",
-			"node-forge": ">=1.3.2",
-			"jws": ">=3.2.3",
-			"google-auth-library>jws": ">4.0.0",
-			"gtoken>jws": ">4.0.0",
-			"swagger-ui-watcher>js-yaml": "3.14.2",
-			"spellchecker-cli>js-yaml": "3.14.2"
+			"tar@<7.5.7": ">=7.5.7",
+			"esbuild@<0.25.0": ">=0.25.0",
+			"qs@=6.14.1": "6.14.0"
 		},
 		"auditConfig": {
 			"ignoreGhsas": [
-				"GHSA-5mhg-wv8w-p59j",
-				"GHSA-fr3w-2p22-6w7p",
-				"GHSA-p8v3-m643-4xqx",
-				"GHSA-2ccr-g2rv-h677",
-				"GHSA-qw9g-7549-7wg5",
-				"GHSA-jgf4-vwc3-r46v",
+				"GHSA-mv33-9f6j-pfmc",
+				"GHSA-849r-qrwj-8rv4",
+				"GHSA-fm3h-p9wm-h74h",
 				"GHSA-cff8-x7jv-4fm8",
-				"GHSA-q83v-hq3j-4pq3",
-				"GHSA-3fff-gqw3-vj86",
+				"GHSA-56p6-qw3c-fq2g",
+				"GHSA-9qrm-48qf-r2rw",
+				"GHSA-3573-4c68-g8cc",
+				"GHSA-r6wx-627v-gh2f",
+				"GHSA-8jpw-gpr4-8cmh",
+				"GHSA-cph6-524f-3hgr",
+				"GHSA-9x5g-62gj-wqf2",
+				"GHSA-vv2v-pw69-8crf",
+				"GHSA-x3vm-88hf-gpxp",
+				"GHSA-f24x-rm6g-3w5v",
+				"GHSA-rmjh-cf9q-pv7q",
+				"GHSA-7cvf-pxgp-42fc",
+				"GHSA-j8xj-7jff-46mx",
+				"GHSA-rv78-qqrq-73m5",
+				"GHSA-7wq3-jr35-275c",
 				"GHSA-68g8-c275-xf2m",
-				"GHSA-632p-p495-25m5"
+				"GHSA-pmf4-v838-29hg",
+				"GHSA-99vm-5v2h-h6r6"
 			],
-			"ignoreCves": [
-				"CVE-2024-27296",
-				"CVE-2024-28239",
-				"CVE-2024-34708",
-				"CVE-2024-28238",
-				"CVE-2024-27295",
-				"CVE-2024-39896",
-				"CVE-2024-45596",
-				"CVE-2024-6534",
-				"CVE-2024-46990",
-				"CVE-2024-36128",
-				"CVE-2024-6533"
-			]
-		}
+			"ignoreCves": []
+		},
+		"onlyBuiltDependencies": [
+			"@fortawesome/fontawesome-common-types",
+			"@fortawesome/fontawesome-svg-core",
+			"@fortawesome/free-regular-svg-icons",
+			"@fortawesome/free-solid-svg-icons",
+			"argon2",
+			"esbuild",
+			"isolated-vm",
+			"oracledb",
+			"sharp",
+			"sqlite3",
+			"vue-demi"
+		]
 	}
 }

@@ -29,15 +29,15 @@
 		"access": "public"
 	},
 	"dependencies": {
-		"@azure/storage-blob": "12.14.0",
+		"@azure/storage-blob": "12.30.0",
 		"@wbce-d9/storage": "workspace:*",
 		"@wbce-d9/utils": "workspace:*"
 	},
 	"devDependencies": {
 		"@ngneat/falso": "6.4.0",
-		"@vitest/coverage-c8": "0.30.1",
+		"@vitest/coverage-v8": "1.6.1",
 		"@wbce-d9/tsconfig": "workspace:*",
 		"typescript": "5.0.4",
-		"vitest": "0.30.1"
+		"vitest": "1.6.1"
 	}
 }
