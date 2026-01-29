@@ -1086,9 +1086,12 @@ importers:
       '@ngneat/falso':
         specifier: 6.4.0
         version: 6.4.0
+      '@types/node':
+        specifier: ^22.19.7
+        version: 22.19.7
       '@vitest/coverage-v8':
         specifier: 1.6.1
-        version: 1.6.1(vitest@1.6.1(@types/node@25.1.0)(happy-dom@20.4.0)(sass@1.62.0)(terser@5.46.0))
+        version: 1.6.1(vitest@1.6.1(@types/node@22.19.7)(happy-dom@20.4.0)(sass@1.62.0)(terser@5.46.0))
       '@wbce-d9/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
@@ -1097,7 +1100,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 1.6.1
-        version: 1.6.1(@types/node@25.1.0)(happy-dom@20.4.0)(sass@1.62.0)(terser@5.46.0)
+        version: 1.6.1(@types/node@22.19.7)(happy-dom@20.4.0)(sass@1.62.0)(terser@5.46.0)
 
   packages/storage-driver-cloudinary:
     dependencies:
@@ -1117,9 +1120,12 @@ importers:
       '@ngneat/falso':
         specifier: 6.4.0
         version: 6.4.0
+      '@types/node':
+        specifier: ^22.19.7
+        version: 22.19.7
       '@vitest/coverage-v8':
         specifier: 1.6.1
-        version: 1.6.1(vitest@1.6.1(@types/node@25.1.0)(happy-dom@20.4.0)(sass@1.62.0)(terser@5.46.0))
+        version: 1.6.1(vitest@1.6.1(@types/node@22.19.7)(happy-dom@20.4.0)(sass@1.62.0)(terser@5.46.0))
       '@wbce-d9/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
@@ -1128,7 +1134,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 1.6.1
-        version: 1.6.1(@types/node@25.1.0)(happy-dom@20.4.0)(sass@1.62.0)(terser@5.46.0)
+        version: 1.6.1(@types/node@22.19.7)(happy-dom@20.4.0)(sass@1.62.0)(terser@5.46.0)
 
   packages/storage-driver-gcs:
     dependencies:
@@ -1145,9 +1151,12 @@ importers:
       '@ngneat/falso':
         specifier: 6.4.0
         version: 6.4.0
+      '@types/node':
+        specifier: ^22.19.7
+        version: 22.19.7
       '@vitest/coverage-v8':
         specifier: 1.6.1
-        version: 1.6.1(vitest@1.6.1(@types/node@25.1.0)(happy-dom@20.4.0)(sass@1.62.0)(terser@5.46.0))
+        version: 1.6.1(vitest@1.6.1(@types/node@22.19.7)(happy-dom@20.4.0)(sass@1.62.0)(terser@5.46.0))
       '@wbce-d9/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
@@ -1156,7 +1165,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 1.6.1
-        version: 1.6.1(@types/node@25.1.0)(happy-dom@20.4.0)(sass@1.62.0)(terser@5.46.0)
+        version: 1.6.1(@types/node@22.19.7)(happy-dom@20.4.0)(sass@1.62.0)(terser@5.46.0)
 
   packages/storage-driver-local:
     dependencies:
@@ -1170,9 +1179,12 @@ importers:
       '@ngneat/falso':
         specifier: 6.4.0
         version: 6.4.0
+      '@types/node':
+        specifier: ^22.19.7
+        version: 22.19.7
       '@vitest/coverage-v8':
         specifier: 1.6.1
-        version: 1.6.1(vitest@1.6.1(@types/node@25.1.0)(happy-dom@20.4.0)(sass@1.62.0)(terser@5.46.0))
+        version: 1.6.1(vitest@1.6.1(@types/node@22.19.7)(happy-dom@20.4.0)(sass@1.62.0)(terser@5.46.0))
       '@wbce-d9/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
@@ -1181,7 +1193,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 1.6.1
-        version: 1.6.1(@types/node@25.1.0)(happy-dom@20.4.0)(sass@1.62.0)(terser@5.46.0)
+        version: 1.6.1(@types/node@22.19.7)(happy-dom@20.4.0)(sass@1.62.0)(terser@5.46.0)
 
   packages/storage-driver-s3:
     dependencies:
@@ -1201,9 +1213,12 @@ importers:
       '@ngneat/falso':
         specifier: 6.4.0
         version: 6.4.0
+      '@types/node':
+        specifier: ^22.19.7
+        version: 22.19.7
       '@vitest/coverage-v8':
         specifier: 1.6.1
-        version: 1.6.1(vitest@1.6.1(@types/node@25.1.0)(happy-dom@20.4.0)(sass@1.62.0)(terser@5.46.0))
+        version: 1.6.1(vitest@1.6.1(@types/node@22.19.7)(happy-dom@20.4.0)(sass@1.62.0)(terser@5.46.0))
       '@wbce-d9/tsconfig':
         specifier: workspace:*
         version: link:../tsconfig
@@ -1212,7 +1227,7 @@ importers:
         version: 5.0.4
       vitest:
         specifier: 1.6.1
-        version: 1.6.1(@types/node@25.1.0)(happy-dom@20.4.0)(sass@1.62.0)(terser@5.46.0)
+        version: 1.6.1(@types/node@22.19.7)(happy-dom@20.4.0)(sass@1.62.0)(terser@5.46.0)
 
   packages/tsconfig: {}
 
