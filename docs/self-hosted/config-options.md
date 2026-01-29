@@ -191,23 +191,23 @@ prefixing the value with `{type}:`. The following types are available:
 
 ## General
 
-| Variable                   | Description                                                                                                | Default Value                |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------- | ---------------------------- |
-| `CONFIG_PATH`              | Where your config file is located. See [Configuration Files](#configuration-files)                         | `.env`                       |
-| `HOST`                     | IP or host the API listens on.                                                                             | `0.0.0.0`                    |
-| `PORT`                     | What port to run the API under.                                                                            | `8055`                       |
-| `PUBLIC_URL`<sup>[1]</sup> | URL where your API can be reached on the web.                                                              | `/`                          |
-| `LOG_LEVEL`                | What level of detail to log. One of `fatal`, `error`, `warn`, `info`, `debug`, `trace` or `silent`.        | `info`                       |
-| `LOG_STYLE`                | Render the logs human readable (pretty) or as JSON. One of `pretty`, `raw`.                                | `pretty`                     |
-| `MAX_PAYLOAD_SIZE`         | Controls the maximum request body size. Accepts number of bytes, or human readable string.                 | `1mb`                        |
-| `ROOT_REDIRECT`            | Where to redirect to when navigating to `/`. Accepts a relative path, absolute URL, or `false` to disable. | `./admin`                    |
-| `SERVE_APP`                | Whether or not to serve the Admin App under `/admin`.                                                      | `true`                       |
-| `GRAPHQL_INTROSPECTION`    | Whether or not to enable GraphQL Introspection                                                             | `true`                       |
-| `MAX_BATCH_MUTATION`       | The maximum number of items for batch mutations when creating, updating and deleting.                      | `Infinity`                   |
-| `MAX_RELATIONAL_DEPTH`     | The maximum depth when filtering / querying relational fields, with a minimum value of `2`.                | `10`                         |
-| `MAX_ITEMS_PER_QUERY`     | The maximum number of items allowed when querying relational fields. Set it to `-1` to remove the limitation.                | `-1`                         |
-| `ROBOTS_TXT`               | What the `/robots.txt` endpoint should return                                                              | `User-agent: *\nDisallow: /` |
-| `X_POWERED_BY_ENABLED`     | Whether the response should return the X-Powered-By Directus Header                                        | `true`                       |
+| Variable                   | Description                                                                                                   | Default Value                |
+| -------------------------- | ------------------------------------------------------------------------------------------------------------- | ---------------------------- |
+| `CONFIG_PATH`              | Where your config file is located. See [Configuration Files](#configuration-files)                            | `.env`                       |
+| `HOST`                     | IP or host the API listens on.                                                                                | `0.0.0.0`                    |
+| `PORT`                     | What port to run the API under.                                                                               | `8055`                       |
+| `PUBLIC_URL`<sup>[1]</sup> | URL where your API can be reached on the web.                                                                 | `/`                          |
+| `LOG_LEVEL`                | What level of detail to log. One of `fatal`, `error`, `warn`, `info`, `debug`, `trace` or `silent`.           | `info`                       |
+| `LOG_STYLE`                | Render the logs human readable (pretty) or as JSON. One of `pretty`, `raw`.                                   | `pretty`                     |
+| `MAX_PAYLOAD_SIZE`         | Controls the maximum request body size. Accepts number of bytes, or human readable string.                    | `1mb`                        |
+| `ROOT_REDIRECT`            | Where to redirect to when navigating to `/`. Accepts a relative path, absolute URL, or `false` to disable.    | `./admin`                    |
+| `SERVE_APP`                | Whether or not to serve the Admin App under `/admin`.                                                         | `true`                       |
+| `GRAPHQL_INTROSPECTION`    | Whether or not to enable GraphQL Introspection                                                                | `true`                       |
+| `MAX_BATCH_MUTATION`       | The maximum number of items for batch mutations when creating, updating and deleting.                         | `Infinity`                   |
+| `MAX_RELATIONAL_DEPTH`     | The maximum depth when filtering / querying relational fields, with a minimum value of `2`.                   | `10`                         |
+| `MAX_ITEMS_PER_QUERY`      | The maximum number of items allowed when querying relational fields. Set it to `-1` to remove the limitation. | `-1`                         |
+| `ROBOTS_TXT`               | What the `/robots.txt` endpoint should return                                                                 | `User-agent: *\nDisallow: /` |
+| `X_POWERED_BY_ENABLED`     | Whether the response should return the X-Powered-By Directus Header                                           | `true`                       |
 
 <sup>[1]</sup> The PUBLIC_URL value is used for things like OAuth redirects, forgot-password emails, and logos that
 needs to be publicly available on the internet.
