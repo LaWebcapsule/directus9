@@ -192,7 +192,7 @@
 		"@types/marked": "4.3.2",
 		"@types/mime-types": "2.1.4",
 		"@types/ms": "0.7.34",
-		"@types/node": "18.19.130",
+		"@types/node": "22.19.7",
 		"@types/node-cron": "3.0.11",
 		"@types/nodemailer": "7.0.9",
 		"@types/object-hash": "3.0.6",

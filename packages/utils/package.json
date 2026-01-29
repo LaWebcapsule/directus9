@@ -54,7 +54,7 @@
 		"@ngneat/falso": "6.4.0",
 		"@types/fs-extra": "11.0.1",
 		"@types/lodash-es": "4.17.7",
-		"@types/node": "18.15.13",
+		"@types/node": "22.19.7",
 		"@types/tmp": "0.2.3",
 		"@vitest/coverage-v8": "1.6.1",
 		"@wbce-d9/tsconfig": "workspace:*",
