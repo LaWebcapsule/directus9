@@ -32,6 +32,9 @@ const allowedEnvironmentVars = [
 	'ROBOTS_TXT',
 	'MAX_RELATIONAL_DEPTH',
 	'MAX_ITEMS_PER_QUERY',
+	// query parser
+	'QS_ARRAY_LIMIT',
+	'QS_PARAMETER_LIMIT',
 	// server
 	'SERVER_.+',
 	// database
@@ -214,6 +217,8 @@ const defaults: Record<string, any> = {
 	MAX_PAYLOAD_SIZE: '1mb',
 	MAX_RELATIONAL_DEPTH: 10,
 	MAX_ITEMS_PER_QUERY: -1,
+	QS_ARRAY_LIMIT: 100,
+	QS_PARAMETER_LIMIT: 1000,
 	MAX_BATCH_MUTATION: Infinity,
 	ROBOTS_TXT: 'User-agent: *\nDisallow: /',
 
@@ -338,6 +343,10 @@ const typeMap: Record<string, string> = {
 	SERVER_SHUTDOWN_TIMEOUT: 'number',
 
 	MAX_ITEMS_PER_QUERY: 'number',
+
+	QS_ARRAY_LIMIT: 'number',
+
+	QS_PARAMETER_LIMIT: 'number',
 };
 
 let env: Record<string, any> = {
