@@ -200,6 +200,8 @@ prefixing the value with `{type}:`. The following types are available:
 | `LOG_LEVEL`                | What level of detail to log. One of `fatal`, `error`, `warn`, `info`, `debug`, `trace` or `silent`.           | `info`                       |
 | `LOG_STYLE`                | Render the logs human readable (pretty) or as JSON. One of `pretty`, `raw`.                                   | `pretty`                     |
 | `MAX_PAYLOAD_SIZE`         | Controls the maximum request body size. Accepts number of bytes, or human readable string.                    | `1mb`                        |
+| `QS_ARRAY_LIMIT`           | Maximum array index allowed in query strings.                                                                 | `100`                        |
+| `QS_PARAMETER_LIMIT`       | Maximum number of query string parameters allowed.                                                            | `1000`                       |
 | `ROOT_REDIRECT`            | Where to redirect to when navigating to `/`. Accepts a relative path, absolute URL, or `false` to disable.    | `./admin`                    |
 | `SERVE_APP`                | Whether or not to serve the Admin App under `/admin`.                                                         | `true`                       |
 | `GRAPHQL_INTROSPECTION`    | Whether or not to enable GraphQL Introspection                                                                | `true`                       |
