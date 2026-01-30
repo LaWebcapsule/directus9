@@ -103,7 +103,14 @@ export default async function createApp(): Promise<express.Application> {
 
 	app.disable('x-powered-by');
 	app.set('trust proxy', env['IP_TRUST_PROXY']);
-	app.set('query parser', (str: string) => qs.parse(str, { depth: 10 }));
+
+	app.set('query parser', (str: string) =>
+		qs.parse(str, {
+			depth: 10,
+			arrayLimit: env['QS_ARRAY_LIMIT'],
+			parameterLimit: env['QS_PARAMETER_LIMIT'],
+		})
+	);
 
 	app.use(
 		helmet.contentSecurityPolicy(
