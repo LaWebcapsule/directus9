@@ -226,6 +226,24 @@ describe('createApp', async () => {
 			expect(response.body.a).toContain('y');
 		});
 
+		test('Should parse array index exactly at QS_ARRAY_LIMIT as array', async () => {
+			const mockRouter = Router();
+
+			mockRouter.use('/test-query', (req, res) => {
+				res.json(req.query);
+			});
+
+			mockGetEndpointRouter.mockReturnValueOnce(mockRouter);
+
+			const app = await createApp();
+			// QS_ARRAY_LIMIT is set to 5, so index 5 (exactly at limit) should still be parsed as array
+			const response = await request(app).get('/test-query?a[0]=x&a[5]=y');
+
+			expect(Array.isArray(response.body.a)).toBe(true);
+			expect(response.body.a).toContain('x');
+			expect(response.body.a).toContain('y');
+		});
+
 		test('Should convert to object when array index exceeds QS_ARRAY_LIMIT', async () => {
 			const mockRouter = Router();
 
