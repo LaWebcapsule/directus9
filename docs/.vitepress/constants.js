@@ -1,7 +1,7 @@
 export const URLS = {
-	WEBSITE: 'http://localhost:5173/',
+	WEBSITE: 'https://directus.io/',
 	CLOUD: 'https://directus.cloud',
-	DOCS: 'http://localhost:5173',
+	DOCS: 'https://docs.directus.io',
 	CDN: 'https://cdn.directus.io',
 	GITHUB: 'https://github.com/LaWebcapsule/directus9',
 	GITHUB_DIRECTUS: 'https://github.com/directus',
