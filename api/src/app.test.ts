@@ -23,6 +23,8 @@ vi.mock('./env', async () => {
 		PUBLIC_URL: 'http://localhost:8055/directus',
 		TELEMETRY: false,
 		LOG_STYLE: 'raw',
+		QS_ARRAY_LIMIT: 5,
+		QS_PARAMETER_LIMIT: 10,
 	};
 
 	return {
@@ -202,6 +204,93 @@ describe('createApp', async () => {
 					},
 				],
 			});
+		});
+	});
+
+	describe('Query Parser', () => {
+		test('Should parse array indices within QS_ARRAY_LIMIT as array', async () => {
+			const mockRouter = Router();
+
+			mockRouter.use('/test-query', (req, res) => {
+				res.json(req.query);
+			});
+
+			mockGetEndpointRouter.mockReturnValueOnce(mockRouter);
+
+			const app = await createApp();
+			// QS_ARRAY_LIMIT is set to 5, so index 4 should be parsed as array
+			const response = await request(app).get('/test-query?a[0]=x&a[4]=y');
+
+			expect(Array.isArray(response.body.a)).toBe(true);
+			expect(response.body.a).toContain('x');
+			expect(response.body.a).toContain('y');
+		});
+
+		test('Should parse array index exactly at QS_ARRAY_LIMIT as array', async () => {
+			const mockRouter = Router();
+
+			mockRouter.use('/test-query', (req, res) => {
+				res.json(req.query);
+			});
+
+			mockGetEndpointRouter.mockReturnValueOnce(mockRouter);
+
+			const app = await createApp();
+			// QS_ARRAY_LIMIT is set to 5, so index 5 (exactly at limit) should still be parsed as array
+			const response = await request(app).get('/test-query?a[0]=x&a[5]=y');
+
+			expect(Array.isArray(response.body.a)).toBe(true);
+			expect(response.body.a).toContain('x');
+			expect(response.body.a).toContain('y');
+		});
+
+		test('Should convert to object when array index exceeds QS_ARRAY_LIMIT', async () => {
+			const mockRouter = Router();
+
+			mockRouter.use('/test-query', (req, res) => {
+				res.json(req.query);
+			});
+
+			mockGetEndpointRouter.mockReturnValueOnce(mockRouter);
+
+			const app = await createApp();
+			// QS_ARRAY_LIMIT is set to 5, so index 6 exceeds limit and converts to object
+			const response = await request(app).get('/test-query?a[0]=x&a[6]=y');
+
+			expect(Array.isArray(response.body.a)).toBe(false);
+			expect(response.body.a).toEqual({ '0': 'x', '6': 'y' });
+		});
+
+		test('Should parse parameters within QS_PARAMETER_LIMIT', async () => {
+			const mockRouter = Router();
+
+			mockRouter.use('/test-query', (req, res) => {
+				res.json(req.query);
+			});
+
+			mockGetEndpointRouter.mockReturnValueOnce(mockRouter);
+
+			const app = await createApp();
+			const response = await request(app).get('/test-query?a=1&b=2&c=3&d=4&e=5');
+
+			expect(response.body).toEqual({ a: '1', b: '2', c: '3', d: '4', e: '5' });
+		});
+
+		test('Should ignore parameters exceeding QS_PARAMETER_LIMIT', async () => {
+			const mockRouter = Router();
+
+			mockRouter.use('/test-query', (req, res) => {
+				res.json(req.query);
+			});
+
+			mockGetEndpointRouter.mockReturnValueOnce(mockRouter);
+
+			const app = await createApp();
+			// QS_PARAMETER_LIMIT is set to 10, so params beyond 10 should be ignored
+			const response = await request(app).get('/test-query?a=1&b=2&c=3&d=4&e=5&f=6&g=7&h=8&i=9&j=10&k=11&l=12');
+
+			expect(response.body).not.toHaveProperty('k');
+			expect(response.body).not.toHaveProperty('l');
 		});
 	});
 });

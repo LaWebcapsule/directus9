@@ -6,6 +6,7 @@
 		"test": "NODE_OPTIONS=--experimental-vm-modules jest"
 	},
 	"devDependencies": {
+		"@types/node": "18.15.13",
 		"@types/jest": "29.5.1",
 		"@types/js-yaml": "4.0.5",
 		"@types/lodash-es": "4.17.7",
@@ -23,7 +24,7 @@
 		"json-to-graphql-query": "2.2.5",
 		"knex": "3.1.0",
 		"listr2": "6.3.1",
-		"lodash-es": "4.17.21",
+		"lodash-es": "4.17.23",
 		"portfinder": "^1.0.32",
 		"seedrandom": "3.0.5",
 		"supertest": "6.3.3",
@@ -32,5 +33,5 @@
 		"typescript": "5.7.3",
 		"uuid": "9.0.0"
 	},
-	"version": "10.0.2"
+	"version": "10.0.3"
 }
