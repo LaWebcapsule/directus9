@@ -57,7 +57,7 @@ importers:
         version: 5.5.4(eslint-config-prettier@9.1.0)(eslint@8.57.0)(prettier@2.8.7)
       eslint-plugin-vue:
         specifier: 10.0.0
-        version: 10.0.0(eslint@8.57.0)(vue-eslint-parser@10.3.0)
+        version: 10.0.0(eslint@8.57.0)(vue-eslint-parser@10.4.0)
       prettier:
         specifier: 2.8.7
         version: 2.8.7
@@ -134,8 +134,8 @@ importers:
         specifier: 3.2.4
         version: 3.2.4
       axios:
-        specifier: ^1.12.0
-        version: 1.12.0
+        specifier: ^1.13.5
+        version: 1.13.5
       busboy:
         specifier: 1.6.0
         version: 1.6.0
@@ -692,8 +692,8 @@ importers:
         specifier: 3.39.0
         version: 3.39.0
       axios:
-        specifier: ^1.13.4
-        version: 1.13.4
+        specifier: ^1.13.5
+        version: 1.13.5
       babel-loader:
         specifier: ^9.2.1
         version: 9.2.1(@babel/core@7.21.4)(webpack@5.104.1)
@@ -895,8 +895,8 @@ importers:
         specifier: workspace:*
         version: link:../types
       axios:
-        specifier: ^1.12.0
-        version: 1.12.0
+        specifier: ^1.13.5
+        version: 1.13.5
       typescript:
         specifier: 5.0.4
         version: 5.0.4
@@ -1403,8 +1403,8 @@ importers:
         specifier: 7.10.0
         version: 7.10.0
       axios:
-        specifier: ^1.12.0
-        version: 1.12.0
+        specifier: ^1.13.5
+        version: 1.13.5
       globby:
         specifier: 12.0.0
         version: 12.0.0
@@ -2951,7 +2951,7 @@ packages:
       '@azure/logger': 1.3.0
       '@types/node-fetch': 2.6.13
       '@types/tunnel': 0.0.3
-      form-data: 4.0.5
+      form-data: 4.0.4
       node-fetch: 2.7.0
       process: 0.11.10
       tslib: 2.8.1
@@ -9942,7 +9942,7 @@ packages:
     resolution: {integrity: sha512-QGpRVpzSaUs30JBSGPjOg4Uveu384erbHBoT1zeONvyCfwQxIkUshLAOqN/k9EjGviPRmWTTe6aH2qySWKTVSw==}
     dependencies:
       '@types/node': 18.15.13
-      form-data: 4.0.5
+      form-data: 4.0.4
 
   /@types/node@12.20.55:
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
@@ -11395,24 +11395,14 @@ packages:
       possible-typed-array-names: 1.1.0
     dev: true
 
-  /axios@1.12.0:
-    resolution: {integrity: sha512-oXTDccv8PcfjZmPGlWsPSwtOJCZ/b6W5jAMCNcfwJbCzDckwG0jrYJFaWH1yvivfCXjVzV/SPDEhMB3Q+DSurg==}
-    dependencies:
-      follow-redirects: 1.15.11
-      form-data: 4.0.4
-      proxy-from-env: 1.1.0
-    transitivePeerDependencies:
-      - debug
-
-  /axios@1.13.4:
-    resolution: {integrity: sha512-1wVkUaAO6WyaYtCkcYCOx12ZgpGf9Zif+qXa4n+oYzK558YryKqiL6UWwd5DqiH3VRW0GYhTZQ/vlgJrCoNQlg==}
+  /axios@1.13.5:
+    resolution: {integrity: sha512-cz4ur7Vb0xS4/KUN0tPWe44eqxrIu31me+fbang3ijiNscE129POzipJJA6zniq2C/Z6sJCjMimjS8Lc/GAs8Q==}
     dependencies:
       follow-redirects: 1.15.11
       form-data: 4.0.5
       proxy-from-env: 1.1.0
     transitivePeerDependencies:
       - debug
-    dev: true
 
   /babel-core@7.0.0-bridge.0(@babel/core@7.29.0):
     resolution: {integrity: sha512-poPX9mZH/5CSanm50Q+1toVci6pv5KSRv/5TWCwtzQS5XEwn40BcCrgIeMFWP9CKKIniKXNxoIOnOq4VVlGXhg==}
@@ -13822,7 +13812,7 @@ packages:
       synckit: 0.11.12
     dev: true
 
-  /eslint-plugin-vue@10.0.0(eslint@8.57.0)(vue-eslint-parser@10.3.0):
+  /eslint-plugin-vue@10.0.0(eslint@8.57.0)(vue-eslint-parser@10.4.0):
     resolution: {integrity: sha512-XKckedtajqwmaX6u1VnECmZ6xJt+YvlmMzBPZd+/sI3ub2lpYZyFnsyWo7c3nMOQKJQudeyk1lw/JxdgeKT64w==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
@@ -13835,7 +13825,7 @@ packages:
       nth-check: 2.1.1
       postcss-selector-parser: 6.1.2
       semver: 7.7.3
-      vue-eslint-parser: 10.3.0(eslint@8.57.0)
+      vue-eslint-parser: 10.4.0(eslint@8.57.0)
       xml-name-validator: 4.0.0
     dev: true
 
@@ -17121,7 +17111,7 @@ packages:
   /mailgun.js@8.2.2:
     resolution: {integrity: sha512-po/KtofzrTuKhHLenbmliDsVVOFANwcfDFUGnggwnyZJmZz7JgBlV6nzK9o2Fk+OK2SiBmJTK25RbkAj57Hd+Q==}
     dependencies:
-      axios: 1.12.0
+      axios: 1.13.5
       base-64: 1.0.0
       url-join: 4.0.1
     transitivePeerDependencies:
@@ -21689,7 +21679,7 @@ packages:
       cookiejar: 2.1.4
       debug: 4.4.3
       fast-safe-stringify: 2.1.1
-      form-data: 4.0.5
+      form-data: 4.0.4
       formidable: 2.1.5
       methods: 1.1.2
       mime: 2.6.0
@@ -23278,8 +23268,8 @@ packages:
       vue-inbrowser-compiler-independent-utils: 4.71.1(vue@3.2.47)
     dev: true
 
-  /vue-eslint-parser@10.3.0(eslint@8.57.0):
-    resolution: {integrity: sha512-Aj1cCjD3HQjp5B8cLr6zJjISEOkr0MCrqvwLg3MeyGDjKlL8uMFLKfVbP7Te09cG9Y9KmzJwwnD7hf884CpcOg==}
+  /vue-eslint-parser@10.4.0(eslint@8.57.0):
+    resolution: {integrity: sha512-Vxi9pJdbN3ZnVGLODVtZ7y4Y2kzAAE2Cm0CZ3ZDRvydVYxZ6VrnBhLikBsRS+dpwj4Jv4UCv21PTEwF5rQ9WXg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     peerDependencies:
       eslint: ^8.57.0 || ^9.0.0 || ^10.0.0
