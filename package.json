@@ -37,7 +37,7 @@
 			"jose@>=3.0.0 <=4.15.4": ">=4.15.5",
 			"follow-redirects@<=1.15.5": ">=1.15.6",
 			"@babel/traverse@<7.23.2": ">=7.23.2",
-			"tar@<6.2.1": ">=6.2.1",
+			"tar@<7.5.4": ">=7.5.4",
 			"ejs@<3.1.10": ">=3.1.10",
 			"esbuild@<=0.24.2": ">=0.25.0",
 			"semver@<7.5.2": ">=7.5.2",
@@ -57,10 +57,23 @@
 			"@types/express": "4.17.25",
 			"@types/express-serve-static-core": "4.19.8"
 		},
+		"packageExtensions": {
+			"@vue/test-utils": {
+				"peerDependencies": {
+					"vue": "*"
+				}
+			}
+		},
 		"onlyBuiltDependencies": [
+			"@fortawesome/fontawesome-common-types",
+			"@fortawesome/fontawesome-svg-core",
+			"@fortawesome/free-brands-svg-icons",
+			"@fortawesome/free-regular-svg-icons",
+			"@fortawesome/free-solid-svg-icons",
 			"argon2",
 			"esbuild",
 			"isolated-vm",
+			"oracledb",
 			"sharp",
 			"sqlite3",
 			"vue-demi"
