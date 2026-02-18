@@ -1,5 +1,12 @@
 # @wbce-d9/api
 
+## 12.2.1
+
+### Patch Changes
+
+- 6d89f94: Fix getIPFromReq to safely handle undefined IP values by returning an empty string instead of throwing an
+  error
+
 ## 12.2.0
 
 ### Minor Changes
