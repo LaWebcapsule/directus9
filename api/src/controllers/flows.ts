@@ -1,4 +1,5 @@
 import express from 'express';
+import type { RequestHandler } from 'express';
 import { UUID_REGEX } from '../constants.js';
 import { ForbiddenException } from '../exceptions/index.js';
 import { getFlowManager } from '../flows.js';
@@ -8,18 +9,28 @@ import { validateBatch } from '../middleware/validate-batch.js';
 import { FlowsService } from '../services/flows.js';
 import { MetaService } from '../services/meta.js';
 import type { PrimaryKey } from '../types/index.js';
-import asyncHandler from '../utils/async-handler.js';
+import { getParam } from '../utils/get-param.js';
 import { sanitizeQuery } from '../utils/sanitize-query.js';
 
-const router = express.Router();
+const router: express.Router = express.Router();
+
+const UUID_PARAM_REGEX = new RegExp(`^${UUID_REGEX}$`);
+
+router.param('pk', (_req, _res, next, pk) => {
+	if (!UUID_PARAM_REGEX.test(pk)) {
+		return next('route');
+	}
+
+	return next();
+});
 
 router.use(useCollection('directus_flows'));
 
-const webhookFlowHandler = asyncHandler(async (req, res, next) => {
+const webhookFlowHandler: RequestHandler = async (req, res, next) => {
 	const flowManager = getFlowManager();
 
 	const result = await flowManager.runWebhookFlow(
-		`${req.method}-${req.params['pk']}`,
+		`${req.method}-${getParam(req, 'pk')!}`,
 		{
 			path: req.path,
 			query: req.query,
@@ -35,14 +46,14 @@ const webhookFlowHandler = asyncHandler(async (req, res, next) => {
 
 	res.locals['payload'] = result;
 	return next();
-});
+};
 
-router.get(`/trigger/:pk(${UUID_REGEX})`, webhookFlowHandler, respond);
-router.post(`/trigger/:pk(${UUID_REGEX})`, webhookFlowHandler, respond);
+router.get('/trigger/:pk', webhookFlowHandler, respond);
+router.post('/trigger/:pk', webhookFlowHandler, respond);
 
 router.post(
 	'/',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new FlowsService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -75,11 +86,11 @@ router.post(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
-const readHandler = asyncHandler(async (req, res, next) => {
+const readHandler: RequestHandler = async (req, res, next) => {
 	const service = new FlowsService({
 		accountability: req.accountability,
 		schema: req.schema,
@@ -95,31 +106,31 @@ const readHandler = asyncHandler(async (req, res, next) => {
 
 	res.locals['payload'] = { data: records || null, meta };
 	return next();
-});
+};
 
 router.get('/', validateBatch('read'), readHandler, respond);
 router.search('/', validateBatch('read'), readHandler, respond);
 
 router.get(
 	'/:pk',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new FlowsService({
 			accountability: req.accountability,
 			schema: req.schema,
 		});
 
-		const record = await service.readOne(req.params['pk']!, req.sanitizedQuery);
+		const record = await service.readOne(getParam(req, 'pk')!, req.sanitizedQuery);
 
 		res.locals['payload'] = { data: record || null };
 		return next();
-	}),
+	},
 	respond
 );
 
 router.patch(
 	'/',
 	validateBatch('update'),
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new FlowsService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -148,19 +159,19 @@ router.patch(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
 router.patch(
 	'/:pk',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new FlowsService({
 			accountability: req.accountability,
 			schema: req.schema,
 		});
 
-		const primaryKey = await service.updateOne(req.params['pk']!, req.body);
+		const primaryKey = await service.updateOne(getParam(req, 'pk')!, req.body);
 
 		try {
 			const item = await service.readOne(primaryKey, req.sanitizedQuery);
@@ -174,13 +185,13 @@ router.patch(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
 router.delete(
 	'/',
-	asyncHandler(async (req, _res, next) => {
+	async (req, _res, next) => {
 		const service = new FlowsService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -196,22 +207,22 @@ router.delete(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
 router.delete(
 	'/:pk',
-	asyncHandler(async (req, _res, next) => {
+	async (req, _res, next) => {
 		const service = new FlowsService({
 			accountability: req.accountability,
 			schema: req.schema,
 		});
 
-		await service.deleteOne(req.params['pk']!);
+		await service.deleteOne(getParam(req, 'pk')!);
 
 		return next();
-	}),
+	},
 	respond
 );
 

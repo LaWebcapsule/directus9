@@ -1,4 +1,5 @@
 import express from 'express';
+import type { RequestHandler } from 'express';
 import Joi from 'joi';
 import { ACCESS_COOKIE_OPTIONS, REFRESH_COOKIE_OPTIONS, UUID_REGEX } from '../constants.js';
 import env from '../env.js';
@@ -8,10 +9,20 @@ import useCollection from '../middleware/use-collection.js';
 import { validateBatch } from '../middleware/validate-batch.js';
 import { SharesService } from '../services/shares.js';
 import type { PrimaryKey } from '../types/index.js';
-import asyncHandler from '../utils/async-handler.js';
+import { getParam } from '../utils/get-param.js';
 import { sanitizeQuery } from '../utils/sanitize-query.js';
 
-const router = express.Router();
+const router: express.Router = express.Router();
+
+const UUID_PARAM_REGEX = new RegExp(`^${UUID_REGEX}$`);
+
+router.param('pk', (_req, _res, next, pk) => {
+	if (!UUID_PARAM_REGEX.test(pk)) {
+		return next('route');
+	}
+
+	return next();
+});
 
 router.use(useCollection('directus_shares'));
 
@@ -22,7 +33,7 @@ const sharedLoginSchema = Joi.object({
 
 router.post(
 	'/auth',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		// This doesn't use accountability, as the user isn't logged in at this point
 		const service = new SharesService({
 			schema: req.schema,
@@ -42,7 +53,7 @@ router.post(
 		res.locals['payload'] = { data: { access_token: accessToken, expires } };
 
 		return next();
-	}),
+	},
 	respond
 );
 
@@ -53,7 +64,7 @@ const sharedInviteSchema = Joi.object({
 
 router.post(
 	'/invite',
-	asyncHandler(async (req, _res, next) => {
+	async (req, _res, next) => {
 		const service = new SharesService({
 			schema: req.schema,
 			accountability: req.accountability,
@@ -68,13 +79,13 @@ router.post(
 		await service.invite(req.body);
 
 		return next();
-	}),
+	},
 	respond
 );
 
 router.post(
 	'/',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new SharesService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -107,11 +118,11 @@ router.post(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
-const readHandler = asyncHandler(async (req, res, next) => {
+const readHandler: RequestHandler = async (req, res, next) => {
 	const service = new SharesService({
 		accountability: req.accountability,
 		schema: req.schema,
@@ -121,19 +132,19 @@ const readHandler = asyncHandler(async (req, res, next) => {
 
 	res.locals['payload'] = { data: records || null };
 	return next();
-});
+};
 
 router.get('/', validateBatch('read'), readHandler, respond);
 router.search('/', validateBatch('read'), readHandler, respond);
 
 router.get(
-	`/info/:pk(${UUID_REGEX})`,
-	asyncHandler(async (req, res, next) => {
+	'/info/:pk',
+	async (req, res, next) => {
 		const service = new SharesService({
 			schema: req.schema,
 		});
 
-		const record = await service.readOne(req.params['pk']!, {
+		const record = await service.readOne(getParam(req, 'pk')!, {
 			fields: ['id', 'collection', 'item', 'password', 'max_uses', 'times_used', 'date_start', 'date_end'],
 			filter: {
 				_and: [
@@ -171,30 +182,30 @@ router.get(
 
 		res.locals['payload'] = { data: record || null };
 		return next();
-	}),
+	},
 	respond
 );
 
 router.get(
-	`/:pk(${UUID_REGEX})`,
-	asyncHandler(async (req, res, next) => {
+	'/:pk',
+	async (req, res, next) => {
 		const service = new SharesService({
 			accountability: req.accountability,
 			schema: req.schema,
 		});
 
-		const record = await service.readOne(req.params['pk']!, req.sanitizedQuery);
+		const record = await service.readOne(getParam(req, 'pk')!, req.sanitizedQuery);
 
 		res.locals['payload'] = { data: record || null };
 		return next();
-	}),
+	},
 	respond
 );
 
 router.patch(
 	'/',
 	validateBatch('update'),
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new SharesService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -223,19 +234,19 @@ router.patch(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
 router.patch(
-	`/:pk(${UUID_REGEX})`,
-	asyncHandler(async (req, res, next) => {
+	'/:pk',
+	async (req, res, next) => {
 		const service = new SharesService({
 			accountability: req.accountability,
 			schema: req.schema,
 		});
 
-		const primaryKey = await service.updateOne(req.params['pk']!, req.body);
+		const primaryKey = await service.updateOne(getParam(req, 'pk')!, req.body);
 
 		try {
 			const item = await service.readOne(primaryKey, req.sanitizedQuery);
@@ -249,13 +260,13 @@ router.patch(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
 router.delete(
 	'/',
-	asyncHandler(async (req, _res, next) => {
+	async (req, _res, next) => {
 		const service = new SharesService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -271,22 +282,22 @@ router.delete(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
 router.delete(
-	`/:pk(${UUID_REGEX})`,
-	asyncHandler(async (req, _res, next) => {
+	'/:pk',
+	async (req, _res, next) => {
 		const service = new SharesService({
 			accountability: req.accountability,
 			schema: req.schema,
 		});
 
-		await service.deleteOne(req.params['pk']!);
+		await service.deleteOne(getParam(req, 'pk')!);
 
 		return next();
-	}),
+	},
 	respond
 );
 

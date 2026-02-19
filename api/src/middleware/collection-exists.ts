@@ -5,16 +5,18 @@
 import type { RequestHandler } from 'express';
 import { systemCollectionRows } from '../database/system-data/collections/index.js';
 import { ForbiddenException } from '../exceptions/index.js';
-import asyncHandler from '../utils/async-handler.js';
+import { getParam } from '../utils/get-param.js';
 
-const collectionExists: RequestHandler = asyncHandler(async (req, _res, next) => {
-	if (!req.params['collection']) return next();
+const collectionExists: RequestHandler = async (req, _res, next) => {
+	const collection = getParam(req, 'collection');
 
-	if (req.params['collection'] in req.schema.collections === false) {
+	if (!collection) return next();
+
+	if (collection in req.schema.collections === false) {
 		throw new ForbiddenException();
 	}
 
-	req.collection = req.params['collection'];
+	req.collection = collection!;
 
 	if (req.collection.startsWith('directus_')) {
 		const systemRow = systemCollectionRows.find((collection) => {
@@ -27,6 +29,6 @@ const collectionExists: RequestHandler = asyncHandler(async (req, _res, next) =>
 	}
 
 	return next();
-});
+};
 
 export default collectionExists;

@@ -6,16 +6,16 @@ import env from '../env.js';
 import { RouteNotFoundException } from '../exceptions/index.js';
 import { getExtensionManager } from '../extensions.js';
 import { respond } from '../middleware/respond.js';
-import asyncHandler from '../utils/async-handler.js';
 import { getCacheControlHeader } from '../utils/get-cache-headers.js';
+import { getParam } from '../utils/get-param.js';
 import { getMilliseconds } from '../utils/get-milliseconds.js';
 
-const router = Router();
+const router: Router = Router();
 
 router.get(
 	'/:type',
-	asyncHandler(async (req, res, next) => {
-		const type = depluralize(req.params['type'] as Plural<string>);
+	async (req, res, next) => {
+		const type = depluralize(getParam(req, 'type') as Plural<string>);
 
 		if (!isIn(type, EXTENSION_TYPES)) {
 			throw new RouteNotFoundException(req.path);
@@ -30,14 +30,14 @@ router.get(
 		};
 
 		return next();
-	}),
+	},
 	respond
 );
 
 router.get(
 	'/sources/:chunk',
-	asyncHandler(async (req, res) => {
-		const chunk = req.params['chunk'] as string;
+	async (req, res) => {
+		const chunk = getParam(req, 'chunk')!;
 		const extensionManager = getExtensionManager();
 
 		let source: string | null;
@@ -61,7 +61,7 @@ router.get(
 
 		res.setHeader('Vary', 'Origin, Cache-Control');
 		res.end(source);
-	})
+	}
 );
 
 export default router;

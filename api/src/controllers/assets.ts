@@ -13,19 +13,19 @@ import { AssetsService } from '../services/assets.js';
 import { PayloadService } from '../services/payload.js';
 import type { TransformationParams } from '../types/assets.js';
 import { TransformationMethods } from '../types/assets.js';
-import asyncHandler from '../utils/async-handler.js';
+import { getParam } from '../utils/get-param.js';
 import { getCacheControlHeader } from '../utils/get-cache-headers.js';
 import { getConfigFromEnv } from '../utils/get-config-from-env.js';
 import { getMilliseconds } from '../utils/get-milliseconds.js';
 
-const router = Router();
+const router: Router = Router();
 
 router.use(useCollection('directus_files'));
 
 router.get(
-	'/:pk/:filename?',
+	'/:pk{/:filename}',
 	// Validate query params
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const payloadService = new PayloadService('directus_settings', { schema: req.schema });
 		const defaults = { storage_asset_presets: [], storage_asset_transform: 'all' };
 
@@ -115,9 +115,9 @@ router.get(
 			if (transformation['key'] && systemKeys.includes(transformation['key'] as string)) return next();
 			throw new InvalidQueryException(`Dynamic asset generation has been disabled for this project.`);
 		}
-	}),
+	},
 
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const helmet = await import('helmet');
 
 		return helmet.contentSecurityPolicy(
@@ -131,11 +131,11 @@ router.get(
 				getConfigFromEnv('ASSETS_CONTENT_SECURITY_POLICY')
 			)
 		)(req, res, next);
-	}),
+	},
 
 	// Return file
-	asyncHandler(async (req, res) => {
-		const id = req.params['pk']!.substring(0, 36);
+	async (req, res) => {
+		const id = getParam(req, 'pk')!.substring(0, 36);
 
 		const service = new AssetsService({
 			accountability: req.accountability,
@@ -187,7 +187,7 @@ router.get(
 
 		const { stream, file, stat } = await service.getAsset(id, transformation, range);
 
-		const filename = req.params['filename'] ?? file.filename_download;
+		const filename = getParam(req, 'filename') ?? file.filename_download;
 		res.attachment(filename);
 		res.setHeader('Content-Type', file.type);
 		res.setHeader('Accept-Ranges', 'bytes');
@@ -254,7 +254,7 @@ router.get(
 		});
 
 		return undefined;
-	})
+	}
 );
 
 export default router;

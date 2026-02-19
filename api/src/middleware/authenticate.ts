@@ -5,7 +5,6 @@ import getDatabase from '../database/index.js';
 import emitter from '../emitter.js';
 import env from '../env.js';
 import { InvalidCredentialsException, InvalidTokenException } from '../exceptions/index.js';
-import asyncHandler from '../utils/async-handler.js';
 import { getIPFromReq } from '../utils/get-ip-from-req.js';
 import isDirectusJWT from '../utils/is-directus-jwt.js';
 import { verifyAccessJWT } from '../utils/jwt.js';
@@ -125,4 +124,4 @@ export const handler = async (req: Request, _res: Response, next: NextFunction) 
 	return next();
 };
 
-export default asyncHandler(handler);
+export default handler;

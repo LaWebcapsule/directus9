@@ -23,7 +23,6 @@ import { respond } from '../../middleware/respond.js';
 import { AuthenticationService } from '../../services/authentication.js';
 import { UsersService } from '../../services/users.js';
 import type { AuthDriverOptions, User } from '../../types/index.js';
-import asyncHandler from '../../utils/async-handler.js';
 import { getConfigFromEnv } from '../../utils/get-config-from-env.js';
 import { isRedirectAllowedOnLogin } from '../../utils/is-redirect-allowed-on-login.js';
 import { LocalAuthDriver } from './local.js';
@@ -111,20 +110,20 @@ export class SAMLAuthDriver extends LocalAuthDriver {
 	}
 }
 
-export function createSAMLAuthRouter(providerName: string) {
-	const router = Router();
+export function createSAMLAuthRouter(providerName: string): Router {
+	const router: Router = Router();
 
 	router.get(
 		'/metadata',
-		asyncHandler(async (_req, res) => {
+		async (_req, res) => {
 			const { sp } = getAuthProvider(providerName) as SAMLAuthDriver;
 			return res.header('Content-Type', 'text/xml').send(sp.getMetadata());
-		})
+		}
 	);
 
 	router.get(
 		'/',
-		asyncHandler(async (req, res) => {
+		async (req, res) => {
 			const { sp, idp } = getAuthProvider(providerName) as SAMLAuthDriver;
 			const { context: url } = sp.createLoginRequest(idp, 'redirect');
 			const parsedUrl = new URL(url);
@@ -140,12 +139,12 @@ export function createSAMLAuthRouter(providerName: string) {
 			}
 
 			return res.redirect(parsedUrl.toString());
-		})
+		}
 	);
 
 	router.post(
 		'/logout',
-		asyncHandler(async (req, res) => {
+		async (req, res) => {
 			const { sp, idp } = getAuthProvider(providerName) as SAMLAuthDriver;
 			const { context } = sp.createLogoutRequest(idp, 'redirect', req.body);
 
@@ -165,13 +164,13 @@ export function createSAMLAuthRouter(providerName: string) {
 			}
 
 			return res.redirect(context);
-		})
+		}
 	);
 
 	router.post(
 		'/acs',
 		express.urlencoded({ extended: false }),
-		asyncHandler(async (req, res, next) => {
+		async (req, res, next) => {
 			const relayState: string | undefined = req.body?.RelayState;
 
 			try {
@@ -212,7 +211,7 @@ export function createSAMLAuthRouter(providerName: string) {
 				logger.warn(error, `[SAML] Unexpected error during SAML login`);
 				throw error;
 			}
-		}),
+		},
 		respond
 	);
 

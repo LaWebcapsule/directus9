@@ -5,7 +5,6 @@ import env from '../env.js';
 import { HitRateLimitException } from '../exceptions/index.js';
 import logger from '../logger.js';
 import { createRateLimiter } from '../rate-limiter.js';
-import asyncHandler from '../utils/async-handler.js';
 import { validateEnv } from '../utils/validate-env.js';
 
 const RATE_LIMITER_GLOBAL_KEY = 'global-rate-limit';
@@ -20,7 +19,7 @@ if (env['RATE_LIMITER_GLOBAL_ENABLED'] === true) {
 
 	rateLimiterGlobal = createRateLimiter('RATE_LIMITER_GLOBAL');
 
-	checkRateLimit = asyncHandler(async (_req, res, next) => {
+	checkRateLimit = async (_req, res, next) => {
 		try {
 			await rateLimiterGlobal.consume(RATE_LIMITER_GLOBAL_KEY, 1);
 		} catch (rateLimiterRes: any) {
@@ -34,7 +33,7 @@ if (env['RATE_LIMITER_GLOBAL_ENABLED'] === true) {
 		}
 
 		next();
-	});
+	};
 }
 
 export default checkRateLimit;

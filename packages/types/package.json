@@ -39,6 +39,6 @@
 		"vue": "catalog:",
 		"vue-router": "catalog:",
 		"zod": "catalog:",
-		"@types/express": "4.17.17"
+		"@types/express": "catalog:"
 	}
 }

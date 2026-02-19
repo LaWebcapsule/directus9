@@ -1,11 +1,11 @@
 import { FailedValidationException } from '@wbce-d9/exceptions';
+import type { RequestHandler } from 'express';
 import Joi from 'joi';
 import { InvalidPayloadException } from '../exceptions/index.js';
-import asyncHandler from '../utils/async-handler.js';
 import { sanitizeQuery } from '../utils/sanitize-query.js';
 
-export const validateBatch = (scope: 'read' | 'update' | 'delete') =>
-	asyncHandler(async (req, _res, next) => {
+export const validateBatch = (scope: 'read' | 'update' | 'delete'): RequestHandler =>
+	async (req, _res, next) => {
 		if (req.method.toLowerCase() === 'get') {
 			req.body = {};
 			return next();
@@ -50,4 +50,4 @@ export const validateBatch = (scope: 'read' | 'update' | 'delete') =>
 		}
 
 		return next();
-	});
+	};

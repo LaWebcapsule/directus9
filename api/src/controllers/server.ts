@@ -4,13 +4,13 @@ import { RouteNotFoundException } from '../exceptions/index.js';
 import { respond } from '../middleware/respond.js';
 import { ServerService } from '../services/server.js';
 import { SpecificationService } from '../services/specifications.js';
-import asyncHandler from '../utils/async-handler.js';
+import { getParam } from '../utils/get-param.js';
 
-const router = Router();
+const router: Router = Router();
 
 router.get(
 	'/specs/oas',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new SpecificationService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -18,13 +18,13 @@ router.get(
 
 		res.locals['payload'] = await service.oas.generate();
 		return next();
-	}),
+	},
 	respond
 );
 
 router.get(
-	'/specs/graphql/:scope?',
-	asyncHandler(async (req, res) => {
+	'/specs/graphql{/:scope}',
+	async (req, res) => {
 		const service = new SpecificationService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -35,7 +35,7 @@ router.get(
 			schema: req.schema,
 		});
 
-		const scope = req.params['scope'] || 'items';
+		const scope = getParam(req, 'scope') || 'items';
 
 		if (['items', 'system'].includes(scope) === false) throw new RouteNotFoundException(req.path);
 
@@ -45,12 +45,12 @@ router.get(
 
 		res.attachment(filename);
 		res.send(result);
-	})
+	}
 );
 
 router.get(
 	'/info',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new ServerService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -59,13 +59,13 @@ router.get(
 		const data = await service.serverInfo();
 		res.locals['payload'] = { data };
 		return next();
-	}),
+	},
 	respond
 );
 
 router.get(
 	'/health',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new ServerService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -79,7 +79,7 @@ router.get(
 		res.locals['payload'] = data;
 		res.locals['cache'] = false;
 		return next();
-	}),
+	},
 	respond
 );
 

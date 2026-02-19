@@ -9,7 +9,6 @@ import { InvalidCredentialsException, InvalidPayloadException } from '../../exce
 import { respond } from '../../middleware/respond.js';
 import { AuthenticationService } from '../../services/authentication.js';
 import type { User } from '../../types/index.js';
-import asyncHandler from '../../utils/async-handler.js';
 import { getIPFromReq } from '../../utils/get-ip-from-req.js';
 import { stall } from '../../utils/stall.js';
 import { AuthDriver } from '../auth.js';
@@ -56,7 +55,7 @@ export function createLocalAuthRouter(provider: string): Router {
 
 	router.post(
 		'/',
-		asyncHandler(async (req, res, next) => {
+		async (req, res, next) => {
 			const STALL_TIME = env['LOGIN_STALL_TIME'];
 			const timeStart = performance.now();
 
@@ -107,7 +106,7 @@ export function createLocalAuthRouter(provider: string): Router {
 			res.locals['payload'] = payload;
 
 			return next();
-		}),
+		},
 		respond
 	);
 

@@ -8,15 +8,15 @@ import validateCollection from '../middleware/collection-exists.js';
 import { respond } from '../middleware/respond.js';
 import useCollection from '../middleware/use-collection.js';
 import { FieldsService } from '../services/fields.js';
-import asyncHandler from '../utils/async-handler.js';
+import { getParam } from '../utils/get-param.js';
 
-const router = Router();
+const router: Router = Router();
 
 router.use(useCollection('directus_fields'));
 
 router.get(
 	'/',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new FieldsService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -26,41 +26,41 @@ router.get(
 
 		res.locals['payload'] = { data: fields || null };
 		return next();
-	}),
+	},
 	respond
 );
 
 router.get(
 	'/:collection',
 	validateCollection,
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new FieldsService({
 			accountability: req.accountability,
 			schema: req.schema,
 		});
 
-		const fields = await service.readAll(req.params['collection']);
+		const fields = await service.readAll(getParam(req, 'collection')!);
 
 		res.locals['payload'] = { data: fields || null };
 		return next();
-	}),
+	},
 	respond
 );
 
 router.get(
 	'/:collection/:field',
 	validateCollection,
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new FieldsService({
 			accountability: req.accountability,
 			schema: req.schema,
 		});
 
-		const field = await service.readOne(req.params['collection']!, req.params['field']!);
+		const field = await service.readOne(getParam(req, 'collection')!, getParam(req, 'field')!);
 
 		res.locals['payload'] = { data: field || null };
 		return next();
-	}),
+	},
 	respond
 );
 
@@ -84,7 +84,7 @@ const newFieldSchema = Joi.object({
 router.post(
 	'/:collection',
 	validateCollection,
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new FieldsService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -98,10 +98,10 @@ router.post(
 
 		const field: Partial<Field> & { field: string; type: Type | null } = req.body;
 
-		await service.createField(req.params['collection']!, field);
+		await service.createField(getParam(req, 'collection')!, field);
 
 		try {
-			const createdField = await service.readOne(req.params['collection']!, field.field);
+			const createdField = await service.readOne(getParam(req, 'collection')!, field.field);
 			res.locals['payload'] = { data: createdField || null };
 		} catch (error: any) {
 			if (error instanceof ForbiddenException) {
@@ -112,14 +112,14 @@ router.post(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
 router.patch(
 	'/:collection',
 	validateCollection,
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new FieldsService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -130,14 +130,14 @@ router.patch(
 		}
 
 		for (const field of req.body) {
-			await service.updateField(req.params['collection']!, field);
+			await service.updateField(getParam(req, 'collection')!, field);
 		}
 
 		try {
 			const results: any = [];
 
 			for (const field of req.body) {
-				const updatedField = await service.readOne(req.params['collection']!, field.field);
+				const updatedField = await service.readOne(getParam(req, 'collection')!, field.field);
 				results.push(updatedField);
 				res.locals['payload'] = { data: results || null };
 			}
@@ -150,7 +150,7 @@ router.patch(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
@@ -171,7 +171,7 @@ const updateSchema = Joi.object({
 router.patch(
 	'/:collection/:field',
 	validateCollection,
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new FieldsService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -189,12 +189,12 @@ router.patch(
 
 		const fieldData: Partial<Field> & { field: string; type: Type } = req.body;
 
-		if (!fieldData.field) fieldData.field = req.params['field']!;
+		if (!fieldData.field) fieldData.field = getParam(req, 'field')!;
 
-		await service.updateField(req.params['collection']!, fieldData);
+		await service.updateField(getParam(req, 'collection')!, fieldData);
 
 		try {
-			const updatedField = await service.readOne(req.params['collection']!, req.params['field']!);
+			const updatedField = await service.readOne(getParam(req, 'collection')!, getParam(req, 'field')!);
 			res.locals['payload'] = { data: updatedField || null };
 		} catch (error: any) {
 			if (error instanceof ForbiddenException) {
@@ -205,22 +205,22 @@ router.patch(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
 router.delete(
 	'/:collection/:field',
 	validateCollection,
-	asyncHandler(async (req, _res, next) => {
+	async (req, _res, next) => {
 		const service = new FieldsService({
 			accountability: req.accountability,
 			schema: req.schema,
 		});
 
-		await service.deleteField(req.params['collection']!, req.params['field']!);
+		await service.deleteField(getParam(req, 'collection')!, getParam(req, 'field')!);
 		return next();
-	}),
+	},
 	respond
 );
 

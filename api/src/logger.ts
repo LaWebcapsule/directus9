@@ -103,7 +103,7 @@ const logger = pino(merge(pinoOptions, loggerEnvConfig));
 
 const httpLoggerEnvConfig = getConfigFromEnv('LOGGER_HTTP', ['LOGGER_HTTP_LOGGER']);
 
-export const expressLogger = pinoHttp({
+export const expressLogger: RequestHandler = pinoHttp({
 	logger: pino(merge(httpLoggerOptions, loggerEnvConfig)),
 	...httpLoggerEnvConfig,
 	serializers: {

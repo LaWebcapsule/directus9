@@ -2,12 +2,11 @@ import type { RequestHandler } from 'express';
 import { getCache, getCacheValue } from '../cache.js';
 import env from '../env.js';
 import logger from '../logger.js';
-import asyncHandler from '../utils/async-handler.js';
 import { getCacheControlHeader } from '../utils/get-cache-headers.js';
 import { getCacheKey } from '../utils/get-cache-key.js';
 import { shouldSkipCache } from '../utils/should-skip-cache.js';
 
-const checkCacheMiddleware: RequestHandler = asyncHandler(async (req, res, next) => {
+const checkCacheMiddleware: RequestHandler = async (req, res, next) => {
 	const { cache } = getCache();
 
 	if (req.method.toLowerCase() !== 'get' && req.originalUrl?.startsWith('/graphql') === false) return next();
@@ -53,6 +52,6 @@ const checkCacheMiddleware: RequestHandler = asyncHandler(async (req, res, next)
 		if (env['CACHE_STATUS_HEADER']) res.setHeader(`${env['CACHE_STATUS_HEADER']}`, 'MISS');
 		return next();
 	}
-});
+};
 
 export default checkCacheMiddleware;

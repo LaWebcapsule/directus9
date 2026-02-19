@@ -20,11 +20,10 @@ import logger from '../logger.js';
 import { respond } from '../middleware/respond.js';
 import { AuthenticationService } from '../services/authentication.js';
 import { UsersService } from '../services/users.js';
-import asyncHandler from '../utils/async-handler.js';
 import { getAuthProviders } from '../utils/get-auth-providers.js';
 import { getIPFromReq } from '../utils/get-ip-from-req.js';
 
-const router = Router();
+const router: Router = Router();
 
 const authProviders = getAuthProviders();
 
@@ -67,7 +66,7 @@ if (!env['AUTH_DISABLE_DEFAULT']) {
 
 router.post(
 	'/refresh',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const accountability: Accountability = {
 			ip: getIPFromReq(req),
 			role: null,
@@ -113,13 +112,13 @@ router.post(
 
 		res.locals['payload'] = payload;
 		return next();
-	}),
+	},
 	respond
 );
 
 router.post(
 	'/logout',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const accountability: Accountability = {
 			ip: getIPFromReq(req),
 			role: null,
@@ -153,13 +152,13 @@ router.post(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
 router.post(
 	'/password/request',
-	asyncHandler(async (req, _res, next) => {
+	async (req, _res, next) => {
 		if (typeof req.body.email !== 'string') {
 			throw new InvalidPayloadException(`"email" field is required.`);
 		}
@@ -188,13 +187,13 @@ router.post(
 				return next();
 			}
 		}
-	}),
+	},
 	respond
 );
 
 router.post(
 	'/password/reset',
-	asyncHandler(async (req, _res, next) => {
+	async (req, _res, next) => {
 		if (typeof req.body.token !== 'string') {
 			throw new InvalidPayloadException(`"token" field is required.`);
 		}
@@ -217,20 +216,20 @@ router.post(
 		const service = new UsersService({ accountability, schema: req.schema });
 		await service.resetPassword(req.body.token, req.body.password);
 		return next();
-	}),
+	},
 	respond
 );
 
 router.get(
 	'/',
-	asyncHandler(async (_req, res, next) => {
+	async (_req, res, next) => {
 		res.locals['payload'] = {
 			data: getAuthProviders(),
 			disableDefault: env['AUTH_DISABLE_DEFAULT'],
 		};
 
 		return next();
-	}),
+	},
 	respond
 );
 

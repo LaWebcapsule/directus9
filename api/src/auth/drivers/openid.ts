@@ -19,7 +19,6 @@ import { respond } from '../../middleware/respond.js';
 import { AuthenticationService } from '../../services/authentication.js';
 import { UsersService } from '../../services/users.js';
 import type { AuthDriverOptions } from '../../types/index.js';
-import asyncHandler from '../../utils/async-handler.js';
 import { getConfigFromEnv } from '../../utils/get-config-from-env.js';
 import { getIPFromReq } from '../../utils/get-ip-from-req.js';
 import { Url } from '../../utils/url.js';
@@ -211,7 +210,7 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 
 	router.get(
 		'/',
-		asyncHandler(async (req, res) => {
+		async (req, res) => {
 			const provider = getAuthProvider(providerName) as OpenIDAuthDriver;
 			const codeVerifier = provider.generateCodeVerifier();
 			const prompt = !!req.query['prompt'];
@@ -242,7 +241,7 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 			});
 
 			return res.redirect(authUrl);
-		}),
+		},
 		respond
 	);
 
@@ -257,7 +256,7 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 
 	router.get(
 		'/callback',
-		asyncHandler(async (req, res, next) => {
+		async (req, res, next) => {
 			const redirectUrl = req.query['redirect'] as string;
 			const validRedirectUrl = isRedirectAllowedOnLogin(redirectUrl, providerName) ? redirectUrl : null;
 			const state = req.query['state'] as string;
@@ -353,7 +352,7 @@ export function createOpenIDAuthRouter(providerName: string): Router {
 			};
 
 			next();
-		}),
+		},
 		respond
 	);
 

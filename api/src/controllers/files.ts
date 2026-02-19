@@ -13,10 +13,10 @@ import { validateBatch } from '../middleware/validate-batch.js';
 import { FilesService } from '../services/files.js';
 import { MetaService } from '../services/meta.js';
 import type { PrimaryKey } from '../types/index.js';
-import asyncHandler from '../utils/async-handler.js';
+import { getParam } from '../utils/get-param.js';
 import { sanitizeQuery } from '../utils/sanitize-query.js';
 
-const router = express.Router();
+const router: express.Router = express.Router();
 
 router.use(useCollection('directus_files'));
 
@@ -38,7 +38,7 @@ export const multipartHandler: RequestHandler = (req, res, next) => {
 	const savedFiles: PrimaryKey[] = [];
 	const service = new FilesService({ accountability: req.accountability, schema: req.schema });
 
-	const existingPrimaryKey = req.params['pk'] || undefined;
+	const existingPrimaryKey = getParam(req, 'pk');
 
 	/**
 	 * The order of the fields in multipart/form-data is important. We require that all fields
@@ -123,8 +123,8 @@ export const multipartHandler: RequestHandler = (req, res, next) => {
 
 router.post(
 	'/',
-	asyncHandler(multipartHandler),
-	asyncHandler(async (req, res, next) => {
+	multipartHandler,
+	async (req, res, next) => {
 		const service = new FilesService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -162,7 +162,7 @@ router.post(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
@@ -173,7 +173,7 @@ const importSchema = Joi.object({
 
 router.post(
 	'/import',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const { error } = importSchema.validate(req.body);
 
 		if (error) {
@@ -199,11 +199,11 @@ router.post(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
-const readHandler = asyncHandler(async (req, res, next) => {
+const readHandler: RequestHandler = async (req, res, next) => {
 	const service = new FilesService({
 		accountability: req.accountability,
 		schema: req.schema,
@@ -218,7 +218,7 @@ const readHandler = asyncHandler(async (req, res, next) => {
 
 	if (req.singleton) {
 		result = await service.readSingleton(req.sanitizedQuery);
-	} else if (req.body.keys) {
+	} else if (req.body?.keys) {
 		result = await service.readMany(req.body.keys, req.sanitizedQuery);
 	} else {
 		result = await service.readByQuery(req.sanitizedQuery);
@@ -228,30 +228,30 @@ const readHandler = asyncHandler(async (req, res, next) => {
 
 	res.locals['payload'] = { data: result, meta };
 	return next();
-});
+};
 
 router.get('/', validateBatch('read'), readHandler, respond);
 router.search('/', validateBatch('read'), readHandler, respond);
 
 router.get(
 	'/:pk',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new FilesService({
 			accountability: req.accountability,
 			schema: req.schema,
 		});
 
-		const record = await service.readOne(req.params['pk']!, req.sanitizedQuery);
+		const record = await service.readOne(getParam(req, 'pk')!, req.sanitizedQuery);
 		res.locals['payload'] = { data: record || null };
 		return next();
-	}),
+	},
 	respond
 );
 
 router.patch(
 	'/',
 	validateBatch('update'),
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new FilesService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -280,23 +280,23 @@ router.patch(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
 router.patch(
 	'/:pk',
-	asyncHandler(multipartHandler),
-	asyncHandler(async (req, res, next) => {
+	multipartHandler,
+	async (req, res, next) => {
 		const service = new FilesService({
 			accountability: req.accountability,
 			schema: req.schema,
 		});
 
-		await service.updateOne(req.params['pk']!, req.body);
+		await service.updateOne(getParam(req, 'pk')!, req.body);
 
 		try {
-			const record = await service.readOne(req.params['pk']!, req.sanitizedQuery);
+			const record = await service.readOne(getParam(req, 'pk')!, req.sanitizedQuery);
 			res.locals['payload'] = { data: record || null };
 		} catch (error: any) {
 			if (error instanceof ForbiddenException) {
@@ -307,14 +307,14 @@ router.patch(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
 router.delete(
 	'/',
 	validateBatch('delete'),
-	asyncHandler(async (req, _res, next) => {
+	async (req, _res, next) => {
 		const service = new FilesService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -330,22 +330,22 @@ router.delete(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
 router.delete(
 	'/:pk',
-	asyncHandler(async (req, _res, next) => {
+	async (req, _res, next) => {
 		const service = new FilesService({
 			accountability: req.accountability,
 			schema: req.schema,
 		});
 
-		await service.deleteOne(req.params['pk']!);
+		await service.deleteOne(getParam(req, 'pk')!);
 
 		return next();
-	}),
+	},
 	respond
 );
 

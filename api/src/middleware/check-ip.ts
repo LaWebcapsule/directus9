@@ -1,9 +1,8 @@
 import type { RequestHandler } from 'express';
 import getDatabase from '../database/index.js';
 import { InvalidIPException } from '../exceptions/index.js';
-import asyncHandler from '../utils/async-handler.js';
 
-export const checkIP: RequestHandler = asyncHandler(async (req, _res, next) => {
+export const checkIP: RequestHandler = async (req, _res, next) => {
 	const database = getDatabase();
 
 	const query = database.select('ip_access').from('directus_roles');
@@ -20,4 +19,4 @@ export const checkIP: RequestHandler = asyncHandler(async (req, _res, next) => {
 
 	if (ipAllowlist.length > 0 && ipAllowlist.includes(req.accountability!.ip) === false) throw new InvalidIPException();
 	return next();
-});
+};

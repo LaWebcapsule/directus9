@@ -4,9 +4,8 @@ import type { DocumentNode } from 'graphql';
 import { getOperationAST, parse, Source } from 'graphql';
 import { InvalidPayloadException, InvalidQueryException, MethodNotAllowedException } from '../exceptions/index.js';
 import type { GraphQLParams } from '../types/index.js';
-import asyncHandler from '../utils/async-handler.js';
 
-export const parseGraphQL: RequestHandler = asyncHandler(async (req, res, next) => {
+export const parseGraphQL: RequestHandler = async (req, res, next) => {
 	if (req.method !== 'GET' && req.method !== 'POST') {
 		throw new MethodNotAllowedException('GraphQL only supports GET and POST requests.', { allow: ['GET', 'POST'] });
 	}
@@ -31,9 +30,9 @@ export const parseGraphQL: RequestHandler = asyncHandler(async (req, res, next) 
 
 		operationName = (req.query['operationName'] as string | undefined) || null;
 	} else {
-		query = req.body.query || null;
-		variables = req.body.variables || null;
-		operationName = req.body.operationName || null;
+		query = req.body?.query || null;
+		variables = req.body?.variables || null;
+		operationName = req.body?.operationName || null;
 	}
 
 	if (query === null) {
@@ -71,4 +70,4 @@ export const parseGraphQL: RequestHandler = asyncHandler(async (req, res, next) 
 	} as GraphQLParams;
 
 	return next();
-});
+};

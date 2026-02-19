@@ -4,7 +4,6 @@ import type { RateLimiterMemcache, RateLimiterMemory, RateLimiterRedis } from 'r
 import env from '../env.js';
 import { HitRateLimitException } from '../exceptions/index.js';
 import { createRateLimiter } from '../rate-limiter.js';
-import asyncHandler from '../utils/async-handler.js';
 import { getIPFromReq } from '../utils/get-ip-from-req.js';
 import { validateEnv } from '../utils/validate-env.js';
 
@@ -17,7 +16,7 @@ if (env['RATE_LIMITER_ENABLED'] === true) {
 
 	rateLimiter = createRateLimiter('RATE_LIMITER');
 
-	checkRateLimit = asyncHandler(async (req, res, next) => {
+	checkRateLimit = async (req, res, next) => {
 		try {
 			await rateLimiter.consume(getIPFromReq(req), 1);
 		} catch (rateLimiterRes: any) {
@@ -31,7 +30,7 @@ if (env['RATE_LIMITER_ENABLED'] === true) {
 		}
 
 		next();
-	});
+	};
 }
 
 export default checkRateLimit;

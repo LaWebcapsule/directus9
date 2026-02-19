@@ -19,7 +19,6 @@ import { respond } from '../../middleware/respond.js';
 import { AuthenticationService } from '../../services/authentication.js';
 import { UsersService } from '../../services/users.js';
 import type { AuthDriverOptions } from '../../types/index.js';
-import asyncHandler from '../../utils/async-handler.js';
 import { getConfigFromEnv } from '../../utils/get-config-from-env.js';
 import { getIPFromReq } from '../../utils/get-ip-from-req.js';
 import { Url } from '../../utils/url.js';
@@ -196,7 +195,7 @@ export function createOAuth2AuthRouter(providerName: string): Router {
 
 	router.get(
 		'/callback',
-		asyncHandler(async (req, res, next) => {
+		async (req, res, next) => {
 			let tokenData;
 
 			try {
@@ -275,7 +274,7 @@ export function createOAuth2AuthRouter(providerName: string): Router {
 			};
 
 			next();
-		}),
+		},
 		respond
 	);
 

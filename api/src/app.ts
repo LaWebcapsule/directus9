@@ -220,7 +220,7 @@ export default async function createApp(): Promise<express.Application> {
 
 		app.get('/admin', sendHtml);
 		app.use('/admin', express.static(path.join(adminPath, '..'), { setHeaders: setStaticHeaders }));
-		app.use('/admin/*', sendHtml);
+		app.use('/admin/*splat', sendHtml);
 	}
 
 	// use the rate limiter - all routes for now

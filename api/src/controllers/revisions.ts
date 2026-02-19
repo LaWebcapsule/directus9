@@ -1,16 +1,17 @@
 import express from 'express';
+import type { RequestHandler } from 'express';
 import { respond } from '../middleware/respond.js';
 import useCollection from '../middleware/use-collection.js';
 import { validateBatch } from '../middleware/validate-batch.js';
 import { MetaService } from '../services/meta.js';
 import { RevisionsService } from '../services/revisions.js';
-import asyncHandler from '../utils/async-handler.js';
+import { getParam } from '../utils/get-param.js';
 
-const router = express.Router();
+const router: express.Router = express.Router();
 
 router.use(useCollection('directus_revisions'));
 
-const readHandler = asyncHandler(async (req, res, next) => {
+const readHandler: RequestHandler = async (req, res, next) => {
 	const service = new RevisionsService({
 		accountability: req.accountability,
 		schema: req.schema,
@@ -26,24 +27,24 @@ const readHandler = asyncHandler(async (req, res, next) => {
 
 	res.locals['payload'] = { data: records || null, meta };
 	return next();
-});
+};
 
 router.get('/', validateBatch('read'), readHandler, respond);
 router.search('/', validateBatch('read'), readHandler, respond);
 
 router.get(
 	'/:pk',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new RevisionsService({
 			accountability: req.accountability,
 			schema: req.schema,
 		});
 
-		const record = await service.readOne(req.params['pk']!, req.sanitizedQuery);
+		const record = await service.readOne(getParam(req, 'pk')!, req.sanitizedQuery);
 
 		res.locals['payload'] = { data: record || null };
 		return next();
-	}),
+	},
 	respond
 );
 

@@ -1,5 +1,6 @@
 import type { Role } from '@wbce-d9/types';
 import express from 'express';
+import type { RequestHandler } from 'express';
 import Joi from 'joi';
 import { ForbiddenException, InvalidCredentialsException, InvalidPayloadException } from '../exceptions/index.js';
 import { respond } from '../middleware/respond.js';
@@ -11,16 +12,16 @@ import { RolesService } from '../services/roles.js';
 import { TFAService } from '../services/tfa.js';
 import { UsersService } from '../services/users.js';
 import type { PrimaryKey } from '../types/index.js';
-import asyncHandler from '../utils/async-handler.js';
+import { getParam } from '../utils/get-param.js';
 import { sanitizeQuery } from '../utils/sanitize-query.js';
 
-const router = express.Router();
+const router: express.Router = express.Router();
 
 router.use(useCollection('directus_users'));
 
 router.post(
 	'/',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new UsersService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -53,11 +54,11 @@ router.post(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
-const readHandler = asyncHandler(async (req, res, next) => {
+const readHandler: RequestHandler = async (req, res, next) => {
 	const service = new UsersService({
 		accountability: req.accountability,
 		schema: req.schema,
@@ -73,14 +74,14 @@ const readHandler = asyncHandler(async (req, res, next) => {
 
 	res.locals['payload'] = { data: item || null, meta };
 	return next();
-});
+};
 
 router.get('/', validateBatch('read'), readHandler, respond);
 router.search('/', validateBatch('read'), readHandler, respond);
 
 router.get(
 	'/me',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		if (req.accountability?.share_scope) {
 			const user = {
 				share: req.accountability?.share,
@@ -117,13 +118,13 @@ router.get(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
 router.get(
 	'/:pk',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		if (req.path.endsWith('me')) return next();
 
 		const service = new UsersService({
@@ -131,17 +132,17 @@ router.get(
 			schema: req.schema,
 		});
 
-		const items = await service.readOne(req.params['pk']!, req.sanitizedQuery);
+		const items = await service.readOne(getParam(req, 'pk')!, req.sanitizedQuery);
 
 		res.locals['payload'] = { data: items || null };
 		return next();
-	}),
+	},
 	respond
 );
 
 router.patch(
 	'/me',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		if (!req.accountability?.user) {
 			throw new InvalidCredentialsException();
 		}
@@ -156,13 +157,13 @@ router.patch(
 
 		res.locals['payload'] = { data: item || null };
 		return next();
-	}),
+	},
 	respond
 );
 
 router.patch(
 	'/me/track/page',
-	asyncHandler(async (req, _res, next) => {
+	async (req, _res, next) => {
 		if (!req.accountability?.user) {
 			throw new InvalidCredentialsException();
 		}
@@ -175,14 +176,14 @@ router.patch(
 		await service.updateOne(req.accountability.user, { last_page: req.body.last_page });
 
 		return next();
-	}),
+	},
 	respond
 );
 
 router.patch(
 	'/',
 	validateBatch('update'),
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new UsersService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -211,19 +212,19 @@ router.patch(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
 router.patch(
 	'/:pk',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new UsersService({
 			accountability: req.accountability,
 			schema: req.schema,
 		});
 
-		const primaryKey = await service.updateOne(req.params['pk']!, req.body);
+		const primaryKey = await service.updateOne(getParam(req, 'pk')!, req.body);
 
 		try {
 			const item = await service.readOne(primaryKey, req.sanitizedQuery);
@@ -237,14 +238,14 @@ router.patch(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
 router.delete(
 	'/',
 	validateBatch('delete'),
-	asyncHandler(async (req, _res, next) => {
+	async (req, _res, next) => {
 		const service = new UsersService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -260,22 +261,22 @@ router.delete(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
 router.delete(
 	'/:pk',
-	asyncHandler(async (req, _res, next) => {
+	async (req, _res, next) => {
 		const service = new UsersService({
 			accountability: req.accountability,
 			schema: req.schema,
 		});
 
-		await service.deleteOne(req.params['pk']!);
+		await service.deleteOne(getParam(req, 'pk')!);
 
 		return next();
-	}),
+	},
 	respond
 );
 
@@ -287,7 +288,7 @@ const inviteSchema = Joi.object({
 
 router.post(
 	'/invite',
-	asyncHandler(async (req, _res, next) => {
+	async (req, _res, next) => {
 		const { error } = inviteSchema.validate(req.body);
 		if (error) throw new InvalidPayloadException(error.message);
 
@@ -298,7 +299,7 @@ router.post(
 
 		await service.inviteUser(req.body.email, req.body.role, req.body.invite_url || null);
 		return next();
-	}),
+	},
 	respond
 );
 
@@ -309,7 +310,7 @@ const acceptInviteSchema = Joi.object({
 
 router.post(
 	'/invite/accept',
-	asyncHandler(async (req, _res, next) => {
+	async (req, _res, next) => {
 		const { error } = acceptInviteSchema.validate(req.body);
 		if (error) throw new InvalidPayloadException(error.message);
 
@@ -320,13 +321,13 @@ router.post(
 
 		await service.acceptInvite(req.body.token, req.body.password);
 		return next();
-	}),
+	},
 	respond
 );
 
 router.post(
 	'/me/tfa/generate/',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		if (!req.accountability?.user) {
 			throw new InvalidCredentialsException();
 		}
@@ -351,13 +352,13 @@ router.post(
 
 		res.locals['payload'] = { data: { secret, otpauth_url: url } };
 		return next();
-	}),
+	},
 	respond
 );
 
 router.post(
 	'/me/tfa/enable/',
-	asyncHandler(async (req, _res, next) => {
+	async (req, _res, next) => {
 		if (!req.accountability?.user) {
 			throw new InvalidCredentialsException();
 		}
@@ -410,13 +411,13 @@ router.post(
 		await service.enableTFA(req.accountability.user, req.body.otp, req.body.secret);
 
 		return next();
-	}),
+	},
 	respond
 );
 
 router.post(
 	'/me/tfa/disable',
-	asyncHandler(async (req, _res, next) => {
+	async (req, _res, next) => {
 		if (!req.accountability?.user) {
 			throw new InvalidCredentialsException();
 		}
@@ -470,18 +471,18 @@ router.post(
 
 		await service.disableTFA(req.accountability.user);
 		return next();
-	}),
+	},
 	respond
 );
 
 router.post(
 	'/:pk/tfa/disable',
-	asyncHandler(async (req, _res, next) => {
+	async (req, _res, next) => {
 		if (!req.accountability?.user) {
 			throw new InvalidCredentialsException();
 		}
 
-		if (!req.accountability.admin || !req.params['pk']) {
+		if (!req.accountability.admin || !getParam(req, 'pk')) {
 			throw new ForbiddenException();
 		}
 
@@ -490,9 +491,9 @@ router.post(
 			schema: req.schema,
 		});
 
-		await service.disableTFA(req.params['pk']);
+		await service.disableTFA(getParam(req, 'pk')!);
 		return next();
-	}),
+	},
 	respond
 );
 

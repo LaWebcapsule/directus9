@@ -21,7 +21,6 @@ import { respond } from '../../middleware/respond.js';
 import { AuthenticationService } from '../../services/authentication.js';
 import { UsersService } from '../../services/users.js';
 import type { AuthDriverOptions, User } from '../../types/index.js';
-import asyncHandler from '../../utils/async-handler.js';
 import { getIPFromReq } from '../../utils/get-ip-from-req.js';
 import { AuthDriver } from '../auth.js';
 
@@ -403,7 +402,7 @@ export function createLDAPAuthRouter(provider: string): Router {
 
 	router.post(
 		'/',
-		asyncHandler(async (req, res, next) => {
+		async (req, res, next) => {
 			const accountability: Accountability = {
 				ip: getIPFromReq(req),
 				role: null,
@@ -450,7 +449,7 @@ export function createLDAPAuthRouter(provider: string): Router {
 			res.locals['payload'] = payload;
 
 			return next();
-		}),
+		},
 		respond
 	);
 

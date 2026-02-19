@@ -3,15 +3,14 @@ import { ForbiddenException } from '../exceptions/index.js';
 import { respond } from '../middleware/respond.js';
 import useCollection from '../middleware/use-collection.js';
 import { SettingsService } from '../services/settings.js';
-import asyncHandler from '../utils/async-handler.js';
 
-const router = express.Router();
+const router: express.Router = express.Router();
 
 router.use(useCollection('directus_settings'));
 
 router.get(
 	'/',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new SettingsService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -20,13 +19,13 @@ router.get(
 		const records = await service.readSingleton(req.sanitizedQuery);
 		res.locals['payload'] = { data: records || null };
 		return next();
-	}),
+	},
 	respond
 );
 
 router.patch(
 	'/',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new SettingsService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -46,7 +45,7 @@ router.patch(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 

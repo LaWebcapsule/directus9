@@ -37,10 +37,9 @@ test(`Short circuits on singletons that aren't queried through SEARCH`, async ()
 test('Throws InvalidPayloadException on missing body', async () => {
 	mockRequest.method = 'SEARCH';
 
-	await validateBatch('read')(mockRequest as Request, mockResponse as Response, nextFunction);
-
-	expect(nextFunction).toHaveBeenCalledTimes(1);
-	expect(vi.mocked(nextFunction).mock.calls[0][0]).toBeInstanceOf(InvalidPayloadException);
+	await expect(
+		validateBatch('read')(mockRequest as Request, mockResponse as Response, nextFunction)
+	).rejects.toBeInstanceOf(InvalidPayloadException);
 });
 
 test(`Short circuits on Array body in update/delete use`, async () => {
@@ -77,10 +76,9 @@ test(`Doesn't allow both query and keys in a batch delete`, async () => {
 		query: { filter: {} },
 	};
 
-	await validateBatch('delete')(mockRequest as Request, mockResponse as Response, nextFunction);
-
-	expect(nextFunction).toHaveBeenCalledTimes(1);
-	expect(vi.mocked(nextFunction).mock.calls[0][0]).toBeInstanceOf(FailedValidationException);
+	await expect(
+		validateBatch('delete')(mockRequest as Request, mockResponse as Response, nextFunction)
+	).rejects.toBeInstanceOf(FailedValidationException);
 });
 
 test(`Requires 'data' on batch update`, async () => {
@@ -91,10 +89,9 @@ test(`Requires 'data' on batch update`, async () => {
 		query: { filter: {} },
 	};
 
-	await validateBatch('update')(mockRequest as Request, mockResponse as Response, nextFunction);
-
-	expect(nextFunction).toHaveBeenCalledTimes(1);
-	expect(vi.mocked(nextFunction).mock.calls[0][0]).toBeInstanceOf(FailedValidationException);
+	await expect(
+		validateBatch('update')(mockRequest as Request, mockResponse as Response, nextFunction)
+	).rejects.toBeInstanceOf(FailedValidationException);
 });
 
 test(`Calls next when all is well`, async () => {

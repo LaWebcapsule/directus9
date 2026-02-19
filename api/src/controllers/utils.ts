@@ -14,11 +14,11 @@ import { respond } from '../middleware/respond.js';
 import { ExportService, ImportService } from '../services/import-export.js';
 import { RevisionsService } from '../services/revisions.js';
 import { UtilsService } from '../services/utils.js';
-import asyncHandler from '../utils/async-handler.js';
 import { generateHash } from '../utils/generate-hash.js';
+import { getParam } from '../utils/get-param.js';
 import { sanitizeQuery } from '../utils/sanitize-query.js';
 
-const router = Router();
+const router: Router = Router();
 
 const randomStringSchemaDesc = Joi.object<{ length: number }>({
 	length: Joi.number().integer().min(1).max(500).default(32),
@@ -26,7 +26,7 @@ const randomStringSchemaDesc = Joi.object<{ length: number }>({
 
 router.get(
 	'/random/string',
-	asyncHandler(async (req, res) => {
+	async (req, res) => {
 		const { nanoid } = await import('nanoid');
 
 		const { error, value } = randomStringSchemaDesc.validate(req.query, { allowUnknown: true });
@@ -36,12 +36,12 @@ router.get(
 		const string = nanoid(value.length);
 
 		return res.json({ data: string });
-	})
+	}
 );
 
 router.post(
 	'/hash/generate',
-	asyncHandler(async (req, res) => {
+	async (req, res) => {
 		if (!req.body?.string) {
 			throw new InvalidPayloadException(`"string" is required`);
 		}
@@ -49,12 +49,12 @@ router.post(
 		const hash = await generateHash(req.body.string);
 
 		return res.json({ data: hash });
-	})
+	}
 );
 
 router.post(
 	'/hash/verify',
-	asyncHandler(async (req, res) => {
+	async (req, res) => {
 		if (!req.body?.string) {
 			throw new InvalidPayloadException(`"string" is required`);
 		}
@@ -66,7 +66,7 @@ router.post(
 		const result = await argon2.verify(req.body.hash, req.body.string);
 
 		return res.json({ data: result });
-	})
+	}
 );
 
 const SortSchema = Joi.object({
@@ -77,7 +77,7 @@ const SortSchema = Joi.object({
 router.post(
 	'/sort/:collection',
 	collectionExists,
-	asyncHandler(async (req, res) => {
+	async (req, res) => {
 		const { error } = SortSchema.validate(req.body);
 		if (error) throw new InvalidPayloadException(error.message);
 
@@ -89,27 +89,27 @@ router.post(
 		await service.sort(req.collection, req.body);
 
 		return res.status(200).end();
-	})
+	}
 );
 
 router.post(
 	'/revert/:revision',
-	asyncHandler(async (req, _res, next) => {
+	async (req, _res, next) => {
 		const service = new RevisionsService({
 			accountability: req.accountability,
 			schema: req.schema,
 		});
 
-		await service.revert(req.params['revision']!);
+		await service.revert(getParam(req, 'revision')!);
 		next();
-	}),
+	},
 	respond
 );
 
 router.post(
 	'/import/:collection',
 	collectionExists,
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		if (req.is('multipart/form-data') === false)
 			throw new UnsupportedMediaTypeException(`Unsupported Content-Type header`);
 
@@ -133,7 +133,7 @@ router.post(
 
 		busboy.on('file', async (_fieldname, fileStream, { mimeType }) => {
 			try {
-				await service.import(req.params['collection']!, mimeType, fileStream);
+				await service.import(getParam(req, 'collection')!, mimeType, fileStream);
 			} catch (err: any) {
 				return next(err);
 			}
@@ -144,13 +144,13 @@ router.post(
 		busboy.on('error', (err: Error) => next(err));
 
 		req.pipe(busboy);
-	})
+	}
 );
 
 router.post(
 	'/export/:collection',
 	collectionExists,
-	asyncHandler(async (req, _res, next) => {
+	async (req, _res, next) => {
 		if (!req.body.query) {
 			throw new InvalidPayloadException(`"query" is required.`);
 		}
@@ -167,18 +167,18 @@ router.post(
 		const sanitizedQuery = sanitizeQuery(req.body.query, req.accountability ?? null);
 
 		// We're not awaiting this, as it's supposed to run async in the background
-		service.exportToFile(req.params['collection']!, sanitizedQuery, req.body.format, {
+		service.exportToFile(getParam(req, 'collection')!, sanitizedQuery, req.body.format, {
 			file: req.body.file,
 		});
 
 		return next();
-	}),
+	},
 	respond
 );
 
 router.post(
 	'/cache/clear',
-	asyncHandler(async (req, res) => {
+	async (req, res) => {
 		if (req.accountability?.admin !== true) {
 			throw new ForbiddenException();
 		}
@@ -186,7 +186,7 @@ router.post(
 		await flushCaches(true);
 
 		res.status(200).end();
-	})
+	}
 );
 
 export default router;

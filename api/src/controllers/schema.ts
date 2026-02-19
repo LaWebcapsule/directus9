@@ -8,35 +8,34 @@ import logger from '../logger.js';
 import { respond } from '../middleware/respond.js';
 import { SchemaService } from '../services/schema.js';
 import type { Snapshot } from '../types/index.js';
-import asyncHandler from '../utils/async-handler.js';
 import { getVersionedHash } from '../utils/get-versioned-hash.js';
 
-const router = express.Router();
+const router: express.Router = express.Router();
 
 router.get(
 	'/snapshot',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new SchemaService({ accountability: req.accountability });
 		const currentSnapshot = await service.snapshot();
 		res.locals['payload'] = { data: currentSnapshot };
 		return next();
-	}),
+	},
 	respond
 );
 
 router.post(
 	'/apply',
-	asyncHandler(async (req, _res, next) => {
+	async (req, _res, next) => {
 		const service = new SchemaService({ accountability: req.accountability });
 		await service.apply(req.body);
 		return next();
-	}),
+	},
 	respond
 );
 
 const schemaMultipartHandler: RequestHandler = (req, res, next) => {
 	if (req.is('application/json')) {
-		if (Object.keys(req.body).length === 0) throw new InvalidPayloadException(`No data was included in the body`);
+		if (!req.body || Object.keys(req.body).length === 0) throw new InvalidPayloadException(`No data was included in the body`);
 		res.locals['uploadedSnapshot'] = req.body;
 		return next();
 	}
@@ -102,8 +101,8 @@ const schemaMultipartHandler: RequestHandler = (req, res, next) => {
 
 router.post(
 	'/diff',
-	asyncHandler(schemaMultipartHandler),
-	asyncHandler(async (req, res, next) => {
+	schemaMultipartHandler,
+	async (req, res, next) => {
 		const service = new SchemaService({ accountability: req.accountability });
 		const snapshot: Snapshot = res.locals['uploadedSnapshot'];
 
@@ -114,7 +113,7 @@ router.post(
 		const currentSnapshotHash = getVersionedHash(currentSnapshot);
 		res.locals['payload'] = { data: { hash: currentSnapshotHash, diff: snapshotDiff } };
 		return next();
-	}),
+	},
 	respond
 );
 

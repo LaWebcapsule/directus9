@@ -5,15 +5,15 @@ import validateCollection from '../middleware/collection-exists.js';
 import { respond } from '../middleware/respond.js';
 import useCollection from '../middleware/use-collection.js';
 import { RelationsService } from '../services/relations.js';
-import asyncHandler from '../utils/async-handler.js';
+import { getParam } from '../utils/get-param.js';
 
-const router = express.Router();
+const router: express.Router = express.Router();
 
 router.use(useCollection('directus_relations'));
 
 router.get(
 	'/',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new RelationsService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -22,41 +22,41 @@ router.get(
 		const relations = await service.readAll();
 		res.locals['payload'] = { data: relations || null };
 		return next();
-	}),
+	},
 	respond
 );
 
 router.get(
 	'/:collection',
 	validateCollection,
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new RelationsService({
 			accountability: req.accountability,
 			schema: req.schema,
 		});
 
-		const relations = await service.readAll(req.params['collection']);
+		const relations = await service.readAll(getParam(req, 'collection')!);
 
 		res.locals['payload'] = { data: relations || null };
 		return next();
-	}),
+	},
 	respond
 );
 
 router.get(
 	'/:collection/:field',
 	validateCollection,
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new RelationsService({
 			accountability: req.accountability,
 			schema: req.schema,
 		});
 
-		const relation = await service.readOne(req.params['collection']!, req.params['field']!);
+		const relation = await service.readOne(getParam(req, 'collection')!, getParam(req, 'field')!);
 
 		res.locals['payload'] = { data: relation || null };
 		return next();
-	}),
+	},
 	respond
 );
 
@@ -74,7 +74,7 @@ const newRelationSchema = Joi.object({
 
 router.post(
 	'/',
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new RelationsService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -100,7 +100,7 @@ router.post(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
@@ -119,7 +119,7 @@ const updateRelationSchema = Joi.object({
 router.patch(
 	'/:collection/:field',
 	validateCollection,
-	asyncHandler(async (req, res, next) => {
+	async (req, res, next) => {
 		const service = new RelationsService({
 			accountability: req.accountability,
 			schema: req.schema,
@@ -131,10 +131,10 @@ router.patch(
 			throw new InvalidPayloadException(error.message);
 		}
 
-		await service.updateOne(req.params['collection']!, req.params['field']!, req.body);
+		await service.updateOne(getParam(req, 'collection')!, getParam(req, 'field')!, req.body);
 
 		try {
-			const updatedField = await service.readOne(req.params['collection']!, req.params['field']!);
+			const updatedField = await service.readOne(getParam(req, 'collection')!, getParam(req, 'field')!);
 			res.locals['payload'] = { data: updatedField || null };
 		} catch (error: any) {
 			if (error instanceof ForbiddenException) {
@@ -145,22 +145,22 @@ router.patch(
 		}
 
 		return next();
-	}),
+	},
 	respond
 );
 
 router.delete(
 	'/:collection/:field',
 	validateCollection,
-	asyncHandler(async (req, _res, next) => {
+	async (req, _res, next) => {
 		const service = new RelationsService({
 			accountability: req.accountability,
 			schema: req.schema,
 		});
 
-		await service.deleteOne(req.params['collection']!, req.params['field']!);
+		await service.deleteOne(getParam(req, 'collection')!, getParam(req, 'field')!);
 		return next();
-	}),
+	},
 	respond
 );
 
