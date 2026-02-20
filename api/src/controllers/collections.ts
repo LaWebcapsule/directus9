@@ -23,7 +23,7 @@ router.post(
 			const records = await collectionsService.readMany(collectionKey);
 			res.locals['payload'] = { data: records || null };
 		} else {
-			const collectionKey = await collectionsService.createOne(req.body);
+			const collectionKey = await collectionsService.createOne(req.body || {});
 			const record = await collectionsService.readOne(collectionKey);
 			res.locals['payload'] = { data: record || null };
 		}
@@ -85,7 +85,7 @@ router.patch(
 			schema: req.schema,
 		});
 
-		const collectionKeys = await collectionsService.updateBatch(req.body);
+		const collectionKeys = await collectionsService.updateBatch(req.body || {});
 
 		try {
 			const collections = await collectionsService.readMany(collectionKeys);
@@ -111,7 +111,7 @@ router.patch(
 			schema: req.schema,
 		});
 
-		await collectionsService.updateOne(getParam(req, 'collection')!, req.body);
+		await collectionsService.updateOne(getParam(req, 'collection')!, req.body || {});
 
 		try {
 			const collection = await collectionsService.readOne(getParam(req, 'collection')!);

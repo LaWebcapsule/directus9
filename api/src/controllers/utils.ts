@@ -78,7 +78,7 @@ router.post(
 	'/sort/:collection',
 	collectionExists,
 	async (req, res) => {
-		const { error } = SortSchema.validate(req.body);
+		const { error } = SortSchema.validate(req.body || {});
 		if (error) throw new InvalidPayloadException(error.message);
 
 		const service = new UtilsService({
@@ -151,11 +151,11 @@ router.post(
 	'/export/:collection',
 	collectionExists,
 	async (req, _res, next) => {
-		if (!req.body.query) {
+		if (!req.body?.query) {
 			throw new InvalidPayloadException(`"query" is required.`);
 		}
 
-		if (!req.body.format) {
+		if (!req.body?.format) {
 			throw new InvalidPayloadException(`"format" is required.`);
 		}
 

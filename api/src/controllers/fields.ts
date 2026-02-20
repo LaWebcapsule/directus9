@@ -90,7 +90,7 @@ router.post(
 			schema: req.schema,
 		});
 
-		const { error } = newFieldSchema.validate(req.body);
+		const { error } = newFieldSchema.validate(req.body || {});
 
 		if (error) {
 			throw new InvalidPayloadException(error.message);
@@ -177,17 +177,17 @@ router.patch(
 			schema: req.schema,
 		});
 
-		const { error } = updateSchema.validate(req.body);
+		const { error } = updateSchema.validate(req.body || {});
 
 		if (error) {
 			throw new InvalidPayloadException(error.message);
 		}
 
-		if (req.body.schema && !req.body.type) {
+		if (req.body?.schema && !req.body?.type) {
 			throw new InvalidPayloadException(`You need to provide "type" when providing "schema".`);
 		}
 
-		const fieldData: Partial<Field> & { field: string; type: Type } = req.body;
+		const fieldData: Partial<Field> & { field: string; type: Type } = req.body || {};
 
 		if (!fieldData.field) fieldData.field = getParam(req, 'field')!;
 

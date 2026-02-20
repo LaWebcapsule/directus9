@@ -31,7 +31,7 @@ router.patch(
 			schema: req.schema,
 		});
 
-		await service.upsertSingleton(req.body);
+		await service.upsertSingleton(req.body || {});
 
 		try {
 			const record = await service.readSingleton(req.sanitizedQuery);

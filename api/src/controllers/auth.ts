@@ -87,13 +87,13 @@ router.post(
 			res.clearCookie(env['ACCESS_TOKEN_COOKIE_NAME'], ACCESS_COOKIE_CLEAR_OPTIONS);
 		}
 
-		const currentRefreshToken = req.body.refresh_token || req.cookies[env['REFRESH_TOKEN_COOKIE_NAME']];
+		const currentRefreshToken = req.body?.refresh_token || req.cookies[env['REFRESH_TOKEN_COOKIE_NAME']];
 
 		if (!currentRefreshToken) {
 			throw new InvalidPayloadException(`"refresh_token" is required in either the JSON payload or Cookie`);
 		}
 
-		const mode: 'json' | 'cookie' = req.body.mode || (req.body.refresh_token ? 'json' : 'cookie');
+		const mode: 'json' | 'cookie' = req.body?.mode || (req.body?.refresh_token ? 'json' : 'cookie');
 
 		const { accessToken, refreshToken, expires } = await authenticationService.refresh(currentRefreshToken);
 
@@ -135,7 +135,7 @@ router.post(
 			schema: req.schema,
 		});
 
-		const currentRefreshToken = req.body.refresh_token || req.cookies[env['REFRESH_TOKEN_COOKIE_NAME']];
+		const currentRefreshToken = req.body?.refresh_token || req.cookies[env['REFRESH_TOKEN_COOKIE_NAME']];
 
 		if (!currentRefreshToken) {
 			throw new InvalidPayloadException(`"refresh_token" is required in either the JSON payload or Cookie`);
@@ -159,7 +159,7 @@ router.post(
 router.post(
 	'/password/request',
 	async (req, _res, next) => {
-		if (typeof req.body.email !== 'string') {
+		if (typeof req.body?.email !== 'string') {
 			throw new InvalidPayloadException(`"email" field is required.`);
 		}
 
@@ -194,11 +194,11 @@ router.post(
 router.post(
 	'/password/reset',
 	async (req, _res, next) => {
-		if (typeof req.body.token !== 'string') {
+		if (typeof req.body?.token !== 'string') {
 			throw new InvalidPayloadException(`"token" field is required.`);
 		}
 
-		if (typeof req.body.password !== 'string') {
+		if (typeof req.body?.password !== 'string') {
 			throw new InvalidPayloadException(`"password" field is required.`);
 		}
 

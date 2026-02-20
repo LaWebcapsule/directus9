@@ -33,7 +33,7 @@ router.post(
 			const keys = await service.createMany(req.body);
 			savedKeys.push(...keys);
 		} else {
-			const key = await service.createOne(req.body);
+			const key = await service.createOne(req.body || {});
 			savedKeys.push(key);
 		}
 
@@ -152,7 +152,7 @@ router.patch(
 			schema: req.schema,
 		});
 
-		const primaryKey = await service.updateOne(req.accountability.user, req.body);
+		const primaryKey = await service.updateOne(req.accountability.user, req.body || {});
 		const item = await service.readOne(primaryKey, req.sanitizedQuery);
 
 		res.locals['payload'] = { data: item || null };
@@ -168,7 +168,7 @@ router.patch(
 			throw new InvalidCredentialsException();
 		}
 
-		if (!req.body.last_page) {
+		if (!req.body?.last_page) {
 			throw new InvalidPayloadException(`"last_page" key is required.`);
 		}
 
@@ -224,7 +224,7 @@ router.patch(
 			schema: req.schema,
 		});
 
-		const primaryKey = await service.updateOne(getParam(req, 'pk')!, req.body);
+		const primaryKey = await service.updateOne(getParam(req, 'pk')!, req.body || {});
 
 		try {
 			const item = await service.readOne(primaryKey, req.sanitizedQuery);
@@ -289,7 +289,7 @@ const inviteSchema = Joi.object({
 router.post(
 	'/invite',
 	async (req, _res, next) => {
-		const { error } = inviteSchema.validate(req.body);
+		const { error } = inviteSchema.validate(req.body || {});
 		if (error) throw new InvalidPayloadException(error.message);
 
 		const service = new UsersService({
@@ -311,7 +311,7 @@ const acceptInviteSchema = Joi.object({
 router.post(
 	'/invite/accept',
 	async (req, _res, next) => {
-		const { error } = acceptInviteSchema.validate(req.body);
+		const { error } = acceptInviteSchema.validate(req.body || {});
 		if (error) throw new InvalidPayloadException(error.message);
 
 		const service = new UsersService({
@@ -332,7 +332,7 @@ router.post(
 			throw new InvalidCredentialsException();
 		}
 
-		if (!req.body.password) {
+		if (!req.body?.password) {
 			throw new InvalidPayloadException(`"password" is required`);
 		}
 
@@ -363,11 +363,11 @@ router.post(
 			throw new InvalidCredentialsException();
 		}
 
-		if (!req.body.secret) {
+		if (!req.body?.secret) {
 			throw new InvalidPayloadException(`"secret" is required`);
 		}
 
-		if (!req.body.otp) {
+		if (!req.body?.otp) {
 			throw new InvalidPayloadException(`"otp" is required`);
 		}
 
@@ -422,7 +422,7 @@ router.post(
 			throw new InvalidCredentialsException();
 		}
 
-		if (!req.body.otp) {
+		if (!req.body?.otp) {
 			throw new InvalidPayloadException(`"otp" is required`);
 		}
 
