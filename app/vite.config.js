@@ -32,6 +32,14 @@ export default defineConfig({
 			},
 		}),
 	],
+	css: {
+		preprocessorOptions: {
+			scss: {
+				api: 'legacy',
+				silenceDeprecations: ['legacy-js-api', 'import'],
+			},
+		},
+	},
 	resolve: {
 		alias: [
 			{ find: '@', replacement: path.resolve(__dirname, 'src') },
